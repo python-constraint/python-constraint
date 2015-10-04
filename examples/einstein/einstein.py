@@ -39,7 +39,7 @@ from constraint import *
 
 # Check http://www.csc.fi/oppaat/f95/python/talot.py
 
-def main():
+def solve():
     problem = Problem()
     for i in range(1,6):
         problem.addVariable("color%d" % i,
@@ -181,10 +181,7 @@ def main():
                                    "drink%d" % (i == 1 and 2 or 4)))
 
     solutions = problem.getSolutions()
-    print("Found %d solution(s)!" % len(solutions))
-    print("")
-    for solution in solutions:
-        showSolution(solution)
+    return solutions
 
 def showSolution(solution):
     for i in range(1,6):
@@ -196,6 +193,14 @@ def showSolution(solution):
         print("Smoke: %s" % solution["smoke%d" % i])
         print("Pet: %s" % solution["pet%d" % i])
         print("")
+
+def main():
+    solutions = solve()
+    print("Found %d solution(s)!" % len(solutions))
+    print("")
+    for solution in solutions:
+        showSolution(solution)
+
 
 if __name__ == "__main__":
     main()

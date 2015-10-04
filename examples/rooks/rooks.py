@@ -7,9 +7,8 @@ import sys
 
 def factorial(x): return x == 1 or factorial(x-1)*x
 
-def main(show=False):
+def solve(size):
     problem = Problem()
-    size = 8
     cols = range(size)
     rows = range(size)
     problem.addVariables(cols, rows)
@@ -19,8 +18,12 @@ def main(show=False):
                 problem.addConstraint(lambda row1, row2: row1 != row2,
                                       (col1, col2))
     solutions = problem.getSolutions()
-    print("Found %d solution(s)!" % len(solutions))
-    assert len(solutions) == factorial(size)
+    return solutions
+
+def main(show=False):
+    size = 8
+    solutions = solve(size)
+    print "Found %d solution(s)!" % len(solutions)
     if show:
         for solution in solutions:
             showSolution(solution, size)

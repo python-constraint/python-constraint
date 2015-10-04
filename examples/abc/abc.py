@@ -10,7 +10,7 @@
 #
 from constraint import *
 
-def main():
+def solve():
     problem = Problem()
     problem.addVariables("abc", range(1,10))
     problem.getSolutions()
@@ -23,6 +23,10 @@ def main():
         value = (a*100+b*10+c)/(a+b+c)
         if value < minvalue:
             minsolution = solution
+    return minvalue, minsolution
+
+def main():
+    minvalue, minsolution = abc()
     print(minvalue)
     print(minsolution)
 
