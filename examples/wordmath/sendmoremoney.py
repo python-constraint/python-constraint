@@ -29,7 +29,7 @@ def solve():
 
 def main():
     solutions = solve()
-    print "SEND+MORE=MONEY"
+    print("SEND+MORE=MONEY")
     for s in solutions:
         print("%(s)d%(e)d%(n)d%(d)d+" \
               "%(m)d%(o)d%(r)d%(e)d=" \

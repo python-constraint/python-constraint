@@ -23,7 +23,7 @@ def solve(size):
 def main(show=False):
     size = 8
     solutions = solve(size)
-    print "Found %d solution(s)!" % len(solutions)
+    print("Found %d solution(s)!" % len(solutions))
     if show:
         for solution in solutions:
             showSolution(solution, size)
