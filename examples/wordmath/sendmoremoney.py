@@ -10,7 +10,7 @@
 #
 from constraint import *
 
-def main():
+def solve():
     problem = Problem()
     problem.addVariables("sendmory", range(10))
     problem.addConstraint(lambda d, e, y: (d+e)%10 == y, "dey")
@@ -24,11 +24,16 @@ def main():
                           10000*m+1000*o+100*n+10*e+y, "sendmory")
     problem.addConstraint(NotInSetConstraint([0]), "sm")
     problem.addConstraint(AllDifferentConstraint())
+    solutions = problem.getSolutions()
+    return solutions
+
+def main():
+    solutions = solve()
     print "SEND+MORE=MONEY"
-    for s in problem.getSolutions():
-        print "%(s)d%(e)d%(n)d%(d)d+" \
+    for s in solutions:
+        print("%(s)d%(e)d%(n)d%(d)d+" \
               "%(m)d%(o)d%(r)d%(e)d=" \
-              "%(m)d%(o)d%(n)d%(e)d%(y)d" % s
+              "%(m)d%(o)d%(n)d%(e)d%(y)d" % s)
 
 if __name__ == "__main__":
     main()

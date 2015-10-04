@@ -12,7 +12,7 @@ STUDENTDESKS = [[  0,  1,  0,  0,  0,  0],
                 [ 15, 16, 17, 18, 19,  0],
                 [  0,  0,  0,  0, 20,  0]]
 
-def main():
+def solve():
     problem = Problem()
     problem.addVariables(range(1,21), ["A", "B", "C", "D", "E"])
     problem.addConstraint(SomeInSetConstraint(["A"], 4, True))
@@ -26,7 +26,12 @@ def main():
                    STUDENTDESKS[row+1][col], STUDENTDESKS[row+1][col+1]]
             lst = [x for x in lst if x]
             problem.addConstraint(AllDifferentConstraint(), lst)
-    showSolution(problem.getSolution())
+    solutions = problem.getSolution()
+    return solutions
+
+def main():
+    solutions = solve()
+    showSolution(solutions)
 
 def showSolution(solution):
     for row in range(len(STUDENTDESKS)):

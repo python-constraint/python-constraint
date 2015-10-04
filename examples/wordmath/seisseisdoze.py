@@ -10,7 +10,7 @@
 #
 from constraint import *
 
-def main():
+def solve():
     problem = Problem()
     problem.addVariables("seidoz", range(10))
     problem.addConstraint(lambda s, e: (2*s)%10 == e, "se")
@@ -22,11 +22,15 @@ def main():
     problem.addConstraint(lambda s: s != 0, "s")
     problem.addConstraint(lambda d: d != 0, "d")
     problem.addConstraint(AllDifferentConstraint())
-    print "SEIS+SEIS=DOZE"
-    for s in problem.getSolutions():
-        print ("%(s)d%(e)d%(i)d%(s)s+%(s)d%(e)d%(i)d%(s)d="
-               "%(d)d%(o)d%(z)d%(e)d") % s
+    solutions = problem.getSolutions()
+    return solutions
+
+def main():
+    solutions = solve()
+    print("SEIS+SEIS=DOZE")
+    for s in solutions:
+        print("%(s)d%(e)d%(i)d%(s)s+%(s)d%(e)d%(i)d%(s)d="
+              "%(d)d%(o)d%(z)d%(e)d") % s
 
 if __name__ == "__main__":
     main()
-

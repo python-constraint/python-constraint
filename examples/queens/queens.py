@@ -5,7 +5,7 @@
 from constraint import *
 import sys
 
-def main(show=False):
+def solve():
     problem = Problem()
     size = 8
     cols = range(size)
@@ -18,10 +18,7 @@ def main(show=False):
                                       abs(row1-row2) != abs(col1-col2) and
                                       row1 != row2, (col1, col2))
     solutions = problem.getSolutions()
-    print "Found %d solution(s)!" % len(solutions)
-    if show:
-        for solution in solutions:
-            showSolution(solution, size)
+    return solutions, size
 
 def showSolution(solution, size):
     sys.stdout.write("   %s \n" % ("-"*((size*4)-1)))
@@ -37,6 +34,13 @@ def showSolution(solution, size):
             sys.stdout.write("  |%s|\n" % ("-"*((size*4)-1)))
     sys.stdout.write("   %s \n" % ("-"*((size*4)-1)))
 
+def main(show=False):
+    solutions, size = solve()
+    print("Found %d solution(s)!" % len(solutions))
+    if show:
+        for solution in solutions:
+            showSolution(solution, size)
+
 if __name__ == "__main__":
     show = False
     if len(sys.argv) == 2 and sys.argv[1] == "-s":
@@ -44,4 +48,3 @@ if __name__ == "__main__":
     elif len(sys.argv) != 1:
         sys.exit("Usage: queens.py [-s]")
     main(show)
-

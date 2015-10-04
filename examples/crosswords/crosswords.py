@@ -112,8 +112,8 @@ def main(puzzle, lines):
 
     solution = problem.getSolution()
     if not solution:
-        print "No solution found!"
-    
+        print("No solution found!")
+
     maxcol = 0
     maxrow = 0
     for hword in horizontal:
@@ -150,4 +150,3 @@ if __name__ == "__main__":
     if len(sys.argv) != 3:
         sys.exit("Usage: crosswords.py <maskfile> <wordsfile>")
     main(open(sys.argv[1]).read(), open(sys.argv[2]))
-

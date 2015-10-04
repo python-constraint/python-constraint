@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/python-constraint/python-constraint.svg?branch=unit_tests)](https://travis-ci.org/python-constraint/python-constraint)
+
 # python-constraint
 
 ## Original code / information

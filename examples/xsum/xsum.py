@@ -11,7 +11,7 @@
 #
 from constraint import *
 
-def main():
+def solve():
     problem = Problem()
     problem.addVariables("abcdxefgh", range(1,10))
     problem.addConstraint(lambda a, b, c, d, x:
@@ -20,18 +20,27 @@ def main():
                           e < f < g < h and e+f+g+h+x == 27, "efghx")
     problem.addConstraint(AllDifferentConstraint())
     solutions = problem.getSolutions()
-    print "Found %d solutions!" % len(solutions)
+    return solutions
+
+def main():
+    solutions = solve()
+    print("Found %d solutions!" % len(solutions))
     showSolutions(solutions)
 
 def showSolutions(solutions):
     for solution in solutions:
-        print " %d   %d" % (solution["a"], solution["e"])
-        print "  %d %d " % (solution["b"], solution["f"])
-        print "   %d   " % (solution["x"],)
-        print "  %d %d " % (solution["g"], solution["c"])
-        print " %d   %d" % (solution["h"], solution["d"])
-        print
+        print(""" %d   %d
+  %d %d
+   %d
+  %d %d
+ %d   %d
+""" % (
+                solution["a"], solution["e"],
+                solution["b"], solution["f"],
+                solution["x"],
+                solution["g"], solution["c"],
+                solution["h"], solution["d"]))
+
 
 if __name__ == "__main__":
     main()
-
