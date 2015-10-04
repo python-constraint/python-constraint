@@ -1,0 +1,13 @@
+Metadata-Version: 1.0
+Name: python-constraint
+Version: 1.2
+Summary: Python module for handling Constraint Solving Problems
+Home-page: http://labix.org/python-constraint
+Author: Gustavo Niemeyer
+Author-email: gustavo@niemeyer.net
+License: Simplified BSD
+Description: 
+        python-constraint is a module implementing support for handling CSPs
+        (Constraint Solving Problems) over finite domains.
+        
+Platform: UNKNOWN

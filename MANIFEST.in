@@ -1,0 +1,2 @@
+include constraint.py setup.py setup.cfg README LICENSE MANIFEST.in
+recursive-include examples *.py *.mask
