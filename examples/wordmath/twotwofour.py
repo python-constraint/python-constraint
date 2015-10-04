@@ -20,7 +20,7 @@ def main():
                           2*(t*100+w*10+o) == f*1000+o*100+u*10+r, "twofur")
     problem.addConstraint(NotInSetConstraint([0]), "ft")
     problem.addConstraint(AllDifferentConstraint())
-    print "TWO+TWO=FOUR"
+    print("TWO+TWO=FOUR")
     for s in problem.getSolutions():
         print "%(t)d%(w)d%(o)d+%(t)d%(w)d%(o)d=%(f)d%(o)d%(u)d%(r)d" % s
 

@@ -55,7 +55,6 @@ for solution in solutions:
     for i in range(1, 10):
         for j in range(1, 10):
             index = i*10+j
-            print solution[index],
-        print
-    print
-
+            print(solution[index])
+        print("")
+    print("")

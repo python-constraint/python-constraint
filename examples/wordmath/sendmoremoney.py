@@ -26,9 +26,9 @@ def main():
     problem.addConstraint(AllDifferentConstraint())
     print "SEND+MORE=MONEY"
     for s in problem.getSolutions():
-        print "%(s)d%(e)d%(n)d%(d)d+" \
+        print("%(s)d%(e)d%(n)d%(d)d+" \
               "%(m)d%(o)d%(r)d%(e)d=" \
-              "%(m)d%(o)d%(n)d%(e)d%(y)d" % s
+              "%(m)d%(o)d%(n)d%(e)d%(y)d" % s)
 
 if __name__ == "__main__":
     main()

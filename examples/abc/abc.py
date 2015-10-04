@@ -23,8 +23,8 @@ def main():
         value = (a*100+b*10+c)/(a+b+c)
         if value < minvalue:
             minsolution = solution
-    print minvalue
-    print minsolution
+    print(minvalue)
+    print(minsolution)
 
 if __name__ == "__main__":
     main()

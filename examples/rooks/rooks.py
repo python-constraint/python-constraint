@@ -19,7 +19,7 @@ def main(show=False):
                 problem.addConstraint(lambda row1, row2: row1 != row2,
                                       (col1, col2))
     solutions = problem.getSolutions()
-    print "Found %d solution(s)!" % len(solutions)
+    print("Found %d solution(s)!" % len(solutions))
     assert len(solutions) == factorial(size)
     if show:
         for solution in solutions:
@@ -46,4 +46,3 @@ if __name__ == "__main__":
     elif len(sys.argv) != 1:
         sys.exit("Usage: rooks.py [-s]")
     main(show)
-

@@ -18,7 +18,7 @@ def main(show=False):
                                       abs(row1-row2) != abs(col1-col2) and
                                       row1 != row2, (col1, col2))
     solutions = problem.getSolutions()
-    print "Found %d solution(s)!" % len(solutions)
+    print("Found %d solution(s)!" % len(solutions))
     if show:
         for solution in solutions:
             showSolution(solution, size)
@@ -44,4 +44,3 @@ if __name__ == "__main__":
     elif len(sys.argv) != 1:
         sys.exit("Usage: queens.py [-s]")
     main(show)
-

@@ -24,9 +24,8 @@ def main():
     problem.addConstraint(AllDifferentConstraint())
     print "SEIS+SEIS=DOZE"
     for s in problem.getSolutions():
-        print ("%(s)d%(e)d%(i)d%(s)s+%(s)d%(e)d%(i)d%(s)d="
-               "%(d)d%(o)d%(z)d%(e)d") % s
+        print("%(s)d%(e)d%(i)d%(s)s+%(s)d%(e)d%(i)d%(s)d="
+              "%(d)d%(o)d%(z)d%(e)d") % s
 
 if __name__ == "__main__":
     main()
-
