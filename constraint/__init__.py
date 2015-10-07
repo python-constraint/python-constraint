@@ -43,6 +43,13 @@
                     SomeInSetConstraint,
                     SomeNotInSetConstraint
 """
+
+from __future__ import absolute_import, division, print_function
+
+
+from .version import (__author__, __copyright__, __credits__, __license__,
+                      __version__, __email__, __status__, __url__)
+
 import random
 import copy
 

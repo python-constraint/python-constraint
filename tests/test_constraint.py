@@ -1,3 +1,4 @@
+import constraint
 from constraint import *
 
 from examples.abc import abc
@@ -10,6 +11,8 @@ from examples.studentdesks import studentdesks
 from examples.sudoku import sudoku
 from examples.wordmath import (seisseisdoze, sendmoremoney, twotwofour)
 from examples.xsum import xsum
+
+import constraint.compat as compat
 
 def test_abc():
     solutions = abc.solve()
@@ -58,3 +61,6 @@ def test_rooks():
     size = 8
     solutions = rooks.solve(size)
     assert len(solutions) == rooks.factorial(size)
+
+def test_version():
+    assert isinstance(constraint.__version__, compat.string_types)
