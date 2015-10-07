@@ -136,7 +136,7 @@ class Problem(object):
         if variable in self._variables:
             raise ValueError("Tried to insert duplicated variable %s" % \
                               repr(variable))
-        if type(domain) in (list, tuple):
+        if isinstance(domain, (list, tuple, range)):
             domain = Domain(domain)
         elif isinstance(domain, Domain):
             domain = copy.copy(domain)
