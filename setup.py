@@ -6,8 +6,8 @@ from codecs import open  # To use a consistent encoding
 from os import path
 import io
 
-NAME = 'constraint'
-filename = "%s/version.py" % NAME
+NAME = 'python-constraint'
+filename = "%s/version.py" % 'constraint'
 with open(filename) as f:
     exec(f.read())
 
