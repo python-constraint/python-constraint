@@ -82,9 +82,9 @@ Features
 
 The following solvers are available:
 
- - Backtracking solver
- - Recursive backtracking solver
- - Minimum conflicts solver
+- Backtracking solver
+- Recursive backtracking solver
+- Minimum conflicts solver
 
 
 .. role:: python(code)
@@ -92,16 +92,16 @@ The following solvers are available:
    
 Predefined constraint types currently available:
 
- - :python:`FunctionConstraint`
- - :python:`AllDifferentConstraint`
- - :python:`AllEqualConstraint`
- - :python:`ExactSumConstraint`
- - :python:`MaxSumConstraint`
- - :python:`MinSumConstraint`
- - :python:`InSetConstraint`
- - :python:`NotInSetConstraint`
- - :python:`SomeInSetConstraint`
- - :python:`SomeNotInSetConstraint`
+- :python:`FunctionConstraint`
+- :python:`AllDifferentConstraint`
+- :python:`AllEqualConstraint`
+- :python:`ExactSumConstraint`
+- :python:`MaxSumConstraint`
+- :python:`MinSumConstraint`
+- :python:`InSetConstraint`
+- :python:`NotInSetConstraint`
+- :python:`SomeInSetConstraint`
+- :python:`SomeNotInSetConstraint`
 
 API documentation
 -----------------
@@ -135,16 +135,16 @@ Roadmap
 This GitHub organization and repository is a global effort to help to
 maintain python-constraint
 
- - Create unit tests - DONE
- - Enable continuous integration - DONE
- - Port to Python 3 (Python 2 being also supported) - DONE
- - Respect Style Guide for Python Code (PEP8) - DONE
- - Move doc to Sphinx or MkDocs - https://readthedocs.org/ - ToDo
+- Create unit tests - DONE
+- Enable continuous integration - DONE
+- Port to Python 3 (Python 2 being also supported) - DONE
+- Respect Style Guide for Python Code (PEP8) - DONE
+- Move doc to Sphinx or MkDocs - https://readthedocs.org/ - ToDo
 
 Contact
 -------
- - Gustavo Niemeyer <gustavo@niemeyer.net>
- - Sébastien Celles <s.celles@gmail.com>
+- Gustavo Niemeyer <gustavo@niemeyer.net>
+- Sébastien Celles <s.celles@gmail.com>
 
 But it's probably better to open an issue <https://github.com/python-constraint/python-constraint/issues<
 
