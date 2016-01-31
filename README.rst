@@ -123,14 +123,14 @@ Documentation for the module is available at: <http://labix.org/doc/constraint/>
 
 Download
 --------
-New version
+New version (Python 2 & 3)
 ~~~~~~~~~~~
 
 .. code-block:: python
 
     $ pip install git+https://github.com/python-constraint/python-constraint.git
 
-Old version
+Old version (v 1.2 - Python 2 only)
 ~~~~~~~~~~~
 Download the module at the Python Package Index: <https://pypi.python.org/pypi/python-constraint>
 
