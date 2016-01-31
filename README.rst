@@ -146,7 +146,7 @@ Contact
 - Gustavo Niemeyer <gustavo@niemeyer.net>
 - Sébastien Celles <s.celles@gmail.com>
 
-But it's probably better to open an issue <https://github.com/python-constraint/python-constraint/issues<
+But it's probably better to open an issue <https://github.com/python-constraint/python-constraint/issues>
 
 
 .. |Build Status| image:: https://travis-ci.org/python-constraint/python-constraint.svg?branch=unit_tests
