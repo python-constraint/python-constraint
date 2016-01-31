@@ -3,6 +3,124 @@
 python-constraint
 =================
 
+Introduction
+-----------
+The Python constraint module offers solvers for Constraint Solving Problems (CSPs) over finite domains in simple and pure Python. CSP is class of problems which may be represented in terms of variables (a, b, ...), domains (a in [1, 2, 3], ...), and constraints (a < b, ...).
+
+Examples
+--------
+
+Basics
+~~~~~~
+
+This interactive Python session demonstrates the module basic operation:
+
+.. code-block:: python
+
+    >>> from constraint import *
+    >>> problem = Problem()
+    >>> problem.addVariable("a", [1,2,3])
+    >>> problem.addVariable("b", [4,5,6])
+    >>> problem.getSolutions()
+    [{'a': 3, 'b': 6}, {'a': 3, 'b': 5}, {'a': 3, 'b': 4},
+     {'a': 2, 'b': 6}, {'a': 2, 'b': 5}, {'a': 2, 'b': 4},
+     {'a': 1, 'b': 6}, {'a': 1, 'b': 5}, {'a': 1, 'b': 4}]
+
+    >>> problem.addConstraint(lambda a, b: a*2 == b,
+                              ("a", "b"))
+    >>> problem.getSolutions()
+    [{'a': 3, 'b': 6}, {'a': 2, 'b': 4}]
+
+    >>> problem = Problem()
+    >>> problem.addVariables(["a", "b"], [1, 2, 3])
+    >>> problem.addConstraint(AllDifferentConstraint())
+    >>> problem.getSolutions()
+    [{'a': 3, 'b': 2}, {'a': 3, 'b': 1}, {'a': 2, 'b': 3},
+     {'a': 2, 'b': 1}, {'a': 1, 'b': 2}, {'a': 1, 'b': 3}]
+
+Rooks problem
+~~~~~~~~~~~~~
+
+The following example solves the classical Eight Rooks problem:
+
+.. code-block:: python
+
+    problem = Problem()
+    numpieces = 8
+    cols = range(numpieces)
+    rows = range(numpieces)
+    problem.addVariables(cols, rows)
+    for col1 in cols:
+        for col2 in cols:
+            if col1 < col2:
+                problem.addConstraint(lambda row1, row2: row1 != row2,
+                                      (col1, col2))
+    solutions = problem.getSolutions()
+
+Magic squares
+~~~~~~~~~~~~~
+
+This example solves a 4x4 magic square:
+
+.. code-block:: python
+
+    problem = Problem()
+    problem.addVariables(range(0, 16), range(1, 16+1))
+    problem.addConstraint(AllDifferentConstraint(), range(0, 16))
+    problem.addConstraint(ExactSumConstraint(34), [0,5,10,15])
+    problem.addConstraint(ExactSumConstraint(34), [3,6,9,12])
+    for row in range(4):
+        problem.addConstraint(ExactSumConstraint(34),
+                              [row*4+i for i in range(4)])
+    for col in range(4):
+        problem.addConstraint(ExactSumConstraint(34),
+                              [col+4*i for i in range(4)])
+    solutions = problem.getSolutions()
+
+Features
+--------
+
+The following solvers are available:
+
+ - Backtracking solver
+ - Recursive backtracking solver
+ - Minimum conflicts solver
+
+
+.. role:: python(code)
+   :language: python
+   
+Predefined constraint types currently available:
+
+ - :python:`FunctionConstraint`
+ - :python:`AllDifferentConstraint`
+ - :python:`AllEqualConstraint`
+ - :python:`ExactSumConstraint`
+ - :python:`MaxSumConstraint`
+ - :python:`MinSumConstraint`
+ - :python:`InSetConstraint`
+ - :python:`NotInSetConstraint`
+ - :python:`SomeInSetConstraint`
+ - :python:`SomeNotInSetConstraint`
+
+API documentation
+-----------------
+Documentation for the module is available at: <http://labix.org/doc/constraint/>
+
+Download
+--------
+New version
+~~~~~~~~~~~
+
+.. code-block:: python
+
+    pip install git+https://github.com/python-constraint/python-constraint.git
+
+Old version
+~~~~~~~~~~~
+Download the module at the Python Package Index: <https://pypi.python.org/pypi/python-constraint>
+
+
 Original code / information
 ---------------------------
 
@@ -17,11 +135,19 @@ Roadmap
 This GitHub organization and repository is a global effort to help to
 maintain python-constraint
 
-- Create unit tests
-- Enable continuous integration
-- Port to Python 3 (Python 2 being also supported)
-- Respect Style Guide for Python Code (PEP8) 
-- Move doc to Sphinx or MkDocs - readthedocs.org
+ - Create unit tests - DONE
+ - Enable continuous integration - DONE
+ - Port to Python 3 (Python 2 being also supported) - DONE
+ - Respect Style Guide for Python Code (PEP8) - DONE
+ - Move doc to Sphinx or MkDocs - https://readthedocs.org/ - ToDo
+
+Contact
+-------
+ - Gustavo Niemeyer <gustavo@niemeyer.net>
+ - Sébastien Celles <s.celles@gmail.com>
+
+But it's probably better to open an issue <https://github.com/python-constraint/python-constraint/issues<
+
 
 .. |Build Status| image:: https://travis-ci.org/python-constraint/python-constraint.svg?branch=unit_tests
    :target: https://travis-ci.org/python-constraint/python-constraint
