@@ -8,7 +8,10 @@ python:
 
 # command to install dependencies
 install:
+  - "pip install -qq flake8"
   - "pip install ."
 
 # command to run tests
-script: nosetests
+script:
+  - flake8 --ignore E501 constraint examples tests
+  - nosetests

@@ -1,28 +1,30 @@
 import constraint
-from constraint import *
 
 from examples.abc import abc
 from examples.coins import coins
-from examples.crosswords import crosswords
+# from examples.crosswords import crosswords
 from examples.einstein import einstein
-from examples.queens import queens
+# from examples.queens import queens
 from examples.rooks import rooks
-from examples.studentdesks import studentdesks
-from examples.sudoku import sudoku
-from examples.wordmath import (seisseisdoze, sendmoremoney, twotwofour)
-from examples.xsum import xsum
+# from examples.studentdesks import studentdesks
+# from examples.sudoku import sudoku
+# from examples.wordmath import (seisseisdoze, sendmoremoney, twotwofour)
+# from examples.xsum import xsum
 
 import constraint.compat as compat
+
 
 def test_abc():
     solutions = abc.solve()
     minvalue, minsolution = solutions
-    assert minvalue==37
-    assert minsolution=={'a': 1, 'c': 2, 'b': 1}
+    assert minvalue == 37
+    assert minsolution == {'a': 1, 'c': 2, 'b': 1}
+
 
 def test_coins():
     solutions = coins.solve()
-    assert len(solutions)==2
+    assert len(solutions) == 2
+
 
 def test_einstein():
     solutions = einstein.solve()
@@ -57,10 +59,12 @@ def test_einstein():
     ]
     assert solutions == expected_solutions
 
+
 def test_rooks():
     size = 8
     solutions = rooks.solve(size)
     assert len(solutions) == rooks.factorial(size)
+
 
 def test_version():
     assert isinstance(constraint.__version__, compat.string_types)

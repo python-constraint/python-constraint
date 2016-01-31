@@ -1,9 +1,10 @@
 #!/usr/bin/python
-from constraint import *
+from constraint import Problem, AllDifferentConstraint
 import random
 import sys
 
 MINLEN = 3
+
 
 def main(puzzle, lines):
     puzzle = puzzle.rstrip().splitlines()
@@ -59,10 +60,10 @@ def main(puzzle, lines):
             del word[:]
         col += 1
 
-    hnames = ["h%d" % i for i in range(len(horizontal))]
-    vnames = ["v%d" % i for i in range(len(vertical))]
+    # hnames = ["h%d" % i for i in range(len(horizontal))]
+    # vnames = ["v%d" % i for i in range(len(vertical))]
 
-    #problem = Problem(MinConflictsSolver())
+    # problem = Problem(MinConflictsSolver())
     problem = Problem()
 
     for hi, hword in enumerate(horizontal):
@@ -130,8 +131,8 @@ def main(puzzle, lines):
                 maxcol = col
 
     matrix = []
-    for row in range(maxrow+1):
-        matrix.append([" "]*(maxcol+1))
+    for row in range(maxrow + 1):
+        matrix.append([" "] * (maxcol + 1))
 
     for variable in solution:
         if variable[0] == "v":
@@ -141,10 +142,11 @@ def main(puzzle, lines):
         for (row, col), char in zip(word, solution[variable]):
             matrix[row][col] = char
 
-    for row in range(maxrow+1):
-        for col in range(maxcol+1):
+    for row in range(maxrow + 1):
+        for col in range(maxcol + 1):
             sys.stdout.write(matrix[row][col])
         sys.stdout.write("\n")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:

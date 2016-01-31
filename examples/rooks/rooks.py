@@ -2,10 +2,13 @@
 #
 # http://mathworld.wolfram.com/RooksProblem.html
 #
-from constraint import *
+from constraint import Problem
 import sys
 
-def factorial(x): return x == 1 or factorial(x-1)*x
+
+def factorial(x):
+    return x == 1 or factorial(x - 1) * x
+
 
 def solve(size):
     problem = Problem()
@@ -20,6 +23,7 @@ def solve(size):
     solutions = problem.getSolutions()
     return solutions
 
+
 def main(show=False):
     size = 8
     solutions = solve(size)
@@ -28,8 +32,9 @@ def main(show=False):
         for solution in solutions:
             showSolution(solution, size)
 
+
 def showSolution(solution, size):
-    sys.stdout.write("   %s \n" % ("-"*((size*4)-1)))
+    sys.stdout.write("   %s \n" % ("-" * ((size * 4) - 1)))
     for i in range(size):
         sys.stdout.write("  |")
         for j in range(size):
@@ -38,9 +43,10 @@ def showSolution(solution, size):
             else:
                 sys.stdout.write("   |")
         sys.stdout.write("\n")
-        if i != size-1:
-            sys.stdout.write("  |%s|\n" % ("-"*((size*4)-1)))
-    sys.stdout.write("   %s \n" % ("-"*((size*4)-1)))
+        if i != size - 1:
+            sys.stdout.write("  |%s|\n" % ("-" * ((size * 4) - 1)))
+    sys.stdout.write("   %s \n" % ("-" * ((size * 4) - 1)))
+
 
 if __name__ == "__main__":
     show = False

@@ -47,11 +47,12 @@
 from __future__ import absolute_import, division, print_function
 
 
-from .version import (__author__, __copyright__, __credits__, __license__,
-                      __version__, __email__, __status__, __url__)
+from .version import (__author__, __copyright__, __credits__, __license__,  # noqa
+                      __version__, __email__, __status__, __url__)  # noqa
 
 import random
 import copy
+from .compat import xrange
 
 __all__ = ["Problem", "Variable", "Domain", "Unassigned",
            "Solver", "BacktrackingSolver", "RecursiveBacktrackingSolver",
@@ -60,6 +61,7 @@ __all__ = ["Problem", "Variable", "Domain", "Unassigned",
            "ExactSumConstraint", "MinSumConstraint", "InSetConstraint",
            "NotInSetConstraint", "SomeInSetConstraint",
            "SomeNotInSetConstraint"]
+
 
 class Problem(object):
     """
@@ -141,15 +143,15 @@ class Problem(object):
         @type  domain: list, tuple, or instance of C{Domain}
         """
         if variable in self._variables:
-            raise ValueError("Tried to insert duplicated variable %s" % \
-                              repr(variable))
+            msg = "Tried to insert duplicated variable %s" % repr(variable)
+            raise ValueError(msg)
         if hasattr(domain, '__getitem__'):
             domain = Domain(domain)
         elif isinstance(domain, Domain):
             domain = copy.copy(domain)
         else:
-            raise TypeError("Domains must be instances of subclasses of "\
-                             "the Domain class")
+            msg = "Domains must be instances of subclasses of the Domain class"
+            raise TypeError(msg)
         if not domain:
             raise ValueError("Domain is empty")
         self._variables[variable] = domain
@@ -202,8 +204,9 @@ class Problem(object):
             if callable(constraint):
                 constraint = FunctionConstraint(constraint)
             else:
-                raise ValueError("Constraints must be instances of "\
-                                  "subclasses of the Constraint class")
+                msg = "Constraints must be instances of subclasses "\
+                      "of the Constraint class"
+                raise ValueError(msg)
         self._constraints.append((constraint, variables))
 
     def getSolution(self):
@@ -293,12 +296,13 @@ class Problem(object):
             domain.resetState()
             if not domain:
                 return None, None, None
-        #doArc8(getArcs(domains, constraints), domains, {})
+        # doArc8(getArcs(domains, constraints), domains, {})
         return domains, constraints, vconstraints
 
 # ----------------------------------------------------------------------
 # Solvers
 # ----------------------------------------------------------------------
+
 
 def getArcs(domains, constraints):
     """
@@ -318,6 +322,7 @@ def getArcs(domains, constraints):
                 .setdefault(variable1, [])\
                 .append(x)
     return arcs
+
 
 def doArc8(arcs, domains, assignments):
     """
@@ -339,7 +344,7 @@ def doArc8(arcs, domains, assignments):
             else:
                 otherdomain = domains[othervariable]
             if domain:
-                changed = False
+                # changed = False
                 for value in domain[:]:
                     assignments[variable] = value
                     if otherdomain:
@@ -355,14 +360,15 @@ def doArc8(arcs, domains, assignments):
                         else:
                             # All othervalues failed. Kill value.
                             domain.hideValue(value)
-                            changed = True
+                            # changed = True
                         del assignments[othervariable]
                 del assignments[variable]
-                #if changed:
-                #    check.update(dict.fromkeys(arcsvariable))
+                # if changed:
+                #     check.update(dict.fromkeys(arcsvariable))
             if not domain:
                 return False
     return True
+
 
 class Solver(object):
     """
@@ -383,8 +389,8 @@ class Solver(object):
                              constraints affecting the given variables.
         @type  vconstraints: dict
         """
-        raise NotImplementedError(
-              "%s is an abstract class" % self.__class__.__name__)
+        msg = "%s is an abstract class" % self.__class__.__name__
+        raise NotImplementedError(msg)
 
     def getSolutions(self, domains, constraints, vconstraints):
         """
@@ -398,8 +404,8 @@ class Solver(object):
                              constraints affecting the given variables.
         @type  vconstraints: dict
         """
-        raise NotImplementedError(
-              "%s provides only a single solution" % self.__class__.__name__)
+        msg = "%s provides only a single solution" % self.__class__.__name__
+        raise NotImplementedError(msg)
 
     def getSolutionIter(self, domains, constraints, vconstraints):
         """
@@ -413,8 +419,9 @@ class Solver(object):
                              constraints affecting the given variables.
         @type  vconstraints: dict
         """
-        raise NotImplementedError(
-              "%s doesn't provide iteration" % self.__class__.__name__)
+        msg = "%s doesn't provide iteration" % self.__class__.__name__
+        raise NotImplementedError(msg)
+
 
 class BacktrackingSolver(Solver):
     """
@@ -445,7 +452,7 @@ class BacktrackingSolver(Solver):
     True
     True
     True
-    """#"""
+    """
 
     def __init__(self, forwardcheck=True):
         """
@@ -475,8 +482,7 @@ class BacktrackingSolver(Solver):
                     values = domains[variable][:]
                     if forwardcheck:
                         pushdomains = [domains[x] for x in domains
-                                                   if x not in assignments and
-                                                      x != variable]
+                                       if x not in assignments and x != variable]
                     else:
                         pushdomains = None
                     break
@@ -570,7 +576,7 @@ class RecursiveBacktrackingSolver(Solver):
     Traceback (most recent call last):
        ...
     NotImplementedError: RecursiveBacktrackingSolver doesn't provide iteration
-    """#"""
+    """
 
     def __init__(self, forwardcheck=True):
         """
@@ -665,7 +671,7 @@ class MinConflictsSolver(Solver):
     Traceback (most recent call last):
        ...
     NotImplementedError: MinConflictsSolver doesn't provide iteration
-    """#"""
+    """
 
     def __init__(self, steps=1000):
         """
@@ -717,6 +723,7 @@ class MinConflictsSolver(Solver):
 # Variables
 # ----------------------------------------------------------------------
 
+
 class Variable(object):
     """
     Helper class for variable definition
@@ -740,6 +747,7 @@ Unassigned = Variable("Unassigned")
 # ----------------------------------------------------------------------
 # Domains
 # ----------------------------------------------------------------------
+
 
 class Domain(list):
     """
@@ -782,7 +790,7 @@ class Domain(list):
         Variables hidden since the last popped state are then available
         again.
         """
-        diff = self._states.pop()-len(self)
+        diff = self._states.pop() - len(self)
         if diff:
             self.extend(self._hidden[-diff:])
             del self._hidden[-diff:]
@@ -803,6 +811,7 @@ class Domain(list):
 # ----------------------------------------------------------------------
 # Constraints
 # ----------------------------------------------------------------------
+
 
 class Constraint(object):
     """
@@ -832,7 +841,7 @@ class Constraint(object):
         @return: Boolean value stating if this constraint is currently
                  broken or not
         @rtype: bool
-        """#"""
+        """
         return True
 
     def preProcess(self, variables, domains, constraints, vconstraints):
@@ -856,7 +865,7 @@ class Constraint(object):
         @param vconstraints: Dictionary mapping variables to a list of
                              constraints affecting the given variables.
         @type  vconstraints: dict
-        """#"""
+        """
         if len(variables) == 1:
             variable = variables[0]
             domain = domains[variable]
@@ -885,7 +894,7 @@ class Constraint(object):
         @return: Boolean value stating if this constraint is currently
                  broken or not
         @rtype: bool
-        """#"""
+        """
         unassignedvariable = _unassigned
         for variable in variables:
             if variable not in assignments:
@@ -908,6 +917,7 @@ class Constraint(object):
                     return False
         return True
 
+
 class FunctionConstraint(Constraint):
     """
     Constraint which wraps a function defining the constraint logic
@@ -929,7 +939,7 @@ class FunctionConstraint(Constraint):
     >>> problem.addConstraint(FunctionConstraint(func), ["a", "b"])
     >>> problem.getSolution()
     {'a': 1, 'b': 2}
-    """#"""
+    """
 
     def __init__(self, func, assigned=True):
         """
@@ -952,6 +962,7 @@ class FunctionConstraint(Constraint):
                      self.forwardCheck(variables, domains, assignments)))
         return self._func(*parms)
 
+
 class AllDifferentConstraint(Constraint):
     """
     Constraint enforcing that values of all given variables are different
@@ -963,7 +974,7 @@ class AllDifferentConstraint(Constraint):
     >>> problem.addConstraint(AllDifferentConstraint())
     >>> sorted(sorted(x.items()) for x in problem.getSolutions())
     [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
-    """#"""
+    """
 
     def __call__(self, variables, domains, assignments, forwardcheck=False,
                  _unassigned=Unassigned):
@@ -985,6 +996,7 @@ class AllDifferentConstraint(Constraint):
                                 return False
         return True
 
+
 class AllEqualConstraint(Constraint):
     """
     Constraint enforcing that values of all given variables are equal
@@ -996,7 +1008,7 @@ class AllEqualConstraint(Constraint):
     >>> problem.addConstraint(AllEqualConstraint())
     >>> sorted(sorted(x.items()) for x in problem.getSolutions())
     [[('a', 1), ('b', 1)], [('a', 2), ('b', 2)]]
-    """#"""
+    """
 
     def __call__(self, variables, domains, assignments, forwardcheck=False,
                  _unassigned=Unassigned):
@@ -1018,6 +1030,7 @@ class AllEqualConstraint(Constraint):
                             domain.hideValue(value)
         return True
 
+
 class MaxSumConstraint(Constraint):
     """
     Constraint enforcing that values of given variables sum up to
@@ -1030,7 +1043,7 @@ class MaxSumConstraint(Constraint):
     >>> problem.addConstraint(MaxSumConstraint(3))
     >>> sorted(sorted(x.items()) for x in problem.getSolutions())
     [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
-    """#"""
+    """
 
     def __init__(self, maxsum, multipliers=None):
         """
@@ -1052,7 +1065,7 @@ class MaxSumConstraint(Constraint):
             for variable, multiplier in zip(variables, multipliers):
                 domain = domains[variable]
                 for value in domain[:]:
-                    if value*multiplier > maxsum:
+                    if value * multiplier > maxsum:
                         domain.remove(value)
         else:
             for variable in variables:
@@ -1068,7 +1081,7 @@ class MaxSumConstraint(Constraint):
         if multipliers:
             for variable, multiplier in zip(variables, multipliers):
                 if variable in assignments:
-                    sum += assignments[variable]*multiplier
+                    sum += assignments[variable] * multiplier
             if type(sum) is float:
                 sum = round(sum, 10)
             if sum > maxsum:
@@ -1078,7 +1091,7 @@ class MaxSumConstraint(Constraint):
                     if variable not in assignments:
                         domain = domains[variable]
                         for value in domain[:]:
-                            if sum+value*multiplier > maxsum:
+                            if sum + value * multiplier > maxsum:
                                 domain.hideValue(value)
                         if not domain:
                             return False
@@ -1095,11 +1108,12 @@ class MaxSumConstraint(Constraint):
                     if variable not in assignments:
                         domain = domains[variable]
                         for value in domain[:]:
-                            if sum+value > maxsum:
+                            if sum + value > maxsum:
                                 domain.hideValue(value)
                         if not domain:
                             return False
         return True
+
 
 class ExactSumConstraint(Constraint):
     """
@@ -1113,7 +1127,7 @@ class ExactSumConstraint(Constraint):
     >>> problem.addConstraint(ExactSumConstraint(3))
     >>> sorted(sorted(x.items()) for x in problem.getSolutions())
     [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
-    """#"""
+    """
 
     def __init__(self, exactsum, multipliers=None):
         """
@@ -1135,7 +1149,7 @@ class ExactSumConstraint(Constraint):
             for variable, multiplier in zip(variables, multipliers):
                 domain = domains[variable]
                 for value in domain[:]:
-                    if value*multiplier > exactsum:
+                    if value * multiplier > exactsum:
                         domain.remove(value)
         else:
             for variable in variables:
@@ -1152,7 +1166,7 @@ class ExactSumConstraint(Constraint):
         if multipliers:
             for variable, multiplier in zip(variables, multipliers):
                 if variable in assignments:
-                    sum += assignments[variable]*multiplier
+                    sum += assignments[variable] * multiplier
                 else:
                     missing = True
             if type(sum) is float:
@@ -1164,7 +1178,7 @@ class ExactSumConstraint(Constraint):
                     if variable not in assignments:
                         domain = domains[variable]
                         for value in domain[:]:
-                            if sum+value*multiplier > exactsum:
+                            if sum + value * multiplier > exactsum:
                                 domain.hideValue(value)
                         if not domain:
                             return False
@@ -1183,7 +1197,7 @@ class ExactSumConstraint(Constraint):
                     if variable not in assignments:
                         domain = domains[variable]
                         for value in domain[:]:
-                            if sum+value > exactsum:
+                            if sum + value > exactsum:
                                 domain.hideValue(value)
                         if not domain:
                             return False
@@ -1191,6 +1205,7 @@ class ExactSumConstraint(Constraint):
             return sum <= exactsum
         else:
             return sum == exactsum
+
 
 class MinSumConstraint(Constraint):
     """
@@ -1204,7 +1219,7 @@ class MinSumConstraint(Constraint):
     >>> problem.addConstraint(MinSumConstraint(3))
     >>> sorted(sorted(x.items()) for x in problem.getSolutions())
     [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)], [('a', 2), ('b', 2)]]
-    """#"""
+    """
 
     def __init__(self, minsum, multipliers=None):
         """
@@ -1227,13 +1242,14 @@ class MinSumConstraint(Constraint):
             sum = 0
             if multipliers:
                 for variable, multiplier in zip(variables, multipliers):
-                    sum += assignments[variable]*multiplier
+                    sum += assignments[variable] * multiplier
             else:
                 for variable in variables:
                     sum += assignments[variable]
             if type(sum) is float:
                 sum = round(sum, 10)
             return sum >= minsum
+
 
 class InSetConstraint(Constraint):
     """
@@ -1247,7 +1263,7 @@ class InSetConstraint(Constraint):
     >>> problem.addConstraint(InSetConstraint([1]))
     >>> sorted(sorted(x.items()) for x in problem.getSolutions())
     [[('a', 1), ('b', 1)]]
-    """#"""
+    """
 
     def __init__(self, set):
         """
@@ -1270,6 +1286,7 @@ class InSetConstraint(Constraint):
             vconstraints[variable].remove((self, variables))
         constraints.remove((self, variables))
 
+
 class NotInSetConstraint(Constraint):
     """
     Constraint enforcing that values of given variables are not present in
@@ -1282,7 +1299,7 @@ class NotInSetConstraint(Constraint):
     >>> problem.addConstraint(NotInSetConstraint([1]))
     >>> sorted(sorted(x.items()) for x in problem.getSolutions())
     [[('a', 2), ('b', 2)]]
-    """#"""
+    """
 
     def __init__(self, set):
         """
@@ -1305,6 +1322,7 @@ class NotInSetConstraint(Constraint):
             vconstraints[variable].remove((self, variables))
         constraints.remove((self, variables))
 
+
 class SomeInSetConstraint(Constraint):
     """
     Constraint enforcing that at least some of the values of given
@@ -1317,7 +1335,7 @@ class SomeInSetConstraint(Constraint):
     >>> problem.addConstraint(SomeInSetConstraint([1]))
     >>> sorted(sorted(x.items()) for x in problem.getSolutions())
     [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
-    """#"""
+    """
 
     def __init__(self, set, n=1, exact=False):
         """
@@ -1345,12 +1363,12 @@ class SomeInSetConstraint(Constraint):
                 missing += 1
         if missing:
             if self._exact:
-                if not (found <= self._n <= missing+found):
+                if not (found <= self._n <= missing + found):
                     return False
             else:
-                if self._n > missing+found:
+                if self._n > missing + found:
                     return False
-            if forwardcheck and self._n-found == missing:
+            if forwardcheck and self._n - found == missing:
                 # All unassigned variables must be assigned to
                 # values in the set.
                 for variable in variables:
@@ -1370,6 +1388,7 @@ class SomeInSetConstraint(Constraint):
                     return False
         return True
 
+
 class SomeNotInSetConstraint(Constraint):
     """
     Constraint enforcing that at least some of the values of given
@@ -1382,7 +1401,7 @@ class SomeNotInSetConstraint(Constraint):
     >>> problem.addConstraint(SomeNotInSetConstraint([1]))
     >>> sorted(sorted(x.items()) for x in problem.getSolutions())
     [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)], [('a', 2), ('b', 2)]]
-    """#"""
+    """
 
     def __init__(self, set, n=1, exact=False):
         """
@@ -1410,12 +1429,12 @@ class SomeNotInSetConstraint(Constraint):
                 missing += 1
         if missing:
             if self._exact:
-                if not (found <= self._n <= missing+found):
+                if not (found <= self._n <= missing + found):
                     return False
             else:
-                if self._n > missing+found:
+                if self._n > missing + found:
                     return False
-            if forwardcheck and self._n-found == missing:
+            if forwardcheck and self._n - found == missing:
                 # All unassigned variables must be assigned to
                 # values not in the set.
                 for variable in variables:
@@ -1434,6 +1453,7 @@ class SomeNotInSetConstraint(Constraint):
                 if found < self._n:
                     return False
         return True
+
 
 if __name__ == "__main__":
     import doctest

@@ -2,8 +2,9 @@
 #
 # http://mathworld.wolfram.com/QueensProblem.html
 #
-from constraint import *
+from constraint import Problem
 import sys
+
 
 def solve():
     problem = Problem()
@@ -15,13 +16,14 @@ def solve():
         for col2 in cols:
             if col1 < col2:
                 problem.addConstraint(lambda row1, row2, col1=col1, col2=col2:
-                                      abs(row1-row2) != abs(col1-col2) and
+                                      abs(row1 - row2) != abs(col1 - col2) and
                                       row1 != row2, (col1, col2))
     solutions = problem.getSolutions()
     return solutions, size
 
+
 def showSolution(solution, size):
-    sys.stdout.write("   %s \n" % ("-"*((size*4)-1)))
+    sys.stdout.write("   %s \n" % ("-" * ((size * 4) - 1)))
     for i in range(size):
         sys.stdout.write("  |")
         for j in range(size):
@@ -30,9 +32,10 @@ def showSolution(solution, size):
             else:
                 sys.stdout.write("   |")
         sys.stdout.write("\n")
-        if i != size-1:
-            sys.stdout.write("  |%s|\n" % ("-"*((size*4)-1)))
-    sys.stdout.write("   %s \n" % ("-"*((size*4)-1)))
+        if i != size - 1:
+            sys.stdout.write("  |%s|\n" % ("-" * ((size * 4) - 1)))
+    sys.stdout.write("   %s \n" % ("-" * ((size * 4) - 1)))
+
 
 def main(show=False):
     solutions, size = solve()
@@ -40,6 +43,7 @@ def main(show=False):
     if show:
         for solution in solutions:
             showSolution(solution, size)
+
 
 if __name__ == "__main__":
     show = False
