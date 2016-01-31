@@ -114,7 +114,7 @@ New version
 
 .. code-block:: python
 
-    pip install git+https://github.com/python-constraint/python-constraint.git
+    $ pip install git+https://github.com/python-constraint/python-constraint.git
 
 Old version
 ~~~~~~~~~~~
