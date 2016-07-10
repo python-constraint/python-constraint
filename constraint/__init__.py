@@ -262,9 +262,9 @@ class Problem(object):
         True
         >>> problem.addVariables(["a"], [42])
         >>> iter = problem.getSolutionIter()
-        >>> iter.next()
+        >>> next(iter)
         {'a': 42}
-        >>> iter.next()
+        >>> next(iter)
         Traceback (most recent call last):
           File "<stdin>", line 1, in ?
         StopIteration
@@ -540,7 +540,7 @@ class BacktrackingSolver(Solver):
     def getSolution(self, domains, constraints, vconstraints):
         iter = self.getSolutionIter(domains, constraints, vconstraints)
         try:
-            return iter.next()
+            return next(iter)
         except StopIteration:
             return None
 
