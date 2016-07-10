@@ -6,7 +6,7 @@ from examples.coins import coins
 from examples.einstein import einstein
 # from examples.queens import queens
 from examples.rooks import rooks
-# from examples.studentdesks import studentdesks
+from examples.studentdesks import studentdesks
 # from examples.sudoku import sudoku
 # from examples.wordmath import (seisseisdoze, sendmoremoney, twotwofour)
 # from examples.xsum import xsum
@@ -64,6 +64,12 @@ def test_rooks():
     size = 8
     solutions = rooks.solve(size)
     assert len(solutions) == rooks.factorial(size)
+
+
+def test_studentdesks():
+    solutions = studentdesks.solve()
+    expected_solutions = {1: 'A', 2: 'E', 3: 'D', 4: 'E', 5: 'D', 6: 'A', 7: 'C', 8: 'B', 9: 'C', 10: 'B', 11: 'E', 12: 'D', 13: 'E', 14: 'D', 15: 'A', 16: 'C', 17: 'B', 18: 'C', 19: 'B', 20: 'A'}
+    assert solutions == expected_solutions
 
 
 def test_version():

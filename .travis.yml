@@ -13,5 +13,5 @@ install:
 
 # command to run tests
 script:
+  - nosetests -s -v
   - flake8 --ignore E501 constraint examples tests
-  - nosetests
