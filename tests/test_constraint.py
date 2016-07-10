@@ -4,7 +4,7 @@ from examples.abc import abc
 from examples.coins import coins
 # from examples.crosswords import crosswords
 from examples.einstein import einstein
-# from examples.queens import queens
+from examples.queens import queens
 from examples.rooks import rooks
 from examples.studentdesks import studentdesks
 # from examples.sudoku import sudoku
@@ -58,6 +58,13 @@ def test_einstein():
         }
     ]
     assert solutions == expected_solutions
+
+
+def test_queens():
+    solutions, size = queens.solve()
+    assert size == 8
+    for solution in solutions:
+        queens.showSolution(solution, size)
 
 
 def test_rooks():
