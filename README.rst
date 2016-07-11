@@ -1,4 +1,4 @@
-|Build Status| |Code Coverage|
+|Build Status| |Code Coverage| |Code Health|
 
 python-constraint
 =================
@@ -168,3 +168,6 @@ But it's probably better to open an issue <https://github.com/python-constraint/
    :target: https://travis-ci.org/python-constraint/python-constraint
 .. |Code Coverage| image:: https://coveralls.io/repos/github/python-constraint/python-constraint/badge.svg
    :target: https://coveralls.io/github/python-constraint/python-constraint
+.. |Code Health| image:: https://landscape.io/github/python-constraint/python-constraint/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/python-constraint/python-constraint/master
+   :alt: Code Health
