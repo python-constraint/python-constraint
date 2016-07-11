@@ -16,3 +16,6 @@ install:
 script:
   - nosetests -s -v --with-coverage --cover-package=constraint
   - flake8 --ignore E501 constraint examples tests
+
+after_success:
+  - coveralls
