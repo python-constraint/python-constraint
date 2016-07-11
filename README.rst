@@ -149,10 +149,11 @@ Roadmap
 This GitHub organization and repository is a global effort to help to
 maintain python-constraint
 
-- Create unit tests - DONE
+- Create some unit tests - DONE
 - Enable continuous integration - DONE
 - Port to Python 3 (Python 2 being also supported) - DONE
 - Respect Style Guide for Python Code (PEP8) - DONE
+- Improve code coverage writting more unit tests - ToDo
 - Move doc to Sphinx or MkDocs - https://readthedocs.org/ - ToDo
 
 Contact
