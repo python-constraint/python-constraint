@@ -1,4 +1,4 @@
-|Build Status| |Code Coverage| |Code Health|
+|Build Status| |Code Health| |Code Coverage|
 
 python-constraint
 =================
@@ -166,8 +166,8 @@ But it's probably better to open an issue <https://github.com/python-constraint/
 
 .. |Build Status| image:: https://travis-ci.org/python-constraint/python-constraint.svg?branch=unit_tests
    :target: https://travis-ci.org/python-constraint/python-constraint
-.. |Code Coverage| image:: https://coveralls.io/repos/github/python-constraint/python-constraint/badge.svg
-   :target: https://coveralls.io/github/python-constraint/python-constraint
 .. |Code Health| image:: https://landscape.io/github/python-constraint/python-constraint/master/landscape.svg?style=flat
    :target: https://landscape.io/github/python-constraint/python-constraint/master
    :alt: Code Health
+.. |Code Coverage| image:: https://coveralls.io/repos/github/python-constraint/python-constraint/badge.svg
+   :target: https://coveralls.io/github/python-constraint/python-constraint
