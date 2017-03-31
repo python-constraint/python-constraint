@@ -121,8 +121,8 @@ API documentation
 -----------------
 Documentation for the module is available at: http://labix.org/doc/constraint/
 
-Download
---------
+Download and install
+--------------------
 
 .. code-block:: python
 
