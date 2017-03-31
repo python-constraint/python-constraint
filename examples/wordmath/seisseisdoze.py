@@ -34,5 +34,6 @@ def main():
         print("%(s)d%(e)d%(i)d%(s)s+%(s)d%(e)d%(i)d%(s)d="
               "%(d)d%(o)d%(z)d%(e)d") % s
 
+
 if __name__ == "__main__":
     main()

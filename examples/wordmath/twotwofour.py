@@ -32,5 +32,6 @@ def main():
     for s in solutions:
         print("%(t)d%(w)d%(o)d+%(t)d%(w)d%(o)d=%(f)d%(o)d%(u)d%(r)d" % s)
 
+
 if __name__ == "__main__":
     main()

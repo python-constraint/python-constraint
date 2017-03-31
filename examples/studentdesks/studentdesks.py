@@ -43,5 +43,6 @@ def showSolution(solution):
             sys.stdout.write(" %s" % (id and solution[id] or " "))
         sys.stdout.write("\n")
 
+
 if __name__ == "__main__":
     main()
