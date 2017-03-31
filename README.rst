@@ -4,7 +4,7 @@ python-constraint
 =================
 
 Introduction
------------
+------------
 The Python constraint module offers solvers for Constraint Solving Problems (CSPs) over finite domains in simple and pure Python. CSP is class of problems which may be represented in terms of variables (a, b, ...), domains (a in [1, 2, 3], ...), and constraints (a < b, ...).
 
 Examples
@@ -103,7 +103,7 @@ The following solvers are available:
 
 .. role:: python(code)
    :language: python
-   
+
 Predefined constraint types currently available:
 
 - :python:`FunctionConstraint`
@@ -124,14 +124,14 @@ Documentation for the module is available at: <http://labix.org/doc/constraint/>
 Download
 --------
 New version (Python 2 & 3)
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
     $ pip install git+https://github.com/python-constraint/python-constraint.git
 
 Old version (v 1.2 - Python 2 only)
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Download the module at the Python Package Index: <https://pypi.python.org/pypi/python-constraint>
 
 
