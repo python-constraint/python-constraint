@@ -119,35 +119,21 @@ Predefined constraint types currently available:
 
 API documentation
 -----------------
-Documentation for the module is available at: <http://labix.org/doc/constraint/>
+Documentation for the module is available at: http://labix.org/doc/constraint/
 
 Download
 --------
-New version (Python 2 & 3)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
-    $ pip install git+https://github.com/python-constraint/python-constraint.git
-
-Old version (v 1.2 - Python 2 only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Download the module at the Python Package Index: <https://pypi.python.org/pypi/python-constraint>
-
-
-Original code / information
----------------------------
-
-Code was taken from https://pypi.python.org/pypi/python-constraint/1.2
-(2014-04-04)
-
-See https://labix.org/python-constraint
+    $ pip install python-constraint
 
 Roadmap
 -------
 
 This GitHub organization and repository is a global effort to help to
-maintain python-constraint
+maintain python-constraint which was written by Gustavo Niemeyer
+and originaly located at https://labix.org/python-constraint
 
 - Create some unit tests - DONE
 - Enable continuous integration - DONE
