@@ -144,8 +144,8 @@ and originaly located at https://labix.org/python-constraint
 
 Contact
 -------
-- Gustavo Niemeyer <gustavo@niemeyer.net>
-- Sébastien Celles <s.celles@gmail.com>
+- [Gustavo Niemeyer](https://github.com/niemeyer) <gustavo@niemeyer.net>
+- [Sébastien Celles](https://github.com/scls19fr/) <s.celles@gmail.com>
 
 But it's probably better to open an issue <https://github.com/python-constraint/python-constraint/issues>
 
