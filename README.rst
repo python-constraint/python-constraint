@@ -150,7 +150,7 @@ Contact
 But it's probably better to `open an issue <https://github.com/python-constraint/python-constraint/issues>`_.
 
 
-.. |Build Status| image:: https://travis-ci.org/python-constraint/python-constraint.svg?branch=unit_tests
+.. |Build Status| image:: https://travis-ci.org/python-constraint/python-constraint.svg
    :target: https://travis-ci.org/python-constraint/python-constraint
 .. |Code Health| image:: https://landscape.io/github/python-constraint/python-constraint/master/landscape.svg?style=flat
    :target: https://landscape.io/github/python-constraint/python-constraint/master
