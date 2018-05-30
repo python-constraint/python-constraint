@@ -96,9 +96,9 @@ def main(puzzle, lines):
 
     for line in lines:
         line = line.strip()
-        l = len(line)
-        if l in wordsbylen:
-            wordsbylen[l].append(line.upper())
+        ll = len(line)
+        if ll in wordsbylen:
+            wordsbylen[ll].append(line.upper())
 
     for hi, hword in enumerate(horizontal):
         words = wordsbylen[len(hword)]
