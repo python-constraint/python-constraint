@@ -79,5 +79,13 @@ def test_studentdesks():
     assert solutions == expected_solutions
 
 
+def test_constraint_without_variables():
+    problem = constraint.Problem()
+    problem.addVariable("a", [1, 2, 3])
+    problem.addConstraint(lambda a: a * 2 == 6)
+    solutions = problem.getSolutions()
+    assert solutions == [{'a': 3}]
+
+
 def test_version():
     assert isinstance(constraint.__version__, compat.string_types)
