@@ -281,7 +281,7 @@ class Problem(object):
         constraints = []
         for constraint, variables in self._constraints:
             if not variables:
-                variables = allvariables
+                variables = list(allvariables)
             constraints.append((constraint, variables))
         vconstraints = {}
         for variable in domains:
