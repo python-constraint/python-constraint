@@ -53,6 +53,8 @@ from .version import (__author__, __copyright__, __credits__, __license__,  # no
 import random
 import copy
 from .compat import xrange
+from six.moves import range
+from six.moves import zip
 
 __all__ = ["Problem", "Variable", "Domain", "Unassigned",
            "Solver", "BacktrackingSolver", "RecursiveBacktrackingSolver",
@@ -277,7 +279,7 @@ class Problem(object):
 
     def _getArgs(self):
         domains = self._variables.copy()
-        allvariables = domains.keys()
+        allvariables = list(domains.keys())
         constraints = []
         for constraint, variables in self._constraints:
             if not variables:
@@ -358,7 +360,7 @@ def doArc8(arcs, domains, assignments):
                                 # All constraints passed. Value is safe.
                                 break
                         else:
-                            # All othervalues failed. Kill value.
+                            # All other values failed. Kill value.
                             domain.hideValue(value)
                             # changed = True
                         del assignments[othervariable]
@@ -686,7 +688,7 @@ class MinConflictsSolver(Solver):
         # Initial assignment
         for variable in domains:
             assignments[variable] = random.choice(domains[variable])
-        for _ in xrange(self._steps):
+        for _ in range(self._steps):
             conflicted = False
             lst = list(domains.keys())
             random.shuffle(lst)
