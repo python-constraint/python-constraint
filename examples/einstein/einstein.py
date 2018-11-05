@@ -43,143 +43,155 @@ from constraint import Problem, AllDifferentConstraint
 def solve():
     problem = Problem()
     for i in range(1, 6):
-        problem.addVariable("color%d" % i,
-                            ["red", "white", "green", "yellow", "blue"])
-        problem.addVariable("nationality%d" % i,
-                            ["brit", "swede", "dane", "norwegian", "german"])
-        problem.addVariable("drink%d" % i,
-                            ["tea", "coffee", "milk", "beer", "water"])
-        problem.addVariable("smoke%d" % i,
-                            ["pallmall", "dunhill", "blends",
-                             "bluemaster", "prince"])
-        problem.addVariable("pet%d" % i,
-                            ["dogs", "birds", "cats", "horses", "fish"])
+        problem.addVariable("color%d" % i, ["red", "white", "green", "yellow", "blue"])
+        problem.addVariable(
+            "nationality%d" % i, ["brit", "swede", "dane", "norwegian", "german"]
+        )
+        problem.addVariable("drink%d" % i, ["tea", "coffee", "milk", "beer", "water"])
+        problem.addVariable(
+            "smoke%d" % i, ["pallmall", "dunhill", "blends", "bluemaster", "prince"]
+        )
+        problem.addVariable("pet%d" % i, ["dogs", "birds", "cats", "horses", "fish"])
 
-    problem.addConstraint(AllDifferentConstraint(),
-                          ["color%d" % i for i in range(1, 6)])
-    problem.addConstraint(AllDifferentConstraint(),
-                          ["nationality%d" % i for i in range(1, 6)])
-    problem.addConstraint(AllDifferentConstraint(),
-                          ["drink%d" % i for i in range(1, 6)])
-    problem.addConstraint(AllDifferentConstraint(),
-                          ["smoke%d" % i for i in range(1, 6)])
-    problem.addConstraint(AllDifferentConstraint(),
-                          ["pet%d" % i for i in range(1, 6)])
+    problem.addConstraint(
+        AllDifferentConstraint(), ["color%d" % i for i in range(1, 6)]
+    )
+    problem.addConstraint(
+        AllDifferentConstraint(), ["nationality%d" % i for i in range(1, 6)]
+    )
+    problem.addConstraint(
+        AllDifferentConstraint(), ["drink%d" % i for i in range(1, 6)]
+    )
+    problem.addConstraint(
+        AllDifferentConstraint(), ["smoke%d" % i for i in range(1, 6)]
+    )
+    problem.addConstraint(AllDifferentConstraint(), ["pet%d" % i for i in range(1, 6)])
 
     for i in range(1, 6):
 
         # Hint 1
-        problem.addConstraint(lambda nationality, color:
-                              nationality != "brit" or color == "red",
-                              ("nationality%d" % i, "color%d" % i))
+        problem.addConstraint(
+            lambda nationality, color: nationality != "brit" or color == "red",
+            ("nationality%d" % i, "color%d" % i),
+        )
 
         # Hint 2
-        problem.addConstraint(lambda nationality, pet:
-                              nationality != "swede" or pet == "dogs",
-                              ("nationality%d" % i, "pet%d" % i))
+        problem.addConstraint(
+            lambda nationality, pet: nationality != "swede" or pet == "dogs",
+            ("nationality%d" % i, "pet%d" % i),
+        )
 
         # Hint 3
-        problem.addConstraint(lambda nationality, drink:
-                              nationality != "dane" or drink == "tea",
-                              ("nationality%d" % i, "drink%d" % i))
+        problem.addConstraint(
+            lambda nationality, drink: nationality != "dane" or drink == "tea",
+            ("nationality%d" % i, "drink%d" % i),
+        )
 
         # Hint 4
         if i < 5:
-            problem.addConstraint(lambda colora, colorb:
-                                  colora != "green" or colorb == "white",
-                                  ("color%d" % i, "color%d" % (i + 1)))
+            problem.addConstraint(
+                lambda colora, colorb: colora != "green" or colorb == "white",
+                ("color%d" % i, "color%d" % (i + 1)),
+            )
         else:
-            problem.addConstraint(lambda color: color != "green",
-                                  ("color%d" % i,))
+            problem.addConstraint(lambda color: color != "green", ("color%d" % i,))
 
         # Hint 5
-        problem.addConstraint(lambda color, drink:
-                              color != "green" or drink == "coffee",
-                              ("color%d" % i, "drink%d" % i))
+        problem.addConstraint(
+            lambda color, drink: color != "green" or drink == "coffee",
+            ("color%d" % i, "drink%d" % i),
+        )
 
         # Hint 6
-        problem.addConstraint(lambda smoke, pet:
-                              smoke != "pallmall" or pet == "birds",
-                              ("smoke%d" % i, "pet%d" % i))
+        problem.addConstraint(
+            lambda smoke, pet: smoke != "pallmall" or pet == "birds",
+            ("smoke%d" % i, "pet%d" % i),
+        )
 
         # Hint 7
-        problem.addConstraint(lambda color, smoke:
-                              color != "yellow" or smoke == "dunhill",
-                              ("color%d" % i, "smoke%d" % i))
+        problem.addConstraint(
+            lambda color, smoke: color != "yellow" or smoke == "dunhill",
+            ("color%d" % i, "smoke%d" % i),
+        )
 
         # Hint 8
         if i == 3:
-            problem.addConstraint(lambda drink: drink == "milk",
-                                  ("drink%d" % i,))
+            problem.addConstraint(lambda drink: drink == "milk", ("drink%d" % i,))
 
         # Hint 9
         if i == 1:
-            problem.addConstraint(lambda nationality:
-                                  nationality == "norwegian",
-                                  ("nationality%d" % i,))
+            problem.addConstraint(
+                lambda nationality: nationality == "norwegian", ("nationality%d" % i,)
+            )
 
         # Hint 10
         if 1 < i < 5:
-            problem.addConstraint(lambda smoke, peta, petb:
-                                  smoke != "blends" or peta == "cats" or
-                                  petb == "cats",
-                                  ("smoke%d" % i, "pet%d" % (i - 1),
-                                                  "pet%d" % (i + 1)))
+            problem.addConstraint(
+                lambda smoke, peta, petb: smoke != "blends" or
+                peta == "cats" or
+                petb == "cats",
+                ("smoke%d" % i, "pet%d" % (i - 1), "pet%d" % (i + 1)),
+            )
         else:
-            problem.addConstraint(lambda smoke, pet:
-                                  smoke != "blends" or pet == "cats",
-                                  ("smoke%d" % i,
-                                   "pet%d" % (i == 1 and 2 or 4)))
+            problem.addConstraint(
+                lambda smoke, pet: smoke != "blends" or pet == "cats",
+                ("smoke%d" % i, "pet%d" % (i == 1 and 2 or 4)),
+            )
 
         # Hint 11
         if 1 < i < 5:
-            problem.addConstraint(lambda pet, smokea, smokeb:
-                                  pet != "horses" or smokea == "dunhill" or
-                                  smokeb == "dunhill",
-                                  ("pet%d" % i, "smoke%d" % (i - 1),
-                                                "smoke%d" % (i + 1)))
+            problem.addConstraint(
+                lambda pet, smokea, smokeb: pet != "horses" or
+                smokea == "dunhill" or
+                smokeb == "dunhill",
+                ("pet%d" % i, "smoke%d" % (i - 1), "smoke%d" % (i + 1)),
+            )
         else:
-            problem.addConstraint(lambda pet, smoke:
-                                  pet != "horses" or smoke == "dunhill",
-                                  ("pet%d" % i,
-                                   "smoke%d" % (i == 1 and 2 or 4)))
+            problem.addConstraint(
+                lambda pet, smoke: pet != "horses" or smoke == "dunhill",
+                ("pet%d" % i, "smoke%d" % (i == 1 and 2 or 4)),
+            )
 
         # Hint 12
-        problem.addConstraint(lambda smoke, drink:
-                              smoke != "bluemaster" or drink == "beer",
-                              ("smoke%d" % i, "drink%d" % i))
+        problem.addConstraint(
+            lambda smoke, drink: smoke != "bluemaster" or drink == "beer",
+            ("smoke%d" % i, "drink%d" % i),
+        )
 
         # Hint 13
-        problem.addConstraint(lambda nationality, smoke:
-                              nationality != "german" or smoke == "prince",
-                              ("nationality%d" % i, "smoke%d" % i))
+        problem.addConstraint(
+            lambda nationality, smoke: nationality != "german" or smoke == "prince",
+            ("nationality%d" % i, "smoke%d" % i),
+        )
 
         # Hint 14
         if 1 < i < 5:
-            problem.addConstraint(lambda nationality, colora, colorb:
-                                  nationality != "norwegian" or
-                                  colora == "blue" or colorb == "blue",
-                                  ("nationality%d" % i, "color%d" % (i - 1),
-                                                        "color%d" % (i + 1)))
+            problem.addConstraint(
+                lambda nationality, colora, colorb: nationality != "norwegian" or
+                colora == "blue" or
+                colorb == "blue",
+                ("nationality%d" % i, "color%d" % (i - 1), "color%d" % (i + 1)),
+            )
         else:
-            problem.addConstraint(lambda nationality, color:
-                                  nationality != "norwegian" or
-                                  color == "blue",
-                                  ("nationality%d" % i,
-                                   "color%d" % (i == 1 and 2 or 4)))
+            problem.addConstraint(
+                lambda nationality, color: nationality != "norwegian" or
+                color == "blue",
+                ("nationality%d" % i, "color%d" % (i == 1 and 2 or 4)),
+            )
 
         # Hint 15
         if 1 < i < 5:
-            problem.addConstraint(lambda smoke, drinka, drinkb:
-                                  smoke != "blends" or
-                                  drinka == "water" or drinkb == "water",
-                                  ("smoke%d" % i, "drink%d" % (i - 1),
-                                                  "drink%d" % (i + 1)))
+            problem.addConstraint(
+                lambda smoke, drinka, drinkb: smoke != "blends" or
+                drinka == "water" or
+                drinkb == "water",
+                ("smoke%d" % i, "drink%d" % (i - 1), "drink%d" % (i + 1)),
+            )
         else:
-            problem.addConstraint(lambda smoke, drink:
-                                  smoke != "blends" or drink == "water",
-                                  ("smoke%d" % i,
-                                   "drink%d" % (i == 1 and 2 or 4)))
+            problem.addConstraint(
+                lambda smoke, drink: smoke != "blends" or drink == "water",
+                ("smoke%d" % i, "drink%d" % (i == 1 and 2 or 4)),
+            )
 
     solutions = problem.getSolutions()
     return solutions

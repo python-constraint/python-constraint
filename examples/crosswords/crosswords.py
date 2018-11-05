@@ -72,21 +72,24 @@ def main(puzzle, lines):
                 if hchar in vword:
                     hci = hword.index(hchar)
                     vci = vword.index(hchar)
-                    problem.addConstraint(lambda hw, vw, hci=hci, vci=vci:
-                                          hw[hci] == vw[vci],
-                                          ("h%d" % hi, "v%d" % vi))
+                    problem.addConstraint(
+                        lambda hw, vw, hci=hci, vci=vci: hw[hci] == vw[vci],
+                        ("h%d" % hi, "v%d" % vi),
+                    )
 
     for char, letter in predefined.items():
         for hi, hword in enumerate(horizontal):
             if char in hword:
                 hci = hword.index(char)
-                problem.addConstraint(lambda hw, hci=hci, letter=letter:
-                                      hw[hci] == letter, ("h%d" % hi,))
+                problem.addConstraint(
+                    lambda hw, hci=hci, letter=letter: hw[hci] == letter, ("h%d" % hi,)
+                )
         for vi, vword in enumerate(vertical):
             if char in vword:
                 vci = vword.index(char)
-                problem.addConstraint(lambda vw, vci=vci, letter=letter:
-                                      vw[vci] == letter, ("v%d" % vi,))
+                problem.addConstraint(
+                    lambda vw, vci=vci, letter=letter: vw[vci] == letter, ("v%d" % vi,)
+                )
 
     wordsbylen = {}
     for hword in horizontal:
