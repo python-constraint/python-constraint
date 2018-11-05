@@ -19,7 +19,7 @@ def solve():
         lambda i, s, z, e: ((10 * 2 * i) + (2 * s)) % 100 == z * 10 + e, "isze"
     )
     problem.addConstraint(
-        lambda s, e, i, d, o, z: 2 * (s * 1000 + e * 100 + i * 10 + s) == 
+        lambda s, e, i, d, o, z: 2 * (s * 1000 + e * 100 + i * 10 + s) ==
         d * 1000 + o * 100 + z * 10 + e,
         "seidoz",
     )
