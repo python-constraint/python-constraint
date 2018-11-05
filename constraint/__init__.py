@@ -47,16 +47,14 @@
 from __future__ import absolute_import, division, print_function
 
 
-from .version import (
-    __author__,
-    __copyright__,
-    __credits__,
-    __license__,  # noqa
-    __version__,
-    __email__,
-    __status__,
-    __url__,
-)  # noqa
+from .version import __author__  # noqa
+from .version import __copyright__  # noqa
+from .version import __credits__  # noqa
+from .version import __license__  # noqa
+from .version import __version__  # noqa
+from .version import __email__  # noqa
+from .version import __status__  # noqa
+from .version import __url__  # noqa
 
 import random
 import copy
