@@ -19,20 +19,20 @@ def solve():
         lambda n, d, r, e, y: (n * 10 + d + r * 10 + e) % 100 == e * 10 + y, "ndrey"
     )
     problem.addConstraint(
-        lambda e, n, d, o, r, y: (e * 100 + n * 10 + d + o * 100 + r * 10 + e) % 1000
-        == n * 100 + e * 10 + y,
+        lambda e, n, d, o, r, y: (e * 100 + n * 10 + d + o * 100 + r * 10 + e) % 1000 ==
+        n * 100 + e * 10 + y,
         "endory",
     )
     problem.addConstraint(
-        lambda s, e, n, d, m, o, r, y: 1000 * s
-        + 100 * e
-        + 10 * n
-        + d
-        + 1000 * m
-        + 100 * o
-        + 10 * r
-        + e
-        == 10000 * m + 1000 * o + 100 * n + 10 * e + y,
+        lambda s, e, n, d, m, o, r, y: 1000 * s +
+        100 * e +
+        10 * n +
+        d +
+        1000 * m +
+        100 * o +
+        10 * r +
+        e ==
+        10000 * m + 1000 * o + 100 * n + 10 * e + y,
         "sendmory",
     )
     problem.addConstraint(NotInSetConstraint([0]), "sm")

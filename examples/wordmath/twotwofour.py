@@ -19,8 +19,8 @@ def solve():
         lambda w, o, u, r: ((10 * 2 * w) + (2 * o)) % 100 == u * 10 + r, "wour"
     )
     problem.addConstraint(
-        lambda t, w, o, f, u, r: 2 * (t * 100 + w * 10 + o)
-        == f * 1000 + o * 100 + u * 10 + r,
+        lambda t, w, o, f, u, r: 2 * (t * 100 + w * 10 + o) ==
+        f * 1000 + o * 100 + u * 10 + r,
         "twofur",
     )
     problem.addConstraint(NotInSetConstraint([0]), "ft")

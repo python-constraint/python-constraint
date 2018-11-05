@@ -127,9 +127,9 @@ def solve():
         # Hint 10
         if 1 < i < 5:
             problem.addConstraint(
-                lambda smoke, peta, petb: smoke != "blends"
-                or peta == "cats"
-                or petb == "cats",
+                lambda smoke, peta, petb: smoke != "blends" or
+                peta == "cats" or
+                petb == "cats",
                 ("smoke%d" % i, "pet%d" % (i - 1), "pet%d" % (i + 1)),
             )
         else:
@@ -141,9 +141,9 @@ def solve():
         # Hint 11
         if 1 < i < 5:
             problem.addConstraint(
-                lambda pet, smokea, smokeb: pet != "horses"
-                or smokea == "dunhill"
-                or smokeb == "dunhill",
+                lambda pet, smokea, smokeb: pet != "horses" or
+                smokea == "dunhill" or
+                smokeb == "dunhill",
                 ("pet%d" % i, "smoke%d" % (i - 1), "smoke%d" % (i + 1)),
             )
         else:
@@ -167,24 +167,24 @@ def solve():
         # Hint 14
         if 1 < i < 5:
             problem.addConstraint(
-                lambda nationality, colora, colorb: nationality != "norwegian"
-                or colora == "blue"
-                or colorb == "blue",
+                lambda nationality, colora, colorb: nationality != "norwegian" or
+                colora == "blue" or
+                colorb == "blue",
                 ("nationality%d" % i, "color%d" % (i - 1), "color%d" % (i + 1)),
             )
         else:
             problem.addConstraint(
-                lambda nationality, color: nationality != "norwegian"
-                or color == "blue",
+                lambda nationality, color: nationality != "norwegian" or
+                color == "blue",
                 ("nationality%d" % i, "color%d" % (i == 1 and 2 or 4)),
             )
 
         # Hint 15
         if 1 < i < 5:
             problem.addConstraint(
-                lambda smoke, drinka, drinkb: smoke != "blends"
-                or drinka == "water"
-                or drinkb == "water",
+                lambda smoke, drinka, drinkb: smoke != "blends" or
+                drinka == "water" or
+                drinkb == "water",
                 ("smoke%d" % i, "drink%d" % (i - 1), "drink%d" % (i + 1)),
             )
         else:
