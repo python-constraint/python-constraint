@@ -8,10 +8,10 @@ def test_min_conflicts_solver():
     solution = problem.getSolution()
 
     possible_solutions = [
-        {'x': 0, 'y': 0},
-        {'x': 0, 'y': 1},
-        {'x': 1, 'y': 0},
-        {'x': 1, 'y': 1}
+        {"x": 0, "y": 0},
+        {"x": 0, "y": 1},
+        {"x": 1, "y": 0},
+        {"x": 1, "y": 1},
     ]
 
     assert solution in possible_solutions

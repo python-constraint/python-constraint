@@ -5,4 +5,4 @@ __license__ = ""
 __version__ = "1.3.2"
 __email__ = "gustavo@niemeyer.net"
 __status__ = "Development"
-__url__ = 'https://github.com/python-constraint/python-constraint'
+__url__ = "https://github.com/python-constraint/python-constraint"
