@@ -5,13 +5,14 @@
 All notable changes to this code base will be documented in this file,
 in every released version.
 
-### Version 1.3.2
+### Version 1.4.0
 
 - Released: 2018-11-05
 - Issues/Enhancements:
   - Add tests around `SomeNotInSetConstraint.`
   - Minor `README` fixes
   - Fix `dict.keys()` issue with Python 3 and add some unit tests
+  - Drop Python 3.3 support
 
 ### Version 1.3.1
 
