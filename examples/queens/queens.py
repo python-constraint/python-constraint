@@ -16,7 +16,7 @@ def solve():
         for col2 in cols:
             if col1 < col2:
                 problem.addConstraint(
-                    lambda row1, row2, col1=col1, 
+                    lambda row1, row2, col1=col1,
                     col2=col2: abs(row1 - row2) !=
                     abs(col1 - col2) and row1 != row2,
                     (col1, col2),
