@@ -1,20 +1,22 @@
 language: python
 python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
-  - "3.6"
-
-# command to install dependencies
+- '2.7'
+- '3.4'
+- '3.5'
+- '3.6'
 install:
-  - "pip install -qq flake8"
-  - "pip install coveralls --quiet"
-  - "pip install ."
-
-# command to run tests
+- pip install -qq flake8
+- pip install coveralls --quiet
+- pip install .
 script:
-  - nosetests -s -v --with-coverage --cover-package=constraint
-  - flake8 --ignore E501,W504 constraint examples tests
-
+- nosetests -s -v --with-coverage --cover-package=constraint
+- flake8 --ignore E501,W504 constraint examples tests
 after_success:
-  - coveralls
+- coveralls
+deploy:
+  provider: pypi
+  user: "scls"
+  password:
+    secure: YP1I8vi04F2mhaexylEK4PoizOMKfPy6ixDGYYLg5WAvgNdHvBN39xFsd9WHavMGg0RcV3xn5jAawQN1dDnXYVNW8LAivwfkUazXjqxAf4IeMp92203kOjQij/D494etHYeIw4SNJgk7J2tDil+goITJ/OhJ4t7fDC0eA0nILn8ifyZZQUgZppW5CoAf1L8cxY1JWICXLKQFQ42zPkFaIA9oBSOgok5wlNoyguScJ70mqUwZewhZHk4L07WSFRbDEOawHe5CAHCPO8rVCkhk2WdLWRoY9uHijDxHn9eCZ3zm4ac/jAwPtFol43q5u9wTCSm8WmeVfU/mJLjgGvmyDhb5Z2fTVbWGsX/N/WHvASr85HfKS0Vq2hAHYozukLbJ8EQZL6ZoOiFhjbL1LJv6Ex3EZ3PTkjKZEGEiLS/aiLZSj95CDMnfKjaNnAN2qFxzR1yi7tFHttS7XiaTCuKoegeN/RNA1iTdFPsXIcmCklhqYr9jCoTaKOXic8W5C1ej3V8oogx1xA79/mf7ZtHxtHWeT9o7cG2EK5gYfvPi6bhKPZDQ2hq49tt8AbcjX4/ycovTmX/cTn0CCoUfLB7Ok9/UvdcdUiflVZEm4cH1WAXAeD3CW+WGTOEHSgNArl9ERxUyomsWhyhutGPmeZIPQ1COeuqFFBTIaHWDG1ytqN4=
+  on:
+    tags: true
