@@ -1,12 +1,18 @@
-# Release procedue
+# Release procedure
+
+## Python versions
 
 * Ensure supported Python versions in `setup.py` and `.travis.yml` are corrects 
 
 * Ensure `python-constraint` version is up to date in `version.py`
 
-* Ensure `CHANGELOG.md` have been updated
+## CHANGELOG
 
-* Tag commit and push to github
+Ensure `CHANGELOG.md` have been updated
+
+## Tag
+
+Tag commit and push to github
 
 using Github website
 
@@ -20,7 +26,15 @@ git tag -a x.x.x -m 'Version x.x.x'
 git push python-constraint master --tags
 ```
 
-* Upload to PyPI
+## Upload to PyPI
+
+### Automatic PyPI upload
+
+PyPI deployment was set using https://docs.travis-ci.com/user/deployment/pypi/
+
+When tagging a new release on Github, package should be automatically uploaded on PyPI.
+
+### Manual PyPI upload
 
 Ensure a `~/.pypirc` exists
 
@@ -44,7 +58,7 @@ python setup.py register sdist bdist_wheel --universal
 python setup.py sdist bdist_wheel upload
 ```
 
-* Verify on PyPI
+## Verify on PyPI
 
 Go to https://pypi.python.org/pypi/python-constraint/
 
