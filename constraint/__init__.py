@@ -23,26 +23,7 @@
 # CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-"""
-@var Unassigned: Helper object instance representing unassigned values
 
-@sort: Problem, Variable, Domain
-@group Solvers: Solver,
-                BacktrackingSolver,
-                RecursiveBacktrackingSolver,
-                MinConflictsSolver
-@group Constraints: Constraint,
-                    FunctionConstraint,
-                    AllDifferentConstraint,
-                    AllEqualConstraint,
-                    MaxSumConstraint,
-                    ExactSumConstraint,
-                    MinSumConstraint,
-                    InSetConstraint,
-                    NotInSetConstraint,
-                    SomeInSetConstraint,
-                    SomeNotInSetConstraint
-"""
 
 from __future__ import absolute_import, division, print_function
 
@@ -386,10 +367,7 @@ def doArc8(arcs, domains, assignments):
 
 
 class Solver(object):
-    """
-    Abstract base class for solvers
-
-    @sort: getSolution, getSolutions, getSolutionIter
+    """Abstract base class for solvers
     """
 
     def getSolution(self, domains, constraints, vconstraints):
@@ -764,7 +742,8 @@ class Variable(object):
         return self.name
 
 
-Unassigned = Variable("Unassigned")
+Unassigned = Variable("Unassigned")  #: Helper object instance representing unassigned values
+
 
 # ----------------------------------------------------------------------
 # Domains
