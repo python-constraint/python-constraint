@@ -146,10 +146,10 @@ class Problem(object):
         if variable in self._variables:
             msg = "Tried to insert duplicated variable %s" % repr(variable)
             raise ValueError(msg)
-        if hasattr(domain, "__getitem__"):
+        if isinstance(domain, Domain):
+            domain = copy.deepcopy(domain)
+        elif hasattr(domain, "__getitem__"):
             domain = Domain(domain)
-        elif isinstance(domain, Domain):
-            domain = copy.copy(domain)
         else:
             msg = "Domains must be instances of subclasses of the Domain class"
             raise TypeError(msg)
