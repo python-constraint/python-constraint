@@ -18,25 +18,14 @@ def test_min_conflicts_solver():
 
 
 def test_least_conflicts_solver():
-    problem = Problem(LeastConflictsSolver())
-    problem.addVariable("x", [0,1,2])
-    problem.addVariable("y", [1,2])
-    problem.addVariable("z", [0,1])
-    problem.addVariable("w", [2])
-    for first, sec in itertools.combinations('xyzw', 2) :
-        problem.addConstraint(lambda a, b: b != a, [first, sec])
-
-
-    solution = problem.getSolution()
-
-    # possible_solutions =
-    #     {"x": 0, "y": 0},
-    #     {"x": 0, "y": 1},
-    #     {"x": 1, "y": 0},
-    #     {"x": 1, "y": 1},
-    # ]
-
-    print(solution)
+    # another test:
+    # problem = Problem(LeastConflictsSolver())
+    # problem.addVariable("x", [0,1,2])
+    # problem.addVariable("y", [1,2])
+    # problem.addVariable("z", [0,1])
+    # problem.addVariable("w", [2])
+    # for first, sec in itertools.combinations('xyzw', 2) :
+    #     problem.addConstraint(lambda a, b: b != a, [first, sec])
 
     problem = Problem(LeastConflictsSolver())
 
@@ -50,7 +39,6 @@ def test_least_conflicts_solver():
     problem.addConstraint(lambda a, b: b != a, ["b", "c"])
 
     solution = problem.getSolution()
-    print(solution)
-    print(sorted(solution.items()) in result)
+    assert sorted(solution.items()) in result
 
 test_least_conflicts_solver()
