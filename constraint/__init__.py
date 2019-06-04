@@ -723,17 +723,21 @@ class MinConflictsSolver(Solver):
 
 class LeastConflictsSolver(Solver):
     """
-    Problem solver based on the minimum conflicts theory
+    Problem solver based on the minimum conflicts theory.
+    With this solver - you will always get an assignment -
+    the one with the minimum coflicts that the algorithm found.
 
     Examples:
 
-    >>> result = [[('a', 1), ('b', 2)],
-    ...           [('a', 1), ('b', 3)],
-    ...           [('a', 2), ('b', 3)]]
+    >>> result = [[('a', 1), ('b', 2), ('c', 1)],
+    ...           [('a', 2), ('b', 1), ('c', 1)]]
 
-    >>> problem = Problem(MinConflictsSolver())
-    >>> problem.addVariables(["a", "b"], [1, 2, 3])
-    >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
+    >>> problem = Problem(LeastConflictsSolver())
+    >>> problem.addVariables(["a", "b"], [1, 2])
+    >>> problem.addVariable("c", [1])
+    >>> problem.addConstraint(lambda a, b: b != a, ["a", "b"])
+    >>> problem.addConstraint(lambda a, b: b != a, ["a", "c"])
+    >>> problem.addConstraint(lambda a, b: b != a, ["b", "c"])
 
     >>> solution = problem.getSolution()
     >>> sorted(solution.items()) in result
@@ -742,12 +746,12 @@ class LeastConflictsSolver(Solver):
     >>> problem.getSolutions()
     Traceback (most recent call last):
        ...
-    NotImplementedError: MinConflictsSolver provides only a single solution
+    NotImplementedError: LeastConflictsSolver provides only a single solution
 
     >>> problem.getSolutionIter()
     Traceback (most recent call last):
        ...
-    NotImplementedError: MinConflictsSolver doesn't provide iteration
+    NotImplementedError: LeastConflictsSolver doesn't provide iteration
     """
 
     def __init__(self, steps=1000):
@@ -797,8 +801,6 @@ class LeastConflictsSolver(Solver):
                 # Pick a random one from these values.
                 assignments[variable] = random.choice(minvalues)
                 conflicted = True
-            if not conflicted:
-                return assignments
         return best_assign
 
 

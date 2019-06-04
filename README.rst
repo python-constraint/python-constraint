@@ -99,6 +99,7 @@ The following solvers are available:
 - Backtracking solver
 - Recursive backtracking solver
 - Minimum conflicts solver
+- Least conflicts solver (returns a soltion with minimum conflicts).
 
 
 .. role:: python(code)
