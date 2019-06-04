@@ -50,6 +50,7 @@ __all__ = [
     "BacktrackingSolver",
     "RecursiveBacktrackingSolver",
     "MinConflictsSolver",
+    "LeastConflictsSolver",
     "Constraint",
     "FunctionConstraint",
     "AllDifferentConstraint",
@@ -716,6 +717,89 @@ class MinConflictsSolver(Solver):
             if not conflicted:
                 return assignments
         return None
+
+
+
+
+class LeastConflictsSolver(Solver):
+    """
+    Problem solver based on the minimum conflicts theory
+
+    Examples:
+
+    >>> result = [[('a', 1), ('b', 2)],
+    ...           [('a', 1), ('b', 3)],
+    ...           [('a', 2), ('b', 3)]]
+
+    >>> problem = Problem(MinConflictsSolver())
+    >>> problem.addVariables(["a", "b"], [1, 2, 3])
+    >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
+
+    >>> solution = problem.getSolution()
+    >>> sorted(solution.items()) in result
+    True
+
+    >>> problem.getSolutions()
+    Traceback (most recent call last):
+       ...
+    NotImplementedError: MinConflictsSolver provides only a single solution
+
+    >>> problem.getSolutionIter()
+    Traceback (most recent call last):
+       ...
+    NotImplementedError: MinConflictsSolver doesn't provide iteration
+    """
+
+    def __init__(self, steps=1000):
+        """
+        @param steps: Maximum number of steps to perform before giving up
+                      when looking for a solution (default is 1000)
+        @type  steps: int
+        """
+        self._steps = steps
+
+    def getSolution(self, domains, constraints, vconstraints):
+        assignments = {}
+        best_assign = {}
+        best_conflicted = float('inf')
+        # Initial assignment
+        for variable in domains:
+            assignments[variable] = random.choice(domains[variable])
+        for _ in xrange(self._steps):
+            conflicted = 0
+            lst = list(domains.keys())
+            random.shuffle(lst)
+            for variable in lst:
+                # Check if variable is not in conflict
+                for constraint, variables in vconstraints[variable]:
+                    if not constraint(variables, domains, assignments):
+                        conflicted +=1
+                if conflicted == 0:
+                    return assignments
+                if best_conflicted > conflicted:
+                    best_assign = assignments
+                    best_conflicted = conflicted
+                # Variable has conflicts. Find values with less conflicts.
+                mincount = len(vconstraints[variable])
+                minvalues = []
+                for value in domains[variable]:
+                    assignments[variable] = value
+                    count = 0
+                    for constraint, variables in vconstraints[variable]:
+                        if not constraint(variables, domains, assignments):
+                            count += 1
+                    if count == mincount:
+                        minvalues.append(value)
+                    elif count < mincount:
+                        mincount = count
+                        del minvalues[:]
+                        minvalues.append(value)
+                # Pick a random one from these values.
+                assignments[variable] = random.choice(minvalues)
+                conflicted = True
+            if not conflicted:
+                return assignments
+        return best_assign
 
 
 # ----------------------------------------------------------------------
