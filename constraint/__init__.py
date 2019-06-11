@@ -719,8 +719,6 @@ class MinConflictsSolver(Solver):
         return None
 
 
-
-
 class LeastConflictsSolver(Solver):
     """
     Problem solver based on the minimum conflicts theory.
@@ -773,36 +771,38 @@ class LeastConflictsSolver(Solver):
             conflicted = 0
             lst = list(domains.keys())
             random.shuffle(lst)
+            conflicted_var = None
             for variable in lst:
                 # Check if variable is not in conflict
                 for constraint, variables in vconstraints[variable]:
                     if not constraint(variables, domains, assignments):
-                        conflicted +=1
-                if conflicted == 0:
-                    return assignments
-                if best_conflicted > conflicted:
-                    best_assign = assignments
-                    best_conflicted = conflicted
-                # Variable has conflicts. Find values with less conflicts.
-                mincount = len(vconstraints[variable])
-                minvalues = []
-                for value in domains[variable]:
-                    assignments[variable] = value
-                    count = 0
-                    for constraint, variables in vconstraints[variable]:
-                        if not constraint(variables, domains, assignments):
-                            count += 1
-                    if count == mincount:
-                        minvalues.append(value)
-                    elif count < mincount:
-                        mincount = count
-                        del minvalues[:]
-                        minvalues.append(value)
-                # Pick a random one from these values.
-                assignments[variable] = random.choice(minvalues)
-                conflicted = True
+                        conflicted += 1
+                # Variable has conflicts. Save it:
+                if conflicted > 0 and conflicted_var is None:
+                    conflicted_var = variable
+            if conflicted == 0:
+                return assignments
+            if best_conflicted > conflicted:
+                best_assign = assignments
+                best_conflicted = conflicted
+            # Find values with less conflicts.
+            mincount = len(vconstraints[conflicted_var])
+            minvalues = []
+            for value in domains[conflicted_var]:
+                assignments[conflicted_var] = value
+                count = 0
+                for constraint, variables in vconstraints[conflicted_var]:
+                    if not constraint(variables, domains, assignments):
+                        count += 1
+                if count == mincount:
+                    minvalues.append(value)
+                elif count < mincount:
+                    mincount = count
+                    del minvalues[:]
+                    minvalues.append(value)
+            # Pick a random one from these values.
+            assignments[conflicted_var] = random.choice(minvalues)
         return best_assign
-
 
 # ----------------------------------------------------------------------
 # Variables
