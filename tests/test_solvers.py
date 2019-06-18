@@ -1,5 +1,5 @@
-from constraint import Problem, MinConflictsSolver
-
+from constraint import Problem, MinConflictsSolver, LeastConflictsSolver
+import itertools
 
 def test_min_conflicts_solver():
     problem = Problem(MinConflictsSolver())
@@ -15,3 +15,24 @@ def test_min_conflicts_solver():
     ]
 
     assert solution in possible_solutions
+
+
+def test_least_conflicts_solver():
+    # another test for LeastConflictsSolver
+
+    problem = Problem(LeastConflictsSolver())
+
+
+    result = [[('a', 1), ('b', 2), ('c', 1)], [('a', 2), ('b', 1), ('c', 1)]
+              , [('a', 2), ('b', 2), ('c', 1)]]
+
+    problem.addVariables(["a", "b"], [1, 2])
+    problem.addVariable("c", [1])
+    problem.addConstraint(lambda a, b: b != a, ["a", "b"])
+    problem.addConstraint(lambda a, b: b != a, ["a", "c"])
+    problem.addConstraint(lambda a, b: b != a, ["b", "c"])
+
+    solution = problem.getSolution()
+    assert sorted(solution.items()) in result
+
+test_least_conflicts_solver()
