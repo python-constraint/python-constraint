@@ -18,19 +18,13 @@ def test_min_conflicts_solver():
 
 
 def test_least_conflicts_solver():
-    # another test:
-    # problem = Problem(LeastConflictsSolver())
-    # problem.addVariable("x", [0,1,2])
-    # problem.addVariable("y", [1,2])
-    # problem.addVariable("z", [0,1])
-    # problem.addVariable("w", [2])
-    # for first, sec in itertools.combinations('xyzw', 2) :
-    #     problem.addConstraint(lambda a, b: b != a, [first, sec])
+    # another test for LeastConflictsSolver
 
     problem = Problem(LeastConflictsSolver())
 
 
-    result = [[('a', 1), ('b', 2), ('c', 1)], [('a', 2), ('b', 1), ('c', 1)]]
+    result = [[('a', 1), ('b', 2), ('c', 1)], [('a', 2), ('b', 1), ('c', 1)]
+              , [('a', 2), ('b', 2), ('c', 1)]]
 
     problem.addVariables(["a", "b"], [1, 2])
     problem.addVariable("c", [1])

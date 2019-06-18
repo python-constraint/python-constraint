@@ -803,7 +803,7 @@ class LeastConflictsSolver(Solver):
             # Pick a random one from these values.
             assignments[conflicted_var] = random.choice(minvalues)
         return best_assign
-
+    
 # ----------------------------------------------------------------------
 # Variables
 # ----------------------------------------------------------------------
