@@ -19,8 +19,8 @@ import constraint.compat as compat
 def test_abc():
     solutions = abc.solve()
     minvalue, minsolution = solutions
-    assert minvalue == 37
-    assert minsolution == {"a": 1, "c": 2, "b": 1}
+    assert abs(minvalue - 10.473684210526315) < 0.00001
+    assert minsolution == {"a": 1, "b": 9, "c": 9}
 
 
 def test_coins():
