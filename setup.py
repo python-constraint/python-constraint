@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from setuptools import setup, find_packages  # Always prefer setuptools over distutils
+from setuptools import setup, find_packages, Extension  # Always prefer setuptools over distutils
 from codecs import open  # To use a consistent encoding
 from os import path
 import io
@@ -18,6 +18,27 @@ def readme():
     filename = path.join(here, "README.rst")
     with io.open(filename, "rt", encoding="UTF-8") as f:
         return f.read()
+
+
+# Cythonize the code for better performance
+USE_CYTHON = True
+
+ext = ".py" if USE_CYTHON else ".c"
+
+extensions = [Extension("constraint.all", ["constraint/all" + ext])]
+
+if USE_CYTHON:
+    from Cython.Build import cythonize
+
+    extensions = cythonize(extensions)
+
+# from Cython.Build import cythonize
+
+# extensions = cythonize(
+#     [
+#         Extension("constraint.all", ["constraint/all.c"]),
+#     ]
+# )
 
 
 setup(
@@ -99,4 +120,5 @@ setup(
     #        'sample=sample:main',
     #    ],
     # },
+    ext_modules=extensions,
 )

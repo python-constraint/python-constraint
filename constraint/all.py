@@ -27,41 +27,20 @@
 
 from __future__ import absolute_import, division, print_function
 
-
-from .version import __author__  # noqa
-from .version import __copyright__  # noqa
-from .version import __credits__  # noqa
-from .version import __license__  # noqa
-from .version import __version__  # noqa
-from .version import __email__  # noqa
-from .version import __status__  # noqa
-from .version import __url__  # noqa
-
 import random
 import copy
-from .compat import xrange
+from compat import xrange
 
-__all__ = [
-    "Problem",
-    "Variable",
-    "Domain",
-    "Unassigned",
-    "Solver",
-    "BacktrackingSolver",
-    "RecursiveBacktrackingSolver",
-    "MinConflictsSolver",
-    "Constraint",
-    "FunctionConstraint",
-    "AllDifferentConstraint",
-    "AllEqualConstraint",
-    "MaxSumConstraint",
-    "ExactSumConstraint",
-    "MinSumConstraint",
-    "InSetConstraint",
-    "NotInSetConstraint",
-    "SomeInSetConstraint",
-    "SomeNotInSetConstraint",
-]
+
+def check_if_compiled() -> bool:
+    """Check if this code has been compiled with Cython.
+
+    Returns:
+        bool: whether the code has been compiled.
+    """
+    from cython import compiled
+
+    return compiled
 
 
 class Problem(object):

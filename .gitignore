@@ -58,3 +58,10 @@ target/
 
 # PyCharm / Intellij
 .idea/
+
+### OS Specific ###
+
+# Mac
+.DS_store
+.AppleDouble
+.LSOverride
