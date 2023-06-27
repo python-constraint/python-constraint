@@ -1,0 +1,10 @@
+{
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--config=pyproject.toml"
+  ],
+  "ruff.args": [
+    "--config=pyproject.toml"
+  ],
+  "autoDocstring.docstringFormat": "google-notypes",
+}
