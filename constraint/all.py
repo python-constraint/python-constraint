@@ -1058,15 +1058,52 @@ class FunctionConstraint(Constraint):
 
     def __call__(
         self,
-        variables,
+        variables: list,
         domains,
-        assignments,
+        assignments: dict,
         forwardcheck=False,
         _unassigned=Unassigned,
     ):
-        parms = [assignments.get(x, _unassigned) for x in variables]
-        missing = parms.count(_unassigned)
-        if missing:
+        # # initial code: 0.94621 seconds, Cythonized: 0.92805 seconds
+        # parms = [assignments.get(x, _unassigned) for x in variables]
+        # missing = parms.count(_unassigned)
+
+        # # list comprehension and sum: 0.13744 seconds, Cythonized: 0.10059 seconds
+        # parms = [assignments.get(x, _unassigned) for x in variables]
+        # missing = sum(x not in assignments for x in variables)
+
+        # # sum check with fallback: , Cythonized: 0.10108 seconds
+        # missing = sum(x not in assignments for x in variables)
+        # parms = [assignments.get(x, _unassigned) for x in variables] if missing > 0 else [assignments[x] for x in variables]
+
+        # # tuple list comprehension with unzipping: 0.14521 seconds, Cythonized: 0.12054 seconds
+        # lst = [(assignments[x], 0) if x in assignments else (_unassigned, 1) for x in variables]
+        # parms, missing_iter = zip(*lst)
+        # parms = list(parms)
+        # missing = sum(missing_iter)
+
+        # # single loop array: 0.11249 seconds, Cythonized: 0.09514 seconds
+        # parms = [None] * len(variables)
+        # missing = 0
+        # for i, x in enumerate(variables):
+        #     if x in assignments:
+        #         parms[i] = assignments[x]
+        #     else:
+        #         parms[i] = _unassigned
+        #         missing += 1
+
+        # single loop list: 0.11462 seconds, Cythonized: 0.08686 seconds
+        parms = list()
+        missing = 0
+        for x in variables:
+            if x in assignments:
+                parms.append(assignments[x])
+            else:
+                parms.append(_unassigned)
+                missing += 1
+
+        # if there are unassigned variables, do a forward check before executing the restriction function
+        if missing > 0:
             return (self._assigned or self._func(*parms)) and (
                 not forwardcheck or missing != 1 or self.forwardCheck(variables, domains, assignments)
             )
