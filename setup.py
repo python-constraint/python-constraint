@@ -5,20 +5,6 @@ from setuptools import setup, Extension  # Always prefer setuptools over distuti
 from pathlib import Path
 from constraint.version import __version__, __url__, __author__, __email__, __license__
 
-# try importing Cython, if it fails, use the existing C-files
-try:
-    from Cython.Build import cythonize
-    USE_CYTHON = True
-except ImportError:
-    USE_CYTHON = False
-    assert Path("constraint/all.c").exists(), "Without Cython installed, the C-files must be available."
-
-
-# cythonize the code for better performance
-ext = ".py" if USE_CYTHON else ".c"
-extensions = [Extension("constraint.all", ["constraint/all" + ext])]
-if USE_CYTHON:
-    extensions = cythonize(extensions)
 
 def get_readme_contents():
     """Function to get the contents of the README file.
@@ -30,6 +16,25 @@ def get_readme_contents():
         return f.read()
 
 
+# try importing Cython, if it fails, use the existing C-files
+cython_modules = ['constraints', 'domain', 'problem', 'solvers']
+try:
+    from Cython.Build import cythonize
+    USE_CYTHON = True
+except ImportError:
+    USE_CYTHON = False
+    for module in cython_modules:
+        if not Path(f"constraint/{module}.c").exists():
+            raise FileNotFoundError(f"Without Cython installed, the C-file for {module} must be available.")
+
+# cythonize the code for better performance
+ext = "py" if USE_CYTHON else "c"
+extensions = [Extension(f"constraint.{module}", [f"constraint/{module}.{ext}"]) for module in cython_modules]
+# extensions = [Extension("constraint.all", ["constraint/all" + ext]),]
+if USE_CYTHON:
+    extensions = cythonize(extensions)
+
+# Run the setup
 setup(
     name="python-constraint",
     # Versions should comply with PEP440.  For a discussion on single-sourcing
