@@ -29,7 +29,30 @@ from __future__ import absolute_import, division, print_function
 
 import random
 import copy
-from compat import xrange
+
+__all__ = [
+    "check_if_compiled",
+    "Problem",
+    "Variable",
+    "Domain",
+    "Unassigned",
+    "Solver",
+    "BacktrackingSolver",
+    "OptimizedBacktrackingSolver",
+    "RecursiveBacktrackingSolver",
+    "MinConflictsSolver",
+    "Constraint",
+    "FunctionConstraint",
+    "AllDifferentConstraint",
+    "AllEqualConstraint",
+    "MaxSumConstraint",
+    "ExactSumConstraint",
+    "MinSumConstraint",
+    "InSetConstraint",
+    "NotInSetConstraint",
+    "SomeInSetConstraint",
+    "SomeNotInSetConstraint",
+]
 
 
 def check_if_compiled() -> bool:
@@ -764,7 +787,7 @@ class MinConflictsSolver(Solver):
         # Initial assignment
         for variable in domains:
             assignments[variable] = random.choice(domains[variable])
-        for _ in xrange(self._steps):
+        for _ in range(self._steps):
             conflicted = False
             lst = list(domains.keys())
             random.shuffle(lst)

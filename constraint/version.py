@@ -1,7 +1,9 @@
+"""File containing project information."""
+
 __author__ = "Gustavo Niemeyer"
 __copyright__ = "Copyright (c) 2005-2018 - Gustavo Niemeyer <gustavo@niemeyer.net>"
 __credits__ = ["Sebastien Celles"]
-__license__ = ""
+__license__ = "LICENSE"
 __version__ = "1.4.0"
 __email__ = "gustavo@niemeyer.net"
 __status__ = "Development"

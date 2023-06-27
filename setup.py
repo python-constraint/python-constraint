@@ -1,56 +1,44 @@
-#!/usr/bin/env python
+#!/usr/bin/env python  # noqa: D100
 # -*- coding: utf-8 -*-
 
-from setuptools import setup, find_packages, Extension  # Always prefer setuptools over distutils
-from codecs import open  # To use a consistent encoding
-from os import path
-import io
+from setuptools import setup, Extension  # Always prefer setuptools over distutils
+from pathlib import Path
+from constraint.version import __version__, __url__, __author__, __email__, __license__
 
-NAME = "python-constraint"
-filename = "%s/version.py" % "constraint"
-with open(filename) as f:
-    exec(f.read())
+# try importing Cython, if it fails, use the existing C-files
+try:
+    from Cython.Build import cythonize
+    USE_CYTHON = True
+except ImportError:
+    USE_CYTHON = False
+    assert Path("constraint/all.c").exists(), "Without Cython installed, the C-files must be available."
 
-here = path.abspath(path.dirname(__file__))
 
+# cythonize the code for better performance
+ext = ".py" if USE_CYTHON else ".c"
+extensions = [Extension("constraint.all", ["constraint/all" + ext])]
+if USE_CYTHON:
+    extensions = cythonize(extensions)
 
-def readme():
-    filename = path.join(here, "README.rst")
-    with io.open(filename, "rt", encoding="UTF-8") as f:
+def get_readme_contents():
+    """Function to get the contents of the README file.
+
+    Returns:
+        a string of the contents of the README file.
+    """
+    with Path("README.rst").open(mode="rt", encoding="UTF-8") as f:
         return f.read()
 
 
-# Cythonize the code for better performance
-USE_CYTHON = True
-
-ext = ".py" if USE_CYTHON else ".c"
-
-extensions = [Extension("constraint.all", ["constraint/all" + ext])]
-
-if USE_CYTHON:
-    from Cython.Build import cythonize
-
-    extensions = cythonize(extensions)
-
-# from Cython.Build import cythonize
-
-# extensions = cythonize(
-#     [
-#         Extension("constraint.all", ["constraint/all.c"]),
-#     ]
-# )
-
-
 setup(
-    name=NAME,
+    name="python-constraint",
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/development.html#single-sourcing-the-version
-    # version='0.0.1',
     version=__version__,
     description="python-constraint is a module implementing support "
     "for handling CSPs (Constraint Solving Problems) over finite domain",
-    long_description=readme(),
+    long_description=get_readme_contents(),
     # The project's main homepage.
     url=__url__,
     # Author details
@@ -64,7 +52,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         # Indicate who your project is intended for
         "Environment :: Console",
         # 'Topic :: Software Development :: Build Tools',
@@ -74,10 +62,7 @@ setup(
         # that you indicate whether you support Python 2, Python 3 or both.
         "Programming Language :: Cython",
         "Programming Language :: Python",
-        # 'Programming Language :: Python :: 2',
-        # 'Programming Language :: Python :: 2.6',
-        "Programming Language :: Python :: 2.7",
-        # 'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3',
         # 'Programming Language :: Python :: 3.2',
         # "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
@@ -91,7 +76,7 @@ setup(
     keywords="csp constraint solving problems problem solver",
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=find_packages(exclude=["contrib", "docs", "tests*"]),
+    packages=['constraint', 'examples'],
     # List run-time dependencies here.  These will be installed by pip when your
     # project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
