@@ -5,6 +5,7 @@ import copy
 from .solvers import BacktrackingSolver
 from .domain import Domain
 from .constraints import Constraint, FunctionConstraint
+from operator import itemgetter
 
 class Problem(object):
     """Class used to define a problem and retrieve solutions."""
@@ -196,6 +197,13 @@ class Problem(object):
         if not domains:
             return iter(())
         return self._solver.getSolutionIter(domains, constraints, vconstraints)
+
+    def getSolutionsOrderedList(self, order: list[str]) -> list[tuple]:
+        solutions: list[dict] = self.getSolutions()
+        if len(order) > 1:
+            return list(itemgetter(*order)(params) for params in solutions)
+        return list(params[order[0]] for params in solutions)
+        # return list((tuple(params[param_name] for param_name in order)) for params in self.getSolutions())
 
     def _getArgs(self):
         domains = self._variables.copy()
