@@ -1,3 +1,4 @@
+# cython: linetrace=True
 """Module containing the code for the problem solvers."""
 
 import random
@@ -343,9 +344,61 @@ class OptimizedBacktrackingSolver(Solver):
 
         raise RuntimeError("Can't happen")
 
+    def getSolutionsList(self, domains: dict[str, list], vconstraints: dict[str, list], lst: list) -> list[dict]:  # noqa: D102
+        # Does not do forwardcheck for simplicity
+        assignments = {}
+        queue: list[tuple] = []
+        solutions: list[dict] = list()
+
+        while True:
+            # Mix the Degree and Minimum Remaing Values (MRV) heuristics
+            for variable in lst:
+                if variable not in assignments:
+                    # Found unassigned variable
+                    values = domains[variable][:]
+                    break
+            else:
+                # No unassigned variables. We've got a solution. Go back
+                # to last variable, if there's one.
+                solutions.append(assignments.copy())
+                if not queue:
+                    return solutions
+                variable, values = queue.pop()
+
+            while True:
+                # We have a variable. Do we have any values left?
+                if not values:
+                    # No. Go back to last variable, if there's one.
+                    del assignments[variable]
+                    while queue:
+                        variable, values = queue.pop()
+                        if values:
+                            break
+                        del assignments[variable]
+                    else:
+                        return solutions
+
+                # Got a value. Check it.
+                assignments[variable] = values.pop()
+
+                for constraint, variables in vconstraints[variable]:
+                    if not constraint(variables, domains, assignments, None):
+                        # Value is not good.
+                        break
+                else:
+                    break
+
+            # Push state before looking for next variable.
+            queue.append((variable, values))
+            # print(len(queue))
+
+        raise RuntimeError("Can't happen")
+
     def getSolutions(self, domains, constraints, vconstraints):  # noqa: D102
+        # sort the list from highest number of vconstraints to lowest to find unassigned variables as soon as possible
         lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
         lst.sort()
+        return self.getSolutionsList(domains, vconstraints, [c for a, b, c in lst])
         return list(self.getSolutionIter(domains, constraints, vconstraints, [c for a, b, c in lst]))
 
     def getSolution(self, domains, constraints, vconstraints):   # noqa: D102
