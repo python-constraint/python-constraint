@@ -345,6 +345,49 @@ class MaxSumConstraint(Constraint):
         return True
 
 
+class MaxProdConstraint(Constraint):
+    """Constraint enforcing that values of given variables create a product up to a given amount."""
+
+    def __init__(self, maxprod):
+        """Instantiate a MaxProdConstraint.
+
+        :params maxprod: Value to be considered as the maximum product
+        :type maxprod: number
+
+        """
+        self._maxprod = maxprod
+
+    def preProcess(self, variables, domains, constraints, vconstraints):        # noqa: D102
+        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
+        maxprod = self._maxprod
+        for variable in variables:
+            domain = domains[variable]
+            for value in domain[:]:
+                if value > maxprod:
+                    domain.remove(value)
+
+    def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102
+        maxprod = self._maxprod
+        prod = 1
+        for variable in variables:
+            if variable in assignments:
+                prod *= assignments[variable]
+        if isinstance(prod, float):
+            prod = round(prod, 10)
+        if prod > maxprod:
+            return False
+        if forwardcheck:
+            for variable in variables:
+                if variable not in assignments:
+                    domain = domains[variable]
+                    for value in domain[:]:
+                        if prod * value > maxprod:
+                            domain.hideValue(value)
+                    if not domain:
+                        return False
+        return True
+
+
 class ExactSumConstraint(Constraint):
     """Constraint enforcing that values of given variables sum exactly to a given amount.
 
