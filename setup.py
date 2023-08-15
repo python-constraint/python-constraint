@@ -29,9 +29,7 @@ except ImportError:
 
 # cythonize the code for better performance
 ext = "py" if USE_CYTHON else "c"
-extensions = [Extension(f"constraint.{module}", [f"constraint/{module}.{ext}"], extra_compile_args=['-fopenmp'],
-        extra_link_args=['-fopenmp'],) for module in cython_modules]
-# extensions = [Extension("constraint.all", ["constraint/all" + ext]),]
+extensions = [Extension(f"constraint.{module}", [f"constraint/{module}.{ext}"]) for module in cython_modules]
 if USE_CYTHON:
     extensions = cythonize(extensions)
 

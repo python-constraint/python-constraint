@@ -2,28 +2,7 @@
 """Module containing the code for the problem solvers."""
 
 import random
-from multiprocessing import Queue, Manager, Pool, Lock
 import cython
-from cython.parallel import prange
-
-from itertools import product
-import re
-from math import prod
-from .constraints import (
-    AllDifferentConstraint,
-    AllEqualConstraint,
-    Constraint,
-    ExactSumConstraint,
-    FunctionConstraint,
-    InSetConstraint,
-    MaxSumConstraint,
-    MinSumConstraint,
-    NotInSetConstraint,
-    SomeInSetConstraint,
-    SomeNotInSetConstraint,
-)
-
-lock = Lock()
 
 
 def getArcs(domains, constraints):
@@ -250,55 +229,6 @@ class BacktrackingSolver(Solver):
     def getSolutions(self, domains, constraints, vconstraints):  # noqa: D102
         return list(self.getSolutionIter(domains, constraints, vconstraints))
 
-def solve(id: int, assignments, queue: Queue, solutions, domains: dict[str, list], vconstraints: dict[str, list], lst: list):
-    while True:
-        # Mix the Degree and Minimum Remaing Values (MRV) heuristics
-        for variable in lst:
-            if variable not in assignments:
-                # Found unassigned variable
-                values = domains[variable][:]
-                break
-        else:
-            # No unassigned variables. We've got a solution. Go back
-            # to last variable, if there's one.
-            with lock:
-                solutions.append(assignments.copy())
-            if queue.empty():
-                return solutions
-            variable, values = queue.get()
-
-        while True:
-            # We have a variable. Do we have any values left?
-            if not values:
-                # No. Go back to last variable, if there's one.
-                with lock:
-                    del assignments[variable]
-                    while not queue.empty():
-                        variable, values = queue.get()
-                        if values:
-                            break
-                        del assignments[variable]
-                    else:
-                        return solutions
-
-            # Got a value. Check it.
-            with lock:
-                assignments[variable] = values.pop()
-
-            for constraint, variables in vconstraints[variable]:
-                if not constraint(variables, domains, assignments, None):
-                    # Value is not good.
-                    break
-            else:
-                break
-
-        # Push state before looking for next variable.
-        with lock:
-            queue.put((variable, values))
-        # print(len(queue))
-
-    raise RuntimeError("Can't happen")
-
 class OptimizedBacktrackingSolver(Solver):
     """Problem solver with backtracking capabilities, implementing several optimizations for increased performance.
 
@@ -451,7 +381,6 @@ class OptimizedBacktrackingSolver(Solver):
 
                 # Got a value. Check it.
                 assignments[variable] = values.pop()
-
                 for constraint, variables in vconstraints[variable]:
                     if not constraint(variables, domains, assignments, None):
                         # Value is not good.
@@ -461,75 +390,17 @@ class OptimizedBacktrackingSolver(Solver):
 
             # Push state before looking for next variable.
             queue.append((variable, values))
-            # print(len(queue))
 
         raise RuntimeError("Can't happen")
 
-    def getSolutionsListParallel(self, domains: dict[str, list], vconstraints: dict[str, list], lst: list) -> list[dict]:  # noqa: D102
-        # Does not do forwardcheck for simplicity
-        # assignments = {}
-        # queue: list[tuple] = []
-        # solutions: list[dict] = list()
-
-        # parallel version
-        num_workers = 4
-        manager = Manager()
-        assignments = manager.dict(lock=True)
-        queue = manager.Queue()
-        solutions = manager.list()
-        jobargs = [(id, assignments, queue, solutions, domains, vconstraints, lst) for i in range(num_workers)]
-
-        p = Pool(num_workers)
-        t = p.map(solve, jobargs)
-        p.close()
-        p.join()
-
-        print(solutions)
-        return solutions
-
-    def getSolutionsBruteforce(self, domains, constraints, vconstraints) -> list:
-        @cython.cfunc
-        def check_converted_restrictions(restrictions: list[tuple], params: dict) -> int:
-            valid = 1
-            for restriction, param_names in restrictions:
-                param_values = list(params.values()) if len(param_names) == 0 else [params[k] for k in param_names]
-                if not restriction(param_values):
-                    valid = 0
-                    break
-            return valid
-
-        # TODO see how fast Cythonized bruteforced can be (optionally with prange)
-        param_names = list(domains.keys())
-        if constraints is not None and len(constraints) > 0:
-            # shrink the domain by applying restrictions that only use one parameter
-            restrictions, pruned_restrictions = convert_restrictions(constraints)
-            for r, p in pruned_restrictions:
-                param_name = p[0]
-                domains[param_name] = filter(lambda v: check_converted_restrictions(r, dict(zip([param_name], [v])) ), domains[param_name])
-            # make bounds on number-type parameters that have restrictions
-            # TODO
-            # apply all restrictions on the cartesian product
-            cartesian_size = prod([len(v) for v in domains.values()])
-            parameter_space = list(product(*domains.values()))
-            c = cython.declare(cython.int, cartesian_size)
-            i = cython.declare(cython.int)
-            result = cython.declare(cython.int[:], [0 for _ in range(cartesian_size)])
-            for i in prange(c, nogil=True):
-                result[i] = check_converted_restrictions(restrictions, dict(zip(param_names, parameter_space[i])))
-            parameter_space = filter(lambda p: check_converted_restrictions(restrictions, dict(zip(param_names, p))), result)
-        else:
-            # compute cartesian product of all tunable parameters
-            parameter_space = product(*domains.values())
-        return list(dict(zip(param_names, sol)) for sol in parameter_space)
-
 
     def getSolutions(self, domains, constraints, vconstraints):  # noqa: D102
-        return self.getSolutionsBruteforce(domains, constraints, vconstraints)
         # sort the list from highest number of vconstraints to lowest to find unassigned variables as soon as possible
         lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
         lst.sort()
-        return self.getSolutionsList(domains, vconstraints, [c for a, b, c in lst])
-        return list(self.getSolutionIter(domains, constraints, vconstraints, [c for a, b, c in lst]))
+        if self._forwardcheck:
+            return list(self.getSolutionIter(domains, constraints, vconstraints, [c for a, b, c in lst]))
+        return self.getSolutionsList(domains, vconstraints, [c for _, _, c in lst])
 
     def getSolution(self, domains, constraints, vconstraints):   # noqa: D102
         iter = self.getSolutionIter(domains, constraints, vconstraints)
@@ -700,108 +571,3 @@ class MinConflictsSolver(Solver):
             if not conflicted:
                 return assignments
         return None
-
-def convert_restrictions(restrictions) -> tuple[list[tuple], list[tuple]]:
-    if callable(restrictions):
-        return ([restrictions], [])
-    new_restrictions: list[tuple] = list()
-    pruned_restrictions: list[tuple] = list()
-    for restriction in restrictions:
-        param_names = []
-        if isinstance(restriction, tuple):
-            restriction, param_names = restriction
-        if isinstance(restriction, Constraint):
-            restriction = convert_constraint_restriction(restriction)
-        elif isinstance(restriction, str):
-            def f_restrict(p):
-                return eval(replace_param_occurrences(restriction, p))
-            restriction = f_restrict
-        elif callable(restriction):
-            pass
-        else:
-            raise ValueError(f"Unkown restriction type {type(restriction)}")
-        if len(param_names) == 1:
-            pruned_restrictions.append((restriction, param_names))
-        else:
-            new_restrictions.append((restriction, param_names))
-    return (new_restrictions, pruned_restrictions)
-
-
-def check_restrictions(restrictions, params: dict, verbose: bool):
-    """Check whether a specific instance meets the search space restrictions."""
-    valid = True
-    if callable(restrictions):
-        valid = restrictions(params)
-    else:
-        for restrict in restrictions:
-            try:
-                # if it's a tuple, extract the restriction and the used parameter names
-                if isinstance(restrict, tuple):
-                    restrict, param_names = restrict
-                    param_values = [params[k] for k in param_names]
-                # if it's a python-constraint, convert to function and execute
-                if isinstance(restrict, Constraint):
-                    if param_values is None:
-                        param_values = params.values()
-                    restrict = convert_constraint_restriction(restrict)
-                    if not restrict(param_values):
-                        valid = False
-                        break
-                # if it's a string, fill in the parameters and evaluate
-                elif isinstance(restrict, str) and not eval(replace_param_occurrences(restrict, params)):
-                    valid = False
-                    break
-                # if it's a function, call it
-                elif callable(restrict) and not restrict(params):
-                    valid = False
-                    break
-            except ZeroDivisionError:
-                pass
-    if not valid and verbose:
-        print(f"skipping config {params}, reason: config fails restriction")
-    return valid
-
-
-def convert_constraint_restriction(restrict: Constraint):
-    """Convert the python-constraint to a function for backwards compatibility."""
-    if isinstance(restrict, FunctionConstraint):
-        def f_restrict(p):
-            return restrict._func(*p)
-    elif isinstance(restrict, AllDifferentConstraint):
-        def f_restrict(p):
-            return len(set(p)) == len(p)
-    elif isinstance(restrict, AllEqualConstraint):
-        def f_restrict(p):
-            return all(x == p[0] for x in p)
-    elif "MaxProdConstraint" in str(type(restrict)):
-        def f_restrict(p):
-            return prod(p) <= restrict._maxprod
-    elif isinstance(restrict, MaxSumConstraint):
-        def f_restrict(p):
-            return sum(p) <= restrict._maxsum
-    elif isinstance(restrict, ExactSumConstraint):
-        def f_restrict(p):
-            return sum(p) == restrict._exactsum
-    elif isinstance(restrict, MinSumConstraint):
-        def f_restrict(p):
-            return sum(p) >= restrict._minsum
-    elif isinstance(restrict, (InSetConstraint, NotInSetConstraint, SomeInSetConstraint, SomeNotInSetConstraint)):
-        raise NotImplementedError(
-            f"Restriction of the type {type(restrict)} is explicitely not supported in backwards compatibility mode, because the behaviour is too complex. Please rewrite this constraint to a function to use it with this algorithm."
-        )
-    else:
-        raise TypeError(f"Unrecognized restriction {restrict}")
-    return f_restrict
-
-def replace_param_occurrences(string: str, params: dict):
-    """Replace occurrences of the tuning params with their current value."""
-    result = ""
-
-    # Split on tokens and replace a token if it is a key in `params`.
-    for part in re.split("([a-zA-Z0-9_]+)", string):
-        if part in params:
-            result += str(params[part])
-        else:
-            result += part
-
-    return result
