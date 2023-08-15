@@ -3,6 +3,8 @@
 
 import random
 from multiprocessing import Queue, Manager, Pool, Lock
+import cython
+from cython.parallel import prange
 
 from itertools import product
 import re
@@ -486,6 +488,16 @@ class OptimizedBacktrackingSolver(Solver):
         return solutions
 
     def getSolutionsBruteforce(self, domains, constraints, vconstraints) -> list:
+        @cython.cfunc
+        def check_converted_restrictions(restrictions: list[tuple], params: dict) -> int:
+            valid = 1
+            for restriction, param_names in restrictions:
+                param_values = list(params.values()) if len(param_names) == 0 else [params[k] for k in param_names]
+                if not restriction(param_values):
+                    valid = 0
+                    break
+            return valid
+
         # TODO see how fast Cythonized bruteforced can be (optionally with prange)
         param_names = list(domains.keys())
         if constraints is not None and len(constraints) > 0:
@@ -497,7 +509,14 @@ class OptimizedBacktrackingSolver(Solver):
             # make bounds on number-type parameters that have restrictions
             # TODO
             # apply all restrictions on the cartesian product
-            parameter_space = filter(lambda p: check_converted_restrictions(restrictions, dict(zip(param_names, p))), product(*domains.values()))
+            cartesian_size = prod([len(v) for v in domains.values()])
+            parameter_space = list(product(*domains.values()))
+            c = cython.declare(cython.int, cartesian_size)
+            i = cython.declare(cython.int)
+            result = cython.declare(cython.int[:], [0 for _ in range(cartesian_size)])
+            for i in prange(c, nogil=True):
+                result[i] = check_converted_restrictions(restrictions, dict(zip(param_names, parameter_space[i])))
+            parameter_space = filter(lambda p: check_converted_restrictions(restrictions, dict(zip(param_names, p))), result)
         else:
             # compute cartesian product of all tunable parameters
             parameter_space = product(*domains.values())
@@ -706,15 +725,6 @@ def convert_restrictions(restrictions) -> tuple[list[tuple], list[tuple]]:
         else:
             new_restrictions.append((restriction, param_names))
     return (new_restrictions, pruned_restrictions)
-
-def check_converted_restrictions(restrictions: list[tuple], params: dict):
-    valid = True
-    for restriction, param_names in restrictions:
-        param_values = list(params.values()) if len(param_names) == 0 else [params[k] for k in param_names]
-        if not restriction(param_values):
-            valid = False
-            break
-    return valid
 
 
 def check_restrictions(restrictions, params: dict, verbose: bool):
