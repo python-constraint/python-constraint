@@ -1,4 +1,4 @@
-# cython: profile=True
+# cython: linetrace=True
 """Module containing the code for the problem solvers."""
 
 import random
@@ -347,9 +347,9 @@ class OptimizedBacktrackingSolver(Solver):
 
     def getSolutionsList(self, domains: dict[cython.int, list], vconstraints: dict[cython.int, list], lst: list) -> list[dict[cython.int, list]]:  # noqa: D102
         # Does not do forwardcheck for simplicity
-        assignments: dict[cython.int, list] = {}
+        assignments = {}
         queue: list[tuple] = []
-        solutions: list[dict[cython.int, list]] = list()
+        solutions: list[dict] = list()
 
         while True:
             # Mix the Degree and Minimum Remaing Values (MRV) heuristics

@@ -1353,6 +1353,13 @@ static const char *__pyx_f[] = {
   "constraint/solvers.py",
 };
 /* #### Code section: utility_code_proto_before_types ### */
+/* NoFastGil.proto */
+#define __Pyx_PyGILState_Ensure PyGILState_Ensure
+#define __Pyx_PyGILState_Release PyGILState_Release
+#define __Pyx_FastGIL_Remember()
+#define __Pyx_FastGIL_Forget()
+#define __Pyx_FastGilFuncInit()
+
 /* #### Code section: numeric_typedefs ### */
 /* #### Code section: complex_type_declarations ### */
 /* #### Code section: type_declarations ### */
@@ -3715,6 +3722,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_getArcs(CYTHON_UNUSED PyObject *
  *     for x in constraints:
  *         constraint, variables = x
  */
+  __Pyx_TraceLine(13,0,__PYX_ERR(0, 13, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_arcs = ((PyObject*)__pyx_t_1);
@@ -3727,6 +3735,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_getArcs(CYTHON_UNUSED PyObject *
  *         constraint, variables = x
  *         if len(variables) == 2:
  */
+  __Pyx_TraceLine(14,0,__PYX_ERR(0, 14, __pyx_L1_error))
   if (likely(PyList_CheckExact(__pyx_v_constraints)) || PyTuple_CheckExact(__pyx_v_constraints)) {
     __pyx_t_1 = __pyx_v_constraints; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
@@ -3776,6 +3785,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_getArcs(CYTHON_UNUSED PyObject *
  *         if len(variables) == 2:
  *             variable1, variable2 = variables
  */
+    __Pyx_TraceLine(15,0,__PYX_ERR(0, 15, __pyx_L1_error))
     if ((likely(PyTuple_CheckExact(__pyx_v_x))) || (PyList_CheckExact(__pyx_v_x))) {
       PyObject* sequence = __pyx_v_x;
       Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
@@ -3832,6 +3842,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_getArcs(CYTHON_UNUSED PyObject *
  *             variable1, variable2 = variables
  *             arcs.setdefault(variable1, {}).setdefault(variable2, []).append(x)
  */
+    __Pyx_TraceLine(16,0,__PYX_ERR(0, 16, __pyx_L1_error))
     __pyx_t_8 = PyObject_Length(__pyx_v_variables); if (unlikely(__pyx_t_8 == ((Py_ssize_t)-1))) __PYX_ERR(0, 16, __pyx_L1_error)
     __pyx_t_9 = (__pyx_t_8 == 2);
     if (__pyx_t_9) {
@@ -3843,6 +3854,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_getArcs(CYTHON_UNUSED PyObject *
  *             arcs.setdefault(variable1, {}).setdefault(variable2, []).append(x)
  *             arcs.setdefault(variable2, {}).setdefault(variable1, []).append(x)
  */
+      __Pyx_TraceLine(17,0,__PYX_ERR(0, 17, __pyx_L1_error))
       if ((likely(PyTuple_CheckExact(__pyx_v_variables))) || (PyList_CheckExact(__pyx_v_variables))) {
         PyObject* sequence = __pyx_v_variables;
         Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
@@ -3899,6 +3911,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_getArcs(CYTHON_UNUSED PyObject *
  *             arcs.setdefault(variable2, {}).setdefault(variable1, []).append(x)
  *     return arcs
  */
+      __Pyx_TraceLine(18,0,__PYX_ERR(0, 18, __pyx_L1_error))
       __pyx_t_5 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 18, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_6 = __Pyx_PyDict_SetDefault(__pyx_v_arcs, __pyx_v_variable1, __pyx_t_5, -1L); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 18, __pyx_L1_error)
@@ -3940,6 +3953,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_getArcs(CYTHON_UNUSED PyObject *
  *     return arcs
  * 
  */
+      __Pyx_TraceLine(19,0,__PYX_ERR(0, 19, __pyx_L1_error))
       __pyx_t_5 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 19, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_6 = __Pyx_PyDict_SetDefault(__pyx_v_arcs, __pyx_v_variable2, __pyx_t_5, -1L); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 19, __pyx_L1_error)
@@ -3990,6 +4004,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_getArcs(CYTHON_UNUSED PyObject *
  *         constraint, variables = x
  *         if len(variables) == 2:
  */
+    __Pyx_TraceLine(14,0,__PYX_ERR(0, 14, __pyx_L1_error))
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -4000,6 +4015,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_getArcs(CYTHON_UNUSED PyObject *
  * 
  * 
  */
+  __Pyx_TraceLine(20,0,__PYX_ERR(0, 20, __pyx_L1_error))
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_arcs);
   __pyx_r = __pyx_v_arcs;
@@ -4189,6 +4205,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *     while check:
  *         variable, _ = check.popitem()
  */
+  __Pyx_TraceLine(28,0,__PYX_ERR(0, 28, __pyx_L1_error))
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)(&PyDict_Type)), __pyx_n_s_fromkeys); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
@@ -4221,6 +4238,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *         variable, _ = check.popitem()
  *         if variable not in arcs or variable in assignments:
  */
+  __Pyx_TraceLine(29,0,__PYX_ERR(0, 29, __pyx_L1_error))
   while (1) {
     __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_check); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 29, __pyx_L1_error)
     if (!__pyx_t_5) break;
@@ -4232,6 +4250,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *         if variable not in arcs or variable in assignments:
  *             continue
  */
+    __Pyx_TraceLine(30,0,__PYX_ERR(0, 30, __pyx_L1_error))
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_check, __pyx_n_s_popitem); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = NULL;
@@ -4312,6 +4331,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *             continue
  *         domain = domains[variable]
  */
+    __Pyx_TraceLine(31,0,__PYX_ERR(0, 31, __pyx_L1_error))
     __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_variable, __pyx_v_arcs, Py_NE)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 31, __pyx_L1_error)
     if (!__pyx_t_8) {
     } else {
@@ -4330,6 +4350,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *         domain = domains[variable]
  *         arcsvariable = arcs[variable]
  */
+      __Pyx_TraceLine(32,0,__PYX_ERR(0, 32, __pyx_L1_error))
       goto __pyx_L3_continue;
 
       /* "constraint/solvers.py":31
@@ -4348,6 +4369,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *         arcsvariable = arcs[variable]
  *         for othervariable in arcsvariable:
  */
+    __Pyx_TraceLine(33,0,__PYX_ERR(0, 33, __pyx_L1_error))
     __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_1);
@@ -4360,6 +4382,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *         for othervariable in arcsvariable:
  *             arcconstraints = arcsvariable[othervariable]
  */
+    __Pyx_TraceLine(34,0,__PYX_ERR(0, 34, __pyx_L1_error))
     __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_arcs, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_arcsvariable, __pyx_t_1);
@@ -4372,6 +4395,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *             arcconstraints = arcsvariable[othervariable]
  *             if othervariable in assignments:
  */
+    __Pyx_TraceLine(35,0,__PYX_ERR(0, 35, __pyx_L1_error))
     if (likely(PyList_CheckExact(__pyx_v_arcsvariable)) || PyTuple_CheckExact(__pyx_v_arcsvariable)) {
       __pyx_t_1 = __pyx_v_arcsvariable; __Pyx_INCREF(__pyx_t_1); __pyx_t_9 = 0;
       __pyx_t_10 = NULL;
@@ -4421,6 +4445,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *             if othervariable in assignments:
  *                 otherdomain = [assignments[othervariable]]
  */
+      __Pyx_TraceLine(36,0,__PYX_ERR(0, 36, __pyx_L1_error))
       __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_arcsvariable, __pyx_v_othervariable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_XDECREF_SET(__pyx_v_arcconstraints, __pyx_t_3);
@@ -4433,6 +4458,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                 otherdomain = [assignments[othervariable]]
  *             else:
  */
+      __Pyx_TraceLine(37,0,__PYX_ERR(0, 37, __pyx_L1_error))
       __pyx_t_5 = (__Pyx_PySequence_ContainsTF(__pyx_v_othervariable, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 37, __pyx_L1_error)
       if (__pyx_t_5) {
 
@@ -4443,6 +4469,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *             else:
  *                 otherdomain = domains[othervariable]
  */
+        __Pyx_TraceLine(38,0,__PYX_ERR(0, 38, __pyx_L1_error))
         __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_assignments, __pyx_v_othervariable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
@@ -4470,6 +4497,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *             if domain:
  *                 # changed = False
  */
+      __Pyx_TraceLine(40,0,__PYX_ERR(0, 40, __pyx_L1_error))
       /*else*/ {
         __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_domains, __pyx_v_othervariable); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
@@ -4485,6 +4513,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                 # changed = False
  *                 for value in domain[:]:
  */
+      __Pyx_TraceLine(41,0,__PYX_ERR(0, 41, __pyx_L1_error))
       __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 41, __pyx_L1_error)
       if (__pyx_t_5) {
 
@@ -4495,6 +4524,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                     assignments[variable] = value
  *                     if otherdomain:
  */
+        __Pyx_TraceLine(43,0,__PYX_ERR(0, 43, __pyx_L1_error))
         __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_slice__3, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
@@ -4547,6 +4577,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                     if otherdomain:
  *                         for othervalue in otherdomain:
  */
+          __Pyx_TraceLine(44,0,__PYX_ERR(0, 44, __pyx_L1_error))
           if (unlikely((PyObject_SetItem(__pyx_v_assignments, __pyx_v_variable, __pyx_v_value) < 0))) __PYX_ERR(0, 44, __pyx_L1_error)
 
           /* "constraint/solvers.py":45
@@ -4556,6 +4587,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                         for othervalue in otherdomain:
  *                             assignments[othervariable] = othervalue
  */
+          __Pyx_TraceLine(45,0,__PYX_ERR(0, 45, __pyx_L1_error))
           __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_otherdomain); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 45, __pyx_L1_error)
           if (__pyx_t_5) {
 
@@ -4566,6 +4598,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                             assignments[othervariable] = othervalue
  *                             for constraint, variables in arcconstraints:
  */
+            __Pyx_TraceLine(46,0,__PYX_ERR(0, 46, __pyx_L1_error))
             if (likely(PyList_CheckExact(__pyx_v_otherdomain)) || PyTuple_CheckExact(__pyx_v_otherdomain)) {
               __pyx_t_2 = __pyx_v_otherdomain; __Pyx_INCREF(__pyx_t_2); __pyx_t_13 = 0;
               __pyx_t_14 = NULL;
@@ -4615,6 +4648,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                             for constraint, variables in arcconstraints:
  *                                 if not constraint(variables, domains, assignments, True):
  */
+              __Pyx_TraceLine(47,0,__PYX_ERR(0, 47, __pyx_L1_error))
               if (unlikely((PyObject_SetItem(__pyx_v_assignments, __pyx_v_othervariable, __pyx_v_othervalue) < 0))) __PYX_ERR(0, 47, __pyx_L1_error)
 
               /* "constraint/solvers.py":48
@@ -4624,6 +4658,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                                 if not constraint(variables, domains, assignments, True):
  *                                     break
  */
+              __Pyx_TraceLine(48,0,__PYX_ERR(0, 48, __pyx_L1_error))
               if (likely(PyList_CheckExact(__pyx_v_arcconstraints)) || PyTuple_CheckExact(__pyx_v_arcconstraints)) {
                 __pyx_t_6 = __pyx_v_arcconstraints; __Pyx_INCREF(__pyx_t_6); __pyx_t_15 = 0;
                 __pyx_t_16 = NULL;
@@ -4721,6 +4756,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                                     break
  *                             else:
  */
+                __Pyx_TraceLine(49,0,__PYX_ERR(0, 49, __pyx_L1_error))
                 __Pyx_INCREF(__pyx_v_constraint);
                 __pyx_t_19 = __pyx_v_constraint; __pyx_t_18 = NULL;
                 __pyx_t_4 = 0;
@@ -4754,6 +4790,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                             else:
  *                                 # All constraints passed. Value is safe.
  */
+                  __Pyx_TraceLine(50,0,__PYX_ERR(0, 50, __pyx_L1_error))
                   goto __pyx_L20_break;
 
                   /* "constraint/solvers.py":49
@@ -4772,6 +4809,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                                 if not constraint(variables, domains, assignments, True):
  *                                     break
  */
+                __Pyx_TraceLine(48,0,__PYX_ERR(0, 48, __pyx_L1_error))
               }
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
               goto __pyx_L24_for_else;
@@ -4788,6 +4826,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                         else:
  *                             # All othervalues failed. Kill value.
  */
+                __Pyx_TraceLine(53,0,__PYX_ERR(0, 53, __pyx_L1_error))
                 goto __pyx_L18_break;
               }
               __pyx_L25_for_end:;
@@ -4799,6 +4838,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                             assignments[othervariable] = othervalue
  *                             for constraint, variables in arcconstraints:
  */
+              __Pyx_TraceLine(46,0,__PYX_ERR(0, 46, __pyx_L1_error))
             }
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             goto __pyx_L26_for_else;
@@ -4815,6 +4855,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                             # changed = True
  *                         del assignments[othervariable]
  */
+              __Pyx_TraceLine(56,0,__PYX_ERR(0, 56, __pyx_L1_error))
               __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_domain, __pyx_n_s_hideValue); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 56, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_6);
               __pyx_t_17 = NULL;
@@ -4848,6 +4889,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                 del assignments[variable]
  *                 # if changed:
  */
+            __Pyx_TraceLine(58,0,__PYX_ERR(0, 58, __pyx_L1_error))
             if (unlikely((PyObject_DelItem(__pyx_v_assignments, __pyx_v_othervariable) < 0))) __PYX_ERR(0, 58, __pyx_L1_error)
 
             /* "constraint/solvers.py":45
@@ -4866,6 +4908,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                     assignments[variable] = value
  *                     if otherdomain:
  */
+          __Pyx_TraceLine(43,0,__PYX_ERR(0, 43, __pyx_L1_error))
         }
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
@@ -4876,6 +4919,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                 # if changed:
  *                 #     check.update(dict.fromkeys(arcsvariable))
  */
+        __Pyx_TraceLine(59,0,__PYX_ERR(0, 59, __pyx_L1_error))
         if (unlikely((PyObject_DelItem(__pyx_v_assignments, __pyx_v_variable) < 0))) __PYX_ERR(0, 59, __pyx_L1_error)
 
         /* "constraint/solvers.py":41
@@ -4894,6 +4938,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *                 return False
  *     return True
  */
+      __Pyx_TraceLine(62,0,__PYX_ERR(0, 62, __pyx_L1_error))
       __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 62, __pyx_L1_error)
       __pyx_t_5 = (!__pyx_t_8);
       if (__pyx_t_5) {
@@ -4905,6 +4950,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *     return True
  * 
  */
+        __Pyx_TraceLine(63,0,__PYX_ERR(0, 63, __pyx_L1_error))
         __Pyx_XDECREF(__pyx_r);
         __Pyx_INCREF(Py_False);
         __pyx_r = Py_False;
@@ -4927,6 +4973,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  *             arcconstraints = arcsvariable[othervariable]
  *             if othervariable in assignments:
  */
+      __Pyx_TraceLine(35,0,__PYX_ERR(0, 35, __pyx_L1_error))
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_L3_continue:;
@@ -4939,6 +4986,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_2doArc8(CYTHON_UNUSED PyObject *
  * 
  * 
  */
+  __Pyx_TraceLine(64,0,__PYX_ERR(0, 64, __pyx_L1_error))
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(Py_True);
   __pyx_r = Py_True;
@@ -5120,6 +5168,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_6Solver_getSolution(CYTHON_UNUSE
  *         raise NotImplementedError(msg)
  * 
  */
+  __Pyx_TraceLine(81,0,__PYX_ERR(0, 81, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_class); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_name); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
@@ -5138,6 +5187,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_6Solver_getSolution(CYTHON_UNUSE
  * 
  *     def getSolutions(self, domains, constraints, vconstraints):
  */
+  __Pyx_TraceLine(82,0,__PYX_ERR(0, 82, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_v_msg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
@@ -5302,6 +5352,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_6Solver_2getSolutions(CYTHON_UNU
  *         raise NotImplementedError(msg)
  * 
  */
+  __Pyx_TraceLine(95,0,__PYX_ERR(0, 95, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_class); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_name); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
@@ -5320,6 +5371,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_6Solver_2getSolutions(CYTHON_UNU
  * 
  *     def getSolutionIter(self, domains, constraints, vconstraints):
  */
+  __Pyx_TraceLine(96,0,__PYX_ERR(0, 96, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_v_msg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
@@ -5484,6 +5536,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_6Solver_4getSolutionIter(CYTHON_
  *         raise NotImplementedError(msg)
  * 
  */
+  __Pyx_TraceLine(109,0,__PYX_ERR(0, 109, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_class); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_name); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
@@ -5502,6 +5555,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_6Solver_4getSolutionIter(CYTHON_
  * 
  * 
  */
+  __Pyx_TraceLine(110,0,__PYX_ERR(0, 110, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_v_msg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
@@ -5643,6 +5697,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18BacktrackingSolver___init__(CY
  * 
  *     def getSolutionIter(self, domains, constraints, vconstraints):  # noqa: D102
  */
+  __Pyx_TraceLine(150,0,__PYX_ERR(0, 150, __pyx_L1_error))
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_forwardcheck_2, __pyx_v_forwardcheck) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
 
   /* "constraint/solvers.py":142
@@ -5870,6 +5925,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *         assignments = {}
  * 
  */
+  __Pyx_TraceLine(153,0,__PYX_ERR(0, 153, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_forwardcheck_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
@@ -5883,6 +5939,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  * 
  *         queue = []
  */
+  __Pyx_TraceLine(154,0,__PYX_ERR(0, 154, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
@@ -5896,6 +5953,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  * 
  *         while True:
  */
+  __Pyx_TraceLine(156,0,__PYX_ERR(0, 156, __pyx_L1_error))
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
@@ -5909,6 +5967,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *             # Mix the Degree and Minimum Remaing Values (MRV) heuristics
  *             lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
  */
+  __Pyx_TraceLine(158,0,__PYX_ERR(0, 158, __pyx_L1_error))
   while (1) {
 
     /* "constraint/solvers.py":160
@@ -5918,6 +5977,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *             lst.sort()
  *             for item in lst:
  */
+    __Pyx_TraceLine(160,0,__PYX_ERR(0, 160, __pyx_L1_error))
     { /* enter inner scope */
       __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
@@ -6004,6 +6064,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *             for item in lst:
  *                 if item[-1] not in assignments:
  */
+    __Pyx_TraceLine(161,0,__PYX_ERR(0, 161, __pyx_L1_error))
     __pyx_t_9 = PyList_Sort(__pyx_cur_scope->__pyx_v_lst); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 161, __pyx_L1_error)
 
     /* "constraint/solvers.py":162
@@ -6013,6 +6074,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                 if item[-1] not in assignments:
  *                     # Found unassigned variable
  */
+    __Pyx_TraceLine(162,0,__PYX_ERR(0, 162, __pyx_L1_error))
     __pyx_t_1 = __pyx_cur_scope->__pyx_v_lst; __Pyx_INCREF(__pyx_t_1); __pyx_t_3 = 0;
     for (;;) {
       if (__pyx_t_3 >= PyList_GET_SIZE(__pyx_t_1)) break;
@@ -6034,6 +6096,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     # Found unassigned variable
  *                     variable = item[-1]
  */
+      __Pyx_TraceLine(163,0,__PYX_ERR(0, 163, __pyx_L1_error))
       __pyx_t_2 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_item, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_t_10 = (__Pyx_PyDict_ContainsTF(__pyx_t_2, __pyx_cur_scope->__pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 163, __pyx_L1_error)
@@ -6047,6 +6110,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     values = domains[variable][:]
  *                     if forwardcheck:
  */
+        __Pyx_TraceLine(165,0,__PYX_ERR(0, 165, __pyx_L1_error))
         __pyx_t_2 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_item, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_variable);
@@ -6061,6 +6125,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     if forwardcheck:
  *                         pushdomains = [domains[x] for x in domains if x not in assignments and x != variable]
  */
+        __Pyx_TraceLine(166,0,__PYX_ERR(0, 166, __pyx_L1_error))
         __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_domains, __pyx_cur_scope->__pyx_v_variable); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_8 = __Pyx_PyObject_GetSlice(__pyx_t_2, 0, 0, NULL, NULL, &__pyx_slice__3, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 166, __pyx_L1_error)
@@ -6078,6 +6143,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         pushdomains = [domains[x] for x in domains if x not in assignments and x != variable]
  *                     else:
  */
+        __Pyx_TraceLine(167,0,__PYX_ERR(0, 167, __pyx_L1_error))
         __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_forwardcheck); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 167, __pyx_L1_error)
         if (__pyx_t_10) {
 
@@ -6088,6 +6154,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     else:
  *                         pushdomains = None
  */
+          __Pyx_TraceLine(168,0,__PYX_ERR(0, 168, __pyx_L1_error))
           { /* enter inner scope */
             __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 168, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
@@ -6176,6 +6243,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     break
  *             else:
  */
+        __Pyx_TraceLine(170,0,__PYX_ERR(0, 170, __pyx_L1_error))
         /*else*/ {
           __Pyx_INCREF(Py_None);
           __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_pushdomains);
@@ -6191,6 +6259,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *             else:
  *                 # No unassigned variables. We've got a solution. Go back
  */
+        __Pyx_TraceLine(171,0,__PYX_ERR(0, 171, __pyx_L1_error))
         goto __pyx_L10_break;
 
         /* "constraint/solvers.py":163
@@ -6209,6 +6278,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                 if item[-1] not in assignments:
  *                     # Found unassigned variable
  */
+      __Pyx_TraceLine(162,0,__PYX_ERR(0, 162, __pyx_L1_error))
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     goto __pyx_L19_for_else;
@@ -6225,6 +6295,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                 if not queue:
  *                     return
  */
+      __Pyx_TraceLine(175,0,__PYX_ERR(0, 175, __pyx_L1_error))
       __pyx_t_1 = PyDict_Copy(__pyx_cur_scope->__pyx_v_assignments); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_r = __pyx_t_1;
@@ -6246,6 +6317,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     return
  *                 variable, values, pushdomains = queue.pop()
  */
+      __Pyx_TraceLine(176,0,__PYX_ERR(0, 176, __pyx_L1_error))
       __pyx_t_10 = (PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_queue) != 0);
       __pyx_t_11 = (!__pyx_t_10);
       if (__pyx_t_11) {
@@ -6257,6 +6329,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                 variable, values, pushdomains = queue.pop()
  *                 if pushdomains:
  */
+        __Pyx_TraceLine(177,0,__PYX_ERR(0, 177, __pyx_L1_error))
         __Pyx_XDECREF(__pyx_r);
         __pyx_r = NULL;
         goto __pyx_L0;
@@ -6277,6 +6350,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                 if pushdomains:
  *                     for domain in pushdomains:
  */
+      __Pyx_TraceLine(178,0,__PYX_ERR(0, 178, __pyx_L1_error))
       __pyx_t_1 = __Pyx_PyList_Pop(__pyx_cur_scope->__pyx_v_queue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
@@ -6352,6 +6426,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     for domain in pushdomains:
  *                         domain.popState()
  */
+      __Pyx_TraceLine(179,0,__PYX_ERR(0, 179, __pyx_L1_error))
       __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_pushdomains); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 179, __pyx_L1_error)
       if (__pyx_t_11) {
 
@@ -6362,6 +6437,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         domain.popState()
  * 
  */
+        __Pyx_TraceLine(180,0,__PYX_ERR(0, 180, __pyx_L1_error))
         if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) {
           __pyx_t_1 = __pyx_cur_scope->__pyx_v_pushdomains; __Pyx_INCREF(__pyx_t_1); __pyx_t_3 = 0;
           __pyx_t_4 = NULL;
@@ -6413,6 +6489,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  * 
  *             while True:
  */
+          __Pyx_TraceLine(181,0,__PYX_ERR(0, 181, __pyx_L1_error))
           __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_domain, __pyx_n_s_popState); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 181, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __pyx_t_8 = NULL;
@@ -6444,6 +6521,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         domain.popState()
  * 
  */
+          __Pyx_TraceLine(180,0,__PYX_ERR(0, 180, __pyx_L1_error))
         }
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -6465,6 +6543,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                 # We have a variable. Do we have any values left?
  *                 if not values:
  */
+    __Pyx_TraceLine(183,0,__PYX_ERR(0, 183, __pyx_L1_error))
     while (1) {
 
       /* "constraint/solvers.py":185
@@ -6474,6 +6553,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     # No. Go back to last variable, if there's one.
  *                     del assignments[variable]
  */
+      __Pyx_TraceLine(185,0,__PYX_ERR(0, 185, __pyx_L1_error))
       __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_values); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 185, __pyx_L1_error)
       __pyx_t_10 = (!__pyx_t_11);
       if (__pyx_t_10) {
@@ -6485,6 +6565,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     while queue:
  *                         variable, values, pushdomains = queue.pop()
  */
+        __Pyx_TraceLine(187,0,__PYX_ERR(0, 187, __pyx_L1_error))
         if (unlikely((PyDict_DelItem(__pyx_cur_scope->__pyx_v_assignments, __pyx_cur_scope->__pyx_v_variable) < 0))) __PYX_ERR(0, 187, __pyx_L1_error)
 
         /* "constraint/solvers.py":188
@@ -6494,6 +6575,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         variable, values, pushdomains = queue.pop()
  *                         if pushdomains:
  */
+        __Pyx_TraceLine(188,0,__PYX_ERR(0, 188, __pyx_L1_error))
         while (1) {
           __pyx_t_10 = (PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_queue) != 0);
           if (!__pyx_t_10) break;
@@ -6505,6 +6587,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         if pushdomains:
  *                             for domain in pushdomains:
  */
+          __Pyx_TraceLine(189,0,__PYX_ERR(0, 189, __pyx_L1_error))
           __pyx_t_1 = __Pyx_PyList_Pop(__pyx_cur_scope->__pyx_v_queue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
@@ -6580,6 +6663,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                             for domain in pushdomains:
  *                                 domain.popState()
  */
+          __Pyx_TraceLine(190,0,__PYX_ERR(0, 190, __pyx_L1_error))
           __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_pushdomains); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 190, __pyx_L1_error)
           if (__pyx_t_10) {
 
@@ -6590,6 +6674,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                                 domain.popState()
  *                         if values:
  */
+            __Pyx_TraceLine(191,0,__PYX_ERR(0, 191, __pyx_L1_error))
             if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) {
               __pyx_t_1 = __pyx_cur_scope->__pyx_v_pushdomains; __Pyx_INCREF(__pyx_t_1); __pyx_t_3 = 0;
               __pyx_t_4 = NULL;
@@ -6641,6 +6726,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         if values:
  *                             break
  */
+              __Pyx_TraceLine(192,0,__PYX_ERR(0, 192, __pyx_L1_error))
               __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_domain, __pyx_n_s_popState); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 192, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
               __pyx_t_7 = NULL;
@@ -6672,6 +6758,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                                 domain.popState()
  *                         if values:
  */
+              __Pyx_TraceLine(191,0,__PYX_ERR(0, 191, __pyx_L1_error))
             }
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -6691,6 +6778,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                             break
  *                         del assignments[variable]
  */
+          __Pyx_TraceLine(193,0,__PYX_ERR(0, 193, __pyx_L1_error))
           __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_values); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 193, __pyx_L1_error)
           if (__pyx_t_10) {
 
@@ -6701,6 +6789,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         del assignments[variable]
  *                     else:
  */
+            __Pyx_TraceLine(194,0,__PYX_ERR(0, 194, __pyx_L1_error))
             goto __pyx_L33_break;
 
             /* "constraint/solvers.py":193
@@ -6719,6 +6808,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     else:
  *                         return
  */
+          __Pyx_TraceLine(195,0,__PYX_ERR(0, 195, __pyx_L1_error))
           if (unlikely((PyDict_DelItem(__pyx_cur_scope->__pyx_v_assignments, __pyx_cur_scope->__pyx_v_variable) < 0))) __PYX_ERR(0, 195, __pyx_L1_error)
         }
 
@@ -6729,6 +6819,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  * 
  *                 # Got a value. Check it.
  */
+        __Pyx_TraceLine(197,0,__PYX_ERR(0, 197, __pyx_L1_error))
         /*else*/ {
           __Pyx_XDECREF(__pyx_r);
           __pyx_r = NULL;
@@ -6752,6 +6843,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  * 
  *                 if pushdomains:
  */
+      __Pyx_TraceLine(200,0,__PYX_ERR(0, 200, __pyx_L1_error))
       __pyx_t_1 = __Pyx_PyObject_Pop(__pyx_cur_scope->__pyx_v_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 200, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_assignments, __pyx_cur_scope->__pyx_v_variable, __pyx_t_1) < 0))) __PYX_ERR(0, 200, __pyx_L1_error)
@@ -6764,6 +6856,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     for domain in pushdomains:
  *                         domain.pushState()
  */
+      __Pyx_TraceLine(202,0,__PYX_ERR(0, 202, __pyx_L1_error))
       __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_pushdomains); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 202, __pyx_L1_error)
       if (__pyx_t_10) {
 
@@ -6774,6 +6867,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         domain.pushState()
  * 
  */
+        __Pyx_TraceLine(203,0,__PYX_ERR(0, 203, __pyx_L1_error))
         if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) {
           __pyx_t_1 = __pyx_cur_scope->__pyx_v_pushdomains; __Pyx_INCREF(__pyx_t_1); __pyx_t_3 = 0;
           __pyx_t_4 = NULL;
@@ -6825,6 +6919,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  * 
  *                 for constraint, variables in vconstraints[variable]:
  */
+          __Pyx_TraceLine(204,0,__PYX_ERR(0, 204, __pyx_L1_error))
           __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_domain, __pyx_n_s_pushState); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 204, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __pyx_t_7 = NULL;
@@ -6856,6 +6951,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         domain.pushState()
  * 
  */
+          __Pyx_TraceLine(203,0,__PYX_ERR(0, 203, __pyx_L1_error))
         }
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -6875,6 +6971,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     if not constraint(variables, domains, assignments, pushdomains):
  *                         # Value is not good.
  */
+      __Pyx_TraceLine(206,0,__PYX_ERR(0, 206, __pyx_L1_error))
       __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_vconstraints, __pyx_cur_scope->__pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
@@ -6979,6 +7076,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         # Value is not good.
  *                         break
  */
+        __Pyx_TraceLine(207,0,__PYX_ERR(0, 207, __pyx_L1_error))
         __Pyx_INCREF(__pyx_cur_scope->__pyx_v_constraint);
         __pyx_t_7 = __pyx_cur_scope->__pyx_v_constraint; __pyx_t_2 = NULL;
         __pyx_t_13 = 0;
@@ -7012,6 +7110,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                 else:
  *                     break
  */
+          __Pyx_TraceLine(209,0,__PYX_ERR(0, 209, __pyx_L1_error))
           goto __pyx_L46_break;
 
           /* "constraint/solvers.py":207
@@ -7030,6 +7129,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     if not constraint(variables, domains, assignments, pushdomains):
  *                         # Value is not good.
  */
+        __Pyx_TraceLine(206,0,__PYX_ERR(0, 206, __pyx_L1_error))
       }
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       goto __pyx_L50_for_else;
@@ -7046,6 +7146,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  * 
  *                 if pushdomains:
  */
+        __Pyx_TraceLine(211,0,__PYX_ERR(0, 211, __pyx_L1_error))
         goto __pyx_L30_break;
       }
       __pyx_L51_for_end:;
@@ -7057,6 +7158,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                     for domain in pushdomains:
  *                         domain.popState()
  */
+      __Pyx_TraceLine(213,0,__PYX_ERR(0, 213, __pyx_L1_error))
       __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_pushdomains); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 213, __pyx_L1_error)
       if (__pyx_t_11) {
 
@@ -7067,6 +7169,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         domain.popState()
  * 
  */
+        __Pyx_TraceLine(214,0,__PYX_ERR(0, 214, __pyx_L1_error))
         if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) {
           __pyx_t_8 = __pyx_cur_scope->__pyx_v_pushdomains; __Pyx_INCREF(__pyx_t_8); __pyx_t_3 = 0;
           __pyx_t_4 = NULL;
@@ -7118,6 +7221,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  * 
  *             # Push state before looking for next variable.
  */
+          __Pyx_TraceLine(215,0,__PYX_ERR(0, 215, __pyx_L1_error))
           __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_domain, __pyx_n_s_popState); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 215, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           __pyx_t_2 = NULL;
@@ -7149,6 +7253,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  *                         domain.popState()
  * 
  */
+          __Pyx_TraceLine(214,0,__PYX_ERR(0, 214, __pyx_L1_error))
         }
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
@@ -7170,6 +7275,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  * 
  *         raise RuntimeError("Can't happen")
  */
+    __Pyx_TraceLine(218,0,__PYX_ERR(0, 218, __pyx_L1_error))
     __pyx_t_8 = PyTuple_New(3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_INCREF(__pyx_cur_scope->__pyx_v_variable);
@@ -7192,6 +7298,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_18BacktrackingSolver_4generator(
  * 
  *     def getSolution(self, domains, constraints, vconstraints):  # noqa: D102
  */
+  __Pyx_TraceLine(220,0,__PYX_ERR(0, 220, __pyx_L1_error))
   __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_Raise(__pyx_t_8, 0, 0, 0);
@@ -7369,6 +7476,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18BacktrackingSolver_5getSolutio
  *         try:
  *             return next(iter)
  */
+  __Pyx_TraceLine(223,0,__PYX_ERR(0, 223, __pyx_L1_error))
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_getSolutionIter); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 223, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
@@ -7401,6 +7509,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18BacktrackingSolver_5getSolutio
  *             return next(iter)
  *         except StopIteration:
  */
+  __Pyx_TraceLine(224,0,__PYX_ERR(0, 224, __pyx_L1_error))
   {
     __Pyx_PyThreadState_declare
     __Pyx_PyThreadState_assign
@@ -7417,6 +7526,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18BacktrackingSolver_5getSolutio
  *         except StopIteration:
  *             return None
  */
+      __Pyx_TraceLine(225,0,__PYX_ERR(0, 225, __pyx_L3_error))
       __Pyx_XDECREF(__pyx_r);
       __pyx_t_1 = __Pyx_PyIter_Next(__pyx_v_iter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_1);
@@ -7444,6 +7554,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18BacktrackingSolver_5getSolutio
  *             return None
  * 
  */
+    __Pyx_TraceLine(226,0,__PYX_ERR(0, 226, __pyx_L5_except_error))
     __pyx_t_4 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_StopIteration);
     if (__pyx_t_4) {
       __Pyx_AddTraceback("constraint.solvers.BacktrackingSolver.getSolution", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -7459,6 +7570,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18BacktrackingSolver_5getSolutio
  * 
  *     def getSolutions(self, domains, constraints, vconstraints):  # noqa: D102
  */
+      __Pyx_TraceLine(227,0,__PYX_ERR(0, 227, __pyx_L5_except_error))
       __Pyx_XDECREF(__pyx_r);
       __pyx_r = Py_None; __Pyx_INCREF(Py_None);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7655,6 +7767,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18BacktrackingSolver_7getSolutio
  * 
  * class OptimizedBacktrackingSolver(Solver):
  */
+  __Pyx_TraceLine(230,0,__PYX_ERR(0, 230, __pyx_L1_error))
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_getSolutionIter); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -7821,6 +7934,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver___
  * 
  *     def getSolutionIter(self, domains, constraints, vconstraints, lst):  # noqa: D102
  */
+  __Pyx_TraceLine(279,0,__PYX_ERR(0, 279, __pyx_L1_error))
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_forwardcheck_2, __pyx_v_forwardcheck) < 0) __PYX_ERR(0, 279, __pyx_L1_error)
 
   /* "constraint/solvers.py":271
@@ -8064,6 +8178,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *         assignments = {}
  * 
  */
+  __Pyx_TraceLine(282,0,__PYX_ERR(0, 282, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_forwardcheck_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 282, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
@@ -8077,6 +8192,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *         queue = []
  */
+  __Pyx_TraceLine(283,0,__PYX_ERR(0, 283, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
@@ -8090,6 +8206,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *         while True:
  */
+  __Pyx_TraceLine(285,0,__PYX_ERR(0, 285, __pyx_L1_error))
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
@@ -8103,6 +8220,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *             # Mix the Degree and Minimum Remaing Values (MRV) heuristics
  *             for variable in lst:
  */
+  __Pyx_TraceLine(287,0,__PYX_ERR(0, 287, __pyx_L1_error))
   while (1) {
 
     /* "constraint/solvers.py":289
@@ -8112,6 +8230,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                 if variable not in assignments:
  *                     # Found unassigned variable
  */
+    __Pyx_TraceLine(289,0,__PYX_ERR(0, 289, __pyx_L1_error))
     if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_lst)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_lst)) {
       __pyx_t_1 = __pyx_cur_scope->__pyx_v_lst; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
       __pyx_t_3 = NULL;
@@ -8163,6 +8282,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     # Found unassigned variable
  *                     values = domains[variable][:]
  */
+      __Pyx_TraceLine(290,0,__PYX_ERR(0, 290, __pyx_L1_error))
       __pyx_t_5 = (__Pyx_PyDict_ContainsTF(__pyx_cur_scope->__pyx_v_variable, __pyx_cur_scope->__pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 290, __pyx_L1_error)
       if (__pyx_t_5) {
 
@@ -8173,6 +8293,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     if forwardcheck:
  *                         pushdomains = [domains[x] for x in domains if x not in assignments and x != variable]
  */
+        __Pyx_TraceLine(292,0,__PYX_ERR(0, 292, __pyx_L1_error))
         __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_domains, __pyx_cur_scope->__pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 292, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __pyx_t_6 = __Pyx_PyObject_GetSlice(__pyx_t_4, 0, 0, NULL, NULL, &__pyx_slice__3, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 292, __pyx_L1_error)
@@ -8190,6 +8311,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         pushdomains = [domains[x] for x in domains if x not in assignments and x != variable]
  *                     else:
  */
+        __Pyx_TraceLine(293,0,__PYX_ERR(0, 293, __pyx_L1_error))
         __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_forwardcheck); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 293, __pyx_L1_error)
         if (__pyx_t_5) {
 
@@ -8200,6 +8322,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     else:
  *                         pushdomains = None
  */
+          __Pyx_TraceLine(294,0,__PYX_ERR(0, 294, __pyx_L1_error))
           { /* enter inner scope */
             __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 294, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_6);
@@ -8288,6 +8411,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     break
  *             else:
  */
+        __Pyx_TraceLine(296,0,__PYX_ERR(0, 296, __pyx_L1_error))
         /*else*/ {
           __Pyx_INCREF(Py_None);
           __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_pushdomains);
@@ -8303,6 +8427,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *             else:
  *                 # No unassigned variables. We've got a solution. Go back
  */
+        __Pyx_TraceLine(297,0,__PYX_ERR(0, 297, __pyx_L1_error))
         goto __pyx_L7_break;
 
         /* "constraint/solvers.py":290
@@ -8321,6 +8446,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                 if variable not in assignments:
  *                     # Found unassigned variable
  */
+      __Pyx_TraceLine(289,0,__PYX_ERR(0, 289, __pyx_L1_error))
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     goto __pyx_L16_for_else;
@@ -8337,6 +8463,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                 if not queue:
  *                     return
  */
+      __Pyx_TraceLine(301,0,__PYX_ERR(0, 301, __pyx_L1_error))
       __pyx_t_1 = PyDict_Copy(__pyx_cur_scope->__pyx_v_assignments); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_r = __pyx_t_1;
@@ -8358,6 +8485,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     return
  *                 variable, values, pushdomains = queue.pop()
  */
+      __Pyx_TraceLine(302,0,__PYX_ERR(0, 302, __pyx_L1_error))
       __pyx_t_5 = (PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_queue) != 0);
       __pyx_t_10 = (!__pyx_t_5);
       if (__pyx_t_10) {
@@ -8369,6 +8497,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                 variable, values, pushdomains = queue.pop()
  *                 if pushdomains:
  */
+        __Pyx_TraceLine(303,0,__PYX_ERR(0, 303, __pyx_L1_error))
         __Pyx_XDECREF(__pyx_r);
         __pyx_r = NULL;
         goto __pyx_L0;
@@ -8389,6 +8518,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                 if pushdomains:
  *                     for domain in pushdomains:
  */
+      __Pyx_TraceLine(304,0,__PYX_ERR(0, 304, __pyx_L1_error))
       __pyx_t_1 = __Pyx_PyList_Pop(__pyx_cur_scope->__pyx_v_queue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 304, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
@@ -8464,6 +8594,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     for domain in pushdomains:
  *                         domain.popState()
  */
+      __Pyx_TraceLine(305,0,__PYX_ERR(0, 305, __pyx_L1_error))
       __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_pushdomains); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 305, __pyx_L1_error)
       if (__pyx_t_10) {
 
@@ -8474,6 +8605,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         domain.popState()
  * 
  */
+        __Pyx_TraceLine(306,0,__PYX_ERR(0, 306, __pyx_L1_error))
         if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) {
           __pyx_t_1 = __pyx_cur_scope->__pyx_v_pushdomains; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
           __pyx_t_3 = NULL;
@@ -8525,6 +8657,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *             while True:
  */
+          __Pyx_TraceLine(307,0,__PYX_ERR(0, 307, __pyx_L1_error))
           __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_domain, __pyx_n_s_popState); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 307, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
           __pyx_t_6 = NULL;
@@ -8556,6 +8689,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         domain.popState()
  * 
  */
+          __Pyx_TraceLine(306,0,__PYX_ERR(0, 306, __pyx_L1_error))
         }
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -8577,6 +8711,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                 # We have a variable. Do we have any values left?
  *                 if not values:
  */
+    __Pyx_TraceLine(309,0,__PYX_ERR(0, 309, __pyx_L1_error))
     while (1) {
 
       /* "constraint/solvers.py":311
@@ -8586,6 +8721,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     # No. Go back to last variable, if there's one.
  *                     del assignments[variable]
  */
+      __Pyx_TraceLine(311,0,__PYX_ERR(0, 311, __pyx_L1_error))
       __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_values); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 311, __pyx_L1_error)
       __pyx_t_5 = (!__pyx_t_10);
       if (__pyx_t_5) {
@@ -8597,6 +8733,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     while queue:
  *                         variable, values, pushdomains = queue.pop()
  */
+        __Pyx_TraceLine(313,0,__PYX_ERR(0, 313, __pyx_L1_error))
         if (unlikely((PyDict_DelItem(__pyx_cur_scope->__pyx_v_assignments, __pyx_cur_scope->__pyx_v_variable) < 0))) __PYX_ERR(0, 313, __pyx_L1_error)
 
         /* "constraint/solvers.py":314
@@ -8606,6 +8743,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         variable, values, pushdomains = queue.pop()
  *                         if pushdomains:
  */
+        __Pyx_TraceLine(314,0,__PYX_ERR(0, 314, __pyx_L1_error))
         while (1) {
           __pyx_t_5 = (PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_queue) != 0);
           if (!__pyx_t_5) break;
@@ -8617,6 +8755,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         if pushdomains:
  *                             for domain in pushdomains:
  */
+          __Pyx_TraceLine(315,0,__PYX_ERR(0, 315, __pyx_L1_error))
           __pyx_t_1 = __Pyx_PyList_Pop(__pyx_cur_scope->__pyx_v_queue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 315, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
@@ -8692,6 +8831,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                             for domain in pushdomains:
  *                                 domain.popState()
  */
+          __Pyx_TraceLine(316,0,__PYX_ERR(0, 316, __pyx_L1_error))
           __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_pushdomains); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 316, __pyx_L1_error)
           if (__pyx_t_5) {
 
@@ -8702,6 +8842,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                                 domain.popState()
  *                         if values:
  */
+            __Pyx_TraceLine(317,0,__PYX_ERR(0, 317, __pyx_L1_error))
             if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) {
               __pyx_t_1 = __pyx_cur_scope->__pyx_v_pushdomains; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
               __pyx_t_3 = NULL;
@@ -8753,6 +8894,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         if values:
  *                             break
  */
+              __Pyx_TraceLine(318,0,__PYX_ERR(0, 318, __pyx_L1_error))
               __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_domain, __pyx_n_s_popState); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 318, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_4);
               __pyx_t_9 = NULL;
@@ -8784,6 +8926,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                                 domain.popState()
  *                         if values:
  */
+              __Pyx_TraceLine(317,0,__PYX_ERR(0, 317, __pyx_L1_error))
             }
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -8803,6 +8946,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                             break
  *                         del assignments[variable]
  */
+          __Pyx_TraceLine(319,0,__PYX_ERR(0, 319, __pyx_L1_error))
           __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_values); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 319, __pyx_L1_error)
           if (__pyx_t_5) {
 
@@ -8813,6 +8957,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         del assignments[variable]
  *                     else:
  */
+            __Pyx_TraceLine(320,0,__PYX_ERR(0, 320, __pyx_L1_error))
             goto __pyx_L30_break;
 
             /* "constraint/solvers.py":319
@@ -8831,6 +8976,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     else:
  *                         return
  */
+          __Pyx_TraceLine(321,0,__PYX_ERR(0, 321, __pyx_L1_error))
           if (unlikely((PyDict_DelItem(__pyx_cur_scope->__pyx_v_assignments, __pyx_cur_scope->__pyx_v_variable) < 0))) __PYX_ERR(0, 321, __pyx_L1_error)
         }
 
@@ -8841,6 +8987,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *                 # Got a value. Check it.
  */
+        __Pyx_TraceLine(323,0,__PYX_ERR(0, 323, __pyx_L1_error))
         /*else*/ {
           __Pyx_XDECREF(__pyx_r);
           __pyx_r = NULL;
@@ -8864,6 +9011,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *                 if pushdomains:
  */
+      __Pyx_TraceLine(326,0,__PYX_ERR(0, 326, __pyx_L1_error))
       __pyx_t_1 = __Pyx_PyObject_Pop(__pyx_cur_scope->__pyx_v_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 326, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_assignments, __pyx_cur_scope->__pyx_v_variable, __pyx_t_1) < 0))) __PYX_ERR(0, 326, __pyx_L1_error)
@@ -8876,6 +9024,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     for domain in pushdomains:
  *                         domain.pushState()
  */
+      __Pyx_TraceLine(328,0,__PYX_ERR(0, 328, __pyx_L1_error))
       __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_pushdomains); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 328, __pyx_L1_error)
       if (__pyx_t_5) {
 
@@ -8886,6 +9035,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         domain.pushState()
  * 
  */
+        __Pyx_TraceLine(329,0,__PYX_ERR(0, 329, __pyx_L1_error))
         if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) {
           __pyx_t_1 = __pyx_cur_scope->__pyx_v_pushdomains; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
           __pyx_t_3 = NULL;
@@ -8937,6 +9087,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *                 for constraint, variables in vconstraints[variable]:
  */
+          __Pyx_TraceLine(330,0,__PYX_ERR(0, 330, __pyx_L1_error))
           __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_domain, __pyx_n_s_pushState); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 330, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
           __pyx_t_9 = NULL;
@@ -8968,6 +9119,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         domain.pushState()
  * 
  */
+          __Pyx_TraceLine(329,0,__PYX_ERR(0, 329, __pyx_L1_error))
         }
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -8987,6 +9139,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     if not constraint(variables, domains, assignments, pushdomains):
  *                         # Value is not good.
  */
+      __Pyx_TraceLine(332,0,__PYX_ERR(0, 332, __pyx_L1_error))
       __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_vconstraints, __pyx_cur_scope->__pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
@@ -9091,6 +9244,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         # Value is not good.
  *                         break
  */
+        __Pyx_TraceLine(333,0,__PYX_ERR(0, 333, __pyx_L1_error))
         __Pyx_INCREF(__pyx_cur_scope->__pyx_v_constraint);
         __pyx_t_9 = __pyx_cur_scope->__pyx_v_constraint; __pyx_t_4 = NULL;
         __pyx_t_13 = 0;
@@ -9124,6 +9278,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                 else:
  *                     break
  */
+          __Pyx_TraceLine(335,0,__PYX_ERR(0, 335, __pyx_L1_error))
           goto __pyx_L43_break;
 
           /* "constraint/solvers.py":333
@@ -9142,6 +9297,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     if not constraint(variables, domains, assignments, pushdomains):
  *                         # Value is not good.
  */
+        __Pyx_TraceLine(332,0,__PYX_ERR(0, 332, __pyx_L1_error))
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       goto __pyx_L47_for_else;
@@ -9158,6 +9314,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *                 if pushdomains:
  */
+        __Pyx_TraceLine(337,0,__PYX_ERR(0, 337, __pyx_L1_error))
         goto __pyx_L27_break;
       }
       __pyx_L48_for_end:;
@@ -9169,6 +9326,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                     for domain in pushdomains:
  *                         domain.popState()
  */
+      __Pyx_TraceLine(339,0,__PYX_ERR(0, 339, __pyx_L1_error))
       __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_pushdomains); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 339, __pyx_L1_error)
       if (__pyx_t_10) {
 
@@ -9179,6 +9337,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         domain.popState()
  * 
  */
+        __Pyx_TraceLine(340,0,__PYX_ERR(0, 340, __pyx_L1_error))
         if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_pushdomains)) {
           __pyx_t_6 = __pyx_cur_scope->__pyx_v_pushdomains; __Pyx_INCREF(__pyx_t_6); __pyx_t_2 = 0;
           __pyx_t_3 = NULL;
@@ -9230,6 +9389,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *             # Push state before looking for next variable.
  */
+          __Pyx_TraceLine(341,0,__PYX_ERR(0, 341, __pyx_L1_error))
           __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_domain, __pyx_n_s_popState); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 341, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
           __pyx_t_4 = NULL;
@@ -9261,6 +9421,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  *                         domain.popState()
  * 
  */
+          __Pyx_TraceLine(340,0,__PYX_ERR(0, 340, __pyx_L1_error))
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
@@ -9282,6 +9443,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *         raise RuntimeError("Can't happen")
  */
+    __Pyx_TraceLine(344,0,__PYX_ERR(0, 344, __pyx_L1_error))
     __pyx_t_6 = PyTuple_New(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 344, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_INCREF(__pyx_cur_scope->__pyx_v_variable);
@@ -9304,6 +9466,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *     def getSolutionsList(self, domains: dict[cython.int, list], vconstraints: dict[cython.int, list], lst: list) -> list[dict[cython.int, list]]:  # noqa: D102
  */
+  __Pyx_TraceLine(346,0,__PYX_ERR(0, 346, __pyx_L1_error))
   __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 346, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_Raise(__pyx_t_6, 0, 0, 0);
@@ -9345,7 +9508,7 @@ static PyObject *__pyx_gb_10constraint_7solvers_27OptimizedBacktrackingSolver_4g
  * 
  *     def getSolutionsList(self, domains: dict[cython.int, list], vconstraints: dict[cython.int, list], lst: list) -> list[dict[cython.int, list]]:  # noqa: D102             # <<<<<<<<<<<<<<
  *         # Does not do forwardcheck for simplicity
- *         assignments: dict[cython.int, list] = {}
+ *         assignments = {}
  */
 
 /* Python wrapper */
@@ -9463,7 +9626,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 }
 
 static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5getSolutionsList(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_domains, PyObject *__pyx_v_vconstraints, PyObject *__pyx_v_lst) {
-  PyObject *__pyx_v_assignments = 0;
+  PyObject *__pyx_v_assignments = NULL;
   PyObject *__pyx_v_queue = 0;
   PyObject *__pyx_v_solutions = 0;
   PyObject *__pyx_v_variable = NULL;
@@ -9495,10 +9658,11 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
   /* "constraint/solvers.py":350
  *     def getSolutionsList(self, domains: dict[cython.int, list], vconstraints: dict[cython.int, list], lst: list) -> list[dict[cython.int, list]]:  # noqa: D102
  *         # Does not do forwardcheck for simplicity
- *         assignments: dict[cython.int, list] = {}             # <<<<<<<<<<<<<<
+ *         assignments = {}             # <<<<<<<<<<<<<<
  *         queue: list[tuple] = []
- *         solutions: list[dict[cython.int, list]] = list()
+ *         solutions: list[dict] = list()
  */
+  __Pyx_TraceLine(350,0,__PYX_ERR(0, 350, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 350, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_assignments = ((PyObject*)__pyx_t_1);
@@ -9506,35 +9670,38 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
 
   /* "constraint/solvers.py":351
  *         # Does not do forwardcheck for simplicity
- *         assignments: dict[cython.int, list] = {}
+ *         assignments = {}
  *         queue: list[tuple] = []             # <<<<<<<<<<<<<<
- *         solutions: list[dict[cython.int, list]] = list()
+ *         solutions: list[dict] = list()
  * 
  */
+  __Pyx_TraceLine(351,0,__PYX_ERR(0, 351, __pyx_L1_error))
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_queue = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
   /* "constraint/solvers.py":352
- *         assignments: dict[cython.int, list] = {}
+ *         assignments = {}
  *         queue: list[tuple] = []
- *         solutions: list[dict[cython.int, list]] = list()             # <<<<<<<<<<<<<<
+ *         solutions: list[dict] = list()             # <<<<<<<<<<<<<<
  * 
  *         while True:
  */
+  __Pyx_TraceLine(352,0,__PYX_ERR(0, 352, __pyx_L1_error))
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 352, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_solutions = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
   /* "constraint/solvers.py":354
- *         solutions: list[dict[cython.int, list]] = list()
+ *         solutions: list[dict] = list()
  * 
  *         while True:             # <<<<<<<<<<<<<<
  *             # Mix the Degree and Minimum Remaing Values (MRV) heuristics
  *             for variable in lst:
  */
+  __Pyx_TraceLine(354,0,__PYX_ERR(0, 354, __pyx_L1_error))
   while (1) {
 
     /* "constraint/solvers.py":356
@@ -9544,6 +9711,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                 if variable not in assignments:
  *                     # Found unassigned variable
  */
+    __Pyx_TraceLine(356,0,__PYX_ERR(0, 356, __pyx_L1_error))
     __pyx_t_1 = __pyx_v_lst; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
     for (;;) {
       if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
@@ -9563,6 +9731,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                     # Found unassigned variable
  *                     values = domains[variable][:]
  */
+      __Pyx_TraceLine(357,0,__PYX_ERR(0, 357, __pyx_L1_error))
       __pyx_t_4 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 357, __pyx_L1_error)
       if (__pyx_t_4) {
 
@@ -9573,6 +9742,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                     break
  *             else:
  */
+        __Pyx_TraceLine(359,0,__PYX_ERR(0, 359, __pyx_L1_error))
         __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 359, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_t_3, 0, 0, NULL, NULL, &__pyx_slice__3, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 359, __pyx_L1_error)
@@ -9588,6 +9758,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *             else:
  *                 # No unassigned variables. We've got a solution. Go back
  */
+        __Pyx_TraceLine(360,0,__PYX_ERR(0, 360, __pyx_L1_error))
         goto __pyx_L6_break;
 
         /* "constraint/solvers.py":357
@@ -9606,6 +9777,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                 if variable not in assignments:
  *                     # Found unassigned variable
  */
+      __Pyx_TraceLine(356,0,__PYX_ERR(0, 356, __pyx_L1_error))
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     goto __pyx_L8_for_else;
@@ -9622,6 +9794,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                 if not queue:
  *                     return solutions
  */
+      __Pyx_TraceLine(364,0,__PYX_ERR(0, 364, __pyx_L1_error))
       __pyx_t_1 = PyDict_Copy(__pyx_v_assignments); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 364, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_6 = __Pyx_PyList_Append(__pyx_v_solutions, __pyx_t_1); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(0, 364, __pyx_L1_error)
@@ -9634,6 +9807,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                     return solutions
  *                 variable, values = queue.pop()
  */
+      __Pyx_TraceLine(365,0,__PYX_ERR(0, 365, __pyx_L1_error))
       __pyx_t_4 = (PyList_GET_SIZE(__pyx_v_queue) != 0);
       __pyx_t_7 = (!__pyx_t_4);
       if (__pyx_t_7) {
@@ -9645,6 +9819,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                 variable, values = queue.pop()
  * 
  */
+        __Pyx_TraceLine(366,0,__PYX_ERR(0, 366, __pyx_L1_error))
         __Pyx_XDECREF(__pyx_r);
         __Pyx_INCREF(__pyx_v_solutions);
         __pyx_r = __pyx_v_solutions;
@@ -9666,6 +9841,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  * 
  *             while True:
  */
+      __Pyx_TraceLine(367,0,__PYX_ERR(0, 367, __pyx_L1_error))
       __pyx_t_1 = __Pyx_PyList_Pop(__pyx_v_queue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 367, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
@@ -9728,6 +9904,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                 # We have a variable. Do we have any values left?
  *                 if not values:
  */
+    __Pyx_TraceLine(369,0,__PYX_ERR(0, 369, __pyx_L1_error))
     while (1) {
 
       /* "constraint/solvers.py":371
@@ -9737,6 +9914,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                     # No. Go back to last variable, if there's one.
  *                     del assignments[variable]
  */
+      __Pyx_TraceLine(371,0,__PYX_ERR(0, 371, __pyx_L1_error))
       __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_values); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 371, __pyx_L1_error)
       __pyx_t_4 = (!__pyx_t_7);
       if (__pyx_t_4) {
@@ -9748,6 +9926,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                     while queue:
  *                         variable, values = queue.pop()
  */
+        __Pyx_TraceLine(373,0,__PYX_ERR(0, 373, __pyx_L1_error))
         if (unlikely((PyDict_DelItem(__pyx_v_assignments, __pyx_v_variable) < 0))) __PYX_ERR(0, 373, __pyx_L1_error)
 
         /* "constraint/solvers.py":374
@@ -9757,6 +9936,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                         variable, values = queue.pop()
  *                         if values:
  */
+        __Pyx_TraceLine(374,0,__PYX_ERR(0, 374, __pyx_L1_error))
         while (1) {
           __pyx_t_4 = (PyList_GET_SIZE(__pyx_v_queue) != 0);
           if (!__pyx_t_4) break;
@@ -9768,6 +9948,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                         if values:
  *                             break
  */
+          __Pyx_TraceLine(375,0,__PYX_ERR(0, 375, __pyx_L1_error))
           __pyx_t_1 = __Pyx_PyList_Pop(__pyx_v_queue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 375, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
@@ -9828,6 +10009,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                             break
  *                         del assignments[variable]
  */
+          __Pyx_TraceLine(376,0,__PYX_ERR(0, 376, __pyx_L1_error))
           __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_values); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 376, __pyx_L1_error)
           if (__pyx_t_4) {
 
@@ -9838,6 +10020,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                         del assignments[variable]
  *                     else:
  */
+            __Pyx_TraceLine(377,0,__PYX_ERR(0, 377, __pyx_L1_error))
             goto __pyx_L17_break;
 
             /* "constraint/solvers.py":376
@@ -9856,6 +10039,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                     else:
  *                         return solutions
  */
+          __Pyx_TraceLine(378,0,__PYX_ERR(0, 378, __pyx_L1_error))
           if (unlikely((PyDict_DelItem(__pyx_v_assignments, __pyx_v_variable) < 0))) __PYX_ERR(0, 378, __pyx_L1_error)
         }
 
@@ -9866,6 +10050,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  * 
  *                 # Got a value. Check it.
  */
+        __Pyx_TraceLine(380,0,__PYX_ERR(0, 380, __pyx_L1_error))
         /*else*/ {
           __Pyx_XDECREF(__pyx_r);
           __Pyx_INCREF(__pyx_v_solutions);
@@ -9890,6 +10075,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                 for constraint, variables in vconstraints[variable]:
  *                     if not constraint(variables, domains, assignments, None):
  */
+      __Pyx_TraceLine(383,0,__PYX_ERR(0, 383, __pyx_L1_error))
       __pyx_t_1 = __Pyx_PyObject_Pop(__pyx_v_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 383, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (unlikely((PyDict_SetItem(__pyx_v_assignments, __pyx_v_variable, __pyx_t_1) < 0))) __PYX_ERR(0, 383, __pyx_L1_error)
@@ -9902,6 +10088,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                     if not constraint(variables, domains, assignments, None):
  *                         # Value is not good.
  */
+      __Pyx_TraceLine(384,0,__PYX_ERR(0, 384, __pyx_L1_error))
       __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_vconstraints, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 384, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
@@ -10002,6 +10189,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                         # Value is not good.
  *                         break
  */
+        __Pyx_TraceLine(385,0,__PYX_ERR(0, 385, __pyx_L1_error))
         __Pyx_INCREF(__pyx_v_constraint);
         __pyx_t_8 = __pyx_v_constraint; __pyx_t_3 = NULL;
         __pyx_t_12 = 0;
@@ -10035,6 +10223,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                 else:
  *                     break
  */
+          __Pyx_TraceLine(387,0,__PYX_ERR(0, 387, __pyx_L1_error))
           goto __pyx_L22_break;
 
           /* "constraint/solvers.py":385
@@ -10053,6 +10242,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *                     if not constraint(variables, domains, assignments, None):
  *                         # Value is not good.
  */
+        __Pyx_TraceLine(384,0,__PYX_ERR(0, 384, __pyx_L1_error))
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       goto __pyx_L26_for_else;
@@ -10069,6 +10259,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  * 
  *             # Push state before looking for next variable.
  */
+        __Pyx_TraceLine(389,0,__PYX_ERR(0, 389, __pyx_L1_error))
         goto __pyx_L14_break;
       }
       __pyx_L27_for_end:;
@@ -10082,6 +10273,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  * 
  *         raise RuntimeError("Can't happen")
  */
+    __Pyx_TraceLine(392,0,__PYX_ERR(0, 392, __pyx_L1_error))
     __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 392, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_INCREF(__pyx_v_variable);
@@ -10101,6 +10293,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  * 
  * 
  */
+  __Pyx_TraceLine(394,0,__PYX_ERR(0, 394, __pyx_L1_error))
   __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 394, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_Raise(__pyx_t_5, 0, 0, 0);
@@ -10112,7 +10305,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  * 
  *     def getSolutionsList(self, domains: dict[cython.int, list], vconstraints: dict[cython.int, list], lst: list) -> list[dict[cython.int, list]]:  # noqa: D102             # <<<<<<<<<<<<<<
  *         # Does not do forwardcheck for simplicity
- *         assignments: dict[cython.int, list] = {}
+ *         assignments = {}
  */
 
   /* function exit code */
@@ -10294,6 +10487,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_7g
  *         lst.sort()
  *         if self._forwardcheck:
  */
+  __Pyx_TraceLine(399,0,__PYX_ERR(0, 399, __pyx_L1_error))
   { /* enter inner scope */
     __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -10382,6 +10576,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_7g
  *         if self._forwardcheck:
  *             return list(self.getSolutionIter(domains, constraints, vconstraints, [c for a, b, c in lst]))
  */
+  __Pyx_TraceLine(400,0,__PYX_ERR(0, 400, __pyx_L1_error))
   __pyx_t_9 = PyList_Sort(__pyx_v_lst); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 400, __pyx_L1_error)
 
   /* "constraint/solvers.py":401
@@ -10391,6 +10586,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_7g
  *             return list(self.getSolutionIter(domains, constraints, vconstraints, [c for a, b, c in lst]))
  *         return self.getSolutionsList(domains, vconstraints, [c for _, _, c in lst])
  */
+  __Pyx_TraceLine(401,0,__PYX_ERR(0, 401, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_forwardcheck_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 401, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 401, __pyx_L1_error)
@@ -10404,6 +10600,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_7g
  *         return self.getSolutionsList(domains, vconstraints, [c for _, _, c in lst])
  * 
  */
+    __Pyx_TraceLine(402,0,__PYX_ERR(0, 402, __pyx_L1_error))
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_getSolutionIter); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 402, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -10536,6 +10733,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_7g
  * 
  *     def getSolution(self, domains, constraints, vconstraints):   # noqa: D102
  */
+  __Pyx_TraceLine(403,0,__PYX_ERR(0, 403, __pyx_L1_error))
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_getSolutionsList); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 403, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -10823,6 +11021,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_9g
  *         try:
  *             return next(iter)
  */
+  __Pyx_TraceLine(406,0,__PYX_ERR(0, 406, __pyx_L1_error))
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_getSolutionIter); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 406, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
@@ -10855,6 +11054,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_9g
  *             return next(iter)
  *         except StopIteration:
  */
+  __Pyx_TraceLine(407,0,__PYX_ERR(0, 407, __pyx_L1_error))
   {
     __Pyx_PyThreadState_declare
     __Pyx_PyThreadState_assign
@@ -10871,6 +11071,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_9g
  *         except StopIteration:
  *             return None
  */
+      __Pyx_TraceLine(408,0,__PYX_ERR(0, 408, __pyx_L3_error))
       __Pyx_XDECREF(__pyx_r);
       __pyx_t_1 = __Pyx_PyIter_Next(__pyx_v_iter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 408, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_1);
@@ -10898,6 +11099,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_9g
  *             return None
  * 
  */
+    __Pyx_TraceLine(409,0,__PYX_ERR(0, 409, __pyx_L5_except_error))
     __pyx_t_4 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_StopIteration);
     if (__pyx_t_4) {
       __Pyx_AddTraceback("constraint.solvers.OptimizedBacktrackingSolver.getSolution", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -10913,6 +11115,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_9g
  * 
  * class RecursiveBacktrackingSolver(Solver):
  */
+      __Pyx_TraceLine(410,0,__PYX_ERR(0, 410, __pyx_L5_except_error))
       __Pyx_XDECREF(__pyx_r);
       __pyx_r = Py_None; __Pyx_INCREF(Py_None);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11086,6 +11289,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver___
  * 
  *     def recursiveBacktracking(self, solutions, domains, vconstraints, assignments, single):
  */
+  __Pyx_TraceLine(448,0,__PYX_ERR(0, 448, __pyx_L1_error))
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_forwardcheck_2, __pyx_v_forwardcheck) < 0) __PYX_ERR(0, 448, __pyx_L1_error)
 
   /* "constraint/solvers.py":440
@@ -11293,6 +11497,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *         lst.sort()
  *         for item in lst:
  */
+  __Pyx_TraceLine(452,0,__PYX_ERR(0, 452, __pyx_L1_error))
   { /* enter inner scope */
     __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -11381,6 +11586,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *         for item in lst:
  *             if item[-1] not in assignments:
  */
+  __Pyx_TraceLine(453,0,__PYX_ERR(0, 453, __pyx_L1_error))
   __pyx_t_9 = PyList_Sort(__pyx_v_lst); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 453, __pyx_L1_error)
 
   /* "constraint/solvers.py":454
@@ -11390,6 +11596,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *             if item[-1] not in assignments:
  *                 # Found an unassigned variable. Let's go.
  */
+  __Pyx_TraceLine(454,0,__PYX_ERR(0, 454, __pyx_L1_error))
   __pyx_t_1 = __pyx_v_lst; __Pyx_INCREF(__pyx_t_1); __pyx_t_3 = 0;
   for (;;) {
     if (__pyx_t_3 >= PyList_GET_SIZE(__pyx_t_1)) break;
@@ -11409,6 +11616,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                 # Found an unassigned variable. Let's go.
  *                 break
  */
+    __Pyx_TraceLine(455,0,__PYX_ERR(0, 455, __pyx_L1_error))
     __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_item, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 455, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_10 = (__Pyx_PySequence_ContainsTF(__pyx_t_2, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 455, __pyx_L1_error)
@@ -11422,6 +11630,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *         else:
  *             # No unassigned variables. We've got a solution.
  */
+      __Pyx_TraceLine(457,0,__PYX_ERR(0, 457, __pyx_L1_error))
       goto __pyx_L11_break;
 
       /* "constraint/solvers.py":455
@@ -11440,6 +11649,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *             if item[-1] not in assignments:
  *                 # Found an unassigned variable. Let's go.
  */
+    __Pyx_TraceLine(454,0,__PYX_ERR(0, 454, __pyx_L1_error))
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   goto __pyx_L13_for_else;
@@ -11456,6 +11666,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *             return solutions
  * 
  */
+    __Pyx_TraceLine(460,0,__PYX_ERR(0, 460, __pyx_L1_error))
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_assignments, __pyx_n_s_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 460, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_8 = NULL;
@@ -11488,6 +11699,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  * 
  *         variable = item[-1]
  */
+    __Pyx_TraceLine(461,0,__PYX_ERR(0, 461, __pyx_L1_error))
     __Pyx_XDECREF(__pyx_r);
     __Pyx_INCREF(__pyx_v_solutions);
     __pyx_r = __pyx_v_solutions;
@@ -11502,6 +11714,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *         assignments[variable] = None
  * 
  */
+  __Pyx_TraceLine(463,0,__PYX_ERR(0, 463, __pyx_L1_error))
   __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_item, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 463, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_variable = __pyx_t_1;
@@ -11514,6 +11727,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  * 
  *         forwardcheck = self._forwardcheck
  */
+  __Pyx_TraceLine(464,0,__PYX_ERR(0, 464, __pyx_L1_error))
   if (unlikely((PyObject_SetItem(__pyx_v_assignments, __pyx_v_variable, Py_None) < 0))) __PYX_ERR(0, 464, __pyx_L1_error)
 
   /* "constraint/solvers.py":466
@@ -11523,6 +11737,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *         if forwardcheck:
  *             pushdomains = [domains[x] for x in domains if x not in assignments]
  */
+  __Pyx_TraceLine(466,0,__PYX_ERR(0, 466, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_forwardcheck_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 466, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_forwardcheck = __pyx_t_1;
@@ -11535,6 +11750,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *             pushdomains = [domains[x] for x in domains if x not in assignments]
  *         else:
  */
+  __Pyx_TraceLine(467,0,__PYX_ERR(0, 467, __pyx_L1_error))
   __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 467, __pyx_L1_error)
   if (__pyx_t_10) {
 
@@ -11545,6 +11761,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *         else:
  *             pushdomains = None
  */
+    __Pyx_TraceLine(468,0,__PYX_ERR(0, 468, __pyx_L1_error))
     { /* enter inner scope */
       __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 468, __pyx_L18_error)
       __Pyx_GOTREF(__pyx_t_1);
@@ -11625,6 +11842,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  * 
  *         for value in domains[variable]:
  */
+  __Pyx_TraceLine(470,0,__PYX_ERR(0, 470, __pyx_L1_error))
   /*else*/ {
     __Pyx_INCREF(Py_None);
     __pyx_v_pushdomains = ((PyObject*)Py_None);
@@ -11638,6 +11856,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *             assignments[variable] = value
  *             if pushdomains:
  */
+  __Pyx_TraceLine(472,0,__PYX_ERR(0, 472, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
@@ -11690,6 +11909,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *             if pushdomains:
  *                 for domain in pushdomains:
  */
+    __Pyx_TraceLine(473,0,__PYX_ERR(0, 473, __pyx_L1_error))
     if (unlikely((PyObject_SetItem(__pyx_v_assignments, __pyx_v_variable, __pyx_v_value) < 0))) __PYX_ERR(0, 473, __pyx_L1_error)
 
     /* "constraint/solvers.py":474
@@ -11699,6 +11919,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                 for domain in pushdomains:
  *                     domain.pushState()
  */
+    __Pyx_TraceLine(474,0,__PYX_ERR(0, 474, __pyx_L1_error))
     __pyx_t_10 = (__pyx_v_pushdomains != Py_None)&&(PyList_GET_SIZE(__pyx_v_pushdomains) != 0);
     if (__pyx_t_10) {
 
@@ -11709,6 +11930,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                     domain.pushState()
  *             for constraint, variables in vconstraints[variable]:
  */
+      __Pyx_TraceLine(475,0,__PYX_ERR(0, 475, __pyx_L1_error))
       if (unlikely(__pyx_v_pushdomains == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
         __PYX_ERR(0, 475, __pyx_L1_error)
@@ -11732,6 +11954,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *             for constraint, variables in vconstraints[variable]:
  *                 if not constraint(variables, domains, assignments, pushdomains):
  */
+        __Pyx_TraceLine(476,0,__PYX_ERR(0, 476, __pyx_L1_error))
         __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_domain, __pyx_n_s_pushState); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 476, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_5 = NULL;
@@ -11763,6 +11986,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                     domain.pushState()
  *             for constraint, variables in vconstraints[variable]:
  */
+        __Pyx_TraceLine(475,0,__PYX_ERR(0, 475, __pyx_L1_error))
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -11782,6 +12006,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                 if not constraint(variables, domains, assignments, pushdomains):
  *                     # Value is not good.
  */
+    __Pyx_TraceLine(477,0,__PYX_ERR(0, 477, __pyx_L1_error))
     __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_vconstraints, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 477, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
@@ -11882,6 +12107,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                     # Value is not good.
  *                     break
  */
+      __Pyx_TraceLine(478,0,__PYX_ERR(0, 478, __pyx_L1_error))
       __Pyx_INCREF(__pyx_v_constraint);
       __pyx_t_5 = __pyx_v_constraint; __pyx_t_7 = NULL;
       __pyx_t_11 = 0;
@@ -11915,6 +12141,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *             else:
  *                 # Value is good. Recurse and get next variable.
  */
+        __Pyx_TraceLine(480,0,__PYX_ERR(0, 480, __pyx_L1_error))
         goto __pyx_L31_break;
 
         /* "constraint/solvers.py":478
@@ -11933,6 +12160,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                 if not constraint(variables, domains, assignments, pushdomains):
  *                     # Value is not good.
  */
+      __Pyx_TraceLine(477,0,__PYX_ERR(0, 477, __pyx_L1_error))
     }
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     goto __pyx_L35_for_else;
@@ -11949,6 +12177,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                 if solutions and single:
  *                     return solutions
  */
+      __Pyx_TraceLine(483,0,__PYX_ERR(0, 483, __pyx_L1_error))
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_recursiveBacktracking); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 483, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_5 = NULL;
@@ -11980,6 +12209,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                     return solutions
  *             if pushdomains:
  */
+      __Pyx_TraceLine(484,0,__PYX_ERR(0, 484, __pyx_L1_error))
       __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_solutions); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 484, __pyx_L1_error)
       if (__pyx_t_10) {
       } else {
@@ -11998,6 +12228,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *             if pushdomains:
  *                 for domain in pushdomains:
  */
+        __Pyx_TraceLine(485,0,__PYX_ERR(0, 485, __pyx_L1_error))
         __Pyx_XDECREF(__pyx_r);
         __Pyx_INCREF(__pyx_v_solutions);
         __pyx_r = __pyx_v_solutions;
@@ -12022,6 +12253,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                 for domain in pushdomains:
  *                     domain.popState()
  */
+    __Pyx_TraceLine(486,0,__PYX_ERR(0, 486, __pyx_L1_error))
     __pyx_t_15 = (__pyx_v_pushdomains != Py_None)&&(PyList_GET_SIZE(__pyx_v_pushdomains) != 0);
     if (__pyx_t_15) {
 
@@ -12032,6 +12264,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                     domain.popState()
  *         del assignments[variable]
  */
+      __Pyx_TraceLine(487,0,__PYX_ERR(0, 487, __pyx_L1_error))
       if (unlikely(__pyx_v_pushdomains == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
         __PYX_ERR(0, 487, __pyx_L1_error)
@@ -12055,6 +12288,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *         del assignments[variable]
  *         return solutions
  */
+        __Pyx_TraceLine(488,0,__PYX_ERR(0, 488, __pyx_L1_error))
         __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_domain, __pyx_n_s_popState); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 488, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __pyx_t_7 = NULL;
@@ -12086,6 +12320,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *                     domain.popState()
  *         del assignments[variable]
  */
+        __Pyx_TraceLine(487,0,__PYX_ERR(0, 487, __pyx_L1_error))
       }
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
@@ -12105,6 +12340,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *             assignments[variable] = value
  *             if pushdomains:
  */
+    __Pyx_TraceLine(472,0,__PYX_ERR(0, 472, __pyx_L1_error))
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
@@ -12115,6 +12351,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  *         return solutions
  * 
  */
+  __Pyx_TraceLine(489,0,__PYX_ERR(0, 489, __pyx_L1_error))
   if (unlikely((PyObject_DelItem(__pyx_v_assignments, __pyx_v_variable) < 0))) __PYX_ERR(0, 489, __pyx_L1_error)
 
   /* "constraint/solvers.py":490
@@ -12124,6 +12361,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_2r
  * 
  *     def getSolution(self, domains, constraints, vconstraints):   # noqa: D102
  */
+  __Pyx_TraceLine(490,0,__PYX_ERR(0, 490, __pyx_L1_error))
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_solutions);
   __pyx_r = __pyx_v_solutions;
@@ -12306,6 +12544,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_4g
  *         return solutions and solutions[0] or None
  * 
  */
+  __Pyx_TraceLine(493,0,__PYX_ERR(0, 493, __pyx_L1_error))
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_recursiveBacktracking); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 493, __pyx_L1_error)
@@ -12344,6 +12583,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_4g
  * 
  *     def getSolutions(self, domains, constraints, vconstraints):  # noqa: D102
  */
+  __Pyx_TraceLine(494,0,__PYX_ERR(0, 494, __pyx_L1_error))
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_solutions); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 494, __pyx_L1_error)
   if (!__pyx_t_7) {
@@ -12533,6 +12773,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27RecursiveBacktrackingSolver_6g
  * 
  * class MinConflictsSolver(Solver):
  */
+  __Pyx_TraceLine(497,0,__PYX_ERR(0, 497, __pyx_L1_error))
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_recursiveBacktracking); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -12704,6 +12945,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver___init__(CY
  * 
  *     def getSolution(self, domains, constraints, vconstraints):   # noqa: D102
  */
+  __Pyx_TraceLine(533,0,__PYX_ERR(0, 533, __pyx_L1_error))
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_steps_2, __pyx_v_steps) < 0) __PYX_ERR(0, 533, __pyx_L1_error)
 
   /* "constraint/solvers.py":526
@@ -12891,6 +13133,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *         # Initial assignment
  *         for variable in domains:
  */
+  __Pyx_TraceLine(536,0,__PYX_ERR(0, 536, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 536, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_assignments = ((PyObject*)__pyx_t_1);
@@ -12903,6 +13146,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *             assignments[variable] = random.choice(domains[variable])
  *         for _ in range(self._steps):
  */
+  __Pyx_TraceLine(538,0,__PYX_ERR(0, 538, __pyx_L1_error))
   if (likely(PyList_CheckExact(__pyx_v_domains)) || PyTuple_CheckExact(__pyx_v_domains)) {
     __pyx_t_1 = __pyx_v_domains; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
@@ -12952,6 +13196,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *         for _ in range(self._steps):
  *             conflicted = False
  */
+    __Pyx_TraceLine(539,0,__PYX_ERR(0, 539, __pyx_L1_error))
     __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_random); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 539, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_choice); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 539, __pyx_L1_error)
@@ -12990,6 +13235,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *             assignments[variable] = random.choice(domains[variable])
  *         for _ in range(self._steps):
  */
+    __Pyx_TraceLine(538,0,__PYX_ERR(0, 538, __pyx_L1_error))
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -13000,6 +13246,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *             conflicted = False
  *             lst = list(domains.keys())
  */
+  __Pyx_TraceLine(540,0,__PYX_ERR(0, 540, __pyx_L1_error))
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_steps_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 540, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 540, __pyx_L1_error)
@@ -13055,6 +13302,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *             lst = list(domains.keys())
  *             random.shuffle(lst)
  */
+    __Pyx_TraceLine(541,0,__PYX_ERR(0, 541, __pyx_L1_error))
     __pyx_v_conflicted = 0;
 
     /* "constraint/solvers.py":542
@@ -13064,6 +13312,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *             random.shuffle(lst)
  *             for variable in lst:
  */
+    __Pyx_TraceLine(542,0,__PYX_ERR(0, 542, __pyx_L1_error))
     __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_domains, __pyx_n_s_keys); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 542, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_5 = NULL;
@@ -13099,6 +13348,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *             for variable in lst:
  *                 # Check if variable is not in conflict
  */
+    __Pyx_TraceLine(543,0,__PYX_ERR(0, 543, __pyx_L1_error))
     __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_random); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 543, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_shuffle); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 543, __pyx_L1_error)
@@ -13133,6 +13383,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 # Check if variable is not in conflict
  *                 for constraint, variables in vconstraints[variable]:
  */
+    __Pyx_TraceLine(544,0,__PYX_ERR(0, 544, __pyx_L1_error))
     __pyx_t_6 = __pyx_v_lst; __Pyx_INCREF(__pyx_t_6); __pyx_t_9 = 0;
     for (;;) {
       if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_6)) break;
@@ -13152,6 +13403,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                     if not constraint(variables, domains, assignments):
  *                         break
  */
+      __Pyx_TraceLine(546,0,__PYX_ERR(0, 546, __pyx_L1_error))
       __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_vconstraints, __pyx_v_variable); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 546, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
@@ -13252,6 +13504,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                         break
  *                 else:
  */
+        __Pyx_TraceLine(547,0,__PYX_ERR(0, 547, __pyx_L1_error))
         __Pyx_INCREF(__pyx_v_constraint);
         __pyx_t_12 = __pyx_v_constraint; __pyx_t_7 = NULL;
         __pyx_t_8 = 0;
@@ -13285,6 +13538,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 else:
  *                     continue
  */
+          __Pyx_TraceLine(548,0,__PYX_ERR(0, 548, __pyx_L1_error))
           goto __pyx_L11_break;
 
           /* "constraint/solvers.py":547
@@ -13303,6 +13557,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                     if not constraint(variables, domains, assignments):
  *                         break
  */
+        __Pyx_TraceLine(546,0,__PYX_ERR(0, 546, __pyx_L1_error))
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       goto __pyx_L15_for_else;
@@ -13319,6 +13574,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 # Variable has conflicts. Find values with less conflicts.
  *                 mincount = len(vconstraints[variable])
  */
+        __Pyx_TraceLine(550,0,__PYX_ERR(0, 550, __pyx_L1_error))
         goto __pyx_L8_continue;
       }
       __pyx_L16_for_end:;
@@ -13330,6 +13586,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 minvalues = []
  *                 for value in domains[variable]:
  */
+      __Pyx_TraceLine(552,0,__PYX_ERR(0, 552, __pyx_L1_error))
       __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_vconstraints, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 552, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_10 = PyObject_Length(__pyx_t_4); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(0, 552, __pyx_L1_error)
@@ -13346,6 +13603,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 for value in domains[variable]:
  *                     assignments[variable] = value
  */
+      __Pyx_TraceLine(553,0,__PYX_ERR(0, 553, __pyx_L1_error))
       __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 553, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_XDECREF_SET(__pyx_v_minvalues, ((PyObject*)__pyx_t_4));
@@ -13358,6 +13616,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                     assignments[variable] = value
  *                     count = 0
  */
+      __Pyx_TraceLine(554,0,__PYX_ERR(0, 554, __pyx_L1_error))
       __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 554, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
@@ -13410,6 +13669,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                     count = 0
  *                     for constraint, variables in vconstraints[variable]:
  */
+        __Pyx_TraceLine(555,0,__PYX_ERR(0, 555, __pyx_L1_error))
         if (unlikely((PyDict_SetItem(__pyx_v_assignments, __pyx_v_variable, __pyx_v_value) < 0))) __PYX_ERR(0, 555, __pyx_L1_error)
 
         /* "constraint/solvers.py":556
@@ -13419,6 +13679,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                     for constraint, variables in vconstraints[variable]:
  *                         if not constraint(variables, domains, assignments):
  */
+        __Pyx_TraceLine(556,0,__PYX_ERR(0, 556, __pyx_L1_error))
         __Pyx_INCREF(__pyx_int_0);
         __Pyx_XDECREF_SET(__pyx_v_count, __pyx_int_0);
 
@@ -13429,6 +13690,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                         if not constraint(variables, domains, assignments):
  *                             count += 1
  */
+        __Pyx_TraceLine(557,0,__PYX_ERR(0, 557, __pyx_L1_error))
         __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_vconstraints, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 557, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
@@ -13529,6 +13791,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                             count += 1
  *                     if count == mincount:
  */
+          __Pyx_TraceLine(558,0,__PYX_ERR(0, 558, __pyx_L1_error))
           __Pyx_INCREF(__pyx_v_constraint);
           __pyx_t_13 = __pyx_v_constraint; __pyx_t_7 = NULL;
           __pyx_t_8 = 0;
@@ -13562,6 +13825,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                     if count == mincount:
  *                         minvalues.append(value)
  */
+            __Pyx_TraceLine(559,0,__PYX_ERR(0, 559, __pyx_L1_error))
             __pyx_t_4 = __Pyx_PyInt_AddObjC(__pyx_v_count, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 559, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_4);
             __Pyx_DECREF_SET(__pyx_v_count, __pyx_t_4);
@@ -13583,6 +13847,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                         if not constraint(variables, domains, assignments):
  *                             count += 1
  */
+          __Pyx_TraceLine(557,0,__PYX_ERR(0, 557, __pyx_L1_error))
         }
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
@@ -13593,6 +13858,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                         minvalues.append(value)
  *                     elif count < mincount:
  */
+        __Pyx_TraceLine(560,0,__PYX_ERR(0, 560, __pyx_L1_error))
         __pyx_t_12 = PyObject_RichCompare(__pyx_v_count, __pyx_v_mincount, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 560, __pyx_L1_error)
         __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely((__pyx_t_15 < 0))) __PYX_ERR(0, 560, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -13605,6 +13871,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                     elif count < mincount:
  *                         mincount = count
  */
+          __Pyx_TraceLine(561,0,__PYX_ERR(0, 561, __pyx_L1_error))
           __pyx_t_20 = __Pyx_PyList_Append(__pyx_v_minvalues, __pyx_v_value); if (unlikely(__pyx_t_20 == ((int)-1))) __PYX_ERR(0, 561, __pyx_L1_error)
 
           /* "constraint/solvers.py":560
@@ -13624,6 +13891,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                         mincount = count
  *                         del minvalues[:]
  */
+        __Pyx_TraceLine(562,0,__PYX_ERR(0, 562, __pyx_L1_error))
         __pyx_t_12 = PyObject_RichCompare(__pyx_v_count, __pyx_v_mincount, Py_LT); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 562, __pyx_L1_error)
         __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely((__pyx_t_15 < 0))) __PYX_ERR(0, 562, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -13636,6 +13904,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                         del minvalues[:]
  *                         minvalues.append(value)
  */
+          __Pyx_TraceLine(563,0,__PYX_ERR(0, 563, __pyx_L1_error))
           __Pyx_INCREF(__pyx_v_count);
           __Pyx_DECREF_SET(__pyx_v_mincount, __pyx_v_count);
 
@@ -13646,6 +13915,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                         minvalues.append(value)
  *                 # Pick a random one from these values.
  */
+          __Pyx_TraceLine(564,0,__PYX_ERR(0, 564, __pyx_L1_error))
           if (__Pyx_PyObject_DelSlice(__pyx_v_minvalues, 0, 0, NULL, NULL, NULL, 0, 0, 1) < 0) __PYX_ERR(0, 564, __pyx_L1_error)
 
           /* "constraint/solvers.py":565
@@ -13655,6 +13925,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 # Pick a random one from these values.
  *                 assignments[variable] = random.choice(minvalues)
  */
+          __Pyx_TraceLine(565,0,__PYX_ERR(0, 565, __pyx_L1_error))
           __pyx_t_20 = __Pyx_PyList_Append(__pyx_v_minvalues, __pyx_v_value); if (unlikely(__pyx_t_20 == ((int)-1))) __PYX_ERR(0, 565, __pyx_L1_error)
 
           /* "constraint/solvers.py":562
@@ -13674,6 +13945,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                     assignments[variable] = value
  *                     count = 0
  */
+        __Pyx_TraceLine(554,0,__PYX_ERR(0, 554, __pyx_L1_error))
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
@@ -13684,6 +13956,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 conflicted = True
  *             if not conflicted:
  */
+      __Pyx_TraceLine(567,0,__PYX_ERR(0, 567, __pyx_L1_error))
       __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_random); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 567, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_choice); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 567, __pyx_L1_error)
@@ -13719,6 +13992,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *             if not conflicted:
  *                 return assignments
  */
+      __Pyx_TraceLine(568,0,__PYX_ERR(0, 568, __pyx_L1_error))
       __pyx_v_conflicted = 1;
 
       /* "constraint/solvers.py":544
@@ -13728,6 +14002,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 # Check if variable is not in conflict
  *                 for constraint, variables in vconstraints[variable]:
  */
+      __Pyx_TraceLine(544,0,__PYX_ERR(0, 544, __pyx_L1_error))
       __pyx_L8_continue:;
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -13739,6 +14014,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 return assignments
  *         return None
  */
+    __Pyx_TraceLine(569,0,__PYX_ERR(0, 569, __pyx_L1_error))
     __pyx_t_15 = (!__pyx_v_conflicted);
     if (__pyx_t_15) {
 
@@ -13748,6 +14024,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 return assignments             # <<<<<<<<<<<<<<
  *         return None
  */
+      __Pyx_TraceLine(570,0,__PYX_ERR(0, 570, __pyx_L1_error))
       __Pyx_XDECREF(__pyx_r);
       __Pyx_INCREF(__pyx_v_assignments);
       __pyx_r = __pyx_v_assignments;
@@ -13770,6 +14047,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *             conflicted = False
  *             lst = list(domains.keys())
  */
+    __Pyx_TraceLine(540,0,__PYX_ERR(0, 540, __pyx_L1_error))
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -13778,6 +14056,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_18MinConflictsSolver_2getSolutio
  *                 return assignments
  *         return None             # <<<<<<<<<<<<<<
  */
+  __Pyx_TraceLine(571,0,__PYX_ERR(0, 571, __pyx_L1_error))
   __Pyx_XDECREF(__pyx_r);
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
@@ -14574,7 +14853,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *     def getSolutionsList(self, domains: dict[cython.int, list], vconstraints: dict[cython.int, list], lst: list) -> list[dict[cython.int, list]]:  # noqa: D102             # <<<<<<<<<<<<<<
  *         # Does not do forwardcheck for simplicity
- *         assignments: dict[cython.int, list] = {}
+ *         assignments = {}
  */
   __pyx_tuple__37 = PyTuple_Pack(11, __pyx_n_s_self, __pyx_n_s_domains, __pyx_n_s_vconstraints, __pyx_n_s_lst, __pyx_n_s_assignments, __pyx_n_s_queue, __pyx_n_s_solutions, __pyx_n_s_variable, __pyx_n_s_values, __pyx_n_s_constraint, __pyx_n_s_variables); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 348, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__37);
@@ -15102,6 +15381,7 @@ if (!__Pyx_RefNanny) {
  * import cython
  * 
  */
+  __Pyx_TraceLine(4,0,__PYX_ERR(0, 4, __pyx_L1_error))
   __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_random, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_random, __pyx_t_2) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
@@ -15114,6 +15394,7 @@ if (!__Pyx_RefNanny) {
  *     """Return a dictionary mapping pairs (arcs) of constrained variables.
  * 
  */
+  __Pyx_TraceLine(8,0,__PYX_ERR(0, 8, __pyx_L1_error))
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_1getArcs, 0, __pyx_n_s_getArcs, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj_)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_getArcs, __pyx_t_2) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
@@ -15126,6 +15407,7 @@ if (!__Pyx_RefNanny) {
  *     """Perform the ARC-8 arc checking algorithm and prune domains.
  * 
  */
+  __Pyx_TraceLine(23,0,__PYX_ERR(0, 23, __pyx_L1_error))
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_3doArc8, 0, __pyx_n_s_doArc8, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__2)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_doArc8, __pyx_t_2) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
@@ -15138,6 +15420,7 @@ if (!__Pyx_RefNanny) {
  *     """Abstract base class for solvers."""
  * 
  */
+  __Pyx_TraceLine(67,0,__PYX_ERR(0, 67, __pyx_L1_error))
   __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_tuple__28); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
@@ -15155,6 +15438,7 @@ if (!__Pyx_RefNanny) {
  *         """Return one solution for the given problem.
  * 
  */
+  __Pyx_TraceLine(70,0,__PYX_ERR(0, 70, __pyx_L1_error))
   __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_6Solver_1getSolution, 0, __pyx_n_s_Solver_getSolution, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_n_s_getSolution, __pyx_t_5) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
@@ -15167,6 +15451,7 @@ if (!__Pyx_RefNanny) {
  *         """Return all solutions for the given problem.
  * 
  */
+  __Pyx_TraceLine(84,0,__PYX_ERR(0, 84, __pyx_L1_error))
   __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_6Solver_3getSolutions, 0, __pyx_n_s_Solver_getSolutions, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 84, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_n_s_getSolutions, __pyx_t_5) < 0) __PYX_ERR(0, 84, __pyx_L1_error)
@@ -15179,6 +15464,7 @@ if (!__Pyx_RefNanny) {
  *         """Return an iterator for the solutions of the given problem.
  * 
  */
+  __Pyx_TraceLine(98,0,__PYX_ERR(0, 98, __pyx_L1_error))
   __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_6Solver_5getSolutionIter, 0, __pyx_n_s_Solver_getSolutionIter, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_n_s_getSolutionIter, __pyx_t_5) < 0) __PYX_ERR(0, 98, __pyx_L1_error)
@@ -15191,6 +15477,7 @@ if (!__Pyx_RefNanny) {
  *     """Abstract base class for solvers."""
  * 
  */
+  __Pyx_TraceLine(67,0,__PYX_ERR(0, 67, __pyx_L1_error))
   __pyx_t_5 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_n_s_Solver, __pyx_t_2, __pyx_t_4, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_Solver, __pyx_t_5) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
@@ -15206,6 +15493,7 @@ if (!__Pyx_RefNanny) {
  *     """Problem solver with backtracking capabilities.
  * 
  */
+  __Pyx_TraceLine(113,0,__PYX_ERR(0, 113, __pyx_L1_error))
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Solver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 113, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
@@ -15231,6 +15519,7 @@ if (!__Pyx_RefNanny) {
  *         """Initialization method.
  * 
  */
+  __Pyx_TraceLine(142,0,__PYX_ERR(0, 142, __pyx_L1_error))
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_18BacktrackingSolver_1__init__, 0, __pyx_n_s_BacktrackingSolver___init, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__31);
@@ -15244,6 +15533,7 @@ if (!__Pyx_RefNanny) {
  *         forwardcheck = self._forwardcheck
  *         assignments = {}
  */
+  __Pyx_TraceLine(152,0,__PYX_ERR(0, 152, __pyx_L1_error))
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_18BacktrackingSolver_3getSolutionIter, 0, __pyx_n_s_BacktrackingSolver_getSolutionIt, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_getSolutionIter, __pyx_t_3) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
@@ -15256,6 +15546,7 @@ if (!__Pyx_RefNanny) {
  *         iter = self.getSolutionIter(domains, constraints, vconstraints)
  *         try:
  */
+  __Pyx_TraceLine(222,0,__PYX_ERR(0, 222, __pyx_L1_error))
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_18BacktrackingSolver_6getSolution, 0, __pyx_n_s_BacktrackingSolver_getSolution, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_getSolution, __pyx_t_3) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
@@ -15268,6 +15559,7 @@ if (!__Pyx_RefNanny) {
  *         return list(self.getSolutionIter(domains, constraints, vconstraints))
  * 
  */
+  __Pyx_TraceLine(229,0,__PYX_ERR(0, 229, __pyx_L1_error))
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_18BacktrackingSolver_8getSolutions, 0, __pyx_n_s_BacktrackingSolver_getSolutions, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_getSolutions, __pyx_t_3) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
@@ -15280,6 +15572,7 @@ if (!__Pyx_RefNanny) {
  *     """Problem solver with backtracking capabilities.
  * 
  */
+  __Pyx_TraceLine(113,0,__PYX_ERR(0, 113, __pyx_L1_error))
   __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_n_s_BacktrackingSolver, __pyx_t_2, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_BacktrackingSolver, __pyx_t_3) < 0) __PYX_ERR(0, 113, __pyx_L1_error)
@@ -15295,6 +15588,7 @@ if (!__Pyx_RefNanny) {
  *     """Problem solver with backtracking capabilities, implementing several optimizations for increased performance.
  * 
  */
+  __Pyx_TraceLine(232,0,__PYX_ERR(0, 232, __pyx_L1_error))
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Solver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 232, __pyx_L1_error)
@@ -15320,6 +15614,7 @@ if (!__Pyx_RefNanny) {
  *         """Initialization method.
  * 
  */
+  __Pyx_TraceLine(271,0,__PYX_ERR(0, 271, __pyx_L1_error))
   __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_27OptimizedBacktrackingSolver_1__init__, 0, __pyx_n_s_OptimizedBacktrackingSolver___in, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 271, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__35);
@@ -15333,6 +15628,7 @@ if (!__Pyx_RefNanny) {
  *         forwardcheck = self._forwardcheck
  *         assignments = {}
  */
+  __Pyx_TraceLine(281,0,__PYX_ERR(0, 281, __pyx_L1_error))
   __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_27OptimizedBacktrackingSolver_3getSolutionIter, 0, __pyx_n_s_OptimizedBacktrackingSolver_getS, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_getSolutionIter, __pyx_t_4) < 0) __PYX_ERR(0, 281, __pyx_L1_error)
@@ -15343,8 +15639,9 @@ if (!__Pyx_RefNanny) {
  * 
  *     def getSolutionsList(self, domains: dict[cython.int, list], vconstraints: dict[cython.int, list], lst: list) -> list[dict[cython.int, list]]:  # noqa: D102             # <<<<<<<<<<<<<<
  *         # Does not do forwardcheck for simplicity
- *         assignments: dict[cython.int, list] = {}
+ *         assignments = {}
  */
+  __Pyx_TraceLine(348,0,__PYX_ERR(0, 348, __pyx_L1_error))
   __pyx_t_4 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 348, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_domains, __pyx_kp_s_dict_cython_int_list) < 0) __PYX_ERR(0, 348, __pyx_L1_error)
@@ -15365,6 +15662,7 @@ if (!__Pyx_RefNanny) {
  *         # sort the list from highest number of vconstraints to lowest to find unassigned variables as soon as possible
  *         lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
  */
+  __Pyx_TraceLine(397,0,__PYX_ERR(0, 397, __pyx_L1_error))
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_27OptimizedBacktrackingSolver_8getSolutions, 0, __pyx_n_s_OptimizedBacktrackingSolver_getS_3, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_getSolutions, __pyx_t_6) < 0) __PYX_ERR(0, 397, __pyx_L1_error)
@@ -15377,6 +15675,7 @@ if (!__Pyx_RefNanny) {
  *         iter = self.getSolutionIter(domains, constraints, vconstraints)
  *         try:
  */
+  __Pyx_TraceLine(405,0,__PYX_ERR(0, 405, __pyx_L1_error))
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_27OptimizedBacktrackingSolver_10getSolution, 0, __pyx_n_s_OptimizedBacktrackingSolver_getS_4, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_getSolution, __pyx_t_6) < 0) __PYX_ERR(0, 405, __pyx_L1_error)
@@ -15389,6 +15688,7 @@ if (!__Pyx_RefNanny) {
  *     """Problem solver with backtracking capabilities, implementing several optimizations for increased performance.
  * 
  */
+  __Pyx_TraceLine(232,0,__PYX_ERR(0, 232, __pyx_L1_error))
   __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_5, __pyx_n_s_OptimizedBacktrackingSolver, __pyx_t_2, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_OptimizedBacktrackingSolver, __pyx_t_6) < 0) __PYX_ERR(0, 232, __pyx_L1_error)
@@ -15404,6 +15704,7 @@ if (!__Pyx_RefNanny) {
  *     """Recursive problem solver with backtracking capabilities.
  * 
  */
+  __Pyx_TraceLine(412,0,__PYX_ERR(0, 412, __pyx_L1_error))
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Solver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 412, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 412, __pyx_L1_error)
@@ -15429,6 +15730,7 @@ if (!__Pyx_RefNanny) {
  *         """Initialization method.
  * 
  */
+  __Pyx_TraceLine(440,0,__PYX_ERR(0, 440, __pyx_L1_error))
   __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_27RecursiveBacktrackingSolver_1__init__, 0, __pyx_n_s_RecursiveBacktrackingSolver___in, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_tuple__39);
@@ -15442,6 +15744,7 @@ if (!__Pyx_RefNanny) {
  *         """Mix the Degree and Minimum Remaing Values (MRV) heuristics."""
  *         lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
  */
+  __Pyx_TraceLine(450,0,__PYX_ERR(0, 450, __pyx_L1_error))
   __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_27RecursiveBacktrackingSolver_3recursiveBacktracking, 0, __pyx_n_s_RecursiveBacktrackingSolver_recu, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_n_s_recursiveBacktracking, __pyx_t_5) < 0) __PYX_ERR(0, 450, __pyx_L1_error)
@@ -15454,6 +15757,7 @@ if (!__Pyx_RefNanny) {
  *         solutions = self.recursiveBacktracking([], domains, vconstraints, {}, True)
  *         return solutions and solutions[0] or None
  */
+  __Pyx_TraceLine(492,0,__PYX_ERR(0, 492, __pyx_L1_error))
   __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_27RecursiveBacktrackingSolver_5getSolution, 0, __pyx_n_s_RecursiveBacktrackingSolver_getS, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 492, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_n_s_getSolution, __pyx_t_5) < 0) __PYX_ERR(0, 492, __pyx_L1_error)
@@ -15466,6 +15770,7 @@ if (!__Pyx_RefNanny) {
  *         return self.recursiveBacktracking([], domains, vconstraints, {}, False)
  * 
  */
+  __Pyx_TraceLine(496,0,__PYX_ERR(0, 496, __pyx_L1_error))
   __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_27RecursiveBacktrackingSolver_7getSolutions, 0, __pyx_n_s_RecursiveBacktrackingSolver_getS_2, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_n_s_getSolutions, __pyx_t_5) < 0) __PYX_ERR(0, 496, __pyx_L1_error)
@@ -15478,6 +15783,7 @@ if (!__Pyx_RefNanny) {
  *     """Recursive problem solver with backtracking capabilities.
  * 
  */
+  __Pyx_TraceLine(412,0,__PYX_ERR(0, 412, __pyx_L1_error))
   __pyx_t_5 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_n_s_RecursiveBacktrackingSolver, __pyx_t_2, __pyx_t_6, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 412, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_RecursiveBacktrackingSolver, __pyx_t_5) < 0) __PYX_ERR(0, 412, __pyx_L1_error)
@@ -15493,6 +15799,7 @@ if (!__Pyx_RefNanny) {
  *     """Problem solver based on the minimum conflicts theory.
  * 
  */
+  __Pyx_TraceLine(499,0,__PYX_ERR(0, 499, __pyx_L1_error))
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Solver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 499, __pyx_L1_error)
@@ -15518,6 +15825,7 @@ if (!__Pyx_RefNanny) {
  *         """Initialization method.
  * 
  */
+  __Pyx_TraceLine(526,0,__PYX_ERR(0, 526, __pyx_L1_error))
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_18MinConflictsSolver_1__init__, 0, __pyx_n_s_MinConflictsSolver___init, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 526, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__43);
@@ -15531,6 +15839,7 @@ if (!__Pyx_RefNanny) {
  *         assignments = {}
  *         # Initial assignment
  */
+  __Pyx_TraceLine(535,0,__PYX_ERR(0, 535, __pyx_L1_error))
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7solvers_18MinConflictsSolver_3getSolution, 0, __pyx_n_s_MinConflictsSolver_getSolution, NULL, __pyx_n_s_constraint_solvers, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 535, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_getSolution, __pyx_t_3) < 0) __PYX_ERR(0, 535, __pyx_L1_error)
@@ -15543,6 +15852,7 @@ if (!__Pyx_RefNanny) {
  *     """Problem solver based on the minimum conflicts theory.
  * 
  */
+  __Pyx_TraceLine(499,0,__PYX_ERR(0, 499, __pyx_L1_error))
   __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_6, __pyx_n_s_MinConflictsSolver, __pyx_t_2, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_MinConflictsSolver, __pyx_t_3) < 0) __PYX_ERR(0, 499, __pyx_L1_error)
@@ -15552,10 +15862,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "constraint/solvers.py":1
- * # cython: profile=True             # <<<<<<<<<<<<<<
+ * # cython: linetrace=True             # <<<<<<<<<<<<<<
  * """Module containing the code for the problem solvers."""
  * 
  */
+  __Pyx_TraceLine(1,0,__PYX_ERR(0, 1, __pyx_L1_error))
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
