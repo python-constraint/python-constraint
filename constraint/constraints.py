@@ -1,6 +1,8 @@
+# cython: profile=True
 """Module containing the code for constraint definitions."""
 
 from .domain import Unassigned
+from typing import Callable
 
 class Constraint(object):
     """Abstract base class for constraints."""
@@ -122,7 +124,7 @@ class FunctionConstraint(Constraint):
     {'a': 1, 'b': 2}
     """
 
-    def __init__(self, func, assigned=True):
+    def __init__(self, func: Callable, assigned: bool = True):
         """Initialization method.
 
         @param func: Function wrapped and queried for constraint logic
@@ -136,7 +138,7 @@ class FunctionConstraint(Constraint):
 
     def __call__(  # noqa: D102
         self,
-        variables: list,
+        variables: list[str],
         domains,
         assignments: dict,
         forwardcheck=False,
@@ -170,14 +172,24 @@ class FunctionConstraint(Constraint):
         #         parms[i] = _unassigned
         #         missing += 1
 
-        # single loop list: 0.11462 seconds, Cythonized: 0.08686 seconds
-        parms = list()
+        # # single loop list: 0.11462 seconds, Cythonized: 0.08686 seconds
+        # parms = list()
+        # missing = 0
+        # for x in variables:
+        #     if x in assignments:
+        #         parms.append(assignments[x])
+        #     else:
+        #         parms.append(_unassigned)
+        #         missing += 1
+
+        # single loop cython array
+        parms = [None] * len(variables)
         missing = 0
-        for x in variables:
+        for i, x in enumerate(variables):
             if x in assignments:
-                parms.append(assignments[x])
+                parms[i] = assignments[x]
             else:
-                parms.append(_unassigned)
+                parms[i] = _unassigned
                 missing += 1
 
         # if there are unassigned variables, do a forward check before executing the restriction function

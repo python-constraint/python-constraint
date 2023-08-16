@@ -1,3 +1,4 @@
+# cython: profile=True
 """Module containing the code for problem definitions."""
 
 import copy
@@ -198,12 +199,33 @@ class Problem(object):
             return iter(())
         return self._solver.getSolutionIter(domains, constraints, vconstraints)
 
-    def getSolutionsOrderedList(self, order: list[str]) -> list[tuple]:
-        solutions: list[dict] = self.getSolutions()
+    def getSolutionsOrderedList(self, order: list[str] = None) -> list[tuple]:
+        """Returns the solutions as a list of tuple, with each solution tuple ordered according to `order`."""
+        solutions: list[dict[str, list]] = self.getSolutions()
+        if order is None:
+            return list(tuple(params) for params in solutions.values())
         if len(order) > 1:
             return list(itemgetter(*order)(params) for params in solutions)
         return list(params[order[0]] for params in solutions)
         # return list((tuple(params[param_name] for param_name in order)) for params in self.getSolutions())
+
+    def getSolutionsAsListDict(self, order: list[str] = None, validate: bool = True) -> tuple[list[tuple], dict[tuple, int], int]:
+        """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
+        solutions_list = self.getSolutionsOrderedList(order)
+        size_list = len(solutions_list)
+        solutions_dict: dict[tuple, int] = dict(zip(solutions_list, range(size_list)))
+        if validate:
+            # check for duplicates
+            size_dict = len(solutions_dict)
+            if size_list != size_dict:
+                raise ValueError(
+                    f"{size_list - size_dict} duplicate parameter configurations in the searchspace, this should not happen."
+                )
+        return (
+            solutions_list,
+            solutions_dict,
+            size_list,
+        )
 
     def _getArgs(self):
         domains = self._variables.copy()
