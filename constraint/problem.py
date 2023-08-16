@@ -7,8 +7,6 @@ from .solvers import BacktrackingSolver
 from .domain import Domain
 from .constraints import Constraint, FunctionConstraint
 from operator import itemgetter
-from typing import Any, Optional
-import cython
 
 class Problem(object):
     """Class used to define a problem and retrieve solutions."""
@@ -21,11 +19,8 @@ class Problem(object):
         @type solver:  instance of a L{Solver} subclass
         """
         self._solver = solver or BacktrackingSolver()
-        self._constraints: list[tuple[Constraint, Optional[cython.int]]] = []
-        self._variables: dict[cython.int, list] = {}
-        self._map_external_variables_to_internal: dict[Any, cython.int] = dict()
-        self._map_internal_variables_to_external: dict[cython.int, Any] = dict()
-        self._map_variables_counter: cython.int = 0
+        self._constraints = []
+        self._variables = {}
 
     def reset(self):
         """Reset the current problem definition.
@@ -83,7 +78,6 @@ class Problem(object):
                        the given variable may assume
         @type  domain: list, tuple, or instance of C{Domain}
         """
-        variable = self._set_variable_to_internal(variable)
         if variable in self._variables:
             msg = "Tried to insert duplicated variable %s" % repr(variable)
             raise ValueError(msg)
@@ -97,27 +91,6 @@ class Problem(object):
         if not domain:
             raise ValueError("Domain is empty")
         self._variables[variable] = domain
-
-    def _set_variable_to_internal(self, variable: Any) -> cython.int:
-        if variable in self._map_external_variables_to_internal:
-            raise ValueError(f"Tried to insert duplicate variable {variable}")
-        internal_variable = self._map_variables_counter
-        self._map_external_variables_to_internal[variable] = internal_variable
-        self._map_internal_variables_to_external[internal_variable] = variable
-        self._map_variables_counter += 1
-        return internal_variable
-
-    def _get_variable_from_internal(self, variable: cython.int) -> Any:
-        return self._map_internal_variables_to_external[variable]
-
-    def _get_variables_from_internal(self, variables: list[cython.int]) -> list[Any]:
-        return list(self._map_internal_variables_to_external[v] for v in variables)
-
-    def _get_variable_from_external(self, variable: Any) -> cython.int:
-        return self._map_external_variables_to_internal[variable]
-
-    def _get_variables_from_external(self, variables: list[Any]) -> list[cython.int]:
-        return list(self._map_external_variables_to_internal[v] for v in variables)
 
     def addVariables(self, variables, domain):
         """Add one or more variables to the problem.
@@ -159,8 +132,6 @@ class Problem(object):
                           the order may be important.
         @type  variables: set or sequence of variables
         """
-        if variables is not None:
-            variables = self._get_variables_from_external(variables)
         if not isinstance(constraint, Constraint):
             if callable(constraint):
                 constraint = FunctionConstraint(constraint)
@@ -186,10 +157,7 @@ class Problem(object):
         domains, constraints, vconstraints = self._getArgs()
         if not domains:
             return None
-        solution = self._solver.getSolution(domains, constraints, vconstraints)
-        if solution is not None:
-            solution = dict(zip(self._get_variables_from_internal(list(solution.keys())), solution.values()))
-        return solution
+        return self._solver.getSolution(domains, constraints, vconstraints)
 
     def getSolutions(self):
         """Find and return all solutions to the problem.
@@ -208,11 +176,7 @@ class Problem(object):
         domains, constraints, vconstraints = self._getArgs()
         if not domains:
             return []
-        solutions = self._solver.getSolutions(domains, constraints, vconstraints)
-        if solutions is not None and len(solutions) > 0:
-            variables = self._get_variables_from_internal(list(solutions[0].keys()))
-            solutions = list(dict(zip(variables, solution.values())) for solution in solutions)
-        return solutions
+        return self._solver.getSolutions(domains, constraints, vconstraints)
 
     def getSolutionIter(self):
         """Return an iterator to the solutions of the problem.
@@ -264,14 +228,14 @@ class Problem(object):
         )
 
     def _getArgs(self):
-        domains: dict[cython.int, list] = self._variables.copy()
+        domains = self._variables.copy()
         allvariables = domains.keys()
-        constraints: list[tuple[Constraint, Optional[list[cython.int]]]] = []
+        constraints = []
         for constraint, variables in self._constraints:
             if not variables:
                 variables = list(allvariables)
             constraints.append((constraint, variables))
-        vconstraints: dict[cython.int, list[tuple[Constraint, Optional[list[cython.int]]]]] = {}
+        vconstraints = {}
         for variable in domains:
             vconstraints[variable] = []
         for constraint, variables in constraints:

@@ -8,9 +8,8 @@ def test_addVariable_support_domain_subclasses():
     class MyConstraint(Constraint):
         def __call__(self, variables, domains,
                      assignments, forwardcheck=False):
-            print(variables)
-            assert isinstance(domains[variables[0]], Domain)
-            assert isinstance(domains[variables[1]], MyCustomDomain)
+            assert isinstance(domains['x'], Domain)
+            assert isinstance(domains['y'], MyCustomDomain)
             return True
 
     problem = Problem()
