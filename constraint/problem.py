@@ -1,4 +1,3 @@
-# cython: profile=True
 """Module containing the code for problem definitions."""
 
 import copy
@@ -7,6 +6,7 @@ from .solvers import BacktrackingSolver
 from .domain import Domain
 from .constraints import Constraint, FunctionConstraint
 from operator import itemgetter
+from typing import List, Optional, Sequence
 
 class Problem(object):
     """Class used to define a problem and retrieve solutions."""
@@ -92,7 +92,7 @@ class Problem(object):
             raise ValueError("Domain is empty")
         self._variables[variable] = domain
 
-    def addVariables(self, variables, domain):
+    def addVariables(self, variables: Sequence, domain):
         """Add one or more variables to the problem.
 
         Example:
@@ -114,7 +114,7 @@ class Problem(object):
         for variable in variables:
             self.addVariable(variable, domain)
 
-    def addConstraint(self, constraint, variables=None):
+    def addConstraint(self, constraint, variables: Optional[Sequence] = None):
         """Add a constraint to the problem.
 
         Example:
@@ -199,21 +199,22 @@ class Problem(object):
             return iter(())
         return self._solver.getSolutionIter(domains, constraints, vconstraints)
 
-    def getSolutionsOrderedList(self, order: list[str] = None) -> list[tuple]:
-        """Returns the solutions as a list of tuple, with each solution tuple ordered according to `order`."""
-        solutions: list[dict[str, list]] = self.getSolutions()
+    def getSolutionsOrderedList(self, order: List[str] = None) -> List[tuple]:
+        """Returns the solutions as a list of tuples, with each solution tuple ordered according to `order`."""
+        solutions: List[dict[str, list]] = self.getSolutions()
         if order is None:
             return list(tuple(params) for params in solutions.values())
         if len(order) > 1:
-            return list(itemgetter(*order)(params) for params in solutions)
+            get_in_order = itemgetter(*order)
+            return list(get_in_order(params) for params in solutions)
         return list(params[order[0]] for params in solutions)
         # return list((tuple(params[param_name] for param_name in order)) for params in self.getSolutions())
 
-    def getSolutionsAsListDict(self, order: list[str] = None, validate: bool = True) -> tuple[list[tuple], dict[tuple, int], int]:
+    def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> tuple[List[tuple], dict[tuple, int], int]:
         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
         solutions_list = self.getSolutionsOrderedList(order)
         size_list = len(solutions_list)
-        solutions_dict: dict[tuple, int] = dict(zip(solutions_list, range(size_list)))
+        solutions_dict: dict = dict(zip(solutions_list, range(size_list)))
         if validate:
             # check for duplicates
             size_dict = len(solutions_dict)

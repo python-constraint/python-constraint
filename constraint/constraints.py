@@ -1,13 +1,12 @@
-# cython: profile=True
 """Module containing the code for constraint definitions."""
 
 from .domain import Unassigned
-from typing import Callable
+from typing import Callable, List, Union, Optional, Sequence
 
 class Constraint(object):
     """Abstract base class for constraints."""
 
-    def __call__(self, variables, domains, assignments, forwardcheck=False):
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):
         """Perform the constraint checking.
 
         If the forwardcheck parameter is not false, besides telling if
@@ -32,7 +31,7 @@ class Constraint(object):
         """
         return True
 
-    def preProcess(self, variables, domains, constraints, vconstraints):
+    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):
         """Preprocess variable domains.
 
         This method is called before starting to look for solutions,
@@ -62,7 +61,7 @@ class Constraint(object):
             constraints.remove((self, variables))
             vconstraints[variable].remove((self, variables))
 
-    def forwardCheck(self, variables, domains, assignments, _unassigned=Unassigned):
+    def forwardCheck(self, variables: Sequence, domains: dict, assignments: dict, _unassigned=Unassigned):
         """Helper method for generic forward checking.
 
         Currently, this method acts only when there's a single
@@ -138,8 +137,8 @@ class FunctionConstraint(Constraint):
 
     def __call__(  # noqa: D102
         self,
-        variables: list[str],
-        domains,
+        variables: Sequence,
+        domains: dict,
         assignments: dict,
         forwardcheck=False,
         _unassigned=Unassigned,
@@ -172,24 +171,14 @@ class FunctionConstraint(Constraint):
         #         parms[i] = _unassigned
         #         missing += 1
 
-        # # single loop list: 0.11462 seconds, Cythonized: 0.08686 seconds
-        # parms = list()
-        # missing = 0
-        # for x in variables:
-        #     if x in assignments:
-        #         parms.append(assignments[x])
-        #     else:
-        #         parms.append(_unassigned)
-        #         missing += 1
-
-        # single loop cython array
-        parms = [None] * len(variables)
+        # single loop list: 0.11462 seconds, Cythonized: 0.08686 seconds
+        parms = list()
         missing = 0
-        for i, x in enumerate(variables):
+        for x in variables:
             if x in assignments:
-                parms[i] = assignments[x]
+                parms.append(assignments[x])
             else:
-                parms[i] = _unassigned
+                parms.append(_unassigned)
                 missing += 1
 
         # if there are unassigned variables, do a forward check before executing the restriction function
@@ -213,9 +202,9 @@ class AllDifferentConstraint(Constraint):
 
     def __call__(  # noqa: D102
         self,
-        variables,
-        domains,
-        assignments,
+        variables: Sequence,
+        domains: dict,
+        assignments: dict,
         forwardcheck=False,
         _unassigned=Unassigned,
     ):
@@ -251,9 +240,9 @@ class AllEqualConstraint(Constraint):
 
     def __call__(   # noqa: D102
         self,
-        variables,
-        domains,
-        assignments,
+        variables: Sequence,
+        domains: dict,
+        assignments: dict,
         forwardcheck=False,
         _unassigned=Unassigned,
     ):
@@ -287,7 +276,7 @@ class MaxSumConstraint(Constraint):
     [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
     """
 
-    def __init__(self, maxsum, multipliers=None):
+    def __init__(self, maxsum: Union[int, float], multipliers: Optional[Sequence] = None):
         """Initialization method.
 
         @param maxsum: Value to be considered as the maximum sum
@@ -299,7 +288,7 @@ class MaxSumConstraint(Constraint):
         self._maxsum = maxsum
         self._multipliers = multipliers
 
-    def preProcess(self, variables, domains, constraints, vconstraints):  # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
         multipliers = self._multipliers
         maxsum = self._maxsum
@@ -316,7 +305,7 @@ class MaxSumConstraint(Constraint):
                     if value > maxsum:
                         domain.remove(value)
 
-    def __call__(self, variables, domains, assignments, forwardcheck=False):  # noqa: D102
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
         multipliers = self._multipliers
         maxsum = self._maxsum
         sum = 0
@@ -360,7 +349,7 @@ class MaxSumConstraint(Constraint):
 class MaxProdConstraint(Constraint):
     """Constraint enforcing that values of given variables create a product up to a given amount."""
 
-    def __init__(self, maxprod):
+    def __init__(self, maxprod: Union[int, float]):
         """Instantiate a MaxProdConstraint.
 
         :params maxprod: Value to be considered as the maximum product
@@ -369,7 +358,7 @@ class MaxProdConstraint(Constraint):
         """
         self._maxprod = maxprod
 
-    def preProcess(self, variables, domains, constraints, vconstraints):        # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
         maxprod = self._maxprod
         for variable in variables:
@@ -378,7 +367,7 @@ class MaxProdConstraint(Constraint):
                 if value > maxprod:
                     domain.remove(value)
 
-    def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         maxprod = self._maxprod
         prod = 1
         for variable in variables:
@@ -411,7 +400,7 @@ class ExactSumConstraint(Constraint):
     [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
     """
 
-    def __init__(self, exactsum, multipliers=None):
+    def __init__(self, exactsum: Union[int, float], multipliers: Optional[Sequence] = None):
         """Initialization method.
 
         @param exactsum: Value to be considered as the exact sum
@@ -423,7 +412,7 @@ class ExactSumConstraint(Constraint):
         self._exactsum = exactsum
         self._multipliers = multipliers
 
-    def preProcess(self, variables, domains, constraints, vconstraints):    # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):    # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
         multipliers = self._multipliers
         exactsum = self._exactsum
@@ -440,7 +429,7 @@ class ExactSumConstraint(Constraint):
                     if value > exactsum:
                         domain.remove(value)
 
-    def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         multipliers = self._multipliers
         exactsum = self._exactsum
         sum = 0
@@ -500,7 +489,7 @@ class MinSumConstraint(Constraint):
     [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)], [('a', 2), ('b', 2)]]
     """
 
-    def __init__(self, minsum, multipliers=None):
+    def __init__(self, minsum: Union[int, float], multipliers: Optional[Sequence] = None):
         """Initialization method.
 
         @param minsum: Value to be considered as the minimum sum
@@ -512,7 +501,7 @@ class MinSumConstraint(Constraint):
         self._minsum = minsum
         self._multipliers = multipliers
 
-    def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         for variable in variables:
             if variable not in assignments:
                 return True
@@ -554,7 +543,7 @@ class InSetConstraint(Constraint):
         # preProcess() will remove it.
         raise RuntimeError("Can't happen")
 
-    def preProcess(self, variables, domains, constraints, vconstraints):        # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
         set = self._set
         for variable in variables:
             domain = domains[variable]
@@ -588,7 +577,7 @@ class NotInSetConstraint(Constraint):
         # preProcess() will remove it.
         raise RuntimeError("Can't happen")
 
-    def preProcess(self, variables, domains, constraints, vconstraints):        # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
         set = self._set
         for variable in variables:
             domain = domains[variable]
@@ -626,7 +615,7 @@ class SomeInSetConstraint(Constraint):
         self._n = n
         self._exact = exact
 
-    def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         set = self._set
         missing = 0
         found = 0
@@ -690,7 +679,7 @@ class SomeNotInSetConstraint(Constraint):
         self._n = n
         self._exact = exact
 
-    def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         set = self._set
         missing = 0
         found = 0

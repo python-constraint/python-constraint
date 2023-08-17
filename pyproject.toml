@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "wheel", "Cython"]
+requires = ["setuptools", "wheel", "Cython>=3.0.0"]
 
 [tool.black]
 line-length = 120
@@ -8,9 +8,9 @@ line-length = 120
 src = ["src"]
 respect-gitignore = true
 select = [
-  "E",   # pycodestyle
-  "F",   # pyflakes,
-  "D",   # pydocstyle,
+    "E", # pycodestyle
+    "F", # pyflakes,
+    "D", # pydocstyle,
 ]
 [tool.ruff.pydocstyle]
 convention = "google"

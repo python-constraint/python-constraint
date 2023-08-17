@@ -1,10 +1,10 @@
-# cython: profile=True
 """Module containing the code for the problem solvers."""
 
 import random
+from typing import List
 
 
-def getArcs(domains, constraints):
+def getArcs(domains: dict, constraints: List[tuple]) -> dict:
     """Return a dictionary mapping pairs (arcs) of constrained variables.
 
     @attention: Currently unused.
@@ -19,7 +19,7 @@ def getArcs(domains, constraints):
     return arcs
 
 
-def doArc8(arcs, domains, assignments):
+def doArc8(arcs: dict, domains: dict, assignments: dict) -> bool:
     """Perform the ARC-8 arc checking algorithm and prune domains.
 
     @attention: Currently unused.
@@ -66,7 +66,7 @@ def doArc8(arcs, domains, assignments):
 class Solver(object):
     """Abstract base class for solvers."""
 
-    def getSolution(self, domains, constraints, vconstraints):
+    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):
         """Return one solution for the given problem.
 
         @param domains: Dictionary mapping variables to their domains
@@ -80,7 +80,7 @@ class Solver(object):
         msg = "%s is an abstract class" % self.__class__.__name__
         raise NotImplementedError(msg)
 
-    def getSolutions(self, domains, constraints, vconstraints):
+    def getSolutions(self, domains: dict, constraints: List[tuple], vconstraints: dict):
         """Return all solutions for the given problem.
 
         @param domains: Dictionary mapping variables to domains
@@ -94,7 +94,7 @@ class Solver(object):
         msg = "%s provides only a single solution" % self.__class__.__name__
         raise NotImplementedError(msg)
 
-    def getSolutionIter(self, domains, constraints, vconstraints):
+    def getSolutionIter(self, domains: dict, constraints: List[tuple], vconstraints: dict):
         """Return an iterator for the solutions of the given problem.
 
         @param domains: Dictionary mapping variables to domains
@@ -148,7 +148,7 @@ class BacktrackingSolver(Solver):
         """
         self._forwardcheck = forwardcheck
 
-    def getSolutionIter(self, domains, constraints, vconstraints):  # noqa: D102
+    def getSolutionIter(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
         forwardcheck = self._forwardcheck
         assignments = {}
 
@@ -218,14 +218,14 @@ class BacktrackingSolver(Solver):
 
         raise RuntimeError("Can't happen")
 
-    def getSolution(self, domains, constraints, vconstraints):  # noqa: D102
+    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
         iter = self.getSolutionIter(domains, constraints, vconstraints)
         try:
             return next(iter)
         except StopIteration:
             return None
 
-    def getSolutions(self, domains, constraints, vconstraints):  # noqa: D102
+    def getSolutions(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
         return list(self.getSolutionIter(domains, constraints, vconstraints))
 
 class OptimizedBacktrackingSolver(Solver):
@@ -277,7 +277,7 @@ class OptimizedBacktrackingSolver(Solver):
         """
         self._forwardcheck = forwardcheck
 
-    def getSolutionIter(self, domains, constraints, vconstraints, lst):  # noqa: D102
+    def getSolutionIter(self, domains: dict, constraints: List[tuple], vconstraints: dict, lst: List):  # noqa: D102
         forwardcheck = self._forwardcheck
         assignments = {}
 
@@ -344,11 +344,11 @@ class OptimizedBacktrackingSolver(Solver):
 
         raise RuntimeError("Can't happen")
 
-    def getSolutionsList(self, domains: dict[str, list], vconstraints: dict[str, list], lst: list) -> list[dict]:  # noqa: D102
+    def getSolutionsList(self, domains: dict, vconstraints: dict, lst: List) -> List[dict]:  # noqa: D102
         # Does not do forwardcheck for simplicity
-        assignments: dict[str, list] = {}
-        queue: list[tuple] = []
-        solutions: list[dict[str, list]] = list()
+        assignments: dict = {}
+        queue: List[tuple] = []
+        solutions: List[dict[str, List]] = list()
 
         while True:
             # Mix the Degree and Minimum Remaing Values (MRV) heuristics
@@ -393,7 +393,7 @@ class OptimizedBacktrackingSolver(Solver):
         raise RuntimeError("Can't happen")
 
 
-    def getSolutions(self, domains, constraints, vconstraints):  # noqa: D102
+    def getSolutions(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
         # sort the list from highest number of vconstraints to lowest to find unassigned variables as soon as possible
         lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
         lst.sort()
@@ -401,7 +401,7 @@ class OptimizedBacktrackingSolver(Solver):
             return list(self.getSolutionIter(domains, constraints, vconstraints, [c for a, b, c in lst]))
         return self.getSolutionsList(domains, vconstraints, [c for _, _, c in lst])
 
-    def getSolution(self, domains, constraints, vconstraints):   # noqa: D102
+    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):   # noqa: D102
         iter = self.getSolutionIter(domains, constraints, vconstraints)
         try:
             return next(iter)
@@ -489,11 +489,11 @@ class RecursiveBacktrackingSolver(Solver):
         del assignments[variable]
         return solutions
 
-    def getSolution(self, domains, constraints, vconstraints):   # noqa: D102
+    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):   # noqa: D102
         solutions = self.recursiveBacktracking([], domains, vconstraints, {}, True)
         return solutions and solutions[0] or None
 
-    def getSolutions(self, domains, constraints, vconstraints):  # noqa: D102
+    def getSolutions(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
         return self.recursiveBacktracking([], domains, vconstraints, {}, False)
 
 
@@ -533,7 +533,7 @@ class MinConflictsSolver(Solver):
         """
         self._steps = steps
 
-    def getSolution(self, domains, constraints, vconstraints):   # noqa: D102
+    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):   # noqa: D102
         assignments = {}
         # Initial assignment
         for variable in domains:
