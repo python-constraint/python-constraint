@@ -289,18 +289,35 @@ class MaxSumConstraint(Constraint):
         self._multipliers = multipliers
 
     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
-        # TODO this seems wrong: if we have maxsum(3) on variable values (4, -2), we prune 4 even though the combination satisfies the constraint
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
+
+        # check if there are any negative values in the associated variables
+        variable_contains_negative: list[bool] = list()
+        for variable in variables:
+            variable_contains_negative.append(any(value < 0 for value in domains[variable]))
+        # if more than one associated variables contain negative, we can't prune
+        num_variables_containing_negative = sum(variable_contains_negative)
+        variable_containing_negative = None
+        if num_variables_containing_negative > 1:
+            return
+        elif num_variables_containing_negative == 1:
+            variable_containing_negative = [v for v in variable_contains_negative if v is True][0]
+
+        # prune the associated variables of values > maxsum
         multipliers = self._multipliers
         maxsum = self._maxsum
         if multipliers:
             for variable, multiplier in zip(variables, multipliers):
+                if variable_containing_negative is not None and variable_containing_negative != variable:
+                    continue
                 domain = domains[variable]
                 for value in domain[:]:
                     if value * multiplier > maxsum:
                         domain.remove(value)
         else:
             for variable in variables:
+                if variable_containing_negative is not None and variable_containing_negative != variable:
+                    continue
                 domain = domains[variable]
                 for value in domain[:]:
                     if value > maxsum:
@@ -358,6 +375,31 @@ class MaxProdConstraint(Constraint):
 
         """
         self._maxprod = maxprod
+
+    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
+
+        # check if there are any values less than 1 in the associated variables
+        variable_contains_lt1: list[bool] = list()
+        for variable in variables:
+            variable_contains_lt1.append(any(value < 1 for value in domains[variable]))
+        # if more than one associated variables contain less than 1, we can't prune
+        num_variables_containing_lt1 = sum(variable_contains_lt1)
+        variable_containing_lt1 = None
+        if num_variables_containing_lt1 > 1:
+            return
+        elif num_variables_containing_lt1 == 1:
+            variable_containing_lt1 = [v for v in variable_contains_lt1 if v is True][0]
+
+        # prune the associated variables of values > maxprod
+        maxprod = self._maxprod
+        for variable in variables:
+            if variable_containing_lt1 is not None and variable_containing_lt1 != variable:
+                continue
+            domain = domains[variable]
+            for value in domain[:]:
+                if value > maxprod:
+                    domain.remove(value)
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         maxprod = self._maxprod
