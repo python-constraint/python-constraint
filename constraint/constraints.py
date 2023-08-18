@@ -536,22 +536,24 @@ class MinSumConstraint(Constraint):
         self._multipliers = multipliers
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
+        # check if each variable is in the assignments
         for variable in variables:
             if variable not in assignments:
                 return True
+
+        # with each variable assigned, sum the values
+        multipliers = self._multipliers
+        minsum = self._minsum
+        sum = 0
+        if multipliers:
+            for variable, multiplier in zip(variables, multipliers):
+                sum += assignments[variable] * multiplier
         else:
-            multipliers = self._multipliers
-            minsum = self._minsum
-            sum = 0
-            if multipliers:
-                for variable, multiplier in zip(variables, multipliers):
-                    sum += assignments[variable] * multiplier
-            else:
-                for variable in variables:
-                    sum += assignments[variable]
-            if type(sum) is float:
-                sum = round(sum, 10)
-            return sum >= minsum
+            for variable in variables:
+                sum += assignments[variable]
+        if type(sum) is float:
+            sum = round(sum, 10)
+        return sum >= minsum
 
 class MinProdConstraint(Constraint):
     """Constraint enforcing that values of given variables create a product up to at least a given amount."""
@@ -566,25 +568,19 @@ class MinProdConstraint(Constraint):
         self._minprod = minprod
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
+        # check if each variable is in the assignments
+        for variable in variables:
+            if variable not in assignments:
+                return True
+
+        # with each variable assigned, sum the values
         minprod = self._minprod
         prod = 1
         for variable in variables:
-            if variable in assignments:
-                prod *= assignments[variable]
-        if isinstance(prod, float):
+            prod *= assignments[variable]
+        if type(prod) is float:
             prod = round(prod, 10)
-        if prod < minprod:
-            return False
-        if forwardcheck:
-            for variable in variables:
-                if variable not in assignments:
-                    domain = domains[variable]
-                    for value in domain[:]:
-                        if prod * value < minprod:
-                            domain.hideValue(value)
-                    if not domain:
-                        return False
-        return True
+        return prod >= minprod
 
 
 class InSetConstraint(Constraint):
