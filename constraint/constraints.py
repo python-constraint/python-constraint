@@ -289,6 +289,7 @@ class MaxSumConstraint(Constraint):
         self._multipliers = multipliers
 
     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+        # TODO this seems wrong: if we have maxsum(3) on variable values (4, -2), we prune 4 even though the combination satisfies the constraint
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
         multipliers = self._multipliers
         maxsum = self._maxsum
@@ -347,7 +348,7 @@ class MaxSumConstraint(Constraint):
 
 
 class MaxProdConstraint(Constraint):
-    """Constraint enforcing that values of given variables create a product up to a given amount."""
+    """Constraint enforcing that values of given variables create a product up to at most a given amount."""
 
     def __init__(self, maxprod: Union[int, float]):
         """Instantiate a MaxProdConstraint.
@@ -357,15 +358,6 @@ class MaxProdConstraint(Constraint):
 
         """
         self._maxprod = maxprod
-
-    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
-        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
-        maxprod = self._maxprod
-        for variable in variables:
-            domain = domains[variable]
-            for value in domain[:]:
-                if value > maxprod:
-                    domain.remove(value)
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         maxprod = self._maxprod
@@ -518,6 +510,39 @@ class MinSumConstraint(Constraint):
             if type(sum) is float:
                 sum = round(sum, 10)
             return sum >= minsum
+
+class MinProdConstraint(Constraint):
+    """Constraint enforcing that values of given variables create a product up to at least a given amount."""
+
+    def __init__(self, minprod: Union[int, float]):
+        """Instantiate a MinProdConstraint.
+
+        :params minprod: Value to be considered as the maximum product
+        :type minprod: number
+
+        """
+        self._minprod = minprod
+
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
+        minprod = self._minprod
+        prod = 1
+        for variable in variables:
+            if variable in assignments:
+                prod *= assignments[variable]
+        if isinstance(prod, float):
+            prod = round(prod, 10)
+        if prod < minprod:
+            return False
+        if forwardcheck:
+            for variable in variables:
+                if variable not in assignments:
+                    domain = domains[variable]
+                    for value in domain[:]:
+                        if prod * value < minprod:
+                            domain.hideValue(value)
+                    if not domain:
+                        return False
+        return True
 
 
 class InSetConstraint(Constraint):
