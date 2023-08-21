@@ -9174,7 +9174,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *         # Does not do forwardcheck for simplicity
  *         assignments: dict = {}             # <<<<<<<<<<<<<<
  *         queue: List[tuple] = []
- *         solutions: List[dict[str, List]] = list()
+ *         solutions: List[dict] = list()
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 349, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -9185,7 +9185,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
  *         # Does not do forwardcheck for simplicity
  *         assignments: dict = {}
  *         queue: List[tuple] = []             # <<<<<<<<<<<<<<
- *         solutions: List[dict[str, List]] = list()
+ *         solutions: List[dict] = list()
  * 
  */
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 350, __pyx_L1_error)
@@ -9196,7 +9196,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
   /* "constraint/solvers.py":351
  *         assignments: dict = {}
  *         queue: List[tuple] = []
- *         solutions: List[dict[str, List]] = list()             # <<<<<<<<<<<<<<
+ *         solutions: List[dict] = list()             # <<<<<<<<<<<<<<
  * 
  *         while True:
  */
@@ -9206,7 +9206,7 @@ static PyObject *__pyx_pf_10constraint_7solvers_27OptimizedBacktrackingSolver_5g
   __pyx_t_1 = 0;
 
   /* "constraint/solvers.py":353
- *         solutions: List[dict[str, List]] = list()
+ *         solutions: List[dict] = list()
  * 
  *         while True:             # <<<<<<<<<<<<<<
  *             # Mix the Degree and Minimum Remaing Values (MRV) heuristics

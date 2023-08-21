@@ -400,6 +400,8 @@ class MaxProdConstraint(Constraint):
             for value in domain[:]:
                 if value > maxprod:
                     domain.remove(value)
+                elif value == 0 and maxprod < 0:
+                    domain.remove(value)
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         maxprod = self._maxprod
@@ -566,6 +568,17 @@ class MinProdConstraint(Constraint):
 
         """
         self._minprod = minprod
+
+    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
+
+        # prune the associated variables of values > maxprod
+        minprod = self._minprod
+        for variable in variables:
+            domain = domains[variable]
+            for value in domain[:]:
+                if value == 0 and minprod > 0:
+                    domain.remove(value)
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         # check if each variable is in the assignments

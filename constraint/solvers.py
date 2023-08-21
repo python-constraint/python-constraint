@@ -348,7 +348,7 @@ class OptimizedBacktrackingSolver(Solver):
         # Does not do forwardcheck for simplicity
         assignments: dict = {}
         queue: List[tuple] = []
-        solutions: List[dict[str, List]] = list()
+        solutions: List[dict] = list()
 
         while True:
             # Mix the Degree and Minimum Remaing Values (MRV) heuristics
