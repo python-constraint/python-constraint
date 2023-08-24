@@ -1,12 +1,70 @@
 [build-system]
 requires = ["setuptools", "wheel", "Cython>=3.0.0"]
 
+[project]
+description = "python-constraint is a module implementing support for handling CSPs (Constraint Solving Problems) over finite domain"
+name = "python-constraint"
+version = "1.4.0"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Gustavo Niemeyer", email = "gustavo@niemeyer.net" },
+    { name = "Sébastien Celles", email = "s.celles@gmail.com" },
+    { name = "Floris-Jan Willemsen", email = "fjwillemsen97@gmail.com" },
+]
+keywords = [
+    "auto-tuning",
+    "gpu",
+    "computing",
+    "pycuda",
+    "cuda",
+    "pyopencl",
+    "opencl",
+]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development",
+    "Development Status :: 5 - Production/Stable",
+]
+
+[project.readme]
+file = "README.rst"
+content-type = "text/x-rst"
+
+[project.urls]
+Homepage = "https://labix.org/python-constraint"
+Documentation = "http://labix.org/doc/constraint/"
+Source = "https://github.com/python-constraint/python-constraint"
+Tracker = "https://github.com/python-constraint/python-constraint/issues"
+
+[project.optional-dependencies]
+test = [
+    "pytest >= 7.3.1",
+    "pytest-cov >= 4.0.0",
+    "nox >= 2023.4.22",
+    "ruff >= 0.0.263",
+]
+
+[tool.setuptools]
+py-modules = ["setup_cythonize"]
+[tool.setuptools.cmdclass]
+build_py = "setup_cythonize.build_py"
+
 [tool.black]
 line-length = 120
 [tool.ruff]
 line-length = 120
-src = ["src"]
+src = ["constraint"]
 respect-gitignore = true
+exclude = ["documentation", "examples", "tests"]
 select = [
     "E", # pycodestyle
     "F", # pyflakes,

@@ -6,7 +6,7 @@ from .solvers import BacktrackingSolver
 from .domain import Domain
 from .constraints import Constraint, FunctionConstraint
 from operator import itemgetter
-from typing import List, Optional, Sequence
+from typing import List, Optional, Sequence, Tuple, Dict
 
 class Problem(object):
     """Class used to define a problem and retrieve solutions."""
@@ -207,7 +207,7 @@ class Problem(object):
         get_in_order = itemgetter(*order)
         return list(get_in_order(params) for params in solutions)
 
-    def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> tuple[List[tuple], dict[tuple, int], int]:
+    def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:
         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
         solutions_list = self.getSolutionsOrderedList(order)
         size_list = len(solutions_list)

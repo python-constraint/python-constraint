@@ -1394,7 +1394,7 @@ struct __pyx_obj_10constraint_7problem___pyx_scope_struct_1_genexpr {
  *         get_in_order = itemgetter(*order)
  *         return list(get_in_order(params) for params in solutions)             # <<<<<<<<<<<<<<
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> tuple[List[tuple], dict[tuple, int], int]:
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:
  */
 struct __pyx_obj_10constraint_7problem___pyx_scope_struct_2_genexpr {
   PyObject_HEAD
@@ -2306,6 +2306,7 @@ static const char __pyx_k__34[] = "?";
 static const char __pyx_k_doc[] = "__doc__";
 static const char __pyx_k_msg[] = "msg";
 static const char __pyx_k_zip[] = "zip";
+static const char __pyx_k_Dict[] = "Dict";
 static const char __pyx_k_List[] = "List";
 static const char __pyx_k_args[] = "args";
 static const char __pyx_k_bool[] = "bool";
@@ -2319,6 +2320,7 @@ static const char __pyx_k_self[] = "self";
 static const char __pyx_k_send[] = "send";
 static const char __pyx_k_spec[] = "__spec__";
 static const char __pyx_k_test[] = "__test__";
+static const char __pyx_k_Tuple[] = "Tuple";
 static const char __pyx_k_clear[] = "clear";
 static const char __pyx_k_close[] = "close";
 static const char __pyx_k_order[] = "order";
@@ -2421,8 +2423,8 @@ static const char __pyx_k_Problem_addConstraint_line_117[] = "Problem.addConstra
 static const char __pyx_k_Problem_getSolutionsAsListDict[] = "Problem.getSolutionsAsListDict";
 static const char __pyx_k_Add_a_constraint_to_the_problem[] = "Add a constraint to the problem.\n\n        Example:\n        >>> problem = Problem()\n        >>> problem.addVariables([\"a\", \"b\"], [1, 2, 3])\n        >>> problem.addConstraint(lambda a, b: b == a+1, [\"a\", \"b\"])\n        >>> solutions = problem.getSolutions()\n        >>>\n\n        @param constraint: Constraint to be included in the problem\n        @type  constraint: instance a L{Constraint} subclass or a\n                           function to be wrapped by L{FunctionConstraint}\n        @param variables: Variables affected by the constraint (default to\n                          all variables). Depending on the constraint type\n                          the order may be important.\n        @type  variables: set or sequence of variables\n        ";
 static const char __pyx_k_Problem_getSolutionsOrderedList[] = "Problem.getSolutionsOrderedList.<locals>.genexpr";
+static const char __pyx_k_Tuple_List_tuple_Dict_tuple_int[] = "Tuple[List[tuple], Dict[tuple, int], int]";
 static const char __pyx_k_duplicate_parameter_configurati[] = " duplicate parameter configurations in the searchspace, this should not happen.";
-static const char __pyx_k_tuple_List_tuple_dict_tuple_int[] = "tuple[List[tuple], dict[tuple, int], int]";
 static const char __pyx_k_Add_a_variable_to_the_problem_Ex[] = "Add a variable to the problem.\n\n        Example:\n        >>> problem = Problem()\n        >>> problem.addVariable(\"a\", [1, 2])\n        >>> problem.getSolution() in ({'a': 1}, {'a': 2})\n        True\n\n        @param variable: Object representing a problem variable\n        @type  variable: hashable object\n        @param domain: Set of items defining the possible values that\n                       the given variable may assume\n        @type  domain: list, tuple, or instance of C{Domain}\n        ";
 static const char __pyx_k_Add_one_or_more_variables_to_the[] = "Add one or more variables to the problem.\n\n        Example:\n        >>> problem = Problem()\n        >>> problem.addVariables([\"a\", \"b\"], [1, 2, 3])\n        >>> solutions = problem.getSolutions()\n        >>> len(solutions)\n        9\n        >>> {'a': 3, 'b': 1} in solutions\n        True\n\n        @param variables: Any object containing a sequence of objects\n                          represeting problem variables\n        @type  variables: sequence of hashable objects\n        @param domain: Set of items defining the possible values that\n                       the given variables may assume\n        @type  domain: list, tuple, or instance of C{Domain}\n        ";
 static const char __pyx_k_Change_the_problem_solver_curren[] = "Change the problem solver currently in use.\n\n        Example:\n        >>> solver = BacktrackingSolver()\n        >>> problem = Problem(solver)\n        >>> problem.getSolver() is solver\n        True\n\n        @param solver: New problem solver\n        @type  solver: instance of a C{Solver} subclass\n        ";
@@ -2500,6 +2502,7 @@ typedef struct {
   PyObject *__pyx_kp_s_Class_used_to_define_a_problem_a;
   PyObject *__pyx_n_s_Constraint;
   PyObject *__pyx_kp_s_Constraints_must_be_instances_of;
+  PyObject *__pyx_n_s_Dict;
   PyObject *__pyx_n_s_Domain;
   PyObject *__pyx_kp_s_Domain_is_empty;
   PyObject *__pyx_kp_s_Domains_must_be_instances_of_sub;
@@ -2540,6 +2543,8 @@ typedef struct {
   PyObject *__pyx_kp_u_Return_an_iterator_to_the_soluti;
   PyObject *__pyx_n_s_Sequence;
   PyObject *__pyx_kp_s_Tried_to_insert_duplicated_varia;
+  PyObject *__pyx_n_s_Tuple;
+  PyObject *__pyx_kp_s_Tuple_List_tuple_Dict_tuple_int;
   PyObject *__pyx_n_s_TypeError;
   PyObject *__pyx_n_s_ValueError;
   PyObject *__pyx_n_s__34;
@@ -2621,7 +2626,6 @@ typedef struct {
   PyObject *__pyx_n_s_super;
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_n_s_throw;
-  PyObject *__pyx_kp_s_tuple_List_tuple_dict_tuple_int;
   PyObject *__pyx_n_s_typing;
   PyObject *__pyx_n_s_validate;
   PyObject *__pyx_n_s_values;
@@ -2717,6 +2721,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_s_Class_used_to_define_a_problem_a);
   Py_CLEAR(clear_module_state->__pyx_n_s_Constraint);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Constraints_must_be_instances_of);
+  Py_CLEAR(clear_module_state->__pyx_n_s_Dict);
   Py_CLEAR(clear_module_state->__pyx_n_s_Domain);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Domain_is_empty);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Domains_must_be_instances_of_sub);
@@ -2757,6 +2762,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_Return_an_iterator_to_the_soluti);
   Py_CLEAR(clear_module_state->__pyx_n_s_Sequence);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Tried_to_insert_duplicated_varia);
+  Py_CLEAR(clear_module_state->__pyx_n_s_Tuple);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_Tuple_List_tuple_Dict_tuple_int);
   Py_CLEAR(clear_module_state->__pyx_n_s_TypeError);
   Py_CLEAR(clear_module_state->__pyx_n_s_ValueError);
   Py_CLEAR(clear_module_state->__pyx_n_s__34);
@@ -2838,7 +2845,6 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_super);
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_throw);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_tuple_List_tuple_dict_tuple_int);
   Py_CLEAR(clear_module_state->__pyx_n_s_typing);
   Py_CLEAR(clear_module_state->__pyx_n_s_validate);
   Py_CLEAR(clear_module_state->__pyx_n_s_values);
@@ -2912,6 +2918,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_s_Class_used_to_define_a_problem_a);
   Py_VISIT(traverse_module_state->__pyx_n_s_Constraint);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Constraints_must_be_instances_of);
+  Py_VISIT(traverse_module_state->__pyx_n_s_Dict);
   Py_VISIT(traverse_module_state->__pyx_n_s_Domain);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Domain_is_empty);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Domains_must_be_instances_of_sub);
@@ -2952,6 +2959,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_Return_an_iterator_to_the_soluti);
   Py_VISIT(traverse_module_state->__pyx_n_s_Sequence);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Tried_to_insert_duplicated_varia);
+  Py_VISIT(traverse_module_state->__pyx_n_s_Tuple);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_Tuple_List_tuple_Dict_tuple_int);
   Py_VISIT(traverse_module_state->__pyx_n_s_TypeError);
   Py_VISIT(traverse_module_state->__pyx_n_s_ValueError);
   Py_VISIT(traverse_module_state->__pyx_n_s__34);
@@ -3033,7 +3042,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_super);
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_throw);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_tuple_List_tuple_dict_tuple_int);
   Py_VISIT(traverse_module_state->__pyx_n_s_typing);
   Py_VISIT(traverse_module_state->__pyx_n_s_validate);
   Py_VISIT(traverse_module_state->__pyx_n_s_values);
@@ -3117,6 +3125,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_s_Class_used_to_define_a_problem_a __pyx_mstate_global->__pyx_kp_s_Class_used_to_define_a_problem_a
 #define __pyx_n_s_Constraint __pyx_mstate_global->__pyx_n_s_Constraint
 #define __pyx_kp_s_Constraints_must_be_instances_of __pyx_mstate_global->__pyx_kp_s_Constraints_must_be_instances_of
+#define __pyx_n_s_Dict __pyx_mstate_global->__pyx_n_s_Dict
 #define __pyx_n_s_Domain __pyx_mstate_global->__pyx_n_s_Domain
 #define __pyx_kp_s_Domain_is_empty __pyx_mstate_global->__pyx_kp_s_Domain_is_empty
 #define __pyx_kp_s_Domains_must_be_instances_of_sub __pyx_mstate_global->__pyx_kp_s_Domains_must_be_instances_of_sub
@@ -3157,6 +3166,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_Return_an_iterator_to_the_soluti __pyx_mstate_global->__pyx_kp_u_Return_an_iterator_to_the_soluti
 #define __pyx_n_s_Sequence __pyx_mstate_global->__pyx_n_s_Sequence
 #define __pyx_kp_s_Tried_to_insert_duplicated_varia __pyx_mstate_global->__pyx_kp_s_Tried_to_insert_duplicated_varia
+#define __pyx_n_s_Tuple __pyx_mstate_global->__pyx_n_s_Tuple
+#define __pyx_kp_s_Tuple_List_tuple_Dict_tuple_int __pyx_mstate_global->__pyx_kp_s_Tuple_List_tuple_Dict_tuple_int
 #define __pyx_n_s_TypeError __pyx_mstate_global->__pyx_n_s_TypeError
 #define __pyx_n_s_ValueError __pyx_mstate_global->__pyx_n_s_ValueError
 #define __pyx_n_s__34 __pyx_mstate_global->__pyx_n_s__34
@@ -3238,7 +3249,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_super __pyx_mstate_global->__pyx_n_s_super
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_n_s_throw __pyx_mstate_global->__pyx_n_s_throw
-#define __pyx_kp_s_tuple_List_tuple_dict_tuple_int __pyx_mstate_global->__pyx_kp_s_tuple_List_tuple_dict_tuple_int
 #define __pyx_n_s_typing __pyx_mstate_global->__pyx_n_s_typing
 #define __pyx_n_s_validate __pyx_mstate_global->__pyx_n_s_validate
 #define __pyx_n_s_values __pyx_mstate_global->__pyx_n_s_values
@@ -5878,7 +5888,7 @@ static PyObject *__pyx_gb_10constraint_7problem_7Problem_23getSolutionsOrderedLi
  *         get_in_order = itemgetter(*order)
  *         return list(get_in_order(params) for params in solutions)             # <<<<<<<<<<<<<<
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> tuple[List[tuple], dict[tuple, int], int]:
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:
  */
 
 static PyObject *__pyx_pf_10constraint_7problem_7Problem_23getSolutionsOrderedList_3genexpr(PyObject *__pyx_self, PyObject *__pyx_genexpr_arg_0) {
@@ -6153,7 +6163,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_20getSolutionsOrderedLi
  *         get_in_order = itemgetter(*order)
  *         return list(get_in_order(params) for params in solutions)             # <<<<<<<<<<<<<<
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> tuple[List[tuple], dict[tuple, int], int]:
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_3 = __pyx_pf_10constraint_7problem_7Problem_23getSolutionsOrderedList_3genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_solutions); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 208, __pyx_L1_error)
@@ -6193,7 +6203,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_20getSolutionsOrderedLi
 /* "constraint/problem.py":210
  *         return list(get_in_order(params) for params in solutions)
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> tuple[List[tuple], dict[tuple, int], int]:             # <<<<<<<<<<<<<<
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:             # <<<<<<<<<<<<<<
  *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)
  */
@@ -6324,7 +6334,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_22getSolutionsAsListDic
   __Pyx_RefNannySetupContext("getSolutionsAsListDict", 0);
 
   /* "constraint/problem.py":212
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> tuple[List[tuple], dict[tuple, int], int]:
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:
  *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)             # <<<<<<<<<<<<<<
  *         size_list = len(solutions_list)
@@ -6511,7 +6521,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_22getSolutionsAsListDic
   /* "constraint/problem.py":210
  *         return list(get_in_order(params) for params in solutions)
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> tuple[List[tuple], dict[tuple, int], int]:             # <<<<<<<<<<<<<<
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:             # <<<<<<<<<<<<<<
  *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)
  */
@@ -7859,6 +7869,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_s_Class_used_to_define_a_problem_a, __pyx_k_Class_used_to_define_a_problem_a, sizeof(__pyx_k_Class_used_to_define_a_problem_a), 0, 0, 1, 0},
     {&__pyx_n_s_Constraint, __pyx_k_Constraint, sizeof(__pyx_k_Constraint), 0, 0, 1, 1},
     {&__pyx_kp_s_Constraints_must_be_instances_of, __pyx_k_Constraints_must_be_instances_of, sizeof(__pyx_k_Constraints_must_be_instances_of), 0, 0, 1, 0},
+    {&__pyx_n_s_Dict, __pyx_k_Dict, sizeof(__pyx_k_Dict), 0, 0, 1, 1},
     {&__pyx_n_s_Domain, __pyx_k_Domain, sizeof(__pyx_k_Domain), 0, 0, 1, 1},
     {&__pyx_kp_s_Domain_is_empty, __pyx_k_Domain_is_empty, sizeof(__pyx_k_Domain_is_empty), 0, 0, 1, 0},
     {&__pyx_kp_s_Domains_must_be_instances_of_sub, __pyx_k_Domains_must_be_instances_of_sub, sizeof(__pyx_k_Domains_must_be_instances_of_sub), 0, 0, 1, 0},
@@ -7899,6 +7910,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u_Return_an_iterator_to_the_soluti, __pyx_k_Return_an_iterator_to_the_soluti, sizeof(__pyx_k_Return_an_iterator_to_the_soluti), 0, 1, 0, 0},
     {&__pyx_n_s_Sequence, __pyx_k_Sequence, sizeof(__pyx_k_Sequence), 0, 0, 1, 1},
     {&__pyx_kp_s_Tried_to_insert_duplicated_varia, __pyx_k_Tried_to_insert_duplicated_varia, sizeof(__pyx_k_Tried_to_insert_duplicated_varia), 0, 0, 1, 0},
+    {&__pyx_n_s_Tuple, __pyx_k_Tuple, sizeof(__pyx_k_Tuple), 0, 0, 1, 1},
+    {&__pyx_kp_s_Tuple_List_tuple_Dict_tuple_int, __pyx_k_Tuple_List_tuple_Dict_tuple_int, sizeof(__pyx_k_Tuple_List_tuple_Dict_tuple_int), 0, 0, 1, 0},
     {&__pyx_n_s_TypeError, __pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 0, 1, 1},
     {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
     {&__pyx_n_s__34, __pyx_k__34, sizeof(__pyx_k__34), 0, 0, 1, 1},
@@ -7980,7 +7993,6 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_super, __pyx_k_super, sizeof(__pyx_k_super), 0, 0, 1, 1},
     {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
     {&__pyx_n_s_throw, __pyx_k_throw, sizeof(__pyx_k_throw), 0, 0, 1, 1},
-    {&__pyx_kp_s_tuple_List_tuple_dict_tuple_int, __pyx_k_tuple_List_tuple_dict_tuple_int, sizeof(__pyx_k_tuple_List_tuple_dict_tuple_int), 0, 0, 1, 0},
     {&__pyx_n_s_typing, __pyx_k_typing, sizeof(__pyx_k_typing), 0, 0, 1, 1},
     {&__pyx_n_s_validate, __pyx_k_validate, sizeof(__pyx_k_validate), 0, 0, 1, 1},
     {&__pyx_n_s_values, __pyx_k_values, sizeof(__pyx_k_values), 0, 0, 1, 1},
@@ -8044,7 +8056,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__3);
 
   /* "constraint/problem.py":11
- * from typing import List, Optional, Sequence
+ * from typing import List, Optional, Sequence, Tuple, Dict
  * 
  * class Problem(object):             # <<<<<<<<<<<<<<
  *     """Class used to define a problem and retrieve solutions."""
@@ -8189,7 +8201,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "constraint/problem.py":210
  *         return list(get_in_order(params) for params in solutions)
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> tuple[List[tuple], dict[tuple, int], int]:             # <<<<<<<<<<<<<<
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:             # <<<<<<<<<<<<<<
  *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)
  */
@@ -8703,7 +8715,7 @@ if (!__Pyx_RefNanny) {
  * from .domain import Domain
  * from .constraints import Constraint, FunctionConstraint             # <<<<<<<<<<<<<<
  * from operator import itemgetter
- * from typing import List, Optional, Sequence
+ * from typing import List, Optional, Sequence, Tuple, Dict
  */
   __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -8730,7 +8742,7 @@ if (!__Pyx_RefNanny) {
  * from .domain import Domain
  * from .constraints import Constraint, FunctionConstraint
  * from operator import itemgetter             # <<<<<<<<<<<<<<
- * from typing import List, Optional, Sequence
+ * from typing import List, Optional, Sequence, Tuple, Dict
  * 
  */
   __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 8, __pyx_L1_error)
@@ -8750,11 +8762,11 @@ if (!__Pyx_RefNanny) {
   /* "constraint/problem.py":9
  * from .constraints import Constraint, FunctionConstraint
  * from operator import itemgetter
- * from typing import List, Optional, Sequence             # <<<<<<<<<<<<<<
+ * from typing import List, Optional, Sequence, Tuple, Dict             # <<<<<<<<<<<<<<
  * 
  * class Problem(object):
  */
-  __pyx_t_2 = PyList_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_List);
   __Pyx_GIVEREF(__pyx_n_s_List);
@@ -8765,6 +8777,12 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_Sequence);
   __Pyx_GIVEREF(__pyx_n_s_Sequence);
   PyList_SET_ITEM(__pyx_t_2, 2, __pyx_n_s_Sequence);
+  __Pyx_INCREF(__pyx_n_s_Tuple);
+  __Pyx_GIVEREF(__pyx_n_s_Tuple);
+  PyList_SET_ITEM(__pyx_t_2, 3, __pyx_n_s_Tuple);
+  __Pyx_INCREF(__pyx_n_s_Dict);
+  __Pyx_GIVEREF(__pyx_n_s_Dict);
+  PyList_SET_ITEM(__pyx_t_2, 4, __pyx_n_s_Dict);
   __pyx_t_3 = __Pyx_Import(__pyx_n_s_typing, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -8780,10 +8798,18 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_Sequence, __pyx_t_2) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_Tuple); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Tuple, __pyx_t_2) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_Dict); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Dict, __pyx_t_2) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "constraint/problem.py":11
- * from typing import List, Optional, Sequence
+ * from typing import List, Optional, Sequence, Tuple, Dict
  * 
  * class Problem(object):             # <<<<<<<<<<<<<<
  *     """Class used to define a problem and retrieve solutions."""
@@ -8953,7 +8979,7 @@ if (!__Pyx_RefNanny) {
   /* "constraint/problem.py":210
  *         return list(get_in_order(params) for params in solutions)
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> tuple[List[tuple], dict[tuple, int], int]:             # <<<<<<<<<<<<<<
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:             # <<<<<<<<<<<<<<
  *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)
  */
@@ -8961,7 +8987,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_6);
   if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_order, __pyx_kp_s_List_str) < 0) __PYX_ERR(0, 210, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_validate, __pyx_n_s_bool) < 0) __PYX_ERR(0, 210, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_kp_s_tuple_List_tuple_dict_tuple_int) < 0) __PYX_ERR(0, 210, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_kp_s_Tuple_List_tuple_Dict_tuple_int) < 0) __PYX_ERR(0, 210, __pyx_L1_error)
   __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_7problem_7Problem_23getSolutionsAsListDict, 0, __pyx_n_s_Problem_getSolutionsAsListDict, NULL, __pyx_n_s_constraint_problem, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 210, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_tuple__31);
@@ -8983,7 +9009,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "constraint/problem.py":11
- * from typing import List, Optional, Sequence
+ * from typing import List, Optional, Sequence, Tuple, Dict
  * 
  * class Problem(object):             # <<<<<<<<<<<<<<
  *     """Class used to define a problem and retrieve solutions."""
