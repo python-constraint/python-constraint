@@ -402,7 +402,10 @@ class OptimizedBacktrackingSolver(Solver):
         return self.getSolutionsList(domains, vconstraints, [c for _, _, c in lst])
 
     def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):   # noqa: D102
-        iter = self.getSolutionIter(domains, constraints, vconstraints)
+        # sort the list from highest number of vconstraints to lowest to find unassigned variables as soon as possible
+        lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
+        lst.sort()
+        iter = self.getSolutionIter(domains, constraints, vconstraints, lst=lst)
         try:
             return next(iter)
         except StopIteration:
