@@ -207,8 +207,8 @@ class Problem(object):
         get_in_order = itemgetter(*order)
         return list(get_in_order(params) for params in solutions)
 
-    def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:
-        """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
+    def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501
+        """Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
         solutions_list = self.getSolutionsOrderedList(order)
         size_list = len(solutions_list)
         solutions_dict: dict = dict(zip(solutions_list, range(size_list)))
@@ -217,7 +217,7 @@ class Problem(object):
             size_dict = len(solutions_dict)
             if size_list != size_dict:
                 raise ValueError(
-                    f"{size_list - size_dict} duplicate parameter configurations in the searchspace, this should not happen."
+                    f"{size_list - size_dict} duplicate parameter configurations in searchspace, should not happen."
                 )
         return (
             solutions_list,

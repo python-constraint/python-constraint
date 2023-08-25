@@ -1394,7 +1394,7 @@ struct __pyx_obj_10constraint_7problem___pyx_scope_struct_1_genexpr {
  *         get_in_order = itemgetter(*order)
  *         return list(get_in_order(params) for params in solutions)             # <<<<<<<<<<<<<<
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501
  */
 struct __pyx_obj_10constraint_7problem___pyx_scope_struct_2_genexpr {
   PyObject_HEAD
@@ -2424,7 +2424,7 @@ static const char __pyx_k_Problem_getSolutionsAsListDict[] = "Problem.getSolutio
 static const char __pyx_k_Add_a_constraint_to_the_problem[] = "Add a constraint to the problem.\n\n        Example:\n        >>> problem = Problem()\n        >>> problem.addVariables([\"a\", \"b\"], [1, 2, 3])\n        >>> problem.addConstraint(lambda a, b: b == a+1, [\"a\", \"b\"])\n        >>> solutions = problem.getSolutions()\n        >>>\n\n        @param constraint: Constraint to be included in the problem\n        @type  constraint: instance a L{Constraint} subclass or a\n                           function to be wrapped by L{FunctionConstraint}\n        @param variables: Variables affected by the constraint (default to\n                          all variables). Depending on the constraint type\n                          the order may be important.\n        @type  variables: set or sequence of variables\n        ";
 static const char __pyx_k_Problem_getSolutionsOrderedList[] = "Problem.getSolutionsOrderedList.<locals>.genexpr";
 static const char __pyx_k_Tuple_List_tuple_Dict_tuple_int[] = "Tuple[List[tuple], Dict[tuple, int], int]";
-static const char __pyx_k_duplicate_parameter_configurati[] = " duplicate parameter configurations in the searchspace, this should not happen.";
+static const char __pyx_k_duplicate_parameter_configurati[] = " duplicate parameter configurations in searchspace, should not happen.";
 static const char __pyx_k_Add_a_variable_to_the_problem_Ex[] = "Add a variable to the problem.\n\n        Example:\n        >>> problem = Problem()\n        >>> problem.addVariable(\"a\", [1, 2])\n        >>> problem.getSolution() in ({'a': 1}, {'a': 2})\n        True\n\n        @param variable: Object representing a problem variable\n        @type  variable: hashable object\n        @param domain: Set of items defining the possible values that\n                       the given variable may assume\n        @type  domain: list, tuple, or instance of C{Domain}\n        ";
 static const char __pyx_k_Add_one_or_more_variables_to_the[] = "Add one or more variables to the problem.\n\n        Example:\n        >>> problem = Problem()\n        >>> problem.addVariables([\"a\", \"b\"], [1, 2, 3])\n        >>> solutions = problem.getSolutions()\n        >>> len(solutions)\n        9\n        >>> {'a': 3, 'b': 1} in solutions\n        True\n\n        @param variables: Any object containing a sequence of objects\n                          represeting problem variables\n        @type  variables: sequence of hashable objects\n        @param domain: Set of items defining the possible values that\n                       the given variables may assume\n        @type  domain: list, tuple, or instance of C{Domain}\n        ";
 static const char __pyx_k_Change_the_problem_solver_curren[] = "Change the problem solver currently in use.\n\n        Example:\n        >>> solver = BacktrackingSolver()\n        >>> problem = Problem(solver)\n        >>> problem.getSolver() is solver\n        True\n\n        @param solver: New problem solver\n        @type  solver: instance of a C{Solver} subclass\n        ";
@@ -5888,7 +5888,7 @@ static PyObject *__pyx_gb_10constraint_7problem_7Problem_23getSolutionsOrderedLi
  *         get_in_order = itemgetter(*order)
  *         return list(get_in_order(params) for params in solutions)             # <<<<<<<<<<<<<<
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501
  */
 
 static PyObject *__pyx_pf_10constraint_7problem_7Problem_23getSolutionsOrderedList_3genexpr(PyObject *__pyx_self, PyObject *__pyx_genexpr_arg_0) {
@@ -6163,7 +6163,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_20getSolutionsOrderedLi
  *         get_in_order = itemgetter(*order)
  *         return list(get_in_order(params) for params in solutions)             # <<<<<<<<<<<<<<
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_3 = __pyx_pf_10constraint_7problem_7Problem_23getSolutionsOrderedList_3genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_solutions); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 208, __pyx_L1_error)
@@ -6203,8 +6203,8 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_20getSolutionsOrderedLi
 /* "constraint/problem.py":210
  *         return list(get_in_order(params) for params in solutions)
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:             # <<<<<<<<<<<<<<
- *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501             # <<<<<<<<<<<<<<
+ *         """Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)
  */
 
@@ -6216,7 +6216,7 @@ PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_10constraint_7problem_7Problem_22getSolutionsAsListDict, "Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size.");
+PyDoc_STRVAR(__pyx_doc_10constraint_7problem_7Problem_22getSolutionsAsListDict, "Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size.");
 static PyMethodDef __pyx_mdef_10constraint_7problem_7Problem_23getSolutionsAsListDict = {"getSolutionsAsListDict", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10constraint_7problem_7Problem_23getSolutionsAsListDict, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_10constraint_7problem_7Problem_22getSolutionsAsListDict};
 static PyObject *__pyx_pw_10constraint_7problem_7Problem_23getSolutionsAsListDict(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
@@ -6334,8 +6334,8 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_22getSolutionsAsListDic
   __Pyx_RefNannySetupContext("getSolutionsAsListDict", 0);
 
   /* "constraint/problem.py":212
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:
- *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501
+ *         """Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)             # <<<<<<<<<<<<<<
  *         size_list = len(solutions_list)
  *         solutions_dict: dict = dict(zip(solutions_list, range(size_list)))
@@ -6366,7 +6366,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_22getSolutionsAsListDic
   __pyx_t_1 = 0;
 
   /* "constraint/problem.py":213
- *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
+ *         """Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)
  *         size_list = len(solutions_list)             # <<<<<<<<<<<<<<
  *         solutions_dict: dict = dict(zip(solutions_list, range(size_list)))
@@ -6432,7 +6432,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_22getSolutionsAsListDic
  *             size_dict = len(solutions_dict)
  *             if size_list != size_dict:             # <<<<<<<<<<<<<<
  *                 raise ValueError(
- *                     f"{size_list - size_dict} duplicate parameter configurations in the searchspace, this should not happen."
+ *                     f"{size_list - size_dict} duplicate parameter configurations in searchspace, should not happen."
  */
     __pyx_t_2 = PyObject_RichCompare(__pyx_v_size_list, __pyx_v_size_dict, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
     __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 218, __pyx_L1_error)
@@ -6442,7 +6442,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_22getSolutionsAsListDic
       /* "constraint/problem.py":220
  *             if size_list != size_dict:
  *                 raise ValueError(
- *                     f"{size_list - size_dict} duplicate parameter configurations in the searchspace, this should not happen."             # <<<<<<<<<<<<<<
+ *                     f"{size_list - size_dict} duplicate parameter configurations in searchspace, should not happen."             # <<<<<<<<<<<<<<
  *                 )
  *         return (
  */
@@ -6459,7 +6459,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_22getSolutionsAsListDic
  *             size_dict = len(solutions_dict)
  *             if size_list != size_dict:
  *                 raise ValueError(             # <<<<<<<<<<<<<<
- *                     f"{size_list - size_dict} duplicate parameter configurations in the searchspace, this should not happen."
+ *                     f"{size_list - size_dict} duplicate parameter configurations in searchspace, should not happen."
  *                 )
  */
       __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
@@ -6474,7 +6474,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_22getSolutionsAsListDic
  *             size_dict = len(solutions_dict)
  *             if size_list != size_dict:             # <<<<<<<<<<<<<<
  *                 raise ValueError(
- *                     f"{size_list - size_dict} duplicate parameter configurations in the searchspace, this should not happen."
+ *                     f"{size_list - size_dict} duplicate parameter configurations in searchspace, should not happen."
  */
     }
 
@@ -6488,7 +6488,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_22getSolutionsAsListDic
   }
 
   /* "constraint/problem.py":222
- *                     f"{size_list - size_dict} duplicate parameter configurations in the searchspace, this should not happen."
+ *                     f"{size_list - size_dict} duplicate parameter configurations in searchspace, should not happen."
  *                 )
  *         return (             # <<<<<<<<<<<<<<
  *             solutions_list,
@@ -6521,8 +6521,8 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_22getSolutionsAsListDic
   /* "constraint/problem.py":210
  *         return list(get_in_order(params) for params in solutions)
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:             # <<<<<<<<<<<<<<
- *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501             # <<<<<<<<<<<<<<
+ *         """Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)
  */
 
@@ -8201,8 +8201,8 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "constraint/problem.py":210
  *         return list(get_in_order(params) for params in solutions)
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:             # <<<<<<<<<<<<<<
- *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501             # <<<<<<<<<<<<<<
+ *         """Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)
  */
   __pyx_tuple__29 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_order, __pyx_n_s_validate, __pyx_n_s_solutions_list, __pyx_n_s_size_list, __pyx_n_s_solutions_dict, __pyx_n_s_size_dict); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 210, __pyx_L1_error)
@@ -8979,8 +8979,8 @@ if (!__Pyx_RefNanny) {
   /* "constraint/problem.py":210
  *         return list(get_in_order(params) for params in solutions)
  * 
- *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:             # <<<<<<<<<<<<<<
- *         """Returns a tuple of the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
+ *     def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501             # <<<<<<<<<<<<<<
+ *         """Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
  *         solutions_list = self.getSolutionsOrderedList(order)
  */
   __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 210, __pyx_L1_error)

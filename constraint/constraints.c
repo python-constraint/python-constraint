@@ -6952,7 +6952,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint___init__
  *         self._maxsum = maxsum
  *         self._multipliers = multipliers             # <<<<<<<<<<<<<<
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_multipliers_2, __pyx_v_multipliers) < 0) __PYX_ERR(0, 289, __pyx_L1_error)
 
@@ -6979,7 +6979,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint___init__
 /* "constraint/constraints.py":291
  *         self._multipliers = multipliers
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -7262,7 +7262,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_16MaxSumConstraint_10prePro
 /* "constraint/constraints.py":291
  *         self._multipliers = multipliers
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -7302,7 +7302,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_2preProc
 
   /* "constraint/constraints.py":292
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)             # <<<<<<<<<<<<<<
  * 
  *         # check if there are any negative values in the associated variables
@@ -8097,7 +8097,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_2preProc
   /* "constraint/constraints.py":291
  *         self._multipliers = multipliers
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -8453,7 +8453,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
  *             for variable, multiplier in zip(variables, multipliers):
  *                 if variable in assignments:             # <<<<<<<<<<<<<<
  *                     sum += assignments[variable] * multiplier
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  */
       __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 332, __pyx_L1_error)
       if (__pyx_t_2) {
@@ -8462,7 +8462,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
  *             for variable, multiplier in zip(variables, multipliers):
  *                 if variable in assignments:
  *                     sum += assignments[variable] * multiplier             # <<<<<<<<<<<<<<
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  */
         __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 333, __pyx_L1_error)
@@ -8481,7 +8481,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
  *             for variable, multiplier in zip(variables, multipliers):
  *                 if variable in assignments:             # <<<<<<<<<<<<<<
  *                     sum += assignments[variable] * multiplier
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  */
       }
 
@@ -8498,16 +8498,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
     /* "constraint/constraints.py":334
  *                 if variable in assignments:
  *                     sum += assignments[variable] * multiplier
- *             if type(sum) is float:             # <<<<<<<<<<<<<<
+ *             if isinstance(sum, float):             # <<<<<<<<<<<<<<
  *                 sum = round(sum, 10)
  *             if sum > maxsum:
  */
-    __pyx_t_2 = (((PyObject *)Py_TYPE(__pyx_v_sum)) == ((PyObject *)(&PyFloat_Type)));
+    __pyx_t_2 = PyFloat_Check(__pyx_v_sum); 
     if (__pyx_t_2) {
 
       /* "constraint/constraints.py":335
  *                     sum += assignments[variable] * multiplier
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)             # <<<<<<<<<<<<<<
  *             if sum > maxsum:
  *                 return False
@@ -8529,14 +8529,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
       /* "constraint/constraints.py":334
  *                 if variable in assignments:
  *                     sum += assignments[variable] * multiplier
- *             if type(sum) is float:             # <<<<<<<<<<<<<<
+ *             if isinstance(sum, float):             # <<<<<<<<<<<<<<
  *                 sum = round(sum, 10)
  *             if sum > maxsum:
  */
     }
 
     /* "constraint/constraints.py":336
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  *             if sum > maxsum:             # <<<<<<<<<<<<<<
  *                 return False
@@ -8560,7 +8560,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
       goto __pyx_L0;
 
       /* "constraint/constraints.py":336
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  *             if sum > maxsum:             # <<<<<<<<<<<<<<
  *                 return False
@@ -8955,7 +8955,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
  *             for variable in variables:
  *                 if variable in assignments:             # <<<<<<<<<<<<<<
  *                     sum += assignments[variable]
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  */
       __pyx_t_13 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 349, __pyx_L1_error)
       if (__pyx_t_13) {
@@ -8964,7 +8964,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
  *             for variable in variables:
  *                 if variable in assignments:
  *                     sum += assignments[variable]             # <<<<<<<<<<<<<<
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  */
         __pyx_t_6 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 350, __pyx_L1_error)
@@ -8980,7 +8980,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
  *             for variable in variables:
  *                 if variable in assignments:             # <<<<<<<<<<<<<<
  *                     sum += assignments[variable]
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  */
       }
 
@@ -8997,16 +8997,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
     /* "constraint/constraints.py":351
  *                 if variable in assignments:
  *                     sum += assignments[variable]
- *             if type(sum) is float:             # <<<<<<<<<<<<<<
+ *             if isinstance(sum, float):             # <<<<<<<<<<<<<<
  *                 sum = round(sum, 10)
  *             if sum > maxsum:
  */
-    __pyx_t_13 = (((PyObject *)Py_TYPE(__pyx_v_sum)) == ((PyObject *)(&PyFloat_Type)));
+    __pyx_t_13 = PyFloat_Check(__pyx_v_sum); 
     if (__pyx_t_13) {
 
       /* "constraint/constraints.py":352
  *                     sum += assignments[variable]
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)             # <<<<<<<<<<<<<<
  *             if sum > maxsum:
  *                 return False
@@ -9028,14 +9028,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
       /* "constraint/constraints.py":351
  *                 if variable in assignments:
  *                     sum += assignments[variable]
- *             if type(sum) is float:             # <<<<<<<<<<<<<<
+ *             if isinstance(sum, float):             # <<<<<<<<<<<<<<
  *                 sum = round(sum, 10)
  *             if sum > maxsum:
  */
     }
 
     /* "constraint/constraints.py":353
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  *             if sum > maxsum:             # <<<<<<<<<<<<<<
  *                 return False
@@ -9059,7 +9059,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MaxSumConstraint_4__call_
       goto __pyx_L0;
 
       /* "constraint/constraints.py":353
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  *             if sum > maxsum:             # <<<<<<<<<<<<<<
  *                 return False
@@ -9475,7 +9475,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint___init_
  *         """
  *         self._maxprod = maxprod             # <<<<<<<<<<<<<<
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_maxprod_2, __pyx_v_maxprod) < 0) __PYX_ERR(0, 377, __pyx_L1_error)
 
@@ -9502,7 +9502,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint___init_
 /* "constraint/constraints.py":379
  *         self._maxprod = maxprod
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -9785,7 +9785,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_17MaxProdConstraint_10prePr
 /* "constraint/constraints.py":379
  *         self._maxprod = maxprod
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -9822,7 +9822,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
 
   /* "constraint/constraints.py":380
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)             # <<<<<<<<<<<<<<
  * 
  *         # check if there are any values less than 1 in the associated variables
@@ -10357,7 +10357,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
   /* "constraint/constraints.py":379
  *         self._maxprod = maxprod
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -11167,7 +11167,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint___init
  *         self._exactsum = exactsum
  *         self._multipliers = multipliers             # <<<<<<<<<<<<<<
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):    # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_multipliers_2, __pyx_v_multipliers) < 0) __PYX_ERR(0, 449, __pyx_L1_error)
 
@@ -11194,7 +11194,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint___init
 /* "constraint/constraints.py":451
  *         self._multipliers = multipliers
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):    # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         multipliers = self._multipliers
  */
@@ -11353,7 +11353,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_2prePr
 
   /* "constraint/constraints.py":452
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):    # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)             # <<<<<<<<<<<<<<
  *         multipliers = self._multipliers
  *         exactsum = self._exactsum
@@ -11386,7 +11386,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_2prePr
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "constraint/constraints.py":453
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):    # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         multipliers = self._multipliers             # <<<<<<<<<<<<<<
  *         exactsum = self._exactsum
@@ -11868,7 +11868,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_2prePr
   /* "constraint/constraints.py":451
  *         self._multipliers = multipliers
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):    # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         multipliers = self._multipliers
  */
@@ -12266,7 +12266,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_4__cal
  *                     sum += assignments[variable] * multiplier
  *                 else:
  *                     missing = True             # <<<<<<<<<<<<<<
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  */
       /*else*/ {
@@ -12287,16 +12287,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_4__cal
     /* "constraint/constraints.py":479
  *                 else:
  *                     missing = True
- *             if type(sum) is float:             # <<<<<<<<<<<<<<
+ *             if isinstance(sum, float):             # <<<<<<<<<<<<<<
  *                 sum = round(sum, 10)
  *             if sum > exactsum:
  */
-    __pyx_t_2 = (((PyObject *)Py_TYPE(__pyx_v_sum)) == ((PyObject *)(&PyFloat_Type)));
+    __pyx_t_2 = PyFloat_Check(__pyx_v_sum); 
     if (__pyx_t_2) {
 
       /* "constraint/constraints.py":480
  *                     missing = True
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)             # <<<<<<<<<<<<<<
  *             if sum > exactsum:
  *                 return False
@@ -12318,14 +12318,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_4__cal
       /* "constraint/constraints.py":479
  *                 else:
  *                     missing = True
- *             if type(sum) is float:             # <<<<<<<<<<<<<<
+ *             if isinstance(sum, float):             # <<<<<<<<<<<<<<
  *                 sum = round(sum, 10)
  *             if sum > exactsum:
  */
     }
 
     /* "constraint/constraints.py":481
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  *             if sum > exactsum:             # <<<<<<<<<<<<<<
  *                 return False
@@ -12349,7 +12349,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_4__cal
       goto __pyx_L0;
 
       /* "constraint/constraints.py":481
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  *             if sum > exactsum:             # <<<<<<<<<<<<<<
  *                 return False
@@ -12785,7 +12785,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_4__cal
  *                     sum += assignments[variable]
  *                 else:
  *                     missing = True             # <<<<<<<<<<<<<<
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  */
       /*else*/ {
@@ -12806,16 +12806,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_4__cal
     /* "constraint/constraints.py":498
  *                 else:
  *                     missing = True
- *             if type(sum) is float:             # <<<<<<<<<<<<<<
+ *             if isinstance(sum, float):             # <<<<<<<<<<<<<<
  *                 sum = round(sum, 10)
  *             if sum > exactsum:
  */
-    __pyx_t_10 = (((PyObject *)Py_TYPE(__pyx_v_sum)) == ((PyObject *)(&PyFloat_Type)));
+    __pyx_t_10 = PyFloat_Check(__pyx_v_sum); 
     if (__pyx_t_10) {
 
       /* "constraint/constraints.py":499
  *                     missing = True
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)             # <<<<<<<<<<<<<<
  *             if sum > exactsum:
  *                 return False
@@ -12837,14 +12837,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_4__cal
       /* "constraint/constraints.py":498
  *                 else:
  *                     missing = True
- *             if type(sum) is float:             # <<<<<<<<<<<<<<
+ *             if isinstance(sum, float):             # <<<<<<<<<<<<<<
  *                 sum = round(sum, 10)
  *             if sum > exactsum:
  */
     }
 
     /* "constraint/constraints.py":500
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  *             if sum > exactsum:             # <<<<<<<<<<<<<<
  *                 return False
@@ -12868,7 +12868,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18ExactSumConstraint_4__cal
       goto __pyx_L0;
 
       /* "constraint/constraints.py":500
- *             if type(sum) is float:
+ *             if isinstance(sum, float):
  *                 sum = round(sum, 10)
  *             if sum > exactsum:             # <<<<<<<<<<<<<<
  *                 return False
@@ -13820,7 +13820,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MinSumConstraint_2__call_
  *         else:
  *             for variable in variables:             # <<<<<<<<<<<<<<
  *                 sum += assignments[variable]
- *         if type(sum) is float:
+ *         if isinstance(sum, float):
  */
   /*else*/ {
     if (likely(PyList_CheckExact(__pyx_v_variables)) || PyTuple_CheckExact(__pyx_v_variables)) {
@@ -13869,7 +13869,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MinSumConstraint_2__call_
  *         else:
  *             for variable in variables:
  *                 sum += assignments[variable]             # <<<<<<<<<<<<<<
- *         if type(sum) is float:
+ *         if isinstance(sum, float):
  *             sum = round(sum, 10)
  */
       __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 555, __pyx_L1_error)
@@ -13885,7 +13885,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MinSumConstraint_2__call_
  *         else:
  *             for variable in variables:             # <<<<<<<<<<<<<<
  *                 sum += assignments[variable]
- *         if type(sum) is float:
+ *         if isinstance(sum, float):
  */
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13895,16 +13895,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MinSumConstraint_2__call_
   /* "constraint/constraints.py":556
  *             for variable in variables:
  *                 sum += assignments[variable]
- *         if type(sum) is float:             # <<<<<<<<<<<<<<
+ *         if isinstance(sum, float):             # <<<<<<<<<<<<<<
  *             sum = round(sum, 10)
  *         return sum >= minsum
  */
-  __pyx_t_5 = (((PyObject *)Py_TYPE(__pyx_v_sum)) == ((PyObject *)(&PyFloat_Type)));
+  __pyx_t_5 = PyFloat_Check(__pyx_v_sum); 
   if (__pyx_t_5) {
 
     /* "constraint/constraints.py":557
  *                 sum += assignments[variable]
- *         if type(sum) is float:
+ *         if isinstance(sum, float):
  *             sum = round(sum, 10)             # <<<<<<<<<<<<<<
  *         return sum >= minsum
  * 
@@ -13926,14 +13926,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_16MinSumConstraint_2__call_
     /* "constraint/constraints.py":556
  *             for variable in variables:
  *                 sum += assignments[variable]
- *         if type(sum) is float:             # <<<<<<<<<<<<<<
+ *         if isinstance(sum, float):             # <<<<<<<<<<<<<<
  *             sum = round(sum, 10)
  *         return sum >= minsum
  */
   }
 
   /* "constraint/constraints.py":558
- *         if type(sum) is float:
+ *         if isinstance(sum, float):
  *             sum = round(sum, 10)
  *         return sum >= minsum             # <<<<<<<<<<<<<<
  * 
@@ -14078,7 +14078,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint___init_
  *         """
  *         self._minprod = minprod             # <<<<<<<<<<<<<<
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_minprod_2, __pyx_v_minprod) < 0) __PYX_ERR(0, 570, __pyx_L1_error)
 
@@ -14105,7 +14105,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint___init_
 /* "constraint/constraints.py":572
  *         self._minprod = minprod
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -14262,7 +14262,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
 
   /* "constraint/constraints.py":573
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)             # <<<<<<<<<<<<<<
  * 
  *         # prune the associated variables of values > maxprod
@@ -14502,7 +14502,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
   /* "constraint/constraints.py":572
  *         self._minprod = minprod
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -14800,7 +14800,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
  *         prod = 1
  *         for variable in variables:             # <<<<<<<<<<<<<<
  *             prod *= assignments[variable]
- *         if type(prod) is float:
+ *         if isinstance(prod, float):
  */
   if (likely(PyList_CheckExact(__pyx_v_variables)) || PyTuple_CheckExact(__pyx_v_variables)) {
     __pyx_t_1 = __pyx_v_variables; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
@@ -14848,7 +14848,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
  *         prod = 1
  *         for variable in variables:
  *             prod *= assignments[variable]             # <<<<<<<<<<<<<<
- *         if type(prod) is float:
+ *         if isinstance(prod, float):
  *             prod = round(prod, 10)
  */
     __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 593, __pyx_L1_error)
@@ -14864,7 +14864,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
  *         prod = 1
  *         for variable in variables:             # <<<<<<<<<<<<<<
  *             prod *= assignments[variable]
- *         if type(prod) is float:
+ *         if isinstance(prod, float):
  */
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -14872,16 +14872,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
   /* "constraint/constraints.py":594
  *         for variable in variables:
  *             prod *= assignments[variable]
- *         if type(prod) is float:             # <<<<<<<<<<<<<<
+ *         if isinstance(prod, float):             # <<<<<<<<<<<<<<
  *             prod = round(prod, 10)
  *         return prod >= minprod
  */
-  __pyx_t_5 = (((PyObject *)Py_TYPE(__pyx_v_prod)) == ((PyObject *)(&PyFloat_Type)));
+  __pyx_t_5 = PyFloat_Check(__pyx_v_prod); 
   if (__pyx_t_5) {
 
     /* "constraint/constraints.py":595
  *             prod *= assignments[variable]
- *         if type(prod) is float:
+ *         if isinstance(prod, float):
  *             prod = round(prod, 10)             # <<<<<<<<<<<<<<
  *         return prod >= minprod
  * 
@@ -14903,14 +14903,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
     /* "constraint/constraints.py":594
  *         for variable in variables:
  *             prod *= assignments[variable]
- *         if type(prod) is float:             # <<<<<<<<<<<<<<
+ *         if isinstance(prod, float):             # <<<<<<<<<<<<<<
  *             prod = round(prod, 10)
  *         return prod >= minprod
  */
   }
 
   /* "constraint/constraints.py":596
- *         if type(prod) is float:
+ *         if isinstance(prod, float):
  *             prod = round(prod, 10)
  *         return prod >= minprod             # <<<<<<<<<<<<<<
  * 
@@ -15220,7 +15220,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_2__call__
  *         # preProcess() will remove it.
  *         raise RuntimeError("Can't happen")             # <<<<<<<<<<<<<<
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  */
   __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 620, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -15249,7 +15249,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_2__call__
 /* "constraint/constraints.py":622
  *         raise RuntimeError("Can't happen")
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         for variable in variables:
  */
@@ -15405,7 +15405,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
 
   /* "constraint/constraints.py":623
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set             # <<<<<<<<<<<<<<
  *         for variable in variables:
  *             domain = domains[variable]
@@ -15416,7 +15416,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
   __pyx_t_1 = 0;
 
   /* "constraint/constraints.py":624
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set
  *         for variable in variables:             # <<<<<<<<<<<<<<
  *             domain = domains[variable]
@@ -15632,7 +15632,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
     /* "constraint/constraints.py":624
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set
  *         for variable in variables:             # <<<<<<<<<<<<<<
  *             domain = domains[variable]
@@ -15664,7 +15664,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
   /* "constraint/constraints.py":622
  *         raise RuntimeError("Can't happen")
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         for variable in variables:
  */
@@ -15964,7 +15964,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_2__cal
  *         # preProcess() will remove it.
  *         raise RuntimeError("Can't happen")             # <<<<<<<<<<<<<<
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  */
   __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 654, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -15993,7 +15993,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_2__cal
 /* "constraint/constraints.py":656
  *         raise RuntimeError("Can't happen")
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         for variable in variables:
  */
@@ -16149,7 +16149,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
 
   /* "constraint/constraints.py":657
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set             # <<<<<<<<<<<<<<
  *         for variable in variables:
  *             domain = domains[variable]
@@ -16160,7 +16160,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
   __pyx_t_1 = 0;
 
   /* "constraint/constraints.py":658
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set
  *         for variable in variables:             # <<<<<<<<<<<<<<
  *             domain = domains[variable]
@@ -16376,7 +16376,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
     /* "constraint/constraints.py":658
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set
  *         for variable in variables:             # <<<<<<<<<<<<<<
  *             domain = domains[variable]
@@ -16408,7 +16408,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
   /* "constraint/constraints.py":656
  *         raise RuntimeError("Can't happen")
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         for variable in variables:
  */
@@ -18999,7 +18999,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         # preProcess() will remove it.
  *         raise RuntimeError("Can't happen")             # <<<<<<<<<<<<<<
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
  */
   __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_Can_t_happen); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 620, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
@@ -19127,7 +19127,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "constraint/constraints.py":291
  *         self._multipliers = multipliers
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -19166,7 +19166,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "constraint/constraints.py":379
  *         self._maxprod = maxprod
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -19208,7 +19208,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "constraint/constraints.py":451
  *         self._multipliers = multipliers
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):    # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         multipliers = self._multipliers
  */
@@ -19277,7 +19277,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "constraint/constraints.py":572
  *         self._minprod = minprod
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -19328,7 +19328,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "constraint/constraints.py":622
  *         raise RuntimeError("Can't happen")
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         for variable in variables:
  */
@@ -19361,7 +19361,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "constraint/constraints.py":656
  *         raise RuntimeError("Can't happen")
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         for variable in variables:
  */
@@ -20297,7 +20297,7 @@ if (!__Pyx_RefNanny) {
   /* "constraint/constraints.py":291
  *         self._multipliers = multipliers
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -20394,7 +20394,7 @@ if (!__Pyx_RefNanny) {
   /* "constraint/constraints.py":379
  *         self._maxprod = maxprod
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -20493,7 +20493,7 @@ if (!__Pyx_RefNanny) {
   /* "constraint/constraints.py":451
  *         self._multipliers = multipliers
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):    # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         multipliers = self._multipliers
  */
@@ -20669,7 +20669,7 @@ if (!__Pyx_RefNanny) {
   /* "constraint/constraints.py":572
  *         self._minprod = minprod
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  */
@@ -20774,7 +20774,7 @@ if (!__Pyx_RefNanny) {
   /* "constraint/constraints.py":622
  *         raise RuntimeError("Can't happen")
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         for variable in variables:
  */
@@ -20859,7 +20859,7 @@ if (!__Pyx_RefNanny) {
   /* "constraint/constraints.py":656
  *         raise RuntimeError("Can't happen")
  * 
- *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):        # noqa: D102             # <<<<<<<<<<<<<<
+ *     def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         for variable in variables:
  */

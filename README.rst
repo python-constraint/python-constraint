@@ -112,6 +112,8 @@ Predefined constraint types currently available:
 - :python:`ExactSumConstraint`
 - :python:`MaxSumConstraint`
 - :python:`MinSumConstraint`
+- :python:`MaxProdConstraint`
+- :python:`MinProdConstraint`
 - :python:`InSetConstraint`
 - :python:`NotInSetConstraint`
 - :python:`SomeInSetConstraint`
@@ -127,6 +129,11 @@ Download and install
 .. code-block:: shell
 
     $ pip install python-constraint
+
+Testing
+-------
+
+Run `pytest` (for local Python) or `nox` (for all supported Python versions).
 
 Roadmap
 -------
