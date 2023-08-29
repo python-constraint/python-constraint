@@ -199,7 +199,6 @@ class Problem(object):
                 ...
             StopIteration
         """
-
         domains, constraints, vconstraints = self._getArgs()
         if not domains:
             return iter(())

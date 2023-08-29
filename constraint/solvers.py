@@ -400,7 +400,7 @@ class OptimizedBacktrackingSolver(Solver):
         # sort the list from highest number of vconstraints to lowest to find unassigned variables as soon as possible
         lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
         lst.sort()
-        iter = self.getSolutionIter(domains, constraints, vconstraints, lst=lst)
+        iter = self.getSolutionIter(domains, constraints, vconstraints, [c for _, _, c in lst])
         try:
             return next(iter)
         except StopIteration:

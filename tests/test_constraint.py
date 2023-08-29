@@ -106,3 +106,23 @@ def test_constraint_without_variables():
     problem.addConstraint(lambda a: a * 2 == 6)
     solutions = problem.getSolutions()
     assert solutions == [{"a": 3}]
+
+def test_multipliers():
+    """Test the multiplier functionality in the constraints."""
+    from constraint import MaxSumConstraint, ExactSumConstraint, MinSumConstraint
+    problem = constraint.Problem()
+    problem.addVariable("x", [-1, 0, 1, 2])
+    problem.addVariable("y", [1, 2])
+    problem.addConstraint(MaxSumConstraint(4, [2, 1]), ["x", "y"])
+    problem.addConstraint(ExactSumConstraint(4, [1, 2]), ["x", "y"])
+    problem.addConstraint(MinSumConstraint(0, [0.5, 1]), ["x"])
+
+    possible_solutions = [
+        {'y': 2, 'x': 0},
+        {'y': 1, 'x': 2}
+    ]
+
+    # get the solutions
+    solutions = problem.getSolutions()
+    for solution in solutions:
+        assert solution in possible_solutions
