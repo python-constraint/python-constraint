@@ -116,7 +116,7 @@ Predefined constraint types currently available:
 - :any:`SomeInSetConstraint`
 - :any:`SomeNotInSetConstraint`
 
- 
+
 Download and install
 --------------------
 
