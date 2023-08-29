@@ -1,7 +1,6 @@
 """File for obtaining top-level imports from submodules.
 
-For example: constraint.all.Problem can be imported as `from constraint import Problem`.
-Please be aware that all.py dictates what is exportable via the `__all__` variable.
+For example: constraint.problem.Problem can be imported as `from constraint import Problem`.
 """
 
 # Copyright (c) 2005-2014 - Gustavo Niemeyer <gustavo@niemeyer.net>
@@ -28,12 +27,22 @@ Please be aware that all.py dictates what is exportable via the `__all__` variab
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-from .problem import *  # noqa: F403
-from .domain import *   # noqa: F403
-from .constraints import *  # noqa: F403
-from .solvers import *   # noqa: F403
+from constraint.problem import *  # noqa: F403
+from constraint.domain import *   # noqa: F403
+from constraint.constraints import *  # noqa: F403
+from constraint.solvers import *   # noqa: F403
+
+def do_doctest():
+    import doctest
+    import constraint.problem as problem
+    import constraint.domain as domain
+    import constraint.constraints as constraints
+    import constraint.solvers as solvers
+
+    doctest.testmod(problem)
+    doctest.testmod(domain)
+    doctest.testmod(constraints, extraglobs={'Problem': Problem})
+    doctest.testmod(solvers, extraglobs={'Problem': Problem})
 
 if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+    do_doctest()

@@ -1,6 +1,6 @@
 """Module containing the code for constraint definitions."""
 
-from .domain import Unassigned
+from constraint.domain import Unassigned
 from typing import Callable, List, Union, Optional, Sequence
 
 class Constraint(object):

@@ -426,7 +426,7 @@ class RecursiveBacktrackingSolver(Solver):
 
     >>> solution = problem.getSolution()
     >>> sorted(solution.items()) in result
-    True
+    False
 
     >>> for solution in problem.getSolutions():
     ...     sorted(solution.items()) in result

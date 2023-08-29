@@ -2,9 +2,9 @@
 
 import copy
 
-from .solvers import BacktrackingSolver
-from .domain import Domain
-from .constraints import Constraint, FunctionConstraint
+from constraint.solvers import BacktrackingSolver
+from constraint.domain import Domain
+from constraint.constraints import Constraint, FunctionConstraint
 from operator import itemgetter
 from typing import List, Optional, Sequence, Tuple, Dict
 
@@ -191,7 +191,7 @@ class Problem(object):
         {'a': 42}
         >>> next(iter)
         Traceback (most recent call last):
-          File "<stdin>", line 1, in ?
+            ...
         StopIteration
         """
         domains, constraints, vconstraints = self._getArgs()

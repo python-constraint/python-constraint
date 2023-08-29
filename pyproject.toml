@@ -46,6 +46,15 @@ Source = "https://github.com/python-constraint/python-constraint"
 Tracker = "https://github.com/python-constraint/python-constraint/issues"
 
 [project.optional-dependencies]
+doc = [
+    "sphinx",
+    "sphinx_rtd_theme",
+    "nbsphinx",
+    "pytest",
+    "ipython",
+    "markupsafe==2.0.1",
+    "toml",
+]
 test = [
     "pytest >= 7.3.1",
     "pytest-cov >= 4.0.0",

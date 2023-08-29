@@ -153,6 +153,7 @@ Contact
 -------
 - `Gustavo Niemeyer <https://github.com/niemeyer/>`_ <gustavo@niemeyer.net>
 - `Sébastien Celles <https://github.com/scls19fr/>`_ <s.celles@gmail.com>
+- `Floris-Jan Willemsen <https://github.com/fjwillemsen>`
 
 But it's probably better to `open an issue <https://github.com/python-constraint/python-constraint/issues>`_.
 
