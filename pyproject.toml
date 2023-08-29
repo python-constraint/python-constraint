@@ -88,7 +88,7 @@ convention = "google"
 [tool.pytest.ini_options]
 minversion = "7.3"
 pythonpath = [
-    "src",
+    "constraint",
 ] # necessary to get coverage reports without installing with `-e`
-addopts = "--cov --cov-config=.coveragerc --cov-report html --cov-report term-missing --cov-fail-under 65"
+addopts = "--cov --cov-config=.coveragerc --cov-report html --cov-report term-missing --cov-fail-under 75"
 testpaths = ["tests"]
