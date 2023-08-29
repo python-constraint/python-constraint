@@ -25,8 +25,9 @@ class Variable(object):
     def __init__(self, name):
         """Initialization method.
 
-        @param name: Generic variable name for problem-specific purposes
-        @type  name: string
+        Args:
+            name (string): Generic variable name for problem-specific
+                purposes
         """
         self.name = name
 
@@ -53,8 +54,8 @@ class Domain(list):
     def __init__(self, set):
         """Initialization method.
 
-        @param set: Set of values that the given variables may assume
-        @type  set: set of objects comparable by equality
+        Args:
+            set: Set of values, comparable by equality, that the given variables may assume.
         """
         list.__init__(self, set)
         self._hidden = []
@@ -92,7 +93,8 @@ class Domain(list):
         on that domain anymore. The hidden value will be restored when the
         previous saved state is popped.
 
-        @param value: Object currently available in the domain
+        Args:
+            value: Object currently available in the domain
         """
         list.remove(self, value)
         self._hidden.append(value)

@@ -69,13 +69,12 @@ class Solver(object):
     def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):
         """Return one solution for the given problem.
 
-        @param domains: Dictionary mapping variables to their domains
-        @type  domains: dict
-        @param constraints: List of pairs of (constraint, variables)
-        @type  constraints: list
-        @param vconstraints: Dictionary mapping variables to a list of
-                             constraints affecting the given variables.
-        @type  vconstraints: dict
+        Args:
+            domains (dict): Dictionary mapping variables to their
+                domains
+            constraints (list): List of pairs of (constraint, variables)
+            vconstraints (dict): Dictionary mapping variables to a list
+                of constraints affecting the given variables.
         """
         msg = "%s is an abstract class" % self.__class__.__name__
         raise NotImplementedError(msg)
@@ -83,13 +82,11 @@ class Solver(object):
     def getSolutions(self, domains: dict, constraints: List[tuple], vconstraints: dict):
         """Return all solutions for the given problem.
 
-        @param domains: Dictionary mapping variables to domains
-        @type  domains: dict
-        @param constraints: List of pairs of (constraint, variables)
-        @type  constraints: list
-        @param vconstraints: Dictionary mapping variables to a list of
-                             constraints affecting the given variables.
-        @type  vconstraints: dict
+        Args:
+            domains (dict): Dictionary mapping variables to domains
+            constraints (list): List of pairs of (constraint, variables)
+            vconstraints (dict): Dictionary mapping variables to a list
+                of constraints affecting the given variables.
         """
         msg = "%s provides only a single solution" % self.__class__.__name__
         raise NotImplementedError(msg)
@@ -97,13 +94,11 @@ class Solver(object):
     def getSolutionIter(self, domains: dict, constraints: List[tuple], vconstraints: dict):
         """Return an iterator for the solutions of the given problem.
 
-        @param domains: Dictionary mapping variables to domains
-        @type  domains: dict
-        @param constraints: List of pairs of (constraint, variables)
-        @type  constraints: list
-        @param vconstraints: Dictionary mapping variables to a list of
-                             constraints affecting the given variables.
-        @type  vconstraints: dict
+        Args:
+            domains (dict): Dictionary mapping variables to domains
+            constraints (list): List of pairs of (constraint, variables)
+            vconstraints (dict): Dictionary mapping variables to a list
+                of constraints affecting the given variables.
         """
         msg = "%s doesn't provide iteration" % self.__class__.__name__
         raise NotImplementedError(msg)
@@ -141,10 +136,10 @@ class BacktrackingSolver(Solver):
     def __init__(self, forwardcheck=True):
         """Initialization method.
 
-        @param forwardcheck: If false forward checking will not be requested
-                             to constraints while looking for solutions
-                             (default is true)
-        @type  forwardcheck: bool
+        Args:
+            forwardcheck (bool): If false forward checking will not be
+                requested to constraints while looking for solutions
+                (default is true)
         """
         self._forwardcheck = forwardcheck
 
@@ -270,10 +265,10 @@ class OptimizedBacktrackingSolver(Solver):
     def __init__(self, forwardcheck=True):
         """Initialization method.
 
-        @param forwardcheck: If false forward checking will not be requested
-                            to constraints while looking for solutions
-                            (default is true)
-        @type  forwardcheck: bool
+        Args:
+            forwardcheck (bool): If false forward checking will not be
+                requested to constraints while looking for solutions
+                (default is true)
         """
         self._forwardcheck = forwardcheck
 
@@ -443,10 +438,10 @@ class RecursiveBacktrackingSolver(Solver):
     def __init__(self, forwardcheck=True):
         """Initialization method.
 
-        @param forwardcheck: If false forward checking will not be requested
-                             to constraints while looking for solutions
-                             (default is true)
-        @type  forwardcheck: bool
+        Args:
+            forwardcheck (bool): If false forward checking will not be
+                requested to constraints while looking for solutions
+                (default is true)
         """
         self._forwardcheck = forwardcheck
 
@@ -530,9 +525,9 @@ class MinConflictsSolver(Solver):
     def __init__(self, steps=1000):
         """Initialization method.
 
-        @param steps: Maximum number of steps to perform before giving up
-                      when looking for a solution (default is 1000)
-        @type  steps: int
+        Args:
+            steps (int): Maximum number of steps to perform before
+                giving up when looking for a solution (default is 1000)
         """
         self._steps = steps
 

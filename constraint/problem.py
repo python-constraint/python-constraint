@@ -14,9 +14,10 @@ class Problem(object):
     def __init__(self, solver=None):
         """Initialization method.
 
-        @param solver: Problem solver used to find solutions
-                       (default is L{BacktrackingSolver})
-        @type solver:  instance of a L{Solver} subclass
+        Args:
+            solver (instance of a `Solver` subclass): Problem solver
+                used to find solutions (default is
+                `BacktrackingSolver`)
         """
         self._solver = solver or BacktrackingSolver()
         self._constraints = []
@@ -44,8 +45,9 @@ class Problem(object):
         >>> problem.getSolver() is solver
         True
 
-        @param solver: New problem solver
-        @type  solver: instance of a C{Solver} subclass
+        Args:
+            solver (instance of a `Solver` subclass): New problem
+                solver
         """
         self._solver = solver
 
@@ -58,25 +60,26 @@ class Problem(object):
         >>> problem.getSolver() is solver
         True
 
-        @return: Solver currently in use
-        @rtype: instance of a L{Solver} subclass
+        Returns:
+            instance of a `Solver` subclass: Solver currently in use
         """
         return self._solver
 
     def addVariable(self, variable, domain):
         """Add a variable to the problem.
 
-        Example:
-        >>> problem = Problem()
-        >>> problem.addVariable("a", [1, 2])
-        >>> problem.getSolution() in ({'a': 1}, {'a': 2})
-        True
+        Examples:
+            >>> problem = Problem()
+            >>> problem.addVariable("a", [1, 2])
+            >>> problem.getSolution() in ({'a': 1}, {'a': 2})
+            True
 
-        @param variable: Object representing a problem variable
-        @type  variable: hashable object
-        @param domain: Set of items defining the possible values that
-                       the given variable may assume
-        @type  domain: list, tuple, or instance of C{Domain}
+        Args:
+            variable (hashable object): Object representing a problem
+                variable
+            domain (list, tuple, or instance of `Domain`): Set of items
+                defining the possible values that the given variable may
+                assume
         """
         if variable in self._variables:
             msg = "Tried to insert duplicated variable %s" % repr(variable)
@@ -104,12 +107,13 @@ class Problem(object):
         >>> {'a': 3, 'b': 1} in solutions
         True
 
-        @param variables: Any object containing a sequence of objects
-                          represeting problem variables
-        @type  variables: sequence of hashable objects
-        @param domain: Set of items defining the possible values that
-                       the given variables may assume
-        @type  domain: list, tuple, or instance of C{Domain}
+        Args:
+            variables (sequence of hashable objects): Any object
+                containing a sequence of objects represeting problem
+                variables
+            domain (list, tuple, or instance of `Domain`): Set of items
+                defining the possible values that the given variables
+                may assume
         """
         for variable in variables:
             self.addVariable(variable, domain)
@@ -124,13 +128,12 @@ class Problem(object):
         >>> solutions = problem.getSolutions()
         >>>
 
-        @param constraint: Constraint to be included in the problem
-        @type  constraint: instance a L{Constraint} subclass or a
-                           function to be wrapped by L{FunctionConstraint}
-        @param variables: Variables affected by the constraint (default to
-                          all variables). Depending on the constraint type
-                          the order may be important.
-        @type  variables: set or sequence of variables
+        Args:
+            constraint (instance of a `Constraint` subclass or a function to be wrapped by `FunctionConstraint`):
+                Constraint to be included in the problem
+            variables (set or sequence of variables): Variables affected
+                by the constraint (default to all variables). Depending
+                on the constraint type the order may be important.
         """
         if not isinstance(constraint, Constraint):
             if callable(constraint):
@@ -151,8 +154,9 @@ class Problem(object):
         >>> problem.getSolution()
         {'a': 42}
 
-        @return: Solution for the problem
-        @rtype: dictionary mapping variables to values
+        Returns:
+            dictionary mapping variables to values: Solution for the
+            problem
         """
         domains, constraints, vconstraints = self._getArgs()
         if not domains:
@@ -170,8 +174,9 @@ class Problem(object):
         >>> problem.getSolutions()
         [{'a': 42}]
 
-        @return: All solutions for the problem
-        @rtype: list of dictionaries mapping variables to values
+        Returns:
+            list of dictionaries mapping variables to values: All
+            solutions for the problem
         """
         domains, constraints, vconstraints = self._getArgs()
         if not domains:

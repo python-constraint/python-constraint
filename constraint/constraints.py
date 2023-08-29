@@ -15,19 +15,19 @@ class Constraint(object):
         unassigned variables to prevent them from being used, and thus
         prune the search space.
 
-        @param variables: Variables affected by that constraint, in the
-                          same order provided by the user
-        @type  variables: sequence
-        @param domains: Dictionary mapping variables to their domains
-        @type  domains: dict
-        @param assignments: Dictionary mapping assigned variables to their
-                            current assumed value
-        @type  assignments: dict
-        @param forwardcheck: Boolean value stating whether forward checking
-                             should be performed or not
-        @return: Boolean value stating if this constraint is currently
-                 broken or not
-        @rtype: bool
+        Args:
+            variables (sequence): Variables affected by that constraint,
+                in the same order provided by the user
+            domains (dict): Dictionary mapping variables to their
+                domains
+            assignments (dict): Dictionary mapping assigned variables to
+                their current assumed value
+            forwardcheck: Boolean value stating whether forward checking
+                should be performed or not
+
+        Returns:
+            bool: Boolean value stating if this constraint is currently
+            broken or not
         """
         return True
 
@@ -41,16 +41,14 @@ class Constraint(object):
         since they may act on individual values even without further
         knowledge about other assignments.
 
-        @param variables: Variables affected by that constraint, in the
-                          same order provided by the user
-        @type  variables: sequence
-        @param domains: Dictionary mapping variables to their domains
-        @type  domains: dict
-        @param constraints: List of pairs of (constraint, variables)
-        @type  constraints: list
-        @param vconstraints: Dictionary mapping variables to a list of
-                             constraints affecting the given variables.
-        @type  vconstraints: dict
+        Args:
+            variables (sequence): Variables affected by that constraint,
+                in the same order provided by the user
+            domains (dict): Dictionary mapping variables to their
+                domains
+            constraints (list): List of pairs of (constraint, variables)
+            vconstraints (dict): Dictionary mapping variables to a list
+                of constraints affecting the given variables.
         """
         if len(variables) == 1:
             variable = variables[0]
@@ -67,17 +65,17 @@ class Constraint(object):
         Currently, this method acts only when there's a single
         unassigned variable.
 
-        @param variables: Variables affected by that constraint, in the
-                          same order provided by the user
-        @type  variables: sequence
-        @param domains: Dictionary mapping variables to their domains
-        @type  domains: dict
-        @param assignments: Dictionary mapping assigned variables to their
-                            current assumed value
-        @type  assignments: dict
-        @return: Boolean value stating if this constraint is currently
-                 broken or not
-        @rtype: bool
+        Args:
+            variables (sequence): Variables affected by that constraint,
+                in the same order provided by the user
+            domains (dict): Dictionary mapping variables to their
+                domains
+            assignments (dict): Dictionary mapping assigned variables to
+                their current assumed value
+
+        Returns:
+            bool: Boolean value stating if this constraint is currently
+            broken or not
         """
         unassignedvariable = _unassigned
         for variable in variables:
@@ -126,11 +124,11 @@ class FunctionConstraint(Constraint):
     def __init__(self, func: Callable, assigned: bool = True):
         """Initialization method.
 
-        @param func: Function wrapped and queried for constraint logic
-        @type  func: callable object
-        @param assigned: Whether the function may receive unassigned
-                         variables or not
-        @type  assigned: bool
+        Args:
+            func (callable object): Function wrapped and queried for
+                constraint logic
+            assigned (bool): Whether the function may receive unassigned
+                variables or not
         """
         self._func = func
         self._assigned = assigned
@@ -279,11 +277,11 @@ class MaxSumConstraint(Constraint):
     def __init__(self, maxsum: Union[int, float], multipliers: Optional[Sequence] = None):
         """Initialization method.
 
-        @param maxsum: Value to be considered as the maximum sum
-        @type  maxsum: number
-        @param multipliers: If given, variable values will be multiplied by
-                            the given factors before being summed to be checked
-        @type  multipliers: sequence of numbers
+        Args:
+            maxsum (number): Value to be considered as the maximum sum
+            multipliers (sequence of numbers): If given, variable values
+                will be multiplied by the given factors before being
+                summed to be checked
         """
         self._maxsum = maxsum
         self._multipliers = multipliers
@@ -439,11 +437,11 @@ class ExactSumConstraint(Constraint):
     def __init__(self, exactsum: Union[int, float], multipliers: Optional[Sequence] = None):
         """Initialization method.
 
-        @param exactsum: Value to be considered as the exact sum
-        @type  exactsum: number
-        @param multipliers: If given, variable values will be multiplied by
-                            the given factors before being summed to be checked
-        @type  multipliers: sequence of numbers
+        Args:
+            exactsum (number): Value to be considered as the exact sum
+            multipliers (sequence of numbers): If given, variable values
+                will be multiplied by the given factors before being
+                summed to be checked
         """
         self._exactsum = exactsum
         self._multipliers = multipliers
@@ -528,11 +526,11 @@ class MinSumConstraint(Constraint):
     def __init__(self, minsum: Union[int, float], multipliers: Optional[Sequence] = None):
         """Initialization method.
 
-        @param minsum: Value to be considered as the minimum sum
-        @type  minsum: number
-        @param multipliers: If given, variable values will be multiplied by
-                            the given factors before being summed to be checked
-        @type  multipliers: sequence of numbers
+        Args:
+            minsum (number): Value to be considered as the minimum sum
+            multipliers (sequence of numbers): If given, variable values
+                will be multiplied by the given factors before being
+                summed to be checked
         """
         self._minsum = minsum
         self._multipliers = multipliers
@@ -610,8 +608,8 @@ class InSetConstraint(Constraint):
     def __init__(self, set):
         """Initialization method.
 
-        @param set: Set of allowed values
-        @type  set: set
+        Args:
+            set (set): Set of allowed values
         """
         self._set = set
 
@@ -644,8 +642,8 @@ class NotInSetConstraint(Constraint):
     def __init__(self, set):
         """Initialization method.
 
-        @param set: Set of disallowed values
-        @type  set: set
+        Args:
+            set (set): Set of disallowed values
         """
         self._set = set
 
@@ -678,14 +676,12 @@ class SomeInSetConstraint(Constraint):
     def __init__(self, set, n=1, exact=False):
         """Initialization method.
 
-        @param set: Set of values to be checked
-        @type  set: set
-        @param n: Minimum number of assigned values that should be present
-                  in set (default is 1)
-        @type  n: int
-        @param exact: Whether the number of assigned values which are
-                      present in set must be exactly C{n}
-        @type  exact: bool
+        Args:
+            set (set): Set of values to be checked
+            n (int): Minimum number of assigned values that should be
+                present in set (default is 1)
+            exact (bool): Whether the number of assigned values which
+                are present in set must be exactly `n`
         """
         self._set = set
         self._n = n
@@ -742,14 +738,12 @@ class SomeNotInSetConstraint(Constraint):
     def __init__(self, set, n=1, exact=False):
         """Initialization method.
 
-        @param set: Set of values to be checked
-        @type  set: set
-        @param n: Minimum number of assigned values that should not be present
-                  in set (default is 1)
-        @type  n: int
-        @param exact: Whether the number of assigned values which are
-                      not present in set must be exactly C{n}
-        @type  exact: bool
+        Args:
+            set (set): Set of values to be checked
+            n (int): Minimum number of assigned values that should not
+                be present in set (default is 1)
+            exact (bool): Whether the number of assigned values which
+                are not present in set must be exactly `n`
         """
         self._set = set
         self._n = n

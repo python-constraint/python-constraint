@@ -32,7 +32,8 @@ from constraint.domain import *   # noqa: F403
 from constraint.constraints import *  # noqa: F403
 from constraint.solvers import *   # noqa: F403
 
-def do_doctest():
+def test_docstrings():
+    """Test the interactive Python parts of docstrings."""
     import doctest
     import constraint.problem as problem
     import constraint.domain as domain
@@ -41,8 +42,8 @@ def do_doctest():
 
     doctest.testmod(problem)
     doctest.testmod(domain)
-    doctest.testmod(constraints, extraglobs={'Problem': Problem})
-    doctest.testmod(solvers, extraglobs={'Problem': Problem})
+    doctest.testmod(constraints, extraglobs={'Problem': problem.Problem})
+    doctest.testmod(solvers, extraglobs={'Problem': problem.Problem})
 
 if __name__ == "__main__":
-    do_doctest()
+    test_docstrings()
