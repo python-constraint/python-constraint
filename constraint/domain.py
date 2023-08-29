@@ -70,16 +70,14 @@ class Domain(list):
     def pushState(self):
         """Save current domain state.
 
-        Variables hidden after that call are restored when that state
-        is popped from the stack.
+        Variables hidden after that call are restored when that state is popped from the stack.
         """
         self._states.append(len(self))
 
     def popState(self):
         """Restore domain state from the top of the stack.
 
-        Variables hidden since the last popped state are then available
-        again.
+        Variables hidden since the last popped state are then available again.
         """
         diff = self._states.pop() - len(self)
         if diff:
@@ -89,9 +87,8 @@ class Domain(list):
     def hideValue(self, value):
         """Hide the given value from the domain.
 
-        After that call the given value won't be seen as a possible value
-        on that domain anymore. The hidden value will be restored when the
-        previous saved state is popped.
+        After that call the given value won't be seen as a possible value on that domain anymore.
+        The hidden value will be restored when the previous saved state is popped.
 
         Args:
             value: Object currently available in the domain

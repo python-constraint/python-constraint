@@ -8,6 +8,9 @@ Be careful that the general setup of tests is left to pyproject.toml.
 
 import nox
 
+nox.options.stop_on_first_error = True
+nox.options.error_on_missing_interpreters = True
+
 # Test code quality: linting
 @nox.session
 def lint(session: nox.Session) -> None:

@@ -16,7 +16,7 @@ class Constraint(object):
         prune the search space.
 
         Args:
-            variables (sequence): Variables affected by that constraint,
+            variables (sequence): :py:class:`Variables` affected by that constraint,
                 in the same order provided by the user
             domains (dict): Dictionary mapping variables to their
                 domains
@@ -362,67 +362,6 @@ class MaxSumConstraint(Constraint):
         return True
 
 
-class MaxProdConstraint(Constraint):
-    """Constraint enforcing that values of given variables create a product up to at most a given amount."""
-
-    def __init__(self, maxprod: Union[int, float]):
-        """Instantiate a MaxProdConstraint.
-
-        :params maxprod: Value to be considered as the maximum product
-        :type maxprod: number
-
-        """
-        self._maxprod = maxprod
-
-    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
-        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
-
-        # check if there are any values less than 1 in the associated variables
-        variable_contains_lt1: list[bool] = list()
-        variable_with_lt1 = None
-        for variable in variables:
-            contains_lt1 = any(value < 1 for value in domains[variable])
-            variable_contains_lt1.append(contains_lt1)
-            if contains_lt1 is True:
-                if variable_with_lt1 is not None:
-                    # if more than one associated variables contain less than 1, we can't prune
-                    return
-                variable_with_lt1 = variable
-
-        # prune the associated variables of values > maxprod
-        maxprod = self._maxprod
-        for variable in variables:
-            if variable_with_lt1 is not None and variable_with_lt1 != variable:
-                continue
-            domain = domains[variable]
-            for value in domain[:]:
-                if value > maxprod:
-                    domain.remove(value)
-                elif value == 0 and maxprod < 0:
-                    domain.remove(value)
-
-    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
-        maxprod = self._maxprod
-        prod = 1
-        for variable in variables:
-            if variable in assignments:
-                prod *= assignments[variable]
-        if isinstance(prod, float):
-            prod = round(prod, 10)
-        if prod > maxprod:
-            return False
-        if forwardcheck:
-            for variable in variables:
-                if variable not in assignments:
-                    domain = domains[variable]
-                    for value in domain[:]:
-                        if prod * value > maxprod:
-                            domain.hideValue(value)
-                    if not domain:
-                        return False
-        return True
-
-
 class ExactSumConstraint(Constraint):
     """Constraint enforcing that values of given variables sum exactly to a given amount.
 
@@ -555,15 +494,75 @@ class MinSumConstraint(Constraint):
             sum = round(sum, 10)
         return sum >= minsum
 
+
+class MaxProdConstraint(Constraint):
+    """Constraint enforcing that values of given variables create a product up to at most a given amount."""
+
+    def __init__(self, maxprod: Union[int, float]):
+        """Instantiate a MaxProdConstraint.
+
+        Args:
+            maxprod: Value to be considered as the maximum product
+        """
+        self._maxprod = maxprod
+
+    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
+        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
+
+        # check if there are any values less than 1 in the associated variables
+        variable_contains_lt1: list[bool] = list()
+        variable_with_lt1 = None
+        for variable in variables:
+            contains_lt1 = any(value < 1 for value in domains[variable])
+            variable_contains_lt1.append(contains_lt1)
+            if contains_lt1 is True:
+                if variable_with_lt1 is not None:
+                    # if more than one associated variables contain less than 1, we can't prune
+                    return
+                variable_with_lt1 = variable
+
+        # prune the associated variables of values > maxprod
+        maxprod = self._maxprod
+        for variable in variables:
+            if variable_with_lt1 is not None and variable_with_lt1 != variable:
+                continue
+            domain = domains[variable]
+            for value in domain[:]:
+                if value > maxprod:
+                    domain.remove(value)
+                elif value == 0 and maxprod < 0:
+                    domain.remove(value)
+
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
+        maxprod = self._maxprod
+        prod = 1
+        for variable in variables:
+            if variable in assignments:
+                prod *= assignments[variable]
+        if isinstance(prod, float):
+            prod = round(prod, 10)
+        if prod > maxprod:
+            return False
+        if forwardcheck:
+            for variable in variables:
+                if variable not in assignments:
+                    domain = domains[variable]
+                    for value in domain[:]:
+                        if prod * value > maxprod:
+                            domain.hideValue(value)
+                    if not domain:
+                        return False
+        return True
+
+
 class MinProdConstraint(Constraint):
     """Constraint enforcing that values of given variables create a product up to at least a given amount."""
 
     def __init__(self, minprod: Union[int, float]):
         """Instantiate a MinProdConstraint.
 
-        :params minprod: Value to be considered as the maximum product
-        :type minprod: number
-
+        Args:
+            minprod: Value to be considered as the maximum product
         """
         self._minprod = minprod
 

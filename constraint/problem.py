@@ -6,7 +6,7 @@ from constraint.solvers import BacktrackingSolver
 from constraint.domain import Domain
 from constraint.constraints import Constraint, FunctionConstraint
 from operator import itemgetter
-from typing import List, Optional, Sequence, Tuple, Dict
+from typing import List, Optional, Union, Sequence, Tuple, Dict, Callable
 
 class Problem(object):
     """Class used to define a problem and retrieve solutions."""
@@ -15,9 +15,7 @@ class Problem(object):
         """Initialization method.
 
         Args:
-            solver (instance of a `Solver` subclass): Problem solver
-                used to find solutions (default is
-                `BacktrackingSolver`)
+            solver (instance of a :py:class:`Solver`): Problem solver to use (default is :py:class:`BacktrackingSolver`)
         """
         self._solver = solver or BacktrackingSolver()
         self._constraints = []
@@ -46,7 +44,7 @@ class Problem(object):
             True
 
         Args:
-            solver (instance of a `Solver` subclass): New problem
+            solver (instance of a :py:class:`Solver`): New problem
                 solver
         """
         self._solver = solver
@@ -61,7 +59,7 @@ class Problem(object):
             True
 
         Returns:
-            instance of a `Solver` subclass: Solver currently in use
+            instance of a :py:class:`Solver` subclass: Solver currently in use
         """
         return self._solver
 
@@ -77,7 +75,7 @@ class Problem(object):
         Args:
             variable (hashable object): Object representing a problem
                 variable
-            domain (list, tuple, or instance of `Domain`): Set of items
+            domain (list, tuple, or instance of :py:class:`Domain`): Set of items
                 defining the possible values that the given variable may
                 assume
         """
@@ -111,14 +109,14 @@ class Problem(object):
             variables (sequence of hashable objects): Any object
                 containing a sequence of objects represeting problem
                 variables
-            domain (list, tuple, or instance of `Domain`): Set of items
+            domain (list, tuple, or instance of :py:class:`Domain`): Set of items
                 defining the possible values that the given variables
                 may assume
         """
         for variable in variables:
             self.addVariable(variable, domain)
 
-    def addConstraint(self, constraint, variables: Optional[Sequence] = None):
+    def addConstraint(self, constraint: Union[Constraint, Callable], variables: Optional[Sequence] = None):
         """Add a constraint to the problem.
 
         Example:
@@ -129,9 +127,9 @@ class Problem(object):
             >>>
 
         Args:
-            constraint (instance of a `Constraint` subclass or a function to be wrapped by `FunctionConstraint`):
+            constraint (instance of :py:class:`Constraint` or function to be wrapped by :py:class:`FunctionConstraint`):
                 Constraint to be included in the problem
-            variables (set or sequence of variables): Variables affected
+            variables (set or sequence of variables): :py:class:`Variables` affected
                 by the constraint (default to all variables). Depending
                 on the constraint type the order may be important.
         """

@@ -70,8 +70,7 @@ class Solver(object):
         """Return one solution for the given problem.
 
         Args:
-            domains (dict): Dictionary mapping variables to their
-                domains
+            domains (dict): Dictionary mapping variables to their domains
             constraints (list): List of pairs of (constraint, variables)
             vconstraints (dict): Dictionary mapping variables to a list
                 of constraints affecting the given variables.
@@ -226,22 +225,15 @@ class BacktrackingSolver(Solver):
 class OptimizedBacktrackingSolver(Solver):
     """Problem solver with backtracking capabilities, implementing several optimizations for increased performance.
 
-    Optimizations applied:
-    - improved check on missing / unassigned parameters
-    - several optimizations described here: https://github.com/python-constraint/python-constraint/issues/62
-
-    To do:
-    - profiling to check hotspots
-    - further cythonizing
-    - mapping variable names to integers internally
-    - avoiding expensive dict.copy() where possible
+    Optimizations are especially in obtaining all solutions.
+    View https://github.com/python-constraint/python-constraint/pull/76 for more details.
 
     Examples:
         >>> result = [[('a', 1), ('b', 2)],
         ...           [('a', 1), ('b', 3)],
         ...           [('a', 2), ('b', 3)]]
 
-        >>> problem = Problem(BacktrackingSolver())
+        >>> problem = Problem(OptimizedBacktrackingSolver())
         >>> problem.addVariables(["a", "b"], [1, 2, 3])
         >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
 
@@ -272,15 +264,16 @@ class OptimizedBacktrackingSolver(Solver):
         """
         self._forwardcheck = forwardcheck
 
-    def getSolutionIter(self, domains: dict, constraints: List[tuple], vconstraints: dict, lst: List):  # noqa: D102
+    def getSolutionIter(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
         forwardcheck = self._forwardcheck
         assignments = {}
+        sorted_variables = self.getSortedVariables(domains, vconstraints)
 
         queue = []
 
         while True:
             # Mix the Degree and Minimum Remaing Values (MRV) heuristics
-            for variable in lst:
+            for variable in sorted_variables:
                 if variable not in assignments:
                     # Found unassigned variable
                     values = domains[variable][:]
@@ -339,15 +332,25 @@ class OptimizedBacktrackingSolver(Solver):
 
         raise RuntimeError("Can't happen")
 
-    def getSolutionsList(self, domains: dict, vconstraints: dict, lst: List) -> List[dict]:  # noqa: D102
+    def getSolutionsList(self, domains: dict, vconstraints: dict) -> List[dict]:  # noqa: D102
+        """Optimized all-solutions finder that skips forwardchecking and returns the solutions in a list.
+
+        Args:
+            domains: Dictionary mapping variables to domains
+            vconstraints: Dictionary mapping variables to a list of constraints affecting the given variables.
+
+        Returns:
+            the list of solutions as a dictionary.
+        """
         # Does not do forwardcheck for simplicity
         assignments: dict = {}
         queue: List[tuple] = []
         solutions: List[dict] = list()
+        sorted_variables = self.getSortedVariables(domains, vconstraints)
 
         while True:
             # Mix the Degree and Minimum Remaing Values (MRV) heuristics
-            for variable in lst:
+            for variable in sorted_variables:
                 if variable not in assignments:
                     # Found unassigned variable
                     values = domains[variable][:]
@@ -389,22 +392,31 @@ class OptimizedBacktrackingSolver(Solver):
 
 
     def getSolutions(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
-        # sort the list from highest number of vconstraints to lowest to find unassigned variables as soon as possible
-        lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
-        lst.sort()
         if self._forwardcheck:
-            return list(self.getSolutionIter(domains, constraints, vconstraints, [c for a, b, c in lst]))
-        return self.getSolutionsList(domains, vconstraints, [c for _, _, c in lst])
+            return list(self.getSolutionIter(domains, constraints, vconstraints))
+        return self.getSolutionsList(domains, vconstraints)
 
     def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):   # noqa: D102
-        # sort the list from highest number of vconstraints to lowest to find unassigned variables as soon as possible
-        lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
-        lst.sort()
-        iter = self.getSolutionIter(domains, constraints, vconstraints, [c for _, _, c in lst])
+        iter = self.getSolutionIter(domains, constraints, vconstraints)
         try:
             return next(iter)
         except StopIteration:
             return None
+
+    def getSortedVariables(self, domains: dict, vconstraints: dict) -> list:
+        """Sorts the list of variables on number of vconstraints to find unassigned variables quicker.
+
+        Args:
+            domains: Dictionary mapping variables to their domains
+            vconstraints: Dictionary mapping variables to a list
+                of constraints affecting the given variables.
+
+        Returns:
+            the list of variables, sorted from highest number of vconstraints to lowest.
+        """
+        lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
+        lst.sort()
+        return [c for _, _, c in lst]
 
 
 class RecursiveBacktrackingSolver(Solver):
@@ -446,7 +458,18 @@ class RecursiveBacktrackingSolver(Solver):
         self._forwardcheck = forwardcheck
 
     def recursiveBacktracking(self, solutions, domains, vconstraints, assignments, single):
-        """Mix the Degree and Minimum Remaing Values (MRV) heuristics."""
+        """Mix the Degree and Minimum Remaing Values (MRV) heuristics.
+
+        Args:
+            solutions: _description_
+            domains: _description_
+            vconstraints: _description_
+            assignments: _description_
+            single: _description_
+
+        Returns:
+            _description_
+        """
         lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
         lst.sort()
         for item in lst:

@@ -6,5 +6,6 @@
   "ruff.args": [
     "--config=pyproject.toml"
   ],
-  "autoDocstring.docstringFormat": "google-notypes",
+"autoDocstring.docstringFormat": "google-notypes",
+"esbonio.sphinx.confDir": "",
 }
