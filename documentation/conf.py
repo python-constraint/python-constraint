@@ -17,7 +17,7 @@ from sphinx_pyproject import SphinxConfig
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('../constraint/'))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -36,13 +36,14 @@ release = config.version  # full version (e.g. 2.6rc1)
 # -- General configuration -----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-needs_sphinx = '6.0'
+needs_sphinx = '7.2'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
     "sphinx.ext.autosummary",
     'sphinx.ext.autodoc',
+    'sphinx_autodoc_typehints',     # must be after autodoc
     'sphinx.ext.doctest',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
@@ -53,6 +54,7 @@ extensions = [
 ]
 
 autosummary_generate = True  # Turn on sphinx.ext.autosummary
+autoclass_content = "both"  # concatenate class doctrings and __init__ method docstrings
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # map objects / types to external documentation (e.g. python objects -> python docs, numpy objects -> numpy docs)
@@ -71,69 +73,6 @@ html_static_path = ["_static"]
 # }
 
 # ------------------------------------------------------------------------------
-
-# The following is the content of
-# https://github.com/jayvdb/sphinx-epytext/blob/master/sphinx_epytext/process_docstring.py
-# which is licensed under the MIT license.
-import re
-
-FIELDS = [
-    'param',
-    'keyword',
-    'kwarg',
-    'type',
-    'returns',
-    'return',
-    'rtype',
-    'raise',
-    'raises',
-    'exception',
-    'see',
-    'note',
-    # not tested
-    'attention',
-    'bug',
-    'warning',
-    'version',
-    'todo',
-    'deprecated',
-    'since',
-    'status',
-    'change',
-    'permission',
-    'requires',
-    'precondition',
-    'postcondition',
-    'invariant',
-    'author',
-    'organization',
-    'copyright',
-    'license',
-    'contact',
-    'summary',
-]
-
-# Not supported yet: 'group', 'sort'
-
-
-def process_docstring(app, what, name, obj, options, lines):
-    """
-    Process the docstring for a given python object.
-    Note that the list 'lines' is changed in this function. Sphinx
-    uses the altered content of the list.
-    """
-    result = [re.sub(r'U\{([^}]*)\}', r'\1',
-                     re.sub(r'(L|C)\{([^}]*)\}', r':py:obj:`\2`',
-                            re.sub(r'@(' + '|'.join(FIELDS) + r')', r':\1',
-                                   l)))
-              for l in lines]
-    lines[:] = result[:]
-
-# ------------------------------------------------------------------------------
-
-def setup(app):
-    app.connect('autodoc-process-docstring', process_docstring)
-
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

@@ -7,6 +7,7 @@ python-constraint
 
    intro
    reference
+   constraint
 
 
 Indices and tables
