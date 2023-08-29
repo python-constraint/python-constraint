@@ -27,11 +27,11 @@ class Problem(object):
         """Reset the current problem definition.
 
         Example:
-        >>> problem = Problem()
-        >>> problem.addVariable("a", [1, 2])
-        >>> problem.reset()
-        >>> problem.getSolution()
-        >>>
+            >>> problem = Problem()
+            >>> problem.addVariable("a", [1, 2])
+            >>> problem.reset()
+            >>> problem.getSolution()
+            >>>
         """
         del self._constraints[:]
         self._variables.clear()
@@ -40,10 +40,10 @@ class Problem(object):
         """Change the problem solver currently in use.
 
         Example:
-        >>> solver = BacktrackingSolver()
-        >>> problem = Problem(solver)
-        >>> problem.getSolver() is solver
-        True
+            >>> solver = BacktrackingSolver()
+            >>> problem = Problem(solver)
+            >>> problem.getSolver() is solver
+            True
 
         Args:
             solver (instance of a `Solver` subclass): New problem
@@ -55,10 +55,10 @@ class Problem(object):
         """Obtain the problem solver currently in use.
 
         Example:
-        >>> solver = BacktrackingSolver()
-        >>> problem = Problem(solver)
-        >>> problem.getSolver() is solver
-        True
+            >>> solver = BacktrackingSolver()
+            >>> problem = Problem(solver)
+            >>> problem.getSolver() is solver
+            True
 
         Returns:
             instance of a `Solver` subclass: Solver currently in use
@@ -68,7 +68,7 @@ class Problem(object):
     def addVariable(self, variable, domain):
         """Add a variable to the problem.
 
-        Examples:
+        Example:
             >>> problem = Problem()
             >>> problem.addVariable("a", [1, 2])
             >>> problem.getSolution() in ({'a': 1}, {'a': 2})
@@ -99,13 +99,13 @@ class Problem(object):
         """Add one or more variables to the problem.
 
         Example:
-        >>> problem = Problem()
-        >>> problem.addVariables(["a", "b"], [1, 2, 3])
-        >>> solutions = problem.getSolutions()
-        >>> len(solutions)
-        9
-        >>> {'a': 3, 'b': 1} in solutions
-        True
+            >>> problem = Problem()
+            >>> problem.addVariables(["a", "b"], [1, 2, 3])
+            >>> solutions = problem.getSolutions()
+            >>> len(solutions)
+            9
+            >>> {'a': 3, 'b': 1} in solutions
+            True
 
         Args:
             variables (sequence of hashable objects): Any object
@@ -122,11 +122,11 @@ class Problem(object):
         """Add a constraint to the problem.
 
         Example:
-        >>> problem = Problem()
-        >>> problem.addVariables(["a", "b"], [1, 2, 3])
-        >>> problem.addConstraint(lambda a, b: b == a+1, ["a", "b"])
-        >>> solutions = problem.getSolutions()
-        >>>
+            >>> problem = Problem()
+            >>> problem.addVariables(["a", "b"], [1, 2, 3])
+            >>> problem.addConstraint(lambda a, b: b == a+1, ["a", "b"])
+            >>> solutions = problem.getSolutions()
+            >>>
 
         Args:
             constraint (instance of a `Constraint` subclass or a function to be wrapped by `FunctionConstraint`):
@@ -147,12 +147,12 @@ class Problem(object):
         """Find and return a solution to the problem.
 
         Example:
-        >>> problem = Problem()
-        >>> problem.getSolution() is None
-        True
-        >>> problem.addVariables(["a"], [42])
-        >>> problem.getSolution()
-        {'a': 42}
+            >>> problem = Problem()
+            >>> problem.getSolution() is None
+            True
+            >>> problem.addVariables(["a"], [42])
+            >>> problem.getSolution()
+            {'a': 42}
 
         Returns:
             dictionary mapping variables to values: Solution for the
@@ -167,12 +167,12 @@ class Problem(object):
         """Find and return all solutions to the problem.
 
         Example:
-        >>> problem = Problem()
-        >>> problem.getSolutions() == []
-        True
-        >>> problem.addVariables(["a"], [42])
-        >>> problem.getSolutions()
-        [{'a': 42}]
+            >>> problem = Problem()
+            >>> problem.getSolutions() == []
+            True
+            >>> problem.addVariables(["a"], [42])
+            >>> problem.getSolutions()
+            [{'a': 42}]
 
         Returns:
             list of dictionaries mapping variables to values: All
@@ -187,18 +187,19 @@ class Problem(object):
         """Return an iterator to the solutions of the problem.
 
         Example:
-        >>> problem = Problem()
-        >>> list(problem.getSolutionIter()) == []
-        True
-        >>> problem.addVariables(["a"], [42])
-        >>> iter = problem.getSolutionIter()
-        >>> next(iter)
-        {'a': 42}
-        >>> next(iter)
-        Traceback (most recent call last):
-            ...
-        StopIteration
+            >>> problem = Problem()
+            >>> list(problem.getSolutionIter()) == []
+            True
+            >>> problem.addVariables(["a"], [42])
+            >>> iter = problem.getSolutionIter()
+            >>> next(iter)
+            {'a': 42}
+            >>> next(iter)
+            Traceback (most recent call last):
+                ...
+            StopIteration
         """
+
         domains, constraints, vconstraints = self._getArgs()
         if not domains:
             return iter(())

@@ -104,21 +104,21 @@ class FunctionConstraint(Constraint):
     """Constraint which wraps a function defining the constraint logic.
 
     Examples:
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> def func(a, b):
-    ...     return b > a
-    >>> problem.addConstraint(func, ["a", "b"])
-    >>> problem.getSolution()
-    {'a': 1, 'b': 2}
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> def func(a, b):
+        ...     return b > a
+        >>> problem.addConstraint(func, ["a", "b"])
+        >>> problem.getSolution()
+        {'a': 1, 'b': 2}
 
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> def func(a, b):
-    ...     return b > a
-    >>> problem.addConstraint(FunctionConstraint(func), ["a", "b"])
-    >>> problem.getSolution()
-    {'a': 1, 'b': 2}
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> def func(a, b):
+        ...     return b > a
+        >>> problem.addConstraint(FunctionConstraint(func), ["a", "b"])
+        >>> problem.getSolution()
+        {'a': 1, 'b': 2}
     """
 
     def __init__(self, func: Callable, assigned: bool = True):
@@ -191,11 +191,11 @@ class AllDifferentConstraint(Constraint):
     """Constraint enforcing that values of all given variables are different.
 
     Example:
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> problem.addConstraint(AllDifferentConstraint())
-    >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-    [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(AllDifferentConstraint())
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
     """
 
     def __call__(  # noqa: D102
@@ -229,11 +229,11 @@ class AllEqualConstraint(Constraint):
     """Constraint enforcing that values of all given variables are equal.
 
     Example:
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> problem.addConstraint(AllEqualConstraint())
-    >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-    [[('a', 1), ('b', 1)], [('a', 2), ('b', 2)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(AllEqualConstraint())
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 1)], [('a', 2), ('b', 2)]]
     """
 
     def __call__(   # noqa: D102
@@ -267,11 +267,11 @@ class MaxSumConstraint(Constraint):
     """Constraint enforcing that values of given variables sum up to a given amount.
 
     Example:
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> problem.addConstraint(MaxSumConstraint(3))
-    >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-    [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(MaxSumConstraint(3))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
     """
 
     def __init__(self, maxsum: Union[int, float], multipliers: Optional[Sequence] = None):
@@ -427,11 +427,11 @@ class ExactSumConstraint(Constraint):
     """Constraint enforcing that values of given variables sum exactly to a given amount.
 
     Example:
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> problem.addConstraint(ExactSumConstraint(3))
-    >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-    [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(ExactSumConstraint(3))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
     """
 
     def __init__(self, exactsum: Union[int, float], multipliers: Optional[Sequence] = None):
@@ -516,11 +516,11 @@ class MinSumConstraint(Constraint):
     """Constraint enforcing that values of given variables sum at least to a given amount.
 
     Example:
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> problem.addConstraint(MinSumConstraint(3))
-    >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-    [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)], [('a', 2), ('b', 2)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(MinSumConstraint(3))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)], [('a', 2), ('b', 2)]]
     """
 
     def __init__(self, minsum: Union[int, float], multipliers: Optional[Sequence] = None):
@@ -598,11 +598,11 @@ class InSetConstraint(Constraint):
     """Constraint enforcing that values of given variables are present in the given set.
 
     Example:
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> problem.addConstraint(InSetConstraint([1]))
-    >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-    [[('a', 1), ('b', 1)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(InSetConstraint([1]))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 1)]]
     """
 
     def __init__(self, set):
@@ -632,11 +632,11 @@ class NotInSetConstraint(Constraint):
     """Constraint enforcing that values of given variables are not present in the given set.
 
     Example:
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> problem.addConstraint(NotInSetConstraint([1]))
-    >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-    [[('a', 2), ('b', 2)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(NotInSetConstraint([1]))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 2), ('b', 2)]]
     """
 
     def __init__(self, set):
@@ -666,11 +666,11 @@ class SomeInSetConstraint(Constraint):
     """Constraint enforcing that at least some of the values of given variables must be present in a given set.
 
     Example:
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> problem.addConstraint(SomeInSetConstraint([1]))
-    >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-    [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(SomeInSetConstraint([1]))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
     """
 
     def __init__(self, set, n=1, exact=False):
@@ -728,11 +728,11 @@ class SomeNotInSetConstraint(Constraint):
     """Constraint enforcing that at least some of the values of given variables must not be present in a given set.
 
     Example:
-    >>> problem = Problem()
-    >>> problem.addVariables(["a", "b"], [1, 2])
-    >>> problem.addConstraint(SomeNotInSetConstraint([1]))
-    >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-    [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)], [('a', 2), ('b', 2)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(SomeNotInSetConstraint([1]))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)], [('a', 2), ('b', 2)]]
     """
 
     def __init__(self, set, n=1, exact=False):

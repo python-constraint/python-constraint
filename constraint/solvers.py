@@ -108,29 +108,29 @@ class BacktrackingSolver(Solver):
     """Problem solver with backtracking capabilities.
 
     Examples:
-    >>> result = [[('a', 1), ('b', 2)],
-    ...           [('a', 1), ('b', 3)],
-    ...           [('a', 2), ('b', 3)]]
+        >>> result = [[('a', 1), ('b', 2)],
+        ...           [('a', 1), ('b', 3)],
+        ...           [('a', 2), ('b', 3)]]
 
-    >>> problem = Problem(BacktrackingSolver())
-    >>> problem.addVariables(["a", "b"], [1, 2, 3])
-    >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
+        >>> problem = Problem(BacktrackingSolver())
+        >>> problem.addVariables(["a", "b"], [1, 2, 3])
+        >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
 
-    >>> solution = problem.getSolution()
-    >>> sorted(solution.items()) in result
-    True
+        >>> solution = problem.getSolution()
+        >>> sorted(solution.items()) in result
+        True
 
-    >>> for solution in problem.getSolutionIter():
-    ...     sorted(solution.items()) in result
-    True
-    True
-    True
+        >>> for solution in problem.getSolutionIter():
+        ...     sorted(solution.items()) in result
+        True
+        True
+        True
 
-    >>> for solution in problem.getSolutions():
-    ...     sorted(solution.items()) in result
-    True
-    True
-    True
+        >>> for solution in problem.getSolutions():
+        ...     sorted(solution.items()) in result
+        True
+        True
+        True
     """
 
     def __init__(self, forwardcheck=True):
@@ -237,29 +237,29 @@ class OptimizedBacktrackingSolver(Solver):
     - avoiding expensive dict.copy() where possible
 
     Examples:
-    >>> result = [[('a', 1), ('b', 2)],
-    ...           [('a', 1), ('b', 3)],
-    ...           [('a', 2), ('b', 3)]]
+        >>> result = [[('a', 1), ('b', 2)],
+        ...           [('a', 1), ('b', 3)],
+        ...           [('a', 2), ('b', 3)]]
 
-    >>> problem = Problem(BacktrackingSolver())
-    >>> problem.addVariables(["a", "b"], [1, 2, 3])
-    >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
+        >>> problem = Problem(BacktrackingSolver())
+        >>> problem.addVariables(["a", "b"], [1, 2, 3])
+        >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
 
-    >>> solution = problem.getSolution()
-    >>> sorted(solution.items()) in result
-    True
+        >>> solution = problem.getSolution()
+        >>> sorted(solution.items()) in result
+        True
 
-    >>> for solution in problem.getSolutionIter():
-    ...     sorted(solution.items()) in result
-    True
-    True
-    True
+        >>> for solution in problem.getSolutionIter():
+        ...     sorted(solution.items()) in result
+        True
+        True
+        True
 
-    >>> for solution in problem.getSolutions():
-    ...     sorted(solution.items()) in result
-    True
-    True
-    True
+        >>> for solution in problem.getSolutions():
+        ...     sorted(solution.items()) in result
+        True
+        True
+        True
     """
 
     def __init__(self, forwardcheck=True):
@@ -411,28 +411,28 @@ class RecursiveBacktrackingSolver(Solver):
     """Recursive problem solver with backtracking capabilities.
 
     Examples:
-    >>> result = [[('a', 1), ('b', 2)],
-    ...           [('a', 1), ('b', 3)],
-    ...           [('a', 2), ('b', 3)]]
+        >>> result = [[('a', 1), ('b', 2)],
+        ...           [('a', 1), ('b', 3)],
+        ...           [('a', 2), ('b', 3)]]
 
-    >>> problem = Problem(RecursiveBacktrackingSolver())
-    >>> problem.addVariables(["a", "b"], [1, 2, 3])
-    >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
+        >>> problem = Problem(RecursiveBacktrackingSolver())
+        >>> problem.addVariables(["a", "b"], [1, 2, 3])
+        >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
 
-    >>> solution = problem.getSolution()
-    >>> sorted(solution.items()) in result
-    False
+        >>> solution = problem.getSolution()
+        >>> sorted(solution.items()) in result
+        True
 
-    >>> for solution in problem.getSolutions():
-    ...     sorted(solution.items()) in result
-    True
-    True
-    True
+        >>> for solution in problem.getSolutions():
+        ...     sorted(solution.items()) in result
+        True
+        True
+        True
 
-    >>> problem.getSolutionIter()
-    Traceback (most recent call last):
-       ...
-    NotImplementedError: RecursiveBacktrackingSolver doesn't provide iteration
+        >>> problem.getSolutionIter()
+        Traceback (most recent call last):
+        ...
+        NotImplementedError: RecursiveBacktrackingSolver doesn't provide iteration
     """
 
     def __init__(self, forwardcheck=True):
@@ -499,27 +499,27 @@ class MinConflictsSolver(Solver):
     """Problem solver based on the minimum conflicts theory.
 
     Examples:
-    >>> result = [[('a', 1), ('b', 2)],
-    ...           [('a', 1), ('b', 3)],
-    ...           [('a', 2), ('b', 3)]]
+        >>> result = [[('a', 1), ('b', 2)],
+        ...           [('a', 1), ('b', 3)],
+        ...           [('a', 2), ('b', 3)]]
 
-    >>> problem = Problem(MinConflictsSolver())
-    >>> problem.addVariables(["a", "b"], [1, 2, 3])
-    >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
+        >>> problem = Problem(MinConflictsSolver())
+        >>> problem.addVariables(["a", "b"], [1, 2, 3])
+        >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
 
-    >>> solution = problem.getSolution()
-    >>> sorted(solution.items()) in result
-    True
+        >>> solution = problem.getSolution()
+        >>> sorted(solution.items()) in result
+        True
 
-    >>> problem.getSolutions()
-    Traceback (most recent call last):
-       ...
-    NotImplementedError: MinConflictsSolver provides only a single solution
+        >>> problem.getSolutions()
+        Traceback (most recent call last):
+        ...
+        NotImplementedError: MinConflictsSolver provides only a single solution
 
-    >>> problem.getSolutionIter()
-    Traceback (most recent call last):
-       ...
-    NotImplementedError: MinConflictsSolver doesn't provide iteration
+        >>> problem.getSolutionIter()
+        Traceback (most recent call last):
+        ...
+        NotImplementedError: MinConflictsSolver doesn't provide iteration
     """
 
     def __init__(self, steps=1000):
