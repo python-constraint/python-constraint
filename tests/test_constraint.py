@@ -13,8 +13,6 @@ from examples.studentdesks import studentdesks
 # from examples.wordmath import (seisseisdoze, sendmoremoney, twotwofour)
 # from examples.xsum import xsum
 
-import constraint.compat as compat
-
 
 def test_abc():
     solutions = abc.solve()
@@ -109,6 +107,22 @@ def test_constraint_without_variables():
     solutions = problem.getSolutions()
     assert solutions == [{"a": 3}]
 
+def test_multipliers():
+    """Test the multiplier functionality in the constraints."""
+    from constraint import MaxSumConstraint, ExactSumConstraint, MinSumConstraint
+    problem = constraint.Problem()
+    problem.addVariable("x", [-1, 0, 1, 2])
+    problem.addVariable("y", [1, 2])
+    problem.addConstraint(MaxSumConstraint(4, [2, 1]), ["x", "y"])
+    problem.addConstraint(ExactSumConstraint(4, [1, 2]), ["x", "y"])
+    problem.addConstraint(MinSumConstraint(0, [0.5, 1]), ["x"])
 
-def test_version():
-    assert isinstance(constraint.__version__, compat.string_types)
+    possible_solutions = [
+        {'y': 2, 'x': 0},
+        {'y': 1, 'x': 2}
+    ]
+
+    # get the solutions
+    solutions = problem.getSolutions()
+    for solution in solutions:
+        assert solution in possible_solutions

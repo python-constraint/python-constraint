@@ -25,6 +25,10 @@ Solvers
     :members:
     :member-order: bysource
 
+.. autoclass:: constraint.OptimizedBacktrackingSolver
+    :members:
+    :member-order: bysource
+
 .. autoclass:: constraint.RecursiveBacktrackingSolver
     :members:
     :member-order: bysource
@@ -62,6 +66,14 @@ Constraints
     :member-order: bysource
 
 .. autoclass:: constraint.MinSumConstraint
+    :members:
+    :member-order: bysource
+
+.. autoclass:: constraint.MaxProdConstraint
+    :members:
+    :member-order: bysource
+
+.. autoclass:: constraint.MinProdConstraint
     :members:
     :member-order: bysource
 

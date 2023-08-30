@@ -4,7 +4,8 @@ python-constraint
 
 Introduction
 ------------
-The Python constraint module offers solvers for `Constraint Satisfaction Problems (CSPs) <https://en.wikipedia.org/wiki/Constraint_satisfaction_problem>`_ over finite domains in simple and pure Python. CSP is class of problems which may be represented in terms of variables (a, b, ...), domains (a in [1, 2, 3], ...), and constraints (a < b, ...).
+The Python constraint module offers efficient solvers for `Constraint Satisfaction Problems (CSPs) <https://en.wikipedia.org/wiki/Constraint_satisfaction_problem>`_ over finite domains in an accessible Python package.
+CSP is class of problems which may be represented in terms of variables (a, b, ...), domains (a in [1, 2, 3], ...), and constraints (a < b, ...).
 
 Examples
 --------
@@ -12,7 +13,7 @@ Examples
 Basics
 ~~~~~~
 
-This interactive Python session demonstrates the module basic operation:
+This interactive Python session demonstrates basic operations:
 
 .. code-block:: python
 
@@ -96,6 +97,7 @@ Features
 The following solvers are available:
 
 - Backtracking solver
+- Optimized backtracking solver
 - Recursive backtracking solver
 - Minimum conflicts solver
 
@@ -108,15 +110,17 @@ Predefined constraint types currently available:
 - :any:`FunctionConstraint`
 - :any:`AllDifferentConstraint`
 - :any:`AllEqualConstraint`
-- :any:`ExactSumConstraint`
 - :any:`MaxSumConstraint`
+- :any:`ExactSumConstraint`
 - :any:`MinSumConstraint`
+- :any:`MaxProdConstraint`
+- :any:`MinProdConstraint`
 - :any:`InSetConstraint`
 - :any:`NotInSetConstraint`
 - :any:`SomeInSetConstraint`
 - :any:`SomeNotInSetConstraint`
 
- 
+
 Download and install
 --------------------
 

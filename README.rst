@@ -5,7 +5,8 @@ python-constraint
 
 Introduction
 ------------
-The Python constraint module offers solvers for `Constraint Satisfaction Problems (CSPs) <https://en.wikipedia.org/wiki/Constraint_satisfaction_problem>`_ over finite domains in simple and pure Python. CSP is class of problems which may be represented in terms of variables (a, b, ...), domains (a in [1, 2, 3], ...), and constraints (a < b, ...).
+The Python constraint module offers efficient solvers for `Constraint Satisfaction Problems (CSPs) <https://en.wikipedia.org/wiki/Constraint_satisfaction_problem>`_ over finite domains in an accessible Python package.
+CSP is class of problems which may be represented in terms of variables (a, b, ...), domains (a in [1, 2, 3], ...), and constraints (a < b, ...).
 
 Examples
 --------
@@ -13,7 +14,7 @@ Examples
 Basics
 ~~~~~~
 
-This interactive Python session demonstrates the module basic operation:
+This interactive Python session demonstrates basic operations:
 
 .. code-block:: python
 
@@ -97,9 +98,9 @@ Features
 The following solvers are available:
 
 - Backtracking solver
+- Optimized backtracking solver
 - Recursive backtracking solver
 - Minimum conflicts solver
-
 
 .. role:: python(code)
    :language: python
@@ -109,9 +110,11 @@ Predefined constraint types currently available:
 - :python:`FunctionConstraint`
 - :python:`AllDifferentConstraint`
 - :python:`AllEqualConstraint`
-- :python:`ExactSumConstraint`
 - :python:`MaxSumConstraint`
+- :python:`ExactSumConstraint`
 - :python:`MinSumConstraint`
+- :python:`MaxProdConstraint`
+- :python:`MinProdConstraint`
 - :python:`InSetConstraint`
 - :python:`NotInSetConstraint`
 - :python:`SomeInSetConstraint`
@@ -119,7 +122,8 @@ Predefined constraint types currently available:
 
 API documentation
 -----------------
-Documentation for the module is available at: http://labix.org/doc/constraint/
+Documentation for the module is available at: http://labix.org/doc/constraint/.
+It can be built locally by running `make clean html` from the `documentation` folder.
 
 Download and install
 --------------------
@@ -127,6 +131,11 @@ Download and install
 .. code-block:: shell
 
     $ pip install python-constraint
+
+Testing
+-------
+
+Run `pytest` (for local Python) or `nox` (for all supported Python versions).
 
 Roadmap
 -------
@@ -146,6 +155,7 @@ Contact
 -------
 - `Gustavo Niemeyer <https://github.com/niemeyer/>`_ <gustavo@niemeyer.net>
 - `Sébastien Celles <https://github.com/scls19fr/>`_ <s.celles@gmail.com>
+- `Floris-Jan Willemsen <https://github.com/fjwillemsen>`
 
 But it's probably better to `open an issue <https://github.com/python-constraint/python-constraint/issues>`_.
 

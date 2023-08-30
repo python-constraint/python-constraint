@@ -8,99 +8,71 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys, os
+import os
+import sys
+import time
+
+from sphinx_pyproject import SphinxConfig
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('../constraint/'))
+
+# -- Project information -----------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+
+# import data from pyproject.toml using https://github.com/sphinx-toolbox/sphinx-pyproject
+# additional data can be added with `[tool.sphinx-pyproject]` and retrieved with `config['']`.
+config = SphinxConfig("../pyproject.toml")  # add `, globalns=globals()` to directly insert in namespace
+year = time.strftime("%Y")
+
+project = "python-constraint"
+author = config.author
+copyright = f"{year}, {author}"
+version = config.version  # major version (e.g. 2.6)
+release = config.version  # full version (e.g. 2.6rc1)
 
 # -- General configuration -----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-#needs_sphinx = '1.0'
+needs_sphinx = '7.2'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
-    'sphinx.ext.autodoc', 
-    'sphinx.ext.doctest', 
-    'sphinx.ext.todo', 
-    'sphinx.ext.coverage', 
-    'sphinx.ext.imgmath', 
+    "sphinx.ext.autosummary",
+    'sphinx.ext.autodoc',
+    'sphinx_autodoc_typehints',     # must be after autodoc
+    'sphinx.ext.doctest',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.imgmath',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.intersphinx',
-    ]
+]
 
+autosummary_generate = True  # Turn on sphinx.ext.autosummary
+autoclass_content = "both"  # concatenate class doctrings and __init__ method docstrings
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+
+# map objects / types to external documentation (e.g. python objects -> python docs, numpy objects -> numpy docs)
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3', None),
 }
 
-# ------------------------------------------------------------------------------
+# -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-# The following is the content of
-# https://github.com/jayvdb/sphinx-epytext/blob/master/sphinx_epytext/process_docstring.py
-# which is licensed under the MIT license.
-import re
-
-FIELDS = [
-    'param',
-    'keyword',
-    'kwarg',
-    'type',
-    'returns',
-    'return',
-    'rtype',
-    'raise',
-    'raises',
-    'exception',
-    'see',
-    'note',
-    # not tested
-    'attention',
-    'bug',
-    'warning',
-    'version',
-    'todo',
-    'deprecated',
-    'since',
-    'status',
-    'change',
-    'permission',
-    'requires',
-    'precondition',
-    'postcondition',
-    'invariant',
-    'author',
-    'organization',
-    'copyright',
-    'license',
-    'contact',
-    'summary',
-]
-
-# Not supported yet: 'group', 'sort'
-
-
-def process_docstring(app, what, name, obj, options, lines):
-    """
-    Process the docstring for a given python object.
-    Note that the list 'lines' is changed in this function. Sphinx
-    uses the altered content of the list.
-    """
-    result = [re.sub(r'U\{([^}]*)\}', r'\1',
-                     re.sub(r'(L|C)\{([^}]*)\}', r':py:obj:`\2`',
-                            re.sub(r'@(' + '|'.join(FIELDS) + r')', r':\1',
-                                   l)))
-              for l in lines]
-    lines[:] = result[:]
+html_theme = "sphinx_rtd_theme"
+html_static_path = ["_static"]
+# html_logo = "source/logo_autotuning_methodology.svg"
+# html_theme_options = {
+#     "logo_only": True,
+# }
 
 # ------------------------------------------------------------------------------
-
-def setup(app):
-    app.connect('autodoc-process-docstring', process_docstring)
-
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -112,24 +84,11 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'index'
-
-# General information about the project.
-project = u'python-constraint'
-copyright = u'2005-2014, Gustavo Niemeyer'
-
-# The version info for the project you're documenting, acts as replacement for
-# |version| and |release|, also used in various other places throughout the
-# built documents.
-#
-# The short X.Y version.
-version = '1.4.0'
-# The full version, including alpha/beta/rc tags.
-release = '1.4.0'
+master_doc = 'source/index'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
-# for a list of supported languages.
-#language = None
+# for a list of supported languages (https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language).
+language = 'en'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -139,7 +98,7 @@ release = '1.4.0'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['*.c', '*.so']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -156,7 +115,7 @@ exclude_patterns = []
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+# pygments_style = 'sphinx'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -169,7 +128,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+# html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
