@@ -1,7 +1,14 @@
-|Build Status| |Code Health| |Code Coverage|
+|License| |Build Status| |Docs| |Python Versions| |Downloads| |Status|
 
 python-constraint
 =================
+
+This software is now back to active development / maintainance status.
+For an overview of recent changes, visit the `Changelog <https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md>`_.
+
+.. contents::
+    :local:
+    :depth: 1
 
 Introduction
 ------------
@@ -122,8 +129,9 @@ Predefined constraint types currently available:
 
 API documentation
 -----------------
-Documentation for the module is available at: http://labix.org/doc/constraint/.
+Documentation for the module is available at: http://python-constraint.github.io/python-constraint/.
 It can be built locally by running `make clean html` from the `docs` folder.
+For viewing RST files locally, `restview <https://pypi.org/project/restview/>`_ is recommended.
 
 Download and install
 --------------------
@@ -142,28 +150,46 @@ Roadmap
 
 This GitHub organization and repository is a global effort to help to
 maintain python-constraint which was written by Gustavo Niemeyer
-and originaly located at https://labix.org/python-constraint
+and originaly located at https://labix.org/python-constraint.
+For an overview of recent changes, visit the `Changelog <https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md>`_.
 
-- Create some unit tests - DONE
-- Enable continuous integration - DONE
-- Port to Python 3 (Python 2 being also supported) - DONE
-- Respect Style Guide for Python Code (PEP8) - DONE
-- Improve code coverage writting more unit tests - ToDo
-- Move doc to Sphinx or MkDocs - https://readthedocs.org/ - ToDo
+Planned development:
+
+- Create a logo
+- Add a string parser for constraints
+- Add parallel-capable solver
 
 Contact
 -------
 - `Gustavo Niemeyer <https://github.com/niemeyer/>`_ <gustavo@niemeyer.net>
 - `Sébastien Celles <https://github.com/scls19fr/>`_ <s.celles@gmail.com>
-- `Floris-Jan Willemsen <https://github.com/fjwillemsen>`
+- `Floris-Jan Willemsen <https://github.com/fjwillemsen>`_
 
 But it's probably better to `open an issue <https://github.com/python-constraint/python-constraint/issues>`_.
 
+.. |License| image:: https://img.shields.io/pypi/l/python-constraint
+    :alt: PyPI - License
 
-.. |Build Status| image:: https://travis-ci.org/python-constraint/python-constraint.svg?branch=master
-   :target: https://travis-ci.org/python-constraint/python-constraint
+.. |Build Status| image:: https://github.com/python-constraint/python-constraint/actions/workflows/build-test-python-package.yml/badge.svg
+   :target: https://github.com/python-constraint/python-constraint/actions/workflows/build-test-python-package.yml
+   :alt: Build Status
+
+.. |Docs| image:: https://img.shields.io/github/actions/workflow/status/python-constraint/python-constraint/publish-documentation.yml?label=Docs
+   :target: http://python-constraint.github.io/python-constraint/
+   :alt: Documentation Status
+
+.. |Python Versions| image:: https://img.shields.io/pypi/pyversions/python-constraint
+    :alt: PyPI - Python Versions
+
+.. |Downloads| image:: https://img.shields.io/pypi/dm/python-constraint
+    :alt: PyPI - Downloads
+
+.. |Status| image:: https://img.shields.io/pypi/status/python-constraint
+    :alt: PyPI - Status
+
 .. |Code Health| image:: https://landscape.io/github/python-constraint/python-constraint/master/landscape.svg?style=flat
    :target: https://landscape.io/github/python-constraint/python-constraint/master
    :alt: Code Health
+
 .. |Code Coverage| image:: https://coveralls.io/repos/github/python-constraint/python-constraint/badge.svg
    :target: https://coveralls.io/github/python-constraint/python-constraint

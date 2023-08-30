@@ -22,6 +22,8 @@ in every released version.
   - Achieved and requires test coverage of at least 65%
   - Added `nox` for testing against all supported Python versions 
   - Added `ruff` for codestyle testing
+  - Moved the documentation to GitHub Pages
+  - Moved test & publishing automation to GitHub Actions
   - Dropped Python 3.4, 3.5, 3.6, 3.7 support
 
 ### Version 1.4.0
