@@ -123,7 +123,7 @@ Predefined constraint types currently available:
 API documentation
 -----------------
 Documentation for the module is available at: http://labix.org/doc/constraint/.
-It can be built locally by running `make clean html` from the `documentation` folder.
+It can be built locally by running `make clean html` from the `docs` folder.
 
 Download and install
 --------------------
