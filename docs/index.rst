@@ -1,7 +1,10 @@
+:tocdepth: 2
+
 python-constraint
 =================
 
-The Python constraint module offers efficient solvers for Constraint Satisfaction Problems (CSPs) over finite domains in an accessible package.
+| The `python-constraint` module offers efficient solvers for Constraint Satisfaction Problems (CSPs) over finite domains in an accessible package.
+| All it takes is a few lines of code:
 
 >>> from constraint import *
 >>> problem = Problem()

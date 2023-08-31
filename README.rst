@@ -1,10 +1,15 @@
 |License| |Build Status| |Docs| |Python Versions| |Downloads| |Status|
 
+.. image:: docs/assets/logo/N-Queens_problem_Python.svg
+    :align: center
+    :width: 50%
+
 python-constraint
 =================
 
-This software is now back to active development / maintainance status.
-For an overview of recent changes, visit the `Changelog <https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md>`_.
+| This software is now back to active development / maintainance status.
+| For an overview of recent changes, visit the `Changelog <https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md>`_.
+| The complete documentation can be found `here <http://python-constraint.github.io/python-constraint/>`_.
 
 .. contents::
     :local:
@@ -12,7 +17,7 @@ For an overview of recent changes, visit the `Changelog <https://github.com/pyth
 
 Introduction
 ------------
-The Python constraint module offers efficient solvers for `Constraint Satisfaction Problems (CSPs) <https://en.wikipedia.org/wiki/Constraint_satisfaction_problem>`_ over finite domains in an accessible Python package.
+The `python-constraint` module offers efficient solvers for `Constraint Satisfaction Problems (CSPs) <https://en.wikipedia.org/wiki/Constraint_satisfaction_problem>`_ over finite domains in an accessible Python package.
 CSP is class of problems which may be represented in terms of variables (a, b, ...), domains (a in [1, 2, 3], ...), and constraints (a < b, ...).
 
 Examples

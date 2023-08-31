@@ -67,10 +67,14 @@ intersphinx_mapping = {
 
 html_theme = "sphinx_rtd_theme"
 # html_static_path = ["_static"]
-# html_logo = "source/logo_autotuning_methodology.svg"
-# html_theme_options = {
-#     "logo_only": True,
-# }
+html_logo = "assets/logo/N-Queens_problem_Python.svg"
+html_theme_options = {
+    "logo_only": False,
+    "collapse_navigation": False,
+    "navigation_depth": 4,
+    # "includehidden": True,
+    "titles_only": False,
+}
 
 # ------------------------------------------------------------------------------
 
