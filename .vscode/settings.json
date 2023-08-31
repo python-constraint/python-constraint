@@ -1,11 +1,19 @@
 {
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": [
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true,
+    }
+  },
+  "black-formatter.args": [
     "--config=pyproject.toml"
   ],
   "ruff.args": [
     "--config=pyproject.toml"
   ],
-"autoDocstring.docstringFormat": "google-notypes",
-"esbonio.sphinx.confDir": "",
+  "autoDocstring.docstringFormat": "google-notypes",
+  "esbonio.sphinx.confDir": "",
 }

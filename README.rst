@@ -17,7 +17,7 @@ python-constraint
 
 Introduction
 ------------
-The `python-constraint` module offers efficient solvers for `Constraint Satisfaction Problems (CSPs) <https://en.wikipedia.org/wiki/Constraint_satisfaction_problem>`_ over finite domains in an accessible Python package.
+The :code:`python-constraint` module offers efficient solvers for `Constraint Satisfaction Problems (CSPs) <https://en.wikipedia.org/wiki/Constraint_satisfaction_problem>`_ over finite domains in an accessible Python package.
 CSP is class of problems which may be represented in terms of variables (a, b, ...), domains (a in [1, 2, 3], ...), and constraints (a < b, ...).
 
 Examples
@@ -135,7 +135,7 @@ Predefined constraint types currently available:
 API documentation
 -----------------
 Documentation for the module is available at: http://python-constraint.github.io/python-constraint/.
-It can be built locally by running `make clean html` from the `docs` folder.
+It can be built locally by running :code:`make clean html` from the `docs` folder.
 For viewing RST files locally, `restview <https://pypi.org/project/restview/>`_ is recommended.
 
 Download and install
@@ -148,21 +148,25 @@ Download and install
 Testing
 -------
 
-Run `pytest` (for local Python) or `nox` (for all supported Python versions).
+Run :code:`pytest` (for local Python) or :code:`nox` (for all supported Python versions).
+
+Contributing
+------------
+
+Feel free to contribute by `submitting pull requests <https://github.com/python-constraint/python-constraint/pulls>`_ or `opening issues <https://github.com/python-constraint/python-constraint/issues>`_.
+Please refer to the `contribution guidelines <https://github.com/python-constraint/python-constraint/contribute>`_ before doing so.
 
 Roadmap
 -------
 
-This GitHub organization and repository is a global effort to help to
-maintain python-constraint which was written by Gustavo Niemeyer
-and originaly located at https://labix.org/python-constraint.
+This GitHub organization and repository is a global effort to help to maintain :code:`python-constraint`, which was written by Gustavo Niemeyer and originaly located at https://labix.org/python-constraint.
 For an overview of recent changes, visit the `Changelog <https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md>`_.
 
 Planned development:
 
-- Create a logo
 - Add a string parser for constraints
 - Add parallel-capable solver
+- Versioned documentation
 
 Contact
 -------
