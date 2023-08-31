@@ -37,4 +37,8 @@ jobs:
                   ruff --format=github --config=pyproject.toml .
             - name: Test with pytest
               run: |
-                  pytest
+                  pytest --cov-report=
+            - name: Report to Coveralls
+              uses: coverallsapp/github-action@v2
+              with:
+                  file: ".coverage"

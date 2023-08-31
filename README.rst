@@ -1,4 +1,4 @@
-|License| |Build Status| |Docs| |Python Versions| |Downloads| |Status|
+|License| |Build Status| |Docs| |Python Versions| |Downloads| |Status| |Code Coverage|
 
 .. image:: docs/assets/logo/N-Queens_problem_Python.svg
     :align: center
@@ -196,9 +196,10 @@ But it's probably better to `open an issue <https://github.com/python-constraint
 .. |Status| image:: https://img.shields.io/pypi/status/python-constraint
     :alt: PyPI - Status
 
+.. |Code Coverage| image:: https://coveralls.io/repos/github/python-constraint/python-constraint/badge.svg
+   :target: https://coveralls.io/github/python-constraint/python-constraint
+   :alt: Code Coverage
+
 .. |Code Health| image:: https://landscape.io/github/python-constraint/python-constraint/master/landscape.svg?style=flat
    :target: https://landscape.io/github/python-constraint/python-constraint/master
    :alt: Code Health
-
-.. |Code Coverage| image:: https://coveralls.io/repos/github/python-constraint/python-constraint/badge.svg
-   :target: https://coveralls.io/github/python-constraint/python-constraint
