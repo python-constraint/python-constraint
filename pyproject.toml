@@ -1,11 +1,17 @@
 [build-system]
-requires = ["poetry-core>=1.7.0", "setuptools>=67.7.2", "Cython>=3.0.0"]
+requires = [
+    "poetry-core>=1.7.0",
+    "setuptools>=67.7.2",
+    "Cython>=3.0.2",
+    "tomli>=2.0.1",
+]
+build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "python-constraint"
+packages = [{ include = "constraint", from = "." }]
 description = "python-constraint is a module implementing support for handling CSPs (Constraint Solving Problems) over finite domain"
 version = "2.0.0"
-build = "setup_cythonize.py"
 authors = [
     "Gustavo Niemeyer <gustavo@niemeyer.net>",
     "Sébastien Celles <s.celles@gmail.com>",
@@ -35,52 +41,30 @@ classifiers = [
     "Development Status :: 5 - Production/Stable",
 ]
 
-[project.readme]
-file = "README.rst"
-content-type = "text/x-rst"
-
-[project.urls]
-Homepage = "https://labix.org/python-constraint"
-Documentation = "http://labix.org/doc/constraint/"
-Source = "https://github.com/python-constraint/python-constraint"
-Tracker = "https://github.com/python-constraint/python-constraint/issues"
+[tool.poetry.build]
+generate-setup-file = false
+script = "build.py"
 
 [tool.poetry.dependencies]
 python = "^3.9"
 
 [tool.poetry.dev-dependencies]
-Cython = "^3.0.0"
+# build
+Cython = "^3.0.2"
+# docs
 sphinx = "^7.2.4"
 sphinx-autodoc-typehints = "^1.24.0"
 sphinx_rtd_theme = "^1.3.0"
 sphinx-pyproject = "^0.3.0"
 toml = "^0.10.2"
-
-# [project.optional-dependencies]
-# docs = [
-#     "sphinx >= 7.2.4",
-#     "sphinx-autodoc-typehints >= 1.24.0",
-#     "sphinx_rtd_theme >= 1.3.0",
-#     "sphinx-pyproject >= 0.3.0",
-#     "toml >= 0.10.2",
-# ]
-# test = [
-#     "pytest >= 7.4.0",
-#     "pytest-cov >= 4.1.0",
-#     "nox >= 2023.4.22",
-#     "ruff >= 0.0.286",
-#     "pep440 >= 0.1.2",
-#     "tomli >= 2.0.1",      # can be replaced by built-in [tomllib](https://docs.python.org/3.11/library/tomllib.html) from Python 3.11
-# ]
-
-# building
-# [tool.setuptools]
-# py-modules = ["setup_cythonize"]
-# [tool.setuptools.cmdclass]
-# build_py = "setup_cythonize.build_py"
-# [tool.poetry]
-# name = "python-constraint"
-# build = "build.py"
+# test
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+nox = "^2023.4.22"
+ruff = "^0.0.286"
+pep440 = "^0.1.2"
+tomli = "^2.0.1"      # can be replaced by built-in [tomllib](https://docs.python.org/3.11/library/tomllib.html) from Python 3.11
+nox-poetry = "^1.0.3"
 
 [tool.black]
 line-length = 120
@@ -98,7 +82,7 @@ select = [
 convention = "google"
 
 [tool.pytest.ini_options]
-minversion = "7.3"
+minversion = "7.4"
 pythonpath = [
     "constraint",
 ] # necessary to get coverage reports without installing with `-e`
