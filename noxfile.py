@@ -29,7 +29,7 @@ def lint(session: Session) -> None:
 def tests(session: Session) -> None:
     """Run the tests for the specified Python versions."""
     # install the dev-dependencies and build the package
-    session.run("poetry", "install", external=True)
+    session.run("poetry", "install", "--with", "dev", external=True)
     # session.poetry.installroot(distribution_format="sdist")
 
     # run pytest on the package with C-extensions, disable required coverage percentage

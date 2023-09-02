@@ -18,6 +18,7 @@ jobs:
             pages: write
             id-token: write
         steps:
+            - run: poetry install --with docs
             - id: deployment
               uses: sphinx-notes/pages@v3
               with:
