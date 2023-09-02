@@ -18,7 +18,11 @@ jobs:
             pages: write
             id-token: write
         steps:
-            - run: poetry install --with docs
+            - name: Install dependencies
+              run: |
+                  python -m pip install --upgrade pip
+                  pip install poetry
+                  poetry install --with docs
             - id: deployment
               uses: sphinx-notes/pages@v3
               with:
