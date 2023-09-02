@@ -24,7 +24,8 @@ in every released version.
   - Added `ruff` for codestyle testing
   - Moved the documentation to GitHub Pages
   - Moved test & publishing automation to GitHub Actions
-  - Dropped Python 3.4, 3.5, 3.6, 3.7 support
+  - Switched dependency & build system to Poetry
+  - Dropped Python 3.4, 3.5, 3.6, 3.7, 3.8 support
 
 ### Version 1.4.0
 

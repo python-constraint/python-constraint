@@ -148,7 +148,10 @@ Download and install
 Testing
 -------
 
-Run :code:`pytest` (for local Python) or :code:`nox` (for all supported Python versions).
+Run :code:`nox` (tests for all supported Python versions in own virtual environment).
+
+To test against your local Python version: make sure you have the development dependencies installed.
+Run :code:`pytest` (optionally add :code:`--no-cov` if you have the C-extensions enabled).
 
 Contributing
 ------------
