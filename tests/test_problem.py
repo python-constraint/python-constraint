@@ -6,10 +6,9 @@ def test_addVariable_support_domain_subclasses():
         pass
 
     class MyConstraint(Constraint):
-        def __call__(self, variables, domains,
-                     assignments, forwardcheck=False):
-            assert isinstance(domains['x'], Domain)
-            assert isinstance(domains['y'], MyCustomDomain)
+        def __call__(self, variables, domains, assignments, forwardcheck=False):
+            assert isinstance(domains["x"], Domain)
+            assert isinstance(domains["y"], MyCustomDomain)
             return True
 
     problem = Problem()

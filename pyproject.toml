@@ -64,7 +64,6 @@ nox = "^2023.4.22"
 ruff = "^0.0.286"
 pep440 = "^0.1.2"
 tomli = "^2.0.1"      # can be replaced by built-in [tomllib](https://docs.python.org/3.11/library/tomllib.html) from Python 3.11
-nox-poetry = "^1.0.3"
 
 [tool.black]
 line-length = 120
