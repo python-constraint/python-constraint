@@ -29,7 +29,7 @@ jobs:
               run: |
                   python -m pip install --upgrade pip
                   pip install poetry
-                  poetry install --with dev
+                  poetry install --with dev,test
             - name: Lint with ruff
               run: |
                   # default set of ruff rules with GitHub Annotations
