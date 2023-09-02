@@ -20,3 +20,5 @@ jobs:
         steps:
             - id: deployment
               uses: sphinx-notes/pages@v3
+              with:
+                  pyproject_extras: "docs"

@@ -1,0 +1,25 @@
+# This workflow will install Python dependencies, run tests and lint for the supported Python versions.
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python.
+
+name: Build & Test
+
+on:
+    push:
+        branches:
+            - main
+            - release/*
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Setup Nox
+              uses: daisylb/setup-nox@v2.1.0
+            - run: nox
+            - name: Report to Coveralls
+              uses: coverallsapp/github-action@v2
+              with:
+                  file: ".coverage"
