@@ -1,4 +1,4 @@
-# This workflow checks out a new release and publishes it to PyPI using Flit.
+# This workflow checks out a new release and publishes it to PyPI using Poetry.
 
 name: Publish Package
 
@@ -12,25 +12,16 @@ on:
     # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-    # This workflow contains a single job called "publish"
-    publish:
-        # The type of runner that the job will run on
+    pypi-publish:
+        name: Upload release to PyPI
         runs-on: ubuntu-latest
-
-        # Steps represent a sequence of tasks that will be executed as part of the job
+        # # Specifying a GitHub environment is optional, but strongly encouraged
+        # environment: release
+        permissions:
+            # IMPORTANT: this permission is mandatory for trusted publishing
+            id-token: write
         steps:
-            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-            - uses: actions/checkout@v3
-            - name: Set up Python 3.9
-              uses: actions/setup-python@v4
-              with:
-                  python-version: 3.9
-                  cache: pip
-
-            # Publishes to PyPi
-            - name: To PyPI using Flit
-              uses: AsifArmanRahman/to-pypi-using-flit@v1
-              with:
-                  password: ${{ secrets.PYPI_API_TOKEN }}
+            # retrieve your distributions here
+            - name: Publish package distributions to PyPI
+              uses: pypa/gh-action-pypi-publish@release/v1
