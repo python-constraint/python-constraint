@@ -14,23 +14,10 @@ on:
 
 jobs:
     publish:
-        name: Upload release to PyPI
         runs-on: ubuntu-latest
-        environment:
-            name: pypi
-            url: https://pypi.org/p/python-constraint2
-        permissions:
-            id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
         steps:
             - uses: actions/checkout@v3
-            - uses: actions/setup-python@v4
+            - name: Build and publish to PyPI
+              uses: JRubics/poetry-publish@v1.17
               with:
-                  python-version: "3.11"
-            - uses: Gr1N/setup-poetry@v8
-            - run: |
-                  poetry install
-                  poetry build
-                  ls
-                  ls ./dist
-            - name: Publish package distributions to PyPI
-              uses: pypa/gh-action-pypi-publish@release/v1
+                  pypi_token: ${{ secrets.PYPI_API_TOKEN }}
