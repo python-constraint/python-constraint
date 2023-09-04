@@ -18,6 +18,6 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Build and publish to PyPI
-              uses: JRubics/poetry-publish@v1.17
+              uses: JRubics/poetry-publish@v1.16
               with:
                   pypi_token: ${{ secrets.PYPI_API_TOKEN }}
