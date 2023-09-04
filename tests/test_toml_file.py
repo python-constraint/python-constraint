@@ -21,7 +21,7 @@ def test_read():
 def test_name():
     """Ensure the name is consistent."""
     assert "name" in project
-    assert project["name"] == "python-constraint"
+    assert project["name"] == "python-constraint2"
 
 
 def test_versioning():

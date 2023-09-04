@@ -1,6 +1,6 @@
 |License| |Build Status| |Docs| |Python Versions| |Downloads| |Status| |Code Coverage|
 
-.. image:: docs/assets/logo/N-Queens_problem_Python.svg
+.. image:: https://github.com/python-constraint/python-constraint/raw/main/docs/assets/logo/N-Queens_problem_Python.svg
     :align: center
     :width: 50%
 
@@ -179,7 +179,7 @@ Contact
 
 But it's probably better to `open an issue <https://github.com/python-constraint/python-constraint/issues>`_.
 
-.. |License| image:: https://img.shields.io/pypi/l/python-constraint
+.. |License| image:: https://img.shields.io/pypi/l/python-constraint2
     :alt: PyPI - License
 
 .. |Build Status| image:: https://github.com/python-constraint/python-constraint/actions/workflows/build-test-python-package.yml/badge.svg
@@ -190,13 +190,13 @@ But it's probably better to `open an issue <https://github.com/python-constraint
    :target: http://python-constraint.github.io/python-constraint/
    :alt: Documentation Status
 
-.. |Python Versions| image:: https://img.shields.io/pypi/pyversions/python-constraint
+.. |Python Versions| image:: https://img.shields.io/pypi/pyversions/python-constraint2
     :alt: PyPI - Python Versions
 
-.. |Downloads| image:: https://img.shields.io/pypi/dm/python-constraint
+.. |Downloads| image:: https://img.shields.io/pypi/dm/python-constraint2
     :alt: PyPI - Downloads
 
-.. |Status| image:: https://img.shields.io/pypi/status/python-constraint
+.. |Status| image:: https://img.shields.io/pypi/status/python-constraint2
     :alt: PyPI - Status
 
 .. |Code Coverage| image:: https://coveralls.io/repos/github/python-constraint/python-constraint/badge.svg
