@@ -13,15 +13,11 @@ on:
     workflow_dispatch:
 
 jobs:
-    pypi-publish:
-        name: Upload release to PyPI
+    publish:
+        # The type of runner that the job will run on
         runs-on: ubuntu-latest
-        # # Specifying a GitHub environment is optional, but strongly encouraged
-        # environment: release
-        permissions:
-            # IMPORTANT: this permission is mandatory for trusted publishing
-            id-token: write
         steps:
-            # retrieve your distributions here
-            - name: Publish package distributions to PyPI
-              uses: pypa/gh-action-pypi-publish@release/v1
+            - name: Build and publish to PyPI
+              uses: JRubics/poetry-publish@v1.17
+              with:
+                  pypi_token: ${{ secrets.PYPI_API_TOKEN }}
