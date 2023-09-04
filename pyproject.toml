@@ -46,7 +46,7 @@ script = "build.py"
 
 # ATTENTION: if anything is changed here, run `poetry update`
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.9" # when changing the minimum Python version, also change the test versions in the noxfile
 [tool.poetry.group.dev.dependencies]
 Cython = "^3.0.2"
 
