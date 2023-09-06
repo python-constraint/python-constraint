@@ -28,12 +28,12 @@ jobs:
                   python-version: "3.11"
             - name: Setup Poetry
               uses: Gr1N/setup-poetry@v8
-            - name: Build distribution
+            - name: Build wheel distribution
               run: |
                   poetry install
                   poetry build -f wheel
                   ls ./dist
-            - name: Upload the built distributions
+            - name: Upload the built wheel distribution
               uses: actions/upload-artifact@v3
               with:
                   name: ${{ matrix.os }}
@@ -60,7 +60,7 @@ jobs:
               with:
                   name: windows-latest
                   path: ./dist
-            - name: Check whether built distributions are available
+            - name: Check whether remotely built distributions are available
               run: ls ./dist
             - name: Build the Linux wheel and source distribution
               uses: actions/checkout@v3
@@ -70,10 +70,10 @@ jobs:
                   python-version: "3.11"
             - name: Setup Poetry
               uses: Gr1N/setup-poetry@v8
-            - name: Build distribution
+            - name: Build wheel and source distributions
               run: |
                   poetry install
-                  poetry build -f wheel
+                  poetry build
                   ls ./dist
             - name: Publish package distributions to PyPI
               uses: pypa/gh-action-pypi-publish@release/v1
