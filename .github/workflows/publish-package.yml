@@ -61,8 +61,19 @@ jobs:
                   name: windows-latest
                   path: ./dist
             - name: Check whether built distributions are available
+              run: ls ./dist
+            - name: Build the Linux wheel and source distribution
+              uses: actions/checkout@v3
+            - name: Setup Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: "3.11"
+            - name: Setup Poetry
+              uses: Gr1N/setup-poetry@v8
+            - name: Build distribution
               run: |
-                  ls
+                  poetry install
+                  poetry build -f wheel
                   ls ./dist
             - name: Publish package distributions to PyPI
               uses: pypa/gh-action-pypi-publish@release/v1
