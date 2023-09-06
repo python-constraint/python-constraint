@@ -18,7 +18,7 @@ jobs:
 
         strategy:
             matrix:
-                os: [ubuntu-latest, macos-latest, windows-latest] # important: if adding OSes here, also download them in build_and_publish_as_package
+                os: [macos-latest, windows-latest] # important: if adding OSes here, also download them in build_and_publish_as_package
 
         steps:
             - uses: actions/checkout@v3
@@ -32,13 +32,12 @@ jobs:
               run: |
                   poetry install
                   poetry build -f wheel
-                  ls
                   ls ./dist
             - name: Upload the built distributions
               uses: actions/upload-artifact@v3
               with:
                   name: ${{ matrix.os }}
-                  path: ./dist/*.tar.gz
+                  path: ./dist/*.whl
 
     build_and_publish_as_package:
         name: Build the wheel and source on Ubuntu and upload release to PyPI
