@@ -8,7 +8,7 @@ from constraint.constraints import Constraint, FunctionConstraint
 from operator import itemgetter
 from typing import List, Optional, Union, Sequence, Tuple, Dict, Callable
 
-class Problem(object):
+class Problem:
     """Class used to define a problem and retrieve solutions."""
 
     def __init__(self, solver=None):

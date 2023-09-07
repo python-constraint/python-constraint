@@ -63,7 +63,7 @@ def doArc8(arcs: dict, domains: dict, assignments: dict) -> bool:
     return True
 
 
-class Solver(object):
+class Solver:
     """Abstract base class for solvers."""
 
     def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):

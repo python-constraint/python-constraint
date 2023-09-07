@@ -79,9 +79,10 @@ src = ["constraint"]
 respect-gitignore = true
 exclude = ["docs", "examples", "tests"]
 select = [
-    "E", # pycodestyle
-    "F", # pyflakes,
-    "D", # pydocstyle,
+    "E",  # pycodestyle
+    "F",  # pyflakes,
+    "D",  # pydocstyle,
+    "UP", # pyupgrade
 ]
 [tool.ruff.pydocstyle]
 convention = "google"

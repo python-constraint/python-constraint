@@ -3,7 +3,7 @@
 from constraint.domain import Unassigned
 from typing import Callable, List, Union, Optional, Sequence
 
-class Constraint(object):
+class Constraint:
     """Abstract base class for constraints."""
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):

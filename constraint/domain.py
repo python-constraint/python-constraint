@@ -15,7 +15,7 @@ def check_if_compiled() -> bool:
 # ----------------------------------------------------------------------
 
 
-class Variable(object):
+class Variable:
     """Helper class for variable definition.
 
     Using this class is optional, since any hashable object,
