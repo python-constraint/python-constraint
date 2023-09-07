@@ -1,65 +1,33 @@
 # Release procedure
+The following is the release procedure from the main branch to having the package on PyPI. 
+Please be aware that access to these functions may be restricted on a user account basis. 
 
-## Python versions
+## Check release information
 
-* Ensure supported Python versions in `setup.py` and `.travis.yml` are corrects 
+* Ensure supported Python versions in `pyproject.toml` and `noxfile.py` are correct
 
-* Ensure `python-constraint` version is up to date in `version.py`
+* Ensure version is bumped in `pyproject.toml` and it is [PEP440-compliant](https://peps.python.org/pep-0440/)
 
 ## CHANGELOG
 
-Ensure `CHANGELOG.md` have been updated
+Ensure `CHANGELOG.md` has been updated.
 
-## Tag
+## Tag & Release
 
-Tag commit and push to github
-
-using Github website
-
-Go to https://github.com/python-constraint/python-constraint/releases/new
-tag: vx.x.x
-
-or using cli
-
-```bash
-git tag -a x.x.x -m 'Version x.x.x'
-git push python-constraint master --tags
-```
+Create a [new release](https://github.com/python-constraint/python-constraint/releases/new). 
+Add a new tag that matches the version in `pyproject.toml`. 
+The release title must start with the exact version as well, followed by a brief description of the changes. 
+Ensure that the release description contains all the relevant information, especially if there are breaking changes.
+The release description must link to the changelog.  
 
 ## Upload to PyPI
 
-### Automatic PyPI upload
+Once a new release is created, publishing to PyPI happens automatically via a GitHub action. 
+This action builds wheels for manylinux, macOS and Windows on x86. ARM support will be added as soon as it is supported by GitHub. 
+Source build is also released, be aware that this requires a C-compiler on the user side.  
 
-PyPI deployment was set using https://docs.travis-ci.com/user/deployment/pypi/
+## Verify release
 
-When tagging a new release on Github, package should be automatically uploaded on PyPI.
-
-### Manual PyPI upload
-
-Ensure a `~/.pypirc` exists
-
-```
-[distutils] # this tells distutils what package indexes you can push to
-index-servers = pypi
-    pypi # the live PyPI
-    pypitest # test PyPI
-
-[pypi]
-repository:http://pypi.python.org/pypi
-username:scls
-password:**********
-```
-
-Upload
-
-```
-git clean -xfd
-python setup.py register sdist bdist_wheel --universal
-python setup.py sdist bdist_wheel upload
-```
-
-## Verify on PyPI
-
-Go to https://pypi.python.org/pypi/python-constraint/
-
-Verify that new version is published.
+Check the status of the [Publish Package](https://github.com/python-constraint/python-constraint/actions/workflows/publish-package.yml) GitHub action. 
+Go to https://pypi.python.org/pypi/python-constraint/ and verify that new version is published.
+In addition, check in the managing section of PyPI if all wheels and the source distributions are correctly uploaded. 

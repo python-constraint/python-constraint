@@ -202,7 +202,3 @@ But it's probably better to `open an issue <https://github.com/python-constraint
 .. |Code Coverage| image:: https://coveralls.io/repos/github/python-constraint/python-constraint/badge.svg
    :target: https://coveralls.io/github/python-constraint/python-constraint
    :alt: Code Coverage
-
-.. |Code Health| image:: https://landscape.io/github/python-constraint/python-constraint/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/python-constraint/python-constraint/master
-   :alt: Code Health
