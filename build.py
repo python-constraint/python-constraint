@@ -21,7 +21,7 @@ extensions = [
 ]
 
 # Cythonize the files
-ext_modules = cythonize(extensions, include_path=[module_name], language_level=3)
+ext_modules = cythonize(extensions, include_path=[module_name], language_level=3, force=True)
 dist = Distribution({"ext_modules": ext_modules})
 try:
     cmd = build_ext(dist)  # bundle into a library file

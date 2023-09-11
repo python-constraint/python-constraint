@@ -18,19 +18,18 @@ jobs:
 
         strategy:
             matrix:
-                os: [macos-latest, windows-latest] # important: if adding OSes here, also download them in build_and_publish_as_package
+                os: [ubuntu-latest, macos-latest, windows-latest] # important: if adding OSes here, also download them in build_and_publish_as_package
+                pyversion: ["3.10", "3.11"]
+                exclude:
+                    - os: ubuntu-latest
+                      pyversion: "3.11" # exclude because we already use this OS and version for building the source package
 
         steps:
-            - name: Setup MinGW on Windows
-              if: matrix.os == 'windows-latest'
-              uses: egor-tensin/setup-mingw@v2
-              with:
-                  platform: x64
             - uses: actions/checkout@v3
             - name: Setup Python
               uses: actions/setup-python@v4
               with:
-                  python-version: "3.11"
+                  python-version: ${{ matrix.pyversion }}
             - name: Setup Poetry
               uses: Gr1N/setup-poetry@v8
             - name: Build wheel distribution
@@ -41,7 +40,7 @@ jobs:
             - name: Upload the built wheel distribution
               uses: actions/upload-artifact@v3
               with:
-                  name: ${{ matrix.os }}
+                  name: ${{ matrix.os }}_${{ matrix.pyversion }}
                   path: ./dist/*.whl
                   if-no-files-found: error
 
@@ -56,18 +55,15 @@ jobs:
             id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
         steps:
             - uses: actions/checkout@v3
-            - name: Download the macOS wheel
+            - name: Download all platform-specific wheels
               uses: actions/download-artifact@v3
               with:
-                  name: macos-latest
                   path: ./dist
-            - name: Download the Windows wheel
-              uses: actions/download-artifact@v3
-              with:
-                  name: windows-latest
-                  path: ./dist
-            - name: Check whether remotely built distributions are available
-              run: ls ./dist
+            - name: Check whether remotely built wheels are available
+              run: |
+                  ls
+                  ls ./dist
+                  ls ./dist/macos-latest_3.9
             - name: Build the Linux wheel and source distribution
               uses: actions/checkout@v3
             - name: Setup Python
