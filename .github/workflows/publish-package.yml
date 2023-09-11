@@ -63,7 +63,7 @@ jobs:
               run: | # searches for wheel files in all subdirectories and moves the files to ./dist
                   ls ./temp_dist
                   mkdir -p ./dist
-                  ls ./dist/macos-latest_3.11
+                  ls ./temp_dist/macos-latest_3.11
                   find ./temp_dist -name '*.whl' -exec mv {} ./dist \;
                   rm -rf ./temp_dist
             - name: Build the Linux wheel and source distribution
