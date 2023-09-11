@@ -21,6 +21,11 @@ jobs:
                 os: [macos-latest, windows-latest] # important: if adding OSes here, also download them in build_and_publish_as_package
 
         steps:
+            - name: Setup MinGW on Windows
+              if: matrix.os == 'windows-latest'
+              uses: egor-tensin/setup-mingw@v2
+              with:
+                  platform: x64
             - uses: actions/checkout@v3
             - name: Setup Python
               uses: actions/setup-python@v4
@@ -38,6 +43,7 @@ jobs:
               with:
                   name: ${{ matrix.os }}
                   path: ./dist/*.whl
+                  if-no-files-found: error
 
     build_and_publish_as_package:
         name: Build the wheel and source on Ubuntu and upload release to PyPI

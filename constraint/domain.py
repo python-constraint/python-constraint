@@ -1,14 +1,19 @@
 """Module containing the code for the Variable and Domain classes."""
 
+
 def check_if_compiled() -> bool:
     """Check if this code has been compiled with Cython.
 
     Returns:
         bool: whether the code has been compiled.
     """
-    from cython import compiled
+    try:
+        from cython import compiled
 
-    return compiled
+        return compiled
+    except ImportError or ModuleNotFoundError:
+        return False
+
 
 # ----------------------------------------------------------------------
 # Variables

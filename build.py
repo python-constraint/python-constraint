@@ -6,6 +6,7 @@ Based on https://blagovdaryu.hashnode.dev/tremendously-speed-up-python-code-with
 import os
 import shutil
 from subprocess import CalledProcessError
+from warnings import warn
 
 from Cython.Build import build_ext, cythonize
 from setuptools import Distribution, Extension
@@ -27,7 +28,7 @@ try:
     cmd.ensure_finalized()
     cmd.run()
 except CalledProcessError:
-    RuntimeWarning("System does not have a C-compiler usable for `build_ext` installed, using slower Python code")
+    warn(RuntimeWarning("System does not have a C-compiler usable for `build_ext` installed, using slower Python code"))
 
 # copy the resulting library bundle into the installed directory
 for output in cmd.get_outputs():
