@@ -56,10 +56,6 @@ jobs:
             id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
         steps:
             - uses: actions/checkout@v3
-            - name: Download all platform-specific wheels to the `temp_dist` folder
-              uses: actions/download-artifact@v3
-              with:
-                  path: ./temp_dist
             - name: Build the source distribution and platform-specific wheel
               uses: actions/checkout@v3
             - name: Setup Python
@@ -73,6 +69,10 @@ jobs:
                   poetry install
                   poetry build
                   ls ./dist
+            - name: Download all platform-specific wheels to the `temp_dist` folder
+              uses: actions/download-artifact@v3
+              with:
+                  path: ./temp_dist
             - name: Unpack the remotely built wheels to the `dist` folder
               run: | # searches for wheel files in all subdirectories of ./temp_dist and moves the files to ./dist
                   ls ./temp_dist
