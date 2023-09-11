@@ -55,16 +55,17 @@ jobs:
             id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
         steps:
             - uses: actions/checkout@v3
-            - name: Download all platform-specific wheels
+            - name: Download all platform-specific wheels to the `temp_dist` folder
               uses: actions/download-artifact@v3
               with:
-                  path: ./temp_dists
+                  path: ./temp_dist
             - name: Unpack the remotely built wheels to the `dist` folder
               run: | # searches for wheel files in all subdirectories and moves the files to ./dist
                   ls ./temp_dist
-                  mkdir ./dist
+                  mkdir -p ./dist
                   ls ./dist/macos-latest_3.11
-                  find . -name '*.whl' -exec mv {} ./dist \;
+                  find ./temp_dist -name '*.whl' -exec mv {} ./dist \;
+                  rm -rf ./temp_dist
             - name: Build the Linux wheel and source distribution
               uses: actions/checkout@v3
             - name: Setup Python
