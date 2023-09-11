@@ -1,4 +1,8 @@
 # This workflow checks out a new release and publishes it to PyPI using Poetry.
+#
+# First it builds a wheel for every combination of OS and Python version listed, save for Python 3.11 on ubuntu-latest.
+# It then starts an ubuntu-latest instance that retrieves all built wheels, and builds a wheel for Python 3.11 and a source distribution.
+# Finally it uploads the source and all wheels to PyPI.
 
 name: Publish Package
 
@@ -18,9 +22,9 @@ jobs:
         runs-on: ${{ matrix.os }}
 
         strategy:
-            matrix:
-                os: [ubuntu-latest, macos-latest, windows-latest] # important: if adding OSes here, also download them in build_and_publish_as_package
-                pyversion: ["3.10", "3.11"]
+            matrix: # important: if this matrix is changed, also change EXPECTED_WHEELS_COUNT in `build_and_publish_as_package` below
+                os: [ubuntu-latest, macos-latest, windows-latest]
+                pyversion: ["3.8", "3.9", "3.10", "3.11"]
                 exclude:
                     - os: ubuntu-latest
                       pyversion: "3.11" # exclude because we already use this OS and version for building the source package
@@ -82,6 +86,20 @@ jobs:
                   ls ./temp_dist
                   ls ./dist
                   rm -rf ./temp_dist
+            - name: Check that the number of wheels is as expected and there is one source distribution
+              run: |
+                  SOURCES_COUNT=$(ls -lR ./dist/*.tar.gz | wc -l)
+                  if [ "$SOURCES_COUNT" -ne 1 ]; then
+                    echo "::error::Number of source distributions $SOURCES_COUNT not equal to 1"
+                    exit 1;
+                  fi
+
+                  EXPECTED_WHEELS_COUNT=12
+                  WHEELS_COUNT=$(ls -lR ./dist/*.whl | wc -l)
+                  if [ "$WHEELS_COUNT" -ne "$EXPECTED_WHEELS_COUNT" ]; then
+                    echo "::error::Number of wheel distributions $WHEELS_COUNT not equal to $EXPECTED_WHEELS_COUNT"
+                    exit 1;
+                  fi
             - name: Publish package distributions to PyPI
               uses: pypa/gh-action-pypi-publish@release/v1
               with:
