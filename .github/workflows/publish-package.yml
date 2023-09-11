@@ -60,17 +60,7 @@ jobs:
               uses: actions/download-artifact@v3
               with:
                   path: ./temp_dist
-            - name: Unpack the remotely built wheels to the `dist` folder
-              run: | # searches for wheel files in all subdirectories and moves the files to ./dist
-                  ls ./temp_dist
-                  mkdir -p ./dist
-                  ls ./temp_dist/macos-latest_3.11
-                  find ./temp_dist -name '*.whl' -exec mv {} ./dist \;
-                  echo "after"
-                  ls ./temp_dist
-                  ls ./dist
-                  rm -rf ./temp_dist
-            - name: Build the Linux wheel and source distribution
+            - name: Build the source distribution and platform-specific wheel
               uses: actions/checkout@v3
             - name: Setup Python
               uses: actions/setup-python@v4
@@ -78,10 +68,21 @@ jobs:
                   python-version: "3.11"
             - name: Setup Poetry
               uses: Gr1N/setup-poetry@v8
-            - name: Build wheel and source distributions
+            - name: Build for Python 3.11 on ubuntu-latest
               run: |
                   poetry install
                   poetry build
                   ls ./dist
+            - name: Unpack the remotely built wheels to the `dist` folder
+              run: | # searches for wheel files in all subdirectories of ./temp_dist and moves the files to ./dist
+                  ls ./temp_dist
+                  mkdir -p ./dist
+                  find ./temp_dist -name '*.whl' -exec mv {} ./dist \;
+                  echo "after"
+                  ls ./temp_dist
+                  ls ./dist
+                  rm -rf ./temp_dist
             - name: Publish package distributions to PyPI
               uses: pypa/gh-action-pypi-publish@release/v1
+              with:
+                  skip-existing: true
