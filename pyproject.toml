@@ -1,10 +1,5 @@
 [build-system]
-requires = [
-    "poetry-core>=1.7.0",
-    "setuptools>=67.7.2",
-    "Cython>=3.0.2",
-    "tomli>=2.0.1",
-]
+requires = ["poetry-core>=1.7.0", "setuptools>=67.7.2", "Cython>=3.0.2"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
@@ -69,6 +64,10 @@ nox = "^2023.4.22"
 ruff = "^0.0.286"
 pep440 = "^0.1.2"
 tomli = "^2.0.1"      # can be replaced by built-in [tomllib](https://docs.python.org/3.11/library/tomllib.html) from Python 3.11
+
+# development dependencies are unused for now, as this is already covered by test and docs
+# # ATTENTION: if anything is changed here, run `poetry update`
+# [tool.poetry.group.dev.dependencies]
 
 [tool.black]
 line-length = 120
