@@ -30,7 +30,7 @@ jobs:
                       pyversion: "3.11" # exclude because we already use this OS and version for building the source package
 
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - name: Setup Python
               uses: actions/setup-python@v4
               with:
@@ -59,9 +59,8 @@ jobs:
         permissions:
             id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
         steps:
-            - uses: actions/checkout@v3
             - name: Build the source distribution and platform-specific wheel
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
             - name: Setup Python
               uses: actions/setup-python@v4
               with:
@@ -79,16 +78,19 @@ jobs:
                   path: ./temp_dist
             - name: Unpack the remotely built wheels to the `dist` folder
               run: | # searches for wheel files in all subdirectories of ./temp_dist and moves the files to ./dist
+                  echo "Received artifacts:"
                   ls ./temp_dist
+                  echo "\n"
                   mkdir -p ./dist
                   find ./temp_dist -name '*.whl' -exec mv {} ./dist \;
-                  echo "after"
-                  ls ./temp_dist
+                  echo "Unpacked files:"
                   ls ./dist
+                  echo "\n"
                   rm -rf ./temp_dist
             - name: Check that the number of wheels is as expected and there is one source distribution
               run: |
                   SOURCES_COUNT=$(ls -lR ./dist/*.tar.gz | wc -l)
+                  echo "Number of source distributions: $SOURCES_COUNT"
                   if [ "$SOURCES_COUNT" -ne 1 ]; then
                     echo "::error::Number of source distributions $SOURCES_COUNT not equal to 1"
                     exit 1;
@@ -96,6 +98,7 @@ jobs:
 
                   EXPECTED_WHEELS_COUNT=12
                   WHEELS_COUNT=$(ls -lR ./dist/*.whl | wc -l)
+                  echo "Number of wheel distributions: $WHEELS_COUNT"
                   if [ "$WHEELS_COUNT" -ne "$EXPECTED_WHEELS_COUNT" ]; then
                     echo "::error::Number of wheel distributions $WHEELS_COUNT not equal to $EXPECTED_WHEELS_COUNT"
                     exit 1;

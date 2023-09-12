@@ -17,9 +17,8 @@ A [Minimal Working Example (MWE)](https://en.wikipedia.org/wiki/Minimal_Working_
 
 ### Reporting bugs
 
-When reporting bugs it's a good idea to provide stacktrace messages to
-the bug report makes it easier to track down bugs. Some steps to reproduce a bug
-reliably would also make a huge difference.
+When reporting bugs it's a good idea to provide stacktrace messages to the bug report makes it easier to track down bugs. 
+Some steps to reproduce a bug reliably would also make a huge difference.
 
 ## Pull requests
 
