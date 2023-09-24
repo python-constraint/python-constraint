@@ -42,7 +42,7 @@ classifiers = [
 ]
 [tool.poetry.build]
 generate-setup-file = false
-script = "build.py"
+script = "build_extensions.py"
 
 # ATTENTION: if anything is changed here, run `poetry update`
 [tool.poetry.dependencies]
