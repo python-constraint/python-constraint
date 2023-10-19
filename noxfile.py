@@ -39,7 +39,7 @@ def tests(session: Session) -> None:
 
     # for the last Python version session:
     if session.python == python_versions_to_test[-1]:
-        # run pytest on the package without C-extensions to generate the correct coverage report
+        # run pytest again on the package, this time without C-extensions to generate the correct coverage report
         session.run("python", "tests/setup_teardown.py", "--no-enable_extensions")
         session.run("pytest")
 

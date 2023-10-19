@@ -27,13 +27,15 @@ keywords = [
 ]
 classifiers = [
     "Environment :: Console",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Education",
     "Natural Language :: English",
+    "Programming Language :: C",
+    "Programming Language :: Cython",
     "Topic :: Scientific/Engineering",
     "Topic :: Software Development",
-    "Development Status :: 4 - Beta",
 ]
 [tool.poetry.build]
 generate-setup-file = false
