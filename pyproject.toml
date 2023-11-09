@@ -39,7 +39,7 @@ classifiers = [
 ]
 [tool.poetry.build]
 generate-setup-file = false
-script = "build.py"
+script = "cythonize_build.py"
 
 # ATTENTION: if anything is changed here, run `poetry update`
 [tool.poetry.dependencies]
