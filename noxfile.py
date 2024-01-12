@@ -11,7 +11,7 @@ from nox import Session, session
 
 # from nox_poetry import Session, session   # nox_poetry is a better option, but <=1.0.3 has a bug with filename-URLs
 
-python_versions_to_test = ["3.8", "3.9", "3.10", "3.11"]
+python_versions_to_test = ["3.8", "3.9", "3.10", "3.11", "3.12"]
 nox.options.stop_on_first_error = True
 nox.options.error_on_missing_interpreters = True
 

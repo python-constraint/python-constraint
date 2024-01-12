@@ -1,7 +1,7 @@
 # This workflow checks out a new release and publishes it to PyPI using Poetry.
 #
-# First it builds a wheel for every combination of OS and Python version listed, save for Python 3.11 on ubuntu-latest.
-# It then starts an ubuntu-latest instance that retrieves all built wheels, and builds a wheel for Python 3.11 and a source distribution.
+# First it builds a wheel for every combination of OS and Python version listed, save for Python 3.12 on ubuntu-latest.
+# It then starts an ubuntu-latest instance that retrieves all built wheels, and builds a wheel for Python 3.12 and a source distribution.
 # Finally it uploads the source and all wheels to PyPI.
 
 name: Publish Package
@@ -24,10 +24,10 @@ jobs:
         strategy:
             matrix: # important: if this matrix is changed, also change EXPECTED_WHEELS_COUNT in `build_and_publish_as_package` below
                 os: [ubuntu-latest, macos-latest, windows-latest]
-                pyversion: ["3.8", "3.9", "3.10", "3.11"]
+                pyversion: ["3.8", "3.9", "3.10", "3.11", "3.12"]
                 exclude:
                     - os: ubuntu-latest
-                      pyversion: "3.11" # exclude because we already use this OS and version for building the source package
+                      pyversion: "3.12" # exclude because we already use this OS and version for building the source package
 
         steps:
             - uses: actions/checkout@v4
@@ -64,10 +64,10 @@ jobs:
             - name: Setup Python
               uses: actions/setup-python@v4
               with:
-                  python-version: "3.11"
+                  python-version: "3.12"
             - name: Setup Poetry
               uses: Gr1N/setup-poetry@v8
-            - name: Build for Python 3.11 on ubuntu-latest
+            - name: Build for Python 3.12 on ubuntu-latest
               run: |
                   poetry install
                   poetry build

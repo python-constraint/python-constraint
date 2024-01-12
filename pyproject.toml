@@ -6,7 +6,7 @@ build-backend = "poetry.core.masonry.api"
 name = "python-constraint2" # when set back to "python-constraint", don't forget to remove '2' in other places (e.g. README)
 packages = [{ include = "constraint", from = "." }, { include = "tests" }]
 description = "python-constraint is a module for efficiently solving CSPs (Constraint Solving Problems) over finite domains."
-version = "2.0.0b4" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
+version = "2.0.0b5" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
 authors = [
     "Gustavo Niemeyer <gustavo@niemeyer.net>",
     "Sébastien Celles <s.celles@gmail.com>",
@@ -43,7 +43,7 @@ script = "cythonize_build.py"
 
 # ATTENTION: if anything is changed here, run `poetry update`
 [tool.poetry.dependencies]
-python = ">=3.8,<3.12" # when changing the minimum Python version, also change the test versions in the Noxfile and GitHub Actions
+python = ">=3.8,<3.13" # when changing the Python versions, also change the test versions in the Noxfile and GitHub Actions
 [tool.poetry.group.dev.dependencies]
 Cython = "^3.0.2"
 
