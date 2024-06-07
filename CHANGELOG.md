@@ -20,12 +20,13 @@ in every released version.
   - Split the codebase into multiple files for convenience
   - Switched from `setup.py` to `pyproject.toml`
   - Achieved and requires test coverage of at least 65%
-  - Added `nox` for testing against all supported Python versions 
+  - Added `nox` for testing against all supported Python versions
   - Added `ruff` for codestyle testing
   - Moved the documentation to GitHub Pages
   - Moved test & publishing automation to GitHub Actions
   - Switched dependency & build system to Poetry
   - Dropped Python 3.4, 3.5, 3.6, 3.7, 3.8 support
+  - Add ability to pass custom `Random` to `MinConflictsSolver`.
 
 ### Version 1.4.0
 
