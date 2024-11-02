@@ -174,7 +174,7 @@ Planned development:
 Contact
 -------
 - `Gustavo Niemeyer <https://github.com/niemeyer/>`_ <gustavo@niemeyer.net>
-- `Sébastien Celles <https://github.com/scls19fr/>`_ <s.celles@gmail.com>
+- `Sébastien Celles <https://github.com/s-celles/>`_ <s.celles@gmail.com>
 - `Floris-Jan Willemsen <https://github.com/fjwillemsen>`_
 
 But it's probably better to `open an issue <https://github.com/python-constraint/python-constraint/issues>`_.
