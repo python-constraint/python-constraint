@@ -1,12 +1,13 @@
 """Module containing the code for problem definitions."""
 
 import copy
-
-from constraint.solvers import BacktrackingSolver
-from constraint.domain import Domain
-from constraint.constraints import Constraint, FunctionConstraint
 from operator import itemgetter
-from typing import List, Optional, Union, Sequence, Tuple, Dict, Callable
+from typing import Callable, Dict, List, Optional, Sequence, Tuple, Union
+
+from constraint.constraints import Constraint, FunctionConstraint
+from constraint.domain import Domain
+from constraint.solvers import BacktrackingSolver
+
 
 class Problem:
     """Class used to define a problem and retrieve solutions."""
@@ -80,7 +81,7 @@ class Problem:
                 assume
         """
         if variable in self._variables:
-            msg = "Tried to insert duplicated variable %s" % repr(variable)
+            msg = f"Tried to insert duplicated variable {repr(variable)}"
             raise ValueError(msg)
         if isinstance(domain, Domain):
             domain = copy.deepcopy(domain)
@@ -210,7 +211,9 @@ class Problem:
         get_in_order = itemgetter(*order)
         return list(get_in_order(params) for params in solutions)
 
-    def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501
+    def getSolutionsAsListDict(
+        self, order: List[str] = None, validate: bool = True
+    ) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501
         """Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
         solutions_list = self.getSolutionsOrderedList(order)
         size_list = len(solutions_list)
