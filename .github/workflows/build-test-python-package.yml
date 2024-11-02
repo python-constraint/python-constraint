@@ -22,6 +22,6 @@ jobs:
             - name: Report to Coveralls
               uses: coverallsapp/github-action@v2
               with:
-                  file: .coverage
-                  format: python
+                  file: coverage.xml
+                  format: cobertura
                   debug: true

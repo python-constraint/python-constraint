@@ -93,5 +93,5 @@ minversion = "8.3"
 pythonpath = [
     "constraint",
 ] # necessary to get coverage reports without installing with `-e`
-addopts = "--cov --cov-config=.coveragerc --cov-report html --cov-report term-missing --cov-fail-under 80"
+addopts = "--cov --cov-config=.coveragerc --cov-report xml --cov-report term-missing --cov-fail-under 80"
 testpaths = ["tests"]
