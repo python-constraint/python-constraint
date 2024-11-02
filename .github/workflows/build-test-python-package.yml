@@ -21,3 +21,7 @@ jobs:
                   nox
             - name: Report to Coveralls
               uses: coverallsapp/github-action@v2
+              with:
+                  file: .coverage
+                  format: python
+                  debug: true
