@@ -32,18 +32,18 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - name: Setup Python
-              uses: actions/setup-python@v4
+              uses: actions/setup-python@v5
               with:
                   python-version: ${{ matrix.pyversion }}
             - name: Setup Poetry
-              uses: Gr1N/setup-poetry@v8
+              uses: Gr1N/setup-poetry@v9
             - name: Build wheel distribution
               run: |
                   poetry install
                   poetry build -f wheel
                   ls ./dist
             - name: Upload the built wheel distribution
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: ${{ matrix.os }}_${{ matrix.pyversion }}
                   path: ./dist/*.whl
@@ -62,11 +62,11 @@ jobs:
             - name: Build the source distribution and platform-specific wheel
               uses: actions/checkout@v4
             - name: Setup Python
-              uses: actions/setup-python@v4
+              uses: actions/setup-python@v5
               with:
                   python-version: "3.12"
             - name: Setup Poetry
-              uses: Gr1N/setup-poetry@v8
+              uses: Gr1N/setup-poetry@v9
             - name: Build for Python 3.12 on ubuntu-latest
               run: |
                   poetry install
