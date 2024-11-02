@@ -72,9 +72,8 @@ jobs:
                   poetry install
                   poetry build
                   ls ./dist
-                  mkdir ./temp_dist
             - name: Download all platform-specific wheels to the `temp_dist` folder
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v4
               with:
                   path: ./temp_dist
             - name: Unpack the remotely built wheels to the `dist` folder
