@@ -24,4 +24,3 @@ jobs:
               with:
                   file: coverage.xml
                   format: cobertura
-                  debug: true
