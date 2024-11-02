@@ -19,8 +19,5 @@ jobs:
             - uses: fjwillemsen/setup-nox2@v3.0.0
             - run: |
                   nox
-                  cat .coverage
             - name: Report to Coveralls
               uses: coverallsapp/github-action@v2
-              with:
-                  file: ".coverage"
