@@ -8,6 +8,7 @@ python-constraint
 =================
 
 | This software is now back to active development / maintainance status.
+| IMPORTANT: the new version can be installed with `pip install python-constraint2`, as the original pip release will not be updated.
 | For an overview of recent changes, visit the `Changelog <https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md>`_.
 | The complete documentation can be found `here <http://python-constraint.github.io/python-constraint/>`_.
 
@@ -143,7 +144,7 @@ Download and install
 
 .. code-block:: shell
 
-    $ pip install python-constraint
+    $ pip install python-constraint2
 
 Testing
 -------
