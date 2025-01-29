@@ -2582,7 +2582,6 @@ static const char __pyx_k_Optional_Sequence[] = "Optional[Sequence]";
 static const char __pyx_k_Problem_getSolver[] = "Problem.getSolver";
 static const char __pyx_k_Problem_setSolver[] = "Problem.setSolver";
 static const char __pyx_k_constraint_domain[] = "constraint.domain";
-static const char __pyx_k_BacktrackingSolver[] = "BacktrackingSolver";
 static const char __pyx_k_FunctionConstraint[] = "FunctionConstraint";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
@@ -2602,6 +2601,7 @@ static const char __pyx_k_getSolutionsOrderedList[] = "getSolutionsOrderedList";
 static const char __pyx_k_Problem_getSolver_line_54[] = "Problem.getSolver (line 54)";
 static const char __pyx_k_Problem_setSolver_line_39[] = "Problem.setSolver (line 39)";
 static const char __pyx_k_Union_Constraint_Callable[] = "Union[Constraint, Callable]";
+static const char __pyx_k_OptimizedBacktrackingSolver[] = "OptimizedBacktrackingSolver";
 static const char __pyx_k_Problem_addVariable_line_68[] = "Problem.addVariable (line 68)";
 static const char __pyx_k_Problem_addVariables_line_98[] = "Problem.addVariables (line 98)";
 static const char __pyx_k_Problem_getSolution_line_146[] = "Problem.getSolution (line 146)";
@@ -2614,14 +2614,14 @@ static const char __pyx_k_duplicate_parameter_configurati[] = " duplicate parame
 static const char __pyx_k_tuple_list_tuple_dict_tuple_int[] = "tuple[list[tuple], dict[tuple, int], int]";
 static const char __pyx_k_Add_a_variable_to_the_problem_Ex[] = "Add a variable to the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.addVariable(\"a\", [1, 2])\n            >>> problem.getSolution() in ({'a': 1}, {'a': 2})\n            True\n\n        Args:\n            variable (hashable object): Object representing a problem\n                variable\n            domain (list, tuple, or instance of :py:class:`Domain`): Set of items\n                defining the possible values that the given variable may\n                assume\n        ";
 static const char __pyx_k_Add_one_or_more_variables_to_the[] = "Add one or more variables to the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.addVariables([\"a\", \"b\"], [1, 2, 3])\n            >>> solutions = problem.getSolutions()\n            >>> len(solutions)\n            9\n            >>> {'a': 3, 'b': 1} in solutions\n            True\n\n        Args:\n            variables (sequence of hashable objects): Any object\n                containing a sequence of objects represeting problem\n                variables\n            domain (list, tuple, or instance of :py:class:`Domain`): Set of items\n                defining the possible values that the given variables\n                may assume\n        ";
-static const char __pyx_k_Change_the_problem_solver_curren[] = "Change the problem solver currently in use.\n\n        Example:\n            >>> solver = BacktrackingSolver()\n            >>> problem = Problem(solver)\n            >>> problem.getSolver() is solver\n            True\n\n        Args:\n            solver (instance of a :py:class:`Solver`): New problem\n                solver\n        ";
+static const char __pyx_k_Change_the_problem_solver_curren[] = "Change the problem solver currently in use.\n\n        Example:\n            >>> solver = OptimizedBacktrackingSolver()\n            >>> problem = Problem(solver)\n            >>> problem.getSolver() is solver\n            True\n\n        Args:\n            solver (instance of a :py:class:`Solver`): New problem\n                solver\n        ";
 static const char __pyx_k_Class_used_to_define_a_problem_a[] = "Class used to define a problem and retrieve solutions.";
 static const char __pyx_k_Constraints_must_be_instances_of[] = "Constraints must be instances of subclasses of the Constraint class";
 static const char __pyx_k_Domains_must_be_instances_of_sub[] = "Domains must be instances of subclasses of the Domain class";
 static const char __pyx_k_Find_and_return_a_solution_to_th[] = "Find and return a solution to the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.getSolution() is None\n            True\n            >>> problem.addVariables([\"a\"], [42])\n            >>> problem.getSolution()\n            {'a': 42}\n\n        Returns:\n            dictionary mapping variables to values: Solution for the\n            problem\n        ";
 static const char __pyx_k_Find_and_return_all_solutions_to[] = "Find and return all solutions to the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.getSolutions() == []\n            True\n            >>> problem.addVariables([\"a\"], [42])\n            >>> problem.getSolutions()\n            [{'a': 42}]\n\n        Returns:\n            list of dictionaries mapping variables to values: All\n            solutions for the problem\n        ";
 static const char __pyx_k_Module_containing_the_code_for_p[] = "Module containing the code for problem definitions.";
-static const char __pyx_k_Obtain_the_problem_solver_curren[] = "Obtain the problem solver currently in use.\n\n        Example:\n            >>> solver = BacktrackingSolver()\n            >>> problem = Problem(solver)\n            >>> problem.getSolver() is solver\n            True\n\n        Returns:\n            instance of a :py:class:`Solver` subclass: Solver currently in use\n        ";
+static const char __pyx_k_Obtain_the_problem_solver_curren[] = "Obtain the problem solver currently in use.\n\n        Example:\n            >>> solver = OptimizedBacktrackingSolver()\n            >>> problem = Problem(solver)\n            >>> problem.getSolver() is solver\n            True\n\n        Returns:\n            instance of a :py:class:`Solver` subclass: Solver currently in use\n        ";
 static const char __pyx_k_Problem_getSolutionIter_line_186[] = "Problem.getSolutionIter (line 186)";
 static const char __pyx_k_Reset_the_current_problem_defini[] = "Reset the current problem definition.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.addVariable(\"a\", [1, 2])\n            >>> problem.reset()\n            >>> problem.getSolution()\n            >>>\n        ";
 static const char __pyx_k_Return_an_iterator_to_the_soluti[] = "Return an iterator to the solutions of the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> list(problem.getSolutionIter()) == []\n            True\n            >>> problem.addVariables([\"a\"], [42])\n            >>> iter = problem.getSolutionIter()\n            >>> next(iter)\n            {'a': 42}\n            >>> next(iter)\n            Traceback (most recent call last):\n                ...\n            StopIteration\n        ";
@@ -2684,7 +2684,6 @@ typedef struct {
   PyObject *__pyx_kp_u_Add_a_constraint_to_the_problem;
   PyObject *__pyx_kp_u_Add_a_variable_to_the_problem_Ex;
   PyObject *__pyx_kp_u_Add_one_or_more_variables_to_the;
-  PyObject *__pyx_n_s_BacktrackingSolver;
   PyObject *__pyx_n_s_Callable;
   PyObject *__pyx_kp_u_Change_the_problem_solver_curren;
   PyObject *__pyx_kp_s_Class_used_to_define_a_problem_a;
@@ -2697,6 +2696,7 @@ typedef struct {
   PyObject *__pyx_kp_u_Find_and_return_all_solutions_to;
   PyObject *__pyx_n_s_FunctionConstraint;
   PyObject *__pyx_kp_u_Obtain_the_problem_solver_curren;
+  PyObject *__pyx_n_s_OptimizedBacktrackingSolver;
   PyObject *__pyx_n_s_Optional;
   PyObject *__pyx_kp_s_Optional_Sequence;
   PyObject *__pyx_n_s_Problem;
@@ -2900,7 +2900,6 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_Add_a_constraint_to_the_problem);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Add_a_variable_to_the_problem_Ex);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Add_one_or_more_variables_to_the);
-  Py_CLEAR(clear_module_state->__pyx_n_s_BacktrackingSolver);
   Py_CLEAR(clear_module_state->__pyx_n_s_Callable);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Change_the_problem_solver_curren);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Class_used_to_define_a_problem_a);
@@ -2913,6 +2912,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_Find_and_return_all_solutions_to);
   Py_CLEAR(clear_module_state->__pyx_n_s_FunctionConstraint);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Obtain_the_problem_solver_curren);
+  Py_CLEAR(clear_module_state->__pyx_n_s_OptimizedBacktrackingSolver);
   Py_CLEAR(clear_module_state->__pyx_n_s_Optional);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Optional_Sequence);
   Py_CLEAR(clear_module_state->__pyx_n_s_Problem);
@@ -3094,7 +3094,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_Add_a_constraint_to_the_problem);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Add_a_variable_to_the_problem_Ex);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Add_one_or_more_variables_to_the);
-  Py_VISIT(traverse_module_state->__pyx_n_s_BacktrackingSolver);
   Py_VISIT(traverse_module_state->__pyx_n_s_Callable);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Change_the_problem_solver_curren);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Class_used_to_define_a_problem_a);
@@ -3107,6 +3106,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_Find_and_return_all_solutions_to);
   Py_VISIT(traverse_module_state->__pyx_n_s_FunctionConstraint);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Obtain_the_problem_solver_curren);
+  Py_VISIT(traverse_module_state->__pyx_n_s_OptimizedBacktrackingSolver);
   Py_VISIT(traverse_module_state->__pyx_n_s_Optional);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Optional_Sequence);
   Py_VISIT(traverse_module_state->__pyx_n_s_Problem);
@@ -3298,7 +3298,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_Add_a_constraint_to_the_problem __pyx_mstate_global->__pyx_kp_u_Add_a_constraint_to_the_problem
 #define __pyx_kp_u_Add_a_variable_to_the_problem_Ex __pyx_mstate_global->__pyx_kp_u_Add_a_variable_to_the_problem_Ex
 #define __pyx_kp_u_Add_one_or_more_variables_to_the __pyx_mstate_global->__pyx_kp_u_Add_one_or_more_variables_to_the
-#define __pyx_n_s_BacktrackingSolver __pyx_mstate_global->__pyx_n_s_BacktrackingSolver
 #define __pyx_n_s_Callable __pyx_mstate_global->__pyx_n_s_Callable
 #define __pyx_kp_u_Change_the_problem_solver_curren __pyx_mstate_global->__pyx_kp_u_Change_the_problem_solver_curren
 #define __pyx_kp_s_Class_used_to_define_a_problem_a __pyx_mstate_global->__pyx_kp_s_Class_used_to_define_a_problem_a
@@ -3311,6 +3310,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_Find_and_return_all_solutions_to __pyx_mstate_global->__pyx_kp_u_Find_and_return_all_solutions_to
 #define __pyx_n_s_FunctionConstraint __pyx_mstate_global->__pyx_n_s_FunctionConstraint
 #define __pyx_kp_u_Obtain_the_problem_solver_curren __pyx_mstate_global->__pyx_kp_u_Obtain_the_problem_solver_curren
+#define __pyx_n_s_OptimizedBacktrackingSolver __pyx_mstate_global->__pyx_n_s_OptimizedBacktrackingSolver
 #define __pyx_n_s_Optional __pyx_mstate_global->__pyx_n_s_Optional
 #define __pyx_kp_s_Optional_Sequence __pyx_mstate_global->__pyx_kp_s_Optional_Sequence
 #define __pyx_n_s_Problem __pyx_mstate_global->__pyx_n_s_Problem
@@ -3481,7 +3481,7 @@ PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_10constraint_7problem_7Problem___init__, "Initialization method.\n\n        Args:\n            solver (instance of a :py:class:`Solver`): Problem solver to use (default is :py:class:`BacktrackingSolver`)\n        ");
+PyDoc_STRVAR(__pyx_doc_10constraint_7problem_7Problem___init__, "Initialization method.\n\n        Args:\n            solver (instance of a :py:class:`Solver`): Problem solver (default :py:class:`OptimizedBacktrackingSolver`)\n        ");
 static PyMethodDef __pyx_mdef_10constraint_7problem_7Problem_1__init__ = {"__init__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10constraint_7problem_7Problem_1__init__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_10constraint_7problem_7Problem___init__};
 static PyObject *__pyx_pw_10constraint_7problem_7Problem_1__init__(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
@@ -3601,9 +3601,9 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem___init__(CYTHON_UNUSED 
   __Pyx_RefNannySetupContext("__init__", 1);
 
   /* "constraint/problem.py":22
- *             solver (instance of a :py:class:`Solver`): Problem solver to use (default is :py:class:`BacktrackingSolver`)
+ *             solver (instance of a :py:class:`Solver`): Problem solver (default :py:class:`OptimizedBacktrackingSolver`)
  *         """
- *         self._solver = solver or BacktrackingSolver()             # <<<<<<<<<<<<<<
+ *         self._solver = solver or OptimizedBacktrackingSolver()             # <<<<<<<<<<<<<<
  *         self._constraints = []
  *         self._variables = {}
  */
@@ -3614,7 +3614,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem___init__(CYTHON_UNUSED 
     __pyx_t_1 = __pyx_v_solver;
     goto __pyx_L3_bool_binop_done;
   }
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_BacktrackingSolver); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_OptimizedBacktrackingSolver); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -3647,7 +3647,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem___init__(CYTHON_UNUSED 
 
   /* "constraint/problem.py":23
  *         """
- *         self._solver = solver or BacktrackingSolver()
+ *         self._solver = solver or OptimizedBacktrackingSolver()
  *         self._constraints = []             # <<<<<<<<<<<<<<
  *         self._variables = {}
  * 
@@ -3658,7 +3658,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem___init__(CYTHON_UNUSED 
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "constraint/problem.py":24
- *         self._solver = solver or BacktrackingSolver()
+ *         self._solver = solver or OptimizedBacktrackingSolver()
  *         self._constraints = []
  *         self._variables = {}             # <<<<<<<<<<<<<<
  * 
@@ -3897,7 +3897,7 @@ PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_10constraint_7problem_7Problem_4setSolver, "Change the problem solver currently in use.\n\n        Example:\n            >>> solver = BacktrackingSolver()\n            >>> problem = Problem(solver)\n            >>> problem.getSolver() is solver\n            True\n\n        Args:\n            solver (instance of a :py:class:`Solver`): New problem\n                solver\n        ");
+PyDoc_STRVAR(__pyx_doc_10constraint_7problem_7Problem_4setSolver, "Change the problem solver currently in use.\n\n        Example:\n            >>> solver = OptimizedBacktrackingSolver()\n            >>> problem = Problem(solver)\n            >>> problem.getSolver() is solver\n            True\n\n        Args:\n            solver (instance of a :py:class:`Solver`): New problem\n                solver\n        ");
 static PyMethodDef __pyx_mdef_10constraint_7problem_7Problem_5setSolver = {"setSolver", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10constraint_7problem_7Problem_5setSolver, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_10constraint_7problem_7Problem_4setSolver};
 static PyObject *__pyx_pw_10constraint_7problem_7Problem_5setSolver(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
@@ -4054,7 +4054,7 @@ PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_10constraint_7problem_7Problem_6getSolver, "Obtain the problem solver currently in use.\n\n        Example:\n            >>> solver = BacktrackingSolver()\n            >>> problem = Problem(solver)\n            >>> problem.getSolver() is solver\n            True\n\n        Returns:\n            instance of a :py:class:`Solver` subclass: Solver currently in use\n        ");
+PyDoc_STRVAR(__pyx_doc_10constraint_7problem_7Problem_6getSolver, "Obtain the problem solver currently in use.\n\n        Example:\n            >>> solver = OptimizedBacktrackingSolver()\n            >>> problem = Problem(solver)\n            >>> problem.getSolver() is solver\n            True\n\n        Returns:\n            instance of a :py:class:`Solver` subclass: Solver currently in use\n        ");
 static PyMethodDef __pyx_mdef_10constraint_7problem_7Problem_7getSolver = {"getSolver", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10constraint_7problem_7Problem_7getSolver, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_10constraint_7problem_7Problem_6getSolver};
 static PyObject *__pyx_pw_10constraint_7problem_7Problem_7getSolver(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
@@ -8576,7 +8576,6 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u_Add_a_constraint_to_the_problem, __pyx_k_Add_a_constraint_to_the_problem, sizeof(__pyx_k_Add_a_constraint_to_the_problem), 0, 1, 0, 0},
     {&__pyx_kp_u_Add_a_variable_to_the_problem_Ex, __pyx_k_Add_a_variable_to_the_problem_Ex, sizeof(__pyx_k_Add_a_variable_to_the_problem_Ex), 0, 1, 0, 0},
     {&__pyx_kp_u_Add_one_or_more_variables_to_the, __pyx_k_Add_one_or_more_variables_to_the, sizeof(__pyx_k_Add_one_or_more_variables_to_the), 0, 1, 0, 0},
-    {&__pyx_n_s_BacktrackingSolver, __pyx_k_BacktrackingSolver, sizeof(__pyx_k_BacktrackingSolver), 0, 0, 1, 1},
     {&__pyx_n_s_Callable, __pyx_k_Callable, sizeof(__pyx_k_Callable), 0, 0, 1, 1},
     {&__pyx_kp_u_Change_the_problem_solver_curren, __pyx_k_Change_the_problem_solver_curren, sizeof(__pyx_k_Change_the_problem_solver_curren), 0, 1, 0, 0},
     {&__pyx_kp_s_Class_used_to_define_a_problem_a, __pyx_k_Class_used_to_define_a_problem_a, sizeof(__pyx_k_Class_used_to_define_a_problem_a), 0, 0, 1, 0},
@@ -8589,6 +8588,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u_Find_and_return_all_solutions_to, __pyx_k_Find_and_return_all_solutions_to, sizeof(__pyx_k_Find_and_return_all_solutions_to), 0, 1, 0, 0},
     {&__pyx_n_s_FunctionConstraint, __pyx_k_FunctionConstraint, sizeof(__pyx_k_FunctionConstraint), 0, 0, 1, 1},
     {&__pyx_kp_u_Obtain_the_problem_solver_curren, __pyx_k_Obtain_the_problem_solver_curren, sizeof(__pyx_k_Obtain_the_problem_solver_curren), 0, 1, 0, 0},
+    {&__pyx_n_s_OptimizedBacktrackingSolver, __pyx_k_OptimizedBacktrackingSolver, sizeof(__pyx_k_OptimizedBacktrackingSolver), 0, 0, 1, 1},
     {&__pyx_n_s_Optional, __pyx_k_Optional, sizeof(__pyx_k_Optional), 0, 0, 1, 1},
     {&__pyx_kp_s_Optional_Sequence, __pyx_k_Optional_Sequence, sizeof(__pyx_k_Optional_Sequence), 0, 0, 1, 0},
     {&__pyx_n_s_Problem, __pyx_k_Problem, sizeof(__pyx_k_Problem), 0, 0, 1, 1},
@@ -9438,7 +9438,7 @@ if (!__Pyx_RefNanny) {
  * 
  * from constraint.constraints import Constraint, FunctionConstraint             # <<<<<<<<<<<<<<
  * from constraint.domain import Domain
- * from constraint.solvers import BacktrackingSolver
+ * from constraint.solvers import OptimizedBacktrackingSolver
  */
   __pyx_t_3 = PyList_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -9465,7 +9465,7 @@ if (!__Pyx_RefNanny) {
  * 
  * from constraint.constraints import Constraint, FunctionConstraint
  * from constraint.domain import Domain             # <<<<<<<<<<<<<<
- * from constraint.solvers import BacktrackingSolver
+ * from constraint.solvers import OptimizedBacktrackingSolver
  * 
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
@@ -9485,21 +9485,21 @@ if (!__Pyx_RefNanny) {
   /* "constraint/problem.py":10
  * from constraint.constraints import Constraint, FunctionConstraint
  * from constraint.domain import Domain
- * from constraint.solvers import BacktrackingSolver             # <<<<<<<<<<<<<<
+ * from constraint.solvers import OptimizedBacktrackingSolver             # <<<<<<<<<<<<<<
  * 
  * 
  */
   __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_INCREF(__pyx_n_s_BacktrackingSolver);
-  __Pyx_GIVEREF(__pyx_n_s_BacktrackingSolver);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_BacktrackingSolver)) __PYX_ERR(0, 10, __pyx_L1_error);
+  __Pyx_INCREF(__pyx_n_s_OptimizedBacktrackingSolver);
+  __Pyx_GIVEREF(__pyx_n_s_OptimizedBacktrackingSolver);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_OptimizedBacktrackingSolver)) __PYX_ERR(0, 10, __pyx_L1_error);
   __pyx_t_2 = __Pyx_Import(__pyx_n_s_constraint_solvers, __pyx_t_3, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_BacktrackingSolver); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_OptimizedBacktrackingSolver); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_BacktrackingSolver, __pyx_t_3) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OptimizedBacktrackingSolver, __pyx_t_3) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
