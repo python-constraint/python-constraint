@@ -17,7 +17,7 @@ class Problem:
         """Initialization method.
 
         Args:
-            solver (instance of a :py:class:`Solver`): Problem solver to use (default is :py:class:`OptimizedBacktrackingSolver`)
+            solver (instance of a :py:class:`Solver`): Problem solver (default :py:class:`OptimizedBacktrackingSolver`)
         """
         self._solver = solver or OptimizedBacktrackingSolver()
         self._constraints = []
