@@ -15,7 +15,8 @@ python_versions_to_test = [
     "3.10",
     "3.11",
     "3.12",
-]  # TODO add back 3.13 as soon as it is supported by GH action runners
+    "3.13"
+]
 nox.options.stop_on_first_error = True
 nox.options.error_on_missing_interpreters = True
 
