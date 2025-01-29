@@ -1,10 +1,9 @@
 """Module containing the code for the problem solvers."""
 
 import random
-from typing import List
 
 
-def getArcs(domains: dict, constraints: List[tuple]) -> dict:
+def getArcs(domains: dict, constraints: list[tuple]) -> dict:
     """Return a dictionary mapping pairs (arcs) of constrained variables.
 
     @attention: Currently unused.
@@ -66,7 +65,7 @@ def doArc8(arcs: dict, domains: dict, assignments: dict) -> bool:
 class Solver:
     """Abstract base class for solvers."""
 
-    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):
+    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):
         """Return one solution for the given problem.
 
         Args:
@@ -78,7 +77,7 @@ class Solver:
         msg = f"{self.__class__.__name__} is an abstract class"
         raise NotImplementedError(msg)
 
-    def getSolutions(self, domains: dict, constraints: List[tuple], vconstraints: dict):
+    def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):
         """Return all solutions for the given problem.
 
         Args:
@@ -90,7 +89,7 @@ class Solver:
         msg = f"{self.__class__.__name__} provides only a single solution"
         raise NotImplementedError(msg)
 
-    def getSolutionIter(self, domains: dict, constraints: List[tuple], vconstraints: dict):
+    def getSolutionIter(self, domains: dict, constraints: list[tuple], vconstraints: dict):
         """Return an iterator for the solutions of the given problem.
 
         Args:
@@ -142,7 +141,7 @@ class BacktrackingSolver(Solver):
         """
         self._forwardcheck = forwardcheck
 
-    def getSolutionIter(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+    def getSolutionIter(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         forwardcheck = self._forwardcheck
         assignments = {}
 
@@ -212,14 +211,14 @@ class BacktrackingSolver(Solver):
 
         raise RuntimeError("Can't happen")
 
-    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         iter = self.getSolutionIter(domains, constraints, vconstraints)
         try:
             return next(iter)
         except StopIteration:
             return None
 
-    def getSolutions(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+    def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         return list(self.getSolutionIter(domains, constraints, vconstraints))
 
 
@@ -265,7 +264,7 @@ class OptimizedBacktrackingSolver(Solver):
         """
         self._forwardcheck = forwardcheck
 
-    def getSolutionIter(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+    def getSolutionIter(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         forwardcheck = self._forwardcheck
         assignments = {}
         sorted_variables = self.getSortedVariables(domains, vconstraints)
@@ -333,7 +332,7 @@ class OptimizedBacktrackingSolver(Solver):
 
         raise RuntimeError("Can't happen")
 
-    def getSolutionsList(self, domains: dict, vconstraints: dict) -> List[dict]:  # noqa: D102
+    def getSolutionsList(self, domains: dict, vconstraints: dict) -> list[dict]:  # noqa: D102
         """Optimized all-solutions finder that skips forwardchecking and returns the solutions in a list.
 
         Args:
@@ -345,8 +344,8 @@ class OptimizedBacktrackingSolver(Solver):
         """
         # Does not do forwardcheck for simplicity
         assignments: dict = {}
-        queue: List[tuple] = []
-        solutions: List[dict] = list()
+        queue: list[tuple] = []
+        solutions: list[dict] = list()
         sorted_variables = self.getSortedVariables(domains, vconstraints)
 
         while True:
@@ -391,12 +390,12 @@ class OptimizedBacktrackingSolver(Solver):
 
         raise RuntimeError("Can't happen")
 
-    def getSolutions(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+    def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         if self._forwardcheck:
             return list(self.getSolutionIter(domains, constraints, vconstraints))
         return self.getSolutionsList(domains, vconstraints)
 
-    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         iter = self.getSolutionIter(domains, constraints, vconstraints)
         try:
             return next(iter)
@@ -510,11 +509,11 @@ class RecursiveBacktrackingSolver(Solver):
         del assignments[variable]
         return solutions
 
-    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         solutions = self.recursiveBacktracking([], domains, vconstraints, {}, True)
         return solutions and solutions[0] or None
 
-    def getSolutions(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+    def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         return self.recursiveBacktracking([], domains, vconstraints, {}, False)
 
 
@@ -554,7 +553,7 @@ class MinConflictsSolver(Solver):
         """
         self._steps = steps
 
-    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):  # noqa: D102
+    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         assignments = {}
         # Initial assignment
         for variable in domains:

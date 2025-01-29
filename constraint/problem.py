@@ -2,7 +2,8 @@
 
 import copy
 from operator import itemgetter
-from typing import Callable, Dict, List, Optional, Sequence, Tuple, Union
+from typing import Callable, Optional, Union
+from collections.abc import Sequence
 
 from constraint.constraints import Constraint, FunctionConstraint
 from constraint.domain import Domain
@@ -203,17 +204,17 @@ class Problem:
             return iter(())
         return self._solver.getSolutionIter(domains, constraints, vconstraints)
 
-    def getSolutionsOrderedList(self, order: List[str] = None) -> List[tuple]:
+    def getSolutionsOrderedList(self, order: list[str] = None) -> list[tuple]:
         """Returns the solutions as a list of tuples, with each solution tuple ordered according to `order`."""
-        solutions: List[dict] = self.getSolutions()
+        solutions: list[dict] = self.getSolutions()
         if order is None or len(order) == 1:
             return list(tuple(solution.values()) for solution in solutions)
         get_in_order = itemgetter(*order)
         return list(get_in_order(params) for params in solutions)
 
     def getSolutionsAsListDict(
-        self, order: List[str] = None, validate: bool = True
-    ) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501
+        self, order: list[str] = None, validate: bool = True
+    ) -> tuple[list[tuple], dict[tuple, int], int]:  # noqa: E501
         """Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
         solutions_list = self.getSolutionsOrderedList(order)
         size_list = len(solutions_list)
