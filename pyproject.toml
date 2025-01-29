@@ -6,7 +6,7 @@ build-backend = "poetry.core.masonry.api"
 name = "python-constraint2" # when set back to "python-constraint", don't forget to remove '2' in other places (e.g. README)
 packages = [{ include = "constraint", from = "." }, { include = "tests" }]
 description = "python-constraint is a module for efficiently solving CSPs (Constraint Solving Problems) over finite domains."
-version = "2.0.0b8" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
+version = "2.0.0" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
 authors = [
     "Gustavo Niemeyer <gustavo@niemeyer.net>",
     "Sébastien Celles <s.celles@gmail.com>",

@@ -7,7 +7,8 @@ in every released version.
 
 ### Version 2.0.0
 
-- Released: TBD
+- Released: 2025-01-29
+- Maintainer: Floris-Jan Willemsen <fjwillemsen97@gmail.com>
 - Issues/Enhancements:
   - Cythonized the package
   - Added the `OptimizedBacktracking` solver based on [issue #62](https://github.com/python-constraint/python-constraint/issues/62)
@@ -19,9 +20,9 @@ in every released version.
   - Overall optimization of common bottlenecks
   - Split the codebase into multiple files for convenience
   - Switched from `setup.py` to `pyproject.toml`
-  - Achieved and requires test coverage of at least 65%
   - Added `nox` for testing against all supported Python versions 
   - Added `ruff` for codestyle testing
+  - Achieved and requires test coverage of at least 65%
   - Moved the documentation to GitHub Pages
   - Moved test & publishing automation to GitHub Actions
   - Switched dependency & build system to Poetry

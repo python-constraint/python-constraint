@@ -167,15 +167,15 @@ For an overview of recent changes, visit the `Changelog <https://github.com/pyth
 
 Planned development:
 
-- Add a string parser for constraints
 - Add parallel-capable solver
+- Add a string parser for constraints
 - Versioned documentation
 
 Contact
 -------
-- `Gustavo Niemeyer <https://github.com/niemeyer/>`_ <gustavo@niemeyer.net>
-- `Sébastien Celles <https://github.com/s-celles/>`_ <s.celles@gmail.com>
-- `Floris-Jan Willemsen <https://github.com/fjwillemsen>`_
+- `Floris-Jan Willemsen <https://github.com/fjwillemsen>`_ <fjwillemsen97@gmail.com> (current maintainer)
+- `Sébastien Celles <https://github.com/s-celles/>`_ <s.celles@gmail.com> (former maintainer)
+- `Gustavo Niemeyer <https://github.com/niemeyer/>`_ <gustavo@niemeyer.net> (initial developer)
 
 But it's probably better to `open an issue <https://github.com/python-constraint/python-constraint/issues>`_.
 
