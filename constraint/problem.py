@@ -7,7 +7,7 @@ from collections.abc import Sequence
 
 from constraint.constraints import Constraint, FunctionConstraint
 from constraint.domain import Domain
-from constraint.solvers import BacktrackingSolver
+from constraint.solvers import OptimizedBacktrackingSolver
 
 
 class Problem:
@@ -17,9 +17,9 @@ class Problem:
         """Initialization method.
 
         Args:
-            solver (instance of a :py:class:`Solver`): Problem solver to use (default is :py:class:`BacktrackingSolver`)
+            solver (instance of a :py:class:`Solver`): Problem solver to use (default is :py:class:`OptimizedBacktrackingSolver`)
         """
-        self._solver = solver or BacktrackingSolver()
+        self._solver = solver or OptimizedBacktrackingSolver()
         self._constraints = []
         self._variables = {}
 
@@ -40,7 +40,7 @@ class Problem:
         """Change the problem solver currently in use.
 
         Example:
-            >>> solver = BacktrackingSolver()
+            >>> solver = OptimizedBacktrackingSolver()
             >>> problem = Problem(solver)
             >>> problem.getSolver() is solver
             True
@@ -55,7 +55,7 @@ class Problem:
         """Obtain the problem solver currently in use.
 
         Example:
-            >>> solver = BacktrackingSolver()
+            >>> solver = OptimizedBacktrackingSolver()
             >>> problem = Problem(solver)
             >>> problem.getSolver() is solver
             True
