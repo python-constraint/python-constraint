@@ -194,7 +194,7 @@ But it's probably better to `open an issue <https://github.com/python-constraint
 .. |Python Versions| image:: https://img.shields.io/pypi/pyversions/python-constraint2
     :alt: PyPI - Python Versions
 
-.. |Downloads| image:: https://img.shields.io/pypi/dm/python-constraint
+.. |Downloads| image:: https://img.shields.io/pypi/dm/python-constraint2
     :alt: PyPI - Downloads
 
 .. |Status| image:: https://img.shields.io/pypi/status/python-constraint2
