@@ -343,52 +343,33 @@ class OptimizedBacktrackingSolver(Solver):
             the list of solutions as a dictionary.
         """
         # Does not do forwardcheck for simplicity
-        assignments: dict = {}
-        queue: list[tuple] = []
-        solutions: list[dict] = list()
-        sorted_variables = self.getSortedVariables(domains, vconstraints)
 
-        while True:
-            # Mix the Degree and Minimum Remaing Values (MRV) heuristics
-            for variable in sorted_variables:
-                if variable not in assignments:
-                    # Found unassigned variable
-                    values = domains[variable][:]
-                    break
-            else:
-                # No unassigned variables. We've got a solution. Go back
-                # to last variable, if there's one.
-                solutions.append(assignments.copy())
-                if not queue:
-                    return solutions
-                variable, values = queue.pop()
+        def is_valid(assignment, vconstraints, domains):
+            """Check if all constraints are satisfied given the current assignment."""
+            for constraints in vconstraints.values():
+                for constraint, vars_involved in constraints:
+                    if all(v in assignment for v in vars_involved):
+                        if not constraint(vars_involved, domains, assignment, None):
+                            return False
+            return True
 
-            while True:
-                # We have a variable. Do we have any values left?
-                if not values:
-                    # No. Go back to last variable, if there's one.
-                    del assignments[variable]
-                    while queue:
-                        variable, values = queue.pop()
-                        if values:
-                            break
-                        del assignments[variable]
-                    else:
-                        return solutions
+        def backtrack(assignment, unassigned_vars, domains, vconstraints, solutions):
+            """Recursive backtracking function to find all valid assignments."""
+            if not unassigned_vars:
+                solutions.append(assignment.copy())
+                return
+            
+            var = unassigned_vars.pop()
+            for value in domains[var]:
+                assignment[var] = value
+                if is_valid(assignment, vconstraints, domains):
+                    backtrack(assignment, unassigned_vars.copy(), domains, vconstraints, solutions)
+                del assignment[var]
+            unassigned_vars.append(var)
 
-                # Got a value. Check it.
-                assignments[variable] = values.pop()
-                for constraint, variables in vconstraints[variable]:
-                    if not constraint(variables, domains, assignments, None):
-                        # Value is not good.
-                        break
-                else:
-                    break
-
-            # Push state before looking for next variable.
-            queue.append((variable, values))
-
-        raise RuntimeError("Can't happen")
+        solutions = []
+        backtrack({}, list(domains.keys()), domains, vconstraints, solutions)
+        return solutions
 
     def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         if self._forwardcheck:
@@ -416,7 +397,6 @@ class OptimizedBacktrackingSolver(Solver):
         lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
         lst.sort()
         return [c for _, _, c in lst]
-
 
 class RecursiveBacktrackingSolver(Solver):
     """Recursive problem solver with backtracking capabilities.
