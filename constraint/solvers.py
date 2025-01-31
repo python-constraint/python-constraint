@@ -3,7 +3,7 @@
 import random
 from constraint.domain import Domain
 from constraint.constraints import Constraint
-from collections.abc import Hashable, Iterable
+from collections.abc import Hashable
 
 
 def getArcs(domains: dict, constraints: list[tuple]) -> dict:
@@ -335,7 +335,7 @@ class OptimizedBacktrackingSolver(Solver):
 
         raise RuntimeError("Can't happen")
 
-    def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:  # noqa: D102
+    def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:  # noqa: D102, E501
         """Optimized all-solutions finder that skips forwardchecking and returns the solutions in a list.
 
         Args:
@@ -431,13 +431,13 @@ class OptimizedBacktrackingSolver(Solver):
         #     unassigned_vars.append(var)
 
         # # Precompute constraints lookup per variable
-        # constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains}
+        # constraint_lookup: (insert type) = {var: vconstraints.get(var, []) for var in domains}
 
         # solutions = []
         # backtrack({}, list(domains.keys()))
         # return solutions
 
-        # optimized version 4 (synthetic speedup 13.1x, ordering variables by domain size, yielding instead of appending)
+        # optimized version 4 (synthetic speedup 13.1x, variables ordered by domain size, yield instead of append)
         def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Constraint, Hashable]]):
             """Check if all constraints are satisfied given the current assignment."""
             return all(
@@ -462,7 +462,7 @@ class OptimizedBacktrackingSolver(Solver):
                 del assignment[var]
 
         # Precompute constraints lookup per variable
-        constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains}
+        constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains} # noqa E501
 
         # Sort variables by domain size (heuristic)
         sorted_vars: list[Hashable] = sorted(domains.keys(), key=lambda v: len(domains[v]))
