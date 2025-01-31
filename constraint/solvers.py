@@ -335,7 +335,7 @@ class OptimizedBacktrackingSolver(Solver):
 
         raise RuntimeError("Can't happen")
 
-    def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, Iterable]]:  # noqa: D102
+    def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:  # noqa: D102
         """Optimized all-solutions finder that skips forwardchecking and returns the solutions in a list.
 
         Args:
@@ -375,8 +375,39 @@ class OptimizedBacktrackingSolver(Solver):
         # backtrack({}, list(domains.keys()), domains, vconstraints, solutions)
         # return solutions
 
-        # optimized version 2 (synthetic speedup 11.0x)
-        def is_valid(assignment, constraints_lookup):
+        # # optimized version 2 (synthetic speedup 11.0x)
+        # def is_valid(assignment, constraints_lookup):
+        #     """Check if all constraints are satisfied given the current assignment."""
+        #     assigned_vars = set(assignment)
+        #     for constraint, vars_involved in constraints_lookup:
+        #         if assigned_vars.issuperset(vars_involved):  # Ensure all vars are assigned
+        #             if not constraint(vars_involved, domains, assignment, None):
+        #                 return False
+        #     return True
+
+        # def backtrack(assignment, unassigned_vars):
+        #     """Recursive backtracking function to find all valid assignments."""
+        #     if not unassigned_vars:
+        #         solutions.append(assignment.copy())
+        #         return
+            
+        #     var = unassigned_vars.pop()
+        #     for value in domains[var]:
+        #         assignment[var] = value
+        #         if is_valid(assignment, constraint_lookup[var]):
+        #             backtrack(assignment, unassigned_vars)
+        #         del assignment[var]
+        #     unassigned_vars.append(var)
+
+        # # Precompute constraints lookup per variable
+        # constraint_lookup = {var: vconstraints.get(var, []) for var in domains}
+
+        # solutions = []
+        # backtrack({}, list(domains.keys()))
+        # return solutions
+    
+        # optimized version 3 (added type hints)
+        def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Constraint, Hashable]]):
             """Check if all constraints are satisfied given the current assignment."""
             assigned_vars = set(assignment)
             for constraint, vars_involved in constraints_lookup:
@@ -385,13 +416,13 @@ class OptimizedBacktrackingSolver(Solver):
                         return False
             return True
 
-        def backtrack(assignment, unassigned_vars):
+        def backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable]):
             """Recursive backtracking function to find all valid assignments."""
             if not unassigned_vars:
                 solutions.append(assignment.copy())
                 return
             
-            var = unassigned_vars.pop()
+            var: Hashable = unassigned_vars.pop()
             for value in domains[var]:
                 assignment[var] = value
                 if is_valid(assignment, constraint_lookup[var]):
@@ -400,7 +431,7 @@ class OptimizedBacktrackingSolver(Solver):
             unassigned_vars.append(var)
 
         # Precompute constraints lookup per variable
-        constraint_lookup = {var: vconstraints.get(var, []) for var in domains}
+        constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains}
 
         solutions = []
         backtrack({}, list(domains.keys()))
