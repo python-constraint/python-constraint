@@ -1,6 +1,6 @@
 # Change Log
 
-## Python Contraint
+## Python Constraint
 
 All notable changes to this code base will be documented in this file, for every released major and minor version.
 
