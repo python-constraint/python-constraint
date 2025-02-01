@@ -2,8 +2,7 @@
 
 ## Python Contraint
 
-All notable changes to this code base will be documented in this file,
-in every released version.
+All notable changes to this code base will be documented in this file, for every released major and minor version.
 
 ### Version 2.0.0
 
