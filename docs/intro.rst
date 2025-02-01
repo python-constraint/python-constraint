@@ -126,4 +126,4 @@ Download and install
 
 .. code-block:: shell
 
-    $ pip install python-constraint
+    $ pip install python-constraint2

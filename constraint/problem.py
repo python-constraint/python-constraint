@@ -1,12 +1,14 @@
 """Module containing the code for problem definitions."""
 
 import copy
-
-from constraint.solvers import BacktrackingSolver
-from constraint.domain import Domain
-from constraint.constraints import Constraint, FunctionConstraint
 from operator import itemgetter
-from typing import List, Optional, Union, Sequence, Tuple, Dict, Callable
+from typing import Callable, Optional, Union
+from collections.abc import Sequence
+
+from constraint.constraints import Constraint, FunctionConstraint
+from constraint.domain import Domain
+from constraint.solvers import OptimizedBacktrackingSolver
+
 
 class Problem:
     """Class used to define a problem and retrieve solutions."""
@@ -15,9 +17,9 @@ class Problem:
         """Initialization method.
 
         Args:
-            solver (instance of a :py:class:`Solver`): Problem solver to use (default is :py:class:`BacktrackingSolver`)
+            solver (instance of a :py:class:`Solver`): Problem solver (default :py:class:`OptimizedBacktrackingSolver`)
         """
-        self._solver = solver or BacktrackingSolver()
+        self._solver = solver or OptimizedBacktrackingSolver()
         self._constraints = []
         self._variables = {}
 
@@ -38,7 +40,7 @@ class Problem:
         """Change the problem solver currently in use.
 
         Example:
-            >>> solver = BacktrackingSolver()
+            >>> solver = OptimizedBacktrackingSolver()
             >>> problem = Problem(solver)
             >>> problem.getSolver() is solver
             True
@@ -53,7 +55,7 @@ class Problem:
         """Obtain the problem solver currently in use.
 
         Example:
-            >>> solver = BacktrackingSolver()
+            >>> solver = OptimizedBacktrackingSolver()
             >>> problem = Problem(solver)
             >>> problem.getSolver() is solver
             True
@@ -80,7 +82,7 @@ class Problem:
                 assume
         """
         if variable in self._variables:
-            msg = "Tried to insert duplicated variable %s" % repr(variable)
+            msg = f"Tried to insert duplicated variable {repr(variable)}"
             raise ValueError(msg)
         if isinstance(domain, Domain):
             domain = copy.deepcopy(domain)
@@ -202,15 +204,17 @@ class Problem:
             return iter(())
         return self._solver.getSolutionIter(domains, constraints, vconstraints)
 
-    def getSolutionsOrderedList(self, order: List[str] = None) -> List[tuple]:
+    def getSolutionsOrderedList(self, order: list[str] = None) -> list[tuple]:
         """Returns the solutions as a list of tuples, with each solution tuple ordered according to `order`."""
-        solutions: List[dict] = self.getSolutions()
+        solutions: list[dict] = self.getSolutions()
         if order is None or len(order) == 1:
             return list(tuple(solution.values()) for solution in solutions)
         get_in_order = itemgetter(*order)
         return list(get_in_order(params) for params in solutions)
 
-    def getSolutionsAsListDict(self, order: List[str] = None, validate: bool = True) -> Tuple[List[tuple], Dict[tuple, int], int]:  # noqa: E501
+    def getSolutionsAsListDict(
+        self, order: list[str] = None, validate: bool = True
+    ) -> tuple[list[tuple], dict[tuple, int], int]:  # noqa: E501
         """Returns the searchspace as a list of tuples, a dict of the searchspace for fast lookups and the size."""
         solutions_list = self.getSolutionsOrderedList(order)
         size_list = len(solutions_list)

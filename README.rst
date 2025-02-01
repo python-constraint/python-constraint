@@ -8,6 +8,7 @@ python-constraint
 =================
 
 | This software is now back to active development / maintainance status.
+| IMPORTANT: the new version can be installed with `pip install python-constraint2`, as the original pip release will not be updated.
 | For an overview of recent changes, visit the `Changelog <https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md>`_.
 | The complete documentation can be found `here <http://python-constraint.github.io/python-constraint/>`_.
 
@@ -143,7 +144,7 @@ Download and install
 
 .. code-block:: shell
 
-    $ pip install python-constraint
+    $ pip install python-constraint2
 
 Testing
 -------
@@ -167,15 +168,15 @@ For an overview of recent changes, visit the `Changelog <https://github.com/pyth
 
 Planned development:
 
-- Add a string parser for constraints
 - Add parallel-capable solver
+- Add a string parser for constraints
 - Versioned documentation
 
 Contact
 -------
-- `Gustavo Niemeyer <https://github.com/niemeyer/>`_ <gustavo@niemeyer.net>
-- `Sébastien Celles <https://github.com/scls19fr/>`_ <s.celles@gmail.com>
-- `Floris-Jan Willemsen <https://github.com/fjwillemsen>`_
+- `Floris-Jan Willemsen <https://github.com/fjwillemsen>`_ <fjwillemsen97@gmail.com> (current maintainer)
+- `Sébastien Celles <https://github.com/s-celles/>`_ <s.celles@gmail.com> (former maintainer)
+- `Gustavo Niemeyer <https://github.com/niemeyer/>`_ <gustavo@niemeyer.net> (initial developer)
 
 But it's probably better to `open an issue <https://github.com/python-constraint/python-constraint/issues>`_.
 
@@ -193,7 +194,7 @@ But it's probably better to `open an issue <https://github.com/python-constraint
 .. |Python Versions| image:: https://img.shields.io/pypi/pyversions/python-constraint2
     :alt: PyPI - Python Versions
 
-.. |Downloads| image:: https://img.shields.io/pypi/dm/python-constraint
+.. |Downloads| image:: https://img.shields.io/pypi/dm/python-constraint2
     :alt: PyPI - Downloads
 
 .. |Status| image:: https://img.shields.io/pypi/status/python-constraint2

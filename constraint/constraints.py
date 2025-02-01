@@ -1,7 +1,8 @@
 """Module containing the code for constraint definitions."""
 
 from constraint.domain import Unassigned
-from typing import Callable, List, Union, Optional, Sequence
+from typing import Callable, Union, Optional
+from collections.abc import Sequence
 
 class Constraint:
     """Abstract base class for constraints."""
@@ -31,7 +32,7 @@ class Constraint:
         """
         return True
 
-    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict):
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict):
         """Preprocess variable domains.
 
         This method is called before starting to look for solutions,
@@ -286,7 +287,7 @@ class MaxSumConstraint(Constraint):
         self._maxsum = maxsum
         self._multipliers = multipliers
 
-    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
 
         # check if there are any negative values in the associated variables
@@ -385,7 +386,7 @@ class ExactSumConstraint(Constraint):
         self._exactsum = exactsum
         self._multipliers = multipliers
 
-    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
         multipliers = self._multipliers
         exactsum = self._exactsum
@@ -506,7 +507,7 @@ class MaxProdConstraint(Constraint):
         """
         self._maxprod = maxprod
 
-    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
 
         # check if there are any values less than 1 in the associated variables
@@ -566,7 +567,7 @@ class MinProdConstraint(Constraint):
         """
         self._minprod = minprod
 
-    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
 
         # prune the associated variables of values > maxprod
@@ -616,7 +617,7 @@ class InSetConstraint(Constraint):
         # preProcess() will remove it.
         raise RuntimeError("Can't happen")
 
-    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         set = self._set
         for variable in variables:
             domain = domains[variable]
@@ -650,7 +651,7 @@ class NotInSetConstraint(Constraint):
         # preProcess() will remove it.
         raise RuntimeError("Can't happen")
 
-    def preProcess(self, variables: Sequence, domains: dict, constraints: List[tuple], vconstraints: dict): # noqa: D102
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         set = self._set
         for variable in variables:
             domain = domains[variable]

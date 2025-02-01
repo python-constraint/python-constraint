@@ -17,8 +17,10 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - uses: fjwillemsen/setup-nox2@v3.0.0
-            - run: nox
+            - run: |
+                  nox
             - name: Report to Coveralls
               uses: coverallsapp/github-action@v2
               with:
-                  file: ".coverage"
+                  file: coverage.xml
+                  format: cobertura
