@@ -556,7 +556,7 @@ class MinConflictsSolver(Solver):
         self._steps = steps
         self._rand = rand
 
-    def getSolution(self, domains: dict, constraints: List[tuple], vconstraints: dict):   # noqa: D102
+    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):   # noqa: D102
         choice = self._rand.choice if self._rand is not None else random.choice
         shuffle = self._rand.shuffle if self._rand is not None else random.shuffle
         assignments = {}
