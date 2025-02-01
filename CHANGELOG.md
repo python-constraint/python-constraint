@@ -26,7 +26,6 @@ All notable changes to this code base will be documented in this file, for every
   - Moved test & publishing automation to GitHub Actions
   - Switched dependency & build system to Poetry
   - Dropped Python 3.4, 3.5, 3.6, 3.7, 3.8 support
-  - Add ability to pass custom `Random` to `MinConflictsSolver`.
 
 ### Version 1.4.0
 
