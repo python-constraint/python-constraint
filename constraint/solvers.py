@@ -3,7 +3,7 @@
 import random
 from constraint.domain import Domain
 from constraint.constraints import Constraint
-from collections.abc import Hashable, Generator
+from collections.abc import Hashable
 
 # # for version 5
 # import cython
@@ -12,7 +12,7 @@ from collections.abc import Hashable, Generator
 # from cython.cimports.libc.stdlib import boundscheck, wraparound, cdivision
 
 # for version 6
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 
 
 def getArcs(domains: dict, constraints: list[tuple]) -> dict:
@@ -233,67 +233,6 @@ class BacktrackingSolver(Solver):
     def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         return list(self.getSolutionIter(domains, constraints, vconstraints))
 
-# # part of optimized version 5
-# @cython.nogil
-# def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Constraint, Hashable]], domains: dict[Hashable, Domain]) -> bool:
-#     """Check if all constraints are satisfied given the current assignment."""
-#     return all(
-#         constraint(vars_involved, domains, assignment, None)
-#         for constraint, vars_involved in constraints_lookup
-#         if all(v in assignment for v in vars_involved)
-#     )
-
-# @cython.nogil
-# def backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable], local_solutions: list[dict[Hashable, any]], domains: dict[Hashable, Domain], constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]]):
-#     """Sequential recursive backtracking function."""
-#     if not unassigned_vars:
-#         local_solutions.append(assignment.copy())
-#         return
-
-#     var: Hashable = unassigned_vars[-1]
-#     remaining_vars = unassigned_vars[:-1]  # Avoid modifying the list
-
-#     for value in domains[var]:
-#         assignment[var] = value
-#         if is_valid(assignment, constraint_lookup[var]):
-#             backtrack(assignment, remaining_vars, local_solutions, domains)
-#         del assignment[var]
-
-# part of optimized version 6
-
-def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Constraint, Hashable]], domains: dict[Hashable, Domain]) -> bool:
-    """Check if all constraints are satisfied given the current assignment."""
-    return all(
-        constraint(vars_involved, domains, assignment, None)
-        for constraint, vars_involved in constraints_lookup
-        if all(v in assignment for v in vars_involved)
-    )
-
-def sequential_backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable], domains: dict[Hashable, Domain], constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:
-    """Sequential recursive backtracking function for subproblems."""
-    if not unassigned_vars:
-        return [assignment.copy()]
-
-    var = unassigned_vars[-1]
-    remaining_vars = unassigned_vars[:-1]
-
-    solutions: list[dict[Hashable, any]] = []
-    for value in domains[var]:
-        assignment[var] = value
-        if is_valid(assignment, constraint_lookup[var], domains):
-            solutions.extend(sequential_backtrack(assignment, remaining_vars, domains, constraint_lookup))
-        del assignment[var]
-    return solutions
-
-def parallel_worker(args: tuple[dict[Hashable, Domain], dict[Hashable, list[tuple[Constraint, Hashable]]], Hashable, any, list[Hashable]]) -> list[dict[Hashable, any]]:
-    """Worker function for parallel execution on first variable."""
-    domains, constraint_lookup, first_var, first_value, remaining_vars = args
-    # raise ValueError(domains, constraint_lookup, first_var, remaining_vars)
-    local_assignment = {first_var: first_value}
-    if is_valid(local_assignment, constraint_lookup[first_var], domains):
-        return sequential_backtrack(local_assignment, remaining_vars, domains, constraint_lookup)
-    return []
-
 
 class OptimizedBacktrackingSolver(Solver):
     """Problem solver with backtracking capabilities, implementing several optimizations for increased performance.
@@ -405,63 +344,63 @@ class OptimizedBacktrackingSolver(Solver):
 
         raise RuntimeError("Can't happen")
 
-    # def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:  # noqa: D102, E501
-    #     """Optimized all-solutions finder that skips forwardchecking and returns the solutions in a list.
+    def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:  # noqa: D102, E501
+        """Optimized all-solutions finder that skips forwardchecking and returns the solutions in a list.
 
-    #     Args:
-    #         domains: Dictionary mapping variables to domains
-    #         vconstraints: Dictionary mapping variables to a list of constraints affecting the given variables.
+        Args:
+            domains: Dictionary mapping variables to domains
+            vconstraints: Dictionary mapping variables to a list of constraints affecting the given variables.
 
-    #     Returns:
-    #         the list of solutions as a dictionary.
-    #     """
-    #     # Does not do forwardcheck for simplicity
+        Returns:
+            the list of solutions as a dictionary.
+        """
+        # Does not do forwardcheck for simplicity
 
-    #     # # version 0
-    #     # assignments: dict = {}
-    #     # queue: list[tuple] = []
-    #     # solutions: list[dict] = list()
-    #     # sorted_variables = self.getSortedVariables(domains, vconstraints)
+        # version 0 (currently implemented in main)
+        assignments: dict = {}
+        queue: list[tuple] = []
+        solutions: list[dict] = list()
+        sorted_variables = self.getSortedVariables(domains, vconstraints)
 
-    #     # while True:
-    #     #     # Mix the Degree and Minimum Remaing Values (MRV) heuristics
-    #     #     for variable in sorted_variables:
-    #     #         if variable not in assignments:
-    #     #             # Found unassigned variable
-    #     #             values = domains[variable][:]
-    #     #             break
-    #     #     else:
-    #     #         # No unassigned variables. We've got a solution. Go back
-    #     #         # to last variable, if there's one.
-    #     #         solutions.append(assignments.copy())
-    #     #         if not queue:
-    #     #             return solutions
-    #     #         variable, values = queue.pop()
+        while True:
+            # Mix the Degree and Minimum Remaing Values (MRV) heuristics
+            for variable in sorted_variables:
+                if variable not in assignments:
+                    # Found unassigned variable
+                    values = domains[variable][:]
+                    break
+            else:
+                # No unassigned variables. We've got a solution. Go back
+                # to last variable, if there's one.
+                solutions.append(assignments.copy())
+                if not queue:
+                    return solutions
+                variable, values = queue.pop()
 
-    #     #     while True:
-    #     #         # We have a variable. Do we have any values left?
-    #     #         if not values:
-    #     #             # No. Go back to last variable, if there's one.
-    #     #             del assignments[variable]
-    #     #             while queue:
-    #     #                 variable, values = queue.pop()
-    #     #                 if values:
-    #     #                     break
-    #     #                 del assignments[variable]
-    #     #             else:
-    #     #                 return solutions
+            while True:
+                # We have a variable. Do we have any values left?
+                if not values:
+                    # No. Go back to last variable, if there's one.
+                    del assignments[variable]
+                    while queue:
+                        variable, values = queue.pop()
+                        if values:
+                            break
+                        del assignments[variable]
+                    else:
+                        return solutions
 
-    #     #         # Got a value. Check it.
-    #     #         assignments[variable] = values.pop()
-    #     #         for constraint, variables in vconstraints[variable]:
-    #     #             if not constraint(variables, domains, assignments, None):
-    #     #                 # Value is not good.
-    #     #                 break
-    #     #         else:
-    #     #             break
+                # Got a value. Check it.
+                assignments[variable] = values.pop()
+                for constraint, variables in vconstraints[variable]:
+                    if not constraint(variables, domains, assignments, None):
+                        # Value is not good.
+                        break
+                else:
+                    break
 
-    #     #     # Push state before looking for next variable.
-    #     #     queue.append((variable, values))
+            # Push state before looking for next variable.
+            queue.append((variable, values))
 
     #     # # initial version 1 (synthetic speedup 6.2x)
     #     # def is_valid(assignment, vconstraints, domains):
@@ -562,7 +501,7 @@ class OptimizedBacktrackingSolver(Solver):
     #             if all(v in assignment for v in vars_involved)
     #         )
 
-    #     def backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable]) -> Generator[dict[Hashable, any]]:
+    #     def backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable]) -> Generator[dict[Hashable, any]]:    # noqa E501
     #         """Recursive backtracking function to find all valid assignments."""
     #         if not unassigned_vars:
     #             yield assignment.copy()
@@ -587,6 +526,32 @@ class OptimizedBacktrackingSolver(Solver):
     #     return solutions
 
     # # optimized version 5 (cython parallel)
+
+    # # part of optimized version 5
+    # @cython.nogil
+    # def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Constraint, Hashable]], domains: dict[Hashable, Domain]) -> bool:    # noqa E501
+    #     """Check if all constraints are satisfied given the current assignment."""
+    #     return all(
+    #         constraint(vars_involved, domains, assignment, None)
+    #         for constraint, vars_involved in constraints_lookup
+    #         if all(v in assignment for v in vars_involved)
+    #     )
+
+    # @cython.nogil
+    # def backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable], local_solutions: list[dict[Hashable, any]], domains: dict[Hashable, Domain], constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]]):   # noqa E501
+    #     """Sequential recursive backtracking function."""
+    #     if not unassigned_vars:
+    #         local_solutions.append(assignment.copy())
+    #         return
+
+    #     var: Hashable = unassigned_vars[-1]
+    #     remaining_vars = unassigned_vars[:-1]  # Avoid modifying the list
+
+    #     for value in domains[var]:
+    #         assignment[var] = value
+    #         if is_valid(assignment, constraint_lookup[var]):
+    #             backtrack(assignment, remaining_vars, local_solutions, domains)
+    #         del assignment[var]
     # @boundscheck(False)
     # @wraparound(False)
     # @cdivision(True)
@@ -594,7 +559,7 @@ class OptimizedBacktrackingSolver(Solver):
     #     """Parallelized all-solutions finder using Cython and OpenMP for branching."""
 
     #     # Precompute constraints lookup per variable
-    #     constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains}
+    #     constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains}    # noqa E501
 
     #     # Sort variables by domain size (heuristic)
     #     sorted_vars: list[Hashable] = sorted(domains.keys(), key=lambda v: len(domains[v]))
@@ -625,35 +590,6 @@ class OptimizedBacktrackingSolver(Solver):
     #                 solutions.extend(local_solutions)  # Merge results safely
 
     #     return solutions
-
-    # optimized version 6 (python parallel)
-    def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:  # noqa: D102, E501
-        """Parallelized all-solutions finder using ProcessPoolExecutor for work-stealing."""
-
-        # Precompute constraints lookup per variable
-        constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains}
-
-        # Sort variables by domain size (heuristic)
-        sorted_vars: list[Hashable] = sorted(domains.keys(), key=lambda v: len(domains[v]))
-
-        # Split parallel and sequential parts
-        first_var = sorted_vars[0]
-        remaining_vars = sorted_vars[1:]
-
-        # select
-        args = ((domains, constraint_lookup, first_var, first_val, remaining_vars.copy()) for first_val in domains[first_var])
-        solutions: list[dict[Hashable, any]] = []
-
-        # execute in parallel
-        # TODO once parsing has been implemented, check if ProcessPoolExecutor can be used
-        # as pickling FunctionConstraints should no longer be an issue, enabling GIL release
-        with ThreadPoolExecutor() as executor:
-            # results = map(parallel_worker, args)  # sequential
-            results = executor.map(parallel_worker, args, chunksize=1)   # parallel
-            for result in results:
-                solutions.extend(result)
-
-        return solutions
 
     def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         if self._forwardcheck:
@@ -854,3 +790,120 @@ class MinConflictsSolver(Solver):
             if not conflicted:
                 return assignments
         return None
+
+
+### Helper functions for parallel solver
+
+def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Constraint, Hashable]], domains: dict[Hashable, Domain]) -> bool:      # noqa E501
+    """Check if all constraints are satisfied given the current assignment."""
+    return all(
+        constraint(vars_involved, domains, assignment, None)
+        for constraint, vars_involved in constraints_lookup
+        if all(v in assignment for v in vars_involved)
+    )
+
+def sequential_backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable], domains: dict[Hashable, Domain], constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:     # noqa E501
+    """Sequential recursive backtracking function for subproblems."""
+    # TODO check if using the OptimizedBacktracking approach is more efficient
+    if not unassigned_vars:
+        return [assignment.copy()]
+
+    var = unassigned_vars[-1]
+    remaining_vars = unassigned_vars[:-1]
+
+    solutions: list[dict[Hashable, any]] = []
+    for value in domains[var]:
+        assignment[var] = value
+        if is_valid(assignment, constraint_lookup[var], domains):
+            solutions.extend(sequential_backtrack(assignment, remaining_vars, domains, constraint_lookup))
+        del assignment[var]
+    return solutions
+
+def parallel_worker(args: tuple[dict[Hashable, Domain], dict[Hashable, list[tuple[Constraint, Hashable]]], Hashable, any, list[Hashable]]) -> list[dict[Hashable, any]]:    # noqa E501
+    """Worker function for parallel execution on first variable."""
+    domains, constraint_lookup, first_var, first_value, remaining_vars = args
+    # raise ValueError(domains, constraint_lookup, first_var, remaining_vars)
+    local_assignment = {first_var: first_value}
+    if is_valid(local_assignment, constraint_lookup[first_var], domains):
+        return sequential_backtrack(local_assignment, remaining_vars, domains, constraint_lookup)
+    return []
+
+class ParallelSolver(Solver):
+    """Problem solver that executes all-solution solve in parallel.
+
+    Sorts the domains on size, creating jobs for each value in the domain with the most variables.
+    Each leaf job is solved recursively.
+
+    Examples:
+        >>> result = [[('a', 1), ('b', 2)],
+        ...           [('a', 1), ('b', 3)],
+        ...           [('a', 2), ('b', 3)]]
+
+        >>> problem = Problem(ParallelSolver())
+        >>> problem.addVariables(["a", "b"], [1, 2, 3])
+        >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
+
+        >>> for solution in problem.getSolutions():
+        ...     sorted(solution.items()) in result
+        True
+        True
+        True
+
+        >>> problem.getSolution()
+        Traceback (most recent call last):
+        ...
+        NotImplementedError: ParallelSolver only provides all solutions
+
+        >>> problem.getSolutionIter()
+        Traceback (most recent call last):
+        ...
+        NotImplementedError: ParallelSolver doesn't provide iteration
+    """
+
+    def __init__(self):
+        """Initialization method."""
+        super().__init__()
+
+    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):
+        """Return one solution for the given problem.
+
+        Args:
+            domains (dict): Dictionary mapping variables to their domains
+            constraints (list): List of pairs of (constraint, variables)
+            vconstraints (dict): Dictionary mapping variables to a list
+                of constraints affecting the given variables.
+        """
+        msg = f"{self.__class__.__name__} only provides all solutions"
+        raise NotImplementedError(msg)
+
+        # optimized version 6 (python parallel)
+    def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:  # noqa: D102, E501
+        """Parallelized all-solutions finder using ProcessPoolExecutor for work-stealing."""
+        # Precompute constraints lookup per variable
+        constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains}  # noqa: E501
+
+        # Sort variables by domain size (heuristic)
+        sorted_vars: list[Hashable] = sorted(domains.keys(), key=lambda v: len(domains[v]))
+
+        # Split parallel and sequential parts
+        first_var = sorted_vars[0]
+        remaining_vars = sorted_vars[1:]
+
+        # Create the parallel function arguments and solutions lists
+        args = ((domains, constraint_lookup, first_var, val, remaining_vars.copy()) for val in domains[first_var])
+        solutions: list[dict[Hashable, any]] = []
+
+        # execute in parallel
+        # TODO once parsing has been implemented, check if ProcessPoolExecutor can be used
+        # as pickling FunctionConstraints should no longer be an issue, enabling GIL release
+        with ThreadPoolExecutor() as executor:
+            # results = map(parallel_worker, args)  # sequential
+            results = executor.map(parallel_worker, args, chunksize=1)   # parallel
+            for result in results:
+                solutions.extend(result)
+
+        return solutions
+    
+    def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
+        return self.getSolutionsList(domains, vconstraints)
+    
