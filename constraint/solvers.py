@@ -3,7 +3,13 @@
 import random
 from constraint.domain import Domain
 from constraint.constraints import Constraint
-from collections.abc import Hashable
+from collections.abc import Hashable, Generator
+
+# # from version 5
+# import cython
+# from cython.cimports.cpython import array
+# from cython.parallel import prange, parallel
+# from cython.cimports.libc.stdlib import boundscheck, wraparound, cdivision
 
 
 def getArcs(domains: dict, constraints: list[tuple]) -> dict:
@@ -224,6 +230,32 @@ class BacktrackingSolver(Solver):
     def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         return list(self.getSolutionIter(domains, constraints, vconstraints))
 
+# # part of optimized version 5
+# @cython.nogil
+# def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Constraint, Hashable]], domains: dict[Hashable, Domain]) -> bool:
+#     """Check if all constraints are satisfied given the current assignment."""
+#     return all(
+#         constraint(vars_involved, domains, assignment, None)
+#         for constraint, vars_involved in constraints_lookup
+#         if all(v in assignment for v in vars_involved)
+#     )
+
+# @cython.nogil
+# def backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable], local_solutions: list[dict[Hashable, any]], domains: dict[Hashable, Domain], constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]]):
+#     """Sequential recursive backtracking function."""
+#     if not unassigned_vars:
+#         local_solutions.append(assignment.copy())
+#         return
+
+#     var: Hashable = unassigned_vars[-1]
+#     remaining_vars = unassigned_vars[:-1]  # Avoid modifying the list
+
+#     for value in domains[var]:
+#         assignment[var] = value
+#         if is_valid(assignment, constraint_lookup[var]):
+#             backtrack(assignment, remaining_vars, local_solutions, domains)
+#         del assignment[var]
+
 
 class OptimizedBacktrackingSolver(Solver):
     """Problem solver with backtracking capabilities, implementing several optimizations for increased performance.
@@ -347,6 +379,52 @@ class OptimizedBacktrackingSolver(Solver):
         """
         # Does not do forwardcheck for simplicity
 
+        # # version 0
+        # assignments: dict = {}
+        # queue: list[tuple] = []
+        # solutions: list[dict] = list()
+        # sorted_variables = self.getSortedVariables(domains, vconstraints)
+
+        # while True:
+        #     # Mix the Degree and Minimum Remaing Values (MRV) heuristics
+        #     for variable in sorted_variables:
+        #         if variable not in assignments:
+        #             # Found unassigned variable
+        #             values = domains[variable][:]
+        #             break
+        #     else:
+        #         # No unassigned variables. We've got a solution. Go back
+        #         # to last variable, if there's one.
+        #         solutions.append(assignments.copy())
+        #         if not queue:
+        #             return solutions
+        #         variable, values = queue.pop()
+
+        #     while True:
+        #         # We have a variable. Do we have any values left?
+        #         if not values:
+        #             # No. Go back to last variable, if there's one.
+        #             del assignments[variable]
+        #             while queue:
+        #                 variable, values = queue.pop()
+        #                 if values:
+        #                     break
+        #                 del assignments[variable]
+        #             else:
+        #                 return solutions
+
+        #         # Got a value. Check it.
+        #         assignments[variable] = values.pop()
+        #         for constraint, variables in vconstraints[variable]:
+        #             if not constraint(variables, domains, assignments, None):
+        #                 # Value is not good.
+        #                 break
+        #         else:
+        #             break
+
+        #     # Push state before looking for next variable.
+        #     queue.append((variable, values))
+
         # # initial version 1 (synthetic speedup 6.2x)
         # def is_valid(assignment, vconstraints, domains):
         #     """Check if all constraints are satisfied given the current assignment."""
@@ -438,7 +516,7 @@ class OptimizedBacktrackingSolver(Solver):
         # return solutions
 
         # optimized version 4 (synthetic speedup 13.1x, variables ordered by domain size, yield instead of append)
-        def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Constraint, Hashable]]):
+        def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Constraint, Hashable]]) -> bool:
             """Check if all constraints are satisfied given the current assignment."""
             return all(
                 constraint(vars_involved, domains, assignment, None)
@@ -446,7 +524,7 @@ class OptimizedBacktrackingSolver(Solver):
                 if all(v in assignment for v in vars_involved)
             )
 
-        def backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable]):
+        def backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable]) -> Generator[dict[Hashable, any]]:
             """Recursive backtracking function to find all valid assignments."""
             if not unassigned_vars:
                 yield assignment.copy()
@@ -467,7 +545,48 @@ class OptimizedBacktrackingSolver(Solver):
         # Sort variables by domain size (heuristic)
         sorted_vars: list[Hashable] = sorted(domains.keys(), key=lambda v: len(domains[v]))
 
-        return list(backtrack({}, sorted_vars))
+        solutions: list[dict[Hashable, any]] = list(backtrack({}, sorted_vars))
+        return solutions
+
+    # # optimized version 5 (parallel)
+    # @boundscheck(False)
+    # @wraparound(False)
+    # @cdivision(True)
+    # def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:  # noqa: D102, E501
+    #     """Parallelized all-solutions finder using Cython and OpenMP for branching."""
+
+    #     # Precompute constraints lookup per variable
+    #     constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains}
+
+    #     # Sort variables by domain size (heuristic)
+    #     sorted_vars: list[Hashable] = sorted(domains.keys(), key=lambda v: len(domains[v]))
+
+    #     # Parallelization on the first variable
+    #     first_var = sorted_vars[0]
+    #     remaining_vars = sorted_vars[1:]
+    #     first_var_length = len(domains[first_var])
+
+    #     # Convert to Cython types
+    #     domains_c = cython.declare(array.array, domains)
+
+    #     solutions: list[dict[Hashable, any]] = []
+
+    #     print(f"First domain size: {first_var_length}")
+
+    #     i = cython.declare(cython.int)
+
+    #     # Parallel loop over the first variable's domain
+    #     with cython.nogil, parallel():
+    #         for i in prange(first_var_length, schedule='dynamic'):
+    #             local_solutions: list[dict[Hashable, any]] = []
+    #             first_value = domains_c[first_var][i]
+    #             local_assignment = {first_var: first_value}
+    #             if is_valid(local_assignment, constraint_lookup[first_var]):
+    #                 backtrack(local_assignment, remaining_vars, local_solutions, domains_c, constraint_lookup)
+    #             with cython.gil:
+    #                 solutions.extend(local_solutions)  # Merge results safely
+
+    #     return solutions
 
     def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         if self._forwardcheck:
