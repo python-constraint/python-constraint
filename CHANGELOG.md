@@ -21,7 +21,7 @@ All notable changes to this code base will be documented in this file, for every
   - Switched from `setup.py` to `pyproject.toml`
   - Added `nox` for testing against all supported Python versions 
   - Added `ruff` for codestyle testing
-  - Achieved and requires test coverage of at least 65%
+  - Achieved and requires test coverage of at least 80%
   - Moved the documentation to GitHub Pages
   - Moved test & publishing automation to GitHub Actions
   - Switched dependency & build system to Poetry

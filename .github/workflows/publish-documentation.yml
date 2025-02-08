@@ -5,6 +5,11 @@ name: Publish documentation
 on:
     push:
         branches: [main] # branch to trigger deployment
+        paths:
+            - "docs/**"
+            - "constraint/**"
+            - "pyproject.toml"
+            - ".github/workflows/publish-documentation.yml"
     release:
         types: [published] # releases trigger deployment as well
 
