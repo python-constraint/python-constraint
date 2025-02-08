@@ -1,4 +1,5 @@
-from constraint import compile_restrictions, parse_restrictions, MinProdConstraint, MaxProdConstraint
+from constraint import compile_restrictions, parse_restrictions, Constraint, MinProdConstraint, MaxProdConstraint
+from collections.abc import Iterable
 
 def test_parse_restrictions():
     tune_params = {"x": [50, 100], "y": [0, 1]}
@@ -53,3 +54,16 @@ def test_parse_restrictions():
     assert all(param in rw_tune_params for param in params_constraint)
     assert isinstance(parsed_constraint, MinProdConstraint)
     assert parsed_constraint._minprod == 31
+
+def test_compile_restrictions():
+    tune_params = {"x": [50, 100], "y": [0, 1]}
+    restrictions = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100"]
+
+    compiled = compile_restrictions(restrictions, tune_params)
+    for r, vals, r_str in compiled:
+        assert isinstance(r, Constraint) or callable(r)
+        assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)
+        if isinstance(r, Constraint):
+            assert r_str is None
+        elif callable(r):
+            assert isinstance(r_str, str)
