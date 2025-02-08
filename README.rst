@@ -168,8 +168,9 @@ For an overview of recent changes, visit the `Changelog <https://github.com/pyth
 
 Planned development:
 
-- Add parallel-capable solver
 - Add a string parser for constraints
+- Add parallel-capable solver
+- Add `benchmarking tests <https://pypi.org/project/pytest-benchmark/>`_ automated with `GH actions <https://github.com/benchmark-action/github-action-benchmark>`_
 - Versioned documentation
 
 Contact
