@@ -19,7 +19,7 @@ from constraint import (
 )
 
 def parse_restrictions(
-    restrictions: list[str], tune_params: dict, monolithic=False, format=None, try_to_constraint=True
+    restrictions: list[str], tune_params: dict, monolithic=False, try_to_constraint=True
 ) -> list[tuple[Union[Constraint, str], list[str]]]:
     """Parses restrictions from a list of strings into compilable functions and constraints, or a single compilable function (if monolithic is True). Returns a list of tuples of (strings or constraints) and parameters."""
     # rewrite the restrictions so variables are singled out
@@ -27,7 +27,7 @@ def parse_restrictions(
 
     def replace_params(match_object):
         key = match_object.group(1)
-        if key in tune_params and format != "pyatf":
+        if key in tune_params:
             param = str(key)
             return "params[params_index['" + param + "']]"
         else:
@@ -234,35 +234,8 @@ def parse_restrictions(
                     finalized_constraint = to_equality_constraint(parsed_restriction, params_used)
             if finalized_constraint is None:
                 # we must turn it into a general function
-                if format is not None and format.lower() == "pyatf":
-                    finalized_constraint = parsed_restriction
-                else:
-                    finalized_constraint = f"def r({', '.join(params_used)}): return {parsed_restriction} \n"
+                finalized_constraint = f"def r({', '.join(params_used)}): return {parsed_restriction} \n"
             parsed_restrictions.append((finalized_constraint, params_used))
-
-        # if pyATF, restrictions that are set on the same parameter must be combined into one
-        if format is not None and format.lower() == "pyatf":
-            res_dict = dict()
-            registered_params = list()
-            registered_restrictions = list()
-            parsed_restrictions_pyatf = list()
-            for param in tune_params.keys():
-                registered_params.append(param)
-                for index, (res, params) in enumerate(parsed_restrictions):
-                    if index in registered_restrictions:
-                        continue
-                    if all(p in registered_params for p in params):
-                        if param not in res_dict:
-                            res_dict[param] = (list(), list())
-                        res_dict[param][0].append(res)
-                        res_dict[param][1].extend(params)
-                        registered_restrictions.append(index)
-            # combine multiple restrictions into one
-            for res_tuple in res_dict.values():
-                res, params_used = res_tuple
-                params_used = list(dict.fromkeys(params_used))   # param_used should only contain unique, dict preserves order
-                parsed_restrictions_pyatf.append((f"def r({', '.join(params_used)}): return ({') and ('.join(res)}) \n", params_used))
-            parsed_restrictions = parsed_restrictions_pyatf
     else:
         # create one monolithic function
         parsed_restrictions = ") and (".join(
@@ -275,26 +248,17 @@ def parse_restrictions(
 
         # provide a mapping of the parameter names to the index in the tuple received
         params_index = dict(zip(tune_params.keys(), range(len(tune_params.keys()))))
-
-        if format == "pyatf":
-            parsed_restrictions = [
-                (
-                    f"def restrictions({', '.join(params_index.keys())}): return {parsed_restrictions} \n",
-                    list(tune_params.keys()),
-                )
-            ]
-        else:
-            parsed_restrictions = [
-                (
-                    f"def restrictions(*params): params_index = {params_index}; return {parsed_restrictions} \n",
-                    list(tune_params.keys()),
-                )
-            ]
+        parsed_restrictions = [
+            (
+                f"def restrictions(*params): params_index = {params_index}; return {parsed_restrictions} \n",
+                list(tune_params.keys()),
+            )
+        ]
 
     return parsed_restrictions
 
 def compile_restrictions(
-    restrictions: list, tune_params: dict, monolithic=False, format=None, try_to_constraint=True
+    restrictions: list, tune_params: dict, monolithic=False, try_to_constraint=True
 ) -> list[tuple[Union[str, Constraint, FunctionType], list[str], Union[str, None]]]:
     """Parses restrictions from a list of strings into a list of strings, Functions, or Constraints (if `try_to_constraint`) and parameters used and source, or a single Function if monolithic is true."""
     # filter the restrictions to get only the strings
@@ -306,7 +270,7 @@ def compile_restrictions(
 
     # parse the strings
     parsed_restrictions = parse_restrictions(
-        restrictions_str, tune_params, monolithic=monolithic, format=format, try_to_constraint=try_to_constraint
+        restrictions_str, tune_params, monolithic=monolithic, try_to_constraint=try_to_constraint
     )
 
     # compile the parsed restrictions into a function
