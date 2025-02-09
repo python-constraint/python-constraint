@@ -2,7 +2,7 @@
 import re
 from types import FunctionType
 from typing import Union, Optional
-from constraint import (
+from constraint.constraints import (
     AllDifferentConstraint,
     AllEqualConstraint,
     Constraint,
@@ -217,7 +217,7 @@ def parse_restrictions(
         for res in restrictions:
             params_used: set[str] = set()
             parsed_restriction = re.sub(regex_match_variable, replace_params_split, res).strip()
-            params_used = list(params_used)
+            params_used_list = list(params_used)
             finalized_constraint = None
             if try_to_constraint and " or " not in res and " and " not in res:
                 # if applicable, strip the outermost round brackets
@@ -229,14 +229,14 @@ def parse_restrictions(
                 ):
                     parsed_restriction = parsed_restriction[1:-1]
                 # check if we can turn this into the built-in numeric comparison constraint
-                finalized_constraint = to_numeric_constraint(parsed_restriction, params_used)
+                finalized_constraint = to_numeric_constraint(parsed_restriction, params_used_list)
                 if finalized_constraint is None:
                     # check if we can turn this into the built-in equality comparison constraint
-                    finalized_constraint = to_equality_constraint(parsed_restriction, params_used)
+                    finalized_constraint = to_equality_constraint(parsed_restriction, params_used_list)
             if finalized_constraint is None:
                 # we must turn it into a general function
-                finalized_constraint = f"def r({', '.join(params_used)}): return {parsed_restriction} \n"
-            parsed_restrictions.append((finalized_constraint, params_used))
+                finalized_constraint = f"def r({', '.join(params_used_list)}): return {parsed_restriction} \n"
+            parsed_restrictions.append((finalized_constraint, params_used_list))
     else:
         # create one monolithic function
         parsed_restrictions = ") and (".join(
