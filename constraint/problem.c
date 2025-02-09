@@ -1503,7 +1503,7 @@ struct __pyx_obj_10constraint_7problem___pyx_scope_struct_3_genexpr;
 /* "constraint/problem.py":145
  *             return
  *         elif isinstance(constraint, list):
- *             assert all(isinstance(c, str) for c in constraint), f"Expected all constraints to be strings, got {constraint}"             # <<<<<<<<<<<<<<
+ *             assert all(isinstance(c, str) for c in constraint), f"Expected constraints to be strings, got {constraint}"             # <<<<<<<<<<<<<<
  *             self._str_constraints.extend(constraint)
  *             return
  */
@@ -2664,7 +2664,7 @@ static const char __pyx_k_Problem_getSolutions_line_178[] = "Problem.getSolution
 static const char __pyx_k_Union_Constraint_Callable_str[] = "Union[Constraint, Callable, str]";
 static const char __pyx_k_Problem_addConstraint_line_123[] = "Problem.addConstraint (line 123)";
 static const char __pyx_k_Problem_getSolutionsAsListDict[] = "Problem.getSolutionsAsListDict";
-static const char __pyx_k_Add_a_constraint_to_the_problem[] = "Add a constraint to the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.addVariables([\"a\", \"b\"], [1, 2, 3])\n            >>> problem.addConstraint(lambda a, b: b == a+1, [\"a\", \"b\"])\n            >>> solutions = problem.getSolutions()\n            >>>\n\n        Args:\n            constraint (instance of :py:class:`Constraint`, function to be wrapped by :py:class:`FunctionConstraint`, or string expression):   # noqa: E501\n                Constraint to be included in the problem\n            variables (set or sequence of variables): :py:class:`Variables` affected\n                by the constraint (default to all variables). Depending\n                on the constraint type the order may be important.\n        ";
+static const char __pyx_k_Add_a_constraint_to_the_problem[] = "Add a constraint to the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.addVariables([\"a\", \"b\"], [1, 2, 3])\n            >>> problem.addConstraint(lambda a, b: b == a+1, [\"a\", \"b\"])\n            >>> solutions = problem.getSolutions()\n            >>>\n\n        Args:\n            constraint (instance of :py:class:`Constraint`, function to be wrapped by :py:class:`FunctionConstraint`, or string expression):\n                Constraint to be included in the problem\n            variables (set or sequence of variables): :py:class:`Variables` affected\n                by the constraint (default to all variables). Depending\n                on the constraint type the order may be important.\n        ";
 static const char __pyx_k_Problem_getSolutionsOrderedList[] = "Problem.getSolutionsOrderedList.<locals>.genexpr";
 static const char __pyx_k_duplicate_parameter_configurati[] = " duplicate parameter configurations in searchspace, should not happen.";
 static const char __pyx_k_tuple_list_tuple_dict_tuple_int[] = "tuple[list[tuple], dict[tuple, int], int]";
@@ -2674,7 +2674,7 @@ static const char __pyx_k_Change_the_problem_solver_curren[] = "Change the probl
 static const char __pyx_k_Class_used_to_define_a_problem_a[] = "Class used to define a problem and retrieve solutions.";
 static const char __pyx_k_Constraints_must_be_instances_of[] = "Constraints must be instances of subclasses of the Constraint class";
 static const char __pyx_k_Domains_must_be_instances_of_sub[] = "Domains must be instances of subclasses of the Domain class";
-static const char __pyx_k_Expected_all_constraints_to_be_s[] = "Expected all constraints to be strings, got ";
+static const char __pyx_k_Expected_constraints_to_be_strin[] = "Expected constraints to be strings, got ";
 static const char __pyx_k_Find_and_return_a_solution_to_th[] = "Find and return a solution to the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.getSolution() is None\n            True\n            >>> problem.addVariables([\"a\"], [42])\n            >>> problem.getSolution()\n            {'a': 42}\n\n        Returns:\n            dictionary mapping variables to values: Solution for the\n            problem\n        ";
 static const char __pyx_k_Find_and_return_all_solutions_to[] = "Find and return all solutions to the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.getSolutions() == []\n            True\n            >>> problem.addVariables([\"a\"], [42])\n            >>> problem.getSolutions()\n            [{'a': 42}]\n\n        Returns:\n            list of dictionaries mapping variables to values: All\n            solutions for the problem\n        ";
 static const char __pyx_k_Module_containing_the_code_for_p[] = "Module containing the code for problem definitions.";
@@ -2755,7 +2755,7 @@ typedef struct {
   PyObject *__pyx_n_s_Domain;
   PyObject *__pyx_kp_u_Domain_is_empty;
   PyObject *__pyx_kp_u_Domains_must_be_instances_of_sub;
-  PyObject *__pyx_kp_u_Expected_all_constraints_to_be_s;
+  PyObject *__pyx_kp_u_Expected_constraints_to_be_strin;
   PyObject *__pyx_kp_u_Find_and_return_a_solution_to_th;
   PyObject *__pyx_kp_u_Find_and_return_all_solutions_to;
   PyObject *__pyx_n_s_FunctionConstraint;
@@ -2984,7 +2984,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_Domain);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Domain_is_empty);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Domains_must_be_instances_of_sub);
-  Py_CLEAR(clear_module_state->__pyx_kp_u_Expected_all_constraints_to_be_s);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Expected_constraints_to_be_strin);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Find_and_return_a_solution_to_th);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Find_and_return_all_solutions_to);
   Py_CLEAR(clear_module_state->__pyx_n_s_FunctionConstraint);
@@ -3191,7 +3191,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_Domain);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Domain_is_empty);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Domains_must_be_instances_of_sub);
-  Py_VISIT(traverse_module_state->__pyx_kp_u_Expected_all_constraints_to_be_s);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Expected_constraints_to_be_strin);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Find_and_return_a_solution_to_th);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Find_and_return_all_solutions_to);
   Py_VISIT(traverse_module_state->__pyx_n_s_FunctionConstraint);
@@ -3408,7 +3408,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_Domain __pyx_mstate_global->__pyx_n_s_Domain
 #define __pyx_kp_u_Domain_is_empty __pyx_mstate_global->__pyx_kp_u_Domain_is_empty
 #define __pyx_kp_u_Domains_must_be_instances_of_sub __pyx_mstate_global->__pyx_kp_u_Domains_must_be_instances_of_sub
-#define __pyx_kp_u_Expected_all_constraints_to_be_s __pyx_mstate_global->__pyx_kp_u_Expected_all_constraints_to_be_s
+#define __pyx_kp_u_Expected_constraints_to_be_strin __pyx_mstate_global->__pyx_kp_u_Expected_constraints_to_be_strin
 #define __pyx_kp_u_Find_and_return_a_solution_to_th __pyx_mstate_global->__pyx_kp_u_Find_and_return_a_solution_to_th
 #define __pyx_kp_u_Find_and_return_all_solutions_to __pyx_mstate_global->__pyx_kp_u_Find_and_return_all_solutions_to
 #define __pyx_n_s_FunctionConstraint __pyx_mstate_global->__pyx_n_s_FunctionConstraint
@@ -5020,7 +5020,7 @@ PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_10constraint_7problem_7Problem_12addConstraint, "Add a constraint to the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.addVariables([\"a\", \"b\"], [1, 2, 3])\n            >>> problem.addConstraint(lambda a, b: b == a+1, [\"a\", \"b\"])\n            >>> solutions = problem.getSolutions()\n            >>>\n\n        Args:\n            constraint (instance of :py:class:`Constraint`, function to be wrapped by :py:class:`FunctionConstraint`, or string expression):   # noqa: E501\n                Constraint to be included in the problem\n            variables (set or sequence of variables): :py:class:`Variables` affected\n                by the constraint (default to all variables). Depending\n                on the constraint type the order may be important.\n        ");
+PyDoc_STRVAR(__pyx_doc_10constraint_7problem_7Problem_12addConstraint, "Add a constraint to the problem.\n\n        Example:\n            >>> problem = Problem()\n            >>> problem.addVariables([\"a\", \"b\"], [1, 2, 3])\n            >>> problem.addConstraint(lambda a, b: b == a+1, [\"a\", \"b\"])\n            >>> solutions = problem.getSolutions()\n            >>>\n\n        Args:\n            constraint (instance of :py:class:`Constraint`, function to be wrapped by :py:class:`FunctionConstraint`, or string expression):\n                Constraint to be included in the problem\n            variables (set or sequence of variables): :py:class:`Variables` affected\n                by the constraint (default to all variables). Depending\n                on the constraint type the order may be important.\n        ");
 static PyMethodDef __pyx_mdef_10constraint_7problem_7Problem_13addConstraint = {"addConstraint", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10constraint_7problem_7Problem_13addConstraint, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_10constraint_7problem_7Problem_12addConstraint};
 static PyObject *__pyx_pw_10constraint_7problem_7Problem_13addConstraint(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
@@ -5144,7 +5144,7 @@ static PyObject *__pyx_gb_10constraint_7problem_7Problem_13addConstraint_2genera
 /* "constraint/problem.py":145
  *             return
  *         elif isinstance(constraint, list):
- *             assert all(isinstance(c, str) for c in constraint), f"Expected all constraints to be strings, got {constraint}"             # <<<<<<<<<<<<<<
+ *             assert all(isinstance(c, str) for c in constraint), f"Expected constraints to be strings, got {constraint}"             # <<<<<<<<<<<<<<
  *             self._str_constraints.extend(constraint)
  *             return
  */
@@ -5329,8 +5329,8 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_12addConstraint(CYTHON_
   __Pyx_INCREF(__pyx_v_constraint);
 
   /* "constraint/problem.py":141
- *         """
- *         # compile string constraints
+ *         """ # noqa: E501
+ *         # compile string constraints (variables argument ignored as it is inferred from the string and may be reordered)
  *         if isinstance(constraint, str):             # <<<<<<<<<<<<<<
  *             self._str_constraints.append(constraint)
  *             return
@@ -5339,7 +5339,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_12addConstraint(CYTHON_
   if (__pyx_t_1) {
 
     /* "constraint/problem.py":142
- *         # compile string constraints
+ *         # compile string constraints (variables argument ignored as it is inferred from the string and may be reordered)
  *         if isinstance(constraint, str):
  *             self._str_constraints.append(constraint)             # <<<<<<<<<<<<<<
  *             return
@@ -5355,15 +5355,15 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_12addConstraint(CYTHON_
  *             self._str_constraints.append(constraint)
  *             return             # <<<<<<<<<<<<<<
  *         elif isinstance(constraint, list):
- *             assert all(isinstance(c, str) for c in constraint), f"Expected all constraints to be strings, got {constraint}"
+ *             assert all(isinstance(c, str) for c in constraint), f"Expected constraints to be strings, got {constraint}"
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
     /* "constraint/problem.py":141
- *         """
- *         # compile string constraints
+ *         """ # noqa: E501
+ *         # compile string constraints (variables argument ignored as it is inferred from the string and may be reordered)
  *         if isinstance(constraint, str):             # <<<<<<<<<<<<<<
  *             self._str_constraints.append(constraint)
  *             return
@@ -5374,7 +5374,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_12addConstraint(CYTHON_
  *             self._str_constraints.append(constraint)
  *             return
  *         elif isinstance(constraint, list):             # <<<<<<<<<<<<<<
- *             assert all(isinstance(c, str) for c in constraint), f"Expected all constraints to be strings, got {constraint}"
+ *             assert all(isinstance(c, str) for c in constraint), f"Expected constraints to be strings, got {constraint}"
  *             self._str_constraints.extend(constraint)
  */
   __pyx_t_1 = PyList_Check(__pyx_v_constraint); 
@@ -5383,7 +5383,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_12addConstraint(CYTHON_
     /* "constraint/problem.py":145
  *             return
  *         elif isinstance(constraint, list):
- *             assert all(isinstance(c, str) for c in constraint), f"Expected all constraints to be strings, got {constraint}"             # <<<<<<<<<<<<<<
+ *             assert all(isinstance(c, str) for c in constraint), f"Expected constraints to be strings, got {constraint}"             # <<<<<<<<<<<<<<
  *             self._str_constraints.extend(constraint)
  *             return
  */
@@ -5399,7 +5399,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_12addConstraint(CYTHON_
       if (unlikely(!__pyx_t_1)) {
         __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_constraint, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 145, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_2 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Expected_all_constraints_to_be_s, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Expected_constraints_to_be_strin, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_Raise(__pyx_builtin_AssertionError, __pyx_t_2, 0, 0);
@@ -5413,7 +5413,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_12addConstraint(CYTHON_
 
     /* "constraint/problem.py":146
  *         elif isinstance(constraint, list):
- *             assert all(isinstance(c, str) for c in constraint), f"Expected all constraints to be strings, got {constraint}"
+ *             assert all(isinstance(c, str) for c in constraint), f"Expected constraints to be strings, got {constraint}"
  *             self._str_constraints.extend(constraint)             # <<<<<<<<<<<<<<
  *             return
  * 
@@ -5448,7 +5448,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_12addConstraint(CYTHON_
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
     /* "constraint/problem.py":147
- *             assert all(isinstance(c, str) for c in constraint), f"Expected all constraints to be strings, got {constraint}"
+ *             assert all(isinstance(c, str) for c in constraint), f"Expected constraints to be strings, got {constraint}"
  *             self._str_constraints.extend(constraint)
  *             return             # <<<<<<<<<<<<<<
  * 
@@ -5462,7 +5462,7 @@ static PyObject *__pyx_pf_10constraint_7problem_7Problem_12addConstraint(CYTHON_
  *             self._str_constraints.append(constraint)
  *             return
  *         elif isinstance(constraint, list):             # <<<<<<<<<<<<<<
- *             assert all(isinstance(c, str) for c in constraint), f"Expected all constraints to be strings, got {constraint}"
+ *             assert all(isinstance(c, str) for c in constraint), f"Expected constraints to be strings, got {constraint}"
  *             self._str_constraints.extend(constraint)
  */
   }
@@ -9478,7 +9478,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_Domain, __pyx_k_Domain, sizeof(__pyx_k_Domain), 0, 0, 1, 1},
     {&__pyx_kp_u_Domain_is_empty, __pyx_k_Domain_is_empty, sizeof(__pyx_k_Domain_is_empty), 0, 1, 0, 0},
     {&__pyx_kp_u_Domains_must_be_instances_of_sub, __pyx_k_Domains_must_be_instances_of_sub, sizeof(__pyx_k_Domains_must_be_instances_of_sub), 0, 1, 0, 0},
-    {&__pyx_kp_u_Expected_all_constraints_to_be_s, __pyx_k_Expected_all_constraints_to_be_s, sizeof(__pyx_k_Expected_all_constraints_to_be_s), 0, 1, 0, 0},
+    {&__pyx_kp_u_Expected_constraints_to_be_strin, __pyx_k_Expected_constraints_to_be_strin, sizeof(__pyx_k_Expected_constraints_to_be_strin), 0, 1, 0, 0},
     {&__pyx_kp_u_Find_and_return_a_solution_to_th, __pyx_k_Find_and_return_a_solution_to_th, sizeof(__pyx_k_Find_and_return_a_solution_to_th), 0, 1, 0, 0},
     {&__pyx_kp_u_Find_and_return_all_solutions_to, __pyx_k_Find_and_return_all_solutions_to, sizeof(__pyx_k_Find_and_return_all_solutions_to), 0, 1, 0, 0},
     {&__pyx_n_s_FunctionConstraint, __pyx_k_FunctionConstraint, sizeof(__pyx_k_FunctionConstraint), 0, 0, 1, 1},
