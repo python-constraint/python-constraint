@@ -7,21 +7,22 @@ from constraint import (
     AllEqualConstraint,
     Constraint,
     ExactSumConstraint,
-    FunctionConstraint,
-    InSetConstraint,
     MaxProdConstraint,
     MaxSumConstraint,
     MinProdConstraint,
     MinSumConstraint,
-    NotInSetConstraint,
-    SomeInSetConstraint,
-    SomeNotInSetConstraint,
+    # TODO implement parsing for these constraints
+    # FunctionConstraint,
+    # InSetConstraint,
+    # NotInSetConstraint,
+    # SomeInSetConstraint,
+    # SomeNotInSetConstraint,
 )
 
 def parse_restrictions(
     restrictions: list[str], tune_params: dict, monolithic=False, try_to_constraint=True
 ) -> list[tuple[Union[Constraint, str], list[str]]]:
-    """Parses restrictions from a list of strings into compilable functions and constraints, or a single compilable function (if monolithic is True). Returns a list of tuples of (strings or constraints) and parameters."""
+    """Parses restrictions from a list of strings into compilable functions and constraints, or a single compilable function (if monolithic is True). Returns a list of tuples of (strings or constraints) and parameters."""   # noqa: E501
     # rewrite the restrictions so variables are singled out
     regex_match_variable = r"([a-zA-Z_$][a-zA-Z_$0-9]*)"
 
@@ -44,7 +45,7 @@ def parse_restrictions(
             return key
 
     def to_multiple_restrictions(restrictions: list[str]) -> list[str]:
-        """Split the restrictions into multiple restriction where possible (e.g. 3 <= x * y < 9 <= z -> [(MinProd(3), [x, y]), (MaxProd(9-1), [x, y]), (MinProd(9), [z])])."""
+        """Split the restrictions into multiple restriction where possible (e.g. 3 <= x * y < 9 <= z -> [(MinProd(3), [x, y]), (MaxProd(9-1), [x, y]), (MinProd(9), [z])])."""  # noqa: E501
         split_restrictions = list()
         for res in restrictions:
             # if there are logic chains in the restriction, skip splitting further
@@ -103,7 +104,7 @@ def parse_restrictions(
             (left_num, right.strip(), False) if left_num is not None else (right_num, left.strip(), True)
         )
 
-        # if the number is an integer, we can map '>' to '>=' and '<' to '<=' by changing the number (does not work with floating points!)
+        # if the number is an integer, we can map '>' to '>=' and '<' to '<=' by changing the number (does not work with floating points!)  # noqa: E501
         number_is_int = isinstance(number, int)
         if number_is_int:
             if comparator == "<":
@@ -260,7 +261,7 @@ def parse_restrictions(
 def compile_restrictions(
     restrictions: list, tune_params: dict, monolithic=False, try_to_constraint=True
 ) -> list[tuple[Union[str, Constraint, FunctionType], list[str], Union[str, None]]]:
-    """Parses restrictions from a list of strings into a list of strings, Functions, or Constraints (if `try_to_constraint`) and parameters used and source, or a single Function if monolithic is true."""
+    """Parses restrictions from a list of strings into a list of strings, Functions, or Constraints (if `try_to_constraint`) and parameters used and source, or a single Function if monolithic is true.""" # noqa: E501
     # filter the restrictions to get only the strings
     restrictions_str, restrictions_ignore = [], []
     for r in restrictions:
