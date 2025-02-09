@@ -7,6 +7,13 @@ on:
         branches:
             - main
             - release/*
+        paths:
+            - "constraint/**"
+            - "tests/**"
+            - "cythonize_build.py"
+            - "noxfile.py"
+            - "pyproject.toml"
+            - ".github/workflows/build-test-python-package.yml"
     pull_request:
         branches:
             - main

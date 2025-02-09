@@ -744,24 +744,29 @@ class MinConflictsSolver(Solver):
         NotImplementedError: MinConflictsSolver doesn't provide iteration
     """
 
-    def __init__(self, steps=1000):
+    def __init__(self, steps=1000, rand=None):
         """Initialization method.
 
         Args:
             steps (int): Maximum number of steps to perform before
                 giving up when looking for a solution (default is 1000)
+            rand (Random): Optional random.Random instance to use for
+                repeatability.
         """
         self._steps = steps
+        self._rand = rand
 
-    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
+    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):   # noqa: D102
+        choice = self._rand.choice if self._rand is not None else random.choice
+        shuffle = self._rand.shuffle if self._rand is not None else random.shuffle
         assignments = {}
         # Initial assignment
         for variable in domains:
-            assignments[variable] = random.choice(domains[variable])
+            assignments[variable] = choice(domains[variable])
         for _ in range(self._steps):
             conflicted = False
             lst = list(domains.keys())
-            random.shuffle(lst)
+            shuffle(lst)
             for variable in lst:
                 # Check if variable is not in conflict
                 for constraint, variables in vconstraints[variable]:
@@ -785,7 +790,7 @@ class MinConflictsSolver(Solver):
                         del minvalues[:]
                         minvalues.append(value)
                 # Pick a random one from these values.
-                assignments[variable] = random.choice(minvalues)
+                assignments[variable] = choice(minvalues)
                 conflicted = True
             if not conflicted:
                 return assignments

@@ -8,6 +8,7 @@ from collections.abc import Sequence
 from constraint.constraints import Constraint, FunctionConstraint
 from constraint.domain import Domain
 from constraint.solvers import OptimizedBacktrackingSolver
+from constraint.parser import compile_restrictions
 
 
 class Problem:
@@ -21,6 +22,7 @@ class Problem:
         """
         self._solver = solver or OptimizedBacktrackingSolver()
         self._constraints = []
+        self._str_constraints = []
         self._variables = {}
 
     def reset(self):
@@ -118,7 +120,7 @@ class Problem:
         for variable in variables:
             self.addVariable(variable, domain)
 
-    def addConstraint(self, constraint: Union[Constraint, Callable], variables: Optional[Sequence] = None):
+    def addConstraint(self, constraint: Union[Constraint, Callable, str], variables: Optional[Sequence] = None):
         """Add a constraint to the problem.
 
         Example:
@@ -129,12 +131,22 @@ class Problem:
             >>>
 
         Args:
-            constraint (instance of :py:class:`Constraint` or function to be wrapped by :py:class:`FunctionConstraint`):
+            constraint (instance of :py:class:`Constraint`, function to be wrapped by :py:class:`FunctionConstraint`, or string expression):
                 Constraint to be included in the problem
             variables (set or sequence of variables): :py:class:`Variables` affected
                 by the constraint (default to all variables). Depending
                 on the constraint type the order may be important.
-        """
+        """ # noqa: E501
+        # compile string constraints (variables argument ignored as it is inferred from the string and may be reordered)
+        if isinstance(constraint, str):
+            self._str_constraints.append(constraint)
+            return
+        elif isinstance(constraint, list):
+            assert all(isinstance(c, str) for c in constraint), f"Expected constraints to be strings, got {constraint}"
+            self._str_constraints.extend(constraint)
+            return
+
+        # add regular constraints
         if not isinstance(constraint, Constraint):
             if callable(constraint):
                 constraint = FunctionConstraint(constraint)
@@ -236,6 +248,10 @@ class Problem:
         domains = self._variables.copy()
         allvariables = domains.keys()
         constraints = []
+        for constraint in self._str_constraints:
+            parsed = compile_restrictions([constraint], domains)
+            for c, v, _ in parsed:
+                self.addConstraint(c, v)
         for constraint, variables in self._constraints:
             if not variables:
                 variables = list(allvariables)

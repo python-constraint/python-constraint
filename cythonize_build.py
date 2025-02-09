@@ -13,7 +13,7 @@ from setuptools import Distribution, Extension
 
 # obtain the files to Cythonize
 module_name = "constraint"
-cython_modules = ["constraints", "domain", "problem", "solvers"]
+cython_modules = ["constraints", "domain", "problem", "solvers", "parser"]
 ext = "py"
 extensions = [
     Extension(f"constraint.{module}", [f"constraint/{module}.{ext}"], extra_compile_args=["-O3"])

@@ -31,6 +31,7 @@ from constraint.problem import *  # noqa: F403
 from constraint.domain import *   # noqa: F403
 from constraint.constraints import *  # noqa: F403
 from constraint.solvers import *   # noqa: F403
+from constraint.parser import * # noqa: F403
 
 if __name__ == "__main__":
     from tests import test_doctests

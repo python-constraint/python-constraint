@@ -1,9 +1,8 @@
 # Change Log
 
-## Python Contraint
+## Python Constraint
 
-All notable changes to this code base will be documented in this file,
-in every released version.
+All notable changes to this code base will be documented in this file, for every released major and minor version.
 
 ### Version 2.0.0
 
@@ -22,7 +21,7 @@ in every released version.
   - Switched from `setup.py` to `pyproject.toml`
   - Added `nox` for testing against all supported Python versions 
   - Added `ruff` for codestyle testing
-  - Achieved and requires test coverage of at least 65%
+  - Achieved and requires test coverage of at least 80%
   - Moved the documentation to GitHub Pages
   - Moved test & publishing automation to GitHub Actions
   - Switched dependency & build system to Poetry
