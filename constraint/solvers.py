@@ -1,6 +1,7 @@
 """Module containing the code for the problem solvers."""
 
 import random
+from copy import deepcopy
 from constraint.domain import Domain
 from constraint.constraints import Constraint
 from collections.abc import Hashable
@@ -12,7 +13,7 @@ from collections.abc import Hashable
 # from cython.cimports.libc.stdlib import boundscheck, wraparound, cdivision
 
 # for version 6
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor
 
 
 def getArcs(domains: dict, constraints: list[tuple]) -> dict:
@@ -827,7 +828,6 @@ def sequential_backtrack(assignment: dict[Hashable, any], unassigned_vars: list[
 def parallel_worker(args: tuple[dict[Hashable, Domain], dict[Hashable, list[tuple[Constraint, Hashable]]], Hashable, any, list[Hashable]]) -> list[dict[Hashable, any]]:    # noqa E501
     """Worker function for parallel execution on first variable."""
     domains, constraint_lookup, first_var, first_value, remaining_vars = args
-    # raise ValueError(domains, constraint_lookup, first_var, remaining_vars)
     local_assignment = {first_var: first_value}
     if is_valid(local_assignment, constraint_lookup[first_var], domains):
         return sequential_backtrack(local_assignment, remaining_vars, domains, constraint_lookup)
@@ -901,7 +901,7 @@ class ParallelSolver(Solver):
         # execute in parallel
         # TODO once parsing has been implemented, check if ProcessPoolExecutor can be used
         # as pickling FunctionConstraints should no longer be an issue, enabling GIL release
-        with ThreadPoolExecutor() as executor:
+        with ProcessPoolExecutor() as executor:
             # results = map(parallel_worker, args)  # sequential
             results = executor.map(parallel_worker, args, chunksize=1)   # parallel
             for result in results:
@@ -910,5 +910,5 @@ class ParallelSolver(Solver):
         return solutions
     
     def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
-        return self.getSolutionsList(domains, vconstraints)
+        return self.getSolutionsList(deepcopy(domains), deepcopy(vconstraints))
     

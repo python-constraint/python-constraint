@@ -1,5 +1,6 @@
 """Module containing the code for parsing string constraints."""
 import re
+from copy import deepcopy
 from types import FunctionType
 from typing import Union, Optional
 from constraint.constraints import (
@@ -262,6 +263,11 @@ def compile_restrictions(
     restrictions: list, tune_params: dict, monolithic=False, try_to_constraint=True
 ) -> list[tuple[Union[str, Constraint, FunctionType], list[str], Union[str, None]]]:
     """Parses restrictions from a list of strings into a list of strings, Functions, or Constraints (if `try_to_constraint`) and parameters used and source, or a single Function if monolithic is true.""" # noqa: E501
+
+    # deepcopy to avoid pickling issues
+    restrictions = deepcopy(restrictions)
+    tune_params = deepcopy(tune_params)
+
     # filter the restrictions to get only the strings
     restrictions_str, restrictions_ignore = [], []
     for r in restrictions:
