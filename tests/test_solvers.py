@@ -80,6 +80,7 @@ def test_parallel_solver():
     problem.addVariable("y", [1, 2])
     problem.addConstraint(MaxProdConstraint(2), ["x", "y"])
     problem.addConstraint(MinProdConstraint(1), ["x", "y"])
+    problem.addConstraint(["1 <= x * y <= 2"])
     problem.addConstraint(MinSumConstraint(0), ["x"])
 
     # assert that a single solution results in an error
