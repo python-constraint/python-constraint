@@ -131,18 +131,18 @@ class Problem:
             >>>
 
         Args:
-            constraint (instance of :py:class:`Constraint`, function to be wrapped by :py:class:`FunctionConstraint`, or string expression):   # noqa: E501
+            constraint (instance of :py:class:`Constraint`, function to be wrapped by :py:class:`FunctionConstraint`, or string expression):
                 Constraint to be included in the problem
             variables (set or sequence of variables): :py:class:`Variables` affected
                 by the constraint (default to all variables). Depending
                 on the constraint type the order may be important.
-        """
-        # compile string constraints
+        """ # noqa: E501
+        # compile string constraints (variables argument ignored as it is inferred from the string and may be reordered)
         if isinstance(constraint, str):
             self._str_constraints.append(constraint)
             return
         elif isinstance(constraint, list):
-            assert all(isinstance(c, str) for c in constraint), f"Expected all constraints to be strings, got {constraint}"
+            assert all(isinstance(c, str) for c in constraint), f"Expected constraints to be strings, got {constraint}"
             self._str_constraints.extend(constraint)
             return
 
