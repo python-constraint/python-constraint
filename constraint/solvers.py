@@ -1,7 +1,6 @@
 """Module containing the code for the problem solvers."""
 
 import random
-from copy import deepcopy
 from types import FunctionType
 from constraint.domain import Domain
 from constraint.constraints import Constraint, FunctionConstraint, CompilableFunctionConstraint
@@ -15,7 +14,6 @@ from collections.abc import Hashable
 
 # for version 6
 from concurrent.futures import ProcessPoolExecutor
-import cython
 
 
 def getArcs(domains: dict, constraints: list[tuple]) -> dict:
@@ -962,7 +960,7 @@ class ParallelSolver(Solver):
         remaining_vars = sorted_vars[1:]
 
         # Create the parallel function arguments and solutions lists
-        args = ((domains, deepcopy(constraint_lookup), first_var, val, remaining_vars.copy()) for val in domains[first_var])
+        args = ((domains, constraint_lookup, first_var, val, remaining_vars.copy()) for val in domains[first_var])
         solutions: list[dict[Hashable, any]] = []
 
         # execute in parallel
@@ -975,5 +973,5 @@ class ParallelSolver(Solver):
         return solutions
     
     def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
-        return self.getSolutionsList(deepcopy(domains), deepcopy(vconstraints))
+        return self.getSolutionsList(domains, vconstraints)
     

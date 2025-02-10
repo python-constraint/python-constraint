@@ -1,6 +1,5 @@
 """Module containing the code for parsing string constraints."""
 import re
-from copy import deepcopy
 from types import FunctionType
 from typing import Union, Optional
 from constraint.constraints import (
@@ -267,10 +266,6 @@ def compile_restrictions(
 
     picklable (bool): whether to keep constraints such that they can be pickled for parallel solvers. Defaults to False.    
     """ # noqa: E501
-
-    # deepcopy to avoid pickling issues
-    restrictions = deepcopy(restrictions)
-    tune_params = deepcopy(tune_params)
 
     # filter the restrictions to get only the strings
     restrictions_str, restrictions_ignore = [], []
