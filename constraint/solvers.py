@@ -2,8 +2,9 @@
 
 import random
 from copy import deepcopy
+from types import FunctionType
 from constraint.domain import Domain
-from constraint.constraints import Constraint
+from constraint.constraints import Constraint, FunctionConstraint, CompilableFunctionConstraint
 from collections.abc import Hashable
 
 # # for version 5
@@ -808,6 +809,13 @@ def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Con
         if all(v in assignment for v in vars_involved)
     )
 
+def compile_to_function(constraint: CompilableFunctionConstraint) -> FunctionConstraint:
+    """Compile a CompilableFunctionConstraint to a function, wrapped by a FunctionConstraint"""
+    func_string = constraint._func
+    code_object = compile(func_string, "<string>", "exec")
+    func = FunctionType(code_object.co_consts[0], globals())
+    return FunctionConstraint(func)
+    
 def sequential_backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable], domains: dict[Hashable, Domain], constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:     # noqa E501
     """Sequential recursive backtracking function for subproblems."""
     # TODO check if using the OptimizedBacktracking approach is more efficient
@@ -829,6 +837,12 @@ def parallel_worker(args: tuple[dict[Hashable, Domain], dict[Hashable, list[tupl
     """Worker function for parallel execution on first variable."""
     domains, constraint_lookup, first_var, first_value, remaining_vars = args
     local_assignment = {first_var: first_value}
+
+    # if there are any CompilableFunctionConstraint, they must be compiled locally first
+    for var, constraints in constraint_lookup.items():
+        constraint_lookup[var] = [tuple([compile_to_function(constraint) if isinstance(constraint, CompilableFunctionConstraint) else constraint, vals]) for constraint, vals in constraints]        # noqa E501
+
+    # continue solving sequentially on this process
     if is_valid(local_assignment, constraint_lookup[first_var], domains):
         return sequential_backtrack(local_assignment, remaining_vars, domains, constraint_lookup)
     return []
@@ -895,12 +909,10 @@ class ParallelSolver(Solver):
         remaining_vars = sorted_vars[1:]
 
         # Create the parallel function arguments and solutions lists
-        args = ((domains, constraint_lookup, first_var, val, remaining_vars.copy()) for val in domains[first_var])
+        args = ((domains, deepcopy(constraint_lookup), first_var, val, remaining_vars.copy()) for val in domains[first_var])
         solutions: list[dict[Hashable, any]] = []
 
         # execute in parallel
-        # TODO once parsing has been implemented, check if ProcessPoolExecutor can be used
-        # as pickling FunctionConstraints should no longer be an issue, enabling GIL release
         with ProcessPoolExecutor() as executor:
             # results = map(parallel_worker, args)  # sequential
             results = executor.map(parallel_worker, args, chunksize=1)   # parallel
