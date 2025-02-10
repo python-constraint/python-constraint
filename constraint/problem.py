@@ -4,10 +4,11 @@ import copy
 from operator import itemgetter
 from typing import Callable, Optional, Union
 from collections.abc import Sequence
+from types import CodeType
 
-from constraint.constraints import Constraint, FunctionConstraint
+from constraint.constraints import Constraint, FunctionConstraint, CompilableFunctionConstraint
 from constraint.domain import Domain
-from constraint.solvers import OptimizedBacktrackingSolver
+from constraint.solvers import OptimizedBacktrackingSolver, ParallelSolver
 from constraint.parser import compile_restrictions
 
 
@@ -138,7 +139,7 @@ class Problem:
                 on the constraint type the order may be important.
         """ # noqa: E501
         # compile string constraints (variables argument ignored as it is inferred from the string and may be reordered)
-        if isinstance(constraint, str):
+        if isinstance(constraint, str) and not constraint.startswith("def "):
             self._str_constraints.append(constraint)
             return
         elif isinstance(constraint, list):
@@ -150,6 +151,8 @@ class Problem:
         if not isinstance(constraint, Constraint):
             if callable(constraint):
                 constraint = FunctionConstraint(constraint)
+            elif isinstance(constraint, str):
+                constraint = CompilableFunctionConstraint(constraint)
             else:
                 msg = "Constraints must be instances of subclasses " "of the Constraint class"
                 raise ValueError(msg)
@@ -190,7 +193,7 @@ class Problem:
             list of dictionaries mapping variables to values: All
             solutions for the problem
         """
-        domains, constraints, vconstraints = self._getArgs()
+        domains, constraints, vconstraints = self._getArgs(picklable=isinstance(self._solver, ParallelSolver))
         if not domains:
             return []
         return self._solver.getSolutions(domains, constraints, vconstraints)
@@ -244,12 +247,12 @@ class Problem:
             size_list,
         )
 
-    def _getArgs(self):
+    def _getArgs(self, picklable=False):
         domains = self._variables.copy()
         allvariables = domains.keys()
         constraints = []
         for constraint in self._str_constraints:
-            parsed = compile_restrictions([constraint], domains)
+            parsed = compile_restrictions([constraint], domains, picklable=picklable)
             for c, v, _ in parsed:
                 self.addConstraint(c, v)
         for constraint, variables in self._constraints:
