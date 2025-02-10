@@ -852,6 +852,7 @@ class ParallelSolver(Solver):
 
     Sorts the domains on size, creating jobs for each value in the domain with the most variables.
     Each leaf job is solved recursively.
+    Does not accept FunctionConstraints due to pickling, must be provided as string constraints.
 
     Examples:
         >>> result = [[('a', 1), ('b', 2)],
@@ -860,7 +861,7 @@ class ParallelSolver(Solver):
 
         >>> problem = Problem(ParallelSolver())
         >>> problem.addVariables(["a", "b"], [1, 2, 3])
-        >>> problem.addConstraint(lambda a, b: b > a, ["a", "b"])
+        >>> problem.addConstraint("b > a", ["a", "b"])
 
         >>> for solution in problem.getSolutions():
         ...     sorted(solution.items()) in result
