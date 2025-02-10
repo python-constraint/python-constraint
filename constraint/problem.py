@@ -4,7 +4,6 @@ import copy
 from operator import itemgetter
 from typing import Callable, Optional, Union
 from collections.abc import Sequence
-from types import CodeType
 
 from constraint.constraints import Constraint, FunctionConstraint, CompilableFunctionConstraint
 from constraint.domain import Domain

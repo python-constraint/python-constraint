@@ -809,7 +809,7 @@ def is_valid(assignment: dict[Hashable, any], constraints_lookup: list[tuple[Con
     )
 
 def compile_to_function(constraint: CompilableFunctionConstraint) -> FunctionConstraint:
-    """Compile a CompilableFunctionConstraint to a function, wrapped by a FunctionConstraint"""
+    """Compile a CompilableFunctionConstraint to a function, wrapped by a FunctionConstraint."""
     func_string = constraint._func
     code_object = compile(func_string, "<string>", "exec")
     func = FunctionType(code_object.co_consts[0], globals())
@@ -884,7 +884,6 @@ def sequential_optimized_backtrack(assignment: dict[Hashable, any], unassigned_v
 
 def parallel_worker(args: tuple[dict[Hashable, Domain], dict[Hashable, list[tuple[Constraint, Hashable]]], Hashable, any, list[Hashable]]) -> list[dict[Hashable, any]]:    # noqa E501
     """Worker function for parallel execution on first variable."""
-
     domains, constraint_lookup, first_var, first_value, remaining_vars = args
     local_assignment = {first_var: first_value}
 

@@ -261,12 +261,10 @@ def parse_restrictions(
 def compile_restrictions(
     restrictions: list, tune_params: dict, monolithic=False, try_to_constraint=True, picklable=False
 ) -> list[tuple[Union[str, Constraint, FunctionType], list[str], Union[str, None]]]:
-    """
-    Parses restrictions from a list of strings into a list of strings, Functions, or Constraints (if `try_to_constraint`) and parameters used and source, or a single Function if monolithic is true.
+    """Parses restrictions from a list of strings into a list of strings, Functions, or Constraints (if `try_to_constraint`) and parameters used and source, or a single Function if monolithic is true.
 
     picklable (bool): whether to keep constraints such that they can be pickled for parallel solvers. Defaults to False.    
     """ # noqa: E501
-
     # filter the restrictions to get only the strings
     restrictions_str, restrictions_ignore = [], []
     for r in restrictions:

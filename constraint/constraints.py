@@ -1,7 +1,6 @@
 """Module containing the code for constraint definitions."""
 
 from constraint.domain import Unassigned
-from types import CodeType
 from typing import Callable, Union, Optional
 from collections.abc import Sequence
 
@@ -191,11 +190,11 @@ class FunctionConstraint(Constraint):
 class CompilableFunctionConstraint(Constraint):
     """Wrapper function for constraints that must be compiled into a FunctionConstraint later on."""
 
-    def __init__(self, func: str, assigned: bool = True):
+    def __init__(self, func: str, assigned: bool = True):     # noqa: D102, D107
         self._func = func
         self._assigned = assigned
 
-    def __call__(self, variables, domains, assignments, forwardcheck=False, _unassigned=Unassigned):
+    def __call__(self, variables, domains, assignments, forwardcheck=False, _unassigned=Unassigned):   # noqa: D102
         raise NotImplementedError("CompilableFunctionConstraint can not be called directly")
 
 
