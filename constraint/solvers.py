@@ -15,6 +15,7 @@ from collections.abc import Hashable
 
 # for version 6
 from concurrent.futures import ProcessPoolExecutor
+import cython
 
 
 def getArcs(domains: dict, constraints: list[tuple]) -> dict:
@@ -816,9 +817,8 @@ def compile_to_function(constraint: CompilableFunctionConstraint) -> FunctionCon
     func = FunctionType(code_object.co_consts[0], globals())
     return FunctionConstraint(func)
     
-def sequential_backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable], domains: dict[Hashable, Domain], constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:     # noqa E501
+def sequential_recursive_backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable], domains: dict[Hashable, Domain], constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:     # noqa E501
     """Sequential recursive backtracking function for subproblems."""
-    # TODO check if using the OptimizedBacktracking approach is more efficient
     if not unassigned_vars:
         return [assignment.copy()]
 
@@ -829,12 +829,64 @@ def sequential_backtrack(assignment: dict[Hashable, any], unassigned_vars: list[
     for value in domains[var]:
         assignment[var] = value
         if is_valid(assignment, constraint_lookup[var], domains):
-            solutions.extend(sequential_backtrack(assignment, remaining_vars, domains, constraint_lookup))
+            solutions.extend(sequential_recursive_backtrack(assignment, remaining_vars, domains, constraint_lookup))
         del assignment[var]
     return solutions
 
+def sequential_optimized_backtrack(assignment: dict[Hashable, any], unassigned_vars: list[Hashable], domains: dict[Hashable, Domain], constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:     # noqa E501
+    """Sequential optimized backtracking (as in OptimizedBacktrackingSolver) function for subproblems."""
+    # Does not do forwardcheck for simplicity
+
+    # version 0 (currently implemented in main)
+    assignments = assignment
+    sorted_variables = unassigned_vars
+    queue: list[tuple] = []
+    solutions: list[dict] = list()
+
+    while True:
+        # Mix the Degree and Minimum Remaing Values (MRV) heuristics
+        for variable in sorted_variables:
+            if variable not in assignments:
+                # Found unassigned variable
+                values = domains[variable][:]
+                break
+        else:
+            # No unassigned variables. We've got a solution. Go back
+            # to last variable, if there's one.
+            solutions.append(assignments.copy())
+            if not queue:
+                return solutions
+            variable, values = queue.pop()
+
+        while True:
+            # We have a variable. Do we have any values left?
+            if not values:
+                # No. Go back to last variable, if there's one.
+                del assignments[variable]
+                while queue:
+                    variable, values = queue.pop()
+                    if values:
+                        break
+                    del assignments[variable]
+                else:
+                    return solutions
+
+            # Got a value. Check it.
+            assignments[variable] = values.pop()
+            for constraint, variables in constraint_lookup[variable]:
+                if not constraint(variables, domains, assignments, None):
+                    # Value is not good.
+                    break
+            else:
+                break
+
+        # Push state before looking for next variable.
+        queue.append((variable, values))
+
+
 def parallel_worker(args: tuple[dict[Hashable, Domain], dict[Hashable, list[tuple[Constraint, Hashable]]], Hashable, any, list[Hashable]]) -> list[dict[Hashable, any]]:    # noqa E501
     """Worker function for parallel execution on first variable."""
+
     domains, constraint_lookup, first_var, first_value, remaining_vars = args
     local_assignment = {first_var: first_value}
 
@@ -844,7 +896,7 @@ def parallel_worker(args: tuple[dict[Hashable, Domain], dict[Hashable, list[tupl
 
     # continue solving sequentially on this process
     if is_valid(local_assignment, constraint_lookup[first_var], domains):
-        return sequential_backtrack(local_assignment, remaining_vars, domains, constraint_lookup)
+        return sequential_optimized_backtrack(local_assignment, remaining_vars, domains, constraint_lookup)
     return []
 
 class ParallelSolver(Solver):
