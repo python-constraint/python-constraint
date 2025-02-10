@@ -260,9 +260,13 @@ def parse_restrictions(
     return parsed_restrictions
 
 def compile_restrictions(
-    restrictions: list, tune_params: dict, monolithic=False, try_to_constraint=True
+    restrictions: list, tune_params: dict, monolithic=False, try_to_constraint=True, picklable=False
 ) -> list[tuple[Union[str, Constraint, FunctionType], list[str], Union[str, None]]]:
-    """Parses restrictions from a list of strings into a list of strings, Functions, or Constraints (if `try_to_constraint`) and parameters used and source, or a single Function if monolithic is true.""" # noqa: E501
+    """
+    Parses restrictions from a list of strings into a list of strings, Functions, or Constraints (if `try_to_constraint`) and parameters used and source, or a single Function if monolithic is true.
+
+    picklable (bool): whether to keep constraints such that they can be pickled for parallel solvers. Defaults to False.    
+    """ # noqa: E501
 
     # deepcopy to avoid pickling issues
     restrictions = deepcopy(restrictions)
@@ -285,9 +289,12 @@ def compile_restrictions(
     for restriction, params_used in parsed_restrictions:
         if isinstance(restriction, str):
             # if it's a string, parse it to a function
-            code_object = compile(restriction, "<string>", "exec")
-            func = FunctionType(code_object.co_consts[0], globals())
-            compiled_restrictions.append((func, params_used, restriction))
+            if picklable:
+                compiled_restrictions.append((restriction, params_used, restriction))
+            else:
+                code_object = compile(restriction, "<string>", "exec")
+                func = FunctionType(code_object.co_consts[0], globals())
+                compiled_restrictions.append((func, params_used, restriction))
         elif isinstance(restriction, Constraint):
             # otherwise it already is a Constraint, pass it directly
             compiled_restrictions.append((restriction, params_used, None))
