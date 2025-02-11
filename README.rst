@@ -12,6 +12,11 @@ python-constraint
 | For an overview of recent changes, visit the `Changelog <https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md>`_.
 | The complete documentation can be found `here <http://python-constraint.github.io/python-constraint/>`_.
 
+| New: writing constraints in the new string format is preferable over functions and lambdas. 
+| These strings, even as compound statements, are automatically parsed to faster built-in constraints, are more concise, and do not require constraint solving familiarity by the user to be efficient.
+| For example, :code:`problem.addConstraint(["50 <= x * y < 100"])` is parsed to :code:`[MinProdConstraint(50, ["x", "y"]), MaxProdConstraint(100, ["x", "y"])]`. 
+| This feature is in beta and subject to possible change, please provide feedback.
+
 .. contents::
     :local:
     :depth: 1
@@ -40,8 +45,7 @@ This interactive Python session demonstrates basic operations:
      {'a': 2, 'b': 6}, {'a': 2, 'b': 5}, {'a': 2, 'b': 4},
      {'a': 1, 'b': 6}, {'a': 1, 'b': 5}, {'a': 1, 'b': 4}]
 
-    >>> problem.addConstraint(lambda a, b: a*2 == b,
-                              ("a", "b"))
+    >>> problem.addConstraint("a*2 == b") # string constraints are preferable over the black-box problem.addConstraint(lambda a, b: a*2 == b, ("a", "b"))
     >>> problem.getSolutions()
     [{'a': 3, 'b': 6}, {'a': 2, 'b': 4}]
 
@@ -114,6 +118,7 @@ The following solvers are available:
 - Optimized backtracking solver
 - Recursive backtracking solver
 - Minimum conflicts solver
+- Parallel solver
 
 .. role:: python(code)
    :language: python
@@ -168,8 +173,6 @@ For an overview of recent changes, visit the `Changelog <https://github.com/pyth
 
 Planned development:
 
-- Add a string parser for constraints
-- Add parallel-capable solver
 - Add `benchmarking tests <https://pypi.org/project/pytest-benchmark/>`_ automated with `GH actions <https://github.com/benchmark-action/github-action-benchmark>`_
 - Versioned documentation
 

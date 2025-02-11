@@ -186,6 +186,16 @@ class FunctionConstraint(Constraint):
                 not forwardcheck or missing != 1 or self.forwardCheck(variables, domains, assignments)
             )
         return self._func(*parms)
+    
+class CompilableFunctionConstraint(Constraint):
+    """Wrapper function for picklable string constraints that must be compiled into a FunctionConstraint later on."""
+
+    def __init__(self, func: str, assigned: bool = True):     # noqa: D102, D107
+        self._func = func
+        self._assigned = assigned
+
+    def __call__(self, variables, domains, assignments, forwardcheck=False, _unassigned=Unassigned):   # noqa: D102
+        raise NotImplementedError("CompilableFunctionConstraint can not be called directly")
 
 
 class AllDifferentConstraint(Constraint):

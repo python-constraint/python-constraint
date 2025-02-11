@@ -2,13 +2,21 @@
 
 ## Python Constraint
 
-All notable changes to this code base will be documented in this file, for every released major and minor version.
+All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
+
+### Version 2.1.0
+
+- Released: TBD
+- Issues / Enhancements:
+  - Implemented a new string format for constraints, that is automatically parsed to constraint types (currently in beta, please report issues)
+  - Implemented a new `ParallelSolver` with both Thread and Process mode (currently experimental)
+  - Added Python 3.13 and experimental 3.14 support
 
 ### Version 2.0.0
 
 - Released: 2025-01-29
 - Maintainer: Floris-Jan Willemsen <fjwillemsen97@gmail.com>
-- Issues/Enhancements:
+- Issues / Enhancements:
   - Cythonized the package
   - Added the `OptimizedBacktracking` solver based on [issue #62](https://github.com/python-constraint/python-constraint/issues/62)
   - Added type-hints to improve Cythonization
@@ -30,7 +38,7 @@ All notable changes to this code base will be documented in this file, for every
 ### Version 1.4.0
 
 - Released: 2018-11-05
-- Issues/Enhancements:
+- Issues / Enhancements:
   - Add tests around `SomeNotInSetConstraint.`
   - Minor `README` fixes
   - Fix `dict.keys()` issue with Python 3 and add some unit tests
@@ -39,14 +47,14 @@ All notable changes to this code base will be documented in this file, for every
 ### Version 1.3.1
 
 - Released: 2017-03-31
-- Issues/Enhancements:
+- Issues / Enhancements:
   - Better `README` rendering (using reStructuredText)
 
 ### Version 1.3
 
 - Released: 2017-03-31
 - Maintainer: Sébastien Celles <s.celles@gmail.com>
-- Issues/Enhancements:
+- Issues / Enhancements:
   - Original code forked from https://labix.org/python-constraint
   - Publish on Github
   - Python 2 / 3 support

@@ -10,7 +10,7 @@ packages = [
 ]
 include = [{ path = "constraint/*.so", format = "wheel" }]
 description = "python-constraint is a module for efficiently solving CSPs (Constraint Solving Problems) over finite domains."
-version = "2.0.3" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
+version = "2.1.0" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
 authors = [
     "Gustavo Niemeyer <gustavo@niemeyer.net>",
     "Sébastien Celles <s.celles@gmail.com>",
@@ -47,7 +47,7 @@ script = "cythonize_build.py"
 
 # ATTENTION: if anything is changed here, run `poetry update`
 [tool.poetry.dependencies]
-python = ">=3.9,<3.14" # when changing the Python versions, also change the test versions in the Noxfile and GitHub Actions
+python = ">=3.9,<3.15" # when changing the Python versions, also change the test versions in the Noxfile and GitHub Actions
 [tool.poetry.group.dev.dependencies]
 Cython = "^3.0.2"
 
