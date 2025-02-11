@@ -188,7 +188,7 @@ class FunctionConstraint(Constraint):
         return self._func(*parms)
     
 class CompilableFunctionConstraint(Constraint):
-    """Wrapper function for constraints that must be compiled into a FunctionConstraint later on."""
+    """Wrapper function for picklable string constraints that must be compiled into a FunctionConstraint later on."""
 
     def __init__(self, func: str, assigned: bool = True):     # noqa: D102, D107
         self._func = func

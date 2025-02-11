@@ -3,28 +3,28 @@
 import copy
 from warnings import warn
 from operator import itemgetter
-from typing import Callable, Optional, Union
+from typing import Callable, Optional, Union, Hashable
 from collections.abc import Sequence
 
 from constraint.constraints import Constraint, FunctionConstraint, CompilableFunctionConstraint
 from constraint.domain import Domain
-from constraint.solvers import OptimizedBacktrackingSolver, ParallelSolver
+from constraint.solvers import Solver, OptimizedBacktrackingSolver, ParallelSolver
 from constraint.parser import compile_restrictions
 
 
 class Problem:
     """Class used to define a problem and retrieve solutions."""
 
-    def __init__(self, solver=None):
+    def __init__(self, solver: Solver=None):
         """Initialization method.
 
         Args:
             solver (instance of a :py:class:`Solver`): Problem solver (default :py:class:`OptimizedBacktrackingSolver`)
         """
         self._solver = solver or OptimizedBacktrackingSolver()
-        self._constraints = []
-        self._str_constraints = []
-        self._variables = {}
+        self._constraints: list[tuple[Constraint, any]] = []
+        self._str_constraints: list[str] = []
+        self._variables: dict[Hashable, Domain] = {}
 
         # warn for experimental parallel solver
         if isinstance(self._solver, ParallelSolver):
@@ -72,7 +72,7 @@ class Problem:
         """
         return self._solver
 
-    def addVariable(self, variable, domain):
+    def addVariable(self, variable: Hashable, domain):
         """Add a variable to the problem.
 
         Example:
@@ -174,8 +174,7 @@ class Problem:
             {'a': 42}
 
         Returns:
-            dictionary mapping variables to values: Solution for the
-            problem
+            dictionary mapping variables to values: Solution for the problem
         """
         domains, constraints, vconstraints = self._getArgs(picklable=self._solver.requires_pickling)
         if not domains:
@@ -194,8 +193,7 @@ class Problem:
             [{'a': 42}]
 
         Returns:
-            list of dictionaries mapping variables to values: All
-            solutions for the problem
+            list of dictionaries mapping variables to values: All solutions for the problem
         """
         domains, constraints, vconstraints = self._getArgs(picklable=self._solver.requires_pickling)
         if not domains:
