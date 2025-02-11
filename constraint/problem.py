@@ -3,8 +3,8 @@
 import copy
 from warnings import warn
 from operator import itemgetter
-from typing import Callable, Optional, Union, Hashable
-from collections.abc import Sequence
+from typing import Callable, Optional, Union
+from collections.abc import Sequence, Hashable
 
 from constraint.constraints import Constraint, FunctionConstraint, CompilableFunctionConstraint
 from constraint.domain import Domain

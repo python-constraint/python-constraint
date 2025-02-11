@@ -235,9 +235,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
     return parsed_restrictions
 
-def compile_restrictions(
-    restrictions: list[Union[str, any]], tune_params: dict, picklable=False
-) -> list[tuple[Union[str, Constraint, FunctionType], list[str], Union[str, None]]]:
+def compile_restrictions(restrictions: list[str], tune_params: dict, picklable=False) -> list[tuple[Union[str, Constraint, FunctionType], list[str], Union[str, None]]]:    # noqa: E501
     """Parses restrictions from a list of strings into a list of strings, functions, or Constraints (if `try_to_constraint`) and parameters used and source.
 
     Args:
@@ -248,17 +246,8 @@ def compile_restrictions(
     Returns:
         list of tuples with restrictions, parameters used, and source if applicable. Returned restrictions are strings, functions, or Constraints depending on the options provided.
     """ # noqa: E501
-    # filter the restrictions to get only the strings
-    restrictions_str, restrictions_ignore = [], []
-    for r in restrictions:
-        (restrictions_str if isinstance(r, str) else restrictions_ignore).append(r)
-    if len(restrictions_str) == 0:
-        return restrictions_ignore
-
-    # parse the strings
-    parsed_restrictions = parse_restrictions(restrictions_str, tune_params)
-
     # compile the parsed restrictions into a function
+    parsed_restrictions = parse_restrictions(restrictions, tune_params)
     compiled_restrictions: list[tuple] = list()
     for restriction, params_used in parsed_restrictions:
         if isinstance(restriction, str):
@@ -276,15 +265,4 @@ def compile_restrictions(
             raise ValueError(f"Restriction {restriction} is neither a string or Constraint {type(restriction)}")
 
     # return the restrictions and used parameters
-    if len(restrictions_ignore) == 0:
-        return compiled_restrictions
-
-    # use the required parameters or add an empty tuple for unknown parameters of ignored restrictions
-    noncompiled_restrictions = []
-    for r in restrictions_ignore:
-        if isinstance(r, tuple) and len(r) == 2 and isinstance(r[1], (list, tuple)):
-            restriction, params_used = r
-            noncompiled_restrictions.append((restriction, params_used, restriction))
-        else:
-            noncompiled_restrictions.append((r, [], r))
-    return noncompiled_restrictions + compiled_restrictions
+    return compiled_restrictions
