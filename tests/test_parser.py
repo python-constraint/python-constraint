@@ -58,6 +58,7 @@ def test_parse_restrictions():
 def test_compile_restrictions():
     tune_params = {"x": [50, 100], "y": [0, 1]}
     restrictions = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100"]
+    expected_constraint_types = [callable, callable, MinProdConstraint, MaxProdConstraint]
 
     compiled = compile_restrictions(restrictions, tune_params)
     for r, vals, r_str in compiled:
@@ -67,3 +68,11 @@ def test_compile_restrictions():
             assert r_str is None
         elif callable(r):
             assert isinstance(r_str, str)
+
+    # check whether the expected types match (may have to be adjusted to be order independent in future)
+    for i, (r, _, _) in enumerate(compiled):
+        expected = expected_constraint_types[i]
+        if callable(expected):
+            assert callable(r)
+        else:
+            assert isinstance(r, expected)
