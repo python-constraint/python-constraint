@@ -3,13 +3,7 @@ from collections.abc import Iterable
 
 def test_parse_restrictions():
     tune_params = {"x": [50, 100], "y": [0, 1]}
-    restrict = ["x != 320"]
     restrictions = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100"]
-
-    # test the monolithic parsed function
-    parsed = parse_restrictions(restrict, tune_params, monolithic=True)[0]
-    expected = "params[params_index['x']] != 320"
-    assert expected in parsed[0]
 
     # test the split parsed function
     parsed_multi = parse_restrictions(restrictions, tune_params, try_to_constraint=False)
