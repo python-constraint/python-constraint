@@ -249,7 +249,7 @@ class Problem:
     def _getArgs(self, picklable=False):
         domains = self._variables.copy()
         allvariables = domains.keys()
-        constraints = []
+        constraints: list[tuple[Constraint, list]] = []
 
         # parse string constraints
         for constraint in self._str_constraints:
@@ -265,7 +265,7 @@ class Problem:
 
         # check if there are any precompiled FunctionConstraints when there shouldn't be
         if picklable:
-            assert not any(isinstance(c, FunctionConstraint) for c in constraints), f"You have used FunctionConstraints with ParallelSolver(process_mode=True). Please use string constraints instead (see https://python-constraint.github.io/python-constraint/reference.html#constraint.ParallelSolver docs as to why)"  # noqa E501
+            assert not any(isinstance(c, FunctionConstraint) for c, _ in constraints), f"You have used FunctionConstraints with ParallelSolver(process_mode=True). Please use string constraints instead (see https://python-constraint.github.io/python-constraint/reference.html#constraint.ParallelSolver docs as to why)"  # noqa E501
         
         vconstraints = {}
         for variable in domains:
