@@ -131,9 +131,8 @@ class Problem:
         Example:
             >>> problem = Problem()
             >>> problem.addVariables(["a", "b"], [1, 2, 3])
-            >>> problem.addConstraint(MinSumConstraint(2), ["a", "b"])
             >>> problem.addConstraint(lambda a, b: b == a+1, ["a", "b"])
-            >>> problem.addConstraint("b == a+1")   # experimental string format, automatically parsed, preferable over callables
+            >>> problem.addConstraint("b == a+1 and a+b >= 2")   # experimental string format, automatically parsed, preferable over callables
             >>> solutions = problem.getSolutions()
             >>>
 
