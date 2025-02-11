@@ -1,4 +1,4 @@
-from constraint import compile_restrictions, parse_restrictions, Constraint, FunctionConstraint, CompilableFunctionConstraint, MinProdConstraint, MaxProdConstraint
+from constraint import compile_to_constraints, parse_restrictions, Constraint, FunctionConstraint, CompilableFunctionConstraint, MinProdConstraint, MaxProdConstraint
 from collections.abc import Iterable
 
 def test_parse_restrictions():
@@ -35,12 +35,12 @@ def test_parse_restrictions():
     assert isinstance(parsed_constraint, MinProdConstraint)
     assert parsed_constraint._minprod == 31
 
-def test_compile_restrictions():
+def test_compile_to_constraints():
     tune_params = {"x": [50, 100], "y": [0, 1]}
     restrictions = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100"]
     expected_constraint_types = [FunctionConstraint, FunctionConstraint, MinProdConstraint, MaxProdConstraint]
 
-    compiled = compile_restrictions(restrictions, tune_params, picklable=False)
+    compiled = compile_to_constraints(restrictions, tune_params, picklable=False)
     for r, vals, r_str in compiled:
         assert isinstance(r, Constraint)
         assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)
@@ -57,7 +57,7 @@ def test_compile_restrictions():
         else:
             assert isinstance(r, expected)
 
-def test_compile_restrictions_picklable():
+def test_compile_to_constraints_picklable():
     tune_params = {"x": [50, 100], "y": [0, 1]}
     restrictions = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100"]
     expected_constraint_types = [
@@ -67,7 +67,7 @@ def test_compile_restrictions_picklable():
         MaxProdConstraint
     ]
 
-    compiled = compile_restrictions(restrictions, tune_params, picklable=True)
+    compiled = compile_to_constraints(restrictions, tune_params, picklable=True)
     for r, vals, r_str in compiled:
         assert isinstance(r, Constraint)
         assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)

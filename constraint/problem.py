@@ -9,7 +9,7 @@ from collections.abc import Sequence, Hashable
 from constraint.constraints import Constraint, FunctionConstraint, CompilableFunctionConstraint
 from constraint.domain import Domain
 from constraint.solvers import Solver, OptimizedBacktrackingSolver, ParallelSolver
-from constraint.parser import compile_restrictions
+from constraint.parser import compile_to_constraints
 
 
 class Problem:
@@ -259,7 +259,7 @@ class Problem:
         if len(self._str_constraints) > 0:
             warn("String constraints are a beta feature, please report issues experienced.")    # future: remove
             for constraint in self._str_constraints:
-                parsed = compile_restrictions([constraint], domains, picklable=picklable)
+                parsed = compile_to_constraints([constraint], domains, picklable=picklable)
                 for c, v, _ in parsed:
                     self.addConstraint(c, v)
 

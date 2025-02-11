@@ -21,7 +21,7 @@ from constraint.constraints import (
 )
 
 def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple[Union[Constraint, str], list[str]]]:
-    """Parses restrictions from a list of strings into compilable functions and constraints. Returns a list of tuples of (strings or constraints) and parameters."""   # noqa: E501
+    """Parses restrictions (constraints in string format) from a list of strings into compilable functions and constraints. Returns a list of tuples of (strings or constraints) and parameters."""   # noqa: E501
     # rewrite the restrictions so variables are singled out
     regex_match_variable = r"([a-zA-Z_$][a-zA-Z_$0-9]*)"
 
@@ -236,34 +236,34 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
     return parsed_restrictions
 
-def compile_restrictions(restrictions: list[str], tune_params: dict, picklable=False) -> list[tuple[Constraint, list[str], Union[str, None]]]:    # noqa: E501
-    """Parses restrictions from a list of strings into a list of Constraints, parameters used, and source if applicable.
+def compile_to_constraints(constraints: list[str], domains: dict, picklable=False) -> list[tuple[Constraint, list[str], Union[str, None]]]:    # noqa: E501
+    """Parses constraints in string format (referred to as restrictions) from a list of strings into a list of Constraints, parameters used, and source if applicable.
 
     Args:
-        restrictions (list[str]): list of constraints in string format to compile.
-        tune_params (dict): the domains to use.
+        constraints (list[str]): list of constraints in string format to compile.
+        domains (dict): the domains to use.
         picklable (bool, optional): whether to keep constraints such that they can be pickled for parallel solvers. Defaults to False.
 
     Returns:
         list of tuples with restrictions, parameters used (list[str]), and source (str) if applicable. Returned restrictions are strings, functions, or Constraints depending on the options provided.
     """ # noqa: E501
-    parsed_restrictions = parse_restrictions(restrictions, tune_params)
-    compiled_restrictions: list[tuple[Constraint, list[str], Union[str, None]]] = list()
+    parsed_restrictions = parse_restrictions(constraints, domains)
+    compiled_constraints: list[tuple[Constraint, list[str], Union[str, None]]] = list()
     for restriction, params_used in parsed_restrictions:
         if isinstance(restriction, str):
-            # if it's a string, wrap it in a (compilable) function constraint
+            # if it's a string, wrap it in a (compilable or compiled) function constraint
             if picklable:
                 constraint = CompilableFunctionConstraint(restriction)
             else:
                 code_object = compile(restriction, "<string>", "exec")
                 func = FunctionType(code_object.co_consts[0], globals())
                 constraint = FunctionConstraint(func)
-            compiled_restrictions.append((constraint, params_used, restriction))
+            compiled_constraints.append((constraint, params_used, restriction))
         elif isinstance(restriction, Constraint):
             # otherwise it already is a Constraint, pass it directly
-            compiled_restrictions.append((restriction, params_used, None))
+            compiled_constraints.append((restriction, params_used, None))
         else:
             raise ValueError(f"Restriction {restriction} is neither a string or Constraint {type(restriction)}")
 
     # return the restrictions and used parameters
-    return compiled_restrictions
+    return compiled_constraints
