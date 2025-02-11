@@ -11,8 +11,9 @@ from constraint.constraints import (
     MaxSumConstraint,
     MinProdConstraint,
     MinSumConstraint,
+    FunctionConstraint,
+    CompilableFunctionConstraint,
     # TODO implement parsing for these constraints:
-    # FunctionConstraint,
     # InSetConstraint,
     # NotInSetConstraint,
     # SomeInSetConstraint,
@@ -235,8 +236,8 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
     return parsed_restrictions
 
-def compile_restrictions(restrictions: list[str], tune_params: dict, picklable=False) -> list[tuple[Union[str, Constraint, FunctionType], list[str], Union[str, None]]]:    # noqa: E501
-    """Parses restrictions from a list of strings into a list of strings, functions, or Constraints (if `try_to_constraint`) and parameters used and source.
+def compile_restrictions(restrictions: list[str], tune_params: dict, picklable=False) -> list[tuple[Constraint, list[str], Union[str, None]]]:    # noqa: E501
+    """Parses restrictions from a list of strings into a list of Constraints, parameters used, and source if applicable.
 
     Args:
         restrictions (list[str]): list of constraints in string format to compile.
@@ -244,20 +245,20 @@ def compile_restrictions(restrictions: list[str], tune_params: dict, picklable=F
         picklable (bool, optional): whether to keep constraints such that they can be pickled for parallel solvers. Defaults to False.
 
     Returns:
-        list of tuples with restrictions, parameters used, and source if applicable. Returned restrictions are strings, functions, or Constraints depending on the options provided.
+        list of tuples with restrictions, parameters used (list[str]), and source (str) if applicable. Returned restrictions are strings, functions, or Constraints depending on the options provided.
     """ # noqa: E501
-    # compile the parsed restrictions into a function
     parsed_restrictions = parse_restrictions(restrictions, tune_params)
-    compiled_restrictions: list[tuple] = list()
+    compiled_restrictions: list[tuple[Constraint, list[str], Union[str, None]]] = list()
     for restriction, params_used in parsed_restrictions:
         if isinstance(restriction, str):
-            # if it's a string, parse it to a function
+            # if it's a string, wrap it in a (compilable) function constraint
             if picklable:
-                compiled_restrictions.append((restriction, params_used, restriction))
+                constraint = CompilableFunctionConstraint(restriction)
             else:
                 code_object = compile(restriction, "<string>", "exec")
                 func = FunctionType(code_object.co_consts[0], globals())
-                compiled_restrictions.append((func, params_used, restriction))
+                constraint = FunctionConstraint(func)
+            compiled_restrictions.append((constraint, params_used, restriction))
         elif isinstance(restriction, Constraint):
             # otherwise it already is a Constraint, pass it directly
             compiled_restrictions.append((restriction, params_used, None))

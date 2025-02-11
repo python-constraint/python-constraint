@@ -143,7 +143,7 @@ class Problem:
                 on the constraint type the order may be important.
         """ # noqa: E501
         # compile string constraints (variables argument ignored as it is inferred from the string and may be reordered)
-        if isinstance(constraint, str) and not constraint.startswith("def "):
+        if isinstance(constraint, str):
             self._str_constraints.append(constraint)
             return
         elif isinstance(constraint, list):
