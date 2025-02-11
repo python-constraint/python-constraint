@@ -154,6 +154,7 @@ class Problem:
         # add regular constraints
         if not isinstance(constraint, Constraint):
             if callable(constraint):
+                # future warn("A function or lambda has been used for a constraint, consider using string constraints")
                 constraint = FunctionConstraint(constraint)
             elif isinstance(constraint, str):
                 constraint = CompilableFunctionConstraint(constraint)

@@ -1,4 +1,4 @@
-from constraint import compile_restrictions, parse_restrictions, Constraint, MinProdConstraint, MaxProdConstraint
+from constraint import compile_restrictions, parse_restrictions, Constraint, FunctionConstraint, CompilableFunctionConstraint, MinProdConstraint, MaxProdConstraint
 from collections.abc import Iterable
 
 def test_parse_restrictions():
@@ -38,16 +38,43 @@ def test_parse_restrictions():
 def test_compile_restrictions():
     tune_params = {"x": [50, 100], "y": [0, 1]}
     restrictions = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100"]
-    expected_constraint_types = [callable, callable, MinProdConstraint, MaxProdConstraint]
+    expected_constraint_types = [FunctionConstraint, FunctionConstraint, MinProdConstraint, MaxProdConstraint]
 
-    compiled = compile_restrictions(restrictions, tune_params)
+    compiled = compile_restrictions(restrictions, tune_params, picklable=False)
     for r, vals, r_str in compiled:
-        assert isinstance(r, Constraint) or callable(r)
+        assert isinstance(r, Constraint)
         assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)
-        if isinstance(r, Constraint):
-            assert r_str is None
-        elif callable(r):
+        if isinstance(r, (FunctionConstraint, CompilableFunctionConstraint)):
             assert isinstance(r_str, str)
+        else:
+            assert r_str is None
+
+    # check whether the expected types match (may have to be adjusted to be order independent in future)
+    for i, (r, _, _) in enumerate(compiled):
+        expected = expected_constraint_types[i]
+        if callable(expected):
+            assert callable(r)
+        else:
+            assert isinstance(r, expected)
+
+def test_compile_restrictions_picklable():
+    tune_params = {"x": [50, 100], "y": [0, 1]}
+    restrictions = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100"]
+    expected_constraint_types = [
+        CompilableFunctionConstraint, 
+        CompilableFunctionConstraint, 
+        MinProdConstraint, 
+        MaxProdConstraint
+    ]
+
+    compiled = compile_restrictions(restrictions, tune_params, picklable=True)
+    for r, vals, r_str in compiled:
+        assert isinstance(r, Constraint)
+        assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)
+        if isinstance(r, (FunctionConstraint, CompilableFunctionConstraint)):
+            assert isinstance(r_str, str)
+        else:
+            assert r_str is None
 
     # check whether the expected types match (may have to be adjusted to be order independent in future)
     for i, (r, _, _) in enumerate(compiled):
