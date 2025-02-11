@@ -602,7 +602,91 @@ class MinConflictsSolver(Solver):
             if not conflicted:
                 return assignments
         return None
+    
 
+class ParallelSolver(Solver):
+    """Problem solver that executes all-solution solve in parallel (ProcessPool or ThreadPool mode).
+
+        Sorts the domains on size, creating jobs for each value in the domain with the most variables.
+        Each leaf job is solved locally with either optimized backtracking or recursion.
+        Whether this is actually faster than non-parallel solving depends on your problem, and hardware and software environment. 
+
+        Uses ThreadPool by default. Instantiate with process_mode=True to use ProcessPool. 
+        In ProcessPool mode, the jobs do not share memory.
+        In ProcessPool mode, precompiled FunctionConstraints are not allowed due to pickling, use string constraints instead.
+
+    Examples:
+        >>> result = [[('a', 1), ('b', 2)],
+        ...           [('a', 1), ('b', 3)],
+        ...           [('a', 2), ('b', 3)]]
+
+        >>> problem = Problem(ParallelSolver())
+        >>> problem.addVariables(["a", "b"], [1, 2, 3])
+        >>> problem.addConstraint("b > a", ["a", "b"])
+
+        >>> for solution in problem.getSolutions():
+        ...     sorted(solution.items()) in result
+        True
+        True
+        True
+
+        >>> problem.getSolution()
+        Traceback (most recent call last):
+        ...
+        NotImplementedError: ParallelSolver only provides all solutions
+
+        >>> problem.getSolutionIter()
+        Traceback (most recent call last):
+        ...
+        NotImplementedError: ParallelSolver doesn't provide iteration
+    """     # noqa E501
+
+    def __init__(self, process_mode=False):
+        """Initialization method. Set `process_mode` to True for using ProcessPool, otherwise uses ThreadPool."""
+        super().__init__()
+        self._process_mode = process_mode
+        self.requires_pickling = process_mode
+
+    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):
+        """Return one solution for the given problem.
+
+        Args:
+            domains (dict): Dictionary mapping variables to their domains
+            constraints (list): List of pairs of (constraint, variables)
+            vconstraints (dict): Dictionary mapping variables to a list
+                of constraints affecting the given variables.
+        """
+        msg = f"{self.__class__.__name__} only provides all solutions"
+        raise NotImplementedError(msg)
+
+    def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:  # noqa: D102, E501
+        """Parallelized all-solutions finder using ProcessPoolExecutor for work-stealing."""
+        # Precompute constraints lookup per variable
+        constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains}  # noqa: E501
+
+        # Sort variables by domain size (heuristic)
+        sorted_vars: list[Hashable] = sorted(domains.keys(), key=lambda v: len(domains[v]))
+
+        # Split parallel and sequential parts
+        first_var = sorted_vars[0]
+        remaining_vars = sorted_vars[1:]
+
+        # Create the parallel function arguments and solutions lists
+        args = ((self.requires_pickling, domains, constraint_lookup, first_var, val, remaining_vars.copy()) for val in domains[first_var])  # noqa: E501
+        solutions: list[dict[Hashable, any]] = []
+
+        # execute in parallel
+        parallel_pool = ProcessPoolExecutor if self._process_mode else ThreadPoolExecutor
+        with parallel_pool() as executor:
+            # results = map(parallel_worker, args)  # sequential
+            results = executor.map(parallel_worker, args, chunksize=1)   # parallel
+            for result in results:
+                solutions.extend(result)
+
+        return solutions
+    
+    def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
+        return self.getSolutionsList(domains, vconstraints)
 
 ### Helper functions for parallel solver
 
@@ -701,88 +785,4 @@ def parallel_worker(args: tuple[bool, dict[Hashable, Domain], dict[Hashable, lis
     if is_valid(local_assignment, constraint_lookup[first_var], domains):
         return sequential_optimized_backtrack(local_assignment, remaining_vars, domains, constraint_lookup)
     return []
-
-class ParallelSolver(Solver):
-    """Problem solver that executes all-solution solve in parallel (ProcessPool or ThreadPool mode).
-
-    Sorts the domains on size, creating jobs for each value in the domain with the most variables.
-    Each leaf job is solved locally with either optimized backtracking or recursion.
-    Whether this is actually faster than non-parallel solving depends on your problem, and hardware and software environment. 
-
-    Uses ThreadPool by default. Instantiate with process_mode=True to use ProcessPool. 
-    In ProcessPool mode, the jobs do not share memory.
-    In ProcessPool mode, precompiled FunctionConstraints are not allowed due to pickling, use string constraints instead.
-
-    Examples:
-        >>> result = [[('a', 1), ('b', 2)],
-        ...           [('a', 1), ('b', 3)],
-        ...           [('a', 2), ('b', 3)]]
-
-        >>> problem = Problem(ParallelSolver())
-        >>> problem.addVariables(["a", "b"], [1, 2, 3])
-        >>> problem.addConstraint("b > a", ["a", "b"])
-
-        >>> for solution in problem.getSolutions():
-        ...     sorted(solution.items()) in result
-        True
-        True
-        True
-
-        >>> problem.getSolution()
-        Traceback (most recent call last):
-        ...
-        NotImplementedError: ParallelSolver only provides all solutions
-
-        >>> problem.getSolutionIter()
-        Traceback (most recent call last):
-        ...
-        NotImplementedError: ParallelSolver doesn't provide iteration
-    """     # noqa E501
-
-    def __init__(self, process_mode=False):
-        """Initialization method. Set `process_mode` to True for using ProcessPool, otherwise uses ThreadPool."""
-        super().__init__()
-        self._process_mode = process_mode
-        self.requires_pickling = process_mode
-
-    def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):
-        """Return one solution for the given problem.
-
-        Args:
-            domains (dict): Dictionary mapping variables to their domains
-            constraints (list): List of pairs of (constraint, variables)
-            vconstraints (dict): Dictionary mapping variables to a list
-                of constraints affecting the given variables.
-        """
-        msg = f"{self.__class__.__name__} only provides all solutions"
-        raise NotImplementedError(msg)
-
-    def getSolutionsList(self, domains: dict[Hashable, Domain], vconstraints: dict[Hashable, list[tuple[Constraint, Hashable]]]) -> list[dict[Hashable, any]]:  # noqa: D102, E501
-        """Parallelized all-solutions finder using ProcessPoolExecutor for work-stealing."""
-        # Precompute constraints lookup per variable
-        constraint_lookup: dict[Hashable, list[tuple[Constraint, Hashable]]] = {var: vconstraints.get(var, []) for var in domains}  # noqa: E501
-
-        # Sort variables by domain size (heuristic)
-        sorted_vars: list[Hashable] = sorted(domains.keys(), key=lambda v: len(domains[v]))
-
-        # Split parallel and sequential parts
-        first_var = sorted_vars[0]
-        remaining_vars = sorted_vars[1:]
-
-        # Create the parallel function arguments and solutions lists
-        args = ((self.requires_pickling, domains, constraint_lookup, first_var, val, remaining_vars.copy()) for val in domains[first_var])  # noqa: E501
-        solutions: list[dict[Hashable, any]] = []
-
-        # execute in parallel
-        parallel_pool = ProcessPoolExecutor if self._process_mode else ThreadPoolExecutor
-        with parallel_pool() as executor:
-            # results = map(parallel_worker, args)  # sequential
-            results = executor.map(parallel_worker, args, chunksize=1)   # parallel
-            for result in results:
-                solutions.extend(result)
-
-        return solutions
-    
-    def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
-        return self.getSolutionsList(domains, vconstraints)
     
