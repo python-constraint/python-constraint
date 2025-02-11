@@ -258,7 +258,7 @@ class Problem:
 
         # parse string constraints
         if len(self._str_constraints) > 0:
-            warn("String constraints are a beta feature, please report issues experienced.")    # future: remove
+            # warn("String constraints are a beta feature, please report issues experienced.")    # future: remove
             for constraint in self._str_constraints:
                 parsed = compile_to_constraints([constraint], domains, picklable=picklable)
                 for c, v, _ in parsed:
