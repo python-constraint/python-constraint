@@ -10,7 +10,7 @@ packages = [
 ]
 include = [{ path = "constraint/*.so", format = "wheel" }]
 description = "python-constraint is a module for efficiently solving CSPs (Constraint Solving Problems) over finite domains."
-version = "2.0.2" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
+version = "2.0.3" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
 authors = [
     "Gustavo Niemeyer <gustavo@niemeyer.net>",
     "Sébastien Celles <s.celles@gmail.com>",
