@@ -13,7 +13,7 @@ from collections.abc import Hashable
 # from cython.cimports.libc.stdlib import boundscheck, wraparound, cdivision
 
 # for version 6
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 
 
 def getArcs(domains: dict, constraints: list[tuple]) -> dict:
@@ -77,6 +77,8 @@ def doArc8(arcs: dict, domains: dict, assignments: dict) -> bool:
 
 class Solver:
     """Abstract base class for solvers."""
+
+    requires_pickling = False
 
     def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):
         """Return one solution for the given problem.
@@ -882,14 +884,15 @@ def sequential_optimized_backtrack(assignment: dict[Hashable, any], unassigned_v
         queue.append((variable, values))
 
 
-def parallel_worker(args: tuple[dict[Hashable, Domain], dict[Hashable, list[tuple[Constraint, Hashable]]], Hashable, any, list[Hashable]]) -> list[dict[Hashable, any]]:    # noqa E501
+def parallel_worker(args: tuple[bool, dict[Hashable, Domain], dict[Hashable, list[tuple[Constraint, Hashable]]], Hashable, any, list[Hashable]]) -> list[dict[Hashable, any]]:    # noqa E501
     """Worker function for parallel execution on first variable."""
-    domains, constraint_lookup, first_var, first_value, remaining_vars = args
+    process_mode, domains, constraint_lookup, first_var, first_value, remaining_vars = args
     local_assignment = {first_var: first_value}
 
-    # if there are any CompilableFunctionConstraint, they must be compiled locally first
-    for var, constraints in constraint_lookup.items():
-        constraint_lookup[var] = [tuple([compile_to_function(constraint) if isinstance(constraint, CompilableFunctionConstraint) else constraint, vals]) for constraint, vals in constraints]        # noqa E501
+    if process_mode:
+        # if there are any CompilableFunctionConstraint, they must be compiled locally first
+        for var, constraints in constraint_lookup.items():
+            constraint_lookup[var] = [tuple([compile_to_function(constraint) if isinstance(constraint, CompilableFunctionConstraint) else constraint, vals]) for constraint, vals in constraints]        # noqa E501
 
     # continue solving sequentially on this process
     if is_valid(local_assignment, constraint_lookup[first_var], domains):
@@ -897,11 +900,15 @@ def parallel_worker(args: tuple[dict[Hashable, Domain], dict[Hashable, list[tupl
     return []
 
 class ParallelSolver(Solver):
-    """Problem solver that executes all-solution solve in parallel.
+    """Problem solver that executes all-solution solve in parallel (ProcessPool or ThreadPool mode).
 
     Sorts the domains on size, creating jobs for each value in the domain with the most variables.
-    Each leaf job is solved recursively.
-    Does not accept FunctionConstraints due to pickling, must be provided as string constraints.
+    Each leaf job is solved locally with either optimized backtracking or recursion.
+    Whether this is actually faster than non-parallel solving depends on your problem, and hardware and software environment. 
+
+    Uses ThreadPool by default. Instantiate with process_mode=True to use ProcessPool. 
+    In ProcessPool mode, the jobs do not share memory.
+    In ProcessPool mode, precompiled FunctionConstraints are not allowed due to pickling, use string constraints instead.
 
     Examples:
         >>> result = [[('a', 1), ('b', 2)],
@@ -927,11 +934,13 @@ class ParallelSolver(Solver):
         Traceback (most recent call last):
         ...
         NotImplementedError: ParallelSolver doesn't provide iteration
-    """
+    """     # noqa E501
 
-    def __init__(self):
-        """Initialization method."""
+    def __init__(self, process_mode=False):
+        """Initialization method. Set `process_mode` to True for using ProcessPool, otherwise uses ThreadPool."""
         super().__init__()
+        self._process_mode = process_mode
+        self.requires_pickling = process_mode
 
     def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):
         """Return one solution for the given problem.
@@ -959,11 +968,12 @@ class ParallelSolver(Solver):
         remaining_vars = sorted_vars[1:]
 
         # Create the parallel function arguments and solutions lists
-        args = ((domains, constraint_lookup, first_var, val, remaining_vars.copy()) for val in domains[first_var])
+        args = ((self.requires_pickling, domains, constraint_lookup, first_var, val, remaining_vars.copy()) for val in domains[first_var])  # noqa: E501
         solutions: list[dict[Hashable, any]] = []
 
         # execute in parallel
-        with ProcessPoolExecutor() as executor:
+        parallel_pool = ProcessPoolExecutor if self._process_mode else ThreadPoolExecutor
+        with parallel_pool() as executor:
             # results = map(parallel_worker, args)  # sequential
             results = executor.map(parallel_worker, args, chunksize=1)   # parallel
             for result in results:

@@ -7,7 +7,7 @@ from collections.abc import Sequence
 
 from constraint.constraints import Constraint, FunctionConstraint, CompilableFunctionConstraint
 from constraint.domain import Domain
-from constraint.solvers import OptimizedBacktrackingSolver, ParallelSolver
+from constraint.solvers import OptimizedBacktrackingSolver
 from constraint.parser import compile_restrictions
 
 
@@ -172,7 +172,7 @@ class Problem:
             dictionary mapping variables to values: Solution for the
             problem
         """
-        domains, constraints, vconstraints = self._getArgs()
+        domains, constraints, vconstraints = self._getArgs(picklable=self._solver.requires_pickling)
         if not domains:
             return None
         return self._solver.getSolution(domains, constraints, vconstraints)
@@ -192,7 +192,7 @@ class Problem:
             list of dictionaries mapping variables to values: All
             solutions for the problem
         """
-        domains, constraints, vconstraints = self._getArgs(picklable=isinstance(self._solver, ParallelSolver))
+        domains, constraints, vconstraints = self._getArgs(picklable=self._solver.requires_pickling)
         if not domains:
             return []
         return self._solver.getSolutions(domains, constraints, vconstraints)
@@ -213,7 +213,7 @@ class Problem:
                 ...
             StopIteration
         """
-        domains, constraints, vconstraints = self._getArgs()
+        domains, constraints, vconstraints = self._getArgs(picklable=self._solver.requires_pickling)
         if not domains:
             return iter(())
         return self._solver.getSolutionIter(domains, constraints, vconstraints)
