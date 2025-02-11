@@ -1,13 +1,14 @@
 """Module containing the code for problem definitions."""
 
 import copy
+from warnings import warn
 from operator import itemgetter
 from typing import Callable, Optional, Union
 from collections.abc import Sequence
 
 from constraint.constraints import Constraint, FunctionConstraint, CompilableFunctionConstraint
 from constraint.domain import Domain
-from constraint.solvers import OptimizedBacktrackingSolver
+from constraint.solvers import OptimizedBacktrackingSolver, ParallelSolver
 from constraint.parser import compile_restrictions
 
 
@@ -24,6 +25,10 @@ class Problem:
         self._constraints = []
         self._str_constraints = []
         self._variables = {}
+
+        # warn for experimental parallel solver
+        if isinstance(self._solver, ParallelSolver):
+            warn("ParallelSolver is currently experimental, and unlikely to be faster than OptimizedBacktrackingSolver. Please report any issues.")     # future: remove     # noqa E501
 
     def reset(self):
         """Reset the current problem definition.
@@ -252,10 +257,12 @@ class Problem:
         constraints: list[tuple[Constraint, list]] = []
 
         # parse string constraints
-        for constraint in self._str_constraints:
-            parsed = compile_restrictions([constraint], domains, picklable=picklable)
-            for c, v, _ in parsed:
-                self.addConstraint(c, v)
+        if len(self._str_constraints) > 0:
+            warn("String constraints are a beta feature, please report issues experienced.")    # future: remove
+            for constraint in self._str_constraints:
+                parsed = compile_restrictions([constraint], domains, picklable=picklable)
+                for c, v, _ in parsed:
+                    self.addConstraint(c, v)
 
         # add regular constraints
         for constraint, variables in self._constraints:
