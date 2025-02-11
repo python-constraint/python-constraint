@@ -250,14 +250,23 @@ class Problem:
         domains = self._variables.copy()
         allvariables = domains.keys()
         constraints = []
+
+        # parse string constraints
         for constraint in self._str_constraints:
             parsed = compile_restrictions([constraint], domains, picklable=picklable)
             for c, v, _ in parsed:
                 self.addConstraint(c, v)
+
+        # add regular constraints
         for constraint, variables in self._constraints:
             if not variables:
                 variables = list(allvariables)
             constraints.append((constraint, variables))
+
+        # check if there are any precompiled FunctionConstraints when there shouldn't be
+        if picklable:
+            assert not any(isinstance(c, FunctionConstraint) for c in constraints), f"You have used FunctionConstraints with ParallelSolver(process_mode=True). Please use string constraints instead (see https://python-constraint.github.io/python-constraint/reference.html#constraint.ParallelSolver docs as to why)"  # noqa E501
+        
         vconstraints = {}
         for variable in domains:
             vconstraints[variable] = []
