@@ -131,13 +131,15 @@ class Problem:
         Example:
             >>> problem = Problem()
             >>> problem.addVariables(["a", "b"], [1, 2, 3])
+            >>> problem.addConstraint(MinSumConstraint(2), ["a", "b"])
             >>> problem.addConstraint(lambda a, b: b == a+1, ["a", "b"])
+            >>> problem.addConstraint("b == a+1")   # experimental string format, automatically parsed, preferable over callables
             >>> solutions = problem.getSolutions()
             >>>
 
         Args:
             constraint (instance of :py:class:`Constraint`, function to be wrapped by :py:class:`FunctionConstraint`, or string expression):
-                Constraint to be included in the problem
+                Constraint to be included in the problem. Can be either a Constraint, a callable (function or lambda), or Python-evaluable string expression that will be parsed automatically.
             variables (set or sequence of variables): :py:class:`Variables` affected
                 by the constraint (default to all variables). Depending
                 on the constraint type the order may be important.
