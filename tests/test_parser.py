@@ -41,7 +41,6 @@ def test_compile_to_constraints():
     expected_constraint_types = [FunctionConstraint, FunctionConstraint, MinProdConstraint, MaxProdConstraint]
 
     compiled = compile_to_constraints(constraints, domains, picklable=False)
-    raise ValueError(compiled)
     for r, vals, r_str in compiled:
         assert isinstance(r, Constraint)
         assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)
