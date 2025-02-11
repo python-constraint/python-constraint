@@ -6,8 +6,8 @@ All notable changes to this code base will be documented in this file, for every
 
 ### Version 2.1.0
 
-- Released: TBD
-- Issues / Enhancements:
+- Released: 2025-02-11
+- Issues / Enhancements (see [#91](https://github.com/python-constraint/python-constraint/pull/91) for more details):
   - Implemented a new string format for constraints, that is automatically parsed to constraint types (currently in beta, please report issues)
   - Implemented a new `ParallelSolver` with both Thread and Process mode (currently experimental)
   - Added Python 3.13 and experimental 3.14 support
