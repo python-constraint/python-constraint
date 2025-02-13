@@ -44,6 +44,8 @@ jobs:
                   output-file-path: .benchmarks/benchmark_${{ runner.os }}_3.13.json
                   external-data-json-path: ./cache/benchmark-data.json
                   fail-on-alert: true
+                  # GitHub API token to make a commit comment
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
                   comment-on-alert: true
                   comment-always: true
                   #   alert-comment-cc-users: '@fjwillemsen' mention a GitHub user in the comment
