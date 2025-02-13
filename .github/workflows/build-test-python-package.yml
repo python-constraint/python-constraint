@@ -31,6 +31,8 @@ jobs:
               with:
                   tool: "pytest"
                   output-file-path: .benchmarks/benchmark_${{ runner.os }}_3.13.json
+                  gh-pages-branch: main
+                  benchmark-data-dir-path: docs/benchmarks
             - name: Report to Coveralls
               uses: coverallsapp/github-action@v2
               with:
