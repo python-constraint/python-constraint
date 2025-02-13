@@ -8,7 +8,8 @@ from math import sqrt
 # reference times (using A4000 on DAS6)
 reference_microbenchmark_mean = [0.3784186691045761, 0.4737640768289566, 0.10726054509480794, 0.10744890073935191, 0.10979799057046573, 0.15360217044750848, 0.14483965436617532, 0.054416230569283165, 0.13835338006416956, 0.1371802551050981]    # noqa E501
 reference_results = {
-    "microhh": 1.1565620
+    "microhh": 1.1565620,
+    "dedispersion": 0.1171140,
 }
 # device properties (for A4000 on DAS6 using get_opencl_device_info.cpp)
 dev = {
@@ -123,6 +124,8 @@ performance_factor, mean_relative_std = get_performance_factor()
 
 
 def test_microhh(benchmark):
+    """Based on the MicroHH search space in the paper."""
+
     cta_padding = 0  # default argument
 
     # setup the tunable parameters
@@ -153,5 +156,36 @@ def test_microhh(benchmark):
         f"BLOCK_SIZE_Z * TILING_FACTOR_Z > {cta_padding}",
     ])
 
+    # run the benchmark and check for performance degradation
     benchmark(problem.getSolutions)
     assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["microhh"] * (performance_factor + mean_relative_std)
+
+
+def test_dedispersion(benchmark):
+    """Based on the Dedispersion search space in the paper."""
+
+    # setup the tunable parameters
+    problem = Problem()
+    problem.addVariable("block_size_x", [1, 2, 4, 8] + [16 * i for i in range(1, 3)])
+    problem.addVariable("block_size_y", [8 * i for i in range(4, 33)])
+    problem.addVariable("block_size_z", [1])
+    problem.addVariable("tile_size_x", [i for i in range(1, 5)])
+    problem.addVariable("tile_size_y", [i for i in range(1, 9)])
+    problem.addVariable("tile_stride_x", [0, 1])
+    problem.addVariable("tile_stride_y", [0, 1])
+    problem.addVariable("loop_unroll_factor_channel", [
+        0
+    ])  # + [i for i in range(1,nr_channels+1) if nr_channels % i == 0] #[i for i in range(nr_channels+1)]
+    # tune_params["loop_unroll_factor_x", [0] #[i for i in range(1,max(tune_params["tile_size_x"]))]
+    # tune_params["loop_unroll_factor_y", [0] #[i for i in range(1,max(tune_params["tile_size_y"]))]
+    # tune_params["blocks_per_sm", [i for i in range(5)]
+
+    # setup the restrictions
+    check_block_size = "32 <= block_size_x * block_size_y <= 1024"
+    check_tile_stride_x = "tile_size_x > 1 or tile_stride_x == 0"
+    check_tile_stride_y = "tile_size_y > 1 or tile_stride_y == 0"
+    problem.addConstraint([check_block_size, check_tile_stride_x, check_tile_stride_y])
+
+    # run the benchmark and check for performance degradation
+    benchmark(problem.getSolutions)
+    assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["dedispersion"] * (performance_factor + mean_relative_std)
