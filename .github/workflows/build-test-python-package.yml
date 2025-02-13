@@ -38,6 +38,7 @@ jobs:
                   tool: "pytest"
                   output-file-path: .benchmarks/benchmark_${{ runner.os }}_3.13.json
                   gh-pages-branch: main
+                  skip-fetch-gh-pages: true
                   benchmark-data-dir-path: docs/benchmarks
                   fail-on-alert: true
                   # GitHub API token to make a commit comment
