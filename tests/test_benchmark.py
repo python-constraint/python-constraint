@@ -1,11 +1,12 @@
-import numpy as np
+from random import random
 from time import perf_counter
 import pytest
 from constraint import Problem
+from math import sqrt
 
 
 # reference times (using A4000 on DAS6)
-reference_microbenchmark_mean = np.array([0.03569697, 0.04690351, 0.1586863, 0.13609187, 0.13637274, 0.01238605, 0.01072952, 0.07484022, 0.01054054, 0.01030138])    # noqa E501
+reference_microbenchmark_mean = [0.03569697, 0.04690351, 0.1586863, 0.13609187, 0.13637274, 0.01238605, 0.01072952, 0.07484022, 0.01054054, 0.01030138]    # noqa E501
 reference_results = {
     "microhh": 1.1565620
 }
@@ -22,19 +23,22 @@ dev = {
 
 @pytest.mark.skip
 def get_performance_factor(repeats=3):
-    """Run microbenchmarks to indicate how much faster / slower this system is compared to the reference."""
+    """Run microbenchmarks to indicate how much slower this system is compared to the reference."""
 
     def cpu_1():
         """Matrix multiplication"""
-        A = np.random.random((1000, 1000))
-        B = np.random.random((1000, 1000))
-        return np.dot(A, B)
+        size = 100
+        A = [[random() for _ in range(size)] for _ in range(size)]
+        B = [[random() for _ in range(size)] for _ in range(size)]
+        result = [[sum(A[i][k] * B[k][j] for k in range(size)) for j in range(size)] for i in range(size)]
+        return result
 
     def cpu_2():
         """Element-wise arithmetic"""
-        A = np.random.random(10**6)
-        B = np.random.random(10**6)
-        return A + B
+        N = 10**6
+        A = [random() for _ in range(N)]
+        B = [random() for _ in range(N)]
+        return [A[i] + B[i] for i in range(N)]
     
     def cpu_3():
         """Addition"""
@@ -53,12 +57,14 @@ def get_performance_factor(repeats=3):
 
     def mem_1():
         """Array copying"""
-        A = np.random.random(10**6)
-        return np.copy(A)
-    
+        N = 10**6
+        A = [random() for _ in range(N)]
+        return A.copy()
+
     def mem_2():
         """Array slicing"""
-        A = np.random.random(10**6)
+        N = 10**6
+        A = [random() for _ in range(N)]
         return A[::2]
     
     def mem_3():
@@ -71,13 +77,15 @@ def get_performance_factor(repeats=3):
     
     def cache_1():
         """Sequential array sum"""
-        A = np.random.random(10**6)
-        return np.sum(A)
+        N = 10**6
+        A = [random() for _ in range(N)]
+        return sum(A)
 
     def cache_2():
         """Strided array sum"""
-        A = np.random.random(10**6)
-        return np.sum(A[::2])
+        N = 10**6
+        A = [random() for _ in range(N)]
+        return sum(A[::2])
     
     # run the benchmarks
     benchmarks = [cpu_1, cpu_2, cpu_3, cpu_4, cpu_5, mem_1, mem_2, mem_3, cache_1, cache_2]
@@ -89,14 +97,37 @@ def get_performance_factor(repeats=3):
             duration = perf_counter() - start
             raw_data[i].append(duration)
 
-    # calculate statistics
-    benchmark_data = np.array(raw_data)
-    benchmark_mean = benchmark_data.mean(axis=0)
-    relative_std = (benchmark_data.std(axis=0) / np.abs(benchmark_mean))
-    mean_relative_std = max(np.mean(relative_std), 0.025)
+    # # below is the non-Numpy equivalent of the following statistics calculation
+    # benchmark_data = np.array(raw_data)
+    # np_benchmark_mean = benchmark_data.mean(axis=0)
+    # np_relative_std = (benchmark_data.std(axis=0) / abs(np_benchmark_mean))
+    # np_mean_relative_std = max(np.mean(np_relative_std), 0.025)
+    # # calculate the performance factor relative to the reference
+    # np_performance_factor: float = np.mean(np_benchmark_mean / reference_microbenchmark_mean)
 
-    # calculate the performance factor relative to the reference
-    performance_factor: float = np.mean(benchmark_mean / reference_microbenchmark_mean)
+
+    # Transpose the raw_data to get columns as rows
+    transposed_data = list(zip(*raw_data))
+
+    # Calculate mean along axis=0 (column-wise)
+    benchmark_mean = [sum(column) / len(column) for column in transposed_data]
+
+    # Calculate standard deviation along axis=0 (column-wise)
+    def stddev(column, mean):
+        variance = sum((x - mean) ** 2 for x in column) / len(column)
+        return sqrt(variance)
+
+    benchmark_std = [stddev(column, mean) for column, mean in zip(transposed_data, benchmark_mean)]
+
+    # Calculate relative standard deviation
+    relative_std = [(s / abs(m)) if m != 0 else 0 for s, m in zip(benchmark_std, benchmark_mean)]
+
+    # Calculate mean relative standard deviation and apply threshold
+    mean_relative_std = max(sum(relative_std) / len(relative_std), 0.025)
+
+    # Calculate performance factor
+    performance_factor = sum(bm / rm for bm, rm in zip(benchmark_mean, reference_microbenchmark_mean)) / len(benchmark_mean)
+    raise ValueError(benchmark_mean)
     return performance_factor, mean_relative_std
 
 performance_factor, mean_relative_std = get_performance_factor()
@@ -134,4 +165,4 @@ def test_microhh(benchmark):
     ])
 
     benchmark(problem.getSolutions)
-    assert benchmark.stats.stats.mean - benchmark.stats.stats.std <= reference_results["microhh"] * (performance_factor + mean_relative_std)
+    assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["microhh"] * (performance_factor + mean_relative_std)
