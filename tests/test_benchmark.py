@@ -10,6 +10,7 @@ reference_microbenchmark_mean = [0.3784186691045761, 0.4737640768289566, 0.10726
 reference_results = {
     "microhh": 1.1565620,
     "dedispersion": 0.1171140,
+    "hotspot": 2.6839208,
 }
 # device properties (for A4000 on DAS6 using get_opencl_device_info.cpp)
 dev = {
@@ -175,10 +176,7 @@ def test_dedispersion(benchmark):
     problem.addVariable("tile_stride_y", [0, 1])
     problem.addVariable("loop_unroll_factor_channel", [
         0
-    ])  # + [i for i in range(1,nr_channels+1) if nr_channels % i == 0] #[i for i in range(nr_channels+1)]
-    # tune_params["loop_unroll_factor_x", [0] #[i for i in range(1,max(tune_params["tile_size_x"]))]
-    # tune_params["loop_unroll_factor_y", [0] #[i for i in range(1,max(tune_params["tile_size_y"]))]
-    # tune_params["blocks_per_sm", [i for i in range(5)]
+    ])
 
     # setup the restrictions
     check_block_size = "32 <= block_size_x * block_size_y <= 1024"
@@ -189,3 +187,34 @@ def test_dedispersion(benchmark):
     # run the benchmark and check for performance degradation
     benchmark(problem.getSolutions)
     assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["dedispersion"] * (performance_factor + mean_relative_std)
+
+def test_hotspot(benchmark):
+    """Based on the Hotspot search space in the paper."""
+    # constants
+    temporal_tiling_factor = [i for i in range(1, 11)]
+    max_tfactor = max(temporal_tiling_factor)
+
+    # setup the tunable parameters
+    problem = Problem()
+    problem.addVariable("block_size_x", [1, 2, 4, 8, 16] + [32 * i for i in range(1, 33)])
+    problem.addVariable("block_size_y", [2**i for i in range(6)])
+    problem.addVariable("tile_size_x", [i for i in range(1, 11)])
+    problem.addVariable("tile_size_y", [i for i in range(1, 11)])
+    problem.addVariable("temporal_tiling_factor", temporal_tiling_factor)
+    problem.addVariable("max_tfactor", [max_tfactor])
+    problem.addVariable("loop_unroll_factor_t", [i for i in range(1, max_tfactor + 1)])
+    problem.addVariable("sh_power", [0, 1])
+    problem.addVariable("blocks_per_sm", [0, 1, 2, 3, 4])
+
+    # setup the restrictions
+    problem.addConstraint([
+        "block_size_x*block_size_y >= 32",
+        "temporal_tiling_factor % loop_unroll_factor_t == 0",
+        f"block_size_x*block_size_y <= {dev['max_threads']}",
+        f"(block_size_x*tile_size_x + temporal_tiling_factor * 2) * (block_size_y*tile_size_y + temporal_tiling_factor * 2) * (2+sh_power) * 4 <= {dev['max_shared_memory_per_block']}",
+        f"blocks_per_sm == 0 or (((block_size_x*tile_size_x + temporal_tiling_factor * 2) * (block_size_y*tile_size_y + temporal_tiling_factor * 2) * (2+sh_power) * 4) * blocks_per_sm <= {dev['max_shared_memory']})",
+    ])
+
+    # run the benchmark and check for performance degradation
+    benchmark(problem.getSolutions)
+    assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["hotspot"] * (performance_factor + mean_relative_std)
