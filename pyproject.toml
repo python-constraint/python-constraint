@@ -65,6 +65,7 @@ sphinx-pyproject = "^0.3.0"
 optional = true
 [tool.poetry.group.test.dependencies]
 pytest = "^8.3.3"
+pytest-benchmark = "^5.1.0"
 pytest-cov = "^6.0.0"
 nox = "^2024.10.9"
 ruff = "^0.7.2"
