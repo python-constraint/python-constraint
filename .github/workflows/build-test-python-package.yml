@@ -26,6 +26,11 @@ jobs:
             - uses: fjwillemsen/setup-nox2@v3.0.0
             - run: |
                   nox -- ${{ runner.os }}
+            - name: Store benchmark result
+              uses: benchmark-action/github-action-benchmark@v1
+              with:
+                  tool: "pytest"
+                  output-file-path: .benchmarks/benchmark_{${{ runner.os }}}_3.13.json
             - name: Report to Coveralls
               uses: coverallsapp/github-action@v2
               with:
