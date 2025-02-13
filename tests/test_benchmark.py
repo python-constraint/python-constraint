@@ -6,7 +6,7 @@ from math import sqrt
 
 
 # reference times (using A4000 on DAS6)
-reference_microbenchmark_mean = [0.03569697, 0.04690351, 0.1586863, 0.13609187, 0.13637274, 0.01238605, 0.01072952, 0.07484022, 0.01054054, 0.01030138]    # noqa E501
+reference_microbenchmark_mean = [0.3784186691045761, 0.4737640768289566, 0.10726054509480794, 0.10744890073935191, 0.10979799057046573, 0.15360217044750848, 0.14483965436617532, 0.054416230569283165, 0.13835338006416956, 0.1371802551050981]    # noqa E501
 reference_results = {
     "microhh": 1.1565620
 }
@@ -97,37 +97,26 @@ def get_performance_factor(repeats=3):
             duration = perf_counter() - start
             raw_data[i].append(duration)
 
-    # # below is the non-Numpy equivalent of the following statistics calculation
-    # benchmark_data = np.array(raw_data)
-    # np_benchmark_mean = benchmark_data.mean(axis=0)
-    # np_relative_std = (benchmark_data.std(axis=0) / abs(np_benchmark_mean))
-    # np_mean_relative_std = max(np.mean(np_relative_std), 0.025)
-    # # calculate the performance factor relative to the reference
-    # np_performance_factor: float = np.mean(np_benchmark_mean / reference_microbenchmark_mean)
+    # non-Numpy implementation of statistics calculation
+    transposed_data = list(zip(*raw_data))  # transpose the raw_data to get columns as rows
 
-
-    # Transpose the raw_data to get columns as rows
-    transposed_data = list(zip(*raw_data))
-
-    # Calculate mean along axis=0 (column-wise)
+    # calculate mean along axis=0 (column-wise) (`benchmark_data.mean(axis=0)`)
     benchmark_mean = [sum(column) / len(column) for column in transposed_data]
 
-    # Calculate standard deviation along axis=0 (column-wise)
+    # calculate standard deviation along axis=0 (column-wise)
     def stddev(column, mean):
         variance = sum((x - mean) ** 2 for x in column) / len(column)
         return sqrt(variance)
 
+    # calculate relative standard deviation (`(benchmark_data.std(axis=0) / abs(np_benchmark_mean))`)
     benchmark_std = [stddev(column, mean) for column, mean in zip(transposed_data, benchmark_mean)]
-
-    # Calculate relative standard deviation
     relative_std = [(s / abs(m)) if m != 0 else 0 for s, m in zip(benchmark_std, benchmark_mean)]
 
-    # Calculate mean relative standard deviation and apply threshold
+    # calculate mean relative standard deviation and apply threshold (`max(np.mean(np_relative_std), 0.025)``)
     mean_relative_std = max(sum(relative_std) / len(relative_std), 0.025)
 
-    # Calculate performance factor
+    # calculate performance factor  (`np.mean(np_benchmark_mean / reference_microbenchmark_mean)``)
     performance_factor = sum(bm / rm for bm, rm in zip(benchmark_mean, reference_microbenchmark_mean)) / len(benchmark_mean)
-    raise ValueError(benchmark_mean)
     return performance_factor, mean_relative_std
 
 performance_factor, mean_relative_std = get_performance_factor()
