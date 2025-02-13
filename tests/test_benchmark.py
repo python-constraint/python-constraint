@@ -22,6 +22,8 @@ dev = {
     "max_wi_size": [1024, 1024, 64],
     "max_wg_size": 1024,
 }
+# collect benchmark times
+benchmark_results = dict()
 
 @pytest.mark.skip
 def get_performance_factor(repeats=3):
@@ -114,18 +116,20 @@ def get_performance_factor(repeats=3):
     benchmark_std = [stddev(column, mean) for column, mean in zip(transposed_data, benchmark_mean)]
     relative_std = [(s / abs(m)) if m != 0 else 0 for s, m in zip(benchmark_std, benchmark_mean)]
 
-    # calculate mean relative standard deviation and apply threshold (`max(np.mean(np_relative_std), 0.025)``)
+    # calculate mean relative standard deviation and apply threshold (`max(np.mean(np_relative_std), 0.025)`)
     mean_relative_std = max(sum(relative_std) / len(relative_std), 0.025)
 
-    # calculate performance factor  (`np.mean(np_benchmark_mean / reference_microbenchmark_mean)``)
+    # calculate performance factor  (`np.mean(np_benchmark_mean / reference_microbenchmark_mean)`)
     performance_factor = sum(bm / rm for bm, rm in zip(benchmark_mean, reference_microbenchmark_mean)) / len(benchmark_mean)
     return performance_factor, mean_relative_std
 
 performance_factor, mean_relative_std = get_performance_factor()
+print(f"\nSystem performance factor: {round(performance_factor, 3)}")
 
 
 def test_microhh(benchmark):
     """Based on the MicroHH search space in the paper."""
+    benchmark_name = "microhh"
 
     cta_padding = 0  # default argument
 
@@ -159,12 +163,17 @@ def test_microhh(benchmark):
 
     # run the benchmark and check for valid outcome and performance degradation
     solutions = benchmark(problem.getSolutions)
+    reference_result = reference_results[benchmark_name]
+    benchmark_result = benchmark.stats.stats.mean
+    benchmark_results[benchmark_name] = benchmark_result
     assert len(solutions) == 138600
-    assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["microhh"] * (performance_factor + mean_relative_std)
+    assert benchmark_result - benchmark.stats.stats.stddev <= reference_result * (performance_factor + mean_relative_std)
+    print(f"Reference: {round(reference_result, 3)}, benchmark: {round(benchmark_result, 3)}, expected: {round(reference_result * performance_factor, 3)}")
 
 
 def test_dedispersion(benchmark):
     """Based on the Dedispersion search space in the paper."""
+    benchmark_name = "dedispersion"
 
     # setup the tunable parameters
     problem = Problem()
@@ -187,11 +196,18 @@ def test_dedispersion(benchmark):
 
     # run the benchmark and check for valid outcome and performance degradation
     solutions = benchmark(problem.getSolutions)
+    reference_result = reference_results[benchmark_name]
+    benchmark_result = benchmark.stats.stats.mean
+    benchmark_results[benchmark_name] = benchmark_result
     assert len(solutions) == 11130
-    assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["dedispersion"] * (performance_factor + mean_relative_std)
+    assert benchmark_results[benchmark_name] - benchmark.stats.stats.stddev <= reference_results["dedispersion"] * (performance_factor + mean_relative_std)
+    print(f"Reference: {round(reference_result, 3)}, benchmark: {round(benchmark_result, 3)}, expected: {round(reference_result * performance_factor, 3)}")
+
 
 def test_hotspot(benchmark):
     """Based on the Hotspot search space in the paper."""
+    benchmark_name = "hotspot"
+
     # constants
     temporal_tiling_factor = [i for i in range(1, 11)]
     max_tfactor = max(temporal_tiling_factor)
@@ -219,5 +235,9 @@ def test_hotspot(benchmark):
 
     # run the benchmark and check for valid outcome and performance degradation
     solutions = benchmark(problem.getSolutions)
+    reference_result = reference_results[benchmark_name]
+    benchmark_result = benchmark.stats.stats.mean
+    benchmark_results[benchmark_name] = benchmark_result
     assert len(solutions) == 349853
-    assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["hotspot"] * (performance_factor + mean_relative_std)
+    assert benchmark_results[benchmark_name] - benchmark.stats.stats.stddev <= reference_results[benchmark_name] * (performance_factor + mean_relative_std)
+    print(f"Reference: {round(reference_result, 3)}, benchmark: {round(benchmark_result, 3)}, expected: {round(reference_result * performance_factor, 3)}")
