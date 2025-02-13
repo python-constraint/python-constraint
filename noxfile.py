@@ -7,6 +7,7 @@ Be aware that the general setup of tests is left to pyproject.toml.
 
 import nox
 from nox import Session, session
+from pathlib import Path
 
 # from nox_poetry import Session, session   # nox_poetry is a better option, but <=1.0.3 has a bug with filename-URLs
 
@@ -20,6 +21,9 @@ python_versions_to_test = [
 ]
 nox.options.stop_on_first_error = True
 nox.options.error_on_missing_interpreters = True
+
+# create the benchmark folder
+Path(".benchmarks").mkdir(exist_ok=True)
 
 
 # Test code quality: linting
@@ -47,7 +51,7 @@ def tests(session: Session) -> None:
     # session.poetry.installroot(distribution_format="sdist")
 
     # run pytest on the package with C-extensions, disable required coverage percentage
-    session.run("pytest", "--no-cov", "--benchmark-json" f".benchmarks/benchmark_{os_name}_{session.python}.json")
+    session.run("pytest", "--no-cov", "--benchmark-json", f".benchmarks/benchmark_{os_name}_{session.python}.json")
 
     # for the last Python version session:
     if session.python == python_versions_to_test[-1]:
