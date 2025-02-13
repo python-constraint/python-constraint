@@ -157,8 +157,9 @@ def test_microhh(benchmark):
         f"BLOCK_SIZE_Z * TILING_FACTOR_Z > {cta_padding}",
     ])
 
-    # run the benchmark and check for performance degradation
-    benchmark(problem.getSolutions)
+    # run the benchmark and check for valid outcome and performance degradation
+    solutions = benchmark(problem.getSolutions)
+    assert len(solutions) == 138600
     assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["microhh"] * (performance_factor + mean_relative_std)
 
 
@@ -184,8 +185,9 @@ def test_dedispersion(benchmark):
     check_tile_stride_y = "tile_size_y > 1 or tile_stride_y == 0"
     problem.addConstraint([check_block_size, check_tile_stride_x, check_tile_stride_y])
 
-    # run the benchmark and check for performance degradation
-    benchmark(problem.getSolutions)
+    # run the benchmark and check for valid outcome and performance degradation
+    solutions = benchmark(problem.getSolutions)
+    assert len(solutions) == 11130
     assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["dedispersion"] * (performance_factor + mean_relative_std)
 
 def test_hotspot(benchmark):
@@ -215,6 +217,7 @@ def test_hotspot(benchmark):
         f"blocks_per_sm == 0 or (((block_size_x*tile_size_x + temporal_tiling_factor * 2) * (block_size_y*tile_size_y + temporal_tiling_factor * 2) * (2+sh_power) * 4) * blocks_per_sm <= {dev['max_shared_memory']})",
     ])
 
-    # run the benchmark and check for performance degradation
-    benchmark(problem.getSolutions)
+    # run the benchmark and check for valid outcome and performance degradation
+    solutions = benchmark(problem.getSolutions)
+    assert len(solutions) == 349853
     assert benchmark.stats.stats.mean - benchmark.stats.stats.stddev <= reference_results["hotspot"] * (performance_factor + mean_relative_std)
