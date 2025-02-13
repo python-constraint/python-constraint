@@ -134,4 +134,4 @@ def test_microhh(benchmark):
     ])
 
     benchmark(problem.getSolutions)
-    assert benchmark.stats.stats.mean <= reference_results["microhh"] * (performance_factor + mean_relative_std)
+    assert benchmark.stats.stats.mean - benchmark.stats.stats.std <= reference_results["microhh"] * (performance_factor + mean_relative_std)

@@ -35,13 +35,19 @@ def lint(session: Session) -> None:
 # do not forget check / set the versions with `pyenv global`, or `pyenv local` in case of virtual environment
 def tests(session: Session) -> None:
     """Run the tests for the specified Python versions."""
+    # get command line arguments
+    if session.posargs:
+        os_name = session.posargs[0]
+    else:
+        os_name = 'local'
+
     # install the dev-dependencies and build the package
     session.install("poetry")
     session.run("poetry", "install", "--with", "dev,test", external=True)
     # session.poetry.installroot(distribution_format="sdist")
 
     # run pytest on the package with C-extensions, disable required coverage percentage
-    session.run("pytest", "--no-cov")
+    session.run("pytest", "--no-cov", "--benchmark-json" f".benchmarks/benchmark_{os_name}_{session.python}.json")
 
     # for the last Python version session:
     if session.python == python_versions_to_test[-1]:
