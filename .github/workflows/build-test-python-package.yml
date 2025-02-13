@@ -2,6 +2,7 @@
 
 name: Build & Test
 
+# Do not run this workflow on pull request since this workflow has permission to modify contents.
 on:
     push:
         branches:
@@ -14,9 +15,12 @@ on:
             - "noxfile.py"
             - "pyproject.toml"
             - ".github/workflows/build-test-python-package.yml"
-    pull_request:
-        branches:
-            - main
+
+permissions:
+    # deployments permission to deploy GitHub pages website
+    deployments: write
+    # contents permission to update benchmark contents in gh-pages branch
+    contents: write
 
 jobs:
     build:

@@ -1,0 +1,23 @@
+# This workflow will use Nox to run tests and lint for the supported Python versions, and upload the test coverage data.
+
+name: Build & Test
+
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: fjwillemsen/setup-nox2@v3.0.0
+            - run: |
+                  nox -- ${{ runner.os }}
+            - name: Report to Coveralls
+              uses: coverallsapp/github-action@v2
+              with:
+                  file: coverage.xml
+                  format: cobertura
+                  fail-on-error: false
