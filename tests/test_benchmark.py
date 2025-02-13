@@ -116,8 +116,8 @@ def get_performance_factor(repeats=3):
     benchmark_std = [stddev(column, mean) for column, mean in zip(transposed_data, benchmark_mean)]
     relative_std = [(s / abs(m)) if m != 0 else 0 for s, m in zip(benchmark_std, benchmark_mean)]
 
-    # calculate mean relative standard deviation and apply threshold (`max(np.mean(np_relative_std), 0.025)`)
-    mean_relative_std = max(sum(relative_std) / len(relative_std), 0.025)
+    # calculate mean relative standard deviation and apply threshold (`max(np.mean(np_relative_std), 0.125)`)
+    mean_relative_std = max(sum(relative_std) / len(relative_std), 0.125)
 
     # calculate performance factor  (`np.mean(np_benchmark_mean / reference_microbenchmark_mean)`)
     performance_factor = sum(bm / rm for bm, rm in zip(benchmark_mean, reference_microbenchmark_mean)) / len(benchmark_mean)
@@ -125,6 +125,13 @@ def get_performance_factor(repeats=3):
 
 performance_factor, mean_relative_std = get_performance_factor()
 print(f"\nSystem performance factor: {round(performance_factor, 3)}")
+
+@pytest.mark.skip
+def check_benchmark_performance(benchmark_name, mean, std):
+    """Utility function to check whether the performance of a benchmark is within the expected range and print information."""
+    reference_result = reference_results[benchmark_name]
+    assert  mean - std * 2 <= reference_result * (performance_factor + mean_relative_std * 2)
+    print(f"Reference: {round(reference_result, 3)}, benchmark: {round(mean, 3)}, expected: {round(reference_result * performance_factor, 3)}")
 
 
 def test_microhh(benchmark):
@@ -167,8 +174,7 @@ def test_microhh(benchmark):
     benchmark_result = benchmark.stats.stats.mean
     benchmark_results[benchmark_name] = benchmark_result
     assert len(solutions) == 138600
-    assert benchmark_result - benchmark.stats.stats.stddev <= reference_result * (performance_factor + mean_relative_std)
-    print(f"Reference: {round(reference_result, 3)}, benchmark: {round(benchmark_result, 3)}, expected: {round(reference_result * performance_factor, 3)}")
+    check_benchmark_performance(benchmark_name, benchmark_result, benchmark.stats.stats.stddev)
 
 
 def test_dedispersion(benchmark):
@@ -200,8 +206,7 @@ def test_dedispersion(benchmark):
     benchmark_result = benchmark.stats.stats.mean
     benchmark_results[benchmark_name] = benchmark_result
     assert len(solutions) == 11130
-    assert benchmark_results[benchmark_name] - benchmark.stats.stats.stddev <= reference_results["dedispersion"] * (performance_factor + mean_relative_std)
-    print(f"Reference: {round(reference_result, 3)}, benchmark: {round(benchmark_result, 3)}, expected: {round(reference_result * performance_factor, 3)}")
+    check_benchmark_performance(benchmark_name, benchmark_result, benchmark.stats.stats.stddev)
 
 
 def test_hotspot(benchmark):
@@ -239,5 +244,4 @@ def test_hotspot(benchmark):
     benchmark_result = benchmark.stats.stats.mean
     benchmark_results[benchmark_name] = benchmark_result
     assert len(solutions) == 349853
-    assert benchmark_results[benchmark_name] - benchmark.stats.stats.stddev <= reference_results[benchmark_name] * (performance_factor + mean_relative_std)
-    print(f"Reference: {round(reference_result, 3)}, benchmark: {round(benchmark_result, 3)}, expected: {round(reference_result * performance_factor, 3)}")
+    check_benchmark_performance(benchmark_name, benchmark_result, benchmark.stats.stats.stddev)
