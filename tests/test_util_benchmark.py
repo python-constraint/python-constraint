@@ -1,7 +1,9 @@
+"""Test run times with benchmarks against reference times. File is called test_util_benchmarks to be ran as last test."""
+
 from random import random
 from time import perf_counter
 import pytest
-from constraint import Problem
+from constraint import Problem, ParallelSolver
 from math import sqrt
 
 
@@ -131,7 +133,7 @@ def check_benchmark_performance(benchmark_name, mean, std):
     """Utility function to check whether the performance of a benchmark is within the expected range and print information."""
     reference_result = reference_results[benchmark_name]
     assert  mean - std * 2 <= reference_result * (performance_factor + mean_relative_std * 2)
-    print(f"Reference: {round(reference_result, 3)}, benchmark: {round(mean, 3)}, expected: {round(reference_result * performance_factor, 3)}")
+    print(f"Benchmark {benchmark_name}: reference: {round(reference_result, 3)}, run: {round(mean, 3)}, expected: {round(reference_result * performance_factor, 3)}")
 
 
 def test_microhh(benchmark):
@@ -170,7 +172,6 @@ def test_microhh(benchmark):
 
     # run the benchmark and check for valid outcome and performance degradation
     solutions = benchmark(problem.getSolutions)
-    reference_result = reference_results[benchmark_name]
     benchmark_result = benchmark.stats.stats.mean
     benchmark_results[benchmark_name] = benchmark_result
     assert len(solutions) == 138600
@@ -202,7 +203,6 @@ def test_dedispersion(benchmark):
 
     # run the benchmark and check for valid outcome and performance degradation
     solutions = benchmark(problem.getSolutions)
-    reference_result = reference_results[benchmark_name]
     benchmark_result = benchmark.stats.stats.mean
     benchmark_results[benchmark_name] = benchmark_result
     assert len(solutions) == 11130
@@ -240,7 +240,6 @@ def test_hotspot(benchmark):
 
     # run the benchmark and check for valid outcome and performance degradation
     solutions = benchmark(problem.getSolutions)
-    reference_result = reference_results[benchmark_name]
     benchmark_result = benchmark.stats.stats.mean
     benchmark_results[benchmark_name] = benchmark_result
     assert len(solutions) == 349853
