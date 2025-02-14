@@ -126,35 +126,23 @@ def check_benchmark_performance(benchmark_name, mean, std):
     assert  mean - std * 2 <= reference_result * (performance_factor + mean_relative_std * 2)
     print(f"Benchmark {benchmark_name}: reference: {round(reference_result, 3)}, run: {round(mean, 3)}, expected: {round(reference_result * performance_factor, 3)}")
 
+@pytest.mark.skip
+def run_and_check_benchmark(benchmark, benchmark_name, problem, expected_num_solutions):
+    """Utility function to run and check a benchmark."""
+    # run the benchmark
+    solutions = benchmark(problem.getSolutions)
+    benchmark_result = benchmark.stats.stats.mean
+    benchmark_results[benchmark_name] = benchmark_result
+    # check for valid outcome
+    assert len(solutions) == expected_num_solutions
+    # check for performance degradation
+    check_benchmark_performance(benchmark_name, benchmark_result, benchmark.stats.stats.stddev)
 
 def test_microhh(benchmark):
-    benchmark_name, problem, expected_num_solutions = microhh()
-
-    # run the benchmark and check for valid outcome and performance degradation
-    solutions = benchmark(problem.getSolutions)
-    benchmark_result = benchmark.stats.stats.mean
-    benchmark_results[benchmark_name] = benchmark_result
-    assert len(solutions) == expected_num_solutions
-    check_benchmark_performance(benchmark_name, benchmark_result, benchmark.stats.stats.stddev)
-
+    run_and_check_benchmark(benchmark, *microhh())
 
 def test_dedispersion(benchmark):
-    benchmark_name, problem, expected_num_solutions = dedispersion()
-
-    # run the benchmark and check for valid outcome and performance degradation
-    solutions = benchmark(problem.getSolutions)
-    benchmark_result = benchmark.stats.stats.mean
-    benchmark_results[benchmark_name] = benchmark_result
-    assert len(solutions) == expected_num_solutions
-    check_benchmark_performance(benchmark_name, benchmark_result, benchmark.stats.stats.stddev)
-
+    run_and_check_benchmark(benchmark, *dedispersion())
 
 def test_hotspot(benchmark):
-    benchmark_name, problem, expected_num_solutions = hotspot()
-
-    # run the benchmark and check for valid outcome and performance degradation
-    solutions = benchmark(problem.getSolutions)
-    benchmark_result = benchmark.stats.stats.mean
-    benchmark_results[benchmark_name] = benchmark_result
-    assert len(solutions) == expected_num_solutions
-    check_benchmark_performance(benchmark_name, benchmark_result, benchmark.stats.stats.stddev)
+    run_and_check_benchmark(benchmark, *hotspot())
