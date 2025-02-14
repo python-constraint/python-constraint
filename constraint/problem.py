@@ -26,6 +26,9 @@ class Problem:
         self._str_constraints: list[str] = []
         self._variables: dict[Hashable, Domain] = {}
 
+        # check if solver is instance instead of class
+        assert isinstance(self._solver, Solver), f"`solver` is not instance of Solver class (is {type(self._solver)})."
+
         # warn for experimental parallel solver
         if isinstance(self._solver, ParallelSolver):
             warn("ParallelSolver is currently experimental, and unlikely to be faster than OptimizedBacktrackingSolver. Please report any issues.")     # future: remove     # noqa E501
