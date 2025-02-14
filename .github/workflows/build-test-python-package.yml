@@ -29,6 +29,11 @@ jobs:
             - uses: actions/checkout@v4
               with:
                   fetch-depth: 0 # fetch all history to avoid detached HEAD state when pushing benchmark results
+            - name: Download previous benchmark data
+              uses: actions/cache@v4
+              with:
+                  path: ./cache
+                  key: ${{ runner.os }}-benchmark
             - uses: fjwillemsen/setup-nox2@v3.0.0
             - run: |
                   nox -- ${{ runner.os }}
@@ -37,15 +42,12 @@ jobs:
               with:
                   tool: "pytest"
                   output-file-path: .benchmarks/benchmark_${{ runner.os }}_3.13.json
-                  gh-pages-branch: main
-                  skip-fetch-gh-pages: true
-                  benchmark-data-dir-path: docs/benchmarks
+                  external-data-json-path: ./cache/benchmark-data.json
                   fail-on-alert: true
                   # GitHub API token to make a commit comment
                   github-token: ${{ secrets.GITHUB_TOKEN }}
-                  auto-push: true
-                  comment-on-alert: true
                   comment-always: true
+                  summary-always: true
                   #   alert-comment-cc-users: '@fjwillemsen' mention a GitHub user in the comment
             - name: Report to Coveralls
               uses: coverallsapp/github-action@v2
