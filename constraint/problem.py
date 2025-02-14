@@ -11,6 +11,12 @@ from constraint.domain import Domain
 from constraint.solvers import Solver, OptimizedBacktrackingSolver, ParallelSolver
 from constraint.parser import compile_to_constraints
 
+try:
+    from sys import _is_gil_enabled
+    freethreading = _is_gil_enabled()
+except ImportError:
+    freethreading = False
+
 
 class Problem:
     """Class used to define a problem and retrieve solutions."""
@@ -26,9 +32,14 @@ class Problem:
         self._str_constraints: list[str] = []
         self._variables: dict[Hashable, Domain] = {}
 
+        # check if solver is instance instead of class
+        assert isinstance(self._solver, Solver), f"`solver` is not instance of Solver class (is {type(self._solver)})."
+
         # warn for experimental parallel solver
         if isinstance(self._solver, ParallelSolver):
             warn("ParallelSolver is currently experimental, and unlikely to be faster than OptimizedBacktrackingSolver. Please report any issues.")     # future: remove     # noqa E501
+            if not self._solver._process_mode and not freethreading:
+                warn("Using the ParallelSolver in ThreadPool mode without freethreading will cause poor performance.")
 
     def reset(self):
         """Reset the current problem definition.

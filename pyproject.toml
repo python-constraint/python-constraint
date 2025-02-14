@@ -1,24 +1,19 @@
 [build-system]
-requires = ["poetry-core>=1.7.0", "setuptools>=67.7.2", "Cython>=3.0.2"]
-build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=2.0.1", "setuptools>=75.8.0", "Cython>=3.0.12"]
+build-backend = "poetry.core.masonry.api" 
 
-[tool.poetry]
+[project]
 name = "python-constraint2" # when set back to "python-constraint", don't forget to remove '2' in other places (e.g. README)
-packages = [
-    { include = "constraint", from = "." },
-    { include = "tests", format = "sdist" }
-]
-include = [{ path = "constraint/*.so", format = "wheel" }]
 description = "python-constraint is a module for efficiently solving CSPs (Constraint Solving Problems) over finite domains."
 version = "2.1.0" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
 authors = [
-    "Gustavo Niemeyer <gustavo@niemeyer.net>",
-    "Sébastien Celles <s.celles@gmail.com>",
-    "Floris-Jan Willemsen <fjwillemsen97@gmail.com>",
+    {name = "Gustavo Niemeyer", email = "gustavo@niemeyer.net"},
+    {name = "Sébastien Celles", email = "s.celles@gmail.com"},
+    {name = "Floris-Jan Willemsen", email = "fjwillemsen97@gmail.com"},
 ]
 license = "BSD-2-Clause"
 readme = "README.rst"
-maintainers = ["Floris-Jan Willemsen <fjwillemsen97@gmail.com>"]
+maintainers = [{name = "Floris-Jan Willemsen", email = "fjwillemsen97@gmail.com"}]
 repository = "https://github.com/python-constraint/python-constraint"
 documentation = "http://python-constraint.github.io/python-constraint/"
 keywords = [
@@ -41,15 +36,21 @@ classifiers = [
     "Topic :: Scientific/Engineering",
     "Topic :: Software Development",
 ]
+
+# ATTENTION: if anything is changed here, run `poetry update`
+requires-python = ">= 3.9"  # when changing the Python versions, also change the test versions in the Noxfile and GitHub Actions
+
+[tool.poetry]
+include = [{ path = "constraint/*.so", format = "wheel" }]
+packages = [
+    { include = "constraint", from = "." },
+    { include = "tests", format = "sdist" }
+]
+
+
 [tool.poetry.build]
 generate-setup-file = false
 script = "cythonize_build.py"
-
-# ATTENTION: if anything is changed here, run `poetry update`
-[tool.poetry.dependencies]
-python = ">=3.9,<3.15" # when changing the Python versions, also change the test versions in the Noxfile and GitHub Actions
-[tool.poetry.group.dev.dependencies]
-Cython = "^3.0.2"
 
 # ATTENTION: if anything is changed here, run `poetry update` and `poetry export --with docs --without-hashes --format=requirements.txt > docs/requirements.txt`
 [tool.poetry.group.docs]
@@ -61,16 +62,18 @@ sphinx_rtd_theme = "^1.3.0"
 sphinx-pyproject = "^0.3.0"
 
 # ATTENTION: if anything is changed here, run `poetry update`
+[tool.poetry.group.dev.dependencies]
+Cython = "^3.0.12"
 [tool.poetry.group.test]
 optional = true
 [tool.poetry.group.test.dependencies]
 pytest = "^8.3.3"
 pytest-benchmark = "^5.1.0"
 pytest-cov = "^6.0.0"
-nox = "^2024.10.9"
-ruff = "^0.7.2"
+nox = "^2025.2.9"
+ruff = "^0.9.6"
 pep440 = "^0.1.2"
-tomli = "^2.0.2"      # can be replaced by built-in [tomllib](https://docs.python.org/3.11/library/tomllib.html) from Python 3.11
+tomli = "^2.2.1"      # can be replaced by built-in [tomllib](https://docs.python.org/3.11/library/tomllib.html) from Python 3.11
 
 # development dependencies are unused for now, as this is already covered by test and docs
 # # ATTENTION: if anything is changed here, run `poetry update`
