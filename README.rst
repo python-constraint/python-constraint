@@ -173,7 +173,8 @@ For an overview of recent changes, visit the `Changelog <https://github.com/pyth
 
 Planned development:
 
-- Add `benchmarking tests <https://pypi.org/project/pytest-benchmark/>`_ automated with `GH actions <https://github.com/benchmark-action/github-action-benchmark>`_
+- Rewrite hotspots in C / Pyx instead of pure python mode
+- Improvements to make the ParallelSolver competitive (experiments reveal the freethreading mode to be promising)
 - Versioned documentation
 
 Contact
