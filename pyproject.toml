@@ -1,6 +1,6 @@
 [build-system]
-requires = ["poetry-core>=2.0.1", "setuptools>=67.7.2", "Cython>=3.0.12"]
-build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=2.0.1", "setuptools>=75.8.0", "Cython>=3.0.12"]
+build-backend = "poetry.core.masonry.api" 
 
 [project]
 name = "python-constraint2" # when set back to "python-constraint", don't forget to remove '2' in other places (e.g. README)
