@@ -50,7 +50,7 @@ packages = [
 
 [tool.poetry.build]
 generate-setup-file = false
-# script = "cythonize_build.py"
+script = "cythonize_build.py"
 
 # ATTENTION: if anything is changed here, run `poetry update` and `poetry export --with docs --without-hashes --format=requirements.txt > docs/requirements.txt`
 [tool.poetry.group.docs]
