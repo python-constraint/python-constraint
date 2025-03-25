@@ -26,10 +26,10 @@ def test_name():
 
 def test_versioning():
     """Test whether the versioning is PEP440 compliant."""
-    from pep440 import is_canonical
+    from packaging.version import Version
 
     assert "version" in project
-    assert is_canonical(project["version"])
+    assert isinstance(Version(project["version"]).release, tuple)
 
 
 def test_authors():
