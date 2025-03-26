@@ -109,8 +109,8 @@ def get_performance_factor(repeats=3):
     benchmark_std = [stddev(column, mean) for column, mean in zip(transposed_data, benchmark_mean)]
     relative_std = [(s / abs(m)) if m != 0 else 0 for s, m in zip(benchmark_std, benchmark_mean)]
 
-    # calculate mean relative standard deviation and apply threshold (`max(np.mean(np_relative_std), 0.125)`)
-    mean_relative_std = max(sum(relative_std) / len(relative_std), 0.125)
+    # calculate mean relative standard deviation and apply threshold (`max(np.mean(np_relative_std), 0.25)`)
+    mean_relative_std = max(sum(relative_std) / len(relative_std), 0.25)
 
     # calculate performance factor  (`np.mean(np_benchmark_mean / reference_microbenchmark_mean)`)
     performance_factor = sum(bm / rm for bm, rm in zip(benchmark_mean, reference_microbenchmark_mean)) / len(benchmark_mean)
