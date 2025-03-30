@@ -159,7 +159,7 @@ class BacktrackingSolver(Solver):
         while True:
             # Mix the Degree and Minimum Remaing Values (MRV) heuristics
             lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
-            lst.sort()
+            lst.sort(key=lambda x: (x[0], x[1]))
             for item in lst:
                 if item[-1] not in assignments:
                     # Found unassigned variable
@@ -422,7 +422,7 @@ class OptimizedBacktrackingSolver(Solver):
             the list of variables, sorted from highest number of vconstraints to lowest.
         """
         lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
-        lst.sort()
+        lst.sort(key=lambda x: (x[0], x[1]))
         return [c for _, _, c in lst]
 
 class RecursiveBacktrackingSolver(Solver):
@@ -477,7 +477,7 @@ class RecursiveBacktrackingSolver(Solver):
             _description_
         """
         lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
-        lst.sort()
+        lst.sort(key=lambda x: (x[0], x[1]))
         for item in lst:
             if item[-1] not in assignments:
                 # Found an unassigned variable. Let's go.
