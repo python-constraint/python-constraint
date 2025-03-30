@@ -21,7 +21,7 @@ def test_min_conflicts_solver():
         assert solution in possible_solutions
         problem.addConstraint(FunctionConstraint(lambda x, y: (lambda x, y, xs, ys: x != xs or y != ys)(x, y, solution['x'], solution['y'])))
 
-def test_optimized_backtracking_solver():
+def test_backtracking_solvers():
     # setup the solvers
     problem_bt = Problem(BacktrackingSolver())
     problem_opt = Problem(OptimizedBacktrackingSolver())
@@ -31,14 +31,14 @@ def test_optimized_backtracking_solver():
     # define the problem for all solvers
     for problem in problems:
         problem.addVariable("x", [-1, 0, 1, 2])
-        problem.addVariable("y", [1, 2])
-        problem.addConstraint(MaxProdConstraint(2), ["x", "y"])
-        problem.addConstraint(MinProdConstraint(1), ["x", "y"])
+        problem.addVariable(100, [1, 2])
+        problem.addConstraint(MaxProdConstraint(2), ["x", 100])
+        problem.addConstraint(MinProdConstraint(1), ["x", 100])
         problem.addConstraint(MinSumConstraint(0), ["x"])
 
     # get the solutions
     true_solutions = [(2, 1), (1, 2), (1, 1)]
-    order = ["x", "y"]
+    order = ["x", 100]
     solution = problem_bt.getSolution()
     solution_tuple = tuple(solution[key] for key in order)
 
@@ -53,8 +53,9 @@ def test_optimized_backtracking_solver():
         assert solution_tuple in solutions_dict
         assert all(sol in solutions_list for sol in true_solutions)
 
-    validate(*problem_opt.getSolutionsAsListDict(order=order))
-    validate(*problem_opt_nfwd.getSolutionsAsListDict(order=order))
+    # validate all solutions of all solvers
+    for problem in problems:
+        validate(*problem.getSolutionsAsListDict(order=order))
 
 def test_recursive_backtracking_solver():
     problem = Problem(RecursiveBacktrackingSolver())
