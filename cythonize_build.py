@@ -7,7 +7,9 @@ import os
 import shutil
 from subprocess import CalledProcessError
 from warnings import warn
+from packaging.version import Version
 
+from Cython.Compiler.Version import version as cython_version
 from Cython.Build import build_ext, cythonize
 from setuptools import Distribution, Extension
 
@@ -20,8 +22,23 @@ extensions = [
     for module in cython_modules
 ]
 
+# set compiler directives
+compiler_directives = {}
+try:
+    from sys import _is_gil_enabled
+    if not _is_gil_enabled() and Version(cython_version) >= Version("3.1.0a0"):
+        compiler_directives["freethreading_compatible"] = True
+except ImportError:
+    pass
+
 # Cythonize the files
-ext_modules = cythonize(extensions, include_path=[module_name], language_level=3, force=True)
+ext_modules = cythonize(
+    extensions, 
+    include_path=[module_name], 
+    language_level=3, 
+    force=True, 
+    compiler_directives=compiler_directives
+)
 dist = Distribution({"ext_modules": ext_modules})
 try:
     cmd = build_ext(dist)  # bundle into a library file

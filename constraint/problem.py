@@ -13,7 +13,7 @@ from constraint.parser import compile_to_constraints
 
 try:
     from sys import _is_gil_enabled
-    freethreading = _is_gil_enabled()
+    freethreading = not _is_gil_enabled()
 except ImportError:
     freethreading = False
 
