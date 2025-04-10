@@ -14,8 +14,6 @@ authors = [
 license = "BSD-2-Clause"
 readme = "README.rst"
 maintainers = [{name = "Floris-Jan Willemsen", email = "fjwillemsen97@gmail.com"}]
-repository = "https://github.com/python-constraint/python-constraint"
-documentation = "http://python-constraint.github.io/python-constraint/"
 keywords = [
     "CSP",
     "constraint solving problems",
@@ -44,6 +42,13 @@ classifiers = [
 
 # ATTENTION: if anything is changed here, run `poetry update`
 requires-python = ">= 3.9"  # when changing the Python versions, also change the test versions in the Noxfile and GitHub Actions
+
+[project.urls]
+Homepage = "http://python-constraint.github.io/python-constraint/"
+Repository = "https://github.com/python-constraint/python-constraint"
+Documentation = "http://python-constraint.github.io/python-constraint/"
+Issues = "https://github.com/python-constraint/python-constraint/issues"
+Changelog = "https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md"
 
 [tool.poetry]
 include = [{ path = "constraint/*.so", format = "wheel" }]

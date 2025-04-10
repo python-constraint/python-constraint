@@ -1,8 +1,15 @@
-# Change Log
-
-## Python Constraint
+# Python Constraint Changelog
 
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
+
+### Version 2.2.0
+
+- Released: 2025-03-25
+- Issues / Enhancements:
+  - Automatic performance benchmarking and validation with real-world cases and automatic reporting (see [#93](https://github.com/python-constraint/python-constraint/pull/93)).
+  - Preparations for free-threading (no GIL) capabilities (see [#94](https://github.com/python-constraint/python-constraint/pull/94)).
+  - Removed NumPy dependency in micro benchmarks, updated dependencies, and optimized test interfaces.
+  - Changed development status from Beta to Production / Stable.
 
 ### Version 2.1.0
 
