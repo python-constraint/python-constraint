@@ -2,6 +2,14 @@
 
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
 
+### Version 2.3.0
+
+- Released: TBD
+- Issues / Enhancements:
+  - Python-Constraint now has an entirely new type of built-in constraints, allowing comparisons with variables on both sides to be evaluated much more efficiently.
+  - Tests have been extended to reflect changes.
+  - Various minor bugs have been resolved.
+
 ### Version 2.2.0
 
 - Released: 2025-03-25
