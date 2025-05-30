@@ -181,7 +181,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         equalities_found = re.findall("==", restriction)
         inequalities_found = re.findall("!=", restriction)
         # check if one of the two have been found, if none or both have been found, return None
-        if not (len(equalities_found) > 0 ^ len(inequalities_found) > 0):
+        if not (bool(len(equalities_found) > 0) ^ bool(len(inequalities_found) > 0)):
             return None
         comparator = equalities_found[0] if len(equalities_found) > 0 else inequalities_found[0]
 
