@@ -461,6 +461,109 @@ class ExactSumConstraint(Constraint):
         else:
             return sum == exactsum
 
+class VariableExactSumConstraint(Constraint):
+    """Constraint enforcing that the sum of variables equals the value of another variable.
+
+    Example:
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b", "c"], [1, 2, 3])
+        >>> problem.addConstraint(VariableExactSumConstraint('c', ['a', 'b']))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 1), ('c', 2)], [('a', 1), ('b', 2), ('c', 3)], [('a', 2), ('b', 1), ('c', 3)]]
+    """
+
+    def __init__(self, target_var: str, sum_vars: Sequence, multipliers: Optional[Sequence] = None):
+        """Initialization method.
+
+        Args:
+            target_var (Variable): The target variable to sum to.
+            sum_vars (sequence of Variables): The variables to sum up.
+            multipliers (sequence of numbers): If given, variable values
+                (except the last) will be multiplied by the given factors before being
+                summed to match the last variable.
+        """
+        self.target_var = target_var
+        self.sum_vars = sum_vars
+        self._multipliers = multipliers
+
+        if multipliers:
+            assert len(multipliers) == len(sum_vars) + 1, "Multipliers must match sum variables and +1 for target."
+            assert all(isinstance(m, (int, float)) for m in multipliers), "Multipliers must be numbers."
+            assert multipliers[-1] == 1, "Last multiplier must be 1, as it is the target variable."
+
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict):     # noqa: D102
+        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
+
+        multipliers = self._multipliers
+
+        if multipliers:
+            for var, multiplier in zip(self.sum_vars, multipliers):
+                domain = domains[var]
+                for value in domain[:]:
+                    if value * multiplier > max(domains[self.target_var]):
+                        domain.remove(value)
+        else:
+            for var in self.sum_vars:
+                domain = domains[var]
+                others_min = sum(min(domains[v]) for v in self.sum_vars if v != var)
+                others_max = sum(max(domains[v]) for v in self.sum_vars if v != var)
+                for value in domain[:]:
+                    if value + others_min > max(domains[self.target_var]):
+                        domain.remove(value)
+                    if value + others_max < min(domains[self.target_var]):
+                        domain.remove(value)
+
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):      # noqa: D102
+        multipliers = self._multipliers
+
+        if self.target_var not in assignments:
+            return True  # can't evaluate without target, defer to later
+
+        target_value = assignments[self.target_var]
+        sum_value = 0
+        missing = False
+
+        if multipliers:
+            for var, multiplier in zip(self.sum_vars, multipliers):
+                if var in assignments:
+                    sum_value += assignments[var] * multiplier
+                else:
+                    missing = True
+        else:
+            for var in self.sum_vars:
+                if var in assignments:
+                    sum_value += assignments[var]
+                else:
+                    sum_value += min(domains[var])  # use min value if not assigned
+                    missing = True
+
+        if isinstance(sum_value, float):
+            sum_value = round(sum_value, 10)
+
+        if missing:
+            # Partial assignments: only check feasibility
+            if sum_value > target_value:
+                return False
+            if forwardcheck:
+                for var in self.sum_vars:
+                    if var not in assignments:
+                        domain = domains[var]
+                        if multipliers:
+                            for value in domain[:]:
+                                temp_sum = sum_value + (value * multipliers[self.sum_vars.index(var)])
+                                if temp_sum > target_value:
+                                    domain.hideValue(value)
+                        else:
+                            for value in domain[:]:
+                                temp_sum = sum_value + value
+                                if temp_sum > target_value:
+                                    domain.hideValue(value)
+                        if not domain:
+                            return False
+            return True
+        else:
+            return sum_value == target_value
+
 
 class MinSumConstraint(Constraint):
     """Constraint enforcing that values of given variables sum at least to a given amount.
