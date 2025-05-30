@@ -13,6 +13,7 @@ from constraint.constraints import (
     MinSumConstraint,
     FunctionConstraint,
     CompilableFunctionConstraint,
+    VariableExactSumConstraint,
     # TODO implement parsing for these constraints:
     # InSetConstraint,
     # NotInSetConstraint,
@@ -97,8 +98,22 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         left_num = is_or_evals_to_number(left)
         right_num = is_or_evals_to_number(right)
         if (left_num is None and right_num is None) or (left_num is not None and right_num is not None):
+            # if both sides are parameters, use the VariableConstraints
+            variable_supported_operators = ['+']
+            variables = [s.strip() for s in list(left + right) if s not in variable_supported_operators]
+            if all(s.strip() in params for s in variables) and (len(left) == 1 or len(right) == 1):
+                variables_on_left = len(right) == 1
+                if comparator == "==":
+                    # if both sides are parameters, use the VariableExactSumConstraint
+                    if variables_on_left:
+                        return VariableExactSumConstraint(variables[-1], variables[:-1])
+                    else:
+                        return VariableExactSumConstraint(variables[0], variables[1:])
+
             # left_num and right_num can't be both None or both a constant
             return None
+
+        # if one side is a number, the other side must be a variable or expression
         number, variables, variables_on_left = (
             (left_num, right.strip(), False) if left_num is not None else (right_num, left.strip(), True)
         )
