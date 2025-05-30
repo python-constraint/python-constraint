@@ -133,3 +133,43 @@ def test_parallel_solver_process_mode():
     problem.addConstraint(FunctionConstraint(lambda x, y: 1 <= x * y <= 2))
     with pytest.raises(AssertionError):
         problem.getSolutions()
+
+def test_solvers_consistency():
+    """Test that the solvers yield consistent results for the same problem."""
+    solvers = [None, MinConflictsSolver(), OptimizedBacktrackingSolver(), BacktrackingSolver(), RecursiveBacktrackingSolver()]
+    base_solution = None
+    # variables = ['A','B','E','F','G','H','M']
+    variables = ['B','E','G']
+
+    def create_problem(solver):
+        print(f"Creating problem with solver: {solver}")
+        problem = Problem(solver)
+        values = range(10, 200)
+        problem.addVariables(variables.copy(), values)
+        # problem.addConstraint("H == 10*A-491")
+        problem.addConstraint("B == E+G")
+        # problem.addConstraint("G == B-M")
+        # problem.addConstraint("H == F*F")
+        # problem.addConstraint("M == 351-2*E")
+        return problem
+
+    for solver in solvers:
+        problem = create_problem(solver)
+        if isinstance(solver, MinConflictsSolver):
+            assert base_solution is not None, "Base solution must be defined before using MinConflictsSolver"
+            solution = problem.getSolution()  # MinConflictsSolver provides only one solution
+            # check that the solution is in the list of possible solutions
+            assert solution is not None, f"No solution found for {solver}"
+            assert tuple(solution.values()) in base_solution
+        else:
+            solutions_list, _, size = problem.getSolutionsAsListDict(order=variables)
+        
+            # Check that all solutions are valid
+            assert size > 0, f"No solutions found for {solver}"
+
+            # Check consistency with the base solution
+            if base_solution is None:
+                base_solution = solutions_list
+            else:
+                assert size == len(base_solution)
+                # assert all(sol in solutions_list for sol in base_solution)
