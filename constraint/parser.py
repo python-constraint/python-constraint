@@ -103,16 +103,20 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             # if both sides are parameters, try to use the VariableConstraints
             variable_supported_operators = ['+']
             variables = [s.strip() for s in list(left + right) if s not in variable_supported_operators]
-            if all(s.strip() in params for s in variables) and (len(left) == 1 or len(right) == 1):
+            # find all unique variable_supported_operators in the restriction, can have at most one
+            unique_operators = set(s.strip() for s in list(left + right) if s in variable_supported_operators)
+            # if there is a mix of operators (e.g. 'x + y * z == a') or multiple variables on both sides, return None
+            if len(unique_operators) == 1 and all(s.strip() in params for s in variables) and (len(left) == 1 or len(right) == 1):
                 variables_on_left = len(right) == 1
-                if comparator == "==":
-                    return VariableExactSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactSumConstraint(variables[0], variables[1:])  # noqa: E501
-                elif comparator == "<=":
-                    # "B+C <= A" (maxsum) if variables_on_left else "A <= B+C" (minsum)
-                    return VariableMaxSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMinSumConstraint(variables[0], variables[1:])  # noqa: E501
-                elif comparator == ">=":
-                    # "B+C >= A" (minsum) if variables_on_left else "A >= B+C" (maxsum)
-                    return VariableMinSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxSumConstraint(variables[0], variables[1:])
+                if unique_operators[0] == "+":
+                    if comparator == "==":
+                        return VariableExactSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactSumConstraint(variables[0], variables[1:])  # noqa: E501
+                    elif comparator == "<=":
+                        # "B+C <= A" (maxsum) if variables_on_left else "A <= B+C" (minsum)
+                        return VariableMaxSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMinSumConstraint(variables[0], variables[1:])  # noqa: E501
+                    elif comparator == ">=":
+                        # "B+C >= A" (minsum) if variables_on_left else "A >= B+C" (maxsum)
+                        return VariableMinSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxSumConstraint(variables[0], variables[1:])
 
             # left_num and right_num can't be both None or both a constant
             return None
@@ -161,7 +165,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         # check which operator is applied on the variables
         operator = operators_found[0]
         if not all(o == operator for o in operators_found):
-            # if the operator is inconsistent (e.g. 'x + y * z == 3'), return None
+            # if there is a mix of operators (e.g. 'x + y * z == 3'), return None
             return None
 
         # split the string on the comparison
