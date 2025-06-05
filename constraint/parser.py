@@ -7,13 +7,15 @@ from constraint.constraints import (
     AllEqualConstraint,
     Constraint,
     ExactSumConstraint,
-    MaxProdConstraint,
+    MinSumConstraint,
     MaxSumConstraint,
     MinProdConstraint,
-    MinSumConstraint,
+    MaxProdConstraint,
     FunctionConstraint,
     CompilableFunctionConstraint,
     VariableExactSumConstraint,
+    VariableMinSumConstraint,
+    VariableMaxSumConstraint,
     # TODO implement parsing for these constraints:
     # InSetConstraint,
     # NotInSetConstraint,
@@ -94,21 +96,23 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                 # it's not a solvable subexpression, return None
                 return None
 
-        # either the left or right side of the equation must evaluate to a constant number
+        # either the left or right side of the equation must evaluate to a constant number, otherwise we use a VariableConstraint
         left_num = is_or_evals_to_number(left)
         right_num = is_or_evals_to_number(right)
         if (left_num is None and right_num is None) or (left_num is not None and right_num is not None):
-            # if both sides are parameters, use the VariableConstraints
+            # if both sides are parameters, try to use the VariableConstraints
             variable_supported_operators = ['+']
             variables = [s.strip() for s in list(left + right) if s not in variable_supported_operators]
             if all(s.strip() in params for s in variables) and (len(left) == 1 or len(right) == 1):
                 variables_on_left = len(right) == 1
                 if comparator == "==":
-                    # if both sides are parameters, use the VariableExactSumConstraint
-                    if variables_on_left:
-                        return VariableExactSumConstraint(variables[-1], variables[:-1])
-                    else:
-                        return VariableExactSumConstraint(variables[0], variables[1:])
+                    return VariableExactSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactSumConstraint(variables[0], variables[1:])  # noqa: E501
+                elif comparator == "<=":
+                    # "B+C <= A" (maxsum) if variables_on_left else "A <= B+C" (minsum)
+                    return VariableMaxSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMinSumConstraint(variables[0], variables[1:])  # noqa: E501
+                elif comparator == ">=":
+                    # "B+C >= A" (minsum) if variables_on_left else "A >= B+C" (maxsum)
+                    return VariableMinSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxSumConstraint(variables[0], variables[1:])
 
             # left_num and right_num can't be both None or both a constant
             return None
