@@ -613,10 +613,10 @@ class VariableMinSumConstraint(Constraint):
 
     Example:
         >>> problem = Problem()
-        >>> problem.addVariables(["a", "b", "c"], [1, 2, 3])
+        >>> problem.addVariables(["a", "b", "c"], [1, 4])
         >>> problem.addConstraint(VariableMinSumConstraint('c', ['a', 'b']))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-        [[('a', 1), ('b', 1), ('c', 2)], [('a', 1), ('b', 2), ('c', 3)], [('a', 2), ('b', 1), ('c', 3)]]
+        [[('a', 1), ('b', 1), ('c', 1)], [('a', 1), ('b', 4), ('c', 1)], [('a', 1), ('b', 4), ('c', 4)], [('a', 4), ('b', 1), ('c', 1)], [('a', 4), ('b', 1), ('c', 4)], [('a', 4), ('b', 4), ('c', 1)], [('a', 4), ('b', 4), ('c', 4)]]
     """
 
     def __init__(self, target_var: str, sum_vars: Sequence, multipliers: Optional[Sequence] = None):
