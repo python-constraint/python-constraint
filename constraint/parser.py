@@ -106,9 +106,9 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             # find all unique variable_supported_operators in the restriction, can have at most one
             unique_operators = set(s.strip() for s in list(left + right) if s in variable_supported_operators)
             # if there is a mix of operators (e.g. 'x + y * z == a') or multiple variables on both sides, return None
-            if len(unique_operators) == 1 and all(s.strip() in params for s in variables) and (len(left) == 1 or len(right) == 1):
+            if len(unique_operators) <= 1 and all(s.strip() in params for s in variables) and (len(left) == 1 or len(right) == 1):
                 variables_on_left = len(right) == 1
-                if unique_operators[0] == "+":
+                if unique_operators[0] == "+" or len(unique_operators) == 0:
                     if comparator == "==":
                         return VariableExactSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactSumConstraint(variables[0], variables[1:])  # noqa: E501
                     elif comparator == "<=":
