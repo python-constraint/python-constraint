@@ -749,6 +749,73 @@ class VariableMaxSumConstraint(Constraint):
         return sum_value <= target_value
 
 
+class ExactProdConstraint(Constraint):
+    """Constraint enforcing that values of given variables create a product of exactly a given amount."""
+
+    def __init__(self, exactprod: Union[int, float]):
+        """Instantiate an ExactProdConstraint.
+
+        Args:
+            exactprod: Value to be considered as the product
+        """
+        self._exactprod = exactprod
+
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
+        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
+
+        # check if there are any values less than 1 in the associated variables
+        self._variable_contains_lt1: list[bool] = list()
+        variable_with_lt1 = None
+        for variable in variables:
+            contains_lt1 = any(value < 1 for value in domains[variable])
+            self._variable_contains_lt1.append(contains_lt1)
+        for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
+            if contains_lt1 is True:
+                if variable_with_lt1 is not None:
+                    # if more than one associated variables contain less than 1, we can't prune
+                    return
+                variable_with_lt1 = variable
+
+        # prune the associated variables of values > exactprod
+        exactprod = self._exactprod
+        for variable in variables:
+            if variable_with_lt1 is not None and variable_with_lt1 != variable:
+                continue
+            domain = domains[variable]
+            for value in domain[:]:
+                if value > exactprod:
+                    domain.remove(value)
+                elif value == 0 and exactprod != 0:
+                    domain.remove(value)
+
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
+        exactprod = self._exactprod
+        prod = 1
+        missing = False
+        missing_lt1 = False
+        for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
+            if variable in assignments:
+                prod *= assignments[variable]
+            else:
+                missing = True
+                if not missing_lt1:
+                    missing_lt1 = contains_lt1
+        if isinstance(prod, float):
+            prod = round(prod, 10)
+        if not missing and prod != exactprod or (not missing_lt1 and prod > exactprod):
+            return False
+        if forwardcheck and not missing_lt1:
+            for variable in variables:
+                if variable not in assignments:
+                    domain = domains[variable]
+                    for value in domain[:]:
+                        if prod * value > exactprod:
+                            domain.hideValue(value)
+                    if not domain:
+                        return False
+        return True
+
+
 class MaxProdConstraint(Constraint):
     """Constraint enforcing that values of given variables create a product up to at most a given amount."""
 
@@ -764,11 +831,12 @@ class MaxProdConstraint(Constraint):
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
 
         # check if there are any values less than 1 in the associated variables
-        variable_contains_lt1: list[bool] = list()
+        self._variable_contains_lt1: list[bool] = list()
         variable_with_lt1 = None
         for variable in variables:
             contains_lt1 = any(value < 1 for value in domains[variable])
-            variable_contains_lt1.append(contains_lt1)
+            self._variable_contains_lt1.append(contains_lt1)
+        for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
             if contains_lt1 is True:
                 if variable_with_lt1 is not None:
                     # if more than one associated variables contain less than 1, we can't prune
@@ -790,14 +858,20 @@ class MaxProdConstraint(Constraint):
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         maxprod = self._maxprod
         prod = 1
-        for variable in variables:
+        missing = False
+        missing_lt1 = False
+        for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
             if variable in assignments:
                 prod *= assignments[variable]
+            else:
+                missing = True
+                if not missing_lt1:
+                    missing_lt1 = contains_lt1
         if isinstance(prod, float):
             prod = round(prod, 10)
-        if prod > maxprod:
+        if (not missing or not missing_lt1) and prod > maxprod:
             return False
-        if forwardcheck:
+        if forwardcheck and not missing_lt1:
             for variable in variables:
                 if variable not in assignments:
                     domain = domains[variable]
@@ -823,7 +897,7 @@ class MinProdConstraint(Constraint):
     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
 
-        # prune the associated variables of values > maxprod
+        # prune the associated variables of values > minprod
         minprod = self._minprod
         for variable in variables:
             domain = domains[variable]

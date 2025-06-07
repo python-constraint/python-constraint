@@ -9,6 +9,7 @@ from constraint.constraints import (
     ExactSumConstraint,
     MinSumConstraint,
     MaxSumConstraint,
+    ExactProdConstraint,
     MinProdConstraint,
     MaxProdConstraint,
     FunctionConstraint,
@@ -99,7 +100,6 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             swapped_side_first_variable = re.search(regex_match_variable, left if variables_on_left else right)
             if swapped_side_first_variable is None:
                 # if there is no variable on the left side, we can't handle this yet
-                raise ValueError(unique_operators_left, unique_operators_right, left, right)
                 return None
             else:
                 swapped_side_first_variable = swapped_side_first_variable.group(0)
@@ -113,6 +113,17 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                     # e.g. "B-M == G" becomes "B == G+M"
                     left_remainder = left[len(swapped_side_first_variable):]
                     right_swap = left_remainder.replace("-", "+")
+                    restriction = f"{swapped_side_first_variable}{comparator}{right}{right_swap}"
+            if "/" in unique_operators:
+                if not variables_on_left:
+                    # e.g. "G == B/M" becomes "G*M == B"
+                    right_remainder = right[len(swapped_side_first_variable):]
+                    left_swap = right_remainder.replace("/", "*")
+                    restriction = f"{left}{left_swap}{comparator}{swapped_side_first_variable}"
+                else:
+                    # e.g. "B/M == G" becomes "B == G*M"
+                    left_remainder = left[len(swapped_side_first_variable):]
+                    right_swap = left_remainder.replace("/", "*")
                     restriction = f"{swapped_side_first_variable}{comparator}{right}{right_swap}"
 
             # we have a potentially rewritten restriction, split again
@@ -210,7 +221,9 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                 # power operations are not (yet) supported, added to avoid matching the double asterisk
                 return None
             elif operator == "*":
-                if comparator == "<=" or (comparator == "<" and number_is_int):
+                if comparator == "==":
+                    return ExactProdConstraint(number)
+                elif comparator == "<=" or (comparator == "<" and number_is_int):
                     return MaxProdConstraint(number) if variables_on_left else MinProdConstraint(number)
                 elif comparator == ">=" or (comparator == ">" and number_is_int):
                     return MinProdConstraint(number) if variables_on_left else MaxProdConstraint(number)
