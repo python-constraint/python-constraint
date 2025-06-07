@@ -85,6 +85,39 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         # split the string on the comparison and remove leading and trailing whitespace
         left, right = tuple(s.strip() for s in restriction.split(comparator))
 
+        # if we have an inverse operation, rewrite to the other side
+        supported_operators = ["**", "*", "+", "-", "/"]
+        unique_operators_left = set(s.strip() for s in list(left) if s in supported_operators)
+        unique_operators_right = set(s.strip() for s in list(right) if s in supported_operators)
+        # TODO implement the case where the minus is part of a constant, e.g. "-3 <= x + y"
+        if len(unique_operators_left) > 0 and len(unique_operators_right) > 0:
+            # if there are operators on both sides, we can't handle this yet
+            return None
+        unique_operators = unique_operators_left.union(unique_operators_right)
+        if len(unique_operators) == 1:
+            variables_on_left = len(unique_operators_left) > 0
+            swapped_side_first_variable = re.search(regex_match_variable, left if variables_on_left else right)
+            if swapped_side_first_variable is None:
+                # if there is no variable on the left side, we can't handle this yet
+                raise ValueError(unique_operators_left, unique_operators_right, left, right)
+                return None
+            else:
+                swapped_side_first_variable = swapped_side_first_variable.group(0)
+            if "-" in unique_operators:
+                if not variables_on_left:
+                    # e.g. "G == B-M" becomes "G+M == B"
+                    right_remainder = right[len(swapped_side_first_variable):]
+                    left_swap = right_remainder.replace("-", "+")
+                    restriction = f"{left}{left_swap}{comparator}{swapped_side_first_variable}"
+                else:
+                    # e.g. "B-M == G" becomes "B == G+M"
+                    left_remainder = left[len(swapped_side_first_variable):]
+                    right_swap = left_remainder.replace("-", "+")
+                    restriction = f"{swapped_side_first_variable}{comparator}{right}{right_swap}"
+
+            # we have a potentially rewritten restriction, split again
+            left, right = tuple(s.strip() for s in restriction.split(comparator))
+
         # find out which side is the constant number
         def is_or_evals_to_number(s: str) -> Optional[Union[int, float]]:
             try:
@@ -108,7 +141,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             # if there is a mix of operators (e.g. 'x + y * z == a') or multiple variables on both sides, return None
             if len(unique_operators) <= 1 and all(s.strip() in params for s in variables) and (len(left) == 1 or len(right) == 1):
                 variables_on_left = len(right) == 1
-                if unique_operators[0] == "+" or len(unique_operators) == 0:
+                if len(unique_operators) == 0 or next(iter(unique_operators)) == "+":
                     if comparator == "==":
                         return VariableExactSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactSumConstraint(variables[0], variables[1:])  # noqa: E501
                     elif comparator == "<=":

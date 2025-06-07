@@ -37,7 +37,7 @@ def test_parse_restrictions():
 
 def test_compile_to_constraints():
     domains = {"x": [50, 100], "y": [0, 1]}
-    constraints = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100", "x == 100", "x == x+y"]
+    constraints = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100", "x == 100", "x == x+y", "100 == x-y"]
     expected_constraint_types = [
         FunctionConstraint, 
         FunctionConstraint, 
@@ -45,6 +45,7 @@ def test_compile_to_constraints():
         MaxProdConstraint,
         ExactSumConstraint,
         VariableExactSumConstraint,
+        ExactSumConstraint,
     ]
 
     compiled = compile_to_constraints(constraints, domains, picklable=False)
