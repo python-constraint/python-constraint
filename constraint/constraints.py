@@ -3,6 +3,7 @@
 from constraint.domain import Unassigned
 from typing import Callable, Union, Optional
 from collections.abc import Sequence
+from itertools import product
 
 class Constraint:
     """Abstract base class for constraints."""
@@ -373,7 +374,7 @@ class VariableExactSumConstraint(Constraint):
         [[('a', 1), ('b', 1), ('c', 2)], [('a', 1), ('b', 2), ('c', 3)], [('a', 2), ('b', 1), ('c', 3)]]
     """
 
-    def __init__(self, target_var: str, sum_vars: Sequence, multipliers: Optional[Sequence] = None):
+    def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Optional[Sequence] = None):
         """Initialization method.
 
         Args:
@@ -520,7 +521,7 @@ class VariableMinSumConstraint(Constraint):
         [[('a', 1), ('b', 1), ('c', 1)], [('a', 1), ('b', 4), ('c', 1)], [('a', 1), ('b', 4), ('c', 4)], [('a', 4), ('b', 1), ('c', 1)], [('a', 4), ('b', 1), ('c', 4)], [('a', 4), ('b', 4), ('c', 1)], [('a', 4), ('b', 4), ('c', 4)]]
     """ # noqa: E501
 
-    def __init__(self, target_var: str, sum_vars: Sequence, multipliers: Optional[Sequence] = None):
+    def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Optional[Sequence] = None):
         """Initialization method.
 
         Args:
@@ -690,7 +691,7 @@ class VariableMaxSumConstraint(Constraint):
         [[('a', 1), ('b', 1), ('c', 3)], [('a', 1), ('b', 1), ('c', 4)], [('a', 1), ('b', 3), ('c', 4)], [('a', 3), ('b', 1), ('c', 4)]]
     """ # noqa: E501
 
-    def __init__(self, target_var: str, sum_vars: Sequence, multipliers: Optional[Sequence] = None):
+    def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Optional[Sequence] = None):
         """Initialization method.
 
         Args:
@@ -824,7 +825,110 @@ class ExactProdConstraint(Constraint):
                         return False
         return True
 
+class VariableExactProdConstraint(Constraint):
+    """Constraint enforcing that the product of variables equals the value of another variable.
 
+    Example:
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b", "c"], [1, 2])
+        >>> problem.addConstraint(VariableExactProdConstraint('c', ['a', 'b']))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 1), ('c', 1)], [('a', 1), ('b', 2), ('c', 2)], [('a', 2), ('b', 1), ('c', 2)]]
+    """
+
+    def __init__(self, target_var: str, product_vars: Sequence[str]):
+        """Instantiate a VariableExactProdConstraint.
+
+        Args:
+            target_var (Variable): The target variable to match.
+            product_vars (sequence of Variables): The variables to calculate the product of.
+        """
+        self.target_var = target_var
+        self.product_vars = product_vars
+
+    def _get_product_bounds(self, domain_dict, exclude_var=None):
+        """Return min and max product of domains of product_vars (excluding `exclude_var` if given)."""
+        bounds = []
+        for var in self.product_vars:
+            if var == exclude_var:
+                continue
+            dom = domain_dict[var]
+            bounds.append((min(dom), max(dom)))
+
+        all_bounds = [b for b in bounds]
+        if not all_bounds:
+            return 1, 1
+
+        # Get all combinations of min/max to find global min/max product
+        candidates = [b for b in product(*[(lo, hi) for lo, hi in all_bounds])]
+        products = [self._safe_product(p) for p in candidates]
+        return min(products), max(products)
+
+    def _safe_product(self, values):
+        prod = 1
+        for v in values:
+            prod *= v
+        return prod
+
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
+        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
+
+        target_domain = domains[self.target_var]
+        target_min = min(target_domain)
+        target_max = max(target_domain)
+        for var in self.product_vars:
+            other_min, other_max = self._get_product_bounds(domains, exclude_var=var)
+            domain = domains[var]
+            for value in domain[:]:
+                candidates = [value * other_min, value * other_max]
+                minval, maxval = min(candidates), max(candidates)
+                if maxval < target_min or minval > target_max:
+                    domain.remove(value)
+
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
+        if self.target_var not in assignments:
+            return True
+
+        target_value = assignments[self.target_var]
+        assigned_product = 1
+        unassigned_vars = []
+
+        for var in self.product_vars:
+            if var in assignments:
+                assigned_product *= assignments[var]
+            else:
+                unassigned_vars.append(var)
+
+        if isinstance(assigned_product, float):
+            assigned_product = round(assigned_product, 10)
+
+        if not unassigned_vars:
+            return assigned_product == target_value
+
+        # Partial assignment – check feasibility
+        domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned_vars]
+        candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
+        possible_min = min(assigned_product * c for c in candidates)
+        possible_max = max(assigned_product * c for c in candidates)
+
+        if target_value < possible_min or target_value > possible_max:
+            return False
+
+        if forwardcheck:
+            for var in unassigned_vars:
+                others = [v for v in unassigned_vars if v != var]
+                others_bounds = [(min(domains[v]), max(domains[v])) for v in others] or [(1, 1)]
+                other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in others_bounds])]
+
+                domain = domains[var]
+                for value in domain[:]:
+                    candidates = [assigned_product * value * p for p in other_products]
+                    if all(c != target_value for c in candidates):
+                        domain.hideValue(value)
+                if not domain:
+                    return False
+
+        return True
 
 
 class MaxProdConstraint(Constraint):

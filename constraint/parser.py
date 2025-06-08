@@ -17,6 +17,7 @@ from constraint.constraints import (
     VariableExactSumConstraint,
     VariableMinSumConstraint,
     VariableMaxSumConstraint,
+    VariableExactProdConstraint,
     # TODO implement parsing for these constraints:
     # InSetConstraint,
     # NotInSetConstraint,
@@ -74,7 +75,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
     def to_numeric_constraint(
         restriction: str, params: list[str]
-    ) -> Optional[Union[MinSumConstraint, VariableMinSumConstraint, ExactSumConstraint, VariableExactSumConstraint, MaxSumConstraint, VariableMaxSumConstraint, MinProdConstraint, ExactProdConstraint, MaxProdConstraint]]:  # noqa: E501
+    ) -> Optional[Union[MinSumConstraint, VariableMinSumConstraint, ExactSumConstraint, VariableExactSumConstraint, MaxSumConstraint, VariableMaxSumConstraint, MinProdConstraint, ExactProdConstraint, VariableExactProdConstraint, MaxProdConstraint]]:  # noqa: E501
         """Converts a restriction to a built-in numeric constraint if possible."""
         # first check if all parameters have only numbers as values
         if len(params) == 0 or not all(all(isinstance(v, (int, float)) for v in tune_params[p]) for p in params):
@@ -149,7 +150,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         right_num = is_or_evals_to_number(right)
         if (left_num is None and right_num is None) or (left_num is not None and right_num is not None):
             # if both sides are parameters, try to use the VariableConstraints
-            variable_supported_operators = ['+']
+            variable_supported_operators = ['+', '*']
             variables = [s.strip() for s in list(left + right) if s not in variable_supported_operators]
             # find all unique variable_supported_operators in the restriction, can have at most one
             unique_operators = set(s.strip() for s in list(left + right) if s in variable_supported_operators)
@@ -165,6 +166,9 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                     elif comparator == ">=":
                         # "B+C >= A" (minsum) if variables_on_left else "A >= B+C" (maxsum)
                         return VariableMinSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxSumConstraint(variables[0], variables[1:])  # noqa: E501
+                elif next(iter(unique_operators)) == "*":
+                    if comparator == "==":
+                        return VariableExactProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactProdConstraint(variables[0], variables[1:])  # noqa: E501
 
             # left_num and right_num can't be both None or both a constant
             return None
