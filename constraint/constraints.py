@@ -274,105 +274,6 @@ class AllEqualConstraint(Constraint):
         return True
 
 
-class MaxSumConstraint(Constraint):
-    """Constraint enforcing that values of given variables sum up to a given amount.
-
-    Example:
-        >>> problem = Problem()
-        >>> problem.addVariables(["a", "b"], [1, 2])
-        >>> problem.addConstraint(MaxSumConstraint(3))
-        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
-        [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
-    """
-
-    def __init__(self, maxsum: Union[int, float], multipliers: Optional[Sequence] = None):
-        """Initialization method.
-
-        Args:
-            maxsum (number): Value to be considered as the maximum sum
-            multipliers (sequence of numbers): If given, variable values
-                will be multiplied by the given factors before being
-                summed to be checked
-        """
-        self._maxsum = maxsum
-        self._multipliers = multipliers
-
-    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
-        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
-
-        # check if there are any negative values in the associated variables
-        variable_contains_negative: list[bool] = list()
-        variable_with_negative = None
-        for variable in variables:
-            contains_negative = any(value < 0 for value in domains[variable])
-            variable_contains_negative.append(contains_negative)
-            if contains_negative:
-                if variable_with_negative is not None:
-                    # if more than one associated variables contain negative, we can't prune
-                    return
-                variable_with_negative = variable
-
-        # prune the associated variables of values > maxsum
-        multipliers = self._multipliers
-        maxsum = self._maxsum
-        if multipliers:
-            for variable, multiplier in zip(variables, multipliers):
-                if variable_with_negative is not None and variable_with_negative != variable:
-                    continue
-                domain = domains[variable]
-                for value in domain[:]:
-                    if value * multiplier > maxsum:
-                        domain.remove(value)
-        else:
-            for variable in variables:
-                if variable_with_negative is not None and variable_with_negative != variable:
-                    continue
-                domain = domains[variable]
-                for value in domain[:]:
-                    if value > maxsum:
-                        domain.remove(value)
-
-    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
-        multipliers = self._multipliers
-        maxsum = self._maxsum
-        sum = 0
-        if multipliers:
-            for variable, multiplier in zip(variables, multipliers):
-                if variable in assignments:
-                    sum += assignments[variable] * multiplier
-            if isinstance(sum, float):
-                sum = round(sum, 10)
-            if sum > maxsum:
-                return False
-            if forwardcheck:
-                for variable, multiplier in zip(variables, multipliers):
-                    if variable not in assignments:
-                        domain = domains[variable]
-                        for value in domain[:]:
-                            if sum + value * multiplier > maxsum:
-                                domain.hideValue(value)
-                        if not domain:
-                            return False
-        else:
-            for variable in variables:
-                if variable in assignments:
-                    sum += assignments[variable]
-            if isinstance(sum, float):
-                sum = round(sum, 10)
-            if sum > maxsum:
-                return False
-            if forwardcheck:
-                for variable in variables:
-                    if variable not in assignments:
-                        domain = domains[variable]
-                        for value in domain[:]:
-                            if sum + value > maxsum:
-                                domain.hideValue(value)
-                        if not domain:
-                            return False
-        return True
-
-
 class ExactSumConstraint(Constraint):
     """Constraint enforcing that values of given variables sum exactly to a given amount.
 
@@ -617,7 +518,7 @@ class VariableMinSumConstraint(Constraint):
         >>> problem.addConstraint(VariableMinSumConstraint('c', ['a', 'b']))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 1), ('c', 1)], [('a', 1), ('b', 4), ('c', 1)], [('a', 1), ('b', 4), ('c', 4)], [('a', 4), ('b', 1), ('c', 1)], [('a', 4), ('b', 1), ('c', 4)], [('a', 4), ('b', 4), ('c', 1)], [('a', 4), ('b', 4), ('c', 4)]]
-    """
+    """ # noqa: E501
 
     def __init__(self, target_var: str, sum_vars: Sequence, multipliers: Optional[Sequence] = None):
         """Initialization method.
@@ -678,6 +579,106 @@ class VariableMinSumConstraint(Constraint):
 
         return sum_value >= target_value
 
+
+class MaxSumConstraint(Constraint):
+    """Constraint enforcing that values of given variables sum up to a given amount.
+
+    Example:
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(MaxSumConstraint(3))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+    """
+
+    def __init__(self, maxsum: Union[int, float], multipliers: Optional[Sequence] = None):
+        """Initialization method.
+
+        Args:
+            maxsum (number): Value to be considered as the maximum sum
+            multipliers (sequence of numbers): If given, variable values
+                will be multiplied by the given factors before being
+                summed to be checked
+        """
+        self._maxsum = maxsum
+        self._multipliers = multipliers
+
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
+        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
+
+        # check if there are any negative values in the associated variables
+        variable_contains_negative: list[bool] = list()
+        variable_with_negative = None
+        for variable in variables:
+            contains_negative = any(value < 0 for value in domains[variable])
+            variable_contains_negative.append(contains_negative)
+            if contains_negative:
+                if variable_with_negative is not None:
+                    # if more than one associated variables contain negative, we can't prune
+                    return
+                variable_with_negative = variable
+
+        # prune the associated variables of values > maxsum
+        multipliers = self._multipliers
+        maxsum = self._maxsum
+        if multipliers:
+            for variable, multiplier in zip(variables, multipliers):
+                if variable_with_negative is not None and variable_with_negative != variable:
+                    continue
+                domain = domains[variable]
+                for value in domain[:]:
+                    if value * multiplier > maxsum:
+                        domain.remove(value)
+        else:
+            for variable in variables:
+                if variable_with_negative is not None and variable_with_negative != variable:
+                    continue
+                domain = domains[variable]
+                for value in domain[:]:
+                    if value > maxsum:
+                        domain.remove(value)
+
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
+        multipliers = self._multipliers
+        maxsum = self._maxsum
+        sum = 0
+        if multipliers:
+            for variable, multiplier in zip(variables, multipliers):
+                if variable in assignments:
+                    sum += assignments[variable] * multiplier
+            if isinstance(sum, float):
+                sum = round(sum, 10)
+            if sum > maxsum:
+                return False
+            if forwardcheck:
+                for variable, multiplier in zip(variables, multipliers):
+                    if variable not in assignments:
+                        domain = domains[variable]
+                        for value in domain[:]:
+                            if sum + value * multiplier > maxsum:
+                                domain.hideValue(value)
+                        if not domain:
+                            return False
+        else:
+            for variable in variables:
+                if variable in assignments:
+                    sum += assignments[variable]
+            if isinstance(sum, float):
+                sum = round(sum, 10)
+            if sum > maxsum:
+                return False
+            if forwardcheck:
+                for variable in variables:
+                    if variable not in assignments:
+                        domain = domains[variable]
+                        for value in domain[:]:
+                            if sum + value > maxsum:
+                                domain.hideValue(value)
+                        if not domain:
+                            return False
+        return True
+
+
 class VariableMaxSumConstraint(Constraint):
     """Constraint enforcing that the sum of variables sum at most to the value of another variable.
 
@@ -687,7 +688,7 @@ class VariableMaxSumConstraint(Constraint):
         >>> problem.addConstraint(VariableMaxSumConstraint('c', ['a', 'b']))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 1), ('c', 3)], [('a', 1), ('b', 1), ('c', 4)], [('a', 1), ('b', 3), ('c', 4)], [('a', 3), ('b', 1), ('c', 4)]]
-    """
+    """ # noqa: E501
 
     def __init__(self, target_var: str, sum_vars: Sequence, multipliers: Optional[Sequence] = None):
         """Initialization method.
@@ -750,7 +751,15 @@ class VariableMaxSumConstraint(Constraint):
 
 
 class ExactProdConstraint(Constraint):
-    """Constraint enforcing that values of given variables create a product of exactly a given amount."""
+    """Constraint enforcing that values of given variables create a product of exactly a given amount.
+    
+    Example:
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(ExactProdConstraint(2))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+    """
 
     def __init__(self, exactprod: Union[int, float]):
         """Instantiate an ExactProdConstraint.
@@ -817,7 +826,15 @@ class ExactProdConstraint(Constraint):
 
 
 class MaxProdConstraint(Constraint):
-    """Constraint enforcing that values of given variables create a product up to at most a given amount."""
+    """Constraint enforcing that values of given variables create a product up to at most a given amount.
+    
+    Example:
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(MaxProdConstraint(2))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+    """
 
     def __init__(self, maxprod: Union[int, float]):
         """Instantiate a MaxProdConstraint.
@@ -884,7 +901,15 @@ class MaxProdConstraint(Constraint):
 
 
 class MinProdConstraint(Constraint):
-    """Constraint enforcing that values of given variables create a product up to at least a given amount."""
+    """Constraint enforcing that values of given variables create a product up to at least a given amount.
+    
+    Example:
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [1, 2])
+        >>> problem.addConstraint(MinProdConstraint(2))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)], [('a', 2), ('b', 2)]]
+    """
 
     def __init__(self, minprod: Union[int, float]):
         """Instantiate a MinProdConstraint.
