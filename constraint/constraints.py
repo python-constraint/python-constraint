@@ -801,21 +801,21 @@ class ExactProdConstraint(Constraint):
         exactprod = self._exactprod
         prod = 1
         missing = False
-        missing_lt1 = False
+        missing_lt1 = []
         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
             if variable in assignments:
                 prod *= assignments[variable]
             else:
                 missing = True
-                if not missing_lt1:
-                    missing_lt1 = contains_lt1
+                if contains_lt1:
+                    missing_lt1.append(variable)
         if isinstance(prod, float):
             prod = round(prod, 10)
-        if not missing and prod != exactprod or (not missing_lt1 and prod > exactprod):
+        if (not missing and prod != exactprod) or (len(missing_lt1) == 0 and prod > exactprod):
             return False
-        if forwardcheck and not missing_lt1:
+        if forwardcheck:
             for variable in variables:
-                if variable not in assignments:
+                if variable not in assignments and (variable not in missing_lt1 or len(missing_lt1) == 1):
                     domain = domains[variable]
                     for value in domain[:]:
                         if prod * value > exactprod:
@@ -876,21 +876,21 @@ class MaxProdConstraint(Constraint):
         maxprod = self._maxprod
         prod = 1
         missing = False
-        missing_lt1 = False
+        missing_lt1 = []
         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
             if variable in assignments:
                 prod *= assignments[variable]
             else:
                 missing = True
-                if not missing_lt1:
-                    missing_lt1 = contains_lt1
+                if contains_lt1:
+                    missing_lt1.append(variable)
         if isinstance(prod, float):
             prod = round(prod, 10)
-        if (not missing or not missing_lt1) and prod > maxprod:
+        if (not missing and prod != exactprod) or (len(missing_lt1) == 0 and prod > exactprod):
             return False
-        if forwardcheck and not missing_lt1:
+        if forwardcheck:
             for variable in variables:
-                if variable not in assignments:
+                if variable not in assignments and (variable not in missing_lt1 or len(missing_lt1) == 1):
                     domain = domains[variable]
                     for value in domain[:]:
                         if prod * value > maxprod:
