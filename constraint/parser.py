@@ -74,8 +74,12 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
     def to_numeric_constraint(
         restriction: str, params: list[str]
-    ) -> Optional[Union[MinSumConstraint, ExactSumConstraint, MaxSumConstraint, MaxProdConstraint]]:
+    ) -> Optional[Union[MinSumConstraint, VariableMinSumConstraint, ExactSumConstraint, VariableExactSumConstraint, MaxSumConstraint, VariableMaxSumConstraint, MinProdConstraint, ExactProdConstraint, MaxProdConstraint]]:  # noqa: E501
         """Converts a restriction to a built-in numeric constraint if possible."""
+        # first check if all parameters have only numbers as values
+        if len(params) == 0 or not all(all(isinstance(v, (int, float)) for v in tune_params[p]) for p in params):
+            return None
+
         comparators = ["<=", "==", ">=", ">", "<"]
         comparators_found = re.findall("|".join(comparators), restriction)
         # check if there is exactly one comparator, if not, return None

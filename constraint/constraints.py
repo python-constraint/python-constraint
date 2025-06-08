@@ -825,6 +825,8 @@ class ExactProdConstraint(Constraint):
         return True
 
 
+
+
 class MaxProdConstraint(Constraint):
     """Constraint enforcing that values of given variables create a product up to at most a given amount.
     
@@ -886,7 +888,7 @@ class MaxProdConstraint(Constraint):
                     missing_lt1.append(variable)
         if isinstance(prod, float):
             prod = round(prod, 10)
-        if (not missing and prod != exactprod) or (len(missing_lt1) == 0 and prod > exactprod):
+        if (not missing or len(missing_lt1) == 0) and prod > maxprod:
             return False
         if forwardcheck:
             for variable in variables:
