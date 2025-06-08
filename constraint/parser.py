@@ -140,7 +140,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                 # it's not a solvable subexpression, return None
                 return None
 
-        # either the left or right side of the equation must evaluate to a constant number, otherwise we use a VariableConstraint
+        # either the left or right side of the equation must evaluate to a constant number, otherwise we use a VariableConstraint   # noqa: E501
         left_num = is_or_evals_to_number(left)
         right_num = is_or_evals_to_number(right)
         if (left_num is None and right_num is None) or (left_num is not None and right_num is not None):
@@ -150,7 +150,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             # find all unique variable_supported_operators in the restriction, can have at most one
             unique_operators = set(s.strip() for s in list(left + right) if s in variable_supported_operators)
             # if there is a mix of operators (e.g. 'x + y * z == a') or multiple variables on both sides, return None
-            if len(unique_operators) <= 1 and all(s.strip() in params for s in variables) and (len(left) == 1 or len(right) == 1):
+            if len(unique_operators) <= 1 and all(s.strip() in params for s in variables) and (len(left) == 1 or len(right) == 1):  # noqa: E501
                 variables_on_left = len(right) == 1
                 if len(unique_operators) == 0 or next(iter(unique_operators)) == "+":
                     if comparator == "==":
@@ -160,7 +160,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                         return VariableMaxSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMinSumConstraint(variables[0], variables[1:])  # noqa: E501
                     elif comparator == ">=":
                         # "B+C >= A" (minsum) if variables_on_left else "A >= B+C" (maxsum)
-                        return VariableMinSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxSumConstraint(variables[0], variables[1:])
+                        return VariableMinSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxSumConstraint(variables[0], variables[1:])  # noqa: E501
 
             # left_num and right_num can't be both None or both a constant
             return None
