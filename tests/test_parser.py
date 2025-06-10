@@ -1,4 +1,4 @@
-from constraint import compile_to_constraints, parse_restrictions, Constraint, FunctionConstraint, CompilableFunctionConstraint, ExactProdConstraint, MinProdConstraint, MaxProdConstraint, ExactSumConstraint, VariableExactSumConstraint
+from constraint import compile_to_constraints, parse_restrictions, Constraint, FunctionConstraint, CompilableFunctionConstraint, ExactProdConstraint, MinProdConstraint, MaxProdConstraint, ExactSumConstraint, VariableExactSumConstraint, VariableExactProdConstraint
 from collections.abc import Iterable
 
 def test_parse_restrictions():
@@ -37,7 +37,7 @@ def test_parse_restrictions():
 
 def test_compile_to_constraints():
     domains = {"x": [50, 100], "y": [0, 1]}
-    constraints = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100", "x == 100", "x == x+y", "100 == x-y", "x / y == 100"] # TODO change the last one to "x / y == x" once VarProd implemented
+    constraints = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100", "x == 100", "x == x+y", "100 == x-y", "x / y == 100", "x / y == x"]
     expected_constraint_types = [
         FunctionConstraint, 
         FunctionConstraint, 
@@ -47,6 +47,7 @@ def test_compile_to_constraints():
         VariableExactSumConstraint,
         ExactSumConstraint,
         ExactProdConstraint,
+        VariableExactProdConstraint,
     ]
 
     compiled = compile_to_constraints(constraints, domains, picklable=False)
