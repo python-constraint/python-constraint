@@ -1146,6 +1146,100 @@ class MaxProdConstraint(Constraint):
         return True
 
 
+class VariableMaxProdConstraint(Constraint):
+    """Constraint enforcing that the product of variables is at most the value of another variable.
+
+    Example:
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b", "c"], [-1, 2])
+        >>> problem.addConstraint(VariableMaxProdConstraint('c', ['a', 'b']))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -1), ('b', -1), ('c', 2)], [('a', -1), ('b', 2), ('c', -1)], [('a', -1), ('b', 2), ('c', 2)], [('a', 2), ('b', -1), ('c', -1)], [('a', 2), ('b', -1), ('c', 2)]]
+    """ # noqa: E501
+
+    def __init__(self, target_var: str, product_vars: Sequence[str]):
+        self.target_var = target_var
+        self.product_vars = product_vars
+
+    def _get_product_bounds(self, domain_dict, exclude_var=None):
+        bounds = []
+        for var in self.product_vars:
+            if var == exclude_var:
+                continue
+            dom = domain_dict[var]
+            bounds.append((min(dom), max(dom)))
+
+        if not bounds:
+            return 1, 1
+
+        # Try all corner combinations
+        candidates = [p for p in product(*[(lo, hi) for lo, hi in bounds])]
+        products = [self._safe_product(p) for p in candidates]
+        return min(products), max(products)
+
+    def _safe_product(self, values):
+        prod = 1
+        for v in values:
+            prod *= v
+        return prod
+
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict):
+        Constraint.preProcess(self, variables, domains, constraints, vconstraints)
+        target_dom = domains[self.target_var]
+        t_min, t_max = min(target_dom), max(target_dom)
+
+        for var in self.product_vars:
+            min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
+            dom = domains[var]
+            for val in dom[:]:
+                possible_prods = [val * min_others, val * max_others]
+                if min(possible_prods) > t_max:
+                    dom.remove(val)
+
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):
+        if self.target_var not in assignments:
+            return True  # Can't evaluate yet
+
+        target_value = assignments[self.target_var]
+        assigned_prod = 1
+        unassigned = []
+
+        for var in self.product_vars:
+            if var in assignments:
+                assigned_prod *= assignments[var]
+            else:
+                unassigned.append(var)
+
+        if not unassigned:
+            return assigned_prod <= target_value
+
+        # Estimate max possible value of full product
+        domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned]
+        candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
+        possible_prods = [assigned_prod * c for c in candidates]
+        if min(possible_prods) > target_value:
+            return False
+
+        if forwardcheck:
+            for var in unassigned:
+                other_unassigned = [v for v in unassigned if v != var]
+                if other_unassigned:
+                    bounds = [(min(domains[v]), max(domains[v])) for v in other_unassigned]
+                    other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in bounds])]
+                else:
+                    other_products = [1]
+
+                domain = domains[var]
+                for val in domain[:]:
+                    prods = [assigned_prod * val * o for o in other_products]
+                    if all(p > target_value for p in prods):
+                        domain.hideValue(val)
+                if not domain:
+                    return False
+
+        return True
+
+
 class InSetConstraint(Constraint):
     """Constraint enforcing that values of given variables are present in the given set.
 
