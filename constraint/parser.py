@@ -18,6 +18,8 @@ from constraint.constraints import (
     VariableMinSumConstraint,
     VariableMaxSumConstraint,
     VariableExactProdConstraint,
+    VariableMinProdConstraint,
+    VariableMaxProdConstraint,
     # TODO implement parsing for these constraints:
     # InSetConstraint,
     # NotInSetConstraint,
@@ -93,12 +95,14 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
         # if we have an inverse operation, rewrite to the other side
         supported_operators = ["**", "*", "+", "-", "/"]
-        unique_operators_left = set(s.strip() for s in list(left) if s in supported_operators)
-        unique_operators_right = set(s.strip() for s in list(right) if s in supported_operators)
+        operators_left = [s.strip() for s in list(left) if s in supported_operators]
+        operators_right = [s.strip() for s in list(right) if s in supported_operators]
         # TODO implement the case where the minus is part of a constant, e.g. "-3 <= x + y"
-        if len(unique_operators_left) > 0 and len(unique_operators_right) > 0:
+        if len(operators_left) > 0 and len(operators_right) > 0:
             # if there are operators on both sides, we can't handle this yet
             return None
+        unique_operators_left = set(operators_left)
+        unique_operators_right = set(operators_right)
         unique_operators = unique_operators_left.union(unique_operators_right)
         if len(unique_operators) == 1:
             variables_on_left = len(unique_operators_left) > 0
@@ -133,6 +137,11 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
             # we have a potentially rewritten restriction, split again
             left, right = tuple(s.strip() for s in restriction.split(comparator))
+            operators_left = [s.strip() for s in list(left) if s in supported_operators]
+            operators_right = [s.strip() for s in list(right) if s in supported_operators]
+            unique_operators_left = set(operators_left)
+            unique_operators_right = set(operators_right)
+            unique_operators = unique_operators_left.union(unique_operators_right)
 
         # find out which side is the constant number
         def is_or_evals_to_number(s: str) -> Optional[Union[int, float]]:
@@ -151,13 +160,18 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         if (left_num is None and right_num is None) or (left_num is not None and right_num is not None):
             # if both sides are parameters, try to use the VariableConstraints
             variable_supported_operators = ['+', '*']
-            variables = [s.strip() for s in list(left + right) if s not in variable_supported_operators]
+            # variables = [s.strip() for s in list(left + right) if s not in variable_supported_operators]
+            # TODO find all variables using regex_match_variable
+            variables = re.findall(regex_match_variable, restriction)
+
             # find all unique variable_supported_operators in the restriction, can have at most one
-            unique_operators = set(s.strip() for s in list(left + right) if s in variable_supported_operators)
+            variable_operators_left = list(s.strip() for s in list(left) if s in variable_supported_operators)
+            variable_operators_right = list(s.strip() for s in list(right) if s in variable_supported_operators)
+            variable_unique_operators = list(set(variable_operators_left).union(set(variable_operators_right)))
             # if there is a mix of operators (e.g. 'x + y * z == a') or multiple variables on both sides, return None
-            if len(unique_operators) <= 1 and all(s.strip() in params for s in variables) and (len(left) == 1 or len(right) == 1):  # noqa: E501
-                variables_on_left = len(right) == 1
-                if len(unique_operators) == 0 or next(iter(unique_operators)) == "+":
+            if len(variable_unique_operators) <= 1 and all(s.strip() in params for s in variables) and (len(unique_operators_left) == 0 or len(unique_operators_right) == 0):  # noqa: E501
+                variables_on_left = len(unique_operators_left) > 0
+                if len(variable_unique_operators) == 0 or variable_unique_operators[0] == "+":
                     if comparator == "==":
                         return VariableExactSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactSumConstraint(variables[0], variables[1:])  # noqa: E501
                     elif comparator == "<=":
@@ -166,11 +180,17 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                     elif comparator == ">=":
                         # "B+C >= A" (minsum) if variables_on_left else "A >= B+C" (maxsum)
                         return VariableMinSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxSumConstraint(variables[0], variables[1:])  # noqa: E501
-                elif next(iter(unique_operators)) == "*":
+                elif variable_unique_operators[0] == "*":
                     if comparator == "==":
                         return VariableExactProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactProdConstraint(variables[0], variables[1:])  # noqa: E501
+                    elif comparator == "<=":
+                        # "B*C <= A" (maxprod) if variables_on_left else "A <= B*C" (minprod)
+                        return VariableMaxProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMinProdConstraint(variables[0], variables[1:])
+                    elif comparator == ">=":
+                        # "B*C >= A" (minprod) if variables_on_left else "A >= B*C" (maxprod)
+                        return VariableMinProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxProdConstraint(variables[0], variables[1:])
 
-            # left_num and right_num can't be both None or both a constant
+            # left_num and right_num can't both be constants, or there is some other reason we can't use a VariableConstraint
             return None
 
         # if one side is a number, the other side must be a variable or expression
