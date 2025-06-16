@@ -1724,7 +1724,7 @@ struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_11_genexpr {
 };
 
 
-/* "constraint/constraints.py":888
+/* "constraint/constraints.py":890
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -1738,7 +1738,7 @@ struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_12___call__ {
 };
 
 
-/* "constraint/constraints.py":911
+/* "constraint/constraints.py":913
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned_vars]
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_min = min(assigned_product * c for c in candidates)             # <<<<<<<<<<<<<<
@@ -1755,7 +1755,7 @@ struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_13_genexpr {
 };
 
 
-/* "constraint/constraints.py":912
+/* "constraint/constraints.py":914
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_min = min(assigned_product * c for c in candidates)
  *         possible_max = max(assigned_product * c for c in candidates)             # <<<<<<<<<<<<<<
@@ -1772,7 +1772,7 @@ struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_14_genexpr {
 };
 
 
-/* "constraint/constraints.py":926
+/* "constraint/constraints.py":928
  *                 for value in domain[:]:
  *                     candidates = [assigned_product * value * p for p in other_products]
  *                     if all(c != target_value for c in candidates):             # <<<<<<<<<<<<<<
@@ -1787,7 +1787,7 @@ struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_15_genexpr {
 };
 
 
-/* "constraint/constraints.py":1030
+/* "constraint/constraints.py":1034
  *                     dom.remove(val)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -1800,7 +1800,7 @@ struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_16___call__ {
 };
 
 
-/* "constraint/constraints.py":1066
+/* "constraint/constraints.py":1070
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p < target_value for p in prods):             # <<<<<<<<<<<<<<
@@ -1815,7 +1815,7 @@ struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_17_genexpr {
 };
 
 
-/* "constraint/constraints.py":1100
+/* "constraint/constraints.py":1104
  *         variable_with_lt1 = None
  *         for variable in variables:
  *             contains_lt1 = any(value < 1 for value in domains[variable])             # <<<<<<<<<<<<<<
@@ -1829,7 +1829,7 @@ struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_18_genexpr {
 };
 
 
-/* "constraint/constraints.py":1199
+/* "constraint/constraints.py":1205
  *                     dom.remove(val)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -1842,7 +1842,7 @@ struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_19___call__ {
 };
 
 
-/* "constraint/constraints.py":1235
+/* "constraint/constraints.py":1241
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p > target_value for p in prods):             # <<<<<<<<<<<<<<
@@ -3214,7 +3214,6 @@ static const char __pyx_k_77JJeef_QfKy_Q_6a_A_L_gQ_waq_J[] = "\320\004$\320$7\32
 static const char __pyx_k_77JJeef_QfKy_Q_WAT_1A_G4q_T_Qi[] = "\320\004$\320$7\3207J\320Je\320ef\330\010\022\220+\230Q\230f\240K\250y\270\r\300Q\330\010\025\220W\230A\230T\240\021\330\010\020\220\003\2201\220A\340\010\014\210G\2204\220q\330\014\030\230\r\240T\320)=\270Q\270i\300|\320ST\330\014\022\220'\230\021\230!\330\014\020\220\007\220s\230!\330\020!\240\021\240$\240b\250\014\260D\270\002\270!\330\020\023\2203\220a\320\027'\240r\250\021\330\024\027\220w\230a\230q";
 static const char __pyx_k_77JJeef_QfKy_Q_d_4q_t1_S_A_IV1[] = "\320\004$\320$7\3207J\320Je\320ef\330\010\022\220+\230Q\230f\240K\250y\270\r\300Q\340\010\026\220d\230!\340\010\013\2104\210q\330\014\020\220\007\220t\2301\330\020\031\230\027\240\001\240\021\330\020\035\230S\240\004\240A\330\020\024\220I\230V\2401\330\024\027\220v\230R\230{\250\"\250C\250q\260\007\260q\270\004\270A\330\030\036\230g\240Q\240a";
 static const char __pyx_k_ExactProdConstraint_preProcess[] = "ExactProdConstraint.preProcess";
-static const char __pyx_k_q_G4q_t3a_Qa_3avS_4q_3a_Qb_E_D[] = "\320\004/\250q\330\010\021\220\021\330\010\014\210G\2204\220q\330\014\017\210t\2203\220a\330\020\021\330\014\022\220+\230Q\230a\330\014\022\220'\230\022\2303\230a\230v\240S\250\001\250\021\340\010\013\2104\210q\330\014\023\2203\220a\360\006\000\t\026\220Q\220b\230\004\230E\240\027\250\002\250\"\250D\260\004\260D\270\004\270F\300!\330\010\023\2201\220D\230\016\240a\240s\250$\250e\2601\330\010\017\210s\220!\220;\230c\240\021\240!";
 static const char __pyx_k_55H_a_4_7_1_4q_1_G4q_t3a_Kq_waq[] = "\320\004\"\320\"5\3205H\310\006\310a\330\010\013\2104\210|\2307\240!\330\014\023\2201\340\010\027\220{\240!\2404\240q\330\010\033\2301\330\010\032\230!\340\010\014\210G\2204\220q\330\014\017\210t\2203\220a\330\020$\240K\250q\260\001\340\020\037\230w\240a\240q\340\010\013\210:\220Q\320\026(\250\001\330\014\037\230u\240A\320%7\260q\340\010\013\2104\210q\330\014\023\320\023$\240C\240q\360\006\000\t\031\230\002\230#\230Q\230g\240Q\240e\2503\250a\250w\260a\260u\270D\300\005\300Q\330\010\025\220Q\220d\230.\250\001\250\023\250D\260\005\260W\270B\270b\300\004\300D\310\004\310D\320PV\320VW\330\010\027\220s\320\032,\250A\330\010\027\220s\320\032,\250A\340\010\013\210=\230\002\230-\240s\250-\260r\270\021\330\014\023\2201\340\010\013\2101\330\014\020\220\007\220q\330\020\031\230\021\230\"\230D\240\005\320%5\260S\270\002\270#\270Q\330\020 \240\002\240#\240Q\240g\250Q\250e\2603\260a\260w\270a\270u\300D\310\005\310X\320UX\320XZ\320Z]\320]^\330\020!\240\021\240$\240n\260A\260S\270\004\270E\300\027\310\002\310\"\310D\320PT\320TX\320X\\\320\\b\320bc\340\020\031\230\027\240\001\240\021\330\020\024\220I\230V\2401\330\024!\240\021\320\"3\2602\260V\2702\270R\270t\3005\310\001\330\024\035\230Q\330\030\036\230j\250\001\250\021\330\020\023\2204\220q\330\024\033\2301\340\010\017\210q";
 static const char __pyx_k_55H_a_d_4_7_1_4q_A_1_3at_a_4s_A[] = "\320\004\"\320\"5\3205H\310\006\310a\330\010\026\220d\230!\340\010\013\2104\210|\2307\240!\330\014\023\2201\340\010\027\220{\240!\2404\240q\330\010\024\220A\330\010\022\220!\340\010\013\2101\330\014\020\220\005\220^\2403\240a\240t\250;\260a\330\020\023\2204\220s\230!\330\024!\240\033\250A\250U\260\"\260A\340\024\036\230a\340\014\020\220\007\220t\2301\330\020\023\2204\220s\230!\330\024!\240\033\250A\250Q\340\024!\240\023\240A\240W\250A\250Q\330\024\036\230a\340\010\013\210:\220Q\220k\240\021\330\014\030\230\005\230Q\230k\250\021\340\010\013\2101\340\014\017\210z\230\022\2301\330\020\027\220q\330\014\017\210q\330\020\024\220G\2304\230q\330\024\027\220t\2307\240!\330\030!\240\027\250\001\250\021\330\030\033\2301\330\034 \240\t\250\026\250q\330 +\250:\260S\270\006\270b\300\013\3101\310D\320PY\320Y_\320_`\320`a\330 #\2409\250B\250a\330$*\250*\260A\260Q\340\034 \240\t\250\026\250q\330 +\250:\260R\260q\330 #\2409\250B\250a\330$*\250*\260A\260Q\330\030\033\2304\230q\330\034#\2401\330\014\023\2201\340\014\023\220:\230S\240\001";
 static const char __pyx_k_55H_a_d_4q_a_1_1Kq_9Cq_az_1_a_z[] = "\320\004\"\320\"5\3205H\310\006\310a\330\010\026\220d\230!\330\010\023\2204\220q\330\010\016\210a\330\010\022\220!\330\010\013\2101\330\014\020\220\n\230.\250\003\2501\250K\260q\330\020\023\2209\230C\230q\330\024\033\230;\240a\240z\260\022\2601\340\024\036\230a\330\014\017\210z\230\021\230%\230q\330\020\026\220e\2301\230E\240\021\330\014\017\210t\2202\220Q\330\020\027\220q\330\014\017\210}\230D\240\001\330\020\024\220J\230n\250C\250q\260\013\2701\330\024\027\220y\240\007\240q\330\030!\240\027\250\001\250\021\330\030\034\230I\240V\2501\330\034\037\230t\2402\240V\2502\250[\270\002\270!\330 &\240j\260\001\260\021\330\030\033\2304\230q\330\034#\2401\340\014\020\220\014\230A\330\020\023\2209\230C\230q\330\024\033\230;\240a\240q\340\024\036\230a\330\014\017\210z\230\021\230%\230q\330\020\026\220e\2301\230E\240\021\330\014\017\210t\2202\220Q\330\020\027\220q\330\014\017\210}\230D\240\001\330\020\024\220L\240\001\330\024\027\220y\240\007\240q\330\030!\240\027\250\001\250\021\330\030\034\230I\240V\2501\330\034\037\230t\2402\240V\2502\250Q\330 &\240j\260\001\260\021\330\030\033\2304\230q\330\034#\2401\330\010\013\2101\330\014\023\2204\220s\230!\340\014\023\2204\220s\230!";
@@ -3235,7 +3234,8 @@ static const char __pyx_k_VariableMaxSumConstraint___init[] = "VariableMaxSumCon
 static const char __pyx_k_VariableMinProdConstraint__safe[] = "VariableMinProdConstraint._safe_product";
 static const char __pyx_k_VariableMinSumConstraint___call[] = "VariableMinSumConstraint.__call__";
 static const char __pyx_k_VariableMinSumConstraint___init[] = "VariableMinSumConstraint.__init__.<locals>.genexpr";
-static const char __pyx_k_q_G4q_t3a_Qa_3avS_Qb_E_4q_3a_Qb[] = "\320\004/\250q\340\010\021\220\021\330\010\014\210G\2204\220q\330\014\017\210t\2203\220a\330\020\021\330\014\022\220+\230Q\230a\330\014\022\220'\230\022\2303\230a\230v\240S\250\001\250\021\340\010\025\220Q\220b\230\004\230E\240\021\330\010\013\2104\210q\330\014\023\2203\220a\360\006\000\t\026\220Q\220b\230\004\230E\240\027\250\002\250\"\250D\260\004\260D\270\004\270F\300!\330\010\023\2201\220D\230\016\240a\240s\250$\250e\2601\330\010\017\210s\220!\220;\230c\240\021\240!";
+static const char __pyx_k_q_G4q_t3a_Qa_t1_3avS_4q_3a_Qb_E[] = "\320\004/\250q\330\010\021\220\021\330\010\014\210G\2204\220q\330\014\017\210t\2203\220a\330\020\021\330\014\022\220+\230Q\230a\330\014\017\210t\2201\330\020\021\330\014\022\220'\230\022\2303\230a\230v\240S\250\001\250\021\340\010\013\2104\210q\330\014\023\2203\220a\360\006\000\t\026\220Q\220b\230\004\230E\240\027\250\002\250\"\250D\260\004\260D\270\004\270F\300!\330\010\023\2201\220D\230\016\240a\240s\250$\250e\2601\330\010\017\210s\220!\220;\230c\240\021\240!";
+static const char __pyx_k_q_G4q_t3a_Qa_t1_3avS_Qb_E_4q_3a[] = "\320\004/\250q\340\010\021\220\021\330\010\014\210G\2204\220q\330\014\017\210t\2203\220a\330\020\021\330\014\022\220+\230Q\230a\330\014\017\210t\2201\330\020\021\330\014\022\220'\230\022\2303\230a\230v\240S\250\001\250\021\340\010\025\220Q\220b\230\004\230E\240\021\330\010\013\2104\210q\330\014\023\2203\220a\360\006\000\t\026\220Q\220b\230\004\230E\240\027\250\002\250\"\250D\260\004\260D\270\004\270F\300!\330\010\023\2201\220D\230\016\240a\240s\250$\250e\2601\330\010\017\210s\220!\220;\230c\240\021\240!";
 static const char __pyx_k_77JJeef_QfKy_Q_6a_A_L_gQ_waq_J_2[] = "\320\004$\320$7\3207J\320Je\320ef\330\010\022\220+\230Q\230f\240K\250y\270\r\300Q\360\006\000\t\r\320\0146\260a\330\010\034\230A\330\010\014\210L\230\001\330\014\036\230g\240Q\330\014\020\320\020'\240w\250a\250q\330\010\014\210J\320\026&\240c\250\021\250+\260T\270\021\330\014\017\210}\230C\230q\330\020\023\320\023%\240W\250A\340\024\025\330\020$\240A\360\006\000\t\023\220$\220a\330\010\014\210L\230\001\330\014\017\320\017!\240\027\250\005\250T\3201C\3003\300a\330\020\021\330\014\025\220W\230A\230Q\330\014\020\220\t\230\026\230q\330\020\023\2206\230\022\2301\330\024\032\230'\240\021\240!\330\025\033\2303\230b\240\004\240H\250B\250a\330\024\032\230'\240\021\240!";
 static const char __pyx_k_A_A_E_r_A_WA_WAQ_1_82Q_D_3d_M_HC[] = "\200A\340\023\024\330\021\022\330\025\026\330\010\t\330\024\025\360>\000\t\025\220A\330\010\022\220!\330\010\014\210E\220\021\330\014\017\210r\220\023\220A\330\020\025\220W\230A\230[\250\001\250\021\340\020\025\220W\230A\230Q\330\020\033\2301\360\006\000\t\014\2108\2202\220Q\330\014\024\220D\230\013\2403\240d\250&\260\002\260(\270!\330\020\024\220M\240\023\240H\250C\250r\260\023\260D\270\r\300Q\300k\320QZ\320Z[\340\010\017\210t\2206\230\022\2301";
 static const char __pyx_k_A_q_L_Kt1Ja_vWA_6_A_1_AYa_1_A_9G[] = "\200A\340\023\024\330\021\022\330\025\026\330\010\t\330\024\025\340\010\017\210q\330\010\014\210L\230\001\330\014\024\220K\230t\2401\240J\250a\330\014\017\210v\220W\230A\330\020\023\2206\230\023\230A\330\024\033\2301\330\020\024\220A\220Y\230a\330\010\013\2101\330\014\020\220\014\230A\330\020\023\2209\230G\2401\330\024\035\230W\240A\240Q\330\024\030\230\t\240\021\330\030\033\2306\240\023\240A\330\034\"\240*\250A\250Q\330\034\037\230t\2401\330 '\240q\330\010\017\210q";
@@ -22540,11 +22540,11 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   Py_ssize_t __pyx_t_3;
   PyObject *(*__pyx_t_4)(PyObject *);
   int __pyx_t_5;
-  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_6;
   PyObject *__pyx_t_7 = NULL;
-  size_t __pyx_t_8;
-  PyObject *__pyx_t_9 = NULL;
-  int __pyx_t_10;
+  PyObject *__pyx_t_8 = NULL;
+  size_t __pyx_t_9;
+  PyObject *__pyx_t_10 = NULL;
   int __pyx_t_11;
   PyObject *__pyx_t_12 = NULL;
   PyObject *__pyx_t_13 = NULL;
@@ -22646,7 +22646,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *             if var == exclude_var:
  *                 continue             # <<<<<<<<<<<<<<
  *             dom = domain_dict[var]
- *             bounds.append((min(dom), max(dom)))
+ *             if not dom:
 */
       goto __pyx_L3_continue;
 
@@ -22663,8 +22663,8 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *             if var == exclude_var:
  *                 continue
  *             dom = domain_dict[var]             # <<<<<<<<<<<<<<
- *             bounds.append((min(dom), max(dom)))
- * 
+ *             if not dom:
+ *                 continue
 */
     __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_domain_dict, __pyx_v_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 855, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -22674,44 +22674,73 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     /* "constraint/constraints.py":856
  *                 continue
  *             dom = domain_dict[var]
+ *             if not dom:             # <<<<<<<<<<<<<<
+ *                 continue
+ *             bounds.append((min(dom), max(dom)))
+*/
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_dom); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 856, __pyx_L1_error)
+    __pyx_t_6 = (!__pyx_t_5);
+    if (__pyx_t_6) {
+
+      /* "constraint/constraints.py":857
+ *             dom = domain_dict[var]
+ *             if not dom:
+ *                 continue             # <<<<<<<<<<<<<<
+ *             bounds.append((min(dom), max(dom)))
+ * 
+*/
+      goto __pyx_L3_continue;
+
+      /* "constraint/constraints.py":856
+ *                 continue
+ *             dom = domain_dict[var]
+ *             if not dom:             # <<<<<<<<<<<<<<
+ *                 continue
+ *             bounds.append((min(dom), max(dom)))
+*/
+    }
+
+    /* "constraint/constraints.py":858
+ *             if not dom:
+ *                 continue
  *             bounds.append((min(dom), max(dom)))             # <<<<<<<<<<<<<<
  * 
  *         all_bounds = [b for b in bounds]
 */
-    __pyx_t_6 = NULL;
+    __pyx_t_7 = NULL;
     __Pyx_INCREF(__pyx_builtin_min);
-    __pyx_t_7 = __pyx_builtin_min; 
-    __pyx_t_8 = 1;
+    __pyx_t_8 = __pyx_builtin_min; 
+    __pyx_t_9 = 1;
     {
-      PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_dom};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 856, __pyx_L1_error)
+      PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_v_dom};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 858, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
-    __pyx_t_6 = NULL;
+    __pyx_t_7 = NULL;
     __Pyx_INCREF(__pyx_builtin_max);
-    __pyx_t_9 = __pyx_builtin_max; 
-    __pyx_t_8 = 1;
+    __pyx_t_10 = __pyx_builtin_max; 
+    __pyx_t_9 = 1;
     {
-      PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_dom};
-      __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 856, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
+      PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_v_dom};
+      __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 858, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_8);
     }
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 856, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
+    __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 858, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
     __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 856, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 856, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 858, __pyx_L1_error);
+    __Pyx_GIVEREF(__pyx_t_8);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 858, __pyx_L1_error);
     __pyx_t_1 = 0;
-    __pyx_t_7 = 0;
-    __pyx_t_10 = __Pyx_PyList_Append(__pyx_v_bounds, __pyx_t_9); if (unlikely(__pyx_t_10 == ((int)-1))) __PYX_ERR(0, 856, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __pyx_t_8 = 0;
+    __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_bounds, __pyx_t_10); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 858, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
     /* "constraint/constraints.py":852
  *         """Return min and max product of domains of product_vars (excluding `exclude_var` if given)."""
@@ -22724,7 +22753,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":858
+  /* "constraint/constraints.py":860
  *             bounds.append((min(dom), max(dom)))
  * 
  *         all_bounds = [b for b in bounds]             # <<<<<<<<<<<<<<
@@ -22732,50 +22761,50 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *             return 1, 1
 */
   { /* enter inner scope */
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 858, __pyx_L9_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 860, __pyx_L10_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_9 = __pyx_v_bounds; __Pyx_INCREF(__pyx_t_9);
+    __pyx_t_10 = __pyx_v_bounds; __Pyx_INCREF(__pyx_t_10);
     __pyx_t_3 = 0;
     for (;;) {
       {
-        Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_9);
+        Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 858, __pyx_L9_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 860, __pyx_L10_error)
         #endif
         if (__pyx_t_3 >= __pyx_temp) break;
       }
-      __pyx_t_7 = __Pyx_PyList_GetItemRef(__pyx_t_9, __pyx_t_3);
+      __pyx_t_8 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_3);
       ++__pyx_t_3;
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 858, __pyx_L9_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_XDECREF_SET(__pyx_8genexpr9__pyx_v_b, __pyx_t_7);
-      __pyx_t_7 = 0;
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_8genexpr9__pyx_v_b))) __PYX_ERR(0, 858, __pyx_L9_error)
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 860, __pyx_L10_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      __Pyx_XDECREF_SET(__pyx_8genexpr9__pyx_v_b, __pyx_t_8);
+      __pyx_t_8 = 0;
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_8genexpr9__pyx_v_b))) __PYX_ERR(0, 860, __pyx_L10_error)
     }
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_XDECREF(__pyx_8genexpr9__pyx_v_b); __pyx_8genexpr9__pyx_v_b = 0;
-    goto __pyx_L13_exit_scope;
-    __pyx_L9_error:;
+    goto __pyx_L14_exit_scope;
+    __pyx_L10_error:;
     __Pyx_XDECREF(__pyx_8genexpr9__pyx_v_b); __pyx_8genexpr9__pyx_v_b = 0;
     goto __pyx_L1_error;
-    __pyx_L13_exit_scope:;
+    __pyx_L14_exit_scope:;
   } /* exit inner scope */
   __pyx_v_all_bounds = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":859
+  /* "constraint/constraints.py":861
  * 
  *         all_bounds = [b for b in bounds]
  *         if not all_bounds:             # <<<<<<<<<<<<<<
  *             return 1, 1
  * 
 */
-  __pyx_t_5 = (__Pyx_PyList_GET_SIZE(__pyx_v_all_bounds) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_5 < 0))) __PYX_ERR(0, 859, __pyx_L1_error)
-  __pyx_t_11 = (!__pyx_t_5);
-  if (__pyx_t_11) {
+  __pyx_t_6 = (__Pyx_PyList_GET_SIZE(__pyx_v_all_bounds) != 0);
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_6 < 0))) __PYX_ERR(0, 861, __pyx_L1_error)
+  __pyx_t_5 = (!__pyx_t_6);
+  if (__pyx_t_5) {
 
-    /* "constraint/constraints.py":860
+    /* "constraint/constraints.py":862
  *         all_bounds = [b for b in bounds]
  *         if not all_bounds:
  *             return 1, 1             # <<<<<<<<<<<<<<
@@ -22787,7 +22816,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __pyx_r = __pyx_mstate_global->__pyx_tuple[0];
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":859
+    /* "constraint/constraints.py":861
  * 
  *         all_bounds = [b for b in bounds]
  *         if not all_bounds:             # <<<<<<<<<<<<<<
@@ -22796,7 +22825,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
 */
   }
 
-  /* "constraint/constraints.py":863
+  /* "constraint/constraints.py":865
  * 
  *         # Get all combinations of min/max to find global min/max product
  *         candidates = [b for b in product(*[(lo, hi) for lo, hi in all_bounds])]             # <<<<<<<<<<<<<<
@@ -22804,34 +22833,34 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *         return min(products), max(products)
 */
   { /* enter inner scope */
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 863, __pyx_L17_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 865, __pyx_L18_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 863, __pyx_L17_error)
-    __Pyx_GOTREF(__pyx_t_9);
+    __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 865, __pyx_L18_error)
+    __Pyx_GOTREF(__pyx_t_10);
     { /* enter inner scope */
-      __pyx_t_7 = PyList_New(0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 863, __pyx_L22_error)
-      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 865, __pyx_L23_error)
+      __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_1 = __pyx_v_all_bounds; __Pyx_INCREF(__pyx_t_1);
       __pyx_t_3 = 0;
       for (;;) {
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 863, __pyx_L22_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 865, __pyx_L23_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
-        __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
+        __pyx_t_7 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
         ++__pyx_t_3;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 863, __pyx_L22_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        if ((likely(PyTuple_CheckExact(__pyx_t_6))) || (PyList_CheckExact(__pyx_t_6))) {
-          PyObject* sequence = __pyx_t_6;
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 865, __pyx_L23_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        if ((likely(PyTuple_CheckExact(__pyx_t_7))) || (PyList_CheckExact(__pyx_t_7))) {
+          PyObject* sequence = __pyx_t_7;
           Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
           if (unlikely(size != 2)) {
             if (size > 2) __Pyx_RaiseTooManyValuesError(2);
             else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-            __PYX_ERR(0, 863, __pyx_L22_error)
+            __PYX_ERR(0, 865, __pyx_L23_error)
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
           if (likely(PyTuple_CheckExact(sequence))) {
@@ -22841,138 +22870,138 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             __Pyx_INCREF(__pyx_t_13);
           } else {
             __pyx_t_12 = __Pyx_PyList_GetItemRef(sequence, 0);
-            if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 863, __pyx_L22_error)
+            if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 865, __pyx_L23_error)
             __Pyx_XGOTREF(__pyx_t_12);
             __pyx_t_13 = __Pyx_PyList_GetItemRef(sequence, 1);
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 863, __pyx_L22_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 865, __pyx_L23_error)
             __Pyx_XGOTREF(__pyx_t_13);
           }
           #else
-          __pyx_t_12 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 863, __pyx_L22_error)
+          __pyx_t_12 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 865, __pyx_L23_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 863, __pyx_L22_error)
+          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 865, __pyx_L23_error)
           __Pyx_GOTREF(__pyx_t_13);
           #endif
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         } else {
           Py_ssize_t index = -1;
-          __pyx_t_14 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 863, __pyx_L22_error)
+          __pyx_t_14 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 865, __pyx_L23_error)
           __Pyx_GOTREF(__pyx_t_14);
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_14);
-          index = 0; __pyx_t_12 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_12)) goto __pyx_L25_unpacking_failed;
+          index = 0; __pyx_t_12 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_12)) goto __pyx_L26_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_12);
-          index = 1; __pyx_t_13 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_13)) goto __pyx_L25_unpacking_failed;
+          index = 1; __pyx_t_13 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_13)) goto __pyx_L26_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_13);
-          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 863, __pyx_L22_error)
+          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 865, __pyx_L23_error)
           __pyx_t_15 = NULL;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          goto __pyx_L26_unpacking_done;
-          __pyx_L25_unpacking_failed:;
+          goto __pyx_L27_unpacking_done;
+          __pyx_L26_unpacking_failed:;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
           if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-          __PYX_ERR(0, 863, __pyx_L22_error)
-          __pyx_L26_unpacking_done:;
+          __PYX_ERR(0, 865, __pyx_L23_error)
+          __pyx_L27_unpacking_done:;
         }
         __Pyx_XDECREF_SET(__pyx_9genexpr11__pyx_v_lo, __pyx_t_12);
         __pyx_t_12 = 0;
         __Pyx_XDECREF_SET(__pyx_9genexpr11__pyx_v_hi, __pyx_t_13);
         __pyx_t_13 = 0;
-        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 863, __pyx_L22_error)
-        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 865, __pyx_L23_error)
+        __Pyx_GOTREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_9genexpr11__pyx_v_lo);
         __Pyx_GIVEREF(__pyx_9genexpr11__pyx_v_lo);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_9genexpr11__pyx_v_lo) != (0)) __PYX_ERR(0, 863, __pyx_L22_error);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_9genexpr11__pyx_v_lo) != (0)) __PYX_ERR(0, 865, __pyx_L23_error);
         __Pyx_INCREF(__pyx_9genexpr11__pyx_v_hi);
         __Pyx_GIVEREF(__pyx_9genexpr11__pyx_v_hi);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_9genexpr11__pyx_v_hi) != (0)) __PYX_ERR(0, 863, __pyx_L22_error);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_7, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 863, __pyx_L22_error)
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_9genexpr11__pyx_v_hi) != (0)) __PYX_ERR(0, 865, __pyx_L23_error);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_8, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 865, __pyx_L23_error)
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF(__pyx_9genexpr11__pyx_v_hi); __pyx_9genexpr11__pyx_v_hi = 0;
       __Pyx_XDECREF(__pyx_9genexpr11__pyx_v_lo); __pyx_9genexpr11__pyx_v_lo = 0;
-      goto __pyx_L28_exit_scope;
-      __pyx_L22_error:;
+      goto __pyx_L29_exit_scope;
+      __pyx_L23_error:;
       __Pyx_XDECREF(__pyx_9genexpr11__pyx_v_hi); __pyx_9genexpr11__pyx_v_hi = 0;
       __Pyx_XDECREF(__pyx_9genexpr11__pyx_v_lo); __pyx_9genexpr11__pyx_v_lo = 0;
-      goto __pyx_L17_error;
-      __pyx_L28_exit_scope:;
+      goto __pyx_L18_error;
+      __pyx_L29_exit_scope:;
     } /* exit inner scope */
-    __pyx_t_1 = PySequence_Tuple(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 863, __pyx_L17_error)
+    __pyx_t_1 = PySequence_Tuple(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 865, __pyx_L18_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_1, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 863, __pyx_L17_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_1, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 865, __pyx_L18_error)
+    __Pyx_GOTREF(__pyx_t_8);
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
-      __pyx_t_1 = __pyx_t_7; __Pyx_INCREF(__pyx_t_1);
+    if (likely(PyList_CheckExact(__pyx_t_8)) || PyTuple_CheckExact(__pyx_t_8)) {
+      __pyx_t_1 = __pyx_t_8; __Pyx_INCREF(__pyx_t_1);
       __pyx_t_3 = 0;
       __pyx_t_4 = NULL;
     } else {
-      __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 863, __pyx_L17_error)
+      __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 865, __pyx_L18_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_4 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 863, __pyx_L17_error)
+      __pyx_t_4 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 865, __pyx_L18_error)
     }
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     for (;;) {
       if (likely(!__pyx_t_4)) {
         if (likely(PyList_CheckExact(__pyx_t_1))) {
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 863, __pyx_L17_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 865, __pyx_L18_error)
             #endif
             if (__pyx_t_3 >= __pyx_temp) break;
           }
-          __pyx_t_7 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
+          __pyx_t_8 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
           ++__pyx_t_3;
         } else {
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 863, __pyx_L17_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 865, __pyx_L18_error)
             #endif
             if (__pyx_t_3 >= __pyx_temp) break;
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = __Pyx_NewRef(PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3));
+          __pyx_t_8 = __Pyx_NewRef(PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3));
           #else
-          __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3);
+          __pyx_t_8 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3);
           #endif
           ++__pyx_t_3;
         }
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 863, __pyx_L17_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 865, __pyx_L18_error)
       } else {
-        __pyx_t_7 = __pyx_t_4(__pyx_t_1);
-        if (unlikely(!__pyx_t_7)) {
+        __pyx_t_8 = __pyx_t_4(__pyx_t_1);
+        if (unlikely(!__pyx_t_8)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 863, __pyx_L17_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 865, __pyx_L18_error)
             PyErr_Clear();
           }
           break;
         }
       }
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_XDECREF_SET(__pyx_9genexpr10__pyx_v_b, __pyx_t_7);
-      __pyx_t_7 = 0;
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_9genexpr10__pyx_v_b))) __PYX_ERR(0, 863, __pyx_L17_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      __Pyx_XDECREF_SET(__pyx_9genexpr10__pyx_v_b, __pyx_t_8);
+      __pyx_t_8 = 0;
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_9genexpr10__pyx_v_b))) __PYX_ERR(0, 865, __pyx_L18_error)
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_9genexpr10__pyx_v_b); __pyx_9genexpr10__pyx_v_b = 0;
-    goto __pyx_L30_exit_scope;
-    __pyx_L17_error:;
+    goto __pyx_L31_exit_scope;
+    __pyx_L18_error:;
     __Pyx_XDECREF(__pyx_9genexpr10__pyx_v_b); __pyx_9genexpr10__pyx_v_b = 0;
     goto __pyx_L1_error;
-    __pyx_L30_exit_scope:;
+    __pyx_L31_exit_scope:;
   } /* exit inner scope */
   __pyx_v_candidates = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":864
+  /* "constraint/constraints.py":866
  *         # Get all combinations of min/max to find global min/max product
  *         candidates = [b for b in product(*[(lo, hi) for lo, hi in all_bounds])]
  *         products = [self._safe_product(p) for p in candidates]             # <<<<<<<<<<<<<<
@@ -22980,7 +23009,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  * 
 */
   { /* enter inner scope */
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 864, __pyx_L33_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 866, __pyx_L34_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_v_candidates; __Pyx_INCREF(__pyx_t_1);
     __pyx_t_3 = 0;
@@ -22988,41 +23017,41 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 864, __pyx_L33_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 866, __pyx_L34_error)
         #endif
         if (__pyx_t_3 >= __pyx_temp) break;
       }
-      __pyx_t_7 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
+      __pyx_t_8 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
       ++__pyx_t_3;
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 864, __pyx_L33_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_XDECREF_SET(__pyx_9genexpr12__pyx_v_p, __pyx_t_7);
-      __pyx_t_7 = 0;
-      __pyx_t_9 = __pyx_v_self;
-      __Pyx_INCREF(__pyx_t_9);
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 866, __pyx_L34_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      __Pyx_XDECREF_SET(__pyx_9genexpr12__pyx_v_p, __pyx_t_8);
       __pyx_t_8 = 0;
+      __pyx_t_10 = __pyx_v_self;
+      __Pyx_INCREF(__pyx_t_10);
+      __pyx_t_9 = 0;
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_9genexpr12__pyx_v_p};
-        __pyx_t_7 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 864, __pyx_L33_error)
-        __Pyx_GOTREF(__pyx_t_7);
+        PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_9genexpr12__pyx_v_p};
+        __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+        __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 866, __pyx_L34_error)
+        __Pyx_GOTREF(__pyx_t_8);
       }
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 864, __pyx_L33_error)
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_8))) __PYX_ERR(0, 866, __pyx_L34_error)
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_9genexpr12__pyx_v_p); __pyx_9genexpr12__pyx_v_p = 0;
-    goto __pyx_L37_exit_scope;
-    __pyx_L33_error:;
+    goto __pyx_L38_exit_scope;
+    __pyx_L34_error:;
     __Pyx_XDECREF(__pyx_9genexpr12__pyx_v_p); __pyx_9genexpr12__pyx_v_p = 0;
     goto __pyx_L1_error;
-    __pyx_L37_exit_scope:;
+    __pyx_L38_exit_scope:;
   } /* exit inner scope */
   __pyx_v_products = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":865
+  /* "constraint/constraints.py":867
  *         candidates = [b for b in product(*[(lo, hi) for lo, hi in all_bounds])]
  *         products = [self._safe_product(p) for p in candidates]
  *         return min(products), max(products)             # <<<<<<<<<<<<<<
@@ -23032,38 +23061,38 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = NULL;
   __Pyx_INCREF(__pyx_builtin_min);
-  __pyx_t_7 = __pyx_builtin_min; 
-  __pyx_t_8 = 1;
+  __pyx_t_8 = __pyx_builtin_min; 
+  __pyx_t_9 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_products};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 865, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 867, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
   __pyx_t_1 = NULL;
   __Pyx_INCREF(__pyx_builtin_max);
-  __pyx_t_9 = __pyx_builtin_max; 
-  __pyx_t_8 = 1;
+  __pyx_t_10 = __pyx_builtin_max; 
+  __pyx_t_9 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_products};
-    __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 865, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 867, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
   }
-  __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 865, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 867, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 865, __pyx_L1_error);
-  __Pyx_GIVEREF(__pyx_t_7);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 865, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 867, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_8);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 867, __pyx_L1_error);
   __pyx_t_2 = 0;
-  __pyx_t_7 = 0;
-  __pyx_r = __pyx_t_9;
-  __pyx_t_9 = 0;
+  __pyx_t_8 = 0;
+  __pyx_r = __pyx_t_10;
+  __pyx_t_10 = 0;
   goto __pyx_L0;
 
   /* "constraint/constraints.py":849
@@ -23078,9 +23107,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10);
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
@@ -23103,7 +23132,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":867
+/* "constraint/constraints.py":869
  *         return min(products), max(products)
  * 
  *     def _safe_product(self, values):             # <<<<<<<<<<<<<<
@@ -23151,39 +23180,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_values,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 867, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 869, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 867, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 869, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 867, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 869, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_safe_product", 0) < 0) __PYX_ERR(0, 867, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_safe_product", 0) < 0) __PYX_ERR(0, 869, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, i); __PYX_ERR(0, 867, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, i); __PYX_ERR(0, 869, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 867, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 869, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 867, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 869, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_values = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 867, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 869, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23218,7 +23247,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_safe_product", 0);
 
-  /* "constraint/constraints.py":868
+  /* "constraint/constraints.py":870
  * 
  *     def _safe_product(self, values):
  *         prod = 1             # <<<<<<<<<<<<<<
@@ -23228,7 +23257,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_1);
   __pyx_v_prod = __pyx_mstate_global->__pyx_int_1;
 
-  /* "constraint/constraints.py":869
+  /* "constraint/constraints.py":871
  *     def _safe_product(self, values):
  *         prod = 1
  *         for v in values:             # <<<<<<<<<<<<<<
@@ -23240,9 +23269,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 869, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 871, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 869, __pyx_L1_error)
+    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 871, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
@@ -23250,7 +23279,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 869, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 871, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -23260,7 +23289,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 869, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 871, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -23271,13 +23300,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         #endif
         ++__pyx_t_2;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 869, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 871, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_3(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 869, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 871, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -23287,19 +23316,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __Pyx_XDECREF_SET(__pyx_v_v, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":870
+    /* "constraint/constraints.py":872
  *         prod = 1
  *         for v in values:
  *             prod *= v             # <<<<<<<<<<<<<<
  *         return prod
  * 
 */
-    __pyx_t_4 = PyNumber_InPlaceMultiply(__pyx_v_prod, __pyx_v_v); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 870, __pyx_L1_error)
+    __pyx_t_4 = PyNumber_InPlaceMultiply(__pyx_v_prod, __pyx_v_v); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 872, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF_SET(__pyx_v_prod, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":869
+    /* "constraint/constraints.py":871
  *     def _safe_product(self, values):
  *         prod = 1
  *         for v in values:             # <<<<<<<<<<<<<<
@@ -23309,7 +23338,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":871
+  /* "constraint/constraints.py":873
  *         for v in values:
  *             prod *= v
  *         return prod             # <<<<<<<<<<<<<<
@@ -23321,7 +23350,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __pyx_r = __pyx_v_prod;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":867
+  /* "constraint/constraints.py":869
  *         return min(products), max(products)
  * 
  *     def _safe_product(self, values):             # <<<<<<<<<<<<<<
@@ -23343,7 +23372,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":873
+/* "constraint/constraints.py":875
  *         return prod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -23394,50 +23423,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_constraints,&__pyx_mstate_global->__pyx_n_u_vconstraints,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 873, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 875, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 873, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 875, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 873, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 875, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 873, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 875, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 873, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 875, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 873, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 875, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 873, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 875, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 5; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 873, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 875, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 873, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 875, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 873, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 875, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 873, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 875, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 873, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 875, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 873, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 875, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_variables = values[1];
@@ -23447,7 +23476,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 873, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 875, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23458,9 +23487,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 873, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 873, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 873, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 875, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 875, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 875, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_27VariableExactProdConstraint_6preProcess(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_constraints, __pyx_v_vconstraints);
 
   /* function exit code */
@@ -23513,7 +23542,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("preProcess", 0);
 
-  /* "constraint/constraints.py":874
+  /* "constraint/constraints.py":876
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)             # <<<<<<<<<<<<<<
@@ -23521,9 +23550,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *         target_domain = domains[self.target_var]
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 874, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 876, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 874, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 876, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = 1;
@@ -23543,27 +23572,27 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (6-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 874, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 876, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":876
+  /* "constraint/constraints.py":878
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
  *         target_domain = domains[self.target_var]             # <<<<<<<<<<<<<<
  *         target_min = min(target_domain)
  *         target_max = max(target_domain)
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 876, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 878, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 876, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 878, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_target_domain = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":877
+  /* "constraint/constraints.py":879
  * 
  *         target_domain = domains[self.target_var]
  *         target_min = min(target_domain)             # <<<<<<<<<<<<<<
@@ -23579,13 +23608,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 877, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 879, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
   }
   __pyx_v_target_min = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":878
+  /* "constraint/constraints.py":880
  *         target_domain = domains[self.target_var]
  *         target_min = min(target_domain)
  *         target_max = max(target_domain)             # <<<<<<<<<<<<<<
@@ -23601,29 +23630,29 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 878, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 880, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
   }
   __pyx_v_target_max = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":879
+  /* "constraint/constraints.py":881
  *         target_min = min(target_domain)
  *         target_max = max(target_domain)
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
  *             other_min, other_max = self._get_product_bounds(domains, exclude_var=var)
  *             domain = domains[var]
 */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 879, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 881, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
     __pyx_t_1 = __pyx_t_4; __Pyx_INCREF(__pyx_t_1);
     __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 879, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 881, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 879, __pyx_L1_error)
+    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 881, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   for (;;) {
@@ -23632,7 +23661,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 879, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 881, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -23642,7 +23671,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 879, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 881, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -23653,13 +23682,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         #endif
         ++__pyx_t_6;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 879, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 881, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_7(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 879, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 881, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -23669,7 +23698,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":880
+    /* "constraint/constraints.py":882
  *         target_max = max(target_domain)
  *         for var in self.product_vars:
  *             other_min, other_max = self._get_product_bounds(domains, exclude_var=var)             # <<<<<<<<<<<<<<
@@ -23681,13 +23710,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __pyx_t_5 = 0;
     {
       PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_2, __pyx_v_domains};
-      __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 880, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 882, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_exclude_var, __pyx_v_var, __pyx_t_3, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 880, __pyx_L1_error)
+      if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_exclude_var, __pyx_v_var, __pyx_t_3, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 882, __pyx_L1_error)
       __pyx_t_4 = __Pyx_Object_VectorcallMethod_CallFromBuilder(__pyx_mstate_global->__pyx_n_u_get_product_bounds, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_3);
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 880, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 882, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
     }
     if ((likely(PyTuple_CheckExact(__pyx_t_4))) || (PyList_CheckExact(__pyx_t_4))) {
@@ -23696,7 +23725,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 880, __pyx_L1_error)
+        __PYX_ERR(0, 882, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -23706,22 +23735,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         __Pyx_INCREF(__pyx_t_2);
       } else {
         __pyx_t_3 = __Pyx_PyList_GetItemRef(sequence, 0);
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 880, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 882, __pyx_L1_error)
         __Pyx_XGOTREF(__pyx_t_3);
         __pyx_t_2 = __Pyx_PyList_GetItemRef(sequence, 1);
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 880, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 882, __pyx_L1_error)
         __Pyx_XGOTREF(__pyx_t_2);
       }
       #else
-      __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 880, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 882, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 880, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 882, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       #endif
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_8 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 880, __pyx_L1_error)
+      __pyx_t_8 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 882, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8);
@@ -23729,7 +23758,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       __Pyx_GOTREF(__pyx_t_3);
       index = 1; __pyx_t_2 = __pyx_t_9(__pyx_t_8); if (unlikely(!__pyx_t_2)) goto __pyx_L5_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_2);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 2) < 0) __PYX_ERR(0, 880, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 2) < 0) __PYX_ERR(0, 882, __pyx_L1_error)
       __pyx_t_9 = NULL;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       goto __pyx_L6_unpacking_done;
@@ -23737,7 +23766,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 880, __pyx_L1_error)
+      __PYX_ERR(0, 882, __pyx_L1_error)
       __pyx_L6_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_other_min, __pyx_t_3);
@@ -23745,35 +23774,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __Pyx_XDECREF_SET(__pyx_v_other_max, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "constraint/constraints.py":881
+    /* "constraint/constraints.py":883
  *         for var in self.product_vars:
  *             other_min, other_max = self._get_product_bounds(domains, exclude_var=var)
  *             domain = domains[var]             # <<<<<<<<<<<<<<
  *             for value in domain[:]:
  *                 candidates = [value * other_min, value * other_max]
 */
-    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 881, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 883, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":882
+    /* "constraint/constraints.py":884
  *             other_min, other_max = self._get_product_bounds(domains, exclude_var=var)
  *             domain = domains[var]
  *             for value in domain[:]:             # <<<<<<<<<<<<<<
  *                 candidates = [value * other_min, value * other_max]
  *                 minval, maxval = min(candidates), max(candidates)
 */
-    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 882, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 884, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
       __pyx_t_2 = __pyx_t_4; __Pyx_INCREF(__pyx_t_2);
       __pyx_t_10 = 0;
       __pyx_t_11 = NULL;
     } else {
-      __pyx_t_10 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 882, __pyx_L1_error)
+      __pyx_t_10 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 884, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_11 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 882, __pyx_L1_error)
+      __pyx_t_11 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 884, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     for (;;) {
@@ -23782,7 +23811,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_2);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 882, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 884, __pyx_L1_error)
             #endif
             if (__pyx_t_10 >= __pyx_temp) break;
           }
@@ -23792,7 +23821,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_2);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 882, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 884, __pyx_L1_error)
             #endif
             if (__pyx_t_10 >= __pyx_temp) break;
           }
@@ -23803,13 +23832,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           #endif
           ++__pyx_t_10;
         }
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 882, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 884, __pyx_L1_error)
       } else {
         __pyx_t_4 = __pyx_t_11(__pyx_t_2);
         if (unlikely(!__pyx_t_4)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 882, __pyx_L1_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 884, __pyx_L1_error)
             PyErr_Clear();
           }
           break;
@@ -23819,29 +23848,29 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       __Pyx_XDECREF_SET(__pyx_v_value, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "constraint/constraints.py":883
+      /* "constraint/constraints.py":885
  *             domain = domains[var]
  *             for value in domain[:]:
  *                 candidates = [value * other_min, value * other_max]             # <<<<<<<<<<<<<<
  *                 minval, maxval = min(candidates), max(candidates)
  *                 if maxval < target_min or minval > target_max:
 */
-      __pyx_t_4 = PyNumber_Multiply(__pyx_v_value, __pyx_v_other_min); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 883, __pyx_L1_error)
+      __pyx_t_4 = PyNumber_Multiply(__pyx_v_value, __pyx_v_other_min); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 885, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyNumber_Multiply(__pyx_v_value, __pyx_v_other_max); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 883, __pyx_L1_error)
+      __pyx_t_3 = PyNumber_Multiply(__pyx_v_value, __pyx_v_other_max); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 885, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_8 = PyList_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 883, __pyx_L1_error)
+      __pyx_t_8 = PyList_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 885, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_GIVEREF(__pyx_t_4);
-      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 0, __pyx_t_4) != (0)) __PYX_ERR(0, 883, __pyx_L1_error);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 0, __pyx_t_4) != (0)) __PYX_ERR(0, 885, __pyx_L1_error);
       __Pyx_GIVEREF(__pyx_t_3);
-      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 883, __pyx_L1_error);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 885, __pyx_L1_error);
       __pyx_t_4 = 0;
       __pyx_t_3 = 0;
       __Pyx_XDECREF_SET(__pyx_v_candidates, ((PyObject*)__pyx_t_8));
       __pyx_t_8 = 0;
 
-      /* "constraint/constraints.py":884
+      /* "constraint/constraints.py":886
  *             for value in domain[:]:
  *                 candidates = [value * other_min, value * other_max]
  *                 minval, maxval = min(candidates), max(candidates)             # <<<<<<<<<<<<<<
@@ -23857,7 +23886,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 884, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 886, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
       __pyx_t_3 = NULL;
@@ -23869,7 +23898,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_12, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 884, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 886, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_XDECREF_SET(__pyx_v_minval, __pyx_t_8);
@@ -23877,29 +23906,29 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       __Pyx_XDECREF_SET(__pyx_v_maxval, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "constraint/constraints.py":885
+      /* "constraint/constraints.py":887
  *                 candidates = [value * other_min, value * other_max]
  *                 minval, maxval = min(candidates), max(candidates)
  *                 if maxval < target_min or minval > target_max:             # <<<<<<<<<<<<<<
  *                     domain.remove(value)
  * 
 */
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_maxval, __pyx_v_target_min, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 885, __pyx_L1_error)
-      __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 885, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_maxval, __pyx_v_target_min, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 887, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 887, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (!__pyx_t_14) {
       } else {
         __pyx_t_13 = __pyx_t_14;
         goto __pyx_L10_bool_binop_done;
       }
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_minval, __pyx_v_target_max, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 885, __pyx_L1_error)
-      __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 885, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_minval, __pyx_v_target_max, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 887, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 887, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_13 = __pyx_t_14;
       __pyx_L10_bool_binop_done:;
       if (__pyx_t_13) {
 
-        /* "constraint/constraints.py":886
+        /* "constraint/constraints.py":888
  *                 minval, maxval = min(candidates), max(candidates)
  *                 if maxval < target_min or minval > target_max:
  *                     domain.remove(value)             # <<<<<<<<<<<<<<
@@ -23913,12 +23942,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_v_value};
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_remove, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 886, __pyx_L1_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 888, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "constraint/constraints.py":885
+        /* "constraint/constraints.py":887
  *                 candidates = [value * other_min, value * other_max]
  *                 minval, maxval = min(candidates), max(candidates)
  *                 if maxval < target_min or minval > target_max:             # <<<<<<<<<<<<<<
@@ -23927,7 +23956,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
 */
       }
 
-      /* "constraint/constraints.py":882
+      /* "constraint/constraints.py":884
  *             other_min, other_max = self._get_product_bounds(domains, exclude_var=var)
  *             domain = domains[var]
  *             for value in domain[:]:             # <<<<<<<<<<<<<<
@@ -23937,7 +23966,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "constraint/constraints.py":879
+    /* "constraint/constraints.py":881
  *         target_min = min(target_domain)
  *         target_max = max(target_domain)
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
@@ -23947,7 +23976,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":873
+  /* "constraint/constraints.py":875
  *         return prod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -23984,7 +24013,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":888
+/* "constraint/constraints.py":890
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -24035,53 +24064,53 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_assignments,&__pyx_mstate_global->__pyx_n_u_forwardcheck,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 888, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 890, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 888, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 890, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 888, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 890, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 888, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 890, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 888, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 890, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 888, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 890, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 888, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 890, __pyx_L3_error)
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 888, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 890, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 888, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 890, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 888, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 890, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 888, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 890, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 888, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 890, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 888, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 890, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -24095,7 +24124,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 888, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 890, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -24106,8 +24135,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 888, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 888, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 890, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 890, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_27VariableExactProdConstraint_8__call__(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_assignments, __pyx_v_forwardcheck);
 
   /* function exit code */
@@ -24128,7 +24157,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 }
 static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstraint_8__call___2generator9(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "constraint/constraints.py":911
+/* "constraint/constraints.py":913
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned_vars]
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_min = min(assigned_product * c for c in candidates)             # <<<<<<<<<<<<<<
@@ -24148,7 +24177,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_13_genexpr *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 911, __pyx_L1_error)
+    __PYX_ERR(0, 913, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -24159,7 +24188,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __Pyx_INCREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_27VariableExactProdConstraint_8__call___2generator9, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[9]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint___ca, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 911, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_27VariableExactProdConstraint_8__call___2generator9, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[9]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint___ca, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 913, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -24197,29 +24226,29 @@ static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstrai
   __pyx_L3_first_run:;
   if (unlikely(__pyx_sent_value != Py_None)) {
     if (unlikely(__pyx_sent_value)) PyErr_SetString(PyExc_TypeError, "can't send non-None value to a just-started generator");
-    __PYX_ERR(0, 911, __pyx_L1_error)
+    __PYX_ERR(0, 913, __pyx_L1_error)
   }
-  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 911, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 913, __pyx_L1_error) }
   __pyx_t_1 = __pyx_cur_scope->__pyx_genexpr_arg_0; __Pyx_INCREF(__pyx_t_1);
   __pyx_t_2 = 0;
   for (;;) {
     {
       Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
       #if !CYTHON_ASSUME_SAFE_SIZE
-      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 911, __pyx_L1_error)
+      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 913, __pyx_L1_error)
       #endif
       if (__pyx_t_2 >= __pyx_temp) break;
     }
     __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_2);
     ++__pyx_t_2;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 911, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 913, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_c);
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_c, __pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_3);
     __pyx_t_3 = 0;
-    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_assigned_product)) { __Pyx_RaiseClosureNameError("assigned_product"); __PYX_ERR(0, 911, __pyx_L1_error) }
-    __pyx_t_3 = PyNumber_Multiply(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_assigned_product, __pyx_cur_scope->__pyx_v_c); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 911, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_assigned_product)) { __Pyx_RaiseClosureNameError("assigned_product"); __PYX_ERR(0, 913, __pyx_L1_error) }
+    __pyx_t_3 = PyNumber_Multiply(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_assigned_product, __pyx_cur_scope->__pyx_v_c); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 913, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
@@ -24237,7 +24266,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstrai
     __pyx_cur_scope->__pyx_t_0 = 0;
     __Pyx_XGOTREF(__pyx_t_1);
     __pyx_t_2 = __pyx_cur_scope->__pyx_t_1;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 911, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 913, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
@@ -24264,7 +24293,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstrai
 }
 static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstraint_8__call___5generator10(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "constraint/constraints.py":912
+/* "constraint/constraints.py":914
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_min = min(assigned_product * c for c in candidates)
  *         possible_max = max(assigned_product * c for c in candidates)             # <<<<<<<<<<<<<<
@@ -24284,7 +24313,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_14_genexpr *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 912, __pyx_L1_error)
+    __PYX_ERR(0, 914, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -24295,7 +24324,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __Pyx_INCREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_27VariableExactProdConstraint_8__call___5generator10, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[10]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint___ca, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 912, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_27VariableExactProdConstraint_8__call___5generator10, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[10]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint___ca, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 914, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -24333,29 +24362,29 @@ static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstrai
   __pyx_L3_first_run:;
   if (unlikely(__pyx_sent_value != Py_None)) {
     if (unlikely(__pyx_sent_value)) PyErr_SetString(PyExc_TypeError, "can't send non-None value to a just-started generator");
-    __PYX_ERR(0, 912, __pyx_L1_error)
+    __PYX_ERR(0, 914, __pyx_L1_error)
   }
-  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 912, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 914, __pyx_L1_error) }
   __pyx_t_1 = __pyx_cur_scope->__pyx_genexpr_arg_0; __Pyx_INCREF(__pyx_t_1);
   __pyx_t_2 = 0;
   for (;;) {
     {
       Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
       #if !CYTHON_ASSUME_SAFE_SIZE
-      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 912, __pyx_L1_error)
+      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 914, __pyx_L1_error)
       #endif
       if (__pyx_t_2 >= __pyx_temp) break;
     }
     __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_2);
     ++__pyx_t_2;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 912, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 914, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_c);
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_c, __pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_3);
     __pyx_t_3 = 0;
-    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_assigned_product)) { __Pyx_RaiseClosureNameError("assigned_product"); __PYX_ERR(0, 912, __pyx_L1_error) }
-    __pyx_t_3 = PyNumber_Multiply(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_assigned_product, __pyx_cur_scope->__pyx_v_c); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 912, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_assigned_product)) { __Pyx_RaiseClosureNameError("assigned_product"); __PYX_ERR(0, 914, __pyx_L1_error) }
+    __pyx_t_3 = PyNumber_Multiply(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_assigned_product, __pyx_cur_scope->__pyx_v_c); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 914, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
@@ -24373,7 +24402,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstrai
     __pyx_cur_scope->__pyx_t_0 = 0;
     __Pyx_XGOTREF(__pyx_t_1);
     __pyx_t_2 = __pyx_cur_scope->__pyx_t_1;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 912, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 914, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
@@ -24400,7 +24429,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstrai
 }
 static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstraint_8__call___8generator11(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "constraint/constraints.py":926
+/* "constraint/constraints.py":928
  *                 for value in domain[:]:
  *                     candidates = [assigned_product * value * p for p in other_products]
  *                     if all(c != target_value for c in candidates):             # <<<<<<<<<<<<<<
@@ -24420,7 +24449,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_15_genexpr *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 926, __pyx_L1_error)
+    __PYX_ERR(0, 928, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -24431,7 +24460,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __Pyx_INCREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_27VariableExactProdConstraint_8__call___8generator11, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[11]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint___ca, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 926, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_27VariableExactProdConstraint_8__call___8generator11, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[11]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint___ca, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 928, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -24468,29 +24497,29 @@ static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstrai
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 926, __pyx_L1_error)
-  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 926, __pyx_L1_error) }
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 928, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 928, __pyx_L1_error) }
   __pyx_t_1 = __pyx_cur_scope->__pyx_genexpr_arg_0; __Pyx_INCREF(__pyx_t_1);
   __pyx_t_2 = 0;
   for (;;) {
     {
       Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
       #if !CYTHON_ASSUME_SAFE_SIZE
-      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 926, __pyx_L1_error)
+      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 928, __pyx_L1_error)
       #endif
       if (__pyx_t_2 >= __pyx_temp) break;
     }
     __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_2);
     ++__pyx_t_2;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 926, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 928, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_c);
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_c, __pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_3);
     __pyx_t_3 = 0;
-    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value)) { __Pyx_RaiseClosureNameError("target_value"); __PYX_ERR(0, 926, __pyx_L1_error) }
-    __pyx_t_3 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_c, __pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 926, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 926, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value)) { __Pyx_RaiseClosureNameError("target_value"); __PYX_ERR(0, 928, __pyx_L1_error) }
+    __pyx_t_3 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_c, __pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 928, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 928, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_5 = (!__pyx_t_4);
     if (__pyx_t_5) {
@@ -24530,7 +24559,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_27VariableExactProdConstrai
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":888
+/* "constraint/constraints.py":890
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -24592,25 +24621,25 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_12___call__ *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 888, __pyx_L1_error)
+    __PYX_ERR(0, 890, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
 
-  /* "constraint/constraints.py":889
+  /* "constraint/constraints.py":891
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
  *         if self.target_var not in assignments:             # <<<<<<<<<<<<<<
  *             return True
  * 
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 889, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 891, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_t_1, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 889, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_t_1, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 891, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "constraint/constraints.py":890
+    /* "constraint/constraints.py":892
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
  *         if self.target_var not in assignments:
  *             return True             # <<<<<<<<<<<<<<
@@ -24622,7 +24651,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __pyx_r = Py_True;
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":889
+    /* "constraint/constraints.py":891
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
  *         if self.target_var not in assignments:             # <<<<<<<<<<<<<<
@@ -24631,23 +24660,23 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
 */
   }
 
-  /* "constraint/constraints.py":892
+  /* "constraint/constraints.py":894
  *             return True
  * 
  *         target_value = assignments[self.target_var]             # <<<<<<<<<<<<<<
  *         assigned_product = 1
  *         unassigned_vars = []
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 892, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 894, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 892, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 894, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_GIVEREF(__pyx_t_3);
   __pyx_cur_scope->__pyx_v_target_value = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":893
+  /* "constraint/constraints.py":895
  * 
  *         target_value = assignments[self.target_var]
  *         assigned_product = 1             # <<<<<<<<<<<<<<
@@ -24658,35 +24687,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_int_1);
   __pyx_cur_scope->__pyx_v_assigned_product = __pyx_mstate_global->__pyx_int_1;
 
-  /* "constraint/constraints.py":894
+  /* "constraint/constraints.py":896
  *         target_value = assignments[self.target_var]
  *         assigned_product = 1
  *         unassigned_vars = []             # <<<<<<<<<<<<<<
  * 
  *         for var in self.product_vars:
 */
-  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 894, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 896, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_unassigned_vars = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":896
+  /* "constraint/constraints.py":898
  *         unassigned_vars = []
  * 
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
  *             if var in assignments:
  *                 assigned_product *= assignments[var]
 */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 896, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 898, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
     __pyx_t_1 = __pyx_t_3; __Pyx_INCREF(__pyx_t_1);
     __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 896, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 898, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 896, __pyx_L1_error)
+    __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 898, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   for (;;) {
@@ -24695,7 +24724,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 896, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 898, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
@@ -24705,7 +24734,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 896, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 898, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
@@ -24716,13 +24745,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         #endif
         ++__pyx_t_4;
       }
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 896, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 898, __pyx_L1_error)
     } else {
       __pyx_t_3 = __pyx_t_5(__pyx_t_1);
       if (unlikely(!__pyx_t_3)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 896, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 898, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -24732,26 +24761,26 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "constraint/constraints.py":897
+    /* "constraint/constraints.py":899
  * 
  *         for var in self.product_vars:
  *             if var in assignments:             # <<<<<<<<<<<<<<
  *                 assigned_product *= assignments[var]
  *             else:
 */
-    __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_v_var, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 897, __pyx_L1_error)
+    __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_v_var, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 899, __pyx_L1_error)
     if (__pyx_t_2) {
 
-      /* "constraint/constraints.py":898
+      /* "constraint/constraints.py":900
  *         for var in self.product_vars:
  *             if var in assignments:
  *                 assigned_product *= assignments[var]             # <<<<<<<<<<<<<<
  *             else:
  *                 unassigned_vars.append(var)
 */
-      __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_var); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 898, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_var); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 900, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = PyNumber_InPlaceMultiply(__pyx_cur_scope->__pyx_v_assigned_product, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 898, __pyx_L1_error)
+      __pyx_t_6 = PyNumber_InPlaceMultiply(__pyx_cur_scope->__pyx_v_assigned_product, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 900, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_cur_scope->__pyx_v_assigned_product);
@@ -24759,7 +24788,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       __Pyx_GIVEREF(__pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "constraint/constraints.py":897
+      /* "constraint/constraints.py":899
  * 
  *         for var in self.product_vars:
  *             if var in assignments:             # <<<<<<<<<<<<<<
@@ -24769,7 +24798,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       goto __pyx_L6;
     }
 
-    /* "constraint/constraints.py":900
+    /* "constraint/constraints.py":902
  *                 assigned_product *= assignments[var]
  *             else:
  *                 unassigned_vars.append(var)             # <<<<<<<<<<<<<<
@@ -24777,11 +24806,11 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *         if isinstance(assigned_product, float):
 */
     /*else*/ {
-      __pyx_t_7 = __Pyx_PyList_Append(__pyx_v_unassigned_vars, __pyx_v_var); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 900, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyList_Append(__pyx_v_unassigned_vars, __pyx_v_var); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 902, __pyx_L1_error)
     }
     __pyx_L6:;
 
-    /* "constraint/constraints.py":896
+    /* "constraint/constraints.py":898
  *         unassigned_vars = []
  * 
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
@@ -24791,7 +24820,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":902
+  /* "constraint/constraints.py":904
  *                 unassigned_vars.append(var)
  * 
  *         if isinstance(assigned_product, float):             # <<<<<<<<<<<<<<
@@ -24804,7 +24833,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "constraint/constraints.py":903
+    /* "constraint/constraints.py":905
  * 
  *         if isinstance(assigned_product, float):
  *             assigned_product = round(assigned_product, 10)             # <<<<<<<<<<<<<<
@@ -24820,7 +24849,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_8, (3-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 903, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 905, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_GOTREF(__pyx_cur_scope->__pyx_v_assigned_product);
@@ -24828,7 +24857,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":902
+    /* "constraint/constraints.py":904
  *                 unassigned_vars.append(var)
  * 
  *         if isinstance(assigned_product, float):             # <<<<<<<<<<<<<<
@@ -24837,7 +24866,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
 */
   }
 
-  /* "constraint/constraints.py":905
+  /* "constraint/constraints.py":907
  *             assigned_product = round(assigned_product, 10)
  * 
  *         if not unassigned_vars:             # <<<<<<<<<<<<<<
@@ -24845,11 +24874,11 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  * 
 */
   __pyx_t_2 = (__Pyx_PyList_GET_SIZE(__pyx_v_unassigned_vars) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_2 < 0))) __PYX_ERR(0, 905, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_2 < 0))) __PYX_ERR(0, 907, __pyx_L1_error)
   __pyx_t_9 = (!__pyx_t_2);
   if (__pyx_t_9) {
 
-    /* "constraint/constraints.py":906
+    /* "constraint/constraints.py":908
  * 
  *         if not unassigned_vars:
  *             return assigned_product == target_value             # <<<<<<<<<<<<<<
@@ -24857,12 +24886,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *         # Partial assignment  check feasibility
 */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_assigned_product, __pyx_cur_scope->__pyx_v_target_value, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 906, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_assigned_product, __pyx_cur_scope->__pyx_v_target_value, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 908, __pyx_L1_error)
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":905
+    /* "constraint/constraints.py":907
  *             assigned_product = round(assigned_product, 10)
  * 
  *         if not unassigned_vars:             # <<<<<<<<<<<<<<
@@ -24871,7 +24900,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
 */
   }
 
-  /* "constraint/constraints.py":909
+  /* "constraint/constraints.py":911
  * 
  *         # Partial assignment  check feasibility
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned_vars]             # <<<<<<<<<<<<<<
@@ -24879,7 +24908,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *         possible_min = min(assigned_product * c for c in candidates)
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 909, __pyx_L12_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 911, __pyx_L12_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = __pyx_v_unassigned_vars; __Pyx_INCREF(__pyx_t_3);
     __pyx_t_4 = 0;
@@ -24887,20 +24916,20 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_3);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 909, __pyx_L12_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 911, __pyx_L12_error)
         #endif
         if (__pyx_t_4 >= __pyx_temp) break;
       }
       __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_3, __pyx_t_4);
       ++__pyx_t_4;
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 909, __pyx_L12_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 911, __pyx_L12_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_XDECREF_SET(__pyx_9genexpr13__pyx_v_v, __pyx_t_6);
       __pyx_t_6 = 0;
       __pyx_t_10 = NULL;
       __Pyx_INCREF(__pyx_builtin_min);
       __pyx_t_11 = __pyx_builtin_min; 
-      __pyx_t_12 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr13__pyx_v_v); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 909, __pyx_L12_error)
+      __pyx_t_12 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr13__pyx_v_v); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 911, __pyx_L12_error)
       __Pyx_GOTREF(__pyx_t_12);
       __pyx_t_8 = 1;
       {
@@ -24909,13 +24938,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 909, __pyx_L12_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 911, __pyx_L12_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       __pyx_t_12 = NULL;
       __Pyx_INCREF(__pyx_builtin_max);
       __pyx_t_10 = __pyx_builtin_max; 
-      __pyx_t_13 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr13__pyx_v_v); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 909, __pyx_L12_error)
+      __pyx_t_13 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr13__pyx_v_v); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 911, __pyx_L12_error)
       __Pyx_GOTREF(__pyx_t_13);
       __pyx_t_8 = 1;
       {
@@ -24924,18 +24953,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 909, __pyx_L12_error)
+        if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 911, __pyx_L12_error)
         __Pyx_GOTREF(__pyx_t_11);
       }
-      __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 909, __pyx_L12_error)
+      __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 911, __pyx_L12_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_GIVEREF(__pyx_t_6);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 909, __pyx_L12_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 911, __pyx_L12_error);
       __Pyx_GIVEREF(__pyx_t_11);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_11) != (0)) __PYX_ERR(0, 909, __pyx_L12_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_11) != (0)) __PYX_ERR(0, 911, __pyx_L12_error);
       __pyx_t_6 = 0;
       __pyx_t_11 = 0;
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_10))) __PYX_ERR(0, 909, __pyx_L12_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_10))) __PYX_ERR(0, 911, __pyx_L12_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24949,7 +24978,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __pyx_v_domain_bounds = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":910
+  /* "constraint/constraints.py":912
  *         # Partial assignment  check feasibility
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned_vars]
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]             # <<<<<<<<<<<<<<
@@ -24957,12 +24986,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *         possible_max = max(assigned_product * c for c in candidates)
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 910, __pyx_L19_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 912, __pyx_L19_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 910, __pyx_L19_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 912, __pyx_L19_error)
     __Pyx_GOTREF(__pyx_t_3);
     { /* enter inner scope */
-      __pyx_t_10 = PyList_New(0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 910, __pyx_L24_error)
+      __pyx_t_10 = PyList_New(0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 912, __pyx_L24_error)
       __Pyx_GOTREF(__pyx_t_10);
       __pyx_t_11 = __pyx_v_domain_bounds; __Pyx_INCREF(__pyx_t_11);
       __pyx_t_4 = 0;
@@ -24970,13 +24999,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_11);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 910, __pyx_L24_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 912, __pyx_L24_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
         __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_11, __pyx_t_4);
         ++__pyx_t_4;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 910, __pyx_L24_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 912, __pyx_L24_error)
         __Pyx_GOTREF(__pyx_t_6);
         if ((likely(PyTuple_CheckExact(__pyx_t_6))) || (PyList_CheckExact(__pyx_t_6))) {
           PyObject* sequence = __pyx_t_6;
@@ -24984,7 +25013,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           if (unlikely(size != 2)) {
             if (size > 2) __Pyx_RaiseTooManyValuesError(2);
             else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-            __PYX_ERR(0, 910, __pyx_L24_error)
+            __PYX_ERR(0, 912, __pyx_L24_error)
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
           if (likely(PyTuple_CheckExact(sequence))) {
@@ -24994,22 +25023,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             __Pyx_INCREF(__pyx_t_12);
           } else {
             __pyx_t_13 = __Pyx_PyList_GetItemRef(sequence, 0);
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 910, __pyx_L24_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 912, __pyx_L24_error)
             __Pyx_XGOTREF(__pyx_t_13);
             __pyx_t_12 = __Pyx_PyList_GetItemRef(sequence, 1);
-            if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 910, __pyx_L24_error)
+            if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 912, __pyx_L24_error)
             __Pyx_XGOTREF(__pyx_t_12);
           }
           #else
-          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 910, __pyx_L24_error)
+          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 912, __pyx_L24_error)
           __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_12 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 910, __pyx_L24_error)
+          __pyx_t_12 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 912, __pyx_L24_error)
           __Pyx_GOTREF(__pyx_t_12);
           #endif
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         } else {
           Py_ssize_t index = -1;
-          __pyx_t_14 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 910, __pyx_L24_error)
+          __pyx_t_14 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 912, __pyx_L24_error)
           __Pyx_GOTREF(__pyx_t_14);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_14);
@@ -25017,7 +25046,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           __Pyx_GOTREF(__pyx_t_13);
           index = 1; __pyx_t_12 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_12)) goto __pyx_L27_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_12);
-          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 910, __pyx_L24_error)
+          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 912, __pyx_L24_error)
           __pyx_t_15 = NULL;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           goto __pyx_L28_unpacking_done;
@@ -25025,22 +25054,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
           if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-          __PYX_ERR(0, 910, __pyx_L24_error)
+          __PYX_ERR(0, 912, __pyx_L24_error)
           __pyx_L28_unpacking_done:;
         }
         __Pyx_XDECREF_SET(__pyx_9genexpr15__pyx_v_lo, __pyx_t_13);
         __pyx_t_13 = 0;
         __Pyx_XDECREF_SET(__pyx_9genexpr15__pyx_v_hi, __pyx_t_12);
         __pyx_t_12 = 0;
-        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 910, __pyx_L24_error)
+        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 912, __pyx_L24_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_INCREF(__pyx_9genexpr15__pyx_v_lo);
         __Pyx_GIVEREF(__pyx_9genexpr15__pyx_v_lo);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_9genexpr15__pyx_v_lo) != (0)) __PYX_ERR(0, 910, __pyx_L24_error);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_9genexpr15__pyx_v_lo) != (0)) __PYX_ERR(0, 912, __pyx_L24_error);
         __Pyx_INCREF(__pyx_9genexpr15__pyx_v_hi);
         __Pyx_GIVEREF(__pyx_9genexpr15__pyx_v_hi);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_9genexpr15__pyx_v_hi) != (0)) __PYX_ERR(0, 910, __pyx_L24_error);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_10, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 910, __pyx_L24_error)
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_9genexpr15__pyx_v_hi) != (0)) __PYX_ERR(0, 912, __pyx_L24_error);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_10, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 912, __pyx_L24_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -25053,10 +25082,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       goto __pyx_L19_error;
       __pyx_L30_exit_scope:;
     } /* exit inner scope */
-    __pyx_t_11 = PySequence_Tuple(__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 910, __pyx_L19_error)
+    __pyx_t_11 = PySequence_Tuple(__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 912, __pyx_L19_error)
     __Pyx_GOTREF(__pyx_t_11);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_11, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 910, __pyx_L19_error)
+    __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_11, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 912, __pyx_L19_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -25065,9 +25094,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       __pyx_t_4 = 0;
       __pyx_t_5 = NULL;
     } else {
-      __pyx_t_4 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 910, __pyx_L19_error)
+      __pyx_t_4 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 912, __pyx_L19_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 910, __pyx_L19_error)
+      __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 912, __pyx_L19_error)
     }
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     for (;;) {
@@ -25076,7 +25105,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_11);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 910, __pyx_L19_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 912, __pyx_L19_error)
             #endif
             if (__pyx_t_4 >= __pyx_temp) break;
           }
@@ -25086,7 +25115,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_11);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 910, __pyx_L19_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 912, __pyx_L19_error)
             #endif
             if (__pyx_t_4 >= __pyx_temp) break;
           }
@@ -25097,13 +25126,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           #endif
           ++__pyx_t_4;
         }
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 910, __pyx_L19_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 912, __pyx_L19_error)
       } else {
         __pyx_t_10 = __pyx_t_5(__pyx_t_11);
         if (unlikely(!__pyx_t_10)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 910, __pyx_L19_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 912, __pyx_L19_error)
             PyErr_Clear();
           }
           break;
@@ -25119,10 +25148,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_9genexpr14__pyx_v_p};
         __pyx_t_10 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 910, __pyx_L19_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 912, __pyx_L19_error)
         __Pyx_GOTREF(__pyx_t_10);
       }
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_10))) __PYX_ERR(0, 910, __pyx_L19_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_10))) __PYX_ERR(0, 912, __pyx_L19_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     }
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -25136,7 +25165,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __pyx_v_candidates = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":911
+  /* "constraint/constraints.py":913
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned_vars]
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_min = min(assigned_product * c for c in candidates)             # <<<<<<<<<<<<<<
@@ -25146,7 +25175,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __pyx_t_11 = NULL;
   __Pyx_INCREF(__pyx_builtin_min);
   __pyx_t_10 = __pyx_builtin_min; 
-  __pyx_t_3 = __pyx_pf_10constraint_11constraints_27VariableExactProdConstraint_8__call___genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_candidates); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 911, __pyx_L1_error)
+  __pyx_t_3 = __pyx_pf_10constraint_11constraints_27VariableExactProdConstraint_8__call___genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_candidates); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 913, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_8 = 1;
   {
@@ -25155,13 +25184,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 911, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 913, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_possible_min = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":912
+  /* "constraint/constraints.py":914
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_min = min(assigned_product * c for c in candidates)
  *         possible_max = max(assigned_product * c for c in candidates)             # <<<<<<<<<<<<<<
@@ -25171,7 +25200,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __pyx_t_10 = NULL;
   __Pyx_INCREF(__pyx_builtin_max);
   __pyx_t_3 = __pyx_builtin_max; 
-  __pyx_t_11 = __pyx_pf_10constraint_11constraints_27VariableExactProdConstraint_8__call___3genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_candidates); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 912, __pyx_L1_error)
+  __pyx_t_11 = __pyx_pf_10constraint_11constraints_27VariableExactProdConstraint_8__call___3genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_candidates); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 914, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __pyx_t_8 = 1;
   {
@@ -25180,35 +25209,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 912, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 914, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_possible_max = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":914
+  /* "constraint/constraints.py":916
  *         possible_max = max(assigned_product * c for c in candidates)
  * 
  *         if target_value < possible_min or target_value > possible_max:             # <<<<<<<<<<<<<<
  *             return False
  * 
 */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_target_value, __pyx_v_possible_min, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 914, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 914, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_target_value, __pyx_v_possible_min, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 916, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 916, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (!__pyx_t_2) {
   } else {
     __pyx_t_9 = __pyx_t_2;
     goto __pyx_L34_bool_binop_done;
   }
-  __pyx_t_1 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_target_value, __pyx_v_possible_max, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 914, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 914, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_target_value, __pyx_v_possible_max, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 916, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 916, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_9 = __pyx_t_2;
   __pyx_L34_bool_binop_done:;
   if (__pyx_t_9) {
 
-    /* "constraint/constraints.py":915
+    /* "constraint/constraints.py":917
  * 
  *         if target_value < possible_min or target_value > possible_max:
  *             return False             # <<<<<<<<<<<<<<
@@ -25220,7 +25249,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     __pyx_r = Py_False;
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":914
+    /* "constraint/constraints.py":916
  *         possible_max = max(assigned_product * c for c in candidates)
  * 
  *         if target_value < possible_min or target_value > possible_max:             # <<<<<<<<<<<<<<
@@ -25229,17 +25258,17 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
 */
   }
 
-  /* "constraint/constraints.py":917
+  /* "constraint/constraints.py":919
  *             return False
  * 
  *         if forwardcheck:             # <<<<<<<<<<<<<<
  *             for var in unassigned_vars:
  *                 others = [v for v in unassigned_vars if v != var]
 */
-  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 917, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 919, __pyx_L1_error)
   if (__pyx_t_9) {
 
-    /* "constraint/constraints.py":918
+    /* "constraint/constraints.py":920
  * 
  *         if forwardcheck:
  *             for var in unassigned_vars:             # <<<<<<<<<<<<<<
@@ -25252,18 +25281,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 918, __pyx_L1_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 920, __pyx_L1_error)
         #endif
         if (__pyx_t_4 >= __pyx_temp) break;
       }
       __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_4);
       ++__pyx_t_4;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 918, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 920, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "constraint/constraints.py":919
+      /* "constraint/constraints.py":921
  *         if forwardcheck:
  *             for var in unassigned_vars:
  *                 others = [v for v in unassigned_vars if v != var]             # <<<<<<<<<<<<<<
@@ -25271,7 +25300,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *                 other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in others_bounds])]
 */
       { /* enter inner scope */
-        __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 919, __pyx_L41_error)
+        __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 921, __pyx_L41_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_11 = __pyx_v_unassigned_vars; __Pyx_INCREF(__pyx_t_11);
         __pyx_t_16 = 0;
@@ -25279,21 +25308,21 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_11);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 919, __pyx_L41_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 921, __pyx_L41_error)
             #endif
             if (__pyx_t_16 >= __pyx_temp) break;
           }
           __pyx_t_10 = __Pyx_PyList_GetItemRef(__pyx_t_11, __pyx_t_16);
           ++__pyx_t_16;
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 919, __pyx_L41_error)
+          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 921, __pyx_L41_error)
           __Pyx_GOTREF(__pyx_t_10);
           __Pyx_XDECREF_SET(__pyx_9genexpr18__pyx_v_v, __pyx_t_10);
           __pyx_t_10 = 0;
-          __pyx_t_10 = PyObject_RichCompare(__pyx_9genexpr18__pyx_v_v, __pyx_v_var, Py_NE); __Pyx_XGOTREF(__pyx_t_10); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 919, __pyx_L41_error)
-          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 919, __pyx_L41_error)
+          __pyx_t_10 = PyObject_RichCompare(__pyx_9genexpr18__pyx_v_v, __pyx_v_var, Py_NE); __Pyx_XGOTREF(__pyx_t_10); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 921, __pyx_L41_error)
+          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 921, __pyx_L41_error)
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
           if (__pyx_t_9) {
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_9genexpr18__pyx_v_v))) __PYX_ERR(0, 919, __pyx_L41_error)
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_9genexpr18__pyx_v_v))) __PYX_ERR(0, 921, __pyx_L41_error)
           }
         }
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -25307,7 +25336,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       __Pyx_XDECREF_SET(__pyx_v_others, ((PyObject*)__pyx_t_3));
       __pyx_t_3 = 0;
 
-      /* "constraint/constraints.py":920
+      /* "constraint/constraints.py":922
  *             for var in unassigned_vars:
  *                 others = [v for v in unassigned_vars if v != var]
  *                 others_bounds = [(min(domains[v]), max(domains[v])) for v in others] or [(1, 1)]             # <<<<<<<<<<<<<<
@@ -25315,7 +25344,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  * 
 */
       { /* enter inner scope */
-        __pyx_t_11 = PyList_New(0); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 920, __pyx_L51_error)
+        __pyx_t_11 = PyList_New(0); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 922, __pyx_L51_error)
         __Pyx_GOTREF(__pyx_t_11);
         __pyx_t_10 = __pyx_v_others; __Pyx_INCREF(__pyx_t_10);
         __pyx_t_16 = 0;
@@ -25323,20 +25352,20 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 920, __pyx_L51_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 922, __pyx_L51_error)
             #endif
             if (__pyx_t_16 >= __pyx_temp) break;
           }
           __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_16);
           ++__pyx_t_16;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 920, __pyx_L51_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 922, __pyx_L51_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_XDECREF_SET(__pyx_9genexpr19__pyx_v_v, __pyx_t_6);
           __pyx_t_6 = 0;
           __pyx_t_12 = NULL;
           __Pyx_INCREF(__pyx_builtin_min);
           __pyx_t_13 = __pyx_builtin_min; 
-          __pyx_t_14 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr19__pyx_v_v); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 920, __pyx_L51_error)
+          __pyx_t_14 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr19__pyx_v_v); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 922, __pyx_L51_error)
           __Pyx_GOTREF(__pyx_t_14);
           __pyx_t_8 = 1;
           {
@@ -25345,13 +25374,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 920, __pyx_L51_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 922, __pyx_L51_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __pyx_t_14 = NULL;
           __Pyx_INCREF(__pyx_builtin_max);
           __pyx_t_12 = __pyx_builtin_max; 
-          __pyx_t_17 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr19__pyx_v_v); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 920, __pyx_L51_error)
+          __pyx_t_17 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr19__pyx_v_v); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 922, __pyx_L51_error)
           __Pyx_GOTREF(__pyx_t_17);
           __pyx_t_8 = 1;
           {
@@ -25360,18 +25389,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
             __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 920, __pyx_L51_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 922, __pyx_L51_error)
             __Pyx_GOTREF(__pyx_t_13);
           }
-          __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 920, __pyx_L51_error)
+          __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 922, __pyx_L51_error)
           __Pyx_GOTREF(__pyx_t_12);
           __Pyx_GIVEREF(__pyx_t_6);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 920, __pyx_L51_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 922, __pyx_L51_error);
           __Pyx_GIVEREF(__pyx_t_13);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_t_13) != (0)) __PYX_ERR(0, 920, __pyx_L51_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_t_13) != (0)) __PYX_ERR(0, 922, __pyx_L51_error);
           __pyx_t_6 = 0;
           __pyx_t_13 = 0;
-          if (unlikely(__Pyx_ListComp_Append(__pyx_t_11, (PyObject*)__pyx_t_12))) __PYX_ERR(0, 920, __pyx_L51_error)
+          if (unlikely(__Pyx_ListComp_Append(__pyx_t_11, (PyObject*)__pyx_t_12))) __PYX_ERR(0, 922, __pyx_L51_error)
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         }
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -25382,7 +25411,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         goto __pyx_L1_error;
         __pyx_L55_exit_scope:;
       } /* exit inner scope */
-      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 920, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 922, __pyx_L1_error)
       if (!__pyx_t_9) {
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       } else {
@@ -25391,11 +25420,11 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         goto __pyx_L47_bool_binop_done;
       }
-      __pyx_t_11 = PyList_New(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 920, __pyx_L1_error)
+      __pyx_t_11 = PyList_New(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 922, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_INCREF(__pyx_mstate_global->__pyx_tuple[0]);
       __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[0]);
-      if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 0, __pyx_mstate_global->__pyx_tuple[0]) != (0)) __PYX_ERR(0, 920, __pyx_L1_error);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 0, __pyx_mstate_global->__pyx_tuple[0]) != (0)) __PYX_ERR(0, 922, __pyx_L1_error);
       __Pyx_INCREF(__pyx_t_11);
       __pyx_t_3 = __pyx_t_11;
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -25403,7 +25432,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       __Pyx_XDECREF_SET(__pyx_v_others_bounds, ((PyObject*)__pyx_t_3));
       __pyx_t_3 = 0;
 
-      /* "constraint/constraints.py":921
+      /* "constraint/constraints.py":923
  *                 others = [v for v in unassigned_vars if v != var]
  *                 others_bounds = [(min(domains[v]), max(domains[v])) for v in others] or [(1, 1)]
  *                 other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in others_bounds])]             # <<<<<<<<<<<<<<
@@ -25411,16 +25440,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *                 domain = domains[var]
 */
       { /* enter inner scope */
-        __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 921, __pyx_L58_error)
+        __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 923, __pyx_L58_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 921, __pyx_L58_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 923, __pyx_L58_error)
         __Pyx_GOTREF(__pyx_t_11);
         { /* enter inner scope */
-          __pyx_t_10 = PyList_New(0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 921, __pyx_L63_error)
+          __pyx_t_10 = PyList_New(0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 923, __pyx_L63_error)
           __Pyx_GOTREF(__pyx_t_10);
           if (unlikely(__pyx_v_others_bounds == Py_None)) {
             PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-            __PYX_ERR(0, 921, __pyx_L63_error)
+            __PYX_ERR(0, 923, __pyx_L63_error)
           }
           __pyx_t_12 = __pyx_v_others_bounds; __Pyx_INCREF(__pyx_t_12);
           __pyx_t_16 = 0;
@@ -25428,13 +25457,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_12);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 921, __pyx_L63_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 923, __pyx_L63_error)
               #endif
               if (__pyx_t_16 >= __pyx_temp) break;
             }
             __pyx_t_13 = __Pyx_PyList_GetItemRef(__pyx_t_12, __pyx_t_16);
             ++__pyx_t_16;
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 921, __pyx_L63_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 923, __pyx_L63_error)
             __Pyx_GOTREF(__pyx_t_13);
             if ((likely(PyTuple_CheckExact(__pyx_t_13))) || (PyList_CheckExact(__pyx_t_13))) {
               PyObject* sequence = __pyx_t_13;
@@ -25442,7 +25471,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
               if (unlikely(size != 2)) {
                 if (size > 2) __Pyx_RaiseTooManyValuesError(2);
                 else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-                __PYX_ERR(0, 921, __pyx_L63_error)
+                __PYX_ERR(0, 923, __pyx_L63_error)
               }
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
               if (likely(PyTuple_CheckExact(sequence))) {
@@ -25452,22 +25481,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
                 __Pyx_INCREF(__pyx_t_17);
               } else {
                 __pyx_t_6 = __Pyx_PyList_GetItemRef(sequence, 0);
-                if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 921, __pyx_L63_error)
+                if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 923, __pyx_L63_error)
                 __Pyx_XGOTREF(__pyx_t_6);
                 __pyx_t_17 = __Pyx_PyList_GetItemRef(sequence, 1);
-                if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 921, __pyx_L63_error)
+                if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 923, __pyx_L63_error)
                 __Pyx_XGOTREF(__pyx_t_17);
               }
               #else
-              __pyx_t_6 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 921, __pyx_L63_error)
+              __pyx_t_6 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 923, __pyx_L63_error)
               __Pyx_GOTREF(__pyx_t_6);
-              __pyx_t_17 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 921, __pyx_L63_error)
+              __pyx_t_17 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 923, __pyx_L63_error)
               __Pyx_GOTREF(__pyx_t_17);
               #endif
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
             } else {
               Py_ssize_t index = -1;
-              __pyx_t_14 = PyObject_GetIter(__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 921, __pyx_L63_error)
+              __pyx_t_14 = PyObject_GetIter(__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 923, __pyx_L63_error)
               __Pyx_GOTREF(__pyx_t_14);
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
               __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_14);
@@ -25475,7 +25504,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
               __Pyx_GOTREF(__pyx_t_6);
               index = 1; __pyx_t_17 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_17)) goto __pyx_L66_unpacking_failed;
               __Pyx_GOTREF(__pyx_t_17);
-              if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 921, __pyx_L63_error)
+              if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 923, __pyx_L63_error)
               __pyx_t_15 = NULL;
               __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
               goto __pyx_L67_unpacking_done;
@@ -25483,22 +25512,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
               __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
               __pyx_t_15 = NULL;
               if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-              __PYX_ERR(0, 921, __pyx_L63_error)
+              __PYX_ERR(0, 923, __pyx_L63_error)
               __pyx_L67_unpacking_done:;
             }
             __Pyx_XDECREF_SET(__pyx_9genexpr21__pyx_v_lo, __pyx_t_6);
             __pyx_t_6 = 0;
             __Pyx_XDECREF_SET(__pyx_9genexpr21__pyx_v_hi, __pyx_t_17);
             __pyx_t_17 = 0;
-            __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 921, __pyx_L63_error)
+            __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 923, __pyx_L63_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_INCREF(__pyx_9genexpr21__pyx_v_lo);
             __Pyx_GIVEREF(__pyx_9genexpr21__pyx_v_lo);
-            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_9genexpr21__pyx_v_lo) != (0)) __PYX_ERR(0, 921, __pyx_L63_error);
+            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_9genexpr21__pyx_v_lo) != (0)) __PYX_ERR(0, 923, __pyx_L63_error);
             __Pyx_INCREF(__pyx_9genexpr21__pyx_v_hi);
             __Pyx_GIVEREF(__pyx_9genexpr21__pyx_v_hi);
-            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_9genexpr21__pyx_v_hi) != (0)) __PYX_ERR(0, 921, __pyx_L63_error);
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_10, (PyObject*)__pyx_t_13))) __PYX_ERR(0, 921, __pyx_L63_error)
+            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_9genexpr21__pyx_v_hi) != (0)) __PYX_ERR(0, 923, __pyx_L63_error);
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_10, (PyObject*)__pyx_t_13))) __PYX_ERR(0, 923, __pyx_L63_error)
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           }
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -25511,10 +25540,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           goto __pyx_L58_error;
           __pyx_L69_exit_scope:;
         } /* exit inner scope */
-        __pyx_t_12 = PySequence_Tuple(__pyx_t_10); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 921, __pyx_L58_error)
+        __pyx_t_12 = PySequence_Tuple(__pyx_t_10); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 923, __pyx_L58_error)
         __Pyx_GOTREF(__pyx_t_12);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_12, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 921, __pyx_L58_error)
+        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_12, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 923, __pyx_L58_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -25523,9 +25552,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
           __pyx_t_16 = 0;
           __pyx_t_5 = NULL;
         } else {
-          __pyx_t_16 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_10); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 921, __pyx_L58_error)
+          __pyx_t_16 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_10); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 923, __pyx_L58_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 921, __pyx_L58_error)
+          __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 923, __pyx_L58_error)
         }
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         for (;;) {
@@ -25534,7 +25563,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
               {
                 Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_12);
                 #if !CYTHON_ASSUME_SAFE_SIZE
-                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 921, __pyx_L58_error)
+                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 923, __pyx_L58_error)
                 #endif
                 if (__pyx_t_16 >= __pyx_temp) break;
               }
@@ -25544,7 +25573,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
               {
                 Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_12);
                 #if !CYTHON_ASSUME_SAFE_SIZE
-                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 921, __pyx_L58_error)
+                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 923, __pyx_L58_error)
                 #endif
                 if (__pyx_t_16 >= __pyx_temp) break;
               }
@@ -25555,13 +25584,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
               #endif
               ++__pyx_t_16;
             }
-            if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 921, __pyx_L58_error)
+            if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 923, __pyx_L58_error)
           } else {
             __pyx_t_10 = __pyx_t_5(__pyx_t_12);
             if (unlikely(!__pyx_t_10)) {
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
-                if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 921, __pyx_L58_error)
+                if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 923, __pyx_L58_error)
                 PyErr_Clear();
               }
               break;
@@ -25577,10 +25606,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             PyObject *__pyx_callargs[2] = {__pyx_t_11, __pyx_9genexpr20__pyx_v_p};
             __pyx_t_10 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-            if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 921, __pyx_L58_error)
+            if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 923, __pyx_L58_error)
             __Pyx_GOTREF(__pyx_t_10);
           }
-          if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_10))) __PYX_ERR(0, 921, __pyx_L58_error)
+          if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_10))) __PYX_ERR(0, 923, __pyx_L58_error)
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         }
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -25594,35 +25623,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       __Pyx_XDECREF_SET(__pyx_v_other_products, ((PyObject*)__pyx_t_3));
       __pyx_t_3 = 0;
 
-      /* "constraint/constraints.py":923
+      /* "constraint/constraints.py":925
  *                 other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in others_bounds])]
  * 
  *                 domain = domains[var]             # <<<<<<<<<<<<<<
  *                 for value in domain[:]:
  *                     candidates = [assigned_product * value * p for p in other_products]
 */
-      __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 923, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 925, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "constraint/constraints.py":924
+      /* "constraint/constraints.py":926
  * 
  *                 domain = domains[var]
  *                 for value in domain[:]:             # <<<<<<<<<<<<<<
  *                     candidates = [assigned_product * value * p for p in other_products]
  *                     if all(c != target_value for c in candidates):
 */
-      __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 924, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 926, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
         __pyx_t_12 = __pyx_t_3; __Pyx_INCREF(__pyx_t_12);
         __pyx_t_16 = 0;
         __pyx_t_5 = NULL;
       } else {
-        __pyx_t_16 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 924, __pyx_L1_error)
+        __pyx_t_16 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 926, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 924, __pyx_L1_error)
+        __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 926, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       for (;;) {
@@ -25631,7 +25660,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_12);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 924, __pyx_L1_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 926, __pyx_L1_error)
               #endif
               if (__pyx_t_16 >= __pyx_temp) break;
             }
@@ -25641,7 +25670,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             {
               Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_12);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 924, __pyx_L1_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 926, __pyx_L1_error)
               #endif
               if (__pyx_t_16 >= __pyx_temp) break;
             }
@@ -25652,13 +25681,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             #endif
             ++__pyx_t_16;
           }
-          if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 924, __pyx_L1_error)
+          if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 926, __pyx_L1_error)
         } else {
           __pyx_t_3 = __pyx_t_5(__pyx_t_12);
           if (unlikely(!__pyx_t_3)) {
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
-              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 924, __pyx_L1_error)
+              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 926, __pyx_L1_error)
               PyErr_Clear();
             }
             break;
@@ -25668,7 +25697,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         __Pyx_XDECREF_SET(__pyx_v_value, __pyx_t_3);
         __pyx_t_3 = 0;
 
-        /* "constraint/constraints.py":925
+        /* "constraint/constraints.py":927
  *                 domain = domains[var]
  *                 for value in domain[:]:
  *                     candidates = [assigned_product * value * p for p in other_products]             # <<<<<<<<<<<<<<
@@ -25676,7 +25705,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
  *                         domain.hideValue(value)
 */
         { /* enter inner scope */
-          __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 925, __pyx_L76_error)
+          __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 927, __pyx_L76_error)
           __Pyx_GOTREF(__pyx_t_3);
           __pyx_t_10 = __pyx_v_other_products; __Pyx_INCREF(__pyx_t_10);
           __pyx_t_18 = 0;
@@ -25684,22 +25713,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 925, __pyx_L76_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 927, __pyx_L76_error)
               #endif
               if (__pyx_t_18 >= __pyx_temp) break;
             }
             __pyx_t_11 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_18);
             ++__pyx_t_18;
-            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 925, __pyx_L76_error)
+            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 927, __pyx_L76_error)
             __Pyx_GOTREF(__pyx_t_11);
             __Pyx_XDECREF_SET(__pyx_9genexpr22__pyx_v_p, __pyx_t_11);
             __pyx_t_11 = 0;
-            __pyx_t_11 = PyNumber_Multiply(__pyx_cur_scope->__pyx_v_assigned_product, __pyx_v_value); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 925, __pyx_L76_error)
+            __pyx_t_11 = PyNumber_Multiply(__pyx_cur_scope->__pyx_v_assigned_product, __pyx_v_value); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 927, __pyx_L76_error)
             __Pyx_GOTREF(__pyx_t_11);
-            __pyx_t_13 = PyNumber_Multiply(__pyx_t_11, __pyx_9genexpr22__pyx_v_p); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 925, __pyx_L76_error)
+            __pyx_t_13 = PyNumber_Multiply(__pyx_t_11, __pyx_9genexpr22__pyx_v_p); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 927, __pyx_L76_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_13))) __PYX_ERR(0, 925, __pyx_L76_error)
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_13))) __PYX_ERR(0, 927, __pyx_L76_error)
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           }
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -25713,23 +25742,23 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         __Pyx_DECREF_SET(__pyx_v_candidates, ((PyObject*)__pyx_t_3));
         __pyx_t_3 = 0;
 
-        /* "constraint/constraints.py":926
+        /* "constraint/constraints.py":928
  *                 for value in domain[:]:
  *                     candidates = [assigned_product * value * p for p in other_products]
  *                     if all(c != target_value for c in candidates):             # <<<<<<<<<<<<<<
  *                         domain.hideValue(value)
  *                 if not domain:
 */
-        __pyx_t_3 = __pyx_pf_10constraint_11constraints_27VariableExactProdConstraint_8__call___6genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_candidates); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 926, __pyx_L1_error)
+        __pyx_t_3 = __pyx_pf_10constraint_11constraints_27VariableExactProdConstraint_8__call___6genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_candidates); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 928, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_10 = __Pyx_Generator_GetInlinedResult(__pyx_t_3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 926, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_Generator_GetInlinedResult(__pyx_t_3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 928, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 926, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 928, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         if (__pyx_t_9) {
 
-          /* "constraint/constraints.py":927
+          /* "constraint/constraints.py":929
  *                     candidates = [assigned_product * value * p for p in other_products]
  *                     if all(c != target_value for c in candidates):
  *                         domain.hideValue(value)             # <<<<<<<<<<<<<<
@@ -25743,12 +25772,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
             PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_value};
             __pyx_t_10 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_hideValue, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-            if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 927, __pyx_L1_error)
+            if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 929, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_10);
           }
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-          /* "constraint/constraints.py":926
+          /* "constraint/constraints.py":928
  *                 for value in domain[:]:
  *                     candidates = [assigned_product * value * p for p in other_products]
  *                     if all(c != target_value for c in candidates):             # <<<<<<<<<<<<<<
@@ -25757,7 +25786,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
 */
         }
 
-        /* "constraint/constraints.py":924
+        /* "constraint/constraints.py":926
  * 
  *                 domain = domains[var]
  *                 for value in domain[:]:             # <<<<<<<<<<<<<<
@@ -25767,18 +25796,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
       }
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "constraint/constraints.py":928
+      /* "constraint/constraints.py":930
  *                     if all(c != target_value for c in candidates):
  *                         domain.hideValue(value)
  *                 if not domain:             # <<<<<<<<<<<<<<
  *                     return False
  * 
 */
-      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 928, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 930, __pyx_L1_error)
       __pyx_t_2 = (!__pyx_t_9);
       if (__pyx_t_2) {
 
-        /* "constraint/constraints.py":929
+        /* "constraint/constraints.py":931
  *                         domain.hideValue(value)
  *                 if not domain:
  *                     return False             # <<<<<<<<<<<<<<
@@ -25791,7 +25820,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":928
+        /* "constraint/constraints.py":930
  *                     if all(c != target_value for c in candidates):
  *                         domain.hideValue(value)
  *                 if not domain:             # <<<<<<<<<<<<<<
@@ -25800,7 +25829,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
 */
       }
 
-      /* "constraint/constraints.py":918
+      /* "constraint/constraints.py":920
  * 
  *         if forwardcheck:
  *             for var in unassigned_vars:             # <<<<<<<<<<<<<<
@@ -25810,7 +25839,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":917
+    /* "constraint/constraints.py":919
  *             return False
  * 
  *         if forwardcheck:             # <<<<<<<<<<<<<<
@@ -25819,7 +25848,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
 */
   }
 
-  /* "constraint/constraints.py":931
+  /* "constraint/constraints.py":933
  *                     return False
  * 
  *         return True             # <<<<<<<<<<<<<<
@@ -25831,7 +25860,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   __pyx_r = Py_True;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":888
+  /* "constraint/constraints.py":890
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -25883,7 +25912,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_27VariableExactProdConstrai
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":945
+/* "constraint/constraints.py":947
  *     """
  * 
  *     def __init__(self, minprod: Union[int, float]):             # <<<<<<<<<<<<<<
@@ -25932,39 +25961,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_minprod,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 945, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 947, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 945, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 947, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 945, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 947, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 945, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 947, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, i); __PYX_ERR(0, 945, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, i); __PYX_ERR(0, 947, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 945, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 947, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 945, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 947, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_minprod = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 945, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 947, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -25993,16 +26022,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint___init_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "constraint/constraints.py":951
+  /* "constraint/constraints.py":953
  *             minprod: Value to be considered as the maximum product
  *         """
  *         self._minprod = minprod             # <<<<<<<<<<<<<<
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_minprod_2, __pyx_v_minprod) < 0) __PYX_ERR(0, 951, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_minprod_2, __pyx_v_minprod) < 0) __PYX_ERR(0, 953, __pyx_L1_error)
 
-  /* "constraint/constraints.py":945
+  /* "constraint/constraints.py":947
  *     """
  * 
  *     def __init__(self, minprod: Union[int, float]):             # <<<<<<<<<<<<<<
@@ -26022,7 +26051,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint___init_
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":953
+/* "constraint/constraints.py":955
  *         self._minprod = minprod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -26073,50 +26102,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_constraints,&__pyx_mstate_global->__pyx_n_u_vconstraints,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 953, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 955, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 953, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 955, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 953, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 955, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 953, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 955, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 953, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 955, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 953, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 955, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 953, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 955, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 5; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 953, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 955, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 953, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 955, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 953, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 955, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 953, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 955, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 953, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 955, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 953, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 955, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_variables = values[1];
@@ -26126,7 +26155,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 953, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 955, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -26137,9 +26166,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 953, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 953, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 953, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 955, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 955, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 955, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_17MinProdConstraint_2preProcess(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_constraints, __pyx_v_vconstraints);
 
   /* function exit code */
@@ -26182,7 +26211,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("preProcess", 0);
 
-  /* "constraint/constraints.py":954
+  /* "constraint/constraints.py":956
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)             # <<<<<<<<<<<<<<
@@ -26190,9 +26219,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
  *         # prune the associated variables of values > minprod
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 954, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 956, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 954, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 956, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = 1;
@@ -26212,24 +26241,24 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (6-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 954, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 956, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":957
+  /* "constraint/constraints.py":959
  * 
  *         # prune the associated variables of values > minprod
  *         minprod = self._minprod             # <<<<<<<<<<<<<<
  *         for variable in variables:
  *             domain = domains[variable]
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_minprod_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 957, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_minprod_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 959, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_minprod = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":958
+  /* "constraint/constraints.py":960
  *         # prune the associated variables of values > minprod
  *         minprod = self._minprod
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -26241,9 +26270,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
     __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 958, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 960, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 958, __pyx_L1_error)
+    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 960, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_7)) {
@@ -26251,7 +26280,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 958, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 960, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -26261,7 +26290,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 958, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 960, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -26272,13 +26301,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
         #endif
         ++__pyx_t_6;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 958, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 960, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_7(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 958, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 960, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -26288,35 +26317,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":959
+    /* "constraint/constraints.py":961
  *         minprod = self._minprod
  *         for variable in variables:
  *             domain = domains[variable]             # <<<<<<<<<<<<<<
  *             for value in domain[:]:
  *                 if value == 0 and minprod > 0:
 */
-    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 959, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 961, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":960
+    /* "constraint/constraints.py":962
  *         for variable in variables:
  *             domain = domains[variable]
  *             for value in domain[:]:             # <<<<<<<<<<<<<<
  *                 if value == 0 and minprod > 0:
  *                     domain.remove(value)
 */
-    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 960, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 962, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
       __pyx_t_2 = __pyx_t_4; __Pyx_INCREF(__pyx_t_2);
       __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
     } else {
-      __pyx_t_8 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 960, __pyx_L1_error)
+      __pyx_t_8 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 962, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 960, __pyx_L1_error)
+      __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 962, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     for (;;) {
@@ -26325,7 +26354,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_2);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 960, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 962, __pyx_L1_error)
             #endif
             if (__pyx_t_8 >= __pyx_temp) break;
           }
@@ -26335,7 +26364,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_2);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 960, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 962, __pyx_L1_error)
             #endif
             if (__pyx_t_8 >= __pyx_temp) break;
           }
@@ -26346,13 +26375,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
           #endif
           ++__pyx_t_8;
         }
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 960, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 962, __pyx_L1_error)
       } else {
         __pyx_t_4 = __pyx_t_9(__pyx_t_2);
         if (unlikely(!__pyx_t_4)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 960, __pyx_L1_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 962, __pyx_L1_error)
             PyErr_Clear();
           }
           break;
@@ -26362,27 +26391,27 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
       __Pyx_XDECREF_SET(__pyx_v_value, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "constraint/constraints.py":961
+      /* "constraint/constraints.py":963
  *             domain = domains[variable]
  *             for value in domain[:]:
  *                 if value == 0 and minprod > 0:             # <<<<<<<<<<<<<<
  *                     domain.remove(value)
  * 
 */
-      __pyx_t_11 = (__Pyx_PyLong_BoolEqObjC(__pyx_v_value, __pyx_mstate_global->__pyx_int_0, 0, 0)); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 961, __pyx_L1_error)
+      __pyx_t_11 = (__Pyx_PyLong_BoolEqObjC(__pyx_v_value, __pyx_mstate_global->__pyx_int_0, 0, 0)); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 963, __pyx_L1_error)
       if (__pyx_t_11) {
       } else {
         __pyx_t_10 = __pyx_t_11;
         goto __pyx_L8_bool_binop_done;
       }
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_minprod, __pyx_mstate_global->__pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 961, __pyx_L1_error)
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 961, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_minprod, __pyx_mstate_global->__pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 963, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 963, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_10 = __pyx_t_11;
       __pyx_L8_bool_binop_done:;
       if (__pyx_t_10) {
 
-        /* "constraint/constraints.py":962
+        /* "constraint/constraints.py":964
  *             for value in domain[:]:
  *                 if value == 0 and minprod > 0:
  *                     domain.remove(value)             # <<<<<<<<<<<<<<
@@ -26396,12 +26425,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
           PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_value};
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_remove, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 962, __pyx_L1_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 964, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "constraint/constraints.py":961
+        /* "constraint/constraints.py":963
  *             domain = domains[variable]
  *             for value in domain[:]:
  *                 if value == 0 and minprod > 0:             # <<<<<<<<<<<<<<
@@ -26410,7 +26439,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
 */
       }
 
-      /* "constraint/constraints.py":960
+      /* "constraint/constraints.py":962
  *         for variable in variables:
  *             domain = domains[variable]
  *             for value in domain[:]:             # <<<<<<<<<<<<<<
@@ -26420,7 +26449,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "constraint/constraints.py":958
+    /* "constraint/constraints.py":960
  *         # prune the associated variables of values > minprod
  *         minprod = self._minprod
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -26430,7 +26459,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":953
+  /* "constraint/constraints.py":955
  *         self._minprod = minprod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -26458,7 +26487,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_2prePro
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":964
+/* "constraint/constraints.py":966
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -26509,53 +26538,53 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_assignments,&__pyx_mstate_global->__pyx_n_u_forwardcheck,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 964, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 966, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 964, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 966, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 964, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 966, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 964, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 966, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 964, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 966, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 964, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 966, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 964, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 966, __pyx_L3_error)
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 964, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 966, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 964, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 966, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 964, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 966, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 964, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 966, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 964, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 966, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 964, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 966, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -26569,7 +26598,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 964, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 966, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -26580,8 +26609,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 964, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 964, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 966, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 966, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call__(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_assignments, __pyx_v_forwardcheck);
 
   /* function exit code */
@@ -26619,7 +26648,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__call__", 0);
 
-  /* "constraint/constraints.py":966
+  /* "constraint/constraints.py":968
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
  *         # check if each variable is in the assignments
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -26631,9 +26660,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
     __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 966, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 968, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 966, __pyx_L1_error)
+    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 968, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
@@ -26641,7 +26670,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 966, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 968, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -26651,7 +26680,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 966, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 968, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -26662,13 +26691,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
         #endif
         ++__pyx_t_2;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 966, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 968, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_3(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 966, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 968, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -26678,17 +26707,17 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":967
+    /* "constraint/constraints.py":969
  *         # check if each variable is in the assignments
  *         for variable in variables:
  *             if variable not in assignments:             # <<<<<<<<<<<<<<
  *                 return True
  * 
 */
-    __pyx_t_5 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 967, __pyx_L1_error)
+    __pyx_t_5 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 969, __pyx_L1_error)
     if (__pyx_t_5) {
 
-      /* "constraint/constraints.py":968
+      /* "constraint/constraints.py":970
  *         for variable in variables:
  *             if variable not in assignments:
  *                 return True             # <<<<<<<<<<<<<<
@@ -26701,7 +26730,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "constraint/constraints.py":967
+      /* "constraint/constraints.py":969
  *         # check if each variable is in the assignments
  *         for variable in variables:
  *             if variable not in assignments:             # <<<<<<<<<<<<<<
@@ -26710,7 +26739,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
 */
     }
 
-    /* "constraint/constraints.py":966
+    /* "constraint/constraints.py":968
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
  *         # check if each variable is in the assignments
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -26720,19 +26749,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":971
+  /* "constraint/constraints.py":973
  * 
  *         # with each variable assigned, sum the values
  *         minprod = self._minprod             # <<<<<<<<<<<<<<
  *         prod = 1
  *         for variable in variables:
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_minprod_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 971, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_minprod_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 973, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_minprod = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":972
+  /* "constraint/constraints.py":974
  *         # with each variable assigned, sum the values
  *         minprod = self._minprod
  *         prod = 1             # <<<<<<<<<<<<<<
@@ -26742,7 +26771,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_1);
   __pyx_v_prod = __pyx_mstate_global->__pyx_int_1;
 
-  /* "constraint/constraints.py":973
+  /* "constraint/constraints.py":975
  *         minprod = self._minprod
  *         prod = 1
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -26754,9 +26783,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
     __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 973, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 975, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 973, __pyx_L1_error)
+    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 975, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
@@ -26764,7 +26793,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 973, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 975, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -26774,7 +26803,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 973, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 975, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -26785,13 +26814,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
         #endif
         ++__pyx_t_2;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 973, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 975, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_3(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 973, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 975, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -26801,22 +26830,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":974
+    /* "constraint/constraints.py":976
  *         prod = 1
  *         for variable in variables:
  *             prod *= assignments[variable]             # <<<<<<<<<<<<<<
  *         if isinstance(prod, float):
  *             prod = round(prod, 10)
 */
-    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 974, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 976, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = PyNumber_InPlaceMultiply(__pyx_v_prod, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 974, __pyx_L1_error)
+    __pyx_t_6 = PyNumber_InPlaceMultiply(__pyx_v_prod, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 976, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF_SET(__pyx_v_prod, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "constraint/constraints.py":973
+    /* "constraint/constraints.py":975
  *         minprod = self._minprod
  *         prod = 1
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -26826,7 +26855,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":975
+  /* "constraint/constraints.py":977
  *         for variable in variables:
  *             prod *= assignments[variable]
  *         if isinstance(prod, float):             # <<<<<<<<<<<<<<
@@ -26836,7 +26865,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
   __pyx_t_5 = PyFloat_Check(__pyx_v_prod); 
   if (__pyx_t_5) {
 
-    /* "constraint/constraints.py":976
+    /* "constraint/constraints.py":978
  *             prod *= assignments[variable]
  *         if isinstance(prod, float):
  *             prod = round(prod, 10)             # <<<<<<<<<<<<<<
@@ -26852,13 +26881,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 976, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 978, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_DECREF_SET(__pyx_v_prod, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":975
+    /* "constraint/constraints.py":977
  *         for variable in variables:
  *             prod *= assignments[variable]
  *         if isinstance(prod, float):             # <<<<<<<<<<<<<<
@@ -26867,7 +26896,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
 */
   }
 
-  /* "constraint/constraints.py":977
+  /* "constraint/constraints.py":979
  *         if isinstance(prod, float):
  *             prod = round(prod, 10)
  *         return prod >= minprod             # <<<<<<<<<<<<<<
@@ -26875,12 +26904,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
  * 
 */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_prod, __pyx_v_minprod, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 977, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_prod, __pyx_v_minprod, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 979, __pyx_L1_error)
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":964
+  /* "constraint/constraints.py":966
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -26904,7 +26933,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MinProdConstraint_4__call
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":991
+/* "constraint/constraints.py":993
  *     """
  * 
  *     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107             # <<<<<<<<<<<<<<
@@ -26953,38 +26982,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_target_var,&__pyx_mstate_global->__pyx_n_u_product_vars,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 991, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 993, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 991, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 993, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 991, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 993, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 991, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 993, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 991, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 993, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, i); __PYX_ERR(0, 991, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, i); __PYX_ERR(0, 993, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 991, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 993, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 991, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 993, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 991, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 993, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_target_var = ((PyObject*)values[1]);
@@ -26992,7 +27021,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 991, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 993, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -27003,7 +27032,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_target_var), (&PyUnicode_Type), 0, "target_var", 2))) __PYX_ERR(0, 991, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_target_var), (&PyUnicode_Type), 0, "target_var", 2))) __PYX_ERR(0, 993, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_25VariableMinProdConstraint___init__(__pyx_self, __pyx_v_self, __pyx_v_target_var, __pyx_v_product_vars);
 
   /* function exit code */
@@ -27031,25 +27060,25 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "constraint/constraints.py":992
+  /* "constraint/constraints.py":994
  * 
  *     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107
  *         self.target_var = target_var             # <<<<<<<<<<<<<<
  *         self.product_vars = product_vars
  * 
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var, __pyx_v_target_var) < 0) __PYX_ERR(0, 992, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var, __pyx_v_target_var) < 0) __PYX_ERR(0, 994, __pyx_L1_error)
 
-  /* "constraint/constraints.py":993
+  /* "constraint/constraints.py":995
  *     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107
  *         self.target_var = target_var
  *         self.product_vars = product_vars             # <<<<<<<<<<<<<<
  * 
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars, __pyx_v_product_vars) < 0) __PYX_ERR(0, 993, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars, __pyx_v_product_vars) < 0) __PYX_ERR(0, 995, __pyx_L1_error)
 
-  /* "constraint/constraints.py":991
+  /* "constraint/constraints.py":993
  *     """
  * 
  *     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107             # <<<<<<<<<<<<<<
@@ -27069,7 +27098,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":995
+/* "constraint/constraints.py":997
  *         self.product_vars = product_vars
  * 
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):             # <<<<<<<<<<<<<<
@@ -27118,41 +27147,41 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_domain_dict,&__pyx_mstate_global->__pyx_n_u_exclude_var,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 995, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 997, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 995, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 997, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 995, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 997, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 995, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 997, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_get_product_bounds", 0) < 0) __PYX_ERR(0, 995, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_get_product_bounds", 0) < 0) __PYX_ERR(0, 997, __pyx_L3_error)
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)Py_None));
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_get_product_bounds", 0, 2, 3, i); __PYX_ERR(0, 995, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_get_product_bounds", 0, 2, 3, i); __PYX_ERR(0, 997, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 995, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 997, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 995, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 997, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 995, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 997, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -27164,7 +27193,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_get_product_bounds", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 995, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_get_product_bounds", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 997, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -27202,11 +27231,11 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   Py_ssize_t __pyx_t_3;
   PyObject *(*__pyx_t_4)(PyObject *);
   int __pyx_t_5;
-  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_6;
   PyObject *__pyx_t_7 = NULL;
-  size_t __pyx_t_8;
-  PyObject *__pyx_t_9 = NULL;
-  int __pyx_t_10;
+  PyObject *__pyx_t_8 = NULL;
+  size_t __pyx_t_9;
+  PyObject *__pyx_t_10 = NULL;
   int __pyx_t_11;
   PyObject *__pyx_t_12 = NULL;
   PyObject *__pyx_t_13 = NULL;
@@ -27217,35 +27246,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_product_bounds", 0);
 
-  /* "constraint/constraints.py":996
+  /* "constraint/constraints.py":998
  * 
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):
  *         bounds = []             # <<<<<<<<<<<<<<
  *         for var in self.product_vars:
  *             if var == exclude_var:
 */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 996, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 998, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_bounds = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":997
+  /* "constraint/constraints.py":999
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):
  *         bounds = []
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
  *             if var == exclude_var:
  *                 continue
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 997, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 999, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2);
     __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 997, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 999, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 997, __pyx_L1_error)
+    __pyx_t_4 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 999, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -27254,7 +27283,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 997, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 999, __pyx_L1_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
@@ -27264,7 +27293,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 997, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 999, __pyx_L1_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
@@ -27275,13 +27304,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         #endif
         ++__pyx_t_3;
       }
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 997, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 999, __pyx_L1_error)
     } else {
       __pyx_t_1 = __pyx_t_4(__pyx_t_2);
       if (unlikely(!__pyx_t_1)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 997, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 999, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -27291,28 +27320,28 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":998
+    /* "constraint/constraints.py":1000
  *         bounds = []
  *         for var in self.product_vars:
  *             if var == exclude_var:             # <<<<<<<<<<<<<<
  *                 continue
  *             dom = domain_dict[var]
 */
-    __pyx_t_1 = PyObject_RichCompare(__pyx_v_var, __pyx_v_exclude_var, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 998, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 998, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_var, __pyx_v_exclude_var, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1000, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1000, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_5) {
 
-      /* "constraint/constraints.py":999
+      /* "constraint/constraints.py":1001
  *         for var in self.product_vars:
  *             if var == exclude_var:
  *                 continue             # <<<<<<<<<<<<<<
  *             dom = domain_dict[var]
- *             bounds.append((min(dom), max(dom)))
+ *             if not dom:
 */
       goto __pyx_L3_continue;
 
-      /* "constraint/constraints.py":998
+      /* "constraint/constraints.py":1000
  *         bounds = []
  *         for var in self.product_vars:
  *             if var == exclude_var:             # <<<<<<<<<<<<<<
@@ -27321,61 +27350,90 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
 */
     }
 
-    /* "constraint/constraints.py":1000
+    /* "constraint/constraints.py":1002
  *             if var == exclude_var:
  *                 continue
  *             dom = domain_dict[var]             # <<<<<<<<<<<<<<
- *             bounds.append((min(dom), max(dom)))
- * 
+ *             if not dom:
+ *                 continue
 */
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_domain_dict, __pyx_v_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1000, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_domain_dict, __pyx_v_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1002, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_dom, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":1001
+    /* "constraint/constraints.py":1003
  *                 continue
  *             dom = domain_dict[var]
+ *             if not dom:             # <<<<<<<<<<<<<<
+ *                 continue
+ *             bounds.append((min(dom), max(dom)))
+*/
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_dom); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1003, __pyx_L1_error)
+    __pyx_t_6 = (!__pyx_t_5);
+    if (__pyx_t_6) {
+
+      /* "constraint/constraints.py":1004
+ *             dom = domain_dict[var]
+ *             if not dom:
+ *                 continue             # <<<<<<<<<<<<<<
+ *             bounds.append((min(dom), max(dom)))
+ * 
+*/
+      goto __pyx_L3_continue;
+
+      /* "constraint/constraints.py":1003
+ *                 continue
+ *             dom = domain_dict[var]
+ *             if not dom:             # <<<<<<<<<<<<<<
+ *                 continue
+ *             bounds.append((min(dom), max(dom)))
+*/
+    }
+
+    /* "constraint/constraints.py":1005
+ *             if not dom:
+ *                 continue
  *             bounds.append((min(dom), max(dom)))             # <<<<<<<<<<<<<<
  * 
  *         if not bounds:
 */
-    __pyx_t_6 = NULL;
+    __pyx_t_7 = NULL;
     __Pyx_INCREF(__pyx_builtin_min);
-    __pyx_t_7 = __pyx_builtin_min; 
-    __pyx_t_8 = 1;
+    __pyx_t_8 = __pyx_builtin_min; 
+    __pyx_t_9 = 1;
     {
-      PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_dom};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1001, __pyx_L1_error)
+      PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_v_dom};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1005, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
-    __pyx_t_6 = NULL;
+    __pyx_t_7 = NULL;
     __Pyx_INCREF(__pyx_builtin_max);
-    __pyx_t_9 = __pyx_builtin_max; 
-    __pyx_t_8 = 1;
+    __pyx_t_10 = __pyx_builtin_max; 
+    __pyx_t_9 = 1;
     {
-      PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_dom};
-      __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1001, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
+      PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_v_dom};
+      __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1005, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_8);
     }
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1001, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
+    __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1005, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
     __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 1001, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 1001, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 1005, __pyx_L1_error);
+    __Pyx_GIVEREF(__pyx_t_8);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 1005, __pyx_L1_error);
     __pyx_t_1 = 0;
-    __pyx_t_7 = 0;
-    __pyx_t_10 = __Pyx_PyList_Append(__pyx_v_bounds, __pyx_t_9); if (unlikely(__pyx_t_10 == ((int)-1))) __PYX_ERR(0, 1001, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __pyx_t_8 = 0;
+    __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_bounds, __pyx_t_10); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 1005, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-    /* "constraint/constraints.py":997
+    /* "constraint/constraints.py":999
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):
  *         bounds = []
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
@@ -27386,19 +27444,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1003
+  /* "constraint/constraints.py":1007
  *             bounds.append((min(dom), max(dom)))
  * 
  *         if not bounds:             # <<<<<<<<<<<<<<
  *             return 1, 1
  * 
 */
-  __pyx_t_5 = (__Pyx_PyList_GET_SIZE(__pyx_v_bounds) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_5 < 0))) __PYX_ERR(0, 1003, __pyx_L1_error)
-  __pyx_t_11 = (!__pyx_t_5);
-  if (__pyx_t_11) {
+  __pyx_t_6 = (__Pyx_PyList_GET_SIZE(__pyx_v_bounds) != 0);
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_6 < 0))) __PYX_ERR(0, 1007, __pyx_L1_error)
+  __pyx_t_5 = (!__pyx_t_6);
+  if (__pyx_t_5) {
 
-    /* "constraint/constraints.py":1004
+    /* "constraint/constraints.py":1008
  * 
  *         if not bounds:
  *             return 1, 1             # <<<<<<<<<<<<<<
@@ -27410,7 +27468,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __pyx_r = __pyx_mstate_global->__pyx_tuple[0];
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":1003
+    /* "constraint/constraints.py":1007
  *             bounds.append((min(dom), max(dom)))
  * 
  *         if not bounds:             # <<<<<<<<<<<<<<
@@ -27419,7 +27477,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
 */
   }
 
-  /* "constraint/constraints.py":1007
+  /* "constraint/constraints.py":1011
  * 
  *         # Try all corner combinations
  *         candidates = [p for p in product(*[(lo, hi) for lo, hi in bounds])]             # <<<<<<<<<<<<<<
@@ -27427,34 +27485,34 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *         return min(products), max(products)
 */
   { /* enter inner scope */
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1007, __pyx_L10_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1011, __pyx_L11_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1007, __pyx_L10_error)
-    __Pyx_GOTREF(__pyx_t_9);
+    __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1011, __pyx_L11_error)
+    __Pyx_GOTREF(__pyx_t_10);
     { /* enter inner scope */
-      __pyx_t_7 = PyList_New(0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1007, __pyx_L15_error)
-      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1011, __pyx_L16_error)
+      __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_1 = __pyx_v_bounds; __Pyx_INCREF(__pyx_t_1);
       __pyx_t_3 = 0;
       for (;;) {
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1007, __pyx_L15_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1011, __pyx_L16_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
-        __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
+        __pyx_t_7 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
         ++__pyx_t_3;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1007, __pyx_L15_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        if ((likely(PyTuple_CheckExact(__pyx_t_6))) || (PyList_CheckExact(__pyx_t_6))) {
-          PyObject* sequence = __pyx_t_6;
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1011, __pyx_L16_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        if ((likely(PyTuple_CheckExact(__pyx_t_7))) || (PyList_CheckExact(__pyx_t_7))) {
+          PyObject* sequence = __pyx_t_7;
           Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
           if (unlikely(size != 2)) {
             if (size > 2) __Pyx_RaiseTooManyValuesError(2);
             else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-            __PYX_ERR(0, 1007, __pyx_L15_error)
+            __PYX_ERR(0, 1011, __pyx_L16_error)
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
           if (likely(PyTuple_CheckExact(sequence))) {
@@ -27464,138 +27522,138 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
             __Pyx_INCREF(__pyx_t_13);
           } else {
             __pyx_t_12 = __Pyx_PyList_GetItemRef(sequence, 0);
-            if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1007, __pyx_L15_error)
+            if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1011, __pyx_L16_error)
             __Pyx_XGOTREF(__pyx_t_12);
             __pyx_t_13 = __Pyx_PyList_GetItemRef(sequence, 1);
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1007, __pyx_L15_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1011, __pyx_L16_error)
             __Pyx_XGOTREF(__pyx_t_13);
           }
           #else
-          __pyx_t_12 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1007, __pyx_L15_error)
+          __pyx_t_12 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1011, __pyx_L16_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1007, __pyx_L15_error)
+          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1011, __pyx_L16_error)
           __Pyx_GOTREF(__pyx_t_13);
           #endif
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         } else {
           Py_ssize_t index = -1;
-          __pyx_t_14 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1007, __pyx_L15_error)
+          __pyx_t_14 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1011, __pyx_L16_error)
           __Pyx_GOTREF(__pyx_t_14);
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_14);
-          index = 0; __pyx_t_12 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_12)) goto __pyx_L18_unpacking_failed;
+          index = 0; __pyx_t_12 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_12)) goto __pyx_L19_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_12);
-          index = 1; __pyx_t_13 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_13)) goto __pyx_L18_unpacking_failed;
+          index = 1; __pyx_t_13 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_13)) goto __pyx_L19_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_13);
-          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 1007, __pyx_L15_error)
+          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 1011, __pyx_L16_error)
           __pyx_t_15 = NULL;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          goto __pyx_L19_unpacking_done;
-          __pyx_L18_unpacking_failed:;
+          goto __pyx_L20_unpacking_done;
+          __pyx_L19_unpacking_failed:;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
           if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-          __PYX_ERR(0, 1007, __pyx_L15_error)
-          __pyx_L19_unpacking_done:;
+          __PYX_ERR(0, 1011, __pyx_L16_error)
+          __pyx_L20_unpacking_done:;
         }
         __Pyx_XDECREF_SET(__pyx_9genexpr25__pyx_v_lo, __pyx_t_12);
         __pyx_t_12 = 0;
         __Pyx_XDECREF_SET(__pyx_9genexpr25__pyx_v_hi, __pyx_t_13);
         __pyx_t_13 = 0;
-        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1007, __pyx_L15_error)
-        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1011, __pyx_L16_error)
+        __Pyx_GOTREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_9genexpr25__pyx_v_lo);
         __Pyx_GIVEREF(__pyx_9genexpr25__pyx_v_lo);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_9genexpr25__pyx_v_lo) != (0)) __PYX_ERR(0, 1007, __pyx_L15_error);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_9genexpr25__pyx_v_lo) != (0)) __PYX_ERR(0, 1011, __pyx_L16_error);
         __Pyx_INCREF(__pyx_9genexpr25__pyx_v_hi);
         __Pyx_GIVEREF(__pyx_9genexpr25__pyx_v_hi);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_9genexpr25__pyx_v_hi) != (0)) __PYX_ERR(0, 1007, __pyx_L15_error);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_7, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1007, __pyx_L15_error)
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_9genexpr25__pyx_v_hi) != (0)) __PYX_ERR(0, 1011, __pyx_L16_error);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_8, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 1011, __pyx_L16_error)
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF(__pyx_9genexpr25__pyx_v_hi); __pyx_9genexpr25__pyx_v_hi = 0;
       __Pyx_XDECREF(__pyx_9genexpr25__pyx_v_lo); __pyx_9genexpr25__pyx_v_lo = 0;
-      goto __pyx_L21_exit_scope;
-      __pyx_L15_error:;
+      goto __pyx_L22_exit_scope;
+      __pyx_L16_error:;
       __Pyx_XDECREF(__pyx_9genexpr25__pyx_v_hi); __pyx_9genexpr25__pyx_v_hi = 0;
       __Pyx_XDECREF(__pyx_9genexpr25__pyx_v_lo); __pyx_9genexpr25__pyx_v_lo = 0;
-      goto __pyx_L10_error;
-      __pyx_L21_exit_scope:;
+      goto __pyx_L11_error;
+      __pyx_L22_exit_scope:;
     } /* exit inner scope */
-    __pyx_t_1 = PySequence_Tuple(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1007, __pyx_L10_error)
+    __pyx_t_1 = PySequence_Tuple(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1011, __pyx_L11_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_1, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1007, __pyx_L10_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_1, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1011, __pyx_L11_error)
+    __Pyx_GOTREF(__pyx_t_8);
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
-      __pyx_t_1 = __pyx_t_7; __Pyx_INCREF(__pyx_t_1);
+    if (likely(PyList_CheckExact(__pyx_t_8)) || PyTuple_CheckExact(__pyx_t_8)) {
+      __pyx_t_1 = __pyx_t_8; __Pyx_INCREF(__pyx_t_1);
       __pyx_t_3 = 0;
       __pyx_t_4 = NULL;
     } else {
-      __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1007, __pyx_L10_error)
+      __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1011, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_4 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1007, __pyx_L10_error)
+      __pyx_t_4 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1011, __pyx_L11_error)
     }
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     for (;;) {
       if (likely(!__pyx_t_4)) {
         if (likely(PyList_CheckExact(__pyx_t_1))) {
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1007, __pyx_L10_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1011, __pyx_L11_error)
             #endif
             if (__pyx_t_3 >= __pyx_temp) break;
           }
-          __pyx_t_7 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
+          __pyx_t_8 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
           ++__pyx_t_3;
         } else {
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1007, __pyx_L10_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1011, __pyx_L11_error)
             #endif
             if (__pyx_t_3 >= __pyx_temp) break;
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = __Pyx_NewRef(PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3));
+          __pyx_t_8 = __Pyx_NewRef(PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3));
           #else
-          __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3);
+          __pyx_t_8 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3);
           #endif
           ++__pyx_t_3;
         }
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1007, __pyx_L10_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1011, __pyx_L11_error)
       } else {
-        __pyx_t_7 = __pyx_t_4(__pyx_t_1);
-        if (unlikely(!__pyx_t_7)) {
+        __pyx_t_8 = __pyx_t_4(__pyx_t_1);
+        if (unlikely(!__pyx_t_8)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1007, __pyx_L10_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1011, __pyx_L11_error)
             PyErr_Clear();
           }
           break;
         }
       }
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_XDECREF_SET(__pyx_9genexpr24__pyx_v_p, __pyx_t_7);
-      __pyx_t_7 = 0;
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_9genexpr24__pyx_v_p))) __PYX_ERR(0, 1007, __pyx_L10_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      __Pyx_XDECREF_SET(__pyx_9genexpr24__pyx_v_p, __pyx_t_8);
+      __pyx_t_8 = 0;
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_9genexpr24__pyx_v_p))) __PYX_ERR(0, 1011, __pyx_L11_error)
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_9genexpr24__pyx_v_p); __pyx_9genexpr24__pyx_v_p = 0;
-    goto __pyx_L23_exit_scope;
-    __pyx_L10_error:;
+    goto __pyx_L24_exit_scope;
+    __pyx_L11_error:;
     __Pyx_XDECREF(__pyx_9genexpr24__pyx_v_p); __pyx_9genexpr24__pyx_v_p = 0;
     goto __pyx_L1_error;
-    __pyx_L23_exit_scope:;
+    __pyx_L24_exit_scope:;
   } /* exit inner scope */
   __pyx_v_candidates = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1008
+  /* "constraint/constraints.py":1012
  *         # Try all corner combinations
  *         candidates = [p for p in product(*[(lo, hi) for lo, hi in bounds])]
  *         products = [self._safe_product(p) for p in candidates]             # <<<<<<<<<<<<<<
@@ -27603,7 +27661,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  * 
 */
   { /* enter inner scope */
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1008, __pyx_L26_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1012, __pyx_L27_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_v_candidates; __Pyx_INCREF(__pyx_t_1);
     __pyx_t_3 = 0;
@@ -27611,41 +27669,41 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1008, __pyx_L26_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1012, __pyx_L27_error)
         #endif
         if (__pyx_t_3 >= __pyx_temp) break;
       }
-      __pyx_t_7 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
+      __pyx_t_8 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
       ++__pyx_t_3;
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1008, __pyx_L26_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_XDECREF_SET(__pyx_9genexpr26__pyx_v_p, __pyx_t_7);
-      __pyx_t_7 = 0;
-      __pyx_t_9 = __pyx_v_self;
-      __Pyx_INCREF(__pyx_t_9);
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1012, __pyx_L27_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      __Pyx_XDECREF_SET(__pyx_9genexpr26__pyx_v_p, __pyx_t_8);
       __pyx_t_8 = 0;
+      __pyx_t_10 = __pyx_v_self;
+      __Pyx_INCREF(__pyx_t_10);
+      __pyx_t_9 = 0;
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_9genexpr26__pyx_v_p};
-        __pyx_t_7 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1008, __pyx_L26_error)
-        __Pyx_GOTREF(__pyx_t_7);
+        PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_9genexpr26__pyx_v_p};
+        __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+        __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1012, __pyx_L27_error)
+        __Pyx_GOTREF(__pyx_t_8);
       }
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 1008, __pyx_L26_error)
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_8))) __PYX_ERR(0, 1012, __pyx_L27_error)
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_9genexpr26__pyx_v_p); __pyx_9genexpr26__pyx_v_p = 0;
-    goto __pyx_L30_exit_scope;
-    __pyx_L26_error:;
+    goto __pyx_L31_exit_scope;
+    __pyx_L27_error:;
     __Pyx_XDECREF(__pyx_9genexpr26__pyx_v_p); __pyx_9genexpr26__pyx_v_p = 0;
     goto __pyx_L1_error;
-    __pyx_L30_exit_scope:;
+    __pyx_L31_exit_scope:;
   } /* exit inner scope */
   __pyx_v_products = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1009
+  /* "constraint/constraints.py":1013
  *         candidates = [p for p in product(*[(lo, hi) for lo, hi in bounds])]
  *         products = [self._safe_product(p) for p in candidates]
  *         return min(products), max(products)             # <<<<<<<<<<<<<<
@@ -27655,41 +27713,41 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = NULL;
   __Pyx_INCREF(__pyx_builtin_min);
-  __pyx_t_7 = __pyx_builtin_min; 
-  __pyx_t_8 = 1;
+  __pyx_t_8 = __pyx_builtin_min; 
+  __pyx_t_9 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_products};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1009, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1013, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
   __pyx_t_1 = NULL;
   __Pyx_INCREF(__pyx_builtin_max);
-  __pyx_t_9 = __pyx_builtin_max; 
-  __pyx_t_8 = 1;
+  __pyx_t_10 = __pyx_builtin_max; 
+  __pyx_t_9 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_products};
-    __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1009, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1013, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
   }
-  __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1009, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1013, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 1009, __pyx_L1_error);
-  __Pyx_GIVEREF(__pyx_t_7);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 1009, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 1013, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_8);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 1013, __pyx_L1_error);
   __pyx_t_2 = 0;
-  __pyx_t_7 = 0;
-  __pyx_r = __pyx_t_9;
-  __pyx_t_9 = 0;
+  __pyx_t_8 = 0;
+  __pyx_r = __pyx_t_10;
+  __pyx_t_10 = 0;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":995
+  /* "constraint/constraints.py":997
  *         self.product_vars = product_vars
  * 
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):             # <<<<<<<<<<<<<<
@@ -27701,9 +27759,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10);
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
@@ -27724,7 +27782,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1011
+/* "constraint/constraints.py":1015
  *         return min(products), max(products)
  * 
  *     def _safe_product(self, values):             # <<<<<<<<<<<<<<
@@ -27772,39 +27830,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_values,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1011, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1015, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1011, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1015, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1011, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1015, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_safe_product", 0) < 0) __PYX_ERR(0, 1011, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_safe_product", 0) < 0) __PYX_ERR(0, 1015, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, i); __PYX_ERR(0, 1011, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, i); __PYX_ERR(0, 1015, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1011, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1015, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1011, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1015, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_values = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 1011, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 1015, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -27839,7 +27897,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_safe_product", 0);
 
-  /* "constraint/constraints.py":1012
+  /* "constraint/constraints.py":1016
  * 
  *     def _safe_product(self, values):
  *         prod = 1             # <<<<<<<<<<<<<<
@@ -27849,7 +27907,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_1);
   __pyx_v_prod = __pyx_mstate_global->__pyx_int_1;
 
-  /* "constraint/constraints.py":1013
+  /* "constraint/constraints.py":1017
  *     def _safe_product(self, values):
  *         prod = 1
  *         for v in values:             # <<<<<<<<<<<<<<
@@ -27861,9 +27919,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1013, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1017, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1013, __pyx_L1_error)
+    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1017, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
@@ -27871,7 +27929,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1013, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1017, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -27881,7 +27939,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1013, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1017, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -27892,13 +27950,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         #endif
         ++__pyx_t_2;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1013, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1017, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_3(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1013, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1017, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -27908,19 +27966,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __Pyx_XDECREF_SET(__pyx_v_v, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1014
+    /* "constraint/constraints.py":1018
  *         prod = 1
  *         for v in values:
  *             prod *= v             # <<<<<<<<<<<<<<
  *         return prod
  * 
 */
-    __pyx_t_4 = PyNumber_InPlaceMultiply(__pyx_v_prod, __pyx_v_v); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1014, __pyx_L1_error)
+    __pyx_t_4 = PyNumber_InPlaceMultiply(__pyx_v_prod, __pyx_v_v); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1018, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF_SET(__pyx_v_prod, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1013
+    /* "constraint/constraints.py":1017
  *     def _safe_product(self, values):
  *         prod = 1
  *         for v in values:             # <<<<<<<<<<<<<<
@@ -27930,7 +27988,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1015
+  /* "constraint/constraints.py":1019
  *         for v in values:
  *             prod *= v
  *         return prod             # <<<<<<<<<<<<<<
@@ -27942,7 +28000,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   __pyx_r = __pyx_v_prod;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":1011
+  /* "constraint/constraints.py":1015
  *         return min(products), max(products)
  * 
  *     def _safe_product(self, values):             # <<<<<<<<<<<<<<
@@ -27964,7 +28022,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1017
+/* "constraint/constraints.py":1021
  *         return prod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -28015,50 +28073,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_constraints,&__pyx_mstate_global->__pyx_n_u_vconstraints,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1017, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1021, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1017, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1021, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1017, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1021, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1017, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1021, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1017, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1021, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1017, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1021, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 1017, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 1021, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 5; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 1017, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 1021, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1017, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1021, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1017, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1021, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1017, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1021, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1017, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1021, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1017, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1021, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_variables = values[1];
@@ -28068,7 +28126,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 1017, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 1021, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -28079,9 +28137,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1017, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 1017, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 1017, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1021, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 1021, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 1021, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_25VariableMinProdConstraint_6preProcess(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_constraints, __pyx_v_vconstraints);
 
   /* function exit code */
@@ -28129,7 +28187,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("preProcess", 0);
 
-  /* "constraint/constraints.py":1018
+  /* "constraint/constraints.py":1022
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)             # <<<<<<<<<<<<<<
@@ -28137,9 +28195,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *         t_min = min(target_dom)
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1018, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1022, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1018, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1022, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = 1;
@@ -28159,27 +28217,27 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (6-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1018, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1022, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1019
+  /* "constraint/constraints.py":1023
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         target_dom = domains[self.target_var]             # <<<<<<<<<<<<<<
  *         t_min = min(target_dom)
  * 
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1019, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1023, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1019, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1023, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_target_dom = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":1020
+  /* "constraint/constraints.py":1024
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         target_dom = domains[self.target_var]
  *         t_min = min(target_dom)             # <<<<<<<<<<<<<<
@@ -28195,29 +28253,29 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1020, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1024, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
   }
   __pyx_v_t_min = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":1022
+  /* "constraint/constraints.py":1026
  *         t_min = min(target_dom)
  * 
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
  *             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
  *             dom = domains[var]
 */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1022, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1026, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
     __pyx_t_2 = __pyx_t_4; __Pyx_INCREF(__pyx_t_2);
     __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1022, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1026, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1022, __pyx_L1_error)
+    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1026, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   for (;;) {
@@ -28226,7 +28284,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1022, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1026, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -28236,7 +28294,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1022, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1026, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -28247,13 +28305,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         #endif
         ++__pyx_t_6;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1022, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1026, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_7(__pyx_t_2);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1022, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1026, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -28263,7 +28321,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1023
+    /* "constraint/constraints.py":1027
  * 
  *         for var in self.product_vars:
  *             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)             # <<<<<<<<<<<<<<
@@ -28275,13 +28333,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __pyx_t_5 = 0;
     {
       PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_1, __pyx_v_domains};
-      __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1023, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1027, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_exclude_var, __pyx_v_var, __pyx_t_3, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 1023, __pyx_L1_error)
+      if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_exclude_var, __pyx_v_var, __pyx_t_3, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 1027, __pyx_L1_error)
       __pyx_t_4 = __Pyx_Object_VectorcallMethod_CallFromBuilder(__pyx_mstate_global->__pyx_n_u_get_product_bounds, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_3);
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1023, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1027, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
     }
     if ((likely(PyTuple_CheckExact(__pyx_t_4))) || (PyList_CheckExact(__pyx_t_4))) {
@@ -28290,7 +28348,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 1023, __pyx_L1_error)
+        __PYX_ERR(0, 1027, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -28300,22 +28358,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         __Pyx_INCREF(__pyx_t_1);
       } else {
         __pyx_t_3 = __Pyx_PyList_GetItemRef(sequence, 0);
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1023, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1027, __pyx_L1_error)
         __Pyx_XGOTREF(__pyx_t_3);
         __pyx_t_1 = __Pyx_PyList_GetItemRef(sequence, 1);
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1023, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1027, __pyx_L1_error)
         __Pyx_XGOTREF(__pyx_t_1);
       }
       #else
-      __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1023, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1027, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_1 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1023, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1027, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       #endif
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_8 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1023, __pyx_L1_error)
+      __pyx_t_8 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1027, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8);
@@ -28323,7 +28381,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       __Pyx_GOTREF(__pyx_t_3);
       index = 1; __pyx_t_1 = __pyx_t_9(__pyx_t_8); if (unlikely(!__pyx_t_1)) goto __pyx_L5_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_1);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 2) < 0) __PYX_ERR(0, 1023, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 2) < 0) __PYX_ERR(0, 1027, __pyx_L1_error)
       __pyx_t_9 = NULL;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       goto __pyx_L6_unpacking_done;
@@ -28331,7 +28389,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 1023, __pyx_L1_error)
+      __PYX_ERR(0, 1027, __pyx_L1_error)
       __pyx_L6_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_min_others, __pyx_t_3);
@@ -28339,35 +28397,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __Pyx_XDECREF_SET(__pyx_v_max_others, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":1024
+    /* "constraint/constraints.py":1028
  *         for var in self.product_vars:
  *             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
  *             dom = domains[var]             # <<<<<<<<<<<<<<
  *             for val in dom[:]:
  *                 possible_prods = [val * min_others, val * max_others]
 */
-    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1024, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1028, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_XDECREF_SET(__pyx_v_dom, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1025
+    /* "constraint/constraints.py":1029
  *             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
  *             dom = domains[var]
  *             for val in dom[:]:             # <<<<<<<<<<<<<<
  *                 possible_prods = [val * min_others, val * max_others]
  *                 if max(possible_prods) < t_min:
 */
-    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_dom, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1025, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_dom, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1029, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
       __pyx_t_1 = __pyx_t_4; __Pyx_INCREF(__pyx_t_1);
       __pyx_t_10 = 0;
       __pyx_t_11 = NULL;
     } else {
-      __pyx_t_10 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1025, __pyx_L1_error)
+      __pyx_t_10 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1029, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_11 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1025, __pyx_L1_error)
+      __pyx_t_11 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1029, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     for (;;) {
@@ -28376,7 +28434,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1025, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1029, __pyx_L1_error)
             #endif
             if (__pyx_t_10 >= __pyx_temp) break;
           }
@@ -28386,7 +28444,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1025, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1029, __pyx_L1_error)
             #endif
             if (__pyx_t_10 >= __pyx_temp) break;
           }
@@ -28397,13 +28455,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           #endif
           ++__pyx_t_10;
         }
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1025, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1029, __pyx_L1_error)
       } else {
         __pyx_t_4 = __pyx_t_11(__pyx_t_1);
         if (unlikely(!__pyx_t_4)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1025, __pyx_L1_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1029, __pyx_L1_error)
             PyErr_Clear();
           }
           break;
@@ -28413,29 +28471,29 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       __Pyx_XDECREF_SET(__pyx_v_val, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "constraint/constraints.py":1026
+      /* "constraint/constraints.py":1030
  *             dom = domains[var]
  *             for val in dom[:]:
  *                 possible_prods = [val * min_others, val * max_others]             # <<<<<<<<<<<<<<
  *                 if max(possible_prods) < t_min:
  *                     dom.remove(val)
 */
-      __pyx_t_4 = PyNumber_Multiply(__pyx_v_val, __pyx_v_min_others); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1026, __pyx_L1_error)
+      __pyx_t_4 = PyNumber_Multiply(__pyx_v_val, __pyx_v_min_others); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1030, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyNumber_Multiply(__pyx_v_val, __pyx_v_max_others); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1026, __pyx_L1_error)
+      __pyx_t_3 = PyNumber_Multiply(__pyx_v_val, __pyx_v_max_others); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1030, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_8 = PyList_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1026, __pyx_L1_error)
+      __pyx_t_8 = PyList_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1030, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_GIVEREF(__pyx_t_4);
-      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 0, __pyx_t_4) != (0)) __PYX_ERR(0, 1026, __pyx_L1_error);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 0, __pyx_t_4) != (0)) __PYX_ERR(0, 1030, __pyx_L1_error);
       __Pyx_GIVEREF(__pyx_t_3);
-      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 1026, __pyx_L1_error);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 1030, __pyx_L1_error);
       __pyx_t_4 = 0;
       __pyx_t_3 = 0;
       __Pyx_XDECREF_SET(__pyx_v_possible_prods, ((PyObject*)__pyx_t_8));
       __pyx_t_8 = 0;
 
-      /* "constraint/constraints.py":1027
+      /* "constraint/constraints.py":1031
  *             for val in dom[:]:
  *                 possible_prods = [val * min_others, val * max_others]
  *                 if max(possible_prods) < t_min:             # <<<<<<<<<<<<<<
@@ -28451,16 +28509,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1027, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1031, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      __pyx_t_4 = PyObject_RichCompare(__pyx_t_8, __pyx_v_t_min, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1027, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_t_8, __pyx_v_t_min, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1031, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1027, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1031, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_12) {
 
-        /* "constraint/constraints.py":1028
+        /* "constraint/constraints.py":1032
  *                 possible_prods = [val * min_others, val * max_others]
  *                 if max(possible_prods) < t_min:
  *                     dom.remove(val)             # <<<<<<<<<<<<<<
@@ -28474,12 +28532,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_v_val};
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_remove, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1028, __pyx_L1_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1032, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "constraint/constraints.py":1027
+        /* "constraint/constraints.py":1031
  *             for val in dom[:]:
  *                 possible_prods = [val * min_others, val * max_others]
  *                 if max(possible_prods) < t_min:             # <<<<<<<<<<<<<<
@@ -28488,7 +28546,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
 */
       }
 
-      /* "constraint/constraints.py":1025
+      /* "constraint/constraints.py":1029
  *             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
  *             dom = domains[var]
  *             for val in dom[:]:             # <<<<<<<<<<<<<<
@@ -28498,7 +28556,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":1022
+    /* "constraint/constraints.py":1026
  *         t_min = min(target_dom)
  * 
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
@@ -28508,7 +28566,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1017
+  /* "constraint/constraints.py":1021
  *         return prod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -28541,7 +28599,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1030
+/* "constraint/constraints.py":1034
  *                     dom.remove(val)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -28592,53 +28650,53 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_assignments,&__pyx_mstate_global->__pyx_n_u_forwardcheck,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1030, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1034, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1034, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1034, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1034, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1034, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1034, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1030, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1034, __pyx_L3_error)
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1030, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1034, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1034, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1034, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1034, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1034, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1034, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -28652,7 +28710,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1030, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1034, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -28663,8 +28721,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1030, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 1030, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1034, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 1034, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_25VariableMinProdConstraint_8__call__(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_assignments, __pyx_v_forwardcheck);
 
   /* function exit code */
@@ -28685,7 +28743,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 }
 static PyObject *__pyx_gb_10constraint_11constraints_25VariableMinProdConstraint_8__call___2generator12(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "constraint/constraints.py":1066
+/* "constraint/constraints.py":1070
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p < target_value for p in prods):             # <<<<<<<<<<<<<<
@@ -28705,7 +28763,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_17_genexpr *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 1066, __pyx_L1_error)
+    __PYX_ERR(0, 1070, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -28716,7 +28774,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   __Pyx_INCREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_25VariableMinProdConstraint_8__call___2generator12, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[12]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint___call, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 1066, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_25VariableMinProdConstraint_8__call___2generator12, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[12]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint___call, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 1070, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -28753,29 +28811,29 @@ static PyObject *__pyx_gb_10constraint_11constraints_25VariableMinProdConstraint
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 1066, __pyx_L1_error)
-  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 1066, __pyx_L1_error) }
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 1070, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 1070, __pyx_L1_error) }
   __pyx_t_1 = __pyx_cur_scope->__pyx_genexpr_arg_0; __Pyx_INCREF(__pyx_t_1);
   __pyx_t_2 = 0;
   for (;;) {
     {
       Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
       #if !CYTHON_ASSUME_SAFE_SIZE
-      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1066, __pyx_L1_error)
+      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1070, __pyx_L1_error)
       #endif
       if (__pyx_t_2 >= __pyx_temp) break;
     }
     __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_2);
     ++__pyx_t_2;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1066, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1070, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_p);
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_p, __pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_3);
     __pyx_t_3 = 0;
-    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value)) { __Pyx_RaiseClosureNameError("target_value"); __PYX_ERR(0, 1066, __pyx_L1_error) }
-    __pyx_t_3 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_p, __pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1066, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 1066, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value)) { __Pyx_RaiseClosureNameError("target_value"); __PYX_ERR(0, 1070, __pyx_L1_error) }
+    __pyx_t_3 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_p, __pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1070, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 1070, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_5 = (!__pyx_t_4);
     if (__pyx_t_5) {
@@ -28815,7 +28873,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_25VariableMinProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1030
+/* "constraint/constraints.py":1034
  *                     dom.remove(val)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -28877,25 +28935,25 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_16___call__ *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 1030, __pyx_L1_error)
+    __PYX_ERR(0, 1034, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
 
-  /* "constraint/constraints.py":1031
+  /* "constraint/constraints.py":1035
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
  *         if self.target_var not in assignments:             # <<<<<<<<<<<<<<
  *             return True  # Can't evaluate yet
  * 
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1031, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1035, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_t_1, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 1031, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_t_1, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 1035, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "constraint/constraints.py":1032
+    /* "constraint/constraints.py":1036
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
  *         if self.target_var not in assignments:
  *             return True  # Can't evaluate yet             # <<<<<<<<<<<<<<
@@ -28907,7 +28965,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __pyx_r = Py_True;
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":1031
+    /* "constraint/constraints.py":1035
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
  *         if self.target_var not in assignments:             # <<<<<<<<<<<<<<
@@ -28916,23 +28974,23 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
 */
   }
 
-  /* "constraint/constraints.py":1034
+  /* "constraint/constraints.py":1038
  *             return True  # Can't evaluate yet
  * 
  *         target_value = assignments[self.target_var]             # <<<<<<<<<<<<<<
  *         assigned_prod = 1
  *         unassigned = []
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1034, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1038, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1034, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1038, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_GIVEREF(__pyx_t_3);
   __pyx_cur_scope->__pyx_v_target_value = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1035
+  /* "constraint/constraints.py":1039
  * 
  *         target_value = assignments[self.target_var]
  *         assigned_prod = 1             # <<<<<<<<<<<<<<
@@ -28942,35 +29000,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_1);
   __pyx_v_assigned_prod = __pyx_mstate_global->__pyx_int_1;
 
-  /* "constraint/constraints.py":1036
+  /* "constraint/constraints.py":1040
  *         target_value = assignments[self.target_var]
  *         assigned_prod = 1
  *         unassigned = []             # <<<<<<<<<<<<<<
  * 
  *         for var in self.product_vars:
 */
-  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1036, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1040, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_unassigned = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1038
+  /* "constraint/constraints.py":1042
  *         unassigned = []
  * 
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
  *             if var in assignments:
  *                 assigned_prod *= assignments[var]
 */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1038, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1042, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
     __pyx_t_1 = __pyx_t_3; __Pyx_INCREF(__pyx_t_1);
     __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1038, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1042, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1038, __pyx_L1_error)
+    __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1042, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   for (;;) {
@@ -28979,7 +29037,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1038, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1042, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
@@ -28989,7 +29047,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1038, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1042, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
@@ -29000,13 +29058,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         #endif
         ++__pyx_t_4;
       }
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1038, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1042, __pyx_L1_error)
     } else {
       __pyx_t_3 = __pyx_t_5(__pyx_t_1);
       if (unlikely(!__pyx_t_3)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1038, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1042, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -29016,32 +29074,32 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "constraint/constraints.py":1039
+    /* "constraint/constraints.py":1043
  * 
  *         for var in self.product_vars:
  *             if var in assignments:             # <<<<<<<<<<<<<<
  *                 assigned_prod *= assignments[var]
  *             else:
 */
-    __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_v_var, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 1039, __pyx_L1_error)
+    __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_v_var, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 1043, __pyx_L1_error)
     if (__pyx_t_2) {
 
-      /* "constraint/constraints.py":1040
+      /* "constraint/constraints.py":1044
  *         for var in self.product_vars:
  *             if var in assignments:
  *                 assigned_prod *= assignments[var]             # <<<<<<<<<<<<<<
  *             else:
  *                 unassigned.append(var)
 */
-      __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_var); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1040, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_var); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1044, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = PyNumber_InPlaceMultiply(__pyx_v_assigned_prod, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1040, __pyx_L1_error)
+      __pyx_t_6 = PyNumber_InPlaceMultiply(__pyx_v_assigned_prod, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1044, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF_SET(__pyx_v_assigned_prod, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "constraint/constraints.py":1039
+      /* "constraint/constraints.py":1043
  * 
  *         for var in self.product_vars:
  *             if var in assignments:             # <<<<<<<<<<<<<<
@@ -29051,7 +29109,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       goto __pyx_L6;
     }
 
-    /* "constraint/constraints.py":1042
+    /* "constraint/constraints.py":1046
  *                 assigned_prod *= assignments[var]
  *             else:
  *                 unassigned.append(var)             # <<<<<<<<<<<<<<
@@ -29059,11 +29117,11 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *         if not unassigned:
 */
     /*else*/ {
-      __pyx_t_7 = __Pyx_PyList_Append(__pyx_v_unassigned, __pyx_v_var); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 1042, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyList_Append(__pyx_v_unassigned, __pyx_v_var); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 1046, __pyx_L1_error)
     }
     __pyx_L6:;
 
-    /* "constraint/constraints.py":1038
+    /* "constraint/constraints.py":1042
  *         unassigned = []
  * 
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
@@ -29073,7 +29131,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1044
+  /* "constraint/constraints.py":1048
  *                 unassigned.append(var)
  * 
  *         if not unassigned:             # <<<<<<<<<<<<<<
@@ -29081,11 +29139,11 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  * 
 */
   __pyx_t_2 = (__Pyx_PyList_GET_SIZE(__pyx_v_unassigned) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_2 < 0))) __PYX_ERR(0, 1044, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_2 < 0))) __PYX_ERR(0, 1048, __pyx_L1_error)
   __pyx_t_8 = (!__pyx_t_2);
   if (__pyx_t_8) {
 
-    /* "constraint/constraints.py":1045
+    /* "constraint/constraints.py":1049
  * 
  *         if not unassigned:
  *             return assigned_prod >= target_value             # <<<<<<<<<<<<<<
@@ -29093,12 +29151,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *         # Estimate min possible value of full product
 */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyObject_RichCompare(__pyx_v_assigned_prod, __pyx_cur_scope->__pyx_v_target_value, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1045, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_assigned_prod, __pyx_cur_scope->__pyx_v_target_value, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1049, __pyx_L1_error)
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":1044
+    /* "constraint/constraints.py":1048
  *                 unassigned.append(var)
  * 
  *         if not unassigned:             # <<<<<<<<<<<<<<
@@ -29107,7 +29165,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
 */
   }
 
-  /* "constraint/constraints.py":1048
+  /* "constraint/constraints.py":1052
  * 
  *         # Estimate min possible value of full product
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned]             # <<<<<<<<<<<<<<
@@ -29115,7 +29173,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *         possible_prods = [assigned_prod * c for c in candidates]
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1048, __pyx_L11_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1052, __pyx_L11_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_6 = __pyx_v_unassigned; __Pyx_INCREF(__pyx_t_6);
     __pyx_t_4 = 0;
@@ -29123,20 +29181,20 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_6);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1048, __pyx_L11_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1052, __pyx_L11_error)
         #endif
         if (__pyx_t_4 >= __pyx_temp) break;
       }
       __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_6, __pyx_t_4);
       ++__pyx_t_4;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1048, __pyx_L11_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1052, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_XDECREF_SET(__pyx_9genexpr27__pyx_v_v, __pyx_t_3);
       __pyx_t_3 = 0;
       __pyx_t_9 = NULL;
       __Pyx_INCREF(__pyx_builtin_min);
       __pyx_t_10 = __pyx_builtin_min; 
-      __pyx_t_11 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr27__pyx_v_v); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1048, __pyx_L11_error)
+      __pyx_t_11 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr27__pyx_v_v); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1052, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_12 = 1;
       {
@@ -29145,13 +29203,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1048, __pyx_L11_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1052, __pyx_L11_error)
         __Pyx_GOTREF(__pyx_t_3);
       }
       __pyx_t_11 = NULL;
       __Pyx_INCREF(__pyx_builtin_max);
       __pyx_t_9 = __pyx_builtin_max; 
-      __pyx_t_13 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr27__pyx_v_v); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1048, __pyx_L11_error)
+      __pyx_t_13 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr27__pyx_v_v); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1052, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_13);
       __pyx_t_12 = 1;
       {
@@ -29160,18 +29218,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1048, __pyx_L11_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1052, __pyx_L11_error)
         __Pyx_GOTREF(__pyx_t_10);
       }
-      __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1048, __pyx_L11_error)
+      __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1052, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_GIVEREF(__pyx_t_3);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 1048, __pyx_L11_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 1052, __pyx_L11_error);
       __Pyx_GIVEREF(__pyx_t_10);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 1048, __pyx_L11_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 1052, __pyx_L11_error);
       __pyx_t_3 = 0;
       __pyx_t_10 = 0;
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1048, __pyx_L11_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1052, __pyx_L11_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -29185,7 +29243,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   __pyx_v_domain_bounds = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1049
+  /* "constraint/constraints.py":1053
  *         # Estimate min possible value of full product
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned]
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]             # <<<<<<<<<<<<<<
@@ -29193,12 +29251,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *         if max(possible_prods) < target_value:
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1049, __pyx_L18_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1053, __pyx_L18_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1049, __pyx_L18_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1053, __pyx_L18_error)
     __Pyx_GOTREF(__pyx_t_6);
     { /* enter inner scope */
-      __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1049, __pyx_L23_error)
+      __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1053, __pyx_L23_error)
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_10 = __pyx_v_domain_bounds; __Pyx_INCREF(__pyx_t_10);
       __pyx_t_4 = 0;
@@ -29206,13 +29264,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1049, __pyx_L23_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1053, __pyx_L23_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
         __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_4);
         ++__pyx_t_4;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1049, __pyx_L23_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1053, __pyx_L23_error)
         __Pyx_GOTREF(__pyx_t_3);
         if ((likely(PyTuple_CheckExact(__pyx_t_3))) || (PyList_CheckExact(__pyx_t_3))) {
           PyObject* sequence = __pyx_t_3;
@@ -29220,7 +29278,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           if (unlikely(size != 2)) {
             if (size > 2) __Pyx_RaiseTooManyValuesError(2);
             else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-            __PYX_ERR(0, 1049, __pyx_L23_error)
+            __PYX_ERR(0, 1053, __pyx_L23_error)
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
           if (likely(PyTuple_CheckExact(sequence))) {
@@ -29230,22 +29288,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
             __Pyx_INCREF(__pyx_t_11);
           } else {
             __pyx_t_13 = __Pyx_PyList_GetItemRef(sequence, 0);
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1049, __pyx_L23_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1053, __pyx_L23_error)
             __Pyx_XGOTREF(__pyx_t_13);
             __pyx_t_11 = __Pyx_PyList_GetItemRef(sequence, 1);
-            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1049, __pyx_L23_error)
+            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1053, __pyx_L23_error)
             __Pyx_XGOTREF(__pyx_t_11);
           }
           #else
-          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1049, __pyx_L23_error)
+          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1053, __pyx_L23_error)
           __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_11 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1049, __pyx_L23_error)
+          __pyx_t_11 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1053, __pyx_L23_error)
           __Pyx_GOTREF(__pyx_t_11);
           #endif
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         } else {
           Py_ssize_t index = -1;
-          __pyx_t_14 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1049, __pyx_L23_error)
+          __pyx_t_14 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1053, __pyx_L23_error)
           __Pyx_GOTREF(__pyx_t_14);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_14);
@@ -29253,7 +29311,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           __Pyx_GOTREF(__pyx_t_13);
           index = 1; __pyx_t_11 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_11)) goto __pyx_L26_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_11);
-          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 1049, __pyx_L23_error)
+          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 1053, __pyx_L23_error)
           __pyx_t_15 = NULL;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           goto __pyx_L27_unpacking_done;
@@ -29261,22 +29319,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
           if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-          __PYX_ERR(0, 1049, __pyx_L23_error)
+          __PYX_ERR(0, 1053, __pyx_L23_error)
           __pyx_L27_unpacking_done:;
         }
         __Pyx_XDECREF_SET(__pyx_9genexpr29__pyx_v_lo, __pyx_t_13);
         __pyx_t_13 = 0;
         __Pyx_XDECREF_SET(__pyx_9genexpr29__pyx_v_hi, __pyx_t_11);
         __pyx_t_11 = 0;
-        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1049, __pyx_L23_error)
+        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1053, __pyx_L23_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_9genexpr29__pyx_v_lo);
         __Pyx_GIVEREF(__pyx_9genexpr29__pyx_v_lo);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_9genexpr29__pyx_v_lo) != (0)) __PYX_ERR(0, 1049, __pyx_L23_error);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_9genexpr29__pyx_v_lo) != (0)) __PYX_ERR(0, 1053, __pyx_L23_error);
         __Pyx_INCREF(__pyx_9genexpr29__pyx_v_hi);
         __Pyx_GIVEREF(__pyx_9genexpr29__pyx_v_hi);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_9genexpr29__pyx_v_hi) != (0)) __PYX_ERR(0, 1049, __pyx_L23_error);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_9, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1049, __pyx_L23_error)
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_9genexpr29__pyx_v_hi) != (0)) __PYX_ERR(0, 1053, __pyx_L23_error);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_9, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1053, __pyx_L23_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -29289,10 +29347,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       goto __pyx_L18_error;
       __pyx_L29_exit_scope:;
     } /* exit inner scope */
-    __pyx_t_10 = PySequence_Tuple(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1049, __pyx_L18_error)
+    __pyx_t_10 = PySequence_Tuple(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1053, __pyx_L18_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_10, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1049, __pyx_L18_error)
+    __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_10, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1053, __pyx_L18_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -29301,9 +29359,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       __pyx_t_4 = 0;
       __pyx_t_5 = NULL;
     } else {
-      __pyx_t_4 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1049, __pyx_L18_error)
+      __pyx_t_4 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1053, __pyx_L18_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_10); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1049, __pyx_L18_error)
+      __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_10); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1053, __pyx_L18_error)
     }
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     for (;;) {
@@ -29312,7 +29370,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1049, __pyx_L18_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1053, __pyx_L18_error)
             #endif
             if (__pyx_t_4 >= __pyx_temp) break;
           }
@@ -29322,7 +29380,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1049, __pyx_L18_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1053, __pyx_L18_error)
             #endif
             if (__pyx_t_4 >= __pyx_temp) break;
           }
@@ -29333,13 +29391,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           #endif
           ++__pyx_t_4;
         }
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1049, __pyx_L18_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1053, __pyx_L18_error)
       } else {
         __pyx_t_9 = __pyx_t_5(__pyx_t_10);
         if (unlikely(!__pyx_t_9)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1049, __pyx_L18_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1053, __pyx_L18_error)
             PyErr_Clear();
           }
           break;
@@ -29355,10 +29413,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_9genexpr28__pyx_v_p};
         __pyx_t_9 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_12, (2-__pyx_t_12) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1049, __pyx_L18_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1053, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_9);
       }
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1049, __pyx_L18_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1053, __pyx_L18_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -29372,7 +29430,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   __pyx_v_candidates = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1050
+  /* "constraint/constraints.py":1054
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned]
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_prods = [assigned_prod * c for c in candidates]             # <<<<<<<<<<<<<<
@@ -29380,7 +29438,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *             return False
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1050, __pyx_L34_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1054, __pyx_L34_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_10 = __pyx_v_candidates; __Pyx_INCREF(__pyx_t_10);
     __pyx_t_4 = 0;
@@ -29388,19 +29446,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1050, __pyx_L34_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1054, __pyx_L34_error)
         #endif
         if (__pyx_t_4 >= __pyx_temp) break;
       }
       __pyx_t_9 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_4);
       ++__pyx_t_4;
-      if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1050, __pyx_L34_error)
+      if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1054, __pyx_L34_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_XDECREF_SET(__pyx_9genexpr30__pyx_v_c, __pyx_t_9);
       __pyx_t_9 = 0;
-      __pyx_t_9 = PyNumber_Multiply(__pyx_v_assigned_prod, __pyx_9genexpr30__pyx_v_c); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1050, __pyx_L34_error)
+      __pyx_t_9 = PyNumber_Multiply(__pyx_v_assigned_prod, __pyx_9genexpr30__pyx_v_c); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1054, __pyx_L34_error)
       __Pyx_GOTREF(__pyx_t_9);
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1050, __pyx_L34_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1054, __pyx_L34_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -29414,7 +29472,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   __pyx_v_possible_prods = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1051
+  /* "constraint/constraints.py":1055
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_prods = [assigned_prod * c for c in candidates]
  *         if max(possible_prods) < target_value:             # <<<<<<<<<<<<<<
@@ -29430,16 +29488,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_12, (2-__pyx_t_12) | (__pyx_t_12*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1051, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1055, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  __pyx_t_9 = PyObject_RichCompare(__pyx_t_1, __pyx_cur_scope->__pyx_v_target_value, Py_LT); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1051, __pyx_L1_error)
+  __pyx_t_9 = PyObject_RichCompare(__pyx_t_1, __pyx_cur_scope->__pyx_v_target_value, Py_LT); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1055, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1051, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1055, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   if (__pyx_t_8) {
 
-    /* "constraint/constraints.py":1052
+    /* "constraint/constraints.py":1056
  *         possible_prods = [assigned_prod * c for c in candidates]
  *         if max(possible_prods) < target_value:
  *             return False             # <<<<<<<<<<<<<<
@@ -29451,7 +29509,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     __pyx_r = Py_False;
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":1051
+    /* "constraint/constraints.py":1055
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_prods = [assigned_prod * c for c in candidates]
  *         if max(possible_prods) < target_value:             # <<<<<<<<<<<<<<
@@ -29460,17 +29518,17 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
 */
   }
 
-  /* "constraint/constraints.py":1054
+  /* "constraint/constraints.py":1058
  *             return False
  * 
  *         if forwardcheck:             # <<<<<<<<<<<<<<
  *             for var in unassigned:
  *                 other_unassigned = [v for v in unassigned if v != var]
 */
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1054, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1058, __pyx_L1_error)
   if (__pyx_t_8) {
 
-    /* "constraint/constraints.py":1055
+    /* "constraint/constraints.py":1059
  * 
  *         if forwardcheck:
  *             for var in unassigned:             # <<<<<<<<<<<<<<
@@ -29483,18 +29541,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_9);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1055, __pyx_L1_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1059, __pyx_L1_error)
         #endif
         if (__pyx_t_4 >= __pyx_temp) break;
       }
       __pyx_t_1 = __Pyx_PyList_GetItemRef(__pyx_t_9, __pyx_t_4);
       ++__pyx_t_4;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1055, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1059, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "constraint/constraints.py":1056
+      /* "constraint/constraints.py":1060
  *         if forwardcheck:
  *             for var in unassigned:
  *                 other_unassigned = [v for v in unassigned if v != var]             # <<<<<<<<<<<<<<
@@ -29502,7 +29560,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *                     bounds = [(min(domains[v]), max(domains[v])) for v in other_unassigned]
 */
       { /* enter inner scope */
-        __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1056, __pyx_L45_error)
+        __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1060, __pyx_L45_error)
         __Pyx_GOTREF(__pyx_t_1);
         __pyx_t_10 = __pyx_v_unassigned; __Pyx_INCREF(__pyx_t_10);
         __pyx_t_16 = 0;
@@ -29510,21 +29568,21 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1056, __pyx_L45_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1060, __pyx_L45_error)
             #endif
             if (__pyx_t_16 >= __pyx_temp) break;
           }
           __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_16);
           ++__pyx_t_16;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1056, __pyx_L45_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1060, __pyx_L45_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_XDECREF_SET(__pyx_9genexpr31__pyx_v_v, __pyx_t_6);
           __pyx_t_6 = 0;
-          __pyx_t_6 = PyObject_RichCompare(__pyx_9genexpr31__pyx_v_v, __pyx_v_var, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1056, __pyx_L45_error)
-          __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1056, __pyx_L45_error)
+          __pyx_t_6 = PyObject_RichCompare(__pyx_9genexpr31__pyx_v_v, __pyx_v_var, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1060, __pyx_L45_error)
+          __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1060, __pyx_L45_error)
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           if (__pyx_t_8) {
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_9genexpr31__pyx_v_v))) __PYX_ERR(0, 1056, __pyx_L45_error)
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_9genexpr31__pyx_v_v))) __PYX_ERR(0, 1060, __pyx_L45_error)
           }
         }
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -29538,7 +29596,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       __Pyx_XDECREF_SET(__pyx_v_other_unassigned, ((PyObject*)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "constraint/constraints.py":1057
+      /* "constraint/constraints.py":1061
  *             for var in unassigned:
  *                 other_unassigned = [v for v in unassigned if v != var]
  *                 if other_unassigned:             # <<<<<<<<<<<<<<
@@ -29546,10 +29604,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *                     other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in bounds])]
 */
       __pyx_t_8 = (__Pyx_PyList_GET_SIZE(__pyx_v_other_unassigned) != 0);
-      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_8 < 0))) __PYX_ERR(0, 1057, __pyx_L1_error)
+      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_8 < 0))) __PYX_ERR(0, 1061, __pyx_L1_error)
       if (__pyx_t_8) {
 
-        /* "constraint/constraints.py":1058
+        /* "constraint/constraints.py":1062
  *                 other_unassigned = [v for v in unassigned if v != var]
  *                 if other_unassigned:
  *                     bounds = [(min(domains[v]), max(domains[v])) for v in other_unassigned]             # <<<<<<<<<<<<<<
@@ -29557,7 +29615,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *                 else:
 */
         { /* enter inner scope */
-          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1058, __pyx_L54_error)
+          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1062, __pyx_L54_error)
           __Pyx_GOTREF(__pyx_t_1);
           __pyx_t_10 = __pyx_v_other_unassigned; __Pyx_INCREF(__pyx_t_10);
           __pyx_t_16 = 0;
@@ -29565,20 +29623,20 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1058, __pyx_L54_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1062, __pyx_L54_error)
               #endif
               if (__pyx_t_16 >= __pyx_temp) break;
             }
             __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_16);
             ++__pyx_t_16;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1058, __pyx_L54_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1062, __pyx_L54_error)
             __Pyx_GOTREF(__pyx_t_6);
             __Pyx_XDECREF_SET(__pyx_9genexpr32__pyx_v_v, __pyx_t_6);
             __pyx_t_6 = 0;
             __pyx_t_3 = NULL;
             __Pyx_INCREF(__pyx_builtin_min);
             __pyx_t_11 = __pyx_builtin_min; 
-            __pyx_t_13 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr32__pyx_v_v); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1058, __pyx_L54_error)
+            __pyx_t_13 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr32__pyx_v_v); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1062, __pyx_L54_error)
             __Pyx_GOTREF(__pyx_t_13);
             __pyx_t_12 = 1;
             {
@@ -29587,13 +29645,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
               __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1058, __pyx_L54_error)
+              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1062, __pyx_L54_error)
               __Pyx_GOTREF(__pyx_t_6);
             }
             __pyx_t_13 = NULL;
             __Pyx_INCREF(__pyx_builtin_max);
             __pyx_t_3 = __pyx_builtin_max; 
-            __pyx_t_14 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr32__pyx_v_v); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1058, __pyx_L54_error)
+            __pyx_t_14 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr32__pyx_v_v); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1062, __pyx_L54_error)
             __Pyx_GOTREF(__pyx_t_14);
             __pyx_t_12 = 1;
             {
@@ -29602,18 +29660,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
               __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
               __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-              if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1058, __pyx_L54_error)
+              if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1062, __pyx_L54_error)
               __Pyx_GOTREF(__pyx_t_11);
             }
-            __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1058, __pyx_L54_error)
+            __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1062, __pyx_L54_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_GIVEREF(__pyx_t_6);
-            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 1058, __pyx_L54_error);
+            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 1062, __pyx_L54_error);
             __Pyx_GIVEREF(__pyx_t_11);
-            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_11) != (0)) __PYX_ERR(0, 1058, __pyx_L54_error);
+            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_11) != (0)) __PYX_ERR(0, 1062, __pyx_L54_error);
             __pyx_t_6 = 0;
             __pyx_t_11 = 0;
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1058, __pyx_L54_error)
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1062, __pyx_L54_error)
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           }
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -29627,7 +29685,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         __Pyx_XDECREF_SET(__pyx_v_bounds, ((PyObject*)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1059
+        /* "constraint/constraints.py":1063
  *                 if other_unassigned:
  *                     bounds = [(min(domains[v]), max(domains[v])) for v in other_unassigned]
  *                     other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in bounds])]             # <<<<<<<<<<<<<<
@@ -29635,12 +29693,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *                     other_products = [1]
 */
         { /* enter inner scope */
-          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1059, __pyx_L61_error)
+          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1063, __pyx_L61_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1059, __pyx_L61_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1063, __pyx_L61_error)
           __Pyx_GOTREF(__pyx_t_10);
           { /* enter inner scope */
-            __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1059, __pyx_L66_error)
+            __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1063, __pyx_L66_error)
             __Pyx_GOTREF(__pyx_t_3);
             __pyx_t_11 = __pyx_v_bounds; __Pyx_INCREF(__pyx_t_11);
             __pyx_t_16 = 0;
@@ -29648,13 +29706,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
               {
                 Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_11);
                 #if !CYTHON_ASSUME_SAFE_SIZE
-                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1059, __pyx_L66_error)
+                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1063, __pyx_L66_error)
                 #endif
                 if (__pyx_t_16 >= __pyx_temp) break;
               }
               __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_11, __pyx_t_16);
               ++__pyx_t_16;
-              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1059, __pyx_L66_error)
+              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1063, __pyx_L66_error)
               __Pyx_GOTREF(__pyx_t_6);
               if ((likely(PyTuple_CheckExact(__pyx_t_6))) || (PyList_CheckExact(__pyx_t_6))) {
                 PyObject* sequence = __pyx_t_6;
@@ -29662,7 +29720,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
                 if (unlikely(size != 2)) {
                   if (size > 2) __Pyx_RaiseTooManyValuesError(2);
                   else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-                  __PYX_ERR(0, 1059, __pyx_L66_error)
+                  __PYX_ERR(0, 1063, __pyx_L66_error)
                 }
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
                 if (likely(PyTuple_CheckExact(sequence))) {
@@ -29672,22 +29730,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
                   __Pyx_INCREF(__pyx_t_13);
                 } else {
                   __pyx_t_14 = __Pyx_PyList_GetItemRef(sequence, 0);
-                  if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1059, __pyx_L66_error)
+                  if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1063, __pyx_L66_error)
                   __Pyx_XGOTREF(__pyx_t_14);
                   __pyx_t_13 = __Pyx_PyList_GetItemRef(sequence, 1);
-                  if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1059, __pyx_L66_error)
+                  if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1063, __pyx_L66_error)
                   __Pyx_XGOTREF(__pyx_t_13);
                 }
                 #else
-                __pyx_t_14 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1059, __pyx_L66_error)
+                __pyx_t_14 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1063, __pyx_L66_error)
                 __Pyx_GOTREF(__pyx_t_14);
-                __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1059, __pyx_L66_error)
+                __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1063, __pyx_L66_error)
                 __Pyx_GOTREF(__pyx_t_13);
                 #endif
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
               } else {
                 Py_ssize_t index = -1;
-                __pyx_t_17 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1059, __pyx_L66_error)
+                __pyx_t_17 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1063, __pyx_L66_error)
                 __Pyx_GOTREF(__pyx_t_17);
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
                 __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_17);
@@ -29695,7 +29753,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
                 __Pyx_GOTREF(__pyx_t_14);
                 index = 1; __pyx_t_13 = __pyx_t_15(__pyx_t_17); if (unlikely(!__pyx_t_13)) goto __pyx_L69_unpacking_failed;
                 __Pyx_GOTREF(__pyx_t_13);
-                if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_17), 2) < 0) __PYX_ERR(0, 1059, __pyx_L66_error)
+                if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_17), 2) < 0) __PYX_ERR(0, 1063, __pyx_L66_error)
                 __pyx_t_15 = NULL;
                 __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
                 goto __pyx_L70_unpacking_done;
@@ -29703,22 +29761,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
                 __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
                 __pyx_t_15 = NULL;
                 if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-                __PYX_ERR(0, 1059, __pyx_L66_error)
+                __PYX_ERR(0, 1063, __pyx_L66_error)
                 __pyx_L70_unpacking_done:;
               }
               __Pyx_XDECREF_SET(__pyx_9genexpr34__pyx_v_lo, __pyx_t_14);
               __pyx_t_14 = 0;
               __Pyx_XDECREF_SET(__pyx_9genexpr34__pyx_v_hi, __pyx_t_13);
               __pyx_t_13 = 0;
-              __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1059, __pyx_L66_error)
+              __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1063, __pyx_L66_error)
               __Pyx_GOTREF(__pyx_t_6);
               __Pyx_INCREF(__pyx_9genexpr34__pyx_v_lo);
               __Pyx_GIVEREF(__pyx_9genexpr34__pyx_v_lo);
-              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_9genexpr34__pyx_v_lo) != (0)) __PYX_ERR(0, 1059, __pyx_L66_error);
+              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_9genexpr34__pyx_v_lo) != (0)) __PYX_ERR(0, 1063, __pyx_L66_error);
               __Pyx_INCREF(__pyx_9genexpr34__pyx_v_hi);
               __Pyx_GIVEREF(__pyx_9genexpr34__pyx_v_hi);
-              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_9genexpr34__pyx_v_hi) != (0)) __PYX_ERR(0, 1059, __pyx_L66_error);
-              if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1059, __pyx_L66_error)
+              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_9genexpr34__pyx_v_hi) != (0)) __PYX_ERR(0, 1063, __pyx_L66_error);
+              if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1063, __pyx_L66_error)
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
             }
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -29731,10 +29789,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
             goto __pyx_L61_error;
             __pyx_L72_exit_scope:;
           } /* exit inner scope */
-          __pyx_t_11 = PySequence_Tuple(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1059, __pyx_L61_error)
+          __pyx_t_11 = PySequence_Tuple(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1063, __pyx_L61_error)
           __Pyx_GOTREF(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1059, __pyx_L61_error)
+          __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1063, __pyx_L61_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -29743,9 +29801,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
             __pyx_t_16 = 0;
             __pyx_t_5 = NULL;
           } else {
-            __pyx_t_16 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1059, __pyx_L61_error)
+            __pyx_t_16 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1063, __pyx_L61_error)
             __Pyx_GOTREF(__pyx_t_11);
-            __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1059, __pyx_L61_error)
+            __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1063, __pyx_L61_error)
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           for (;;) {
@@ -29754,7 +29812,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_11);
                   #if !CYTHON_ASSUME_SAFE_SIZE
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1059, __pyx_L61_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1063, __pyx_L61_error)
                   #endif
                   if (__pyx_t_16 >= __pyx_temp) break;
                 }
@@ -29764,7 +29822,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_11);
                   #if !CYTHON_ASSUME_SAFE_SIZE
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1059, __pyx_L61_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1063, __pyx_L61_error)
                   #endif
                   if (__pyx_t_16 >= __pyx_temp) break;
                 }
@@ -29775,13 +29833,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
                 #endif
                 ++__pyx_t_16;
               }
-              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1059, __pyx_L61_error)
+              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1063, __pyx_L61_error)
             } else {
               __pyx_t_3 = __pyx_t_5(__pyx_t_11);
               if (unlikely(!__pyx_t_3)) {
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
-                  if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1059, __pyx_L61_error)
+                  if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1063, __pyx_L61_error)
                   PyErr_Clear();
                 }
                 break;
@@ -29797,10 +29855,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
               PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_9genexpr33__pyx_v_p};
               __pyx_t_3 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_12, (2-__pyx_t_12) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1059, __pyx_L61_error)
+              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1063, __pyx_L61_error)
               __Pyx_GOTREF(__pyx_t_3);
             }
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1059, __pyx_L61_error)
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1063, __pyx_L61_error)
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           }
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -29814,7 +29872,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         __Pyx_XDECREF_SET(__pyx_v_other_products, ((PyObject*)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1057
+        /* "constraint/constraints.py":1061
  *             for var in unassigned:
  *                 other_unassigned = [v for v in unassigned if v != var]
  *                 if other_unassigned:             # <<<<<<<<<<<<<<
@@ -29824,7 +29882,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         goto __pyx_L51;
       }
 
-      /* "constraint/constraints.py":1061
+      /* "constraint/constraints.py":1065
  *                     other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in bounds])]
  *                 else:
  *                     other_products = [1]             # <<<<<<<<<<<<<<
@@ -29832,45 +29890,45 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *                 domain = domains[var]
 */
       /*else*/ {
-        __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1061, __pyx_L1_error)
+        __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1065, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_INCREF(__pyx_mstate_global->__pyx_int_1);
         __Pyx_GIVEREF(__pyx_mstate_global->__pyx_int_1);
-        if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_mstate_global->__pyx_int_1) != (0)) __PYX_ERR(0, 1061, __pyx_L1_error);
+        if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_mstate_global->__pyx_int_1) != (0)) __PYX_ERR(0, 1065, __pyx_L1_error);
         __Pyx_XDECREF_SET(__pyx_v_other_products, ((PyObject*)__pyx_t_1));
         __pyx_t_1 = 0;
       }
       __pyx_L51:;
 
-      /* "constraint/constraints.py":1063
+      /* "constraint/constraints.py":1067
  *                     other_products = [1]
  * 
  *                 domain = domains[var]             # <<<<<<<<<<<<<<
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]
 */
-      __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1063, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1067, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "constraint/constraints.py":1064
+      /* "constraint/constraints.py":1068
  * 
  *                 domain = domains[var]
  *                 for val in domain[:]:             # <<<<<<<<<<<<<<
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p < target_value for p in prods):
 */
-      __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1064, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1068, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
         __pyx_t_11 = __pyx_t_1; __Pyx_INCREF(__pyx_t_11);
         __pyx_t_16 = 0;
         __pyx_t_5 = NULL;
       } else {
-        __pyx_t_16 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1064, __pyx_L1_error)
+        __pyx_t_16 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1068, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1064, __pyx_L1_error)
+        __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1068, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       for (;;) {
@@ -29879,7 +29937,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_11);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1064, __pyx_L1_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1068, __pyx_L1_error)
               #endif
               if (__pyx_t_16 >= __pyx_temp) break;
             }
@@ -29889,7 +29947,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
             {
               Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_11);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1064, __pyx_L1_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1068, __pyx_L1_error)
               #endif
               if (__pyx_t_16 >= __pyx_temp) break;
             }
@@ -29900,13 +29958,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
             #endif
             ++__pyx_t_16;
           }
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1064, __pyx_L1_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1068, __pyx_L1_error)
         } else {
           __pyx_t_1 = __pyx_t_5(__pyx_t_11);
           if (unlikely(!__pyx_t_1)) {
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
-              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1064, __pyx_L1_error)
+              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1068, __pyx_L1_error)
               PyErr_Clear();
             }
             break;
@@ -29916,7 +29974,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         __Pyx_XDECREF_SET(__pyx_v_val, __pyx_t_1);
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1065
+        /* "constraint/constraints.py":1069
  *                 domain = domains[var]
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]             # <<<<<<<<<<<<<<
@@ -29924,7 +29982,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
  *                         domain.hideValue(val)
 */
         { /* enter inner scope */
-          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1065, __pyx_L79_error)
+          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1069, __pyx_L79_error)
           __Pyx_GOTREF(__pyx_t_1);
           __pyx_t_3 = __pyx_v_other_products; __Pyx_INCREF(__pyx_t_3);
           __pyx_t_18 = 0;
@@ -29932,22 +29990,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_3);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1065, __pyx_L79_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1069, __pyx_L79_error)
               #endif
               if (__pyx_t_18 >= __pyx_temp) break;
             }
             __pyx_t_10 = __Pyx_PyList_GetItemRef(__pyx_t_3, __pyx_t_18);
             ++__pyx_t_18;
-            if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1065, __pyx_L79_error)
+            if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1069, __pyx_L79_error)
             __Pyx_GOTREF(__pyx_t_10);
             __Pyx_XDECREF_SET(__pyx_9genexpr35__pyx_v_o, __pyx_t_10);
             __pyx_t_10 = 0;
-            __pyx_t_10 = PyNumber_Multiply(__pyx_v_assigned_prod, __pyx_v_val); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1065, __pyx_L79_error)
+            __pyx_t_10 = PyNumber_Multiply(__pyx_v_assigned_prod, __pyx_v_val); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1069, __pyx_L79_error)
             __Pyx_GOTREF(__pyx_t_10);
-            __pyx_t_6 = PyNumber_Multiply(__pyx_t_10, __pyx_9genexpr35__pyx_v_o); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1065, __pyx_L79_error)
+            __pyx_t_6 = PyNumber_Multiply(__pyx_t_10, __pyx_9genexpr35__pyx_v_o); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1069, __pyx_L79_error)
             __Pyx_GOTREF(__pyx_t_6);
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1065, __pyx_L79_error)
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1069, __pyx_L79_error)
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -29961,23 +30019,23 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         __Pyx_XDECREF_SET(__pyx_v_prods, ((PyObject*)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1066
+        /* "constraint/constraints.py":1070
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p < target_value for p in prods):             # <<<<<<<<<<<<<<
  *                         domain.hideValue(val)
  *                 if not domain:
 */
-        __pyx_t_1 = __pyx_pf_10constraint_11constraints_25VariableMinProdConstraint_8__call___genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_prods); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1066, __pyx_L1_error)
+        __pyx_t_1 = __pyx_pf_10constraint_11constraints_25VariableMinProdConstraint_8__call___genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_prods); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1070, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_3 = __Pyx_Generator_GetInlinedResult(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1066, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_Generator_GetInlinedResult(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1070, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1066, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1070, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         if (__pyx_t_8) {
 
-          /* "constraint/constraints.py":1067
+          /* "constraint/constraints.py":1071
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p < target_value for p in prods):
  *                         domain.hideValue(val)             # <<<<<<<<<<<<<<
@@ -29991,12 +30049,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
             PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_val};
             __pyx_t_3 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_hideValue, __pyx_callargs+__pyx_t_12, (2-__pyx_t_12) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1067, __pyx_L1_error)
+            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1071, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "constraint/constraints.py":1066
+          /* "constraint/constraints.py":1070
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p < target_value for p in prods):             # <<<<<<<<<<<<<<
@@ -30005,7 +30063,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
 */
         }
 
-        /* "constraint/constraints.py":1064
+        /* "constraint/constraints.py":1068
  * 
  *                 domain = domains[var]
  *                 for val in domain[:]:             # <<<<<<<<<<<<<<
@@ -30015,18 +30073,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
       }
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-      /* "constraint/constraints.py":1068
+      /* "constraint/constraints.py":1072
  *                     if all(p < target_value for p in prods):
  *                         domain.hideValue(val)
  *                 if not domain:             # <<<<<<<<<<<<<<
  *                     return False
  * 
 */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1068, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1072, __pyx_L1_error)
       __pyx_t_2 = (!__pyx_t_8);
       if (__pyx_t_2) {
 
-        /* "constraint/constraints.py":1069
+        /* "constraint/constraints.py":1073
  *                         domain.hideValue(val)
  *                 if not domain:
  *                     return False             # <<<<<<<<<<<<<<
@@ -30039,7 +30097,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1068
+        /* "constraint/constraints.py":1072
  *                     if all(p < target_value for p in prods):
  *                         domain.hideValue(val)
  *                 if not domain:             # <<<<<<<<<<<<<<
@@ -30048,7 +30106,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
 */
       }
 
-      /* "constraint/constraints.py":1055
+      /* "constraint/constraints.py":1059
  * 
  *         if forwardcheck:
  *             for var in unassigned:             # <<<<<<<<<<<<<<
@@ -30058,7 +30116,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
     }
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "constraint/constraints.py":1054
+    /* "constraint/constraints.py":1058
  *             return False
  * 
  *         if forwardcheck:             # <<<<<<<<<<<<<<
@@ -30067,7 +30125,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
 */
   }
 
-  /* "constraint/constraints.py":1071
+  /* "constraint/constraints.py":1075
  *                     return False
  * 
  *         return True             # <<<<<<<<<<<<<<
@@ -30079,7 +30137,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   __pyx_r = Py_True;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":1030
+  /* "constraint/constraints.py":1034
  *                     dom.remove(val)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -30131,7 +30189,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMinProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1085
+/* "constraint/constraints.py":1089
  *     """
  * 
  *     def __init__(self, maxprod: Union[int, float]):             # <<<<<<<<<<<<<<
@@ -30180,39 +30238,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_maxprod,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1085, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1089, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1085, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1089, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1085, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1089, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1085, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1089, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, i); __PYX_ERR(0, 1085, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, i); __PYX_ERR(0, 1089, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1085, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1089, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1085, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1089, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_maxprod = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 1085, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 1089, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -30241,16 +30299,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint___init_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "constraint/constraints.py":1091
+  /* "constraint/constraints.py":1095
  *             maxprod: Value to be considered as the maximum product
  *         """
  *         self._maxprod = maxprod             # <<<<<<<<<<<<<<
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_maxprod_2, __pyx_v_maxprod) < 0) __PYX_ERR(0, 1091, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_maxprod_2, __pyx_v_maxprod) < 0) __PYX_ERR(0, 1095, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1085
+  /* "constraint/constraints.py":1089
  *     """
  * 
  *     def __init__(self, maxprod: Union[int, float]):             # <<<<<<<<<<<<<<
@@ -30270,7 +30328,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint___init_
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1093
+/* "constraint/constraints.py":1097
  *         self._maxprod = maxprod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -30321,50 +30379,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_constraints,&__pyx_mstate_global->__pyx_n_u_vconstraints,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1093, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1097, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1093, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1097, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1093, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1097, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1093, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1097, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1093, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1097, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1093, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1097, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 1093, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 1097, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 5; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 1093, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 1097, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1093, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1097, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1093, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1097, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1093, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1097, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1093, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1097, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1093, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1097, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_variables = values[1];
@@ -30374,7 +30432,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 1093, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 1097, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -30385,9 +30443,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1093, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 1093, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 1093, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1097, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 1097, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 1097, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_17MaxProdConstraint_2preProcess(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_constraints, __pyx_v_vconstraints);
 
   /* function exit code */
@@ -30408,7 +30466,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 }
 static PyObject *__pyx_gb_10constraint_11constraints_17MaxProdConstraint_10preProcess_2generator13(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "constraint/constraints.py":1100
+/* "constraint/constraints.py":1104
  *         variable_with_lt1 = None
  *         for variable in variables:
  *             contains_lt1 = any(value < 1 for value in domains[variable])             # <<<<<<<<<<<<<<
@@ -30428,7 +30486,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_10prePr
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_18_genexpr *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 1100, __pyx_L1_error)
+    __PYX_ERR(0, 1104, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -30436,7 +30494,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_10prePr
   __Pyx_INCREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_17MaxProdConstraint_10preProcess_2generator13, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[13]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint_preProcess_loc, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 1100, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_17MaxProdConstraint_10preProcess_2generator13, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[13]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint_preProcess_loc, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 1104, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -30473,16 +30531,16 @@ static PyObject *__pyx_gb_10constraint_11constraints_17MaxProdConstraint_10prePr
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 1100, __pyx_L1_error)
-  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 1100, __pyx_L1_error) }
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 1104, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 1104, __pyx_L1_error) }
   if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_genexpr_arg_0)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_genexpr_arg_0)) {
     __pyx_t_1 = __pyx_cur_scope->__pyx_genexpr_arg_0; __Pyx_INCREF(__pyx_t_1);
     __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_cur_scope->__pyx_genexpr_arg_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1100, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_cur_scope->__pyx_genexpr_arg_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1100, __pyx_L1_error)
+    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1104, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
@@ -30490,7 +30548,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_17MaxProdConstraint_10prePr
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1100, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1104, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -30500,7 +30558,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_17MaxProdConstraint_10prePr
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1100, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1104, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -30511,13 +30569,13 @@ static PyObject *__pyx_gb_10constraint_11constraints_17MaxProdConstraint_10prePr
         #endif
         ++__pyx_t_2;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1100, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1104, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_3(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1100, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1104, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -30528,8 +30586,8 @@ static PyObject *__pyx_gb_10constraint_11constraints_17MaxProdConstraint_10prePr
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_value, __pyx_t_4);
     __Pyx_GIVEREF(__pyx_t_4);
     __pyx_t_4 = 0;
-    __pyx_t_4 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_value, __pyx_mstate_global->__pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1100, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1100, __pyx_L1_error)
+    __pyx_t_4 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_value, __pyx_mstate_global->__pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1104, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1104, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (__pyx_t_5) {
       __Pyx_XDECREF(__pyx_r);
@@ -30568,7 +30626,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_17MaxProdConstraint_10prePr
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1093
+/* "constraint/constraints.py":1097
  *         self._maxprod = maxprod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -30605,7 +30663,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("preProcess", 0);
 
-  /* "constraint/constraints.py":1094
+  /* "constraint/constraints.py":1098
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)             # <<<<<<<<<<<<<<
@@ -30613,9 +30671,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
  *         # check if there are any values less than 1 in the associated variables
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1094, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1098, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1094, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1098, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = 1;
@@ -30635,24 +30693,24 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (6-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1094, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1098, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1097
+  /* "constraint/constraints.py":1101
  * 
  *         # check if there are any values less than 1 in the associated variables
  *         self._variable_contains_lt1: list[bool] = list()             # <<<<<<<<<<<<<<
  *         variable_with_lt1 = None
  *         for variable in variables:
 */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1097, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_variable_contains_lt1, __pyx_t_1) < 0) __PYX_ERR(0, 1097, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_variable_contains_lt1, __pyx_t_1) < 0) __PYX_ERR(0, 1101, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1098
+  /* "constraint/constraints.py":1102
  *         # check if there are any values less than 1 in the associated variables
  *         self._variable_contains_lt1: list[bool] = list()
  *         variable_with_lt1 = None             # <<<<<<<<<<<<<<
@@ -30662,7 +30720,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
   __Pyx_INCREF(Py_None);
   __pyx_v_variable_with_lt1 = Py_None;
 
-  /* "constraint/constraints.py":1099
+  /* "constraint/constraints.py":1103
  *         self._variable_contains_lt1: list[bool] = list()
  *         variable_with_lt1 = None
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -30674,9 +30732,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
     __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1099, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1103, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1099, __pyx_L1_error)
+    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1103, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_7)) {
@@ -30684,7 +30742,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1099, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1103, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -30694,7 +30752,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1099, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1103, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -30705,13 +30763,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         #endif
         ++__pyx_t_6;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1099, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1103, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_7(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1099, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1103, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -30721,37 +30779,37 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1100
+    /* "constraint/constraints.py":1104
  *         variable_with_lt1 = None
  *         for variable in variables:
  *             contains_lt1 = any(value < 1 for value in domains[variable])             # <<<<<<<<<<<<<<
  *             self._variable_contains_lt1.append(contains_lt1)
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
 */
-    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1100, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_2 = __pyx_pf_10constraint_11constraints_17MaxProdConstraint_10preProcess_genexpr(NULL, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1100, __pyx_L1_error)
+    __pyx_t_2 = __pyx_pf_10constraint_11constraints_17MaxProdConstraint_10preProcess_genexpr(NULL, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_Generator_GetInlinedResult(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1100, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_Generator_GetInlinedResult(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF_SET(__pyx_v_contains_lt1, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1101
+    /* "constraint/constraints.py":1105
  *         for variable in variables:
  *             contains_lt1 = any(value < 1 for value in domains[variable])
  *             self._variable_contains_lt1.append(contains_lt1)             # <<<<<<<<<<<<<<
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
  *             if contains_lt1 is True:
 */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_variable_contains_lt1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1101, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_variable_contains_lt1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_8 = __Pyx_PyObject_Append(__pyx_t_4, __pyx_v_contains_lt1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 1101, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_Append(__pyx_t_4, __pyx_v_contains_lt1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 1105, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1099
+    /* "constraint/constraints.py":1103
  *         self._variable_contains_lt1: list[bool] = list()
  *         variable_with_lt1 = None
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -30761,7 +30819,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1102
+  /* "constraint/constraints.py":1106
  *             contains_lt1 = any(value < 1 for value in domains[variable])
  *             self._variable_contains_lt1.append(contains_lt1)
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):             # <<<<<<<<<<<<<<
@@ -30771,7 +30829,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
   __pyx_t_4 = NULL;
   __Pyx_INCREF(__pyx_builtin_zip);
   __pyx_t_2 = __pyx_builtin_zip; 
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_variable_contains_lt1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1102, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_variable_contains_lt1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = 1;
   {
@@ -30780,7 +30838,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1102, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1106, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
@@ -30788,9 +30846,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
     __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1102, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1106, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1102, __pyx_L1_error)
+    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1106, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -30799,7 +30857,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1102, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1106, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -30809,7 +30867,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1102, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1106, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -30820,13 +30878,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         #endif
         ++__pyx_t_6;
       }
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1102, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1106, __pyx_L1_error)
     } else {
       __pyx_t_1 = __pyx_t_7(__pyx_t_2);
       if (unlikely(!__pyx_t_1)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1102, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1106, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -30839,7 +30897,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 1102, __pyx_L1_error)
+        __PYX_ERR(0, 1106, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -30849,22 +30907,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         __Pyx_INCREF(__pyx_t_4);
       } else {
         __pyx_t_3 = __Pyx_PyList_GetItemRef(sequence, 0);
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1102, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1106, __pyx_L1_error)
         __Pyx_XGOTREF(__pyx_t_3);
         __pyx_t_4 = __Pyx_PyList_GetItemRef(sequence, 1);
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1102, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1106, __pyx_L1_error)
         __Pyx_XGOTREF(__pyx_t_4);
       }
       #else
-      __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1102, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1106, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1102, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1106, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       #endif
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_9 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1102, __pyx_L1_error)
+      __pyx_t_9 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1106, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_9);
@@ -30872,7 +30930,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
       __Pyx_GOTREF(__pyx_t_3);
       index = 1; __pyx_t_4 = __pyx_t_10(__pyx_t_9); if (unlikely(!__pyx_t_4)) goto __pyx_L8_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_4);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_10(__pyx_t_9), 2) < 0) __PYX_ERR(0, 1102, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_10(__pyx_t_9), 2) < 0) __PYX_ERR(0, 1106, __pyx_L1_error)
       __pyx_t_10 = NULL;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       goto __pyx_L9_unpacking_done;
@@ -30880,7 +30938,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __pyx_t_10 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 1102, __pyx_L1_error)
+      __PYX_ERR(0, 1106, __pyx_L1_error)
       __pyx_L9_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_3);
@@ -30888,7 +30946,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
     __Pyx_XDECREF_SET(__pyx_v_contains_lt1, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1103
+    /* "constraint/constraints.py":1107
  *             self._variable_contains_lt1.append(contains_lt1)
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
  *             if contains_lt1 is True:             # <<<<<<<<<<<<<<
@@ -30898,7 +30956,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
     __pyx_t_11 = (__pyx_v_contains_lt1 == Py_True);
     if (__pyx_t_11) {
 
-      /* "constraint/constraints.py":1104
+      /* "constraint/constraints.py":1108
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
  *             if contains_lt1 is True:
  *                 if variable_with_lt1 is not None:             # <<<<<<<<<<<<<<
@@ -30908,7 +30966,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
       __pyx_t_11 = (__pyx_v_variable_with_lt1 != Py_None);
       if (__pyx_t_11) {
 
-        /* "constraint/constraints.py":1106
+        /* "constraint/constraints.py":1110
  *                 if variable_with_lt1 is not None:
  *                     # if more than one associated variables contain less than 1, we can't prune
  *                     return             # <<<<<<<<<<<<<<
@@ -30920,7 +30978,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1104
+        /* "constraint/constraints.py":1108
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
  *             if contains_lt1 is True:
  *                 if variable_with_lt1 is not None:             # <<<<<<<<<<<<<<
@@ -30929,7 +30987,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
 */
       }
 
-      /* "constraint/constraints.py":1107
+      /* "constraint/constraints.py":1111
  *                     # if more than one associated variables contain less than 1, we can't prune
  *                     return
  *                 variable_with_lt1 = variable             # <<<<<<<<<<<<<<
@@ -30939,7 +30997,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
       __Pyx_INCREF(__pyx_v_variable);
       __Pyx_DECREF_SET(__pyx_v_variable_with_lt1, __pyx_v_variable);
 
-      /* "constraint/constraints.py":1103
+      /* "constraint/constraints.py":1107
  *             self._variable_contains_lt1.append(contains_lt1)
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
  *             if contains_lt1 is True:             # <<<<<<<<<<<<<<
@@ -30948,7 +31006,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
 */
     }
 
-    /* "constraint/constraints.py":1102
+    /* "constraint/constraints.py":1106
  *             contains_lt1 = any(value < 1 for value in domains[variable])
  *             self._variable_contains_lt1.append(contains_lt1)
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):             # <<<<<<<<<<<<<<
@@ -30958,19 +31016,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1110
+  /* "constraint/constraints.py":1114
  * 
  *         # prune the associated variables of values > maxprod
  *         maxprod = self._maxprod             # <<<<<<<<<<<<<<
  *         for variable in variables:
  *             if variable_with_lt1 is not None and variable_with_lt1 != variable:
 */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_maxprod_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1110, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_maxprod_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_maxprod = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1111
+  /* "constraint/constraints.py":1115
  *         # prune the associated variables of values > maxprod
  *         maxprod = self._maxprod
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -30982,9 +31040,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
     __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1111, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1115, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1111, __pyx_L1_error)
+    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1115, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_7)) {
@@ -30992,7 +31050,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1111, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1115, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -31002,7 +31060,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1111, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1115, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -31013,13 +31071,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         #endif
         ++__pyx_t_6;
       }
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1111, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1115, __pyx_L1_error)
     } else {
       __pyx_t_1 = __pyx_t_7(__pyx_t_2);
       if (unlikely(!__pyx_t_1)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1111, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1115, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -31029,7 +31087,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":1112
+    /* "constraint/constraints.py":1116
  *         maxprod = self._maxprod
  *         for variable in variables:
  *             if variable_with_lt1 is not None and variable_with_lt1 != variable:             # <<<<<<<<<<<<<<
@@ -31042,14 +31100,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
       __pyx_t_11 = __pyx_t_12;
       goto __pyx_L16_bool_binop_done;
     }
-    __pyx_t_1 = PyObject_RichCompare(__pyx_v_variable_with_lt1, __pyx_v_variable, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1112, __pyx_L1_error)
-    __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1112, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_variable_with_lt1, __pyx_v_variable, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1116, __pyx_L1_error)
+    __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1116, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_11 = __pyx_t_12;
     __pyx_L16_bool_binop_done:;
     if (__pyx_t_11) {
 
-      /* "constraint/constraints.py":1113
+      /* "constraint/constraints.py":1117
  *         for variable in variables:
  *             if variable_with_lt1 is not None and variable_with_lt1 != variable:
  *                 continue             # <<<<<<<<<<<<<<
@@ -31058,7 +31116,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
 */
       goto __pyx_L13_continue;
 
-      /* "constraint/constraints.py":1112
+      /* "constraint/constraints.py":1116
  *         maxprod = self._maxprod
  *         for variable in variables:
  *             if variable_with_lt1 is not None and variable_with_lt1 != variable:             # <<<<<<<<<<<<<<
@@ -31067,35 +31125,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
 */
     }
 
-    /* "constraint/constraints.py":1114
+    /* "constraint/constraints.py":1118
  *             if variable_with_lt1 is not None and variable_with_lt1 != variable:
  *                 continue
  *             domain = domains[variable]             # <<<<<<<<<<<<<<
  *             for value in domain[:]:
  *                 if value > maxprod:
 */
-    __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1114, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":1115
+    /* "constraint/constraints.py":1119
  *                 continue
  *             domain = domains[variable]
  *             for value in domain[:]:             # <<<<<<<<<<<<<<
  *                 if value > maxprod:
  *                     domain.remove(value)
 */
-    __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1115, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
       __pyx_t_4 = __pyx_t_1; __Pyx_INCREF(__pyx_t_4);
       __pyx_t_13 = 0;
       __pyx_t_14 = NULL;
     } else {
-      __pyx_t_13 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1115, __pyx_L1_error)
+      __pyx_t_13 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1119, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_14 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1115, __pyx_L1_error)
+      __pyx_t_14 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1119, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     for (;;) {
@@ -31104,7 +31162,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_4);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1115, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1119, __pyx_L1_error)
             #endif
             if (__pyx_t_13 >= __pyx_temp) break;
           }
@@ -31114,7 +31172,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_4);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1115, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1119, __pyx_L1_error)
             #endif
             if (__pyx_t_13 >= __pyx_temp) break;
           }
@@ -31125,13 +31183,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
           #endif
           ++__pyx_t_13;
         }
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1115, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1119, __pyx_L1_error)
       } else {
         __pyx_t_1 = __pyx_t_14(__pyx_t_4);
         if (unlikely(!__pyx_t_1)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1115, __pyx_L1_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1119, __pyx_L1_error)
             PyErr_Clear();
           }
           break;
@@ -31141,19 +31199,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
       __Pyx_XDECREF_SET(__pyx_v_value, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "constraint/constraints.py":1116
+      /* "constraint/constraints.py":1120
  *             domain = domains[variable]
  *             for value in domain[:]:
  *                 if value > maxprod:             # <<<<<<<<<<<<<<
  *                     domain.remove(value)
  *                 elif value == 0 and maxprod < 0:
 */
-      __pyx_t_1 = PyObject_RichCompare(__pyx_v_value, __pyx_v_maxprod, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1116, __pyx_L1_error)
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 1116, __pyx_L1_error)
+      __pyx_t_1 = PyObject_RichCompare(__pyx_v_value, __pyx_v_maxprod, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1120, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 1120, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (__pyx_t_11) {
 
-        /* "constraint/constraints.py":1117
+        /* "constraint/constraints.py":1121
  *             for value in domain[:]:
  *                 if value > maxprod:
  *                     domain.remove(value)             # <<<<<<<<<<<<<<
@@ -31167,12 +31225,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
           PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_value};
           __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_remove, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1117, __pyx_L1_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1121, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
         }
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1116
+        /* "constraint/constraints.py":1120
  *             domain = domains[variable]
  *             for value in domain[:]:
  *                 if value > maxprod:             # <<<<<<<<<<<<<<
@@ -31182,27 +31240,27 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
         goto __pyx_L20;
       }
 
-      /* "constraint/constraints.py":1118
+      /* "constraint/constraints.py":1122
  *                 if value > maxprod:
  *                     domain.remove(value)
  *                 elif value == 0 and maxprod < 0:             # <<<<<<<<<<<<<<
  *                     domain.remove(value)
  * 
 */
-      __pyx_t_12 = (__Pyx_PyLong_BoolEqObjC(__pyx_v_value, __pyx_mstate_global->__pyx_int_0, 0, 0)); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1118, __pyx_L1_error)
+      __pyx_t_12 = (__Pyx_PyLong_BoolEqObjC(__pyx_v_value, __pyx_mstate_global->__pyx_int_0, 0, 0)); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1122, __pyx_L1_error)
       if (__pyx_t_12) {
       } else {
         __pyx_t_11 = __pyx_t_12;
         goto __pyx_L21_bool_binop_done;
       }
-      __pyx_t_1 = PyObject_RichCompare(__pyx_v_maxprod, __pyx_mstate_global->__pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1118, __pyx_L1_error)
-      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1118, __pyx_L1_error)
+      __pyx_t_1 = PyObject_RichCompare(__pyx_v_maxprod, __pyx_mstate_global->__pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1122, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1122, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_11 = __pyx_t_12;
       __pyx_L21_bool_binop_done:;
       if (__pyx_t_11) {
 
-        /* "constraint/constraints.py":1119
+        /* "constraint/constraints.py":1123
  *                     domain.remove(value)
  *                 elif value == 0 and maxprod < 0:
  *                     domain.remove(value)             # <<<<<<<<<<<<<<
@@ -31216,12 +31274,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
           PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_value};
           __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_remove, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1119, __pyx_L1_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1123, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
         }
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1118
+        /* "constraint/constraints.py":1122
  *                 if value > maxprod:
  *                     domain.remove(value)
  *                 elif value == 0 and maxprod < 0:             # <<<<<<<<<<<<<<
@@ -31231,7 +31289,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
       }
       __pyx_L20:;
 
-      /* "constraint/constraints.py":1115
+      /* "constraint/constraints.py":1119
  *                 continue
  *             domain = domains[variable]
  *             for value in domain[:]:             # <<<<<<<<<<<<<<
@@ -31241,7 +31299,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1111
+    /* "constraint/constraints.py":1115
  *         # prune the associated variables of values > maxprod
  *         maxprod = self._maxprod
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -31252,7 +31310,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1093
+  /* "constraint/constraints.py":1097
  *         self._maxprod = maxprod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -31284,7 +31342,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_2prePro
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1121
+/* "constraint/constraints.py":1125
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -31335,53 +31393,53 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_assignments,&__pyx_mstate_global->__pyx_n_u_forwardcheck,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1121, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1125, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1121, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1125, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1121, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1125, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1121, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1125, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1121, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1125, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1121, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1125, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1121, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1125, __pyx_L3_error)
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1121, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1125, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1121, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1125, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1121, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1125, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1121, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1125, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1121, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1125, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1121, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1125, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -31395,7 +31453,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1121, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1125, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -31406,8 +31464,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1121, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 1121, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1125, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 1125, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call__(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_assignments, __pyx_v_forwardcheck);
 
   /* function exit code */
@@ -31457,19 +31515,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__call__", 0);
 
-  /* "constraint/constraints.py":1122
+  /* "constraint/constraints.py":1126
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
  *         maxprod = self._maxprod             # <<<<<<<<<<<<<<
  *         prod = 1
  *         missing = False
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_maxprod_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1122, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_maxprod_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1126, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_maxprod = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1123
+  /* "constraint/constraints.py":1127
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
  *         maxprod = self._maxprod
  *         prod = 1             # <<<<<<<<<<<<<<
@@ -31479,7 +31537,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_1);
   __pyx_v_prod = __pyx_mstate_global->__pyx_int_1;
 
-  /* "constraint/constraints.py":1124
+  /* "constraint/constraints.py":1128
  *         maxprod = self._maxprod
  *         prod = 1
  *         missing = False             # <<<<<<<<<<<<<<
@@ -31488,19 +31546,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
 */
   __pyx_v_missing = 0;
 
-  /* "constraint/constraints.py":1125
+  /* "constraint/constraints.py":1129
  *         prod = 1
  *         missing = False
  *         missing_lt1 = []             # <<<<<<<<<<<<<<
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
  *             if variable in assignments:
 */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1125, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1129, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_missing_lt1 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1126
+  /* "constraint/constraints.py":1130
  *         missing = False
  *         missing_lt1 = []
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):             # <<<<<<<<<<<<<<
@@ -31510,7 +31568,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
   __pyx_t_2 = NULL;
   __Pyx_INCREF(__pyx_builtin_zip);
   __pyx_t_3 = __pyx_builtin_zip; 
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_variable_contains_lt1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1126, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_variable_contains_lt1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = 1;
   {
@@ -31519,7 +31577,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1126, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
@@ -31527,9 +31585,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
     __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1126, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1126, __pyx_L1_error)
+    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1130, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -31538,7 +31596,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_3);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1126, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1130, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -31548,7 +31606,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_3);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1126, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1130, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -31559,13 +31617,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
         #endif
         ++__pyx_t_6;
       }
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1126, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1130, __pyx_L1_error)
     } else {
       __pyx_t_1 = __pyx_t_7(__pyx_t_3);
       if (unlikely(!__pyx_t_1)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1126, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1130, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -31578,7 +31636,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 1126, __pyx_L1_error)
+        __PYX_ERR(0, 1130, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -31588,22 +31646,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
         __Pyx_INCREF(__pyx_t_2);
       } else {
         __pyx_t_4 = __Pyx_PyList_GetItemRef(sequence, 0);
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1126, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1130, __pyx_L1_error)
         __Pyx_XGOTREF(__pyx_t_4);
         __pyx_t_2 = __Pyx_PyList_GetItemRef(sequence, 1);
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1126, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1130, __pyx_L1_error)
         __Pyx_XGOTREF(__pyx_t_2);
       }
       #else
-      __pyx_t_4 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1126, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_2 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1126, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       #endif
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_8 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1126, __pyx_L1_error)
+      __pyx_t_8 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8);
@@ -31611,7 +31669,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
       __Pyx_GOTREF(__pyx_t_4);
       index = 1; __pyx_t_2 = __pyx_t_9(__pyx_t_8); if (unlikely(!__pyx_t_2)) goto __pyx_L5_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_2);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 2) < 0) __PYX_ERR(0, 1126, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 2) < 0) __PYX_ERR(0, 1130, __pyx_L1_error)
       __pyx_t_9 = NULL;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       goto __pyx_L6_unpacking_done;
@@ -31619,7 +31677,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 1126, __pyx_L1_error)
+      __PYX_ERR(0, 1130, __pyx_L1_error)
       __pyx_L6_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_4);
@@ -31627,32 +31685,32 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
     __Pyx_XDECREF_SET(__pyx_v_contains_lt1, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "constraint/constraints.py":1127
+    /* "constraint/constraints.py":1131
  *         missing_lt1 = []
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
  *             if variable in assignments:             # <<<<<<<<<<<<<<
  *                 prod *= assignments[variable]
  *             else:
 */
-    __pyx_t_10 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 1127, __pyx_L1_error)
+    __pyx_t_10 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 1131, __pyx_L1_error)
     if (__pyx_t_10) {
 
-      /* "constraint/constraints.py":1128
+      /* "constraint/constraints.py":1132
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
  *             if variable in assignments:
  *                 prod *= assignments[variable]             # <<<<<<<<<<<<<<
  *             else:
  *                 missing = True
 */
-      __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1128, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1132, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = PyNumber_InPlaceMultiply(__pyx_v_prod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1128, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_InPlaceMultiply(__pyx_v_prod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1132, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF_SET(__pyx_v_prod, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "constraint/constraints.py":1127
+      /* "constraint/constraints.py":1131
  *         missing_lt1 = []
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
  *             if variable in assignments:             # <<<<<<<<<<<<<<
@@ -31662,7 +31720,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
       goto __pyx_L7;
     }
 
-    /* "constraint/constraints.py":1130
+    /* "constraint/constraints.py":1134
  *                 prod *= assignments[variable]
  *             else:
  *                 missing = True             # <<<<<<<<<<<<<<
@@ -31672,26 +31730,26 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
     /*else*/ {
       __pyx_v_missing = 1;
 
-      /* "constraint/constraints.py":1131
+      /* "constraint/constraints.py":1135
  *             else:
  *                 missing = True
  *                 if contains_lt1:             # <<<<<<<<<<<<<<
  *                     missing_lt1.append(variable)
  *         if isinstance(prod, float):
 */
-      __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_contains_lt1); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 1131, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_contains_lt1); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 1135, __pyx_L1_error)
       if (__pyx_t_10) {
 
-        /* "constraint/constraints.py":1132
+        /* "constraint/constraints.py":1136
  *                 missing = True
  *                 if contains_lt1:
  *                     missing_lt1.append(variable)             # <<<<<<<<<<<<<<
  *         if isinstance(prod, float):
  *             prod = round(prod, 10)
 */
-        __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_missing_lt1, __pyx_v_variable); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 1132, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_missing_lt1, __pyx_v_variable); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 1136, __pyx_L1_error)
 
-        /* "constraint/constraints.py":1131
+        /* "constraint/constraints.py":1135
  *             else:
  *                 missing = True
  *                 if contains_lt1:             # <<<<<<<<<<<<<<
@@ -31702,7 +31760,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
     }
     __pyx_L7:;
 
-    /* "constraint/constraints.py":1126
+    /* "constraint/constraints.py":1130
  *         missing = False
  *         missing_lt1 = []
  *         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):             # <<<<<<<<<<<<<<
@@ -31712,7 +31770,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1133
+  /* "constraint/constraints.py":1137
  *                 if contains_lt1:
  *                     missing_lt1.append(variable)
  *         if isinstance(prod, float):             # <<<<<<<<<<<<<<
@@ -31722,7 +31780,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
   __pyx_t_10 = PyFloat_Check(__pyx_v_prod); 
   if (__pyx_t_10) {
 
-    /* "constraint/constraints.py":1134
+    /* "constraint/constraints.py":1138
  *                     missing_lt1.append(variable)
  *         if isinstance(prod, float):
  *             prod = round(prod, 10)             # <<<<<<<<<<<<<<
@@ -31738,13 +31796,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+__pyx_t_5, (3-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1134, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1138, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
     }
     __Pyx_DECREF_SET(__pyx_v_prod, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "constraint/constraints.py":1133
+    /* "constraint/constraints.py":1137
  *                 if contains_lt1:
  *                     missing_lt1.append(variable)
  *         if isinstance(prod, float):             # <<<<<<<<<<<<<<
@@ -31753,7 +31811,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
 */
   }
 
-  /* "constraint/constraints.py":1135
+  /* "constraint/constraints.py":1139
  *         if isinstance(prod, float):
  *             prod = round(prod, 10)
  *         if (not missing or len(missing_lt1) == 0) and prod > maxprod:             # <<<<<<<<<<<<<<
@@ -31765,7 +31823,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
   } else {
     goto __pyx_L13_next_and;
   }
-  __pyx_t_6 = __Pyx_PyList_GET_SIZE(__pyx_v_missing_lt1); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 1135, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyList_GET_SIZE(__pyx_v_missing_lt1); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 1139, __pyx_L1_error)
   __pyx_t_12 = (__pyx_t_6 == 0);
   if (__pyx_t_12) {
   } else {
@@ -31773,14 +31831,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
     goto __pyx_L12_bool_binop_done;
   }
   __pyx_L13_next_and:;
-  __pyx_t_3 = PyObject_RichCompare(__pyx_v_prod, __pyx_v_maxprod, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1135, __pyx_L1_error)
-  __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1135, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_prod, __pyx_v_maxprod, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1139, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1139, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_10 = __pyx_t_12;
   __pyx_L12_bool_binop_done:;
   if (__pyx_t_10) {
 
-    /* "constraint/constraints.py":1136
+    /* "constraint/constraints.py":1140
  *             prod = round(prod, 10)
  *         if (not missing or len(missing_lt1) == 0) and prod > maxprod:
  *             return False             # <<<<<<<<<<<<<<
@@ -31792,7 +31850,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
     __pyx_r = Py_False;
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":1135
+    /* "constraint/constraints.py":1139
  *         if isinstance(prod, float):
  *             prod = round(prod, 10)
  *         if (not missing or len(missing_lt1) == 0) and prod > maxprod:             # <<<<<<<<<<<<<<
@@ -31801,17 +31859,17 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
 */
   }
 
-  /* "constraint/constraints.py":1137
+  /* "constraint/constraints.py":1141
  *         if (not missing or len(missing_lt1) == 0) and prod > maxprod:
  *             return False
  *         if forwardcheck:             # <<<<<<<<<<<<<<
  *             for variable in variables:
  *                 if variable not in assignments and (variable not in missing_lt1 or len(missing_lt1) == 1):
 */
-  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 1137, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 1141, __pyx_L1_error)
   if (__pyx_t_10) {
 
-    /* "constraint/constraints.py":1138
+    /* "constraint/constraints.py":1142
  *             return False
  *         if forwardcheck:
  *             for variable in variables:             # <<<<<<<<<<<<<<
@@ -31823,9 +31881,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
       __pyx_t_6 = 0;
       __pyx_t_7 = NULL;
     } else {
-      __pyx_t_6 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1138, __pyx_L1_error)
+      __pyx_t_6 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1142, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1138, __pyx_L1_error)
+      __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1142, __pyx_L1_error)
     }
     for (;;) {
       if (likely(!__pyx_t_7)) {
@@ -31833,7 +31891,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_3);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1138, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1142, __pyx_L1_error)
             #endif
             if (__pyx_t_6 >= __pyx_temp) break;
           }
@@ -31843,7 +31901,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_3);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1138, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1142, __pyx_L1_error)
             #endif
             if (__pyx_t_6 >= __pyx_temp) break;
           }
@@ -31854,13 +31912,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
           #endif
           ++__pyx_t_6;
         }
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1138, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1142, __pyx_L1_error)
       } else {
         __pyx_t_1 = __pyx_t_7(__pyx_t_3);
         if (unlikely(!__pyx_t_1)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1138, __pyx_L1_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1142, __pyx_L1_error)
             PyErr_Clear();
           }
           break;
@@ -31870,60 +31928,60 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
       __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "constraint/constraints.py":1139
+      /* "constraint/constraints.py":1143
  *         if forwardcheck:
  *             for variable in variables:
  *                 if variable not in assignments and (variable not in missing_lt1 or len(missing_lt1) == 1):             # <<<<<<<<<<<<<<
  *                     domain = domains[variable]
  *                     for value in domain[:]:
 */
-      __pyx_t_12 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1139, __pyx_L1_error)
+      __pyx_t_12 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1143, __pyx_L1_error)
       if (__pyx_t_12) {
       } else {
         __pyx_t_10 = __pyx_t_12;
         goto __pyx_L19_bool_binop_done;
       }
-      __pyx_t_12 = (__Pyx_PySequence_ContainsTF(__pyx_v_variable, __pyx_v_missing_lt1, Py_NE)); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1139, __pyx_L1_error)
+      __pyx_t_12 = (__Pyx_PySequence_ContainsTF(__pyx_v_variable, __pyx_v_missing_lt1, Py_NE)); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1143, __pyx_L1_error)
       if (!__pyx_t_12) {
       } else {
         __pyx_t_10 = __pyx_t_12;
         goto __pyx_L19_bool_binop_done;
       }
-      __pyx_t_13 = __Pyx_PyList_GET_SIZE(__pyx_v_missing_lt1); if (unlikely(__pyx_t_13 == ((Py_ssize_t)-1))) __PYX_ERR(0, 1139, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyList_GET_SIZE(__pyx_v_missing_lt1); if (unlikely(__pyx_t_13 == ((Py_ssize_t)-1))) __PYX_ERR(0, 1143, __pyx_L1_error)
       __pyx_t_12 = (__pyx_t_13 == 1);
       __pyx_t_10 = __pyx_t_12;
       __pyx_L19_bool_binop_done:;
       if (__pyx_t_10) {
 
-        /* "constraint/constraints.py":1140
+        /* "constraint/constraints.py":1144
  *             for variable in variables:
  *                 if variable not in assignments and (variable not in missing_lt1 or len(missing_lt1) == 1):
  *                     domain = domains[variable]             # <<<<<<<<<<<<<<
  *                     for value in domain[:]:
  *                         if prod * value > maxprod:
 */
-        __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1140, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1144, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_1);
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1141
+        /* "constraint/constraints.py":1145
  *                 if variable not in assignments and (variable not in missing_lt1 or len(missing_lt1) == 1):
  *                     domain = domains[variable]
  *                     for value in domain[:]:             # <<<<<<<<<<<<<<
  *                         if prod * value > maxprod:
  *                             domain.hideValue(value)
 */
-        __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1141, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1145, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
           __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2);
           __pyx_t_13 = 0;
           __pyx_t_14 = NULL;
         } else {
-          __pyx_t_13 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1141, __pyx_L1_error)
+          __pyx_t_13 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1145, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_14 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1141, __pyx_L1_error)
+          __pyx_t_14 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1145, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         for (;;) {
@@ -31932,7 +31990,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
               {
                 Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_2);
                 #if !CYTHON_ASSUME_SAFE_SIZE
-                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1141, __pyx_L1_error)
+                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1145, __pyx_L1_error)
                 #endif
                 if (__pyx_t_13 >= __pyx_temp) break;
               }
@@ -31942,7 +32000,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
               {
                 Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_2);
                 #if !CYTHON_ASSUME_SAFE_SIZE
-                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1141, __pyx_L1_error)
+                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1145, __pyx_L1_error)
                 #endif
                 if (__pyx_t_13 >= __pyx_temp) break;
               }
@@ -31953,13 +32011,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
               #endif
               ++__pyx_t_13;
             }
-            if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1141, __pyx_L1_error)
+            if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1145, __pyx_L1_error)
           } else {
             __pyx_t_1 = __pyx_t_14(__pyx_t_2);
             if (unlikely(!__pyx_t_1)) {
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
-                if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1141, __pyx_L1_error)
+                if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1145, __pyx_L1_error)
                 PyErr_Clear();
               }
               break;
@@ -31969,22 +32027,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
           __Pyx_XDECREF_SET(__pyx_v_value, __pyx_t_1);
           __pyx_t_1 = 0;
 
-          /* "constraint/constraints.py":1142
+          /* "constraint/constraints.py":1146
  *                     domain = domains[variable]
  *                     for value in domain[:]:
  *                         if prod * value > maxprod:             # <<<<<<<<<<<<<<
  *                             domain.hideValue(value)
  *                     if not domain:
 */
-          __pyx_t_1 = PyNumber_Multiply(__pyx_v_prod, __pyx_v_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1142, __pyx_L1_error)
+          __pyx_t_1 = PyNumber_Multiply(__pyx_v_prod, __pyx_v_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1146, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_v_maxprod, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1142, __pyx_L1_error)
+          __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_v_maxprod, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1146, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 1142, __pyx_L1_error)
+          __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 1146, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           if (__pyx_t_10) {
 
-            /* "constraint/constraints.py":1143
+            /* "constraint/constraints.py":1147
  *                     for value in domain[:]:
  *                         if prod * value > maxprod:
  *                             domain.hideValue(value)             # <<<<<<<<<<<<<<
@@ -31998,12 +32056,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
               PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_value};
               __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_hideValue, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-              if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1143, __pyx_L1_error)
+              if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1147, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_4);
             }
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-            /* "constraint/constraints.py":1142
+            /* "constraint/constraints.py":1146
  *                     domain = domains[variable]
  *                     for value in domain[:]:
  *                         if prod * value > maxprod:             # <<<<<<<<<<<<<<
@@ -32012,7 +32070,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
 */
           }
 
-          /* "constraint/constraints.py":1141
+          /* "constraint/constraints.py":1145
  *                 if variable not in assignments and (variable not in missing_lt1 or len(missing_lt1) == 1):
  *                     domain = domains[variable]
  *                     for value in domain[:]:             # <<<<<<<<<<<<<<
@@ -32022,18 +32080,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
         }
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-        /* "constraint/constraints.py":1144
+        /* "constraint/constraints.py":1148
  *                         if prod * value > maxprod:
  *                             domain.hideValue(value)
  *                     if not domain:             # <<<<<<<<<<<<<<
  *                         return False
  *         return True
 */
-        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 1144, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_10 < 0))) __PYX_ERR(0, 1148, __pyx_L1_error)
         __pyx_t_12 = (!__pyx_t_10);
         if (__pyx_t_12) {
 
-          /* "constraint/constraints.py":1145
+          /* "constraint/constraints.py":1149
  *                             domain.hideValue(value)
  *                     if not domain:
  *                         return False             # <<<<<<<<<<<<<<
@@ -32046,7 +32104,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           goto __pyx_L0;
 
-          /* "constraint/constraints.py":1144
+          /* "constraint/constraints.py":1148
  *                         if prod * value > maxprod:
  *                             domain.hideValue(value)
  *                     if not domain:             # <<<<<<<<<<<<<<
@@ -32055,7 +32113,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
 */
         }
 
-        /* "constraint/constraints.py":1139
+        /* "constraint/constraints.py":1143
  *         if forwardcheck:
  *             for variable in variables:
  *                 if variable not in assignments and (variable not in missing_lt1 or len(missing_lt1) == 1):             # <<<<<<<<<<<<<<
@@ -32064,7 +32122,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
 */
       }
 
-      /* "constraint/constraints.py":1138
+      /* "constraint/constraints.py":1142
  *             return False
  *         if forwardcheck:
  *             for variable in variables:             # <<<<<<<<<<<<<<
@@ -32074,7 +32132,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "constraint/constraints.py":1137
+    /* "constraint/constraints.py":1141
  *         if (not missing or len(missing_lt1) == 0) and prod > maxprod:
  *             return False
  *         if forwardcheck:             # <<<<<<<<<<<<<<
@@ -32083,7 +32141,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
 */
   }
 
-  /* "constraint/constraints.py":1146
+  /* "constraint/constraints.py":1150
  *                     if not domain:
  *                         return False
  *         return True             # <<<<<<<<<<<<<<
@@ -32095,7 +32153,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
   __pyx_r = Py_True;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":1121
+  /* "constraint/constraints.py":1125
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -32125,7 +32183,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_17MaxProdConstraint_4__call
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1160
+/* "constraint/constraints.py":1164
  *     """ # noqa: E501
  * 
  *     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107             # <<<<<<<<<<<<<<
@@ -32174,38 +32232,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_target_var,&__pyx_mstate_global->__pyx_n_u_product_vars,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1160, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1164, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1160, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1164, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1160, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1164, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1160, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1164, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1160, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1164, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, i); __PYX_ERR(0, 1160, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, i); __PYX_ERR(0, 1164, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1160, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1164, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1160, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1164, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1160, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1164, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_target_var = ((PyObject*)values[1]);
@@ -32213,7 +32271,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 1160, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 1164, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -32224,7 +32282,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_target_var), (&PyUnicode_Type), 0, "target_var", 2))) __PYX_ERR(0, 1160, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_target_var), (&PyUnicode_Type), 0, "target_var", 2))) __PYX_ERR(0, 1164, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint___init__(__pyx_self, __pyx_v_self, __pyx_v_target_var, __pyx_v_product_vars);
 
   /* function exit code */
@@ -32252,25 +32310,25 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "constraint/constraints.py":1161
+  /* "constraint/constraints.py":1165
  * 
  *     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107
  *         self.target_var = target_var             # <<<<<<<<<<<<<<
  *         self.product_vars = product_vars
  * 
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var, __pyx_v_target_var) < 0) __PYX_ERR(0, 1161, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var, __pyx_v_target_var) < 0) __PYX_ERR(0, 1165, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1162
+  /* "constraint/constraints.py":1166
  *     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107
  *         self.target_var = target_var
  *         self.product_vars = product_vars             # <<<<<<<<<<<<<<
  * 
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars, __pyx_v_product_vars) < 0) __PYX_ERR(0, 1162, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars, __pyx_v_product_vars) < 0) __PYX_ERR(0, 1166, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1160
+  /* "constraint/constraints.py":1164
  *     """ # noqa: E501
  * 
  *     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107             # <<<<<<<<<<<<<<
@@ -32290,7 +32348,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1164
+/* "constraint/constraints.py":1168
  *         self.product_vars = product_vars
  * 
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):             # <<<<<<<<<<<<<<
@@ -32339,41 +32397,41 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_domain_dict,&__pyx_mstate_global->__pyx_n_u_exclude_var,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1164, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1168, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1164, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1168, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1164, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1168, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1164, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1168, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_get_product_bounds", 0) < 0) __PYX_ERR(0, 1164, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_get_product_bounds", 0) < 0) __PYX_ERR(0, 1168, __pyx_L3_error)
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)Py_None));
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_get_product_bounds", 0, 2, 3, i); __PYX_ERR(0, 1164, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_get_product_bounds", 0, 2, 3, i); __PYX_ERR(0, 1168, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1164, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1168, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1164, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1168, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1164, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1168, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -32385,7 +32443,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_get_product_bounds", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 1164, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_get_product_bounds", 0, 2, 3, __pyx_nargs); __PYX_ERR(0, 1168, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -32423,11 +32481,11 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   Py_ssize_t __pyx_t_3;
   PyObject *(*__pyx_t_4)(PyObject *);
   int __pyx_t_5;
-  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_6;
   PyObject *__pyx_t_7 = NULL;
-  size_t __pyx_t_8;
-  PyObject *__pyx_t_9 = NULL;
-  int __pyx_t_10;
+  PyObject *__pyx_t_8 = NULL;
+  size_t __pyx_t_9;
+  PyObject *__pyx_t_10 = NULL;
   int __pyx_t_11;
   PyObject *__pyx_t_12 = NULL;
   PyObject *__pyx_t_13 = NULL;
@@ -32438,35 +32496,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_product_bounds", 0);
 
-  /* "constraint/constraints.py":1165
+  /* "constraint/constraints.py":1169
  * 
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):
  *         bounds = []             # <<<<<<<<<<<<<<
  *         for var in self.product_vars:
  *             if var == exclude_var:
 */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1165, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_bounds = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1166
+  /* "constraint/constraints.py":1170
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):
  *         bounds = []
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
  *             if var == exclude_var:
  *                 continue
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1166, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2);
     __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1166, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1170, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1166, __pyx_L1_error)
+    __pyx_t_4 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1170, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -32475,7 +32533,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1166, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1170, __pyx_L1_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
@@ -32485,7 +32543,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1166, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1170, __pyx_L1_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
@@ -32496,13 +32554,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         #endif
         ++__pyx_t_3;
       }
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1166, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1170, __pyx_L1_error)
     } else {
       __pyx_t_1 = __pyx_t_4(__pyx_t_2);
       if (unlikely(!__pyx_t_1)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1166, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1170, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -32512,28 +32570,28 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":1167
+    /* "constraint/constraints.py":1171
  *         bounds = []
  *         for var in self.product_vars:
  *             if var == exclude_var:             # <<<<<<<<<<<<<<
  *                 continue
  *             dom = domain_dict[var]
 */
-    __pyx_t_1 = PyObject_RichCompare(__pyx_v_var, __pyx_v_exclude_var, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1167, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1167, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_var, __pyx_v_exclude_var, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1171, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1171, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_5) {
 
-      /* "constraint/constraints.py":1168
+      /* "constraint/constraints.py":1172
  *         for var in self.product_vars:
  *             if var == exclude_var:
  *                 continue             # <<<<<<<<<<<<<<
  *             dom = domain_dict[var]
- *             bounds.append((min(dom), max(dom)))
+ *             if not dom:
 */
       goto __pyx_L3_continue;
 
-      /* "constraint/constraints.py":1167
+      /* "constraint/constraints.py":1171
  *         bounds = []
  *         for var in self.product_vars:
  *             if var == exclude_var:             # <<<<<<<<<<<<<<
@@ -32542,61 +32600,90 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
 */
     }
 
-    /* "constraint/constraints.py":1169
+    /* "constraint/constraints.py":1173
  *             if var == exclude_var:
  *                 continue
  *             dom = domain_dict[var]             # <<<<<<<<<<<<<<
- *             bounds.append((min(dom), max(dom)))
- * 
+ *             if not dom:
+ *                 continue
 */
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_domain_dict, __pyx_v_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1169, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_domain_dict, __pyx_v_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1173, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_dom, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":1170
+    /* "constraint/constraints.py":1174
  *                 continue
  *             dom = domain_dict[var]
+ *             if not dom:             # <<<<<<<<<<<<<<
+ *                 continue
+ *             bounds.append((min(dom), max(dom)))
+*/
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_dom); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1174, __pyx_L1_error)
+    __pyx_t_6 = (!__pyx_t_5);
+    if (__pyx_t_6) {
+
+      /* "constraint/constraints.py":1175
+ *             dom = domain_dict[var]
+ *             if not dom:
+ *                 continue             # <<<<<<<<<<<<<<
+ *             bounds.append((min(dom), max(dom)))
+ * 
+*/
+      goto __pyx_L3_continue;
+
+      /* "constraint/constraints.py":1174
+ *                 continue
+ *             dom = domain_dict[var]
+ *             if not dom:             # <<<<<<<<<<<<<<
+ *                 continue
+ *             bounds.append((min(dom), max(dom)))
+*/
+    }
+
+    /* "constraint/constraints.py":1176
+ *             if not dom:
+ *                 continue
  *             bounds.append((min(dom), max(dom)))             # <<<<<<<<<<<<<<
  * 
  *         if not bounds:
 */
-    __pyx_t_6 = NULL;
+    __pyx_t_7 = NULL;
     __Pyx_INCREF(__pyx_builtin_min);
-    __pyx_t_7 = __pyx_builtin_min; 
-    __pyx_t_8 = 1;
+    __pyx_t_8 = __pyx_builtin_min; 
+    __pyx_t_9 = 1;
     {
-      PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_dom};
-      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1170, __pyx_L1_error)
+      PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_v_dom};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1176, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
-    __pyx_t_6 = NULL;
+    __pyx_t_7 = NULL;
     __Pyx_INCREF(__pyx_builtin_max);
-    __pyx_t_9 = __pyx_builtin_max; 
-    __pyx_t_8 = 1;
+    __pyx_t_10 = __pyx_builtin_max; 
+    __pyx_t_9 = 1;
     {
-      PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_dom};
-      __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1170, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
+      PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_v_dom};
+      __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1176, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_8);
     }
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1170, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
+    __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1176, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
     __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 1170, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 1170, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 1176, __pyx_L1_error);
+    __Pyx_GIVEREF(__pyx_t_8);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 1176, __pyx_L1_error);
     __pyx_t_1 = 0;
-    __pyx_t_7 = 0;
-    __pyx_t_10 = __Pyx_PyList_Append(__pyx_v_bounds, __pyx_t_9); if (unlikely(__pyx_t_10 == ((int)-1))) __PYX_ERR(0, 1170, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __pyx_t_8 = 0;
+    __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_bounds, __pyx_t_10); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 1176, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-    /* "constraint/constraints.py":1166
+    /* "constraint/constraints.py":1170
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):
  *         bounds = []
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
@@ -32607,19 +32694,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1172
+  /* "constraint/constraints.py":1178
  *             bounds.append((min(dom), max(dom)))
  * 
  *         if not bounds:             # <<<<<<<<<<<<<<
  *             return 1, 1
  * 
 */
-  __pyx_t_5 = (__Pyx_PyList_GET_SIZE(__pyx_v_bounds) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_5 < 0))) __PYX_ERR(0, 1172, __pyx_L1_error)
-  __pyx_t_11 = (!__pyx_t_5);
-  if (__pyx_t_11) {
+  __pyx_t_6 = (__Pyx_PyList_GET_SIZE(__pyx_v_bounds) != 0);
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_6 < 0))) __PYX_ERR(0, 1178, __pyx_L1_error)
+  __pyx_t_5 = (!__pyx_t_6);
+  if (__pyx_t_5) {
 
-    /* "constraint/constraints.py":1173
+    /* "constraint/constraints.py":1179
  * 
  *         if not bounds:
  *             return 1, 1             # <<<<<<<<<<<<<<
@@ -32631,7 +32718,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __pyx_r = __pyx_mstate_global->__pyx_tuple[0];
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":1172
+    /* "constraint/constraints.py":1178
  *             bounds.append((min(dom), max(dom)))
  * 
  *         if not bounds:             # <<<<<<<<<<<<<<
@@ -32640,7 +32727,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
 */
   }
 
-  /* "constraint/constraints.py":1176
+  /* "constraint/constraints.py":1182
  * 
  *         # Try all corner combinations
  *         candidates = [p for p in product(*[(lo, hi) for lo, hi in bounds])]             # <<<<<<<<<<<<<<
@@ -32648,34 +32735,34 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *         return min(products), max(products)
 */
   { /* enter inner scope */
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1176, __pyx_L10_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1182, __pyx_L11_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1176, __pyx_L10_error)
-    __Pyx_GOTREF(__pyx_t_9);
+    __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1182, __pyx_L11_error)
+    __Pyx_GOTREF(__pyx_t_10);
     { /* enter inner scope */
-      __pyx_t_7 = PyList_New(0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1176, __pyx_L15_error)
-      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1182, __pyx_L16_error)
+      __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_1 = __pyx_v_bounds; __Pyx_INCREF(__pyx_t_1);
       __pyx_t_3 = 0;
       for (;;) {
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1176, __pyx_L15_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1182, __pyx_L16_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
-        __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
+        __pyx_t_7 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
         ++__pyx_t_3;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1176, __pyx_L15_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        if ((likely(PyTuple_CheckExact(__pyx_t_6))) || (PyList_CheckExact(__pyx_t_6))) {
-          PyObject* sequence = __pyx_t_6;
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1182, __pyx_L16_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        if ((likely(PyTuple_CheckExact(__pyx_t_7))) || (PyList_CheckExact(__pyx_t_7))) {
+          PyObject* sequence = __pyx_t_7;
           Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
           if (unlikely(size != 2)) {
             if (size > 2) __Pyx_RaiseTooManyValuesError(2);
             else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-            __PYX_ERR(0, 1176, __pyx_L15_error)
+            __PYX_ERR(0, 1182, __pyx_L16_error)
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
           if (likely(PyTuple_CheckExact(sequence))) {
@@ -32685,138 +32772,138 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
             __Pyx_INCREF(__pyx_t_13);
           } else {
             __pyx_t_12 = __Pyx_PyList_GetItemRef(sequence, 0);
-            if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1176, __pyx_L15_error)
+            if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1182, __pyx_L16_error)
             __Pyx_XGOTREF(__pyx_t_12);
             __pyx_t_13 = __Pyx_PyList_GetItemRef(sequence, 1);
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1176, __pyx_L15_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1182, __pyx_L16_error)
             __Pyx_XGOTREF(__pyx_t_13);
           }
           #else
-          __pyx_t_12 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1176, __pyx_L15_error)
+          __pyx_t_12 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1182, __pyx_L16_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1176, __pyx_L15_error)
+          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1182, __pyx_L16_error)
           __Pyx_GOTREF(__pyx_t_13);
           #endif
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         } else {
           Py_ssize_t index = -1;
-          __pyx_t_14 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1176, __pyx_L15_error)
+          __pyx_t_14 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1182, __pyx_L16_error)
           __Pyx_GOTREF(__pyx_t_14);
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_14);
-          index = 0; __pyx_t_12 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_12)) goto __pyx_L18_unpacking_failed;
+          index = 0; __pyx_t_12 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_12)) goto __pyx_L19_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_12);
-          index = 1; __pyx_t_13 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_13)) goto __pyx_L18_unpacking_failed;
+          index = 1; __pyx_t_13 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_13)) goto __pyx_L19_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_13);
-          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 1176, __pyx_L15_error)
+          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 1182, __pyx_L16_error)
           __pyx_t_15 = NULL;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          goto __pyx_L19_unpacking_done;
-          __pyx_L18_unpacking_failed:;
+          goto __pyx_L20_unpacking_done;
+          __pyx_L19_unpacking_failed:;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
           if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-          __PYX_ERR(0, 1176, __pyx_L15_error)
-          __pyx_L19_unpacking_done:;
+          __PYX_ERR(0, 1182, __pyx_L16_error)
+          __pyx_L20_unpacking_done:;
         }
         __Pyx_XDECREF_SET(__pyx_9genexpr39__pyx_v_lo, __pyx_t_12);
         __pyx_t_12 = 0;
         __Pyx_XDECREF_SET(__pyx_9genexpr39__pyx_v_hi, __pyx_t_13);
         __pyx_t_13 = 0;
-        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1176, __pyx_L15_error)
-        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1182, __pyx_L16_error)
+        __Pyx_GOTREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_9genexpr39__pyx_v_lo);
         __Pyx_GIVEREF(__pyx_9genexpr39__pyx_v_lo);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_9genexpr39__pyx_v_lo) != (0)) __PYX_ERR(0, 1176, __pyx_L15_error);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_9genexpr39__pyx_v_lo) != (0)) __PYX_ERR(0, 1182, __pyx_L16_error);
         __Pyx_INCREF(__pyx_9genexpr39__pyx_v_hi);
         __Pyx_GIVEREF(__pyx_9genexpr39__pyx_v_hi);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_9genexpr39__pyx_v_hi) != (0)) __PYX_ERR(0, 1176, __pyx_L15_error);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_7, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1176, __pyx_L15_error)
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_9genexpr39__pyx_v_hi) != (0)) __PYX_ERR(0, 1182, __pyx_L16_error);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_8, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 1182, __pyx_L16_error)
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF(__pyx_9genexpr39__pyx_v_hi); __pyx_9genexpr39__pyx_v_hi = 0;
       __Pyx_XDECREF(__pyx_9genexpr39__pyx_v_lo); __pyx_9genexpr39__pyx_v_lo = 0;
-      goto __pyx_L21_exit_scope;
-      __pyx_L15_error:;
+      goto __pyx_L22_exit_scope;
+      __pyx_L16_error:;
       __Pyx_XDECREF(__pyx_9genexpr39__pyx_v_hi); __pyx_9genexpr39__pyx_v_hi = 0;
       __Pyx_XDECREF(__pyx_9genexpr39__pyx_v_lo); __pyx_9genexpr39__pyx_v_lo = 0;
-      goto __pyx_L10_error;
-      __pyx_L21_exit_scope:;
+      goto __pyx_L11_error;
+      __pyx_L22_exit_scope:;
     } /* exit inner scope */
-    __pyx_t_1 = PySequence_Tuple(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1176, __pyx_L10_error)
+    __pyx_t_1 = PySequence_Tuple(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1182, __pyx_L11_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_1, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1176, __pyx_L10_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_1, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1182, __pyx_L11_error)
+    __Pyx_GOTREF(__pyx_t_8);
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
-      __pyx_t_1 = __pyx_t_7; __Pyx_INCREF(__pyx_t_1);
+    if (likely(PyList_CheckExact(__pyx_t_8)) || PyTuple_CheckExact(__pyx_t_8)) {
+      __pyx_t_1 = __pyx_t_8; __Pyx_INCREF(__pyx_t_1);
       __pyx_t_3 = 0;
       __pyx_t_4 = NULL;
     } else {
-      __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1176, __pyx_L10_error)
+      __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1182, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_4 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1176, __pyx_L10_error)
+      __pyx_t_4 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1182, __pyx_L11_error)
     }
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     for (;;) {
       if (likely(!__pyx_t_4)) {
         if (likely(PyList_CheckExact(__pyx_t_1))) {
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1176, __pyx_L10_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1182, __pyx_L11_error)
             #endif
             if (__pyx_t_3 >= __pyx_temp) break;
           }
-          __pyx_t_7 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
+          __pyx_t_8 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
           ++__pyx_t_3;
         } else {
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1176, __pyx_L10_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1182, __pyx_L11_error)
             #endif
             if (__pyx_t_3 >= __pyx_temp) break;
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = __Pyx_NewRef(PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3));
+          __pyx_t_8 = __Pyx_NewRef(PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3));
           #else
-          __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3);
+          __pyx_t_8 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3);
           #endif
           ++__pyx_t_3;
         }
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1176, __pyx_L10_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1182, __pyx_L11_error)
       } else {
-        __pyx_t_7 = __pyx_t_4(__pyx_t_1);
-        if (unlikely(!__pyx_t_7)) {
+        __pyx_t_8 = __pyx_t_4(__pyx_t_1);
+        if (unlikely(!__pyx_t_8)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1176, __pyx_L10_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1182, __pyx_L11_error)
             PyErr_Clear();
           }
           break;
         }
       }
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_XDECREF_SET(__pyx_9genexpr38__pyx_v_p, __pyx_t_7);
-      __pyx_t_7 = 0;
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_9genexpr38__pyx_v_p))) __PYX_ERR(0, 1176, __pyx_L10_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      __Pyx_XDECREF_SET(__pyx_9genexpr38__pyx_v_p, __pyx_t_8);
+      __pyx_t_8 = 0;
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_9genexpr38__pyx_v_p))) __PYX_ERR(0, 1182, __pyx_L11_error)
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_9genexpr38__pyx_v_p); __pyx_9genexpr38__pyx_v_p = 0;
-    goto __pyx_L23_exit_scope;
-    __pyx_L10_error:;
+    goto __pyx_L24_exit_scope;
+    __pyx_L11_error:;
     __Pyx_XDECREF(__pyx_9genexpr38__pyx_v_p); __pyx_9genexpr38__pyx_v_p = 0;
     goto __pyx_L1_error;
-    __pyx_L23_exit_scope:;
+    __pyx_L24_exit_scope:;
   } /* exit inner scope */
   __pyx_v_candidates = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1177
+  /* "constraint/constraints.py":1183
  *         # Try all corner combinations
  *         candidates = [p for p in product(*[(lo, hi) for lo, hi in bounds])]
  *         products = [self._safe_product(p) for p in candidates]             # <<<<<<<<<<<<<<
@@ -32824,7 +32911,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  * 
 */
   { /* enter inner scope */
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1177, __pyx_L26_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1183, __pyx_L27_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_v_candidates; __Pyx_INCREF(__pyx_t_1);
     __pyx_t_3 = 0;
@@ -32832,41 +32919,41 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1177, __pyx_L26_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1183, __pyx_L27_error)
         #endif
         if (__pyx_t_3 >= __pyx_temp) break;
       }
-      __pyx_t_7 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
+      __pyx_t_8 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
       ++__pyx_t_3;
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1177, __pyx_L26_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_XDECREF_SET(__pyx_9genexpr40__pyx_v_p, __pyx_t_7);
-      __pyx_t_7 = 0;
-      __pyx_t_9 = __pyx_v_self;
-      __Pyx_INCREF(__pyx_t_9);
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1183, __pyx_L27_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      __Pyx_XDECREF_SET(__pyx_9genexpr40__pyx_v_p, __pyx_t_8);
       __pyx_t_8 = 0;
+      __pyx_t_10 = __pyx_v_self;
+      __Pyx_INCREF(__pyx_t_10);
+      __pyx_t_9 = 0;
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_9genexpr40__pyx_v_p};
-        __pyx_t_7 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1177, __pyx_L26_error)
-        __Pyx_GOTREF(__pyx_t_7);
+        PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_9genexpr40__pyx_v_p};
+        __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+        __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1183, __pyx_L27_error)
+        __Pyx_GOTREF(__pyx_t_8);
       }
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 1177, __pyx_L26_error)
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_8))) __PYX_ERR(0, 1183, __pyx_L27_error)
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_9genexpr40__pyx_v_p); __pyx_9genexpr40__pyx_v_p = 0;
-    goto __pyx_L30_exit_scope;
-    __pyx_L26_error:;
+    goto __pyx_L31_exit_scope;
+    __pyx_L27_error:;
     __Pyx_XDECREF(__pyx_9genexpr40__pyx_v_p); __pyx_9genexpr40__pyx_v_p = 0;
     goto __pyx_L1_error;
-    __pyx_L30_exit_scope:;
+    __pyx_L31_exit_scope:;
   } /* exit inner scope */
   __pyx_v_products = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1178
+  /* "constraint/constraints.py":1184
  *         candidates = [p for p in product(*[(lo, hi) for lo, hi in bounds])]
  *         products = [self._safe_product(p) for p in candidates]
  *         return min(products), max(products)             # <<<<<<<<<<<<<<
@@ -32876,41 +32963,41 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = NULL;
   __Pyx_INCREF(__pyx_builtin_min);
-  __pyx_t_7 = __pyx_builtin_min; 
-  __pyx_t_8 = 1;
+  __pyx_t_8 = __pyx_builtin_min; 
+  __pyx_t_9 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_products};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1178, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1184, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
   __pyx_t_1 = NULL;
   __Pyx_INCREF(__pyx_builtin_max);
-  __pyx_t_9 = __pyx_builtin_max; 
-  __pyx_t_8 = 1;
+  __pyx_t_10 = __pyx_builtin_max; 
+  __pyx_t_9 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_products};
-    __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1178, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1184, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
   }
-  __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1178, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1184, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 1178, __pyx_L1_error);
-  __Pyx_GIVEREF(__pyx_t_7);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 1178, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 1184, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_8);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 1184, __pyx_L1_error);
   __pyx_t_2 = 0;
-  __pyx_t_7 = 0;
-  __pyx_r = __pyx_t_9;
-  __pyx_t_9 = 0;
+  __pyx_t_8 = 0;
+  __pyx_r = __pyx_t_10;
+  __pyx_t_10 = 0;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":1164
+  /* "constraint/constraints.py":1168
  *         self.product_vars = product_vars
  * 
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):             # <<<<<<<<<<<<<<
@@ -32922,9 +33009,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10);
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
@@ -32945,7 +33032,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1180
+/* "constraint/constraints.py":1186
  *         return min(products), max(products)
  * 
  *     def _safe_product(self, values):             # <<<<<<<<<<<<<<
@@ -32993,39 +33080,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_values,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1180, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1186, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1180, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1186, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1180, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1186, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_safe_product", 0) < 0) __PYX_ERR(0, 1180, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_safe_product", 0) < 0) __PYX_ERR(0, 1186, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, i); __PYX_ERR(0, 1180, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, i); __PYX_ERR(0, 1186, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1180, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1186, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1180, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1186, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_values = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 1180, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_safe_product", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 1186, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -33060,7 +33147,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_safe_product", 0);
 
-  /* "constraint/constraints.py":1181
+  /* "constraint/constraints.py":1187
  * 
  *     def _safe_product(self, values):
  *         prod = 1             # <<<<<<<<<<<<<<
@@ -33070,7 +33157,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_1);
   __pyx_v_prod = __pyx_mstate_global->__pyx_int_1;
 
-  /* "constraint/constraints.py":1182
+  /* "constraint/constraints.py":1188
  *     def _safe_product(self, values):
  *         prod = 1
  *         for v in values:             # <<<<<<<<<<<<<<
@@ -33082,9 +33169,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1182, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1188, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1182, __pyx_L1_error)
+    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1188, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
@@ -33092,7 +33179,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1182, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1188, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -33102,7 +33189,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1182, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1188, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -33113,13 +33200,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         #endif
         ++__pyx_t_2;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1182, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1188, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_3(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1182, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1188, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -33129,19 +33216,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __Pyx_XDECREF_SET(__pyx_v_v, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1183
+    /* "constraint/constraints.py":1189
  *         prod = 1
  *         for v in values:
  *             prod *= v             # <<<<<<<<<<<<<<
  *         return prod
  * 
 */
-    __pyx_t_4 = PyNumber_InPlaceMultiply(__pyx_v_prod, __pyx_v_v); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1183, __pyx_L1_error)
+    __pyx_t_4 = PyNumber_InPlaceMultiply(__pyx_v_prod, __pyx_v_v); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1189, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF_SET(__pyx_v_prod, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1182
+    /* "constraint/constraints.py":1188
  *     def _safe_product(self, values):
  *         prod = 1
  *         for v in values:             # <<<<<<<<<<<<<<
@@ -33151,7 +33238,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1184
+  /* "constraint/constraints.py":1190
  *         for v in values:
  *             prod *= v
  *         return prod             # <<<<<<<<<<<<<<
@@ -33163,7 +33250,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   __pyx_r = __pyx_v_prod;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":1180
+  /* "constraint/constraints.py":1186
  *         return min(products), max(products)
  * 
  *     def _safe_product(self, values):             # <<<<<<<<<<<<<<
@@ -33185,7 +33272,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1186
+/* "constraint/constraints.py":1192
  *         return prod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -33236,50 +33323,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_constraints,&__pyx_mstate_global->__pyx_n_u_vconstraints,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1186, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1192, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1186, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1192, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1186, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1192, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1186, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1192, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1186, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1192, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1186, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1192, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 1186, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 1192, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 5; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 1186, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 1192, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1186, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1192, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1186, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1192, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1186, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1192, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1186, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1192, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1186, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1192, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_variables = values[1];
@@ -33289,7 +33376,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 1186, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 1192, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -33300,9 +33387,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1186, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 1186, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 1186, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1192, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 1192, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 1192, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint_6preProcess(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_constraints, __pyx_v_vconstraints);
 
   /* function exit code */
@@ -33350,7 +33437,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("preProcess", 0);
 
-  /* "constraint/constraints.py":1187
+  /* "constraint/constraints.py":1193
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)             # <<<<<<<<<<<<<<
@@ -33358,9 +33445,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *         t_max = max(target_dom)
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1187, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1187, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_5 = 1;
@@ -33380,27 +33467,27 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (6-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1187, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1193, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1188
+  /* "constraint/constraints.py":1194
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         target_dom = domains[self.target_var]             # <<<<<<<<<<<<<<
  *         t_max = max(target_dom)
  * 
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1188, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1194, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1188, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1194, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_target_dom = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":1189
+  /* "constraint/constraints.py":1195
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         target_dom = domains[self.target_var]
  *         t_max = max(target_dom)             # <<<<<<<<<<<<<<
@@ -33416,29 +33503,29 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1189, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
   }
   __pyx_v_t_max = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":1191
+  /* "constraint/constraints.py":1197
  *         t_max = max(target_dom)
  * 
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
  *             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
  *             dom = domains[var]
 */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1191, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
     __pyx_t_2 = __pyx_t_4; __Pyx_INCREF(__pyx_t_2);
     __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1191, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1197, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1191, __pyx_L1_error)
+    __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1197, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   for (;;) {
@@ -33447,7 +33534,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1191, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1197, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -33457,7 +33544,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_2);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1191, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1197, __pyx_L1_error)
           #endif
           if (__pyx_t_6 >= __pyx_temp) break;
         }
@@ -33468,13 +33555,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         #endif
         ++__pyx_t_6;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1191, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1197, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_7(__pyx_t_2);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1191, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1197, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -33484,7 +33571,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1192
+    /* "constraint/constraints.py":1198
  * 
  *         for var in self.product_vars:
  *             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)             # <<<<<<<<<<<<<<
@@ -33496,13 +33583,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __pyx_t_5 = 0;
     {
       PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_1, __pyx_v_domains};
-      __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1192, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1198, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_exclude_var, __pyx_v_var, __pyx_t_3, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 1192, __pyx_L1_error)
+      if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_exclude_var, __pyx_v_var, __pyx_t_3, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 1198, __pyx_L1_error)
       __pyx_t_4 = __Pyx_Object_VectorcallMethod_CallFromBuilder(__pyx_mstate_global->__pyx_n_u_get_product_bounds, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_3);
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1192, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1198, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
     }
     if ((likely(PyTuple_CheckExact(__pyx_t_4))) || (PyList_CheckExact(__pyx_t_4))) {
@@ -33511,7 +33598,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 1192, __pyx_L1_error)
+        __PYX_ERR(0, 1198, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -33521,22 +33608,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         __Pyx_INCREF(__pyx_t_1);
       } else {
         __pyx_t_3 = __Pyx_PyList_GetItemRef(sequence, 0);
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1192, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1198, __pyx_L1_error)
         __Pyx_XGOTREF(__pyx_t_3);
         __pyx_t_1 = __Pyx_PyList_GetItemRef(sequence, 1);
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1192, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1198, __pyx_L1_error)
         __Pyx_XGOTREF(__pyx_t_1);
       }
       #else
-      __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1192, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1198, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_1 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1192, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1198, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       #endif
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_8 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1192, __pyx_L1_error)
+      __pyx_t_8 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1198, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8);
@@ -33544,7 +33631,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       __Pyx_GOTREF(__pyx_t_3);
       index = 1; __pyx_t_1 = __pyx_t_9(__pyx_t_8); if (unlikely(!__pyx_t_1)) goto __pyx_L5_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_1);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 2) < 0) __PYX_ERR(0, 1192, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 2) < 0) __PYX_ERR(0, 1198, __pyx_L1_error)
       __pyx_t_9 = NULL;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       goto __pyx_L6_unpacking_done;
@@ -33552,7 +33639,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 1192, __pyx_L1_error)
+      __PYX_ERR(0, 1198, __pyx_L1_error)
       __pyx_L6_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_min_others, __pyx_t_3);
@@ -33560,35 +33647,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __Pyx_XDECREF_SET(__pyx_v_max_others, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":1193
+    /* "constraint/constraints.py":1199
  *         for var in self.product_vars:
  *             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
  *             dom = domains[var]             # <<<<<<<<<<<<<<
  *             for val in dom[:]:
  *                 possible_prods = [val * min_others, val * max_others]
 */
-    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1193, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1199, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_XDECREF_SET(__pyx_v_dom, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1194
+    /* "constraint/constraints.py":1200
  *             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
  *             dom = domains[var]
  *             for val in dom[:]:             # <<<<<<<<<<<<<<
  *                 possible_prods = [val * min_others, val * max_others]
  *                 if min(possible_prods) > t_max:
 */
-    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_dom, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1194, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_dom, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1200, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
       __pyx_t_1 = __pyx_t_4; __Pyx_INCREF(__pyx_t_1);
       __pyx_t_10 = 0;
       __pyx_t_11 = NULL;
     } else {
-      __pyx_t_10 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1194, __pyx_L1_error)
+      __pyx_t_10 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1200, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_11 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1194, __pyx_L1_error)
+      __pyx_t_11 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1200, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     for (;;) {
@@ -33597,7 +33684,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1194, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1200, __pyx_L1_error)
             #endif
             if (__pyx_t_10 >= __pyx_temp) break;
           }
@@ -33607,7 +33694,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1194, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1200, __pyx_L1_error)
             #endif
             if (__pyx_t_10 >= __pyx_temp) break;
           }
@@ -33618,13 +33705,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           #endif
           ++__pyx_t_10;
         }
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1194, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1200, __pyx_L1_error)
       } else {
         __pyx_t_4 = __pyx_t_11(__pyx_t_1);
         if (unlikely(!__pyx_t_4)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1194, __pyx_L1_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1200, __pyx_L1_error)
             PyErr_Clear();
           }
           break;
@@ -33634,29 +33721,29 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       __Pyx_XDECREF_SET(__pyx_v_val, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "constraint/constraints.py":1195
+      /* "constraint/constraints.py":1201
  *             dom = domains[var]
  *             for val in dom[:]:
  *                 possible_prods = [val * min_others, val * max_others]             # <<<<<<<<<<<<<<
  *                 if min(possible_prods) > t_max:
  *                     dom.remove(val)
 */
-      __pyx_t_4 = PyNumber_Multiply(__pyx_v_val, __pyx_v_min_others); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1195, __pyx_L1_error)
+      __pyx_t_4 = PyNumber_Multiply(__pyx_v_val, __pyx_v_min_others); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1201, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = PyNumber_Multiply(__pyx_v_val, __pyx_v_max_others); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1195, __pyx_L1_error)
+      __pyx_t_3 = PyNumber_Multiply(__pyx_v_val, __pyx_v_max_others); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1201, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_8 = PyList_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1195, __pyx_L1_error)
+      __pyx_t_8 = PyList_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1201, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_GIVEREF(__pyx_t_4);
-      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 0, __pyx_t_4) != (0)) __PYX_ERR(0, 1195, __pyx_L1_error);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 0, __pyx_t_4) != (0)) __PYX_ERR(0, 1201, __pyx_L1_error);
       __Pyx_GIVEREF(__pyx_t_3);
-      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 1195, __pyx_L1_error);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 1201, __pyx_L1_error);
       __pyx_t_4 = 0;
       __pyx_t_3 = 0;
       __Pyx_XDECREF_SET(__pyx_v_possible_prods, ((PyObject*)__pyx_t_8));
       __pyx_t_8 = 0;
 
-      /* "constraint/constraints.py":1196
+      /* "constraint/constraints.py":1202
  *             for val in dom[:]:
  *                 possible_prods = [val * min_others, val * max_others]
  *                 if min(possible_prods) > t_max:             # <<<<<<<<<<<<<<
@@ -33672,16 +33759,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1196, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1202, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      __pyx_t_4 = PyObject_RichCompare(__pyx_t_8, __pyx_v_t_max, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1196, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_t_8, __pyx_v_t_max, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1202, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1196, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 1202, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_12) {
 
-        /* "constraint/constraints.py":1197
+        /* "constraint/constraints.py":1203
  *                 possible_prods = [val * min_others, val * max_others]
  *                 if min(possible_prods) > t_max:
  *                     dom.remove(val)             # <<<<<<<<<<<<<<
@@ -33695,12 +33782,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_v_val};
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_remove, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1197, __pyx_L1_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1203, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "constraint/constraints.py":1196
+        /* "constraint/constraints.py":1202
  *             for val in dom[:]:
  *                 possible_prods = [val * min_others, val * max_others]
  *                 if min(possible_prods) > t_max:             # <<<<<<<<<<<<<<
@@ -33709,7 +33796,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
 */
       }
 
-      /* "constraint/constraints.py":1194
+      /* "constraint/constraints.py":1200
  *             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
  *             dom = domains[var]
  *             for val in dom[:]:             # <<<<<<<<<<<<<<
@@ -33719,7 +33806,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "constraint/constraints.py":1191
+    /* "constraint/constraints.py":1197
  *         t_max = max(target_dom)
  * 
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
@@ -33729,7 +33816,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1186
+  /* "constraint/constraints.py":1192
  *         return prod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -33762,7 +33849,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1199
+/* "constraint/constraints.py":1205
  *                     dom.remove(val)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -33813,53 +33900,53 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_assignments,&__pyx_mstate_global->__pyx_n_u_forwardcheck,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1199, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1205, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1199, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1205, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1199, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1205, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1199, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1205, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1199, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1205, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1199, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1205, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1199, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1205, __pyx_L3_error)
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1199, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1205, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1199, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1205, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1199, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1205, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1199, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1205, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1199, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1205, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1199, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1205, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -33873,7 +33960,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1199, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1205, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -33884,8 +33971,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1199, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 1199, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1205, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 1205, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint_8__call__(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_assignments, __pyx_v_forwardcheck);
 
   /* function exit code */
@@ -33906,7 +33993,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 }
 static PyObject *__pyx_gb_10constraint_11constraints_25VariableMaxProdConstraint_8__call___2generator14(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "constraint/constraints.py":1235
+/* "constraint/constraints.py":1241
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p > target_value for p in prods):             # <<<<<<<<<<<<<<
@@ -33926,7 +34013,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_20_genexpr *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 1235, __pyx_L1_error)
+    __PYX_ERR(0, 1241, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -33937,7 +34024,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   __Pyx_INCREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_genexpr_arg_0);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_25VariableMaxProdConstraint_8__call___2generator14, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[14]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint___call, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 1235, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10constraint_11constraints_25VariableMaxProdConstraint_8__call___2generator14, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[14]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_genexpr, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint___call, __pyx_mstate_global->__pyx_n_u_constraint_constraints); if (unlikely(!gen)) __PYX_ERR(0, 1241, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -33974,29 +34061,29 @@ static PyObject *__pyx_gb_10constraint_11constraints_25VariableMaxProdConstraint
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 1235, __pyx_L1_error)
-  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 1235, __pyx_L1_error) }
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 1241, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 1241, __pyx_L1_error) }
   __pyx_t_1 = __pyx_cur_scope->__pyx_genexpr_arg_0; __Pyx_INCREF(__pyx_t_1);
   __pyx_t_2 = 0;
   for (;;) {
     {
       Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
       #if !CYTHON_ASSUME_SAFE_SIZE
-      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1235, __pyx_L1_error)
+      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1241, __pyx_L1_error)
       #endif
       if (__pyx_t_2 >= __pyx_temp) break;
     }
     __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_2);
     ++__pyx_t_2;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1235, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1241, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_p);
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_p, __pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_3);
     __pyx_t_3 = 0;
-    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value)) { __Pyx_RaiseClosureNameError("target_value"); __PYX_ERR(0, 1235, __pyx_L1_error) }
-    __pyx_t_3 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_p, __pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1235, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 1235, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value)) { __Pyx_RaiseClosureNameError("target_value"); __PYX_ERR(0, 1241, __pyx_L1_error) }
+    __pyx_t_3 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_p, __pyx_cur_scope->__pyx_outer_scope->__pyx_v_target_value, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1241, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 1241, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_5 = (!__pyx_t_4);
     if (__pyx_t_5) {
@@ -34036,7 +34123,7 @@ static PyObject *__pyx_gb_10constraint_11constraints_25VariableMaxProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1199
+/* "constraint/constraints.py":1205
  *                     dom.remove(val)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -34098,25 +34185,25 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_10constraint_11constraints___pyx_scope_struct_19___call__ *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 1199, __pyx_L1_error)
+    __PYX_ERR(0, 1205, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
 
-  /* "constraint/constraints.py":1200
+  /* "constraint/constraints.py":1206
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
  *         if self.target_var not in assignments:             # <<<<<<<<<<<<<<
  *             return True  # Can't evaluate yet
  * 
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1200, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1206, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_t_1, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 1200, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_t_1, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 1206, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "constraint/constraints.py":1201
+    /* "constraint/constraints.py":1207
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
  *         if self.target_var not in assignments:
  *             return True  # Can't evaluate yet             # <<<<<<<<<<<<<<
@@ -34128,7 +34215,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __pyx_r = Py_True;
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":1200
+    /* "constraint/constraints.py":1206
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
  *         if self.target_var not in assignments:             # <<<<<<<<<<<<<<
@@ -34137,23 +34224,23 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
 */
   }
 
-  /* "constraint/constraints.py":1203
+  /* "constraint/constraints.py":1209
  *             return True  # Can't evaluate yet
  * 
  *         target_value = assignments[self.target_var]             # <<<<<<<<<<<<<<
  *         assigned_prod = 1
  *         unassigned = []
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1203, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_target_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1209, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1203, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1209, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_GIVEREF(__pyx_t_3);
   __pyx_cur_scope->__pyx_v_target_value = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1204
+  /* "constraint/constraints.py":1210
  * 
  *         target_value = assignments[self.target_var]
  *         assigned_prod = 1             # <<<<<<<<<<<<<<
@@ -34163,35 +34250,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_1);
   __pyx_v_assigned_prod = __pyx_mstate_global->__pyx_int_1;
 
-  /* "constraint/constraints.py":1205
+  /* "constraint/constraints.py":1211
  *         target_value = assignments[self.target_var]
  *         assigned_prod = 1
  *         unassigned = []             # <<<<<<<<<<<<<<
  * 
  *         for var in self.product_vars:
 */
-  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1205, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1211, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_unassigned = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1207
+  /* "constraint/constraints.py":1213
  *         unassigned = []
  * 
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
  *             if var in assignments:
  *                 assigned_prod *= assignments[var]
 */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1207, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_product_vars); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
     __pyx_t_1 = __pyx_t_3; __Pyx_INCREF(__pyx_t_1);
     __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1207, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1213, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1207, __pyx_L1_error)
+    __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1213, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   for (;;) {
@@ -34200,7 +34287,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1207, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1213, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
@@ -34210,7 +34297,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1207, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1213, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
@@ -34221,13 +34308,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         #endif
         ++__pyx_t_4;
       }
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1207, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1213, __pyx_L1_error)
     } else {
       __pyx_t_3 = __pyx_t_5(__pyx_t_1);
       if (unlikely(!__pyx_t_3)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1207, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1213, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -34237,32 +34324,32 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "constraint/constraints.py":1208
+    /* "constraint/constraints.py":1214
  * 
  *         for var in self.product_vars:
  *             if var in assignments:             # <<<<<<<<<<<<<<
  *                 assigned_prod *= assignments[var]
  *             else:
 */
-    __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_v_var, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 1208, __pyx_L1_error)
+    __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_v_var, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 1214, __pyx_L1_error)
     if (__pyx_t_2) {
 
-      /* "constraint/constraints.py":1209
+      /* "constraint/constraints.py":1215
  *         for var in self.product_vars:
  *             if var in assignments:
  *                 assigned_prod *= assignments[var]             # <<<<<<<<<<<<<<
  *             else:
  *                 unassigned.append(var)
 */
-      __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_var); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1209, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_var); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1215, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = PyNumber_InPlaceMultiply(__pyx_v_assigned_prod, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1209, __pyx_L1_error)
+      __pyx_t_6 = PyNumber_InPlaceMultiply(__pyx_v_assigned_prod, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1215, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF_SET(__pyx_v_assigned_prod, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "constraint/constraints.py":1208
+      /* "constraint/constraints.py":1214
  * 
  *         for var in self.product_vars:
  *             if var in assignments:             # <<<<<<<<<<<<<<
@@ -34272,7 +34359,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       goto __pyx_L6;
     }
 
-    /* "constraint/constraints.py":1211
+    /* "constraint/constraints.py":1217
  *                 assigned_prod *= assignments[var]
  *             else:
  *                 unassigned.append(var)             # <<<<<<<<<<<<<<
@@ -34280,11 +34367,11 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *         if not unassigned:
 */
     /*else*/ {
-      __pyx_t_7 = __Pyx_PyList_Append(__pyx_v_unassigned, __pyx_v_var); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 1211, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyList_Append(__pyx_v_unassigned, __pyx_v_var); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 1217, __pyx_L1_error)
     }
     __pyx_L6:;
 
-    /* "constraint/constraints.py":1207
+    /* "constraint/constraints.py":1213
  *         unassigned = []
  * 
  *         for var in self.product_vars:             # <<<<<<<<<<<<<<
@@ -34294,7 +34381,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1213
+  /* "constraint/constraints.py":1219
  *                 unassigned.append(var)
  * 
  *         if not unassigned:             # <<<<<<<<<<<<<<
@@ -34302,11 +34389,11 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  * 
 */
   __pyx_t_2 = (__Pyx_PyList_GET_SIZE(__pyx_v_unassigned) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_2 < 0))) __PYX_ERR(0, 1213, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_2 < 0))) __PYX_ERR(0, 1219, __pyx_L1_error)
   __pyx_t_8 = (!__pyx_t_2);
   if (__pyx_t_8) {
 
-    /* "constraint/constraints.py":1214
+    /* "constraint/constraints.py":1220
  * 
  *         if not unassigned:
  *             return assigned_prod <= target_value             # <<<<<<<<<<<<<<
@@ -34314,12 +34401,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *         # Estimate max possible value of full product
 */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyObject_RichCompare(__pyx_v_assigned_prod, __pyx_cur_scope->__pyx_v_target_value, Py_LE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1214, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_assigned_prod, __pyx_cur_scope->__pyx_v_target_value, Py_LE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1220, __pyx_L1_error)
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":1213
+    /* "constraint/constraints.py":1219
  *                 unassigned.append(var)
  * 
  *         if not unassigned:             # <<<<<<<<<<<<<<
@@ -34328,7 +34415,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
 */
   }
 
-  /* "constraint/constraints.py":1217
+  /* "constraint/constraints.py":1223
  * 
  *         # Estimate max possible value of full product
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned]             # <<<<<<<<<<<<<<
@@ -34336,7 +34423,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *         possible_prods = [assigned_prod * c for c in candidates]
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1217, __pyx_L11_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1223, __pyx_L11_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_6 = __pyx_v_unassigned; __Pyx_INCREF(__pyx_t_6);
     __pyx_t_4 = 0;
@@ -34344,20 +34431,20 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_6);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1217, __pyx_L11_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1223, __pyx_L11_error)
         #endif
         if (__pyx_t_4 >= __pyx_temp) break;
       }
       __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_6, __pyx_t_4);
       ++__pyx_t_4;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1217, __pyx_L11_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1223, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_XDECREF_SET(__pyx_9genexpr41__pyx_v_v, __pyx_t_3);
       __pyx_t_3 = 0;
       __pyx_t_9 = NULL;
       __Pyx_INCREF(__pyx_builtin_min);
       __pyx_t_10 = __pyx_builtin_min; 
-      __pyx_t_11 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr41__pyx_v_v); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1217, __pyx_L11_error)
+      __pyx_t_11 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr41__pyx_v_v); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1223, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_12 = 1;
       {
@@ -34366,13 +34453,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1217, __pyx_L11_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1223, __pyx_L11_error)
         __Pyx_GOTREF(__pyx_t_3);
       }
       __pyx_t_11 = NULL;
       __Pyx_INCREF(__pyx_builtin_max);
       __pyx_t_9 = __pyx_builtin_max; 
-      __pyx_t_13 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr41__pyx_v_v); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1217, __pyx_L11_error)
+      __pyx_t_13 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr41__pyx_v_v); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1223, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_13);
       __pyx_t_12 = 1;
       {
@@ -34381,18 +34468,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1217, __pyx_L11_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1223, __pyx_L11_error)
         __Pyx_GOTREF(__pyx_t_10);
       }
-      __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1217, __pyx_L11_error)
+      __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1223, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_GIVEREF(__pyx_t_3);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 1217, __pyx_L11_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 1223, __pyx_L11_error);
       __Pyx_GIVEREF(__pyx_t_10);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 1217, __pyx_L11_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 1223, __pyx_L11_error);
       __pyx_t_3 = 0;
       __pyx_t_10 = 0;
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1217, __pyx_L11_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1223, __pyx_L11_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -34406,7 +34493,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   __pyx_v_domain_bounds = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1218
+  /* "constraint/constraints.py":1224
  *         # Estimate max possible value of full product
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned]
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]             # <<<<<<<<<<<<<<
@@ -34414,12 +34501,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *         if min(possible_prods) > target_value:
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1218, __pyx_L18_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1224, __pyx_L18_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1218, __pyx_L18_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1224, __pyx_L18_error)
     __Pyx_GOTREF(__pyx_t_6);
     { /* enter inner scope */
-      __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1218, __pyx_L23_error)
+      __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1224, __pyx_L23_error)
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_10 = __pyx_v_domain_bounds; __Pyx_INCREF(__pyx_t_10);
       __pyx_t_4 = 0;
@@ -34427,13 +34514,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1218, __pyx_L23_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1224, __pyx_L23_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
         __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_4);
         ++__pyx_t_4;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1218, __pyx_L23_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1224, __pyx_L23_error)
         __Pyx_GOTREF(__pyx_t_3);
         if ((likely(PyTuple_CheckExact(__pyx_t_3))) || (PyList_CheckExact(__pyx_t_3))) {
           PyObject* sequence = __pyx_t_3;
@@ -34441,7 +34528,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           if (unlikely(size != 2)) {
             if (size > 2) __Pyx_RaiseTooManyValuesError(2);
             else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-            __PYX_ERR(0, 1218, __pyx_L23_error)
+            __PYX_ERR(0, 1224, __pyx_L23_error)
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
           if (likely(PyTuple_CheckExact(sequence))) {
@@ -34451,22 +34538,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
             __Pyx_INCREF(__pyx_t_11);
           } else {
             __pyx_t_13 = __Pyx_PyList_GetItemRef(sequence, 0);
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1218, __pyx_L23_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1224, __pyx_L23_error)
             __Pyx_XGOTREF(__pyx_t_13);
             __pyx_t_11 = __Pyx_PyList_GetItemRef(sequence, 1);
-            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1218, __pyx_L23_error)
+            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1224, __pyx_L23_error)
             __Pyx_XGOTREF(__pyx_t_11);
           }
           #else
-          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1218, __pyx_L23_error)
+          __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1224, __pyx_L23_error)
           __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_11 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1218, __pyx_L23_error)
+          __pyx_t_11 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1224, __pyx_L23_error)
           __Pyx_GOTREF(__pyx_t_11);
           #endif
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         } else {
           Py_ssize_t index = -1;
-          __pyx_t_14 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1218, __pyx_L23_error)
+          __pyx_t_14 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1224, __pyx_L23_error)
           __Pyx_GOTREF(__pyx_t_14);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_14);
@@ -34474,7 +34561,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           __Pyx_GOTREF(__pyx_t_13);
           index = 1; __pyx_t_11 = __pyx_t_15(__pyx_t_14); if (unlikely(!__pyx_t_11)) goto __pyx_L26_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_11);
-          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 1218, __pyx_L23_error)
+          if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_14), 2) < 0) __PYX_ERR(0, 1224, __pyx_L23_error)
           __pyx_t_15 = NULL;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           goto __pyx_L27_unpacking_done;
@@ -34482,22 +34569,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __pyx_t_15 = NULL;
           if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-          __PYX_ERR(0, 1218, __pyx_L23_error)
+          __PYX_ERR(0, 1224, __pyx_L23_error)
           __pyx_L27_unpacking_done:;
         }
         __Pyx_XDECREF_SET(__pyx_9genexpr43__pyx_v_lo, __pyx_t_13);
         __pyx_t_13 = 0;
         __Pyx_XDECREF_SET(__pyx_9genexpr43__pyx_v_hi, __pyx_t_11);
         __pyx_t_11 = 0;
-        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1218, __pyx_L23_error)
+        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1224, __pyx_L23_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_9genexpr43__pyx_v_lo);
         __Pyx_GIVEREF(__pyx_9genexpr43__pyx_v_lo);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_9genexpr43__pyx_v_lo) != (0)) __PYX_ERR(0, 1218, __pyx_L23_error);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_9genexpr43__pyx_v_lo) != (0)) __PYX_ERR(0, 1224, __pyx_L23_error);
         __Pyx_INCREF(__pyx_9genexpr43__pyx_v_hi);
         __Pyx_GIVEREF(__pyx_9genexpr43__pyx_v_hi);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_9genexpr43__pyx_v_hi) != (0)) __PYX_ERR(0, 1218, __pyx_L23_error);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_9, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1218, __pyx_L23_error)
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_9genexpr43__pyx_v_hi) != (0)) __PYX_ERR(0, 1224, __pyx_L23_error);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_9, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1224, __pyx_L23_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -34510,10 +34597,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       goto __pyx_L18_error;
       __pyx_L29_exit_scope:;
     } /* exit inner scope */
-    __pyx_t_10 = PySequence_Tuple(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1218, __pyx_L18_error)
+    __pyx_t_10 = PySequence_Tuple(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1224, __pyx_L18_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_10, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1218, __pyx_L18_error)
+    __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_10, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1224, __pyx_L18_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -34522,9 +34609,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       __pyx_t_4 = 0;
       __pyx_t_5 = NULL;
     } else {
-      __pyx_t_4 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1218, __pyx_L18_error)
+      __pyx_t_4 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1224, __pyx_L18_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_10); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1218, __pyx_L18_error)
+      __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_10); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1224, __pyx_L18_error)
     }
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     for (;;) {
@@ -34533,7 +34620,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1218, __pyx_L18_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1224, __pyx_L18_error)
             #endif
             if (__pyx_t_4 >= __pyx_temp) break;
           }
@@ -34543,7 +34630,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1218, __pyx_L18_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1224, __pyx_L18_error)
             #endif
             if (__pyx_t_4 >= __pyx_temp) break;
           }
@@ -34554,13 +34641,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           #endif
           ++__pyx_t_4;
         }
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1218, __pyx_L18_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1224, __pyx_L18_error)
       } else {
         __pyx_t_9 = __pyx_t_5(__pyx_t_10);
         if (unlikely(!__pyx_t_9)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1218, __pyx_L18_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1224, __pyx_L18_error)
             PyErr_Clear();
           }
           break;
@@ -34576,10 +34663,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_9genexpr42__pyx_v_p};
         __pyx_t_9 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_12, (2-__pyx_t_12) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1218, __pyx_L18_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1224, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_9);
       }
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1218, __pyx_L18_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1224, __pyx_L18_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -34593,7 +34680,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   __pyx_v_candidates = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1219
+  /* "constraint/constraints.py":1225
  *         domain_bounds = [(min(domains[v]), max(domains[v])) for v in unassigned]
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_prods = [assigned_prod * c for c in candidates]             # <<<<<<<<<<<<<<
@@ -34601,7 +34688,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *             return False
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1219, __pyx_L34_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1225, __pyx_L34_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_10 = __pyx_v_candidates; __Pyx_INCREF(__pyx_t_10);
     __pyx_t_4 = 0;
@@ -34609,19 +34696,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1219, __pyx_L34_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1225, __pyx_L34_error)
         #endif
         if (__pyx_t_4 >= __pyx_temp) break;
       }
       __pyx_t_9 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_4);
       ++__pyx_t_4;
-      if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1219, __pyx_L34_error)
+      if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1225, __pyx_L34_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_XDECREF_SET(__pyx_9genexpr44__pyx_v_c, __pyx_t_9);
       __pyx_t_9 = 0;
-      __pyx_t_9 = PyNumber_Multiply(__pyx_v_assigned_prod, __pyx_9genexpr44__pyx_v_c); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1219, __pyx_L34_error)
+      __pyx_t_9 = PyNumber_Multiply(__pyx_v_assigned_prod, __pyx_9genexpr44__pyx_v_c); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1225, __pyx_L34_error)
       __Pyx_GOTREF(__pyx_t_9);
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1219, __pyx_L34_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_9))) __PYX_ERR(0, 1225, __pyx_L34_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -34635,7 +34722,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   __pyx_v_possible_prods = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1220
+  /* "constraint/constraints.py":1226
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_prods = [assigned_prod * c for c in candidates]
  *         if min(possible_prods) > target_value:             # <<<<<<<<<<<<<<
@@ -34651,16 +34738,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_12, (2-__pyx_t_12) | (__pyx_t_12*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1220, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1226, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  __pyx_t_9 = PyObject_RichCompare(__pyx_t_1, __pyx_cur_scope->__pyx_v_target_value, Py_GT); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1220, __pyx_L1_error)
+  __pyx_t_9 = PyObject_RichCompare(__pyx_t_1, __pyx_cur_scope->__pyx_v_target_value, Py_GT); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1226, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1220, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1226, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   if (__pyx_t_8) {
 
-    /* "constraint/constraints.py":1221
+    /* "constraint/constraints.py":1227
  *         possible_prods = [assigned_prod * c for c in candidates]
  *         if min(possible_prods) > target_value:
  *             return False             # <<<<<<<<<<<<<<
@@ -34672,7 +34759,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     __pyx_r = Py_False;
     goto __pyx_L0;
 
-    /* "constraint/constraints.py":1220
+    /* "constraint/constraints.py":1226
  *         candidates = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in domain_bounds])]
  *         possible_prods = [assigned_prod * c for c in candidates]
  *         if min(possible_prods) > target_value:             # <<<<<<<<<<<<<<
@@ -34681,17 +34768,17 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
 */
   }
 
-  /* "constraint/constraints.py":1223
+  /* "constraint/constraints.py":1229
  *             return False
  * 
  *         if forwardcheck:             # <<<<<<<<<<<<<<
  *             for var in unassigned:
  *                 other_unassigned = [v for v in unassigned if v != var]
 */
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1223, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1229, __pyx_L1_error)
   if (__pyx_t_8) {
 
-    /* "constraint/constraints.py":1224
+    /* "constraint/constraints.py":1230
  * 
  *         if forwardcheck:
  *             for var in unassigned:             # <<<<<<<<<<<<<<
@@ -34704,18 +34791,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_9);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1224, __pyx_L1_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1230, __pyx_L1_error)
         #endif
         if (__pyx_t_4 >= __pyx_temp) break;
       }
       __pyx_t_1 = __Pyx_PyList_GetItemRef(__pyx_t_9, __pyx_t_4);
       ++__pyx_t_4;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1224, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1230, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_XDECREF_SET(__pyx_v_var, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "constraint/constraints.py":1225
+      /* "constraint/constraints.py":1231
  *         if forwardcheck:
  *             for var in unassigned:
  *                 other_unassigned = [v for v in unassigned if v != var]             # <<<<<<<<<<<<<<
@@ -34723,7 +34810,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *                     bounds = [(min(domains[v]), max(domains[v])) for v in other_unassigned]
 */
       { /* enter inner scope */
-        __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1225, __pyx_L45_error)
+        __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1231, __pyx_L45_error)
         __Pyx_GOTREF(__pyx_t_1);
         __pyx_t_10 = __pyx_v_unassigned; __Pyx_INCREF(__pyx_t_10);
         __pyx_t_16 = 0;
@@ -34731,21 +34818,21 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1225, __pyx_L45_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1231, __pyx_L45_error)
             #endif
             if (__pyx_t_16 >= __pyx_temp) break;
           }
           __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_16);
           ++__pyx_t_16;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1225, __pyx_L45_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1231, __pyx_L45_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_XDECREF_SET(__pyx_9genexpr45__pyx_v_v, __pyx_t_6);
           __pyx_t_6 = 0;
-          __pyx_t_6 = PyObject_RichCompare(__pyx_9genexpr45__pyx_v_v, __pyx_v_var, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1225, __pyx_L45_error)
-          __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1225, __pyx_L45_error)
+          __pyx_t_6 = PyObject_RichCompare(__pyx_9genexpr45__pyx_v_v, __pyx_v_var, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1231, __pyx_L45_error)
+          __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1231, __pyx_L45_error)
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           if (__pyx_t_8) {
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_9genexpr45__pyx_v_v))) __PYX_ERR(0, 1225, __pyx_L45_error)
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_9genexpr45__pyx_v_v))) __PYX_ERR(0, 1231, __pyx_L45_error)
           }
         }
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -34759,7 +34846,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       __Pyx_XDECREF_SET(__pyx_v_other_unassigned, ((PyObject*)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "constraint/constraints.py":1226
+      /* "constraint/constraints.py":1232
  *             for var in unassigned:
  *                 other_unassigned = [v for v in unassigned if v != var]
  *                 if other_unassigned:             # <<<<<<<<<<<<<<
@@ -34767,10 +34854,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *                     other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in bounds])]
 */
       __pyx_t_8 = (__Pyx_PyList_GET_SIZE(__pyx_v_other_unassigned) != 0);
-      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_8 < 0))) __PYX_ERR(0, 1226, __pyx_L1_error)
+      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_8 < 0))) __PYX_ERR(0, 1232, __pyx_L1_error)
       if (__pyx_t_8) {
 
-        /* "constraint/constraints.py":1227
+        /* "constraint/constraints.py":1233
  *                 other_unassigned = [v for v in unassigned if v != var]
  *                 if other_unassigned:
  *                     bounds = [(min(domains[v]), max(domains[v])) for v in other_unassigned]             # <<<<<<<<<<<<<<
@@ -34778,7 +34865,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *                 else:
 */
         { /* enter inner scope */
-          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1227, __pyx_L54_error)
+          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1233, __pyx_L54_error)
           __Pyx_GOTREF(__pyx_t_1);
           __pyx_t_10 = __pyx_v_other_unassigned; __Pyx_INCREF(__pyx_t_10);
           __pyx_t_16 = 0;
@@ -34786,20 +34873,20 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1227, __pyx_L54_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1233, __pyx_L54_error)
               #endif
               if (__pyx_t_16 >= __pyx_temp) break;
             }
             __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_10, __pyx_t_16);
             ++__pyx_t_16;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1227, __pyx_L54_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1233, __pyx_L54_error)
             __Pyx_GOTREF(__pyx_t_6);
             __Pyx_XDECREF_SET(__pyx_9genexpr46__pyx_v_v, __pyx_t_6);
             __pyx_t_6 = 0;
             __pyx_t_3 = NULL;
             __Pyx_INCREF(__pyx_builtin_min);
             __pyx_t_11 = __pyx_builtin_min; 
-            __pyx_t_13 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr46__pyx_v_v); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1227, __pyx_L54_error)
+            __pyx_t_13 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr46__pyx_v_v); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1233, __pyx_L54_error)
             __Pyx_GOTREF(__pyx_t_13);
             __pyx_t_12 = 1;
             {
@@ -34808,13 +34895,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
               __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1227, __pyx_L54_error)
+              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1233, __pyx_L54_error)
               __Pyx_GOTREF(__pyx_t_6);
             }
             __pyx_t_13 = NULL;
             __Pyx_INCREF(__pyx_builtin_max);
             __pyx_t_3 = __pyx_builtin_max; 
-            __pyx_t_14 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr46__pyx_v_v); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1227, __pyx_L54_error)
+            __pyx_t_14 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_9genexpr46__pyx_v_v); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1233, __pyx_L54_error)
             __Pyx_GOTREF(__pyx_t_14);
             __pyx_t_12 = 1;
             {
@@ -34823,18 +34910,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
               __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
               __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-              if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1227, __pyx_L54_error)
+              if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1233, __pyx_L54_error)
               __Pyx_GOTREF(__pyx_t_11);
             }
-            __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1227, __pyx_L54_error)
+            __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1233, __pyx_L54_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_GIVEREF(__pyx_t_6);
-            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 1227, __pyx_L54_error);
+            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 1233, __pyx_L54_error);
             __Pyx_GIVEREF(__pyx_t_11);
-            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_11) != (0)) __PYX_ERR(0, 1227, __pyx_L54_error);
+            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_11) != (0)) __PYX_ERR(0, 1233, __pyx_L54_error);
             __pyx_t_6 = 0;
             __pyx_t_11 = 0;
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1227, __pyx_L54_error)
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1233, __pyx_L54_error)
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           }
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -34848,7 +34935,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         __Pyx_XDECREF_SET(__pyx_v_bounds, ((PyObject*)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1228
+        /* "constraint/constraints.py":1234
  *                 if other_unassigned:
  *                     bounds = [(min(domains[v]), max(domains[v])) for v in other_unassigned]
  *                     other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in bounds])]             # <<<<<<<<<<<<<<
@@ -34856,12 +34943,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *                     other_products = [1]
 */
         { /* enter inner scope */
-          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1228, __pyx_L61_error)
+          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1234, __pyx_L61_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1228, __pyx_L61_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_product); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1234, __pyx_L61_error)
           __Pyx_GOTREF(__pyx_t_10);
           { /* enter inner scope */
-            __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1228, __pyx_L66_error)
+            __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1234, __pyx_L66_error)
             __Pyx_GOTREF(__pyx_t_3);
             __pyx_t_11 = __pyx_v_bounds; __Pyx_INCREF(__pyx_t_11);
             __pyx_t_16 = 0;
@@ -34869,13 +34956,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
               {
                 Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_11);
                 #if !CYTHON_ASSUME_SAFE_SIZE
-                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1228, __pyx_L66_error)
+                if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1234, __pyx_L66_error)
                 #endif
                 if (__pyx_t_16 >= __pyx_temp) break;
               }
               __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_11, __pyx_t_16);
               ++__pyx_t_16;
-              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1228, __pyx_L66_error)
+              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1234, __pyx_L66_error)
               __Pyx_GOTREF(__pyx_t_6);
               if ((likely(PyTuple_CheckExact(__pyx_t_6))) || (PyList_CheckExact(__pyx_t_6))) {
                 PyObject* sequence = __pyx_t_6;
@@ -34883,7 +34970,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
                 if (unlikely(size != 2)) {
                   if (size > 2) __Pyx_RaiseTooManyValuesError(2);
                   else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-                  __PYX_ERR(0, 1228, __pyx_L66_error)
+                  __PYX_ERR(0, 1234, __pyx_L66_error)
                 }
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
                 if (likely(PyTuple_CheckExact(sequence))) {
@@ -34893,22 +34980,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
                   __Pyx_INCREF(__pyx_t_13);
                 } else {
                   __pyx_t_14 = __Pyx_PyList_GetItemRef(sequence, 0);
-                  if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1228, __pyx_L66_error)
+                  if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1234, __pyx_L66_error)
                   __Pyx_XGOTREF(__pyx_t_14);
                   __pyx_t_13 = __Pyx_PyList_GetItemRef(sequence, 1);
-                  if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1228, __pyx_L66_error)
+                  if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1234, __pyx_L66_error)
                   __Pyx_XGOTREF(__pyx_t_13);
                 }
                 #else
-                __pyx_t_14 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1228, __pyx_L66_error)
+                __pyx_t_14 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1234, __pyx_L66_error)
                 __Pyx_GOTREF(__pyx_t_14);
-                __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1228, __pyx_L66_error)
+                __pyx_t_13 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 1234, __pyx_L66_error)
                 __Pyx_GOTREF(__pyx_t_13);
                 #endif
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
               } else {
                 Py_ssize_t index = -1;
-                __pyx_t_17 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1228, __pyx_L66_error)
+                __pyx_t_17 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1234, __pyx_L66_error)
                 __Pyx_GOTREF(__pyx_t_17);
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
                 __pyx_t_15 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_17);
@@ -34916,7 +35003,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
                 __Pyx_GOTREF(__pyx_t_14);
                 index = 1; __pyx_t_13 = __pyx_t_15(__pyx_t_17); if (unlikely(!__pyx_t_13)) goto __pyx_L69_unpacking_failed;
                 __Pyx_GOTREF(__pyx_t_13);
-                if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_17), 2) < 0) __PYX_ERR(0, 1228, __pyx_L66_error)
+                if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_17), 2) < 0) __PYX_ERR(0, 1234, __pyx_L66_error)
                 __pyx_t_15 = NULL;
                 __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
                 goto __pyx_L70_unpacking_done;
@@ -34924,22 +35011,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
                 __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
                 __pyx_t_15 = NULL;
                 if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-                __PYX_ERR(0, 1228, __pyx_L66_error)
+                __PYX_ERR(0, 1234, __pyx_L66_error)
                 __pyx_L70_unpacking_done:;
               }
               __Pyx_XDECREF_SET(__pyx_9genexpr48__pyx_v_lo, __pyx_t_14);
               __pyx_t_14 = 0;
               __Pyx_XDECREF_SET(__pyx_9genexpr48__pyx_v_hi, __pyx_t_13);
               __pyx_t_13 = 0;
-              __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1228, __pyx_L66_error)
+              __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1234, __pyx_L66_error)
               __Pyx_GOTREF(__pyx_t_6);
               __Pyx_INCREF(__pyx_9genexpr48__pyx_v_lo);
               __Pyx_GIVEREF(__pyx_9genexpr48__pyx_v_lo);
-              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_9genexpr48__pyx_v_lo) != (0)) __PYX_ERR(0, 1228, __pyx_L66_error);
+              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_9genexpr48__pyx_v_lo) != (0)) __PYX_ERR(0, 1234, __pyx_L66_error);
               __Pyx_INCREF(__pyx_9genexpr48__pyx_v_hi);
               __Pyx_GIVEREF(__pyx_9genexpr48__pyx_v_hi);
-              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_9genexpr48__pyx_v_hi) != (0)) __PYX_ERR(0, 1228, __pyx_L66_error);
-              if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1228, __pyx_L66_error)
+              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_9genexpr48__pyx_v_hi) != (0)) __PYX_ERR(0, 1234, __pyx_L66_error);
+              if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1234, __pyx_L66_error)
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
             }
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -34952,10 +35039,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
             goto __pyx_L61_error;
             __pyx_L72_exit_scope:;
           } /* exit inner scope */
-          __pyx_t_11 = PySequence_Tuple(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1228, __pyx_L61_error)
+          __pyx_t_11 = PySequence_Tuple(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1234, __pyx_L61_error)
           __Pyx_GOTREF(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1228, __pyx_L61_error)
+          __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1234, __pyx_L61_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -34964,9 +35051,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
             __pyx_t_16 = 0;
             __pyx_t_5 = NULL;
           } else {
-            __pyx_t_16 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1228, __pyx_L61_error)
+            __pyx_t_16 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1234, __pyx_L61_error)
             __Pyx_GOTREF(__pyx_t_11);
-            __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1228, __pyx_L61_error)
+            __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1234, __pyx_L61_error)
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           for (;;) {
@@ -34975,7 +35062,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_11);
                   #if !CYTHON_ASSUME_SAFE_SIZE
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1228, __pyx_L61_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1234, __pyx_L61_error)
                   #endif
                   if (__pyx_t_16 >= __pyx_temp) break;
                 }
@@ -34985,7 +35072,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_11);
                   #if !CYTHON_ASSUME_SAFE_SIZE
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1228, __pyx_L61_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1234, __pyx_L61_error)
                   #endif
                   if (__pyx_t_16 >= __pyx_temp) break;
                 }
@@ -34996,13 +35083,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
                 #endif
                 ++__pyx_t_16;
               }
-              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1228, __pyx_L61_error)
+              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1234, __pyx_L61_error)
             } else {
               __pyx_t_3 = __pyx_t_5(__pyx_t_11);
               if (unlikely(!__pyx_t_3)) {
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
-                  if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1228, __pyx_L61_error)
+                  if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1234, __pyx_L61_error)
                   PyErr_Clear();
                 }
                 break;
@@ -35018,10 +35105,10 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
               PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_9genexpr47__pyx_v_p};
               __pyx_t_3 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_safe_product, __pyx_callargs+__pyx_t_12, (2-__pyx_t_12) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1228, __pyx_L61_error)
+              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1234, __pyx_L61_error)
               __Pyx_GOTREF(__pyx_t_3);
             }
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1228, __pyx_L61_error)
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 1234, __pyx_L61_error)
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           }
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -35035,7 +35122,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         __Pyx_XDECREF_SET(__pyx_v_other_products, ((PyObject*)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1226
+        /* "constraint/constraints.py":1232
  *             for var in unassigned:
  *                 other_unassigned = [v for v in unassigned if v != var]
  *                 if other_unassigned:             # <<<<<<<<<<<<<<
@@ -35045,7 +35132,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         goto __pyx_L51;
       }
 
-      /* "constraint/constraints.py":1230
+      /* "constraint/constraints.py":1236
  *                     other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in bounds])]
  *                 else:
  *                     other_products = [1]             # <<<<<<<<<<<<<<
@@ -35053,45 +35140,45 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *                 domain = domains[var]
 */
       /*else*/ {
-        __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1230, __pyx_L1_error)
+        __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1236, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_INCREF(__pyx_mstate_global->__pyx_int_1);
         __Pyx_GIVEREF(__pyx_mstate_global->__pyx_int_1);
-        if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_mstate_global->__pyx_int_1) != (0)) __PYX_ERR(0, 1230, __pyx_L1_error);
+        if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_mstate_global->__pyx_int_1) != (0)) __PYX_ERR(0, 1236, __pyx_L1_error);
         __Pyx_XDECREF_SET(__pyx_v_other_products, ((PyObject*)__pyx_t_1));
         __pyx_t_1 = 0;
       }
       __pyx_L51:;
 
-      /* "constraint/constraints.py":1232
+      /* "constraint/constraints.py":1238
  *                     other_products = [1]
  * 
  *                 domain = domains[var]             # <<<<<<<<<<<<<<
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]
 */
-      __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1232, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1238, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "constraint/constraints.py":1233
+      /* "constraint/constraints.py":1239
  * 
  *                 domain = domains[var]
  *                 for val in domain[:]:             # <<<<<<<<<<<<<<
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p > target_value for p in prods):
 */
-      __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1233, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1239, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
         __pyx_t_11 = __pyx_t_1; __Pyx_INCREF(__pyx_t_11);
         __pyx_t_16 = 0;
         __pyx_t_5 = NULL;
       } else {
-        __pyx_t_16 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1233, __pyx_L1_error)
+        __pyx_t_16 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1239, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1233, __pyx_L1_error)
+        __pyx_t_5 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1239, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       for (;;) {
@@ -35100,7 +35187,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_11);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1233, __pyx_L1_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1239, __pyx_L1_error)
               #endif
               if (__pyx_t_16 >= __pyx_temp) break;
             }
@@ -35110,7 +35197,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
             {
               Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_11);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1233, __pyx_L1_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1239, __pyx_L1_error)
               #endif
               if (__pyx_t_16 >= __pyx_temp) break;
             }
@@ -35121,13 +35208,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
             #endif
             ++__pyx_t_16;
           }
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1233, __pyx_L1_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1239, __pyx_L1_error)
         } else {
           __pyx_t_1 = __pyx_t_5(__pyx_t_11);
           if (unlikely(!__pyx_t_1)) {
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
-              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1233, __pyx_L1_error)
+              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1239, __pyx_L1_error)
               PyErr_Clear();
             }
             break;
@@ -35137,7 +35224,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         __Pyx_XDECREF_SET(__pyx_v_val, __pyx_t_1);
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1234
+        /* "constraint/constraints.py":1240
  *                 domain = domains[var]
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]             # <<<<<<<<<<<<<<
@@ -35145,7 +35232,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
  *                         domain.hideValue(val)
 */
         { /* enter inner scope */
-          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1234, __pyx_L79_error)
+          __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1240, __pyx_L79_error)
           __Pyx_GOTREF(__pyx_t_1);
           __pyx_t_3 = __pyx_v_other_products; __Pyx_INCREF(__pyx_t_3);
           __pyx_t_18 = 0;
@@ -35153,22 +35240,22 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_3);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1234, __pyx_L79_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1240, __pyx_L79_error)
               #endif
               if (__pyx_t_18 >= __pyx_temp) break;
             }
             __pyx_t_10 = __Pyx_PyList_GetItemRef(__pyx_t_3, __pyx_t_18);
             ++__pyx_t_18;
-            if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1234, __pyx_L79_error)
+            if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1240, __pyx_L79_error)
             __Pyx_GOTREF(__pyx_t_10);
             __Pyx_XDECREF_SET(__pyx_9genexpr49__pyx_v_o, __pyx_t_10);
             __pyx_t_10 = 0;
-            __pyx_t_10 = PyNumber_Multiply(__pyx_v_assigned_prod, __pyx_v_val); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1234, __pyx_L79_error)
+            __pyx_t_10 = PyNumber_Multiply(__pyx_v_assigned_prod, __pyx_v_val); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1240, __pyx_L79_error)
             __Pyx_GOTREF(__pyx_t_10);
-            __pyx_t_6 = PyNumber_Multiply(__pyx_t_10, __pyx_9genexpr49__pyx_v_o); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1234, __pyx_L79_error)
+            __pyx_t_6 = PyNumber_Multiply(__pyx_t_10, __pyx_9genexpr49__pyx_v_o); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1240, __pyx_L79_error)
             __Pyx_GOTREF(__pyx_t_6);
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1234, __pyx_L79_error)
+            if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1240, __pyx_L79_error)
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -35182,23 +35269,23 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         __Pyx_XDECREF_SET(__pyx_v_prods, ((PyObject*)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1235
+        /* "constraint/constraints.py":1241
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p > target_value for p in prods):             # <<<<<<<<<<<<<<
  *                         domain.hideValue(val)
  *                 if not domain:
 */
-        __pyx_t_1 = __pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint_8__call___genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_prods); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1235, __pyx_L1_error)
+        __pyx_t_1 = __pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint_8__call___genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_prods); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1241, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_3 = __Pyx_Generator_GetInlinedResult(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1235, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_Generator_GetInlinedResult(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1241, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1235, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1241, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         if (__pyx_t_8) {
 
-          /* "constraint/constraints.py":1236
+          /* "constraint/constraints.py":1242
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p > target_value for p in prods):
  *                         domain.hideValue(val)             # <<<<<<<<<<<<<<
@@ -35212,12 +35299,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
             PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_val};
             __pyx_t_3 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_hideValue, __pyx_callargs+__pyx_t_12, (2-__pyx_t_12) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1236, __pyx_L1_error)
+            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1242, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "constraint/constraints.py":1235
+          /* "constraint/constraints.py":1241
  *                 for val in domain[:]:
  *                     prods = [assigned_prod * val * o for o in other_products]
  *                     if all(p > target_value for p in prods):             # <<<<<<<<<<<<<<
@@ -35226,7 +35313,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
 */
         }
 
-        /* "constraint/constraints.py":1233
+        /* "constraint/constraints.py":1239
  * 
  *                 domain = domains[var]
  *                 for val in domain[:]:             # <<<<<<<<<<<<<<
@@ -35236,18 +35323,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
       }
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-      /* "constraint/constraints.py":1237
+      /* "constraint/constraints.py":1243
  *                     if all(p > target_value for p in prods):
  *                         domain.hideValue(val)
  *                 if not domain:             # <<<<<<<<<<<<<<
  *                     return False
  * 
 */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1237, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1243, __pyx_L1_error)
       __pyx_t_2 = (!__pyx_t_8);
       if (__pyx_t_2) {
 
-        /* "constraint/constraints.py":1238
+        /* "constraint/constraints.py":1244
  *                         domain.hideValue(val)
  *                 if not domain:
  *                     return False             # <<<<<<<<<<<<<<
@@ -35260,7 +35347,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1237
+        /* "constraint/constraints.py":1243
  *                     if all(p > target_value for p in prods):
  *                         domain.hideValue(val)
  *                 if not domain:             # <<<<<<<<<<<<<<
@@ -35269,7 +35356,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
 */
       }
 
-      /* "constraint/constraints.py":1224
+      /* "constraint/constraints.py":1230
  * 
  *         if forwardcheck:
  *             for var in unassigned:             # <<<<<<<<<<<<<<
@@ -35279,7 +35366,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
     }
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "constraint/constraints.py":1223
+    /* "constraint/constraints.py":1229
  *             return False
  * 
  *         if forwardcheck:             # <<<<<<<<<<<<<<
@@ -35288,7 +35375,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
 */
   }
 
-  /* "constraint/constraints.py":1240
+  /* "constraint/constraints.py":1246
  *                     return False
  * 
  *         return True             # <<<<<<<<<<<<<<
@@ -35300,7 +35387,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   __pyx_r = Py_True;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":1199
+  /* "constraint/constraints.py":1205
  *                     dom.remove(val)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
@@ -35352,7 +35439,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_25VariableMaxProdConstraint
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1254
+/* "constraint/constraints.py":1260
  *     """
  * 
  *     def __init__(self, set):             # <<<<<<<<<<<<<<
@@ -35401,39 +35488,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_set,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1254, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1260, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1254, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1260, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1254, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1260, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1254, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1260, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, i); __PYX_ERR(0, 1254, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, i); __PYX_ERR(0, 1260, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1254, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1260, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1254, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1260, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_set = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 1254, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 1260, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -35462,16 +35549,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint___init__(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "constraint/constraints.py":1260
+  /* "constraint/constraints.py":1266
  *             set (set): Set of allowed values
  *         """
  *         self._set = set             # <<<<<<<<<<<<<<
  * 
  *     def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2, __pyx_v_set) < 0) __PYX_ERR(0, 1260, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2, __pyx_v_set) < 0) __PYX_ERR(0, 1266, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1254
+  /* "constraint/constraints.py":1260
  *     """
  * 
  *     def __init__(self, set):             # <<<<<<<<<<<<<<
@@ -35491,7 +35578,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint___init__(
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1262
+/* "constraint/constraints.py":1268
  *         self._set = set
  * 
  *     def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -35542,53 +35629,53 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_assignments,&__pyx_mstate_global->__pyx_n_u_forwardcheck,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1262, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1268, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1262, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1268, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1262, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1268, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1262, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1268, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1262, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1268, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1262, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1268, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1262, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1268, __pyx_L3_error)
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1262, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1268, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1262, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1268, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1262, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1268, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1262, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1268, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1262, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1268, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1262, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1268, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -35602,7 +35689,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1262, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1268, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -35635,7 +35722,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_2__call__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__call__", 0);
 
-  /* "constraint/constraints.py":1264
+  /* "constraint/constraints.py":1270
  *     def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102
  *         # preProcess() will remove it.
  *         raise RuntimeError("Can't happen")             # <<<<<<<<<<<<<<
@@ -35651,14 +35738,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_2__call__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1264, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1270, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 1264, __pyx_L1_error)
+  __PYX_ERR(0, 1270, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1262
+  /* "constraint/constraints.py":1268
  *         self._set = set
  * 
  *     def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -35678,7 +35765,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_2__call__
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1266
+/* "constraint/constraints.py":1272
  *         raise RuntimeError("Can't happen")
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -35729,50 +35816,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_constraints,&__pyx_mstate_global->__pyx_n_u_vconstraints,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1266, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1272, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1266, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1272, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1266, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1272, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1266, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1272, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1266, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1272, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1266, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1272, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 1266, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 1272, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 5; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 1266, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 1272, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1266, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1272, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1266, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1272, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1266, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1272, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1266, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1272, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1266, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1272, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_variables = values[1];
@@ -35782,7 +35869,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 1266, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 1272, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -35793,9 +35880,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1266, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 1266, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 1266, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1272, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 1272, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 1272, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_15InSetConstraint_4preProcess(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_constraints, __pyx_v_vconstraints);
 
   /* function exit code */
@@ -35838,19 +35925,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("preProcess", 0);
 
-  /* "constraint/constraints.py":1267
+  /* "constraint/constraints.py":1273
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set             # <<<<<<<<<<<<<<
  *         for variable in variables:
  *             domain = domains[variable]
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1267, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1273, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_set = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1268
+  /* "constraint/constraints.py":1274
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -35862,9 +35949,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
     __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1268, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1274, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1268, __pyx_L1_error)
+    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1274, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
@@ -35872,7 +35959,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1268, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1274, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -35882,7 +35969,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1268, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1274, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -35893,13 +35980,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
         #endif
         ++__pyx_t_2;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1268, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1274, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_3(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1268, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1274, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -35909,35 +35996,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1269
+    /* "constraint/constraints.py":1275
  *         set = self._set
  *         for variable in variables:
  *             domain = domains[variable]             # <<<<<<<<<<<<<<
  *             for value in domain[:]:
  *                 if value not in set:
 */
-    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1269, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1275, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1270
+    /* "constraint/constraints.py":1276
  *         for variable in variables:
  *             domain = domains[variable]
  *             for value in domain[:]:             # <<<<<<<<<<<<<<
  *                 if value not in set:
  *                     domain.remove(value)
 */
-    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1270, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
       __pyx_t_5 = __pyx_t_4; __Pyx_INCREF(__pyx_t_5);
       __pyx_t_6 = 0;
       __pyx_t_7 = NULL;
     } else {
-      __pyx_t_6 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1270, __pyx_L1_error)
+      __pyx_t_6 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1276, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1270, __pyx_L1_error)
+      __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1276, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     for (;;) {
@@ -35946,7 +36033,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_5);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1270, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1276, __pyx_L1_error)
             #endif
             if (__pyx_t_6 >= __pyx_temp) break;
           }
@@ -35956,7 +36043,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_5);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1270, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1276, __pyx_L1_error)
             #endif
             if (__pyx_t_6 >= __pyx_temp) break;
           }
@@ -35967,13 +36054,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
           #endif
           ++__pyx_t_6;
         }
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1270, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1276, __pyx_L1_error)
       } else {
         __pyx_t_4 = __pyx_t_7(__pyx_t_5);
         if (unlikely(!__pyx_t_4)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1270, __pyx_L1_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1276, __pyx_L1_error)
             PyErr_Clear();
           }
           break;
@@ -35983,17 +36070,17 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
       __Pyx_XDECREF_SET(__pyx_v_value, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "constraint/constraints.py":1271
+      /* "constraint/constraints.py":1277
  *             domain = domains[variable]
  *             for value in domain[:]:
  *                 if value not in set:             # <<<<<<<<<<<<<<
  *                     domain.remove(value)
  *             vconstraints[variable].remove((self, variables))
 */
-      __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_value, __pyx_v_set, Py_NE)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1271, __pyx_L1_error)
+      __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_value, __pyx_v_set, Py_NE)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1277, __pyx_L1_error)
       if (__pyx_t_8) {
 
-        /* "constraint/constraints.py":1272
+        /* "constraint/constraints.py":1278
  *             for value in domain[:]:
  *                 if value not in set:
  *                     domain.remove(value)             # <<<<<<<<<<<<<<
@@ -36007,12 +36094,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
           PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_v_value};
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_remove, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1272, __pyx_L1_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1278, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "constraint/constraints.py":1271
+        /* "constraint/constraints.py":1277
  *             domain = domains[variable]
  *             for value in domain[:]:
  *                 if value not in set:             # <<<<<<<<<<<<<<
@@ -36021,7 +36108,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
 */
       }
 
-      /* "constraint/constraints.py":1270
+      /* "constraint/constraints.py":1276
  *         for variable in variables:
  *             domain = domains[variable]
  *             for value in domain[:]:             # <<<<<<<<<<<<<<
@@ -36031,25 +36118,25 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "constraint/constraints.py":1273
+    /* "constraint/constraints.py":1279
  *                 if value not in set:
  *                     domain.remove(value)
  *             vconstraints[variable].remove((self, variables))             # <<<<<<<<<<<<<<
  *         constraints.remove((self, variables))
  * 
 */
-    __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_vconstraints, __pyx_v_variable); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1273, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_vconstraints, __pyx_v_variable); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1279, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __pyx_t_4 = __pyx_t_9;
     __Pyx_INCREF(__pyx_t_4);
-    __pyx_t_11 = PyTuple_New(2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1273, __pyx_L1_error)
+    __pyx_t_11 = PyTuple_New(2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1279, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_11);
     __Pyx_INCREF(__pyx_v_self);
     __Pyx_GIVEREF(__pyx_v_self);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_v_self) != (0)) __PYX_ERR(0, 1273, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_v_self) != (0)) __PYX_ERR(0, 1279, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_variables);
     __Pyx_GIVEREF(__pyx_v_variables);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_v_variables) != (0)) __PYX_ERR(0, 1273, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_v_variables) != (0)) __PYX_ERR(0, 1279, __pyx_L1_error);
     __pyx_t_10 = 0;
     {
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_11};
@@ -36057,12 +36144,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1273, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1279, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "constraint/constraints.py":1268
+    /* "constraint/constraints.py":1274
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -36072,27 +36159,27 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1274
+  /* "constraint/constraints.py":1280
  *                     domain.remove(value)
  *             vconstraints[variable].remove((self, variables))
  *         constraints.remove((self, variables))             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1274, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1280, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_self);
   __Pyx_GIVEREF(__pyx_v_self);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_self) != (0)) __PYX_ERR(0, 1274, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_self) != (0)) __PYX_ERR(0, 1280, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_variables);
   __Pyx_GIVEREF(__pyx_v_variables);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_variables) != (0)) __PYX_ERR(0, 1274, __pyx_L1_error);
-  __pyx_t_5 = __Pyx_CallUnboundCMethod1(&__pyx_mstate_global->__pyx_umethod_PyList_Type__remove, __pyx_v_constraints, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1274, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_variables) != (0)) __PYX_ERR(0, 1280, __pyx_L1_error);
+  __pyx_t_5 = __Pyx_CallUnboundCMethod1(&__pyx_mstate_global->__pyx_umethod_PyList_Type__remove, __pyx_v_constraints, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1280, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "constraint/constraints.py":1266
+  /* "constraint/constraints.py":1272
  *         raise RuntimeError("Can't happen")
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -36121,7 +36208,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_15InSetConstraint_4preProce
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1288
+/* "constraint/constraints.py":1294
  *     """
  * 
  *     def __init__(self, set):             # <<<<<<<<<<<<<<
@@ -36170,39 +36257,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_set,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1288, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1294, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1288, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1294, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1288, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1294, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1288, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1294, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, i); __PYX_ERR(0, 1288, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, i); __PYX_ERR(0, 1294, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1288, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1294, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1288, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1294, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_set = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 1288, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 1294, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -36231,16 +36318,16 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint___init
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "constraint/constraints.py":1294
+  /* "constraint/constraints.py":1300
  *             set (set): Set of disallowed values
  *         """
  *         self._set = set             # <<<<<<<<<<<<<<
  * 
  *     def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2, __pyx_v_set) < 0) __PYX_ERR(0, 1294, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2, __pyx_v_set) < 0) __PYX_ERR(0, 1300, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1288
+  /* "constraint/constraints.py":1294
  *     """
  * 
  *     def __init__(self, set):             # <<<<<<<<<<<<<<
@@ -36260,7 +36347,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint___init
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1296
+/* "constraint/constraints.py":1302
  *         self._set = set
  * 
  *     def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -36311,53 +36398,53 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_assignments,&__pyx_mstate_global->__pyx_n_u_forwardcheck,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1296, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1302, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1296, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1302, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1296, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1302, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1296, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1302, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1296, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1302, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1296, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1302, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1296, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1302, __pyx_L3_error)
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1296, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1302, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1296, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1302, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1296, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1302, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1296, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1302, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1296, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1302, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1296, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1302, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -36371,7 +36458,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1296, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1302, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -36404,7 +36491,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_2__cal
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__call__", 0);
 
-  /* "constraint/constraints.py":1298
+  /* "constraint/constraints.py":1304
  *     def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102
  *         # preProcess() will remove it.
  *         raise RuntimeError("Can't happen")             # <<<<<<<<<<<<<<
@@ -36420,14 +36507,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_2__cal
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1298, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1304, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 1298, __pyx_L1_error)
+  __PYX_ERR(0, 1304, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1296
+  /* "constraint/constraints.py":1302
  *         self._set = set
  * 
  *     def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -36447,7 +36534,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_2__cal
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1300
+/* "constraint/constraints.py":1306
  *         raise RuntimeError("Can't happen")
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -36498,50 +36585,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_constraints,&__pyx_mstate_global->__pyx_n_u_vconstraints,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1300, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1306, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1300, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1306, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1300, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1306, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1300, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1306, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1300, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1306, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1300, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1306, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 1300, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "preProcess", 0) < 0) __PYX_ERR(0, 1306, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 5; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 1300, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, i); __PYX_ERR(0, 1306, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1300, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1306, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1300, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1306, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1300, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1306, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1300, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1306, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1300, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1306, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_variables = values[1];
@@ -36551,7 +36638,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 1300, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("preProcess", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 1306, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -36562,9 +36649,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1300, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 1300, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 1300, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1306, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_constraints), (&PyList_Type), 0, "constraints", 2))) __PYX_ERR(0, 1306, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vconstraints), (&PyDict_Type), 0, "vconstraints", 2))) __PYX_ERR(0, 1306, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_18NotInSetConstraint_4preProcess(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_constraints, __pyx_v_vconstraints);
 
   /* function exit code */
@@ -36607,19 +36694,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("preProcess", 0);
 
-  /* "constraint/constraints.py":1301
+  /* "constraint/constraints.py":1307
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set             # <<<<<<<<<<<<<<
  *         for variable in variables:
  *             domain = domains[variable]
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1301, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_set = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1302
+  /* "constraint/constraints.py":1308
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -36631,9 +36718,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
     __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1302, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1308, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1302, __pyx_L1_error)
+    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1308, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
@@ -36641,7 +36728,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1302, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1308, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -36651,7 +36738,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1302, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1308, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -36662,13 +36749,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
         #endif
         ++__pyx_t_2;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1302, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1308, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_3(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1302, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1308, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -36678,35 +36765,35 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1303
+    /* "constraint/constraints.py":1309
  *         set = self._set
  *         for variable in variables:
  *             domain = domains[variable]             # <<<<<<<<<<<<<<
  *             for value in domain[:]:
  *                 if value in set:
 */
-    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1303, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1304
+    /* "constraint/constraints.py":1310
  *         for variable in variables:
  *             domain = domains[variable]
  *             for value in domain[:]:             # <<<<<<<<<<<<<<
  *                 if value in set:
  *                     domain.remove(value)
 */
-    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1304, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
       __pyx_t_5 = __pyx_t_4; __Pyx_INCREF(__pyx_t_5);
       __pyx_t_6 = 0;
       __pyx_t_7 = NULL;
     } else {
-      __pyx_t_6 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1304, __pyx_L1_error)
+      __pyx_t_6 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1310, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1304, __pyx_L1_error)
+      __pyx_t_7 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1310, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     for (;;) {
@@ -36715,7 +36802,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_5);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1304, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1310, __pyx_L1_error)
             #endif
             if (__pyx_t_6 >= __pyx_temp) break;
           }
@@ -36725,7 +36812,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_5);
             #if !CYTHON_ASSUME_SAFE_SIZE
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1304, __pyx_L1_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1310, __pyx_L1_error)
             #endif
             if (__pyx_t_6 >= __pyx_temp) break;
           }
@@ -36736,13 +36823,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
           #endif
           ++__pyx_t_6;
         }
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1304, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1310, __pyx_L1_error)
       } else {
         __pyx_t_4 = __pyx_t_7(__pyx_t_5);
         if (unlikely(!__pyx_t_4)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
-            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1304, __pyx_L1_error)
+            if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1310, __pyx_L1_error)
             PyErr_Clear();
           }
           break;
@@ -36752,17 +36839,17 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
       __Pyx_XDECREF_SET(__pyx_v_value, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "constraint/constraints.py":1305
+      /* "constraint/constraints.py":1311
  *             domain = domains[variable]
  *             for value in domain[:]:
  *                 if value in set:             # <<<<<<<<<<<<<<
  *                     domain.remove(value)
  *             vconstraints[variable].remove((self, variables))
 */
-      __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_value, __pyx_v_set, Py_EQ)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1305, __pyx_L1_error)
+      __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_value, __pyx_v_set, Py_EQ)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 1311, __pyx_L1_error)
       if (__pyx_t_8) {
 
-        /* "constraint/constraints.py":1306
+        /* "constraint/constraints.py":1312
  *             for value in domain[:]:
  *                 if value in set:
  *                     domain.remove(value)             # <<<<<<<<<<<<<<
@@ -36776,12 +36863,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
           PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_v_value};
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_remove, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1306, __pyx_L1_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1312, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "constraint/constraints.py":1305
+        /* "constraint/constraints.py":1311
  *             domain = domains[variable]
  *             for value in domain[:]:
  *                 if value in set:             # <<<<<<<<<<<<<<
@@ -36790,7 +36877,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
 */
       }
 
-      /* "constraint/constraints.py":1304
+      /* "constraint/constraints.py":1310
  *         for variable in variables:
  *             domain = domains[variable]
  *             for value in domain[:]:             # <<<<<<<<<<<<<<
@@ -36800,25 +36887,25 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "constraint/constraints.py":1307
+    /* "constraint/constraints.py":1313
  *                 if value in set:
  *                     domain.remove(value)
  *             vconstraints[variable].remove((self, variables))             # <<<<<<<<<<<<<<
  *         constraints.remove((self, variables))
  * 
 */
-    __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_vconstraints, __pyx_v_variable); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1307, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_vconstraints, __pyx_v_variable); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __pyx_t_4 = __pyx_t_9;
     __Pyx_INCREF(__pyx_t_4);
-    __pyx_t_11 = PyTuple_New(2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1307, __pyx_L1_error)
+    __pyx_t_11 = PyTuple_New(2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_11);
     __Pyx_INCREF(__pyx_v_self);
     __Pyx_GIVEREF(__pyx_v_self);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_v_self) != (0)) __PYX_ERR(0, 1307, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_v_self) != (0)) __PYX_ERR(0, 1313, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_variables);
     __Pyx_GIVEREF(__pyx_v_variables);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_v_variables) != (0)) __PYX_ERR(0, 1307, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_v_variables) != (0)) __PYX_ERR(0, 1313, __pyx_L1_error);
     __pyx_t_10 = 0;
     {
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_11};
@@ -36826,12 +36913,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1307, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1313, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "constraint/constraints.py":1302
+    /* "constraint/constraints.py":1308
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
  *         set = self._set
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -36841,27 +36928,27 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1308
+  /* "constraint/constraints.py":1314
  *                     domain.remove(value)
  *             vconstraints[variable].remove((self, variables))
  *         constraints.remove((self, variables))             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1308, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1314, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_self);
   __Pyx_GIVEREF(__pyx_v_self);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_self) != (0)) __PYX_ERR(0, 1308, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_self) != (0)) __PYX_ERR(0, 1314, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_variables);
   __Pyx_GIVEREF(__pyx_v_variables);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_variables) != (0)) __PYX_ERR(0, 1308, __pyx_L1_error);
-  __pyx_t_5 = __Pyx_CallUnboundCMethod1(&__pyx_mstate_global->__pyx_umethod_PyList_Type__remove, __pyx_v_constraints, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1308, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_variables) != (0)) __PYX_ERR(0, 1314, __pyx_L1_error);
+  __pyx_t_5 = __Pyx_CallUnboundCMethod1(&__pyx_mstate_global->__pyx_umethod_PyList_Type__remove, __pyx_v_constraints, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1314, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "constraint/constraints.py":1300
+  /* "constraint/constraints.py":1306
  *         raise RuntimeError("Can't happen")
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
@@ -36890,7 +36977,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_18NotInSetConstraint_4prePr
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1322
+/* "constraint/constraints.py":1328
  *     """
  * 
  *     def __init__(self, set, n=1, exact=False):             # <<<<<<<<<<<<<<
@@ -36941,50 +37028,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_set,&__pyx_mstate_global->__pyx_n_u_n,&__pyx_mstate_global->__pyx_n_u_exact,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1322, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1328, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1322, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1328, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1322, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1328, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1322, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1328, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1322, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1328, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1322, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1328, __pyx_L3_error)
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)((PyObject*)__pyx_mstate_global->__pyx_int_1)));
       if (!values[3]) values[3] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 4, i); __PYX_ERR(0, 1322, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 4, i); __PYX_ERR(0, 1328, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1322, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1328, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1322, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1328, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1322, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1328, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1322, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1328, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -36998,7 +37085,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 4, __pyx_nargs); __PYX_ERR(0, 1322, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 4, __pyx_nargs); __PYX_ERR(0, 1328, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -37027,34 +37114,34 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint___ini
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "constraint/constraints.py":1332
+  /* "constraint/constraints.py":1338
  *                 are present in set must be exactly `n`
  *         """
  *         self._set = set             # <<<<<<<<<<<<<<
  *         self._n = n
  *         self._exact = exact
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2, __pyx_v_set) < 0) __PYX_ERR(0, 1332, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2, __pyx_v_set) < 0) __PYX_ERR(0, 1338, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1333
+  /* "constraint/constraints.py":1339
  *         """
  *         self._set = set
  *         self._n = n             # <<<<<<<<<<<<<<
  *         self._exact = exact
  * 
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2, __pyx_v_n) < 0) __PYX_ERR(0, 1333, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2, __pyx_v_n) < 0) __PYX_ERR(0, 1339, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1334
+  /* "constraint/constraints.py":1340
  *         self._set = set
  *         self._n = n
  *         self._exact = exact             # <<<<<<<<<<<<<<
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2, __pyx_v_exact) < 0) __PYX_ERR(0, 1334, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2, __pyx_v_exact) < 0) __PYX_ERR(0, 1340, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1322
+  /* "constraint/constraints.py":1328
  *     """
  * 
  *     def __init__(self, set, n=1, exact=False):             # <<<<<<<<<<<<<<
@@ -37074,7 +37161,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint___ini
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1336
+/* "constraint/constraints.py":1342
  *         self._exact = exact
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -37125,53 +37212,53 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_assignments,&__pyx_mstate_global->__pyx_n_u_forwardcheck,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1336, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1342, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1336, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1342, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1336, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1342, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1336, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1342, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1336, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1342, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1336, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1342, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1336, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1342, __pyx_L3_error)
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1336, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1342, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1336, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1342, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1336, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1342, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1336, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1342, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1336, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1342, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1336, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1342, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -37185,7 +37272,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1336, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1342, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -37196,8 +37283,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1336, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 1336, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1342, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 1342, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__call__(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_assignments, __pyx_v_forwardcheck);
 
   /* function exit code */
@@ -37242,19 +37329,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__call__", 0);
 
-  /* "constraint/constraints.py":1337
+  /* "constraint/constraints.py":1343
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
  *         set = self._set             # <<<<<<<<<<<<<<
  *         missing = 0
  *         found = 0
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1337, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1343, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_set = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1338
+  /* "constraint/constraints.py":1344
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
  *         set = self._set
  *         missing = 0             # <<<<<<<<<<<<<<
@@ -37264,7 +37351,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_0);
   __pyx_v_missing = __pyx_mstate_global->__pyx_int_0;
 
-  /* "constraint/constraints.py":1339
+  /* "constraint/constraints.py":1345
  *         set = self._set
  *         missing = 0
  *         found = 0             # <<<<<<<<<<<<<<
@@ -37274,7 +37361,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_0);
   __pyx_v_found = __pyx_mstate_global->__pyx_int_0;
 
-  /* "constraint/constraints.py":1340
+  /* "constraint/constraints.py":1346
  *         missing = 0
  *         found = 0
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -37286,9 +37373,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
     __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1340, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1346, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1340, __pyx_L1_error)
+    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1346, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
@@ -37296,7 +37383,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1340, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1346, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -37306,7 +37393,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1340, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1346, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -37317,13 +37404,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
         #endif
         ++__pyx_t_2;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1340, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1346, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_3(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1340, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1346, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -37333,36 +37420,36 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1341
+    /* "constraint/constraints.py":1347
  *         found = 0
  *         for variable in variables:
  *             if variable in assignments:             # <<<<<<<<<<<<<<
  *                 found += assignments[variable] in set
  *             else:
 */
-    __pyx_t_5 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1341, __pyx_L1_error)
+    __pyx_t_5 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1347, __pyx_L1_error)
     if (__pyx_t_5) {
 
-      /* "constraint/constraints.py":1342
+      /* "constraint/constraints.py":1348
  *         for variable in variables:
  *             if variable in assignments:
  *                 found += assignments[variable] in set             # <<<<<<<<<<<<<<
  *             else:
  *                 missing += 1
 */
-      __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1342, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1348, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = (__Pyx_PySequence_ContainsTF(__pyx_t_4, __pyx_v_set, Py_EQ)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1342, __pyx_L1_error)
+      __pyx_t_5 = (__Pyx_PySequence_ContainsTF(__pyx_t_4, __pyx_v_set, Py_EQ)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1348, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyBool_FromLong(__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1342, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyBool_FromLong(__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1348, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = PyNumber_InPlaceAdd(__pyx_v_found, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1342, __pyx_L1_error)
+      __pyx_t_6 = PyNumber_InPlaceAdd(__pyx_v_found, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1348, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF_SET(__pyx_v_found, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "constraint/constraints.py":1341
+      /* "constraint/constraints.py":1347
  *         found = 0
  *         for variable in variables:
  *             if variable in assignments:             # <<<<<<<<<<<<<<
@@ -37372,7 +37459,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
       goto __pyx_L5;
     }
 
-    /* "constraint/constraints.py":1344
+    /* "constraint/constraints.py":1350
  *                 found += assignments[variable] in set
  *             else:
  *                 missing += 1             # <<<<<<<<<<<<<<
@@ -37380,14 +37467,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
  *             if self._exact:
 */
     /*else*/ {
-      __pyx_t_6 = __Pyx_PyLong_AddObjC(__pyx_v_missing, __pyx_mstate_global->__pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1344, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyLong_AddObjC(__pyx_v_missing, __pyx_mstate_global->__pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1350, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF_SET(__pyx_v_missing, __pyx_t_6);
       __pyx_t_6 = 0;
     }
     __pyx_L5:;
 
-    /* "constraint/constraints.py":1340
+    /* "constraint/constraints.py":1346
  *         missing = 0
  *         found = 0
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -37397,53 +37484,53 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1345
+  /* "constraint/constraints.py":1351
  *             else:
  *                 missing += 1
  *         if missing:             # <<<<<<<<<<<<<<
  *             if self._exact:
  *                 if not (found <= self._n <= missing + found):
 */
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_missing); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1345, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_missing); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1351, __pyx_L1_error)
   if (__pyx_t_5) {
 
-    /* "constraint/constraints.py":1346
+    /* "constraint/constraints.py":1352
  *                 missing += 1
  *         if missing:
  *             if self._exact:             # <<<<<<<<<<<<<<
  *                 if not (found <= self._n <= missing + found):
  *                     return False
 */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1346, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1352, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1346, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1352, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_5) {
 
-      /* "constraint/constraints.py":1347
+      /* "constraint/constraints.py":1353
  *         if missing:
  *             if self._exact:
  *                 if not (found <= self._n <= missing + found):             # <<<<<<<<<<<<<<
  *                     return False
  *             else:
 */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1347, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1353, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = PyObject_RichCompare(__pyx_v_found, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1347, __pyx_L1_error)
+      __pyx_t_6 = PyObject_RichCompare(__pyx_v_found, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1353, __pyx_L1_error)
       if (__Pyx_PyObject_IsTrue(__pyx_t_6)) {
         __Pyx_DECREF(__pyx_t_6);
-        __pyx_t_4 = PyNumber_Add(__pyx_v_missing, __pyx_v_found); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1347, __pyx_L1_error)
+        __pyx_t_4 = PyNumber_Add(__pyx_v_missing, __pyx_v_found); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1353, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_LE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1347, __pyx_L1_error)
+        __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_LE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1353, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1347, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1353, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_7 = (!__pyx_t_5);
       if (__pyx_t_7) {
 
-        /* "constraint/constraints.py":1348
+        /* "constraint/constraints.py":1354
  *             if self._exact:
  *                 if not (found <= self._n <= missing + found):
  *                     return False             # <<<<<<<<<<<<<<
@@ -37455,7 +37542,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
         __pyx_r = Py_False;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1347
+        /* "constraint/constraints.py":1353
  *         if missing:
  *             if self._exact:
  *                 if not (found <= self._n <= missing + found):             # <<<<<<<<<<<<<<
@@ -37464,7 +37551,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
 */
       }
 
-      /* "constraint/constraints.py":1346
+      /* "constraint/constraints.py":1352
  *                 missing += 1
  *         if missing:
  *             if self._exact:             # <<<<<<<<<<<<<<
@@ -37474,7 +37561,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
       goto __pyx_L8;
     }
 
-    /* "constraint/constraints.py":1350
+    /* "constraint/constraints.py":1356
  *                     return False
  *             else:
  *                 if self._n > missing + found:             # <<<<<<<<<<<<<<
@@ -37482,18 +37569,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
  *             if forwardcheck and self._n - found == missing:
 */
     /*else*/ {
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1350, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1356, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_1 = PyNumber_Add(__pyx_v_missing, __pyx_v_found); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1350, __pyx_L1_error)
+      __pyx_t_1 = PyNumber_Add(__pyx_v_missing, __pyx_v_found); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1356, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_t_6, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1350, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_t_6, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1356, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1350, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1356, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_7) {
 
-        /* "constraint/constraints.py":1351
+        /* "constraint/constraints.py":1357
  *             else:
  *                 if self._n > missing + found:
  *                     return False             # <<<<<<<<<<<<<<
@@ -37505,7 +37592,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
         __pyx_r = Py_False;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1350
+        /* "constraint/constraints.py":1356
  *                     return False
  *             else:
  *                 if self._n > missing + found:             # <<<<<<<<<<<<<<
@@ -37516,33 +37603,33 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
     }
     __pyx_L8:;
 
-    /* "constraint/constraints.py":1352
+    /* "constraint/constraints.py":1358
  *                 if self._n > missing + found:
  *                     return False
  *             if forwardcheck and self._n - found == missing:             # <<<<<<<<<<<<<<
  *                 # All unassigned variables must be assigned to
  *                 # values in the set.
 */
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1352, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1358, __pyx_L1_error)
     if (__pyx_t_5) {
     } else {
       __pyx_t_7 = __pyx_t_5;
       goto __pyx_L12_bool_binop_done;
     }
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1352, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1358, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = PyNumber_Subtract(__pyx_t_4, __pyx_v_found); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1352, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Subtract(__pyx_t_4, __pyx_v_found); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1358, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_v_missing, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1352, __pyx_L1_error)
+    __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_v_missing, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1358, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1352, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1358, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_7 = __pyx_t_5;
     __pyx_L12_bool_binop_done:;
     if (__pyx_t_7) {
 
-      /* "constraint/constraints.py":1355
+      /* "constraint/constraints.py":1361
  *                 # All unassigned variables must be assigned to
  *                 # values in the set.
  *                 for variable in variables:             # <<<<<<<<<<<<<<
@@ -37554,9 +37641,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
         __pyx_t_2 = 0;
         __pyx_t_3 = NULL;
       } else {
-        __pyx_t_2 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1355, __pyx_L1_error)
+        __pyx_t_2 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1361, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1355, __pyx_L1_error)
+        __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1361, __pyx_L1_error)
       }
       for (;;) {
         if (likely(!__pyx_t_3)) {
@@ -37564,7 +37651,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_4);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1355, __pyx_L1_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1361, __pyx_L1_error)
               #endif
               if (__pyx_t_2 >= __pyx_temp) break;
             }
@@ -37574,7 +37661,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
             {
               Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_4);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1355, __pyx_L1_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1361, __pyx_L1_error)
               #endif
               if (__pyx_t_2 >= __pyx_temp) break;
             }
@@ -37585,13 +37672,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
             #endif
             ++__pyx_t_2;
           }
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1355, __pyx_L1_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1361, __pyx_L1_error)
         } else {
           __pyx_t_1 = __pyx_t_3(__pyx_t_4);
           if (unlikely(!__pyx_t_1)) {
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
-              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1355, __pyx_L1_error)
+              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1361, __pyx_L1_error)
               PyErr_Clear();
             }
             break;
@@ -37601,45 +37688,45 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
         __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_1);
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1356
+        /* "constraint/constraints.py":1362
  *                 # values in the set.
  *                 for variable in variables:
  *                     if variable not in assignments:             # <<<<<<<<<<<<<<
  *                         domain = domains[variable]
  *                         for value in domain[:]:
 */
-        __pyx_t_7 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1356, __pyx_L1_error)
+        __pyx_t_7 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1362, __pyx_L1_error)
         if (__pyx_t_7) {
 
-          /* "constraint/constraints.py":1357
+          /* "constraint/constraints.py":1363
  *                 for variable in variables:
  *                     if variable not in assignments:
  *                         domain = domains[variable]             # <<<<<<<<<<<<<<
  *                         for value in domain[:]:
  *                             if value not in set:
 */
-          __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1357, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1363, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_1);
           __pyx_t_1 = 0;
 
-          /* "constraint/constraints.py":1358
+          /* "constraint/constraints.py":1364
  *                     if variable not in assignments:
  *                         domain = domains[variable]
  *                         for value in domain[:]:             # <<<<<<<<<<<<<<
  *                             if value not in set:
  *                                 domain.hideValue(value)
 */
-          __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1358, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1364, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
             __pyx_t_6 = __pyx_t_1; __Pyx_INCREF(__pyx_t_6);
             __pyx_t_8 = 0;
             __pyx_t_9 = NULL;
           } else {
-            __pyx_t_8 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1358, __pyx_L1_error)
+            __pyx_t_8 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1364, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_6);
-            __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_6); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1358, __pyx_L1_error)
+            __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_6); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1364, __pyx_L1_error)
           }
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           for (;;) {
@@ -37648,7 +37735,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_6);
                   #if !CYTHON_ASSUME_SAFE_SIZE
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1358, __pyx_L1_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1364, __pyx_L1_error)
                   #endif
                   if (__pyx_t_8 >= __pyx_temp) break;
                 }
@@ -37658,7 +37745,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_6);
                   #if !CYTHON_ASSUME_SAFE_SIZE
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1358, __pyx_L1_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1364, __pyx_L1_error)
                   #endif
                   if (__pyx_t_8 >= __pyx_temp) break;
                 }
@@ -37669,13 +37756,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
                 #endif
                 ++__pyx_t_8;
               }
-              if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1358, __pyx_L1_error)
+              if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1364, __pyx_L1_error)
             } else {
               __pyx_t_1 = __pyx_t_9(__pyx_t_6);
               if (unlikely(!__pyx_t_1)) {
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
-                  if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1358, __pyx_L1_error)
+                  if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1364, __pyx_L1_error)
                   PyErr_Clear();
                 }
                 break;
@@ -37685,17 +37772,17 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
             __Pyx_XDECREF_SET(__pyx_v_value, __pyx_t_1);
             __pyx_t_1 = 0;
 
-            /* "constraint/constraints.py":1359
+            /* "constraint/constraints.py":1365
  *                         domain = domains[variable]
  *                         for value in domain[:]:
  *                             if value not in set:             # <<<<<<<<<<<<<<
  *                                 domain.hideValue(value)
  *                         if not domain:
 */
-            __pyx_t_7 = (__Pyx_PySequence_ContainsTF(__pyx_v_value, __pyx_v_set, Py_NE)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1359, __pyx_L1_error)
+            __pyx_t_7 = (__Pyx_PySequence_ContainsTF(__pyx_v_value, __pyx_v_set, Py_NE)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1365, __pyx_L1_error)
             if (__pyx_t_7) {
 
-              /* "constraint/constraints.py":1360
+              /* "constraint/constraints.py":1366
  *                         for value in domain[:]:
  *                             if value not in set:
  *                                 domain.hideValue(value)             # <<<<<<<<<<<<<<
@@ -37709,12 +37796,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
                 PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_v_value};
                 __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_hideValue, __pyx_callargs+__pyx_t_11, (2-__pyx_t_11) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
                 __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-                if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1360, __pyx_L1_error)
+                if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1366, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_1);
               }
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "constraint/constraints.py":1359
+              /* "constraint/constraints.py":1365
  *                         domain = domains[variable]
  *                         for value in domain[:]:
  *                             if value not in set:             # <<<<<<<<<<<<<<
@@ -37723,7 +37810,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
 */
             }
 
-            /* "constraint/constraints.py":1358
+            /* "constraint/constraints.py":1364
  *                     if variable not in assignments:
  *                         domain = domains[variable]
  *                         for value in domain[:]:             # <<<<<<<<<<<<<<
@@ -37733,18 +37820,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "constraint/constraints.py":1361
+          /* "constraint/constraints.py":1367
  *                             if value not in set:
  *                                 domain.hideValue(value)
  *                         if not domain:             # <<<<<<<<<<<<<<
  *                             return False
  *         else:
 */
-          __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1361, __pyx_L1_error)
+          __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1367, __pyx_L1_error)
           __pyx_t_5 = (!__pyx_t_7);
           if (__pyx_t_5) {
 
-            /* "constraint/constraints.py":1362
+            /* "constraint/constraints.py":1368
  *                                 domain.hideValue(value)
  *                         if not domain:
  *                             return False             # <<<<<<<<<<<<<<
@@ -37757,7 +37844,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             goto __pyx_L0;
 
-            /* "constraint/constraints.py":1361
+            /* "constraint/constraints.py":1367
  *                             if value not in set:
  *                                 domain.hideValue(value)
  *                         if not domain:             # <<<<<<<<<<<<<<
@@ -37766,7 +37853,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
 */
           }
 
-          /* "constraint/constraints.py":1356
+          /* "constraint/constraints.py":1362
  *                 # values in the set.
  *                 for variable in variables:
  *                     if variable not in assignments:             # <<<<<<<<<<<<<<
@@ -37775,7 +37862,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
 */
         }
 
-        /* "constraint/constraints.py":1355
+        /* "constraint/constraints.py":1361
  *                 # All unassigned variables must be assigned to
  *                 # values in the set.
  *                 for variable in variables:             # <<<<<<<<<<<<<<
@@ -37785,7 +37872,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "constraint/constraints.py":1352
+      /* "constraint/constraints.py":1358
  *                 if self._n > missing + found:
  *                     return False
  *             if forwardcheck and self._n - found == missing:             # <<<<<<<<<<<<<<
@@ -37794,7 +37881,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
 */
     }
 
-    /* "constraint/constraints.py":1345
+    /* "constraint/constraints.py":1351
  *             else:
  *                 missing += 1
  *         if missing:             # <<<<<<<<<<<<<<
@@ -37804,7 +37891,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
     goto __pyx_L7;
   }
 
-  /* "constraint/constraints.py":1364
+  /* "constraint/constraints.py":1370
  *                             return False
  *         else:
  *             if self._exact:             # <<<<<<<<<<<<<<
@@ -37812,28 +37899,28 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
  *                     return False
 */
   /*else*/ {
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1364, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1370, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1364, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1370, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (__pyx_t_5) {
 
-      /* "constraint/constraints.py":1365
+      /* "constraint/constraints.py":1371
  *         else:
  *             if self._exact:
  *                 if found != self._n:             # <<<<<<<<<<<<<<
  *                     return False
  *             else:
 */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1365, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1371, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = PyObject_RichCompare(__pyx_v_found, __pyx_t_4, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1365, __pyx_L1_error)
+      __pyx_t_6 = PyObject_RichCompare(__pyx_v_found, __pyx_t_4, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1371, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1365, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1371, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_5) {
 
-        /* "constraint/constraints.py":1366
+        /* "constraint/constraints.py":1372
  *             if self._exact:
  *                 if found != self._n:
  *                     return False             # <<<<<<<<<<<<<<
@@ -37845,7 +37932,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
         __pyx_r = Py_False;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1365
+        /* "constraint/constraints.py":1371
  *         else:
  *             if self._exact:
  *                 if found != self._n:             # <<<<<<<<<<<<<<
@@ -37854,7 +37941,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
 */
       }
 
-      /* "constraint/constraints.py":1364
+      /* "constraint/constraints.py":1370
  *                             return False
  *         else:
  *             if self._exact:             # <<<<<<<<<<<<<<
@@ -37864,7 +37951,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
       goto __pyx_L23;
     }
 
-    /* "constraint/constraints.py":1368
+    /* "constraint/constraints.py":1374
  *                     return False
  *             else:
  *                 if found < self._n:             # <<<<<<<<<<<<<<
@@ -37872,15 +37959,15 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
  *         return True
 */
     /*else*/ {
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1368, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1374, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_found, __pyx_t_6, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1368, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_found, __pyx_t_6, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1374, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1368, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1374, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_5) {
 
-        /* "constraint/constraints.py":1369
+        /* "constraint/constraints.py":1375
  *             else:
  *                 if found < self._n:
  *                     return False             # <<<<<<<<<<<<<<
@@ -37892,7 +37979,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
         __pyx_r = Py_False;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1368
+        /* "constraint/constraints.py":1374
  *                     return False
  *             else:
  *                 if found < self._n:             # <<<<<<<<<<<<<<
@@ -37905,7 +37992,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
   }
   __pyx_L7:;
 
-  /* "constraint/constraints.py":1370
+  /* "constraint/constraints.py":1376
  *                 if found < self._n:
  *                     return False
  *         return True             # <<<<<<<<<<<<<<
@@ -37917,7 +38004,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
   __pyx_r = Py_True;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":1336
+  /* "constraint/constraints.py":1342
  *         self._exact = exact
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -37945,7 +38032,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_19SomeInSetConstraint_2__ca
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1384
+/* "constraint/constraints.py":1390
  *     """
  * 
  *     def __init__(self, set, n=1, exact=False):             # <<<<<<<<<<<<<<
@@ -37996,50 +38083,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_set,&__pyx_mstate_global->__pyx_n_u_n,&__pyx_mstate_global->__pyx_n_u_exact,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1384, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1390, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1384, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1390, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1384, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1390, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1384, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1390, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1384, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1390, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1384, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 1390, __pyx_L3_error)
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)((PyObject*)__pyx_mstate_global->__pyx_int_1)));
       if (!values[3]) values[3] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 4, i); __PYX_ERR(0, 1384, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 4, i); __PYX_ERR(0, 1390, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1384, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1390, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1384, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1390, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1384, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1390, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1384, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1390, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -38053,7 +38140,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 4, __pyx_nargs); __PYX_ERR(0, 1384, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 4, __pyx_nargs); __PYX_ERR(0, 1390, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -38082,34 +38169,34 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint___
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "constraint/constraints.py":1394
+  /* "constraint/constraints.py":1400
  *                 are not present in set must be exactly `n`
  *         """
  *         self._set = set             # <<<<<<<<<<<<<<
  *         self._n = n
  *         self._exact = exact
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2, __pyx_v_set) < 0) __PYX_ERR(0, 1394, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2, __pyx_v_set) < 0) __PYX_ERR(0, 1400, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1395
+  /* "constraint/constraints.py":1401
  *         """
  *         self._set = set
  *         self._n = n             # <<<<<<<<<<<<<<
  *         self._exact = exact
  * 
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2, __pyx_v_n) < 0) __PYX_ERR(0, 1395, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2, __pyx_v_n) < 0) __PYX_ERR(0, 1401, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1396
+  /* "constraint/constraints.py":1402
  *         self._set = set
  *         self._n = n
  *         self._exact = exact             # <<<<<<<<<<<<<<
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
 */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2, __pyx_v_exact) < 0) __PYX_ERR(0, 1396, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2, __pyx_v_exact) < 0) __PYX_ERR(0, 1402, __pyx_L1_error)
 
-  /* "constraint/constraints.py":1384
+  /* "constraint/constraints.py":1390
  *     """
  * 
  *     def __init__(self, set, n=1, exact=False):             # <<<<<<<<<<<<<<
@@ -38129,7 +38216,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint___
   return __pyx_r;
 }
 
-/* "constraint/constraints.py":1398
+/* "constraint/constraints.py":1404
  *         self._exact = exact
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -38180,53 +38267,53 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_variables,&__pyx_mstate_global->__pyx_n_u_domains,&__pyx_mstate_global->__pyx_n_u_assignments,&__pyx_mstate_global->__pyx_n_u_forwardcheck,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1398, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 1404, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1398, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1404, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1398, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1404, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1398, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1404, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1398, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1404, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1398, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1404, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1398, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__call__", 0) < 0) __PYX_ERR(0, 1404, __pyx_L3_error)
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1398, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, i); __PYX_ERR(0, 1404, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1398, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 1404, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1398, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 1404, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1398, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 1404, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1398, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 1404, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1398, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 1404, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
@@ -38240,7 +38327,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1398, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__call__", 0, 4, 5, __pyx_nargs); __PYX_ERR(0, 1404, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -38251,8 +38338,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1398, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 1398, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_domains), (&PyDict_Type), 0, "domains", 2))) __PYX_ERR(0, 1404, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_assignments), (&PyDict_Type), 0, "assignments", 2))) __PYX_ERR(0, 1404, __pyx_L1_error)
   __pyx_r = __pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2__call__(__pyx_self, __pyx_v_self, __pyx_v_variables, __pyx_v_domains, __pyx_v_assignments, __pyx_v_forwardcheck);
 
   /* function exit code */
@@ -38297,19 +38384,19 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__call__", 0);
 
-  /* "constraint/constraints.py":1399
+  /* "constraint/constraints.py":1405
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
  *         set = self._set             # <<<<<<<<<<<<<<
  *         missing = 0
  *         found = 0
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1399, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_set_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_set = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1400
+  /* "constraint/constraints.py":1406
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
  *         set = self._set
  *         missing = 0             # <<<<<<<<<<<<<<
@@ -38319,7 +38406,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_0);
   __pyx_v_missing = __pyx_mstate_global->__pyx_int_0;
 
-  /* "constraint/constraints.py":1401
+  /* "constraint/constraints.py":1407
  *         set = self._set
  *         missing = 0
  *         found = 0             # <<<<<<<<<<<<<<
@@ -38329,7 +38416,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_0);
   __pyx_v_found = __pyx_mstate_global->__pyx_int_0;
 
-  /* "constraint/constraints.py":1402
+  /* "constraint/constraints.py":1408
  *         missing = 0
  *         found = 0
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -38341,9 +38428,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
     __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1402, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1408, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1402, __pyx_L1_error)
+    __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1408, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
@@ -38351,7 +38438,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1402, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1408, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -38361,7 +38448,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1402, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1408, __pyx_L1_error)
           #endif
           if (__pyx_t_2 >= __pyx_temp) break;
         }
@@ -38372,13 +38459,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
         #endif
         ++__pyx_t_2;
       }
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1402, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1408, __pyx_L1_error)
     } else {
       __pyx_t_4 = __pyx_t_3(__pyx_t_1);
       if (unlikely(!__pyx_t_4)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1402, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1408, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -38388,36 +38475,36 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
     __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "constraint/constraints.py":1403
+    /* "constraint/constraints.py":1409
  *         found = 0
  *         for variable in variables:
  *             if variable in assignments:             # <<<<<<<<<<<<<<
  *                 found += assignments[variable] not in set
  *             else:
 */
-    __pyx_t_5 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1403, __pyx_L1_error)
+    __pyx_t_5 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_EQ)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1409, __pyx_L1_error)
     if (__pyx_t_5) {
 
-      /* "constraint/constraints.py":1404
+      /* "constraint/constraints.py":1410
  *         for variable in variables:
  *             if variable in assignments:
  *                 found += assignments[variable] not in set             # <<<<<<<<<<<<<<
  *             else:
  *                 missing += 1
 */
-      __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1404, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_assignments, __pyx_v_variable); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1410, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = (__Pyx_PySequence_ContainsTF(__pyx_t_4, __pyx_v_set, Py_NE)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1404, __pyx_L1_error)
+      __pyx_t_5 = (__Pyx_PySequence_ContainsTF(__pyx_t_4, __pyx_v_set, Py_NE)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1410, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyBool_FromLong(__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1404, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyBool_FromLong(__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1410, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = PyNumber_InPlaceAdd(__pyx_v_found, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1404, __pyx_L1_error)
+      __pyx_t_6 = PyNumber_InPlaceAdd(__pyx_v_found, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1410, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF_SET(__pyx_v_found, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "constraint/constraints.py":1403
+      /* "constraint/constraints.py":1409
  *         found = 0
  *         for variable in variables:
  *             if variable in assignments:             # <<<<<<<<<<<<<<
@@ -38427,7 +38514,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
       goto __pyx_L5;
     }
 
-    /* "constraint/constraints.py":1406
+    /* "constraint/constraints.py":1412
  *                 found += assignments[variable] not in set
  *             else:
  *                 missing += 1             # <<<<<<<<<<<<<<
@@ -38435,14 +38522,14 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
  *             if self._exact:
 */
     /*else*/ {
-      __pyx_t_6 = __Pyx_PyLong_AddObjC(__pyx_v_missing, __pyx_mstate_global->__pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1406, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyLong_AddObjC(__pyx_v_missing, __pyx_mstate_global->__pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1412, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF_SET(__pyx_v_missing, __pyx_t_6);
       __pyx_t_6 = 0;
     }
     __pyx_L5:;
 
-    /* "constraint/constraints.py":1402
+    /* "constraint/constraints.py":1408
  *         missing = 0
  *         found = 0
  *         for variable in variables:             # <<<<<<<<<<<<<<
@@ -38452,53 +38539,53 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "constraint/constraints.py":1407
+  /* "constraint/constraints.py":1413
  *             else:
  *                 missing += 1
  *         if missing:             # <<<<<<<<<<<<<<
  *             if self._exact:
  *                 if not (found <= self._n <= missing + found):
 */
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_missing); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1407, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_missing); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1413, __pyx_L1_error)
   if (__pyx_t_5) {
 
-    /* "constraint/constraints.py":1408
+    /* "constraint/constraints.py":1414
  *                 missing += 1
  *         if missing:
  *             if self._exact:             # <<<<<<<<<<<<<<
  *                 if not (found <= self._n <= missing + found):
  *                     return False
 */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1408, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1414, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1408, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1414, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_5) {
 
-      /* "constraint/constraints.py":1409
+      /* "constraint/constraints.py":1415
  *         if missing:
  *             if self._exact:
  *                 if not (found <= self._n <= missing + found):             # <<<<<<<<<<<<<<
  *                     return False
  *             else:
 */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1409, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1415, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = PyObject_RichCompare(__pyx_v_found, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1409, __pyx_L1_error)
+      __pyx_t_6 = PyObject_RichCompare(__pyx_v_found, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1415, __pyx_L1_error)
       if (__Pyx_PyObject_IsTrue(__pyx_t_6)) {
         __Pyx_DECREF(__pyx_t_6);
-        __pyx_t_4 = PyNumber_Add(__pyx_v_missing, __pyx_v_found); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1409, __pyx_L1_error)
+        __pyx_t_4 = PyNumber_Add(__pyx_v_missing, __pyx_v_found); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1415, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_LE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1409, __pyx_L1_error)
+        __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_LE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1415, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1409, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1415, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_7 = (!__pyx_t_5);
       if (__pyx_t_7) {
 
-        /* "constraint/constraints.py":1410
+        /* "constraint/constraints.py":1416
  *             if self._exact:
  *                 if not (found <= self._n <= missing + found):
  *                     return False             # <<<<<<<<<<<<<<
@@ -38510,7 +38597,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
         __pyx_r = Py_False;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1409
+        /* "constraint/constraints.py":1415
  *         if missing:
  *             if self._exact:
  *                 if not (found <= self._n <= missing + found):             # <<<<<<<<<<<<<<
@@ -38519,7 +38606,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
 */
       }
 
-      /* "constraint/constraints.py":1408
+      /* "constraint/constraints.py":1414
  *                 missing += 1
  *         if missing:
  *             if self._exact:             # <<<<<<<<<<<<<<
@@ -38529,7 +38616,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
       goto __pyx_L8;
     }
 
-    /* "constraint/constraints.py":1412
+    /* "constraint/constraints.py":1418
  *                     return False
  *             else:
  *                 if self._n > missing + found:             # <<<<<<<<<<<<<<
@@ -38537,18 +38624,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
  *             if forwardcheck and self._n - found == missing:
 */
     /*else*/ {
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1412, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1418, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_1 = PyNumber_Add(__pyx_v_missing, __pyx_v_found); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1412, __pyx_L1_error)
+      __pyx_t_1 = PyNumber_Add(__pyx_v_missing, __pyx_v_found); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1418, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_t_6, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1412, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_t_6, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1418, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1412, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1418, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_7) {
 
-        /* "constraint/constraints.py":1413
+        /* "constraint/constraints.py":1419
  *             else:
  *                 if self._n > missing + found:
  *                     return False             # <<<<<<<<<<<<<<
@@ -38560,7 +38647,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
         __pyx_r = Py_False;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1412
+        /* "constraint/constraints.py":1418
  *                     return False
  *             else:
  *                 if self._n > missing + found:             # <<<<<<<<<<<<<<
@@ -38571,33 +38658,33 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
     }
     __pyx_L8:;
 
-    /* "constraint/constraints.py":1414
+    /* "constraint/constraints.py":1420
  *                 if self._n > missing + found:
  *                     return False
  *             if forwardcheck and self._n - found == missing:             # <<<<<<<<<<<<<<
  *                 # All unassigned variables must be assigned to
  *                 # values not in the set.
 */
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1414, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_forwardcheck); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1420, __pyx_L1_error)
     if (__pyx_t_5) {
     } else {
       __pyx_t_7 = __pyx_t_5;
       goto __pyx_L12_bool_binop_done;
     }
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1414, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1420, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = PyNumber_Subtract(__pyx_t_4, __pyx_v_found); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1414, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Subtract(__pyx_t_4, __pyx_v_found); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1420, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_v_missing, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1414, __pyx_L1_error)
+    __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_v_missing, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1420, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1414, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1420, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_7 = __pyx_t_5;
     __pyx_L12_bool_binop_done:;
     if (__pyx_t_7) {
 
-      /* "constraint/constraints.py":1417
+      /* "constraint/constraints.py":1423
  *                 # All unassigned variables must be assigned to
  *                 # values not in the set.
  *                 for variable in variables:             # <<<<<<<<<<<<<<
@@ -38609,9 +38696,9 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
         __pyx_t_2 = 0;
         __pyx_t_3 = NULL;
       } else {
-        __pyx_t_2 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1417, __pyx_L1_error)
+        __pyx_t_2 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_variables); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1423, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1417, __pyx_L1_error)
+        __pyx_t_3 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1423, __pyx_L1_error)
       }
       for (;;) {
         if (likely(!__pyx_t_3)) {
@@ -38619,7 +38706,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_4);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1417, __pyx_L1_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1423, __pyx_L1_error)
               #endif
               if (__pyx_t_2 >= __pyx_temp) break;
             }
@@ -38629,7 +38716,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
             {
               Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_4);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1417, __pyx_L1_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1423, __pyx_L1_error)
               #endif
               if (__pyx_t_2 >= __pyx_temp) break;
             }
@@ -38640,13 +38727,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
             #endif
             ++__pyx_t_2;
           }
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1417, __pyx_L1_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1423, __pyx_L1_error)
         } else {
           __pyx_t_1 = __pyx_t_3(__pyx_t_4);
           if (unlikely(!__pyx_t_1)) {
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
-              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1417, __pyx_L1_error)
+              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1423, __pyx_L1_error)
               PyErr_Clear();
             }
             break;
@@ -38656,45 +38743,45 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
         __Pyx_XDECREF_SET(__pyx_v_variable, __pyx_t_1);
         __pyx_t_1 = 0;
 
-        /* "constraint/constraints.py":1418
+        /* "constraint/constraints.py":1424
  *                 # values not in the set.
  *                 for variable in variables:
  *                     if variable not in assignments:             # <<<<<<<<<<<<<<
  *                         domain = domains[variable]
  *                         for value in domain[:]:
 */
-        __pyx_t_7 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1418, __pyx_L1_error)
+        __pyx_t_7 = (__Pyx_PyDict_ContainsTF(__pyx_v_variable, __pyx_v_assignments, Py_NE)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1424, __pyx_L1_error)
         if (__pyx_t_7) {
 
-          /* "constraint/constraints.py":1419
+          /* "constraint/constraints.py":1425
  *                 for variable in variables:
  *                     if variable not in assignments:
  *                         domain = domains[variable]             # <<<<<<<<<<<<<<
  *                         for value in domain[:]:
  *                             if value in set:
 */
-          __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1419, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_domains, __pyx_v_variable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1425, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_XDECREF_SET(__pyx_v_domain, __pyx_t_1);
           __pyx_t_1 = 0;
 
-          /* "constraint/constraints.py":1420
+          /* "constraint/constraints.py":1426
  *                     if variable not in assignments:
  *                         domain = domains[variable]
  *                         for value in domain[:]:             # <<<<<<<<<<<<<<
  *                             if value in set:
  *                                 domain.hideValue(value)
 */
-          __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1420, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_domain, 0, 0, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1426, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
             __pyx_t_6 = __pyx_t_1; __Pyx_INCREF(__pyx_t_6);
             __pyx_t_8 = 0;
             __pyx_t_9 = NULL;
           } else {
-            __pyx_t_8 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1420, __pyx_L1_error)
+            __pyx_t_8 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1426, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_6);
-            __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_6); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1420, __pyx_L1_error)
+            __pyx_t_9 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_6); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1426, __pyx_L1_error)
           }
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           for (;;) {
@@ -38703,7 +38790,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_6);
                   #if !CYTHON_ASSUME_SAFE_SIZE
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1420, __pyx_L1_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1426, __pyx_L1_error)
                   #endif
                   if (__pyx_t_8 >= __pyx_temp) break;
                 }
@@ -38713,7 +38800,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
                 {
                   Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_6);
                   #if !CYTHON_ASSUME_SAFE_SIZE
-                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1420, __pyx_L1_error)
+                  if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 1426, __pyx_L1_error)
                   #endif
                   if (__pyx_t_8 >= __pyx_temp) break;
                 }
@@ -38724,13 +38811,13 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
                 #endif
                 ++__pyx_t_8;
               }
-              if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1420, __pyx_L1_error)
+              if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1426, __pyx_L1_error)
             } else {
               __pyx_t_1 = __pyx_t_9(__pyx_t_6);
               if (unlikely(!__pyx_t_1)) {
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
-                  if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1420, __pyx_L1_error)
+                  if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 1426, __pyx_L1_error)
                   PyErr_Clear();
                 }
                 break;
@@ -38740,17 +38827,17 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
             __Pyx_XDECREF_SET(__pyx_v_value, __pyx_t_1);
             __pyx_t_1 = 0;
 
-            /* "constraint/constraints.py":1421
+            /* "constraint/constraints.py":1427
  *                         domain = domains[variable]
  *                         for value in domain[:]:
  *                             if value in set:             # <<<<<<<<<<<<<<
  *                                 domain.hideValue(value)
  *                         if not domain:
 */
-            __pyx_t_7 = (__Pyx_PySequence_ContainsTF(__pyx_v_value, __pyx_v_set, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1421, __pyx_L1_error)
+            __pyx_t_7 = (__Pyx_PySequence_ContainsTF(__pyx_v_value, __pyx_v_set, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1427, __pyx_L1_error)
             if (__pyx_t_7) {
 
-              /* "constraint/constraints.py":1422
+              /* "constraint/constraints.py":1428
  *                         for value in domain[:]:
  *                             if value in set:
  *                                 domain.hideValue(value)             # <<<<<<<<<<<<<<
@@ -38764,12 +38851,12 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
                 PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_v_value};
                 __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_hideValue, __pyx_callargs+__pyx_t_11, (2-__pyx_t_11) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
                 __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-                if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1422, __pyx_L1_error)
+                if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1428, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_1);
               }
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "constraint/constraints.py":1421
+              /* "constraint/constraints.py":1427
  *                         domain = domains[variable]
  *                         for value in domain[:]:
  *                             if value in set:             # <<<<<<<<<<<<<<
@@ -38778,7 +38865,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
 */
             }
 
-            /* "constraint/constraints.py":1420
+            /* "constraint/constraints.py":1426
  *                     if variable not in assignments:
  *                         domain = domains[variable]
  *                         for value in domain[:]:             # <<<<<<<<<<<<<<
@@ -38788,18 +38875,18 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "constraint/constraints.py":1423
+          /* "constraint/constraints.py":1429
  *                             if value in set:
  *                                 domain.hideValue(value)
  *                         if not domain:             # <<<<<<<<<<<<<<
  *                             return False
  *         else:
 */
-          __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1423, __pyx_L1_error)
+          __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_domain); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 1429, __pyx_L1_error)
           __pyx_t_5 = (!__pyx_t_7);
           if (__pyx_t_5) {
 
-            /* "constraint/constraints.py":1424
+            /* "constraint/constraints.py":1430
  *                                 domain.hideValue(value)
  *                         if not domain:
  *                             return False             # <<<<<<<<<<<<<<
@@ -38812,7 +38899,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             goto __pyx_L0;
 
-            /* "constraint/constraints.py":1423
+            /* "constraint/constraints.py":1429
  *                             if value in set:
  *                                 domain.hideValue(value)
  *                         if not domain:             # <<<<<<<<<<<<<<
@@ -38821,7 +38908,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
 */
           }
 
-          /* "constraint/constraints.py":1418
+          /* "constraint/constraints.py":1424
  *                 # values not in the set.
  *                 for variable in variables:
  *                     if variable not in assignments:             # <<<<<<<<<<<<<<
@@ -38830,7 +38917,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
 */
         }
 
-        /* "constraint/constraints.py":1417
+        /* "constraint/constraints.py":1423
  *                 # All unassigned variables must be assigned to
  *                 # values not in the set.
  *                 for variable in variables:             # <<<<<<<<<<<<<<
@@ -38840,7 +38927,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "constraint/constraints.py":1414
+      /* "constraint/constraints.py":1420
  *                 if self._n > missing + found:
  *                     return False
  *             if forwardcheck and self._n - found == missing:             # <<<<<<<<<<<<<<
@@ -38849,7 +38936,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
 */
     }
 
-    /* "constraint/constraints.py":1407
+    /* "constraint/constraints.py":1413
  *             else:
  *                 missing += 1
  *         if missing:             # <<<<<<<<<<<<<<
@@ -38859,7 +38946,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
     goto __pyx_L7;
   }
 
-  /* "constraint/constraints.py":1426
+  /* "constraint/constraints.py":1432
  *                             return False
  *         else:
  *             if self._exact:             # <<<<<<<<<<<<<<
@@ -38867,28 +38954,28 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
  *                     return False
 */
   /*else*/ {
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1426, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_exact_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1432, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1426, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1432, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (__pyx_t_5) {
 
-      /* "constraint/constraints.py":1427
+      /* "constraint/constraints.py":1433
  *         else:
  *             if self._exact:
  *                 if found != self._n:             # <<<<<<<<<<<<<<
  *                     return False
  *             else:
 */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1427, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1433, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = PyObject_RichCompare(__pyx_v_found, __pyx_t_4, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1427, __pyx_L1_error)
+      __pyx_t_6 = PyObject_RichCompare(__pyx_v_found, __pyx_t_4, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1433, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1427, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1433, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_5) {
 
-        /* "constraint/constraints.py":1428
+        /* "constraint/constraints.py":1434
  *             if self._exact:
  *                 if found != self._n:
  *                     return False             # <<<<<<<<<<<<<<
@@ -38900,7 +38987,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
         __pyx_r = Py_False;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1427
+        /* "constraint/constraints.py":1433
  *         else:
  *             if self._exact:
  *                 if found != self._n:             # <<<<<<<<<<<<<<
@@ -38909,7 +38996,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
 */
       }
 
-      /* "constraint/constraints.py":1426
+      /* "constraint/constraints.py":1432
  *                             return False
  *         else:
  *             if self._exact:             # <<<<<<<<<<<<<<
@@ -38919,7 +39006,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
       goto __pyx_L23;
     }
 
-    /* "constraint/constraints.py":1430
+    /* "constraint/constraints.py":1436
  *                     return False
  *             else:
  *                 if found < self._n:             # <<<<<<<<<<<<<<
@@ -38927,15 +39014,15 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
  *         return True
 */
     /*else*/ {
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1430, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_n_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1436, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_found, __pyx_t_6, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1430, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_found, __pyx_t_6, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1436, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1430, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1436, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_5) {
 
-        /* "constraint/constraints.py":1431
+        /* "constraint/constraints.py":1437
  *             else:
  *                 if found < self._n:
  *                     return False             # <<<<<<<<<<<<<<
@@ -38946,7 +39033,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
         __pyx_r = Py_False;
         goto __pyx_L0;
 
-        /* "constraint/constraints.py":1430
+        /* "constraint/constraints.py":1436
  *                     return False
  *             else:
  *                 if found < self._n:             # <<<<<<<<<<<<<<
@@ -38959,7 +39046,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
   }
   __pyx_L7:;
 
-  /* "constraint/constraints.py":1432
+  /* "constraint/constraints.py":1438
  *                 if found < self._n:
  *                     return False
  *         return True             # <<<<<<<<<<<<<<
@@ -38969,7 +39056,7 @@ static PyObject *__pyx_pf_10constraint_11constraints_22SomeNotInSetConstraint_2_
   __pyx_r = Py_True;
   goto __pyx_L0;
 
-  /* "constraint/constraints.py":1398
+  /* "constraint/constraints.py":1404
  *         self._exact = exact
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
@@ -42893,15 +42980,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__ = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_12___call___spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__)) __PYX_ERR(0, 888, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_12___call___spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__) < 0) __PYX_ERR(0, 888, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__ = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_12___call___spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__)) __PYX_ERR(0, 890, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_12___call___spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__) < 0) __PYX_ERR(0, 890, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__ = &__pyx_type_10constraint_11constraints___pyx_scope_struct_12___call__;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__) < 0) __PYX_ERR(0, 888, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__) < 0) __PYX_ERR(0, 890, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__->tp_dictoffset && __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_12___call__->tp_getattro == PyObject_GenericGetAttr)) {
@@ -42909,15 +42996,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_13_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr)) __PYX_ERR(0, 911, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_13_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr) < 0) __PYX_ERR(0, 911, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_13_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr)) __PYX_ERR(0, 913, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_13_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr) < 0) __PYX_ERR(0, 913, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr = &__pyx_type_10constraint_11constraints___pyx_scope_struct_13_genexpr;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr) < 0) __PYX_ERR(0, 911, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr) < 0) __PYX_ERR(0, 913, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr->tp_dictoffset && __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_13_genexpr->tp_getattro == PyObject_GenericGetAttr)) {
@@ -42925,15 +43012,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_14_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr)) __PYX_ERR(0, 912, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_14_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr) < 0) __PYX_ERR(0, 912, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_14_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr)) __PYX_ERR(0, 914, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_14_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr) < 0) __PYX_ERR(0, 914, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr = &__pyx_type_10constraint_11constraints___pyx_scope_struct_14_genexpr;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr) < 0) __PYX_ERR(0, 912, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr) < 0) __PYX_ERR(0, 914, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr->tp_dictoffset && __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_14_genexpr->tp_getattro == PyObject_GenericGetAttr)) {
@@ -42941,15 +43028,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_15_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr)) __PYX_ERR(0, 926, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_15_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr) < 0) __PYX_ERR(0, 926, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_15_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr)) __PYX_ERR(0, 928, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_15_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr) < 0) __PYX_ERR(0, 928, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr = &__pyx_type_10constraint_11constraints___pyx_scope_struct_15_genexpr;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr) < 0) __PYX_ERR(0, 926, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr) < 0) __PYX_ERR(0, 928, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr->tp_dictoffset && __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_15_genexpr->tp_getattro == PyObject_GenericGetAttr)) {
@@ -42957,15 +43044,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__ = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_16___call___spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__)) __PYX_ERR(0, 1030, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_16___call___spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__) < 0) __PYX_ERR(0, 1030, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__ = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_16___call___spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__)) __PYX_ERR(0, 1034, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_16___call___spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__) < 0) __PYX_ERR(0, 1034, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__ = &__pyx_type_10constraint_11constraints___pyx_scope_struct_16___call__;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__) < 0) __PYX_ERR(0, 1030, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__) < 0) __PYX_ERR(0, 1034, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__->tp_dictoffset && __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_16___call__->tp_getattro == PyObject_GenericGetAttr)) {
@@ -42973,15 +43060,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_17_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr)) __PYX_ERR(0, 1066, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_17_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr) < 0) __PYX_ERR(0, 1066, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_17_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr)) __PYX_ERR(0, 1070, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_17_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr) < 0) __PYX_ERR(0, 1070, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr = &__pyx_type_10constraint_11constraints___pyx_scope_struct_17_genexpr;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr) < 0) __PYX_ERR(0, 1066, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr) < 0) __PYX_ERR(0, 1070, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr->tp_dictoffset && __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_17_genexpr->tp_getattro == PyObject_GenericGetAttr)) {
@@ -42989,15 +43076,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_18_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr)) __PYX_ERR(0, 1100, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_18_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr) < 0) __PYX_ERR(0, 1100, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_18_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr)) __PYX_ERR(0, 1104, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_18_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr) < 0) __PYX_ERR(0, 1104, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr = &__pyx_type_10constraint_11constraints___pyx_scope_struct_18_genexpr;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr) < 0) __PYX_ERR(0, 1100, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr) < 0) __PYX_ERR(0, 1104, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr->tp_dictoffset && __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_18_genexpr->tp_getattro == PyObject_GenericGetAttr)) {
@@ -43005,15 +43092,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__ = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_19___call___spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__)) __PYX_ERR(0, 1199, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_19___call___spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__) < 0) __PYX_ERR(0, 1199, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__ = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_19___call___spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__)) __PYX_ERR(0, 1205, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_19___call___spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__) < 0) __PYX_ERR(0, 1205, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__ = &__pyx_type_10constraint_11constraints___pyx_scope_struct_19___call__;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__) < 0) __PYX_ERR(0, 1199, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__) < 0) __PYX_ERR(0, 1205, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__->tp_dictoffset && __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_19___call__->tp_getattro == PyObject_GenericGetAttr)) {
@@ -43021,15 +43108,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_20_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr)) __PYX_ERR(0, 1235, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_20_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr) < 0) __PYX_ERR(0, 1235, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10constraint_11constraints___pyx_scope_struct_20_genexpr_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr)) __PYX_ERR(0, 1241, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10constraint_11constraints___pyx_scope_struct_20_genexpr_spec, __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr) < 0) __PYX_ERR(0, 1241, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr = &__pyx_type_10constraint_11constraints___pyx_scope_struct_20_genexpr;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr) < 0) __PYX_ERR(0, 1235, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr) < 0) __PYX_ERR(0, 1241, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr->tp_dictoffset && __pyx_mstate->__pyx_ptype_10constraint_11constraints___pyx_scope_struct_20_genexpr->tp_getattro == PyObject_GenericGetAttr)) {
@@ -44551,56 +44638,56 @@ __Pyx_RefNannySetupContext("PyInit_constraints", 0);
   if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_get_product_bounds, __pyx_t_3) < 0) __PYX_ERR(0, 849, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":867
+  /* "constraint/constraints.py":869
  *         return min(products), max(products)
  * 
  *     def _safe_product(self, values):             # <<<<<<<<<<<<<<
  *         prod = 1
  *         for v in values:
 */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_27VariableExactProdConstraint_5_safe_product, 0, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint__saf, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[46])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 867, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_27VariableExactProdConstraint_5_safe_product, 0, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint__saf, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[46])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 869, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_safe_product, __pyx_t_3) < 0) __PYX_ERR(0, 867, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_safe_product, __pyx_t_3) < 0) __PYX_ERR(0, 869, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":873
+  /* "constraint/constraints.py":875
  *         return prod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
 */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 873, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 875, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 873, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 873, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 873, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 873, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_27VariableExactProdConstraint_7preProcess, 0, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint_preP, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[47])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 873, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 875, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 875, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 875, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 875, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_27VariableExactProdConstraint_7preProcess, 0, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint_preP, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[47])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 875, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_4) < 0) __PYX_ERR(0, 873, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_4) < 0) __PYX_ERR(0, 875, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":888
+  /* "constraint/constraints.py":890
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
  *         if self.target_var not in assignments:
  *             return True
 */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 888, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 890, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 888, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 888, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 888, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_27VariableExactProdConstraint_9__call__, 0, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint___ca_2, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[48])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 888, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 890, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 890, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 890, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_27VariableExactProdConstraint_9__call__, 0, __pyx_mstate_global->__pyx_n_u_VariableExactProdConstraint___ca_2, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[48])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 890, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_3) < 0) __PYX_ERR(0, 888, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_3) < 0) __PYX_ERR(0, 890, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "constraint/constraints.py":828
@@ -44618,741 +44705,741 @@ __Pyx_RefNannySetupContext("PyInit_constraints", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":934
+  /* "constraint/constraints.py":936
  * 
  * 
  * class MinProdConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that values of given variables create a product up to at least a given amount.
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 934, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 936, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 934, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 936, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 934, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 936, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 934, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 936, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_5, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_MinProdConstraint, __pyx_mstate_global->__pyx_n_u_MinProdConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_values_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 934, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_5, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_MinProdConstraint, __pyx_mstate_global->__pyx_n_u_MinProdConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_values_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 936, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__pyx_t_2 != __pyx_t_6) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_3, "__orig_bases__", __pyx_t_6) < 0))) __PYX_ERR(0, 934, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_3, "__orig_bases__", __pyx_t_6) < 0))) __PYX_ERR(0, 936, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "constraint/constraints.py":945
+  /* "constraint/constraints.py":947
  *     """
  * 
  *     def __init__(self, minprod: Union[int, float]):             # <<<<<<<<<<<<<<
  *         """Instantiate a MinProdConstraint.
  * 
 */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 945, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 947, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_minprod, __pyx_mstate_global->__pyx_kp_u_Union_int_float) < 0) __PYX_ERR(0, 945, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MinProdConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_MinProdConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[49])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 945, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_minprod, __pyx_mstate_global->__pyx_kp_u_Union_int_float) < 0) __PYX_ERR(0, 947, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MinProdConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_MinProdConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[49])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 947, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_4) < 0) __PYX_ERR(0, 945, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_4) < 0) __PYX_ERR(0, 947, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":953
+  /* "constraint/constraints.py":955
  *         self._minprod = minprod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
 */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 953, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 955, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 953, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 953, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 953, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 953, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MinProdConstraint_3preProcess, 0, __pyx_mstate_global->__pyx_n_u_MinProdConstraint_preProcess, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[50])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 953, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 955, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 955, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 955, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 955, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MinProdConstraint_3preProcess, 0, __pyx_mstate_global->__pyx_n_u_MinProdConstraint_preProcess, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[50])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 955, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_6) < 0) __PYX_ERR(0, 953, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_6) < 0) __PYX_ERR(0, 955, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "constraint/constraints.py":964
+  /* "constraint/constraints.py":966
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
  *         # check if each variable is in the assignments
  *         for variable in variables:
 */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 964, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 966, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 964, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 964, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 964, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MinProdConstraint_5__call__, 0, __pyx_mstate_global->__pyx_n_u_MinProdConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[51])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 964, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 966, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 966, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 966, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MinProdConstraint_5__call__, 0, __pyx_mstate_global->__pyx_n_u_MinProdConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[51])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 966, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_4) < 0) __PYX_ERR(0, 964, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_4) < 0) __PYX_ERR(0, 966, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":934
+  /* "constraint/constraints.py":936
  * 
  * 
  * class MinProdConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that values of given variables create a product up to at least a given amount.
  * 
 */
-  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_MinProdConstraint, __pyx_t_2, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 934, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_MinProdConstraint, __pyx_t_2, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 936, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_MinProdConstraint, __pyx_t_4) < 0) __PYX_ERR(0, 934, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_MinProdConstraint, __pyx_t_4) < 0) __PYX_ERR(0, 936, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":980
+  /* "constraint/constraints.py":982
  * 
  * 
  * class VariableMinProdConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that the product of variables is at least the value of another variable.
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 980, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 982, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 980, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 982, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 980, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 982, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 980, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 982, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_3, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_the_pr_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 980, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_3, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_the_pr_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 982, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__pyx_t_2 != __pyx_t_5) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_4, "__orig_bases__", __pyx_t_5) < 0))) __PYX_ERR(0, 980, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_4, "__orig_bases__", __pyx_t_5) < 0))) __PYX_ERR(0, 982, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "constraint/constraints.py":991
+  /* "constraint/constraints.py":993
  *     """
  * 
  *     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107             # <<<<<<<<<<<<<<
  *         self.target_var = target_var
  *         self.product_vars = product_vars
 */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 991, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 993, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_target_var, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 991, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_product_vars, __pyx_mstate_global->__pyx_kp_u_Sequence_str) < 0) __PYX_ERR(0, 991, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMinProdConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[52])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 991, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_target_var, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 993, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_product_vars, __pyx_mstate_global->__pyx_kp_u_Sequence_str) < 0) __PYX_ERR(0, 993, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMinProdConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[52])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 993, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_6) < 0) __PYX_ERR(0, 991, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_6) < 0) __PYX_ERR(0, 993, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "constraint/constraints.py":995
+  /* "constraint/constraints.py":997
  *         self.product_vars = product_vars
  * 
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):             # <<<<<<<<<<<<<<
  *         bounds = []
  *         for var in self.product_vars:
 */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMinProdConstraint_3_get_product_bounds, 0, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint__get_p, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[53])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 995, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMinProdConstraint_3_get_product_bounds, 0, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint__get_p, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[53])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 997, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_6, __pyx_mstate_global->__pyx_tuple[3]);
-  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_get_product_bounds, __pyx_t_6) < 0) __PYX_ERR(0, 995, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_get_product_bounds, __pyx_t_6) < 0) __PYX_ERR(0, 997, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "constraint/constraints.py":1011
+  /* "constraint/constraints.py":1015
  *         return min(products), max(products)
  * 
  *     def _safe_product(self, values):             # <<<<<<<<<<<<<<
  *         prod = 1
  *         for v in values:
 */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMinProdConstraint_5_safe_product, 0, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint__safe, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[54])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1011, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMinProdConstraint_5_safe_product, 0, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint__safe, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[54])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1015, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_safe_product, __pyx_t_6) < 0) __PYX_ERR(0, 1011, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_safe_product, __pyx_t_6) < 0) __PYX_ERR(0, 1015, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "constraint/constraints.py":1017
+  /* "constraint/constraints.py":1021
  *         return prod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         target_dom = domains[self.target_var]
 */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1017, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1021, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1017, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1017, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 1017, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1017, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMinProdConstraint_7preProcess, 0, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint_prePro, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[55])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1017, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1021, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1021, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 1021, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1021, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMinProdConstraint_7preProcess, 0, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint_prePro, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[55])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1021, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_5) < 0) __PYX_ERR(0, 1017, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_5) < 0) __PYX_ERR(0, 1021, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "constraint/constraints.py":1030
+  /* "constraint/constraints.py":1034
  *                     dom.remove(val)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
  *         if self.target_var not in assignments:
  *             return True  # Can't evaluate yet
 */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1030, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1034, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1030, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1030, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1030, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMinProdConstraint_9__call__, 0, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint___call_2, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[56])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1030, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1034, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1034, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1034, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMinProdConstraint_9__call__, 0, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint___call_2, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[56])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1034, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_6, __pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_6) < 0) __PYX_ERR(0, 1030, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_6) < 0) __PYX_ERR(0, 1034, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "constraint/constraints.py":980
+  /* "constraint/constraints.py":982
  * 
  * 
  * class VariableMinProdConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that the product of variables is at least the value of another variable.
  * 
 */
-  __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint, __pyx_t_2, __pyx_t_4, NULL, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 980, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint, __pyx_t_2, __pyx_t_4, NULL, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 982, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint, __pyx_t_6) < 0) __PYX_ERR(0, 980, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_VariableMinProdConstraint, __pyx_t_6) < 0) __PYX_ERR(0, 982, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1074
+  /* "constraint/constraints.py":1078
  * 
  * 
  * class MaxProdConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that values of given variables create a product up to at most a given amount.
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1074, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1078, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1074, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1078, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1074, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1078, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1074, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1078, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = __Pyx_Py3MetaclassPrepare(__pyx_t_4, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_values_8); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1074, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Py3MetaclassPrepare(__pyx_t_4, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_values_8); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1078, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   if (__pyx_t_2 != __pyx_t_3) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_6, "__orig_bases__", __pyx_t_3) < 0))) __PYX_ERR(0, 1074, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_6, "__orig_bases__", __pyx_t_3) < 0))) __PYX_ERR(0, 1078, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1085
+  /* "constraint/constraints.py":1089
  *     """
  * 
  *     def __init__(self, maxprod: Union[int, float]):             # <<<<<<<<<<<<<<
  *         """Instantiate a MaxProdConstraint.
  * 
 */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1085, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1089, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_maxprod, __pyx_mstate_global->__pyx_kp_u_Union_int_float) < 0) __PYX_ERR(0, 1085, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MaxProdConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[57])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1085, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_maxprod, __pyx_mstate_global->__pyx_kp_u_Union_int_float) < 0) __PYX_ERR(0, 1089, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MaxProdConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[57])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1089, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_5) < 0) __PYX_ERR(0, 1085, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_5) < 0) __PYX_ERR(0, 1089, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "constraint/constraints.py":1093
+  /* "constraint/constraints.py":1097
  *         self._maxprod = maxprod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  * 
 */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1093, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1097, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1093, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1093, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 1093, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1093, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MaxProdConstraint_3preProcess, 0, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint_preProcess, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[58])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1093, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1097, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1097, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 1097, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1097, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MaxProdConstraint_3preProcess, 0, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint_preProcess, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[58])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1097, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_3) < 0) __PYX_ERR(0, 1093, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_3) < 0) __PYX_ERR(0, 1097, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1121
+  /* "constraint/constraints.py":1125
  *                     domain.remove(value)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
  *         maxprod = self._maxprod
  *         prod = 1
 */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1121, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1121, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1121, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1121, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MaxProdConstraint_5__call__, 0, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[59])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1121, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1125, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1125, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1125, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_17MaxProdConstraint_5__call__, 0, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[59])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_5) < 0) __PYX_ERR(0, 1121, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_5) < 0) __PYX_ERR(0, 1125, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "constraint/constraints.py":1074
+  /* "constraint/constraints.py":1078
  * 
  * 
  * class MaxProdConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that values of given variables create a product up to at most a given amount.
  * 
 */
-  __pyx_t_5 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint, __pyx_t_2, __pyx_t_6, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1074, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint, __pyx_t_2, __pyx_t_6, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1078, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint, __pyx_t_5) < 0) __PYX_ERR(0, 1074, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_MaxProdConstraint, __pyx_t_5) < 0) __PYX_ERR(0, 1078, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1149
+  /* "constraint/constraints.py":1153
  * 
  * 
  * class VariableMaxProdConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that the product of variables is at most the value of another variable.
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1149, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1149, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1149, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1149, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_Py3MetaclassPrepare(__pyx_t_6, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_the_pr_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1149, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3MetaclassPrepare(__pyx_t_6, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_the_pr_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__pyx_t_2 != __pyx_t_4) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_5, "__orig_bases__", __pyx_t_4) < 0))) __PYX_ERR(0, 1149, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_5, "__orig_bases__", __pyx_t_4) < 0))) __PYX_ERR(0, 1153, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":1160
+  /* "constraint/constraints.py":1164
  *     """ # noqa: E501
  * 
  *     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107             # <<<<<<<<<<<<<<
  *         self.target_var = target_var
  *         self.product_vars = product_vars
 */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1160, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_target_var, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 1160, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_product_vars, __pyx_mstate_global->__pyx_kp_u_Sequence_str) < 0) __PYX_ERR(0, 1160, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMaxProdConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[60])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1160, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_target_var, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 1164, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_product_vars, __pyx_mstate_global->__pyx_kp_u_Sequence_str) < 0) __PYX_ERR(0, 1164, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMaxProdConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[60])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_3) < 0) __PYX_ERR(0, 1160, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_3) < 0) __PYX_ERR(0, 1164, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1164
+  /* "constraint/constraints.py":1168
  *         self.product_vars = product_vars
  * 
  *     def _get_product_bounds(self, domain_dict, exclude_var=None):             # <<<<<<<<<<<<<<
  *         bounds = []
  *         for var in self.product_vars:
 */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMaxProdConstraint_3_get_product_bounds, 0, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint__get_p, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[61])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1164, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMaxProdConstraint_3_get_product_bounds, 0, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint__get_p, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[61])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_mstate_global->__pyx_tuple[3]);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_get_product_bounds, __pyx_t_3) < 0) __PYX_ERR(0, 1164, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_get_product_bounds, __pyx_t_3) < 0) __PYX_ERR(0, 1168, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1180
+  /* "constraint/constraints.py":1186
  *         return min(products), max(products)
  * 
  *     def _safe_product(self, values):             # <<<<<<<<<<<<<<
  *         prod = 1
  *         for v in values:
 */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMaxProdConstraint_5_safe_product, 0, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint__safe, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[62])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1180, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMaxProdConstraint_5_safe_product, 0, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint__safe, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[62])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_safe_product, __pyx_t_3) < 0) __PYX_ERR(0, 1180, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_safe_product, __pyx_t_3) < 0) __PYX_ERR(0, 1186, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1186
+  /* "constraint/constraints.py":1192
  *         return prod
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
  *         target_dom = domains[self.target_var]
 */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1186, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1186, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1186, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 1186, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1186, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMaxProdConstraint_7preProcess, 0, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint_prePro, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[63])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1186, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1192, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1192, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 1192, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1192, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMaxProdConstraint_7preProcess, 0, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint_prePro, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[63])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_4) < 0) __PYX_ERR(0, 1186, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_4) < 0) __PYX_ERR(0, 1192, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":1199
+  /* "constraint/constraints.py":1205
  *                     dom.remove(val)
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102             # <<<<<<<<<<<<<<
  *         if self.target_var not in assignments:
  *             return True  # Can't evaluate yet
 */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1199, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1205, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1199, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1199, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1199, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMaxProdConstraint_9__call__, 0, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint___call_2, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[64])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1199, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1205, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1205, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1205, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_25VariableMaxProdConstraint_9__call__, 0, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint___call_2, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[64])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1205, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_3) < 0) __PYX_ERR(0, 1199, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_3) < 0) __PYX_ERR(0, 1205, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1149
+  /* "constraint/constraints.py":1153
  * 
  * 
  * class VariableMaxProdConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that the product of variables is at most the value of another variable.
  * 
 */
-  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint, __pyx_t_2, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1149, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint, __pyx_t_2, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint, __pyx_t_3) < 0) __PYX_ERR(0, 1149, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_VariableMaxProdConstraint, __pyx_t_3) < 0) __PYX_ERR(0, 1153, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1243
+  /* "constraint/constraints.py":1249
  * 
  * 
  * class InSetConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that values of given variables are present in the given set.
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1243, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1249, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1243, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1249, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1243, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1249, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1243, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1249, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_5, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_InSetConstraint, __pyx_mstate_global->__pyx_n_u_InSetConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_values_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1243, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_5, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_InSetConstraint, __pyx_mstate_global->__pyx_n_u_InSetConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_values_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1249, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__pyx_t_2 != __pyx_t_6) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_3, "__orig_bases__", __pyx_t_6) < 0))) __PYX_ERR(0, 1243, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_3, "__orig_bases__", __pyx_t_6) < 0))) __PYX_ERR(0, 1249, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "constraint/constraints.py":1254
+  /* "constraint/constraints.py":1260
  *     """
  * 
  *     def __init__(self, set):             # <<<<<<<<<<<<<<
  *         """Initialization method.
  * 
 */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_15InSetConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_InSetConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[65])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1254, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_15InSetConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_InSetConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[65])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1260, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_6) < 0) __PYX_ERR(0, 1254, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_6) < 0) __PYX_ERR(0, 1260, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "constraint/constraints.py":1262
+  /* "constraint/constraints.py":1268
  *         self._set = set
  * 
  *     def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
  *         # preProcess() will remove it.
  *         raise RuntimeError("Can't happen")
 */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_15InSetConstraint_3__call__, 0, __pyx_mstate_global->__pyx_n_u_InSetConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[66])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1262, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_15InSetConstraint_3__call__, 0, __pyx_mstate_global->__pyx_n_u_InSetConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[66])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1268, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_6, __pyx_mstate_global->__pyx_tuple[1]);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_6) < 0) __PYX_ERR(0, 1262, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_6) < 0) __PYX_ERR(0, 1268, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "constraint/constraints.py":1266
+  /* "constraint/constraints.py":1272
  *         raise RuntimeError("Can't happen")
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         for variable in variables:
 */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1266, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1266, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1266, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 1266, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1266, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_15InSetConstraint_5preProcess, 0, __pyx_mstate_global->__pyx_n_u_InSetConstraint_preProcess, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[67])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1266, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1272, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1272, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 1272, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1272, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_15InSetConstraint_5preProcess, 0, __pyx_mstate_global->__pyx_n_u_InSetConstraint_preProcess, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[67])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_4) < 0) __PYX_ERR(0, 1266, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_4) < 0) __PYX_ERR(0, 1272, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":1243
+  /* "constraint/constraints.py":1249
  * 
  * 
  * class InSetConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that values of given variables are present in the given set.
  * 
 */
-  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_InSetConstraint, __pyx_t_2, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1243, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_InSetConstraint, __pyx_t_2, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1249, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_InSetConstraint, __pyx_t_4) < 0) __PYX_ERR(0, 1243, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_InSetConstraint, __pyx_t_4) < 0) __PYX_ERR(0, 1249, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1277
+  /* "constraint/constraints.py":1283
  * 
  * 
  * class NotInSetConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that values of given variables are not present in the given set.
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1277, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1277, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1277, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1277, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_3, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_values_10); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1277, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_3, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_values_10); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__pyx_t_2 != __pyx_t_5) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_4, "__orig_bases__", __pyx_t_5) < 0))) __PYX_ERR(0, 1277, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_4, "__orig_bases__", __pyx_t_5) < 0))) __PYX_ERR(0, 1283, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "constraint/constraints.py":1288
+  /* "constraint/constraints.py":1294
  *     """
  * 
  *     def __init__(self, set):             # <<<<<<<<<<<<<<
  *         """Initialization method.
  * 
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_18NotInSetConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[68])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1288, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_18NotInSetConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[68])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_5) < 0) __PYX_ERR(0, 1288, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_5) < 0) __PYX_ERR(0, 1294, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "constraint/constraints.py":1296
+  /* "constraint/constraints.py":1302
  *         self._set = set
  * 
  *     def __call__(self, variables, domains, assignments, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
  *         # preProcess() will remove it.
  *         raise RuntimeError("Can't happen")
 */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_18NotInSetConstraint_3__call__, 0, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[69])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1296, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_18NotInSetConstraint_3__call__, 0, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[69])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_mstate_global->__pyx_tuple[1]);
-  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_5) < 0) __PYX_ERR(0, 1296, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_5) < 0) __PYX_ERR(0, 1302, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "constraint/constraints.py":1300
+  /* "constraint/constraints.py":1306
  *         raise RuntimeError("Can't happen")
  * 
  *     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         for variable in variables:
 */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1300, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1300, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1300, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 1300, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1300, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_18NotInSetConstraint_5preProcess, 0, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint_preProcess, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[70])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1300, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1306, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1306, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_constraints, __pyx_mstate_global->__pyx_kp_u_list_tuple) < 0) __PYX_ERR(0, 1306, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_vconstraints, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1306, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_18NotInSetConstraint_5preProcess, 0, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint_preProcess, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[70])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_6) < 0) __PYX_ERR(0, 1300, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_preProcess, __pyx_t_6) < 0) __PYX_ERR(0, 1306, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "constraint/constraints.py":1277
+  /* "constraint/constraints.py":1283
  * 
  * 
  * class NotInSetConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that values of given variables are not present in the given set.
  * 
 */
-  __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint, __pyx_t_2, __pyx_t_4, NULL, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1277, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint, __pyx_t_2, __pyx_t_4, NULL, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint, __pyx_t_6) < 0) __PYX_ERR(0, 1277, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_NotInSetConstraint, __pyx_t_6) < 0) __PYX_ERR(0, 1283, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1311
+  /* "constraint/constraints.py":1317
  * 
  * 
  * class SomeInSetConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that at least some of the values of given variables must be present in a given set.
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1311, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1311, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1311, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1311, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = __Pyx_Py3MetaclassPrepare(__pyx_t_4, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_at_lea); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1311, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Py3MetaclassPrepare(__pyx_t_4, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_at_lea); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   if (__pyx_t_2 != __pyx_t_3) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_6, "__orig_bases__", __pyx_t_3) < 0))) __PYX_ERR(0, 1311, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_6, "__orig_bases__", __pyx_t_3) < 0))) __PYX_ERR(0, 1317, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1322
+  /* "constraint/constraints.py":1328
  *     """
  * 
  *     def __init__(self, set, n=1, exact=False):             # <<<<<<<<<<<<<<
  *         """Initialization method.
  * 
 */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_19SomeInSetConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[71])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1322, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_19SomeInSetConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[71])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1328, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_mstate_global->__pyx_tuple[4]);
-  if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_3) < 0) __PYX_ERR(0, 1322, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_3) < 0) __PYX_ERR(0, 1328, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1336
+  /* "constraint/constraints.py":1342
  *         self._exact = exact
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         missing = 0
 */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1336, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1342, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1336, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1336, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1336, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_19SomeInSetConstraint_3__call__, 0, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[72])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1336, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1342, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1342, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1342, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_19SomeInSetConstraint_3__call__, 0, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[72])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1342, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_5) < 0) __PYX_ERR(0, 1336, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_5) < 0) __PYX_ERR(0, 1342, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "constraint/constraints.py":1311
+  /* "constraint/constraints.py":1317
  * 
  * 
  * class SomeInSetConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that at least some of the values of given variables must be present in a given set.
  * 
 */
-  __pyx_t_5 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint, __pyx_t_2, __pyx_t_6, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1311, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint, __pyx_t_2, __pyx_t_6, NULL, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint, __pyx_t_5) < 0) __PYX_ERR(0, 1311, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_SomeInSetConstraint, __pyx_t_5) < 0) __PYX_ERR(0, 1317, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "constraint/constraints.py":1373
+  /* "constraint/constraints.py":1379
  * 
  * 
  * class SomeNotInSetConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that at least some of the values of given variables must not be present in a given set.
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1373, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Constraint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1373, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_Pack(1, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1373, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1373, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_Py3MetaclassPrepare(__pyx_t_6, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_at_lea_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1373, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3MetaclassPrepare(__pyx_t_6, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_kp_u_Constraint_enforcing_that_at_lea_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__pyx_t_2 != __pyx_t_4) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_5, "__orig_bases__", __pyx_t_4) < 0))) __PYX_ERR(0, 1373, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_5, "__orig_bases__", __pyx_t_4) < 0))) __PYX_ERR(0, 1379, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":1384
+  /* "constraint/constraints.py":1390
  *     """
  * 
  *     def __init__(self, set, n=1, exact=False):             # <<<<<<<<<<<<<<
  *         """Initialization method.
  * 
 */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_22SomeNotInSetConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[73])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1384, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_22SomeNotInSetConstraint_1__init__, 0, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint___init, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[73])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_mstate_global->__pyx_tuple[4]);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_4) < 0) __PYX_ERR(0, 1384, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_4) < 0) __PYX_ERR(0, 1390, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "constraint/constraints.py":1398
+  /* "constraint/constraints.py":1404
  *         self._exact = exact
  * 
  *     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102             # <<<<<<<<<<<<<<
  *         set = self._set
  *         missing = 0
 */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1398, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1404, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1398, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1398, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1398, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_22SomeNotInSetConstraint_3__call__, 0, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[74])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1398, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_variables, __pyx_mstate_global->__pyx_n_u_Sequence) < 0) __PYX_ERR(0, 1404, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_domains, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1404, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_assignments, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 1404, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10constraint_11constraints_22SomeNotInSetConstraint_3__call__, 0, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint___call, NULL, __pyx_mstate_global->__pyx_n_u_constraint_constraints, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[74])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1404, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_3) < 0) __PYX_ERR(0, 1398, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_call, __pyx_t_3) < 0) __PYX_ERR(0, 1404, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "constraint/constraints.py":1373
+  /* "constraint/constraints.py":1379
  * 
  * 
  * class SomeNotInSetConstraint(Constraint):             # <<<<<<<<<<<<<<
  *     """Constraint enforcing that at least some of the values of given variables must not be present in a given set.
  * 
 */
-  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint, __pyx_t_2, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1373, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint, __pyx_t_2, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint, __pyx_t_3) < 0) __PYX_ERR(0, 1373, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_SomeNotInSetConstraint, __pyx_t_3) < 0) __PYX_ERR(0, 1379, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -45735,7 +45822,7 @@ static int __Pyx_InitCachedBuiltins(__pyx_mstatetype *__pyx_mstate) {
   __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_max); if (!__pyx_builtin_max) __PYX_ERR(0, 405, __pyx_L1_error)
   __pyx_builtin_sum = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_sum); if (!__pyx_builtin_sum) __PYX_ERR(0, 410, __pyx_L1_error)
   __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_min); if (!__pyx_builtin_min) __PYX_ERR(0, 415, __pyx_L1_error)
-  __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(0, 1264, __pyx_L1_error)
+  __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(0, 1270, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -45758,14 +45845,14 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_slice[0]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_slice[0]);
 
-  /* "constraint/constraints.py":860
+  /* "constraint/constraints.py":862
  *         all_bounds = [b for b in bounds]
  *         if not all_bounds:
  *             return 1, 1             # <<<<<<<<<<<<<<
  * 
  *         # Get all combinations of min/max to find global min/max product
 */
-  __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_1, __pyx_mstate_global->__pyx_int_1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 860, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_1, __pyx_mstate_global->__pyx_int_1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 862, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[0]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[0]);
 
@@ -45802,14 +45889,14 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[3]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[3]);
 
-  /* "constraint/constraints.py":1322
+  /* "constraint/constraints.py":1328
  *     """
  * 
  *     def __init__(self, set, n=1, exact=False):             # <<<<<<<<<<<<<<
  *         """Initialization method.
  * 
 */
-  __pyx_mstate_global->__pyx_tuple[4] = PyTuple_Pack(2, ((PyObject*)__pyx_mstate_global->__pyx_int_1), ((PyObject*)Py_False)); if (unlikely(!__pyx_mstate_global->__pyx_tuple[4])) __PYX_ERR(0, 1322, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[4] = PyTuple_Pack(2, ((PyObject*)__pyx_mstate_global->__pyx_int_1), ((PyObject*)Py_False)); if (unlikely(!__pyx_mstate_global->__pyx_tuple[4])) __PYX_ERR(0, 1328, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[4]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[4]);
   __Pyx_RefNannyFinishContext();
@@ -45907,32 +45994,32 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
     __pyx_mstate_global->__pyx_codeobj_tab[8] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_genexpr, __pyx_k_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[8])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 911, 2};
+    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 913, 2};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_c};
     __pyx_mstate_global->__pyx_codeobj_tab[9] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_genexpr, __pyx_k_A_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[9])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 912, 2};
+    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 914, 2};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_c};
     __pyx_mstate_global->__pyx_codeobj_tab[10] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_genexpr, __pyx_k_A_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[10])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 926, 2};
+    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 928, 2};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_c};
     __pyx_mstate_global->__pyx_codeobj_tab[11] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_genexpr, __pyx_k_Q_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[11])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 1066, 2};
+    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 1070, 2};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_p};
     __pyx_mstate_global->__pyx_codeobj_tab[12] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_genexpr, __pyx_k_Q_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[12])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 1100, 2};
+    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 1104, 2};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_value};
     __pyx_mstate_global->__pyx_codeobj_tab[13] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_genexpr, __pyx_k_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[13])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 1235, 2};
+    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR), 1241, 2};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_p};
     __pyx_mstate_global->__pyx_codeobj_tab[14] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_genexpr, __pyx_k_Q_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[14])) goto bad;
   }
@@ -46087,152 +46174,152 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
     __pyx_mstate_global->__pyx_codeobj_tab[44] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_init, __pyx_k_6a_N_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[44])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 14, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 849, 151};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 14, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 849, 161};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_domain_dict, __pyx_mstate->__pyx_n_u_exclude_var, __pyx_mstate->__pyx_n_u_bounds, __pyx_mstate->__pyx_n_u_var, __pyx_mstate->__pyx_n_u_dom, __pyx_mstate->__pyx_n_u_all_bounds, __pyx_mstate->__pyx_n_u_candidates, __pyx_mstate->__pyx_n_u_products, __pyx_mstate->__pyx_n_u_b, __pyx_mstate->__pyx_n_u_b, __pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi, __pyx_mstate->__pyx_n_u_p};
-    __pyx_mstate_global->__pyx_codeobj_tab[45] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_get_product_bounds, __pyx_k_q_G4q_t3a_Qa_3avS_Qb_E_4q_3a_Qb, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[45])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[45] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_get_product_bounds, __pyx_k_q_G4q_t3a_Qa_t1_3avS_Qb_E_4q_3a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[45])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 867, 24};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 869, 24};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_values, __pyx_mstate->__pyx_n_u_prod, __pyx_mstate->__pyx_n_u_v};
     __pyx_mstate_global->__pyx_codeobj_tab[46] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_safe_product, __pyx_k_A_q_E_A_q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[46])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 16, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 873, 167};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 16, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 875, 167};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_constraints, __pyx_mstate->__pyx_n_u_vconstraints, __pyx_mstate->__pyx_n_u_target_domain, __pyx_mstate->__pyx_n_u_target_min, __pyx_mstate->__pyx_n_u_target_max, __pyx_mstate->__pyx_n_u_var, __pyx_mstate->__pyx_n_u_other_min, __pyx_mstate->__pyx_n_u_other_max, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_value, __pyx_mstate->__pyx_n_u_candidates, __pyx_mstate->__pyx_n_u_minval, __pyx_mstate->__pyx_n_u_maxval};
     __pyx_mstate_global->__pyx_codeobj_tab[47] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_preProcess, __pyx_k_77JJeef_QfKy_Q_q_A_S_S_G4q_4_1I, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[47])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 32, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 888, 427};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 32, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 890, 427};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_assignments, __pyx_mstate->__pyx_n_u_forwardcheck, __pyx_mstate->__pyx_n_u_target_value, __pyx_mstate->__pyx_n_u_assigned_product, __pyx_mstate->__pyx_n_u_unassigned_vars, __pyx_mstate->__pyx_n_u_var, __pyx_mstate->__pyx_n_u_domain_bounds, __pyx_mstate->__pyx_n_u_candidates, __pyx_mstate->__pyx_n_u_possible_min, __pyx_mstate->__pyx_n_u_possible_max, __pyx_mstate->__pyx_n_u_others, __pyx_mstate->__pyx_n_u_others_bounds, __pyx_mstate->__pyx_n_u_other_products, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_value, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_p, __pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi, __pyx_mstate->__pyx_n_u_genexpr, __pyx_mstate->__pyx_n_u_genexpr, __pyx_mstate->__pyx_n_u_genexpr, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_p, __pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi, __pyx_mstate->__pyx_n_u_p, __pyx_mstate->__pyx_n_u_genexpr};
     __pyx_mstate_global->__pyx_codeobj_tab[48] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_call, __pyx_k_55H_a_4_7_1_4q_1_G4q_t3a_Kq_waq, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[48])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 945, 14};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 947, 14};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_minprod};
     __pyx_mstate_global->__pyx_codeobj_tab[49] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_init, __pyx_k_L, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[49])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 9, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 953, 92};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 9, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 955, 92};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_constraints, __pyx_mstate->__pyx_n_u_vconstraints, __pyx_mstate->__pyx_n_u_minprod, __pyx_mstate->__pyx_n_u_variable, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_value};
     __pyx_mstate_global->__pyx_codeobj_tab[50] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_preProcess, __pyx_k_77JJeef_QfKy_Q_a_L_WAQ_q_6_Bd_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[50])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 8, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 964, 95};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 8, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 966, 95};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_assignments, __pyx_mstate->__pyx_n_u_forwardcheck, __pyx_mstate->__pyx_n_u_variable, __pyx_mstate->__pyx_n_u_minprod, __pyx_mstate->__pyx_n_u_prod};
     __pyx_mstate_global->__pyx_codeobj_tab[51] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_call, __pyx_k_55H_a_L_y_q_q_a_q_L_Kq_QfA_5_q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[51])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 991, 23};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 993, 23};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_target_var, __pyx_mstate->__pyx_n_u_product_vars};
     __pyx_mstate_global->__pyx_codeobj_tab[52] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_init, __pyx_k_6a_N_A_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[52])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 12, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 995, 138};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 12, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 997, 148};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_domain_dict, __pyx_mstate->__pyx_n_u_exclude_var, __pyx_mstate->__pyx_n_u_bounds, __pyx_mstate->__pyx_n_u_var, __pyx_mstate->__pyx_n_u_dom, __pyx_mstate->__pyx_n_u_candidates, __pyx_mstate->__pyx_n_u_products, __pyx_mstate->__pyx_n_u_p, __pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi, __pyx_mstate->__pyx_n_u_p};
-    __pyx_mstate_global->__pyx_codeobj_tab[53] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_get_product_bounds, __pyx_k_q_G4q_t3a_Qa_3avS_4q_3a_Qb_E_D, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[53])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[53] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_get_product_bounds, __pyx_k_q_G4q_t3a_Qa_t1_3avS_4q_3a_Qb_E, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[53])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1011, 24};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1015, 24};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_values, __pyx_mstate->__pyx_n_u_prod, __pyx_mstate->__pyx_n_u_v};
     __pyx_mstate_global->__pyx_codeobj_tab[54] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_safe_product, __pyx_k_A_q_E_A_q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[54])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1017, 138};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1021, 138};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_constraints, __pyx_mstate->__pyx_n_u_vconstraints, __pyx_mstate->__pyx_n_u_target_dom, __pyx_mstate->__pyx_n_u_t_min, __pyx_mstate->__pyx_n_u_var, __pyx_mstate->__pyx_n_u_min_others, __pyx_mstate->__pyx_n_u_max_others, __pyx_mstate->__pyx_n_u_dom, __pyx_mstate->__pyx_n_u_val, __pyx_mstate->__pyx_n_u_possible_prods};
     __pyx_mstate_global->__pyx_codeobj_tab[55] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_preProcess, __pyx_k_77JJeef_QfKy_Q_WAT_1A_G4q_T_Qi, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[55])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 31, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1030, 395};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 31, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1034, 395};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_assignments, __pyx_mstate->__pyx_n_u_forwardcheck, __pyx_mstate->__pyx_n_u_target_value, __pyx_mstate->__pyx_n_u_assigned_prod, __pyx_mstate->__pyx_n_u_unassigned_2, __pyx_mstate->__pyx_n_u_var, __pyx_mstate->__pyx_n_u_domain_bounds, __pyx_mstate->__pyx_n_u_candidates, __pyx_mstate->__pyx_n_u_possible_prods, __pyx_mstate->__pyx_n_u_other_unassigned, __pyx_mstate->__pyx_n_u_bounds, __pyx_mstate->__pyx_n_u_other_products, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_val, __pyx_mstate->__pyx_n_u_prods, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_p, __pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi, __pyx_mstate->__pyx_n_u_c, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_p, __pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi, __pyx_mstate->__pyx_n_u_o, __pyx_mstate->__pyx_n_u_genexpr, __pyx_mstate->__pyx_n_u_genexpr};
     __pyx_mstate_global->__pyx_codeobj_tab[56] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_call, __pyx_k_55H_a_4_7_1_4q_Q_G4q_t3a_AQ_4q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[56])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1085, 14};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1089, 14};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_maxprod};
     __pyx_mstate_global->__pyx_codeobj_tab[57] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_init, __pyx_k_L, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[57])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1093, 216};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1097, 216};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_constraints, __pyx_mstate->__pyx_n_u_vconstraints, __pyx_mstate->__pyx_n_u_variable_with_lt1, __pyx_mstate->__pyx_n_u_variable, __pyx_mstate->__pyx_n_u_contains_lt1, __pyx_mstate->__pyx_n_u_maxprod, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_value, __pyx_mstate->__pyx_n_u_genexpr, __pyx_mstate->__pyx_n_u_genexpr};
     __pyx_mstate_global->__pyx_codeobj_tab[58] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_preProcess, __pyx_k_77JJeef_QfKy_Q_6a_A_L_gQ_waq_J_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[58])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1121, 248};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1125, 248};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_assignments, __pyx_mstate->__pyx_n_u_forwardcheck, __pyx_mstate->__pyx_n_u_maxprod, __pyx_mstate->__pyx_n_u_prod, __pyx_mstate->__pyx_n_u_missing, __pyx_mstate->__pyx_n_u_missing_lt1, __pyx_mstate->__pyx_n_u_variable, __pyx_mstate->__pyx_n_u_contains_lt1, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_value};
     __pyx_mstate_global->__pyx_codeobj_tab[59] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_call, __pyx_k_55H_a_a_q_a_J_c_T_y_1_1A_1_waq, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[59])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1160, 23};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1164, 23};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_target_var, __pyx_mstate->__pyx_n_u_product_vars};
     __pyx_mstate_global->__pyx_codeobj_tab[60] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_init, __pyx_k_6a_N_A_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[60])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 12, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1164, 138};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 12, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1168, 148};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_domain_dict, __pyx_mstate->__pyx_n_u_exclude_var, __pyx_mstate->__pyx_n_u_bounds, __pyx_mstate->__pyx_n_u_var, __pyx_mstate->__pyx_n_u_dom, __pyx_mstate->__pyx_n_u_candidates, __pyx_mstate->__pyx_n_u_products, __pyx_mstate->__pyx_n_u_p, __pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi, __pyx_mstate->__pyx_n_u_p};
-    __pyx_mstate_global->__pyx_codeobj_tab[61] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_get_product_bounds, __pyx_k_q_G4q_t3a_Qa_3avS_4q_3a_Qb_E_D, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[61])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[61] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_get_product_bounds, __pyx_k_q_G4q_t3a_Qa_t1_3avS_4q_3a_Qb_E, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[61])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1180, 24};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1186, 24};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_values, __pyx_mstate->__pyx_n_u_prod, __pyx_mstate->__pyx_n_u_v};
     __pyx_mstate_global->__pyx_codeobj_tab[62] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_safe_product, __pyx_k_A_q_E_A_q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[62])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1186, 138};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1192, 138};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_constraints, __pyx_mstate->__pyx_n_u_vconstraints, __pyx_mstate->__pyx_n_u_target_dom, __pyx_mstate->__pyx_n_u_t_max, __pyx_mstate->__pyx_n_u_var, __pyx_mstate->__pyx_n_u_min_others, __pyx_mstate->__pyx_n_u_max_others, __pyx_mstate->__pyx_n_u_dom, __pyx_mstate->__pyx_n_u_val, __pyx_mstate->__pyx_n_u_possible_prods};
     __pyx_mstate_global->__pyx_codeobj_tab[63] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_preProcess, __pyx_k_77JJeef_QfKy_Q_WAT_1A_G4q_T_Qi, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[63])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 31, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1199, 395};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 31, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1205, 395};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_assignments, __pyx_mstate->__pyx_n_u_forwardcheck, __pyx_mstate->__pyx_n_u_target_value, __pyx_mstate->__pyx_n_u_assigned_prod, __pyx_mstate->__pyx_n_u_unassigned_2, __pyx_mstate->__pyx_n_u_var, __pyx_mstate->__pyx_n_u_domain_bounds, __pyx_mstate->__pyx_n_u_candidates, __pyx_mstate->__pyx_n_u_possible_prods, __pyx_mstate->__pyx_n_u_other_unassigned, __pyx_mstate->__pyx_n_u_bounds, __pyx_mstate->__pyx_n_u_other_products, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_val, __pyx_mstate->__pyx_n_u_prods, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_p, __pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi, __pyx_mstate->__pyx_n_u_c, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_p, __pyx_mstate->__pyx_n_u_lo, __pyx_mstate->__pyx_n_u_hi, __pyx_mstate->__pyx_n_u_o, __pyx_mstate->__pyx_n_u_genexpr, __pyx_mstate->__pyx_n_u_genexpr};
     __pyx_mstate_global->__pyx_codeobj_tab[64] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_call, __pyx_k_55H_a_4_7_1_4q_Q_G4q_t3a_AQ_4q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[64])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1254, 11};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1260, 11};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_set};
     __pyx_mstate_global->__pyx_codeobj_tab[65] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_init, __pyx_k_A_HA, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[65])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1262, 14};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1268, 14};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_assignments, __pyx_mstate->__pyx_n_u_forwardcheck};
     __pyx_mstate_global->__pyx_codeobj_tab[66] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_call, __pyx_k_8_l_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[66])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 9, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1266, 91};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 9, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1272, 91};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_constraints, __pyx_mstate->__pyx_n_u_vconstraints, __pyx_mstate->__pyx_n_u_set, __pyx_mstate->__pyx_n_u_variable, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_value};
     __pyx_mstate_global->__pyx_codeobj_tab[67] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_preProcess, __pyx_k_77JJeef_d_L_WAQ_q_6_6_7_F, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[67])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1288, 11};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1294, 11};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_set};
     __pyx_mstate_global->__pyx_codeobj_tab[68] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_init, __pyx_k_A_HA, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[68])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1296, 14};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1302, 14};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_assignments, __pyx_mstate->__pyx_n_u_forwardcheck};
     __pyx_mstate_global->__pyx_codeobj_tab[69] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_call, __pyx_k_8_l_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[69])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 9, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1300, 91};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 9, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1306, 91};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_constraints, __pyx_mstate->__pyx_n_u_vconstraints, __pyx_mstate->__pyx_n_u_set, __pyx_mstate->__pyx_n_u_variable, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_value};
     __pyx_mstate_global->__pyx_codeobj_tab[70] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_preProcess, __pyx_k_77JJeef_d_L_WAQ_q_6_A_6_7_F, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[70])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1322, 30};
+    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1328, 30};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_set, __pyx_mstate->__pyx_n_u_n, __pyx_mstate->__pyx_n_u_exact};
     __pyx_mstate_global->__pyx_codeobj_tab[71] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_init, __pyx_k_E_HA_F_Ja, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[71])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 11, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1336, 249};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 11, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1342, 249};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_assignments, __pyx_mstate->__pyx_n_u_forwardcheck, __pyx_mstate->__pyx_n_u_set, __pyx_mstate->__pyx_n_u_missing, __pyx_mstate->__pyx_n_u_found, __pyx_mstate->__pyx_n_u_variable, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_value};
     __pyx_mstate_global->__pyx_codeobj_tab[72] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_call, __pyx_k_55H_a_d_L_y_1_AZs_1_1_t1_5_c_WH, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[72])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1384, 30};
+    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1390, 30};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_set, __pyx_mstate->__pyx_n_u_n, __pyx_mstate->__pyx_n_u_exact};
     __pyx_mstate_global->__pyx_codeobj_tab[73] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_init, __pyx_k_E_HA_F_Ja, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[73])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 11, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1398, 249};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 11, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1404, 249};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_variables, __pyx_mstate->__pyx_n_u_domains, __pyx_mstate->__pyx_n_u_assignments, __pyx_mstate->__pyx_n_u_forwardcheck, __pyx_mstate->__pyx_n_u_set, __pyx_mstate->__pyx_n_u_missing, __pyx_mstate->__pyx_n_u_found, __pyx_mstate->__pyx_n_u_variable, __pyx_mstate->__pyx_n_u_domain, __pyx_mstate->__pyx_n_u_value};
     __pyx_mstate_global->__pyx_codeobj_tab[74] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_constraint_constraints_py, __pyx_mstate->__pyx_n_u_call, __pyx_k_55H_a_d_L_y_1_AZwa_1_1_t1_5_c_W, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[74])) goto bad;
   }
