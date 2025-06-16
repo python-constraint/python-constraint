@@ -198,24 +198,22 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             (left_num, right.strip(), False) if left_num is not None else (right_num, left.strip(), True)
         )
 
-        # if the number is an integer, we can map '>' to '>=' and '<' to '<=' by changing the number (does not work with floating points!)  # noqa: E501
-        # TODO instead use the smallest floating point difference in Python / ^-10
-        number_is_int = isinstance(number, int)
-        if number_is_int:
-            if comparator == "<":
-                if variables_on_left:
-                    # (x < 2) == (x <= 2-1)
-                    number -= 1
-                else:
-                    # (2 < x) == (2+1 <= x)
-                    number += 1
-            elif comparator == ">":
-                if variables_on_left:
-                    # (x > 2) == (x >= 2+1)
-                    number += 1
-                else:
-                    # (2 > x) == (2-1 >= x)
-                    number -= 1
+        # we can map '>' to '>=' and '<' to '<=' by adding a tiny offset to the number
+        offset = 1e-12
+        if comparator == "<":
+            if variables_on_left:
+                # (x < 2) == (x <= 2-offset)
+                number -= offset
+            else:
+                # (2 < x) == (2+offset <= x)
+                number += offset
+        elif comparator == ">":
+            if variables_on_left:
+                # (x > 2) == (x >= 2+offset)
+                number += offset
+            else:
+                # (2 > x) == (2-offset >= x)
+                number -= offset
 
         # check if an operator is applied on the variables, if not return
         operators = [r"\*\*", r"\*", r"\+"]
@@ -229,9 +227,9 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             # if there are restrictions with a single variable, it will be used to prune the domain at the start
             elif comparator == "==":
                 return ExactSumConstraint(number)
-            elif comparator == "<=" or (comparator == "<" and number_is_int):
+            elif comparator == "<=" or comparator == "<":
                 return MaxSumConstraint(number) if variables_on_left else MinSumConstraint(number)
-            elif comparator == ">=" or (comparator == ">" and number_is_int):
+            elif comparator == ">=" or comparator == ">":
                 return MinSumConstraint(number) if variables_on_left else MaxSumConstraint(number)
             raise ValueError(f"Invalid comparator {comparator}")
 
@@ -252,16 +250,17 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             elif operator == "*":
                 if comparator == "==":
                     return ExactProdConstraint(number)
-                elif comparator == "<=" or (comparator == "<" and number_is_int):
+                elif comparator == "<=" or comparator == "<":
                     return MaxProdConstraint(number) if variables_on_left else MinProdConstraint(number)
-                elif comparator == ">=" or (comparator == ">" and number_is_int):
+                elif comparator == ">=" or comparator == ">":
                     return MinProdConstraint(number) if variables_on_left else MaxProdConstraint(number)
             elif operator == "+":
                 if comparator == "==":
                     return ExactSumConstraint(number)
-                elif comparator == "<=" or (comparator == "<" and number_is_int):
+                elif comparator == "<=" or comparator == "<":
+                    # raise ValueError(restriction, comparator)
                     return MaxSumConstraint(number) if variables_on_left else MinSumConstraint(number)
-                elif comparator == ">=" or (comparator == ">" and number_is_int):
+                elif comparator == ">=" or comparator == ">":
                     return MinSumConstraint(number) if variables_on_left else MaxSumConstraint(number)
             else:
                 raise ValueError(f"Invalid operator {operator}")

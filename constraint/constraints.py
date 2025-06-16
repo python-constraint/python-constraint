@@ -853,6 +853,8 @@ class VariableExactProdConstraint(Constraint):
             if var == exclude_var:
                 continue
             dom = domain_dict[var]
+            if not dom:
+                continue
             bounds.append((min(dom), max(dom)))
 
         all_bounds = [b for b in bounds]
@@ -998,6 +1000,8 @@ class VariableMinProdConstraint(Constraint):
             if var == exclude_var:
                 continue
             dom = domain_dict[var]
+            if not dom:
+                continue
             bounds.append((min(dom), max(dom)))
 
         if not bounds:
@@ -1167,6 +1171,8 @@ class VariableMaxProdConstraint(Constraint):
             if var == exclude_var:
                 continue
             dom = domain_dict[var]
+            if not dom:
+                continue
             bounds.append((min(dom), max(dom)))
 
         if not bounds:
