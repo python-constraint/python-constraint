@@ -1,4 +1,5 @@
-from constraint import compile_to_constraints, parse_restrictions, Constraint, FunctionConstraint, CompilableFunctionConstraint, ExactProdConstraint, MinProdConstraint, MaxProdConstraint, ExactSumConstraint, VariableExactSumConstraint, VariableExactProdConstraint
+from constraint import (
+    compile_to_constraints, parse_restrictions, Constraint, FunctionConstraint, CompilableFunctionConstraint, ExactProdConstraint, MinProdConstraint, MaxProdConstraint, ExactSumConstraint, VariableExactSumConstraint, VariableExactProdConstraint, VariableMinProdConstraint, VariableMaxProdConstraint, MaxSumConstraint)
 from collections.abc import Iterable
 
 def test_parse_restrictions():
@@ -37,7 +38,19 @@ def test_parse_restrictions():
 
 def test_compile_to_constraints():
     domains = {"x": [50, 100], "y": [0, 1]}
-    constraints = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100", "x == 100", "x == x+y", "100 == x-y", "x / y == 100", "x / y == x"]
+    constraints = [
+        "x != 320", 
+        "y == 0 or x % 32 != 0",
+        "50 <= x * y < 100",        # turns into MinProdConstraint and MaxProdConstraint
+        "x == 100", 
+        "x == x+y", 
+        "100-y >= x",
+        "100 == x-y", 
+        "x / y == 100", 
+        "x / y == x",
+        "x / y <= x",
+        "x / y >= x",
+    ]
     expected_constraint_types = [
         FunctionConstraint, 
         FunctionConstraint, 
@@ -45,13 +58,18 @@ def test_compile_to_constraints():
         MaxProdConstraint,
         ExactSumConstraint,
         VariableExactSumConstraint,
-        ExactSumConstraint,
-        ExactProdConstraint,
+        MaxSumConstraint,               # with rewriting "100-y >= x" becomes "100 >= x+y"
+        VariableExactSumConstraint,     # with rewriting "100 == x-y" becomes "100+y == x"
+        VariableExactProdConstraint,    # with rewriting "x / y == 100" becomes "x==100 * y"
         VariableExactProdConstraint,
+        VariableMinProdConstraint,
+        VariableMaxProdConstraint,
     ]
 
     compiled = compile_to_constraints(constraints, domains, picklable=False)
+    assert len(compiled) == len(expected_constraint_types)
     for r, vals, r_str in compiled:
+        print(r, vals, r_str)
         assert isinstance(r, Constraint)
         assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)
         if isinstance(r, (FunctionConstraint, CompilableFunctionConstraint)):
@@ -60,12 +78,11 @@ def test_compile_to_constraints():
             assert r_str is None
 
     # check whether the expected types match (may have to be adjusted to be order independent in future)
-    for i, (r, _, _) in enumerate(compiled):
+    for i, (r, _, cons) in enumerate(compiled):
         expected = expected_constraint_types[i]
+        assert isinstance(r, expected), f"Expected {expected} but got {type(r)} for constraint {constraints[i]}"
         if callable(expected):
             assert callable(r)
-        else:
-            assert isinstance(r, expected)
 
 def test_compile_to_constraints_picklable():
     domains = {"x": [50, 100], "y": [0, 1]}
@@ -78,6 +95,7 @@ def test_compile_to_constraints_picklable():
     ]
 
     compiled = compile_to_constraints(constraints, domains, picklable=True)
+    assert len(compiled) == len(expected_constraint_types)
     for r, vals, r_str in compiled:
         assert isinstance(r, Constraint)
         assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)
