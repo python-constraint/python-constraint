@@ -988,7 +988,7 @@ class VariableMinProdConstraint(Constraint):
         [[('a', -1), ('b', -1), ('c', -1)], [('a', 2), ('b', 2), ('c', -1)], [('a', 2), ('b', 2), ('c', 2)]]
     """
 
-    def __init__(self, target_var: str, product_vars: Sequence[str]):
+    def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107
         self.target_var = target_var
         self.product_vars = product_vars
 
@@ -1014,10 +1014,10 @@ class VariableMinProdConstraint(Constraint):
             prod *= v
         return prod
 
-    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict):
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
         target_dom = domains[self.target_var]
-        t_min, t_max = min(target_dom), max(target_dom)
+        t_min = min(target_dom)
 
         for var in self.product_vars:
             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
@@ -1027,7 +1027,7 @@ class VariableMinProdConstraint(Constraint):
                 if max(possible_prods) < t_min:
                     dom.remove(val)
 
-    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
         if self.target_var not in assignments:
             return True  # Can't evaluate yet
 
@@ -1157,7 +1157,7 @@ class VariableMaxProdConstraint(Constraint):
         [[('a', -1), ('b', -1), ('c', 2)], [('a', -1), ('b', 2), ('c', -1)], [('a', -1), ('b', 2), ('c', 2)], [('a', 2), ('b', -1), ('c', -1)], [('a', 2), ('b', -1), ('c', 2)]]
     """ # noqa: E501
 
-    def __init__(self, target_var: str, product_vars: Sequence[str]):
+    def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107
         self.target_var = target_var
         self.product_vars = product_vars
 
@@ -1183,10 +1183,10 @@ class VariableMaxProdConstraint(Constraint):
             prod *= v
         return prod
 
-    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict):
+    def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
         target_dom = domains[self.target_var]
-        t_min, t_max = min(target_dom), max(target_dom)
+        t_max = max(target_dom)
 
         for var in self.product_vars:
             min_others, max_others = self._get_product_bounds(domains, exclude_var=var)
@@ -1196,7 +1196,7 @@ class VariableMaxProdConstraint(Constraint):
                 if min(possible_prods) > t_max:
                     dom.remove(val)
 
-    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):
+    def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
         if self.target_var not in assignments:
             return True  # Can't evaluate yet
 

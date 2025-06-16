@@ -78,13 +78,12 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
     def to_numeric_constraint(
         restriction: str, params: list[str]
-    ) -> Optional[Union[MinSumConstraint, VariableMinSumConstraint, ExactSumConstraint, VariableExactSumConstraint, MaxSumConstraint, VariableMaxSumConstraint, MinProdConstraint, ExactProdConstraint, VariableExactProdConstraint, MaxProdConstraint]]:  # noqa: E501
+    ) -> Optional[Union[MinSumConstraint, VariableMinSumConstraint, ExactSumConstraint, VariableExactSumConstraint, MaxSumConstraint, VariableMaxSumConstraint, MinProdConstraint, VariableMinProdConstraint, ExactProdConstraint, VariableExactProdConstraint, MaxProdConstraint, VariableMaxProdConstraint]]:  # noqa: E501
         """Converts a restriction to a built-in numeric constraint if possible."""
         # first check if all parameters have only numbers as values
         if len(params) == 0 or not all(all(isinstance(v, (int, float)) for v in tune_params[p]) for p in params):
             return None
 
-        restriction_unmodified = restriction
         comparators = ["<=", "==", ">=", ">", "<"]
         comparators_found = re.findall("|".join(comparators), restriction)
         # check if there is exactly one comparator, if not, return None
@@ -108,7 +107,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         unique_operators = unique_operators_left.union(unique_operators_right)
         if len(unique_operators) == 1:
             variables_on_left = len(unique_operators_left) > 0
-            swapped_side_first_component = re.search(regex_match_variable_or_constant, left if variables_on_left else right)
+            swapped_side_first_component = re.search(regex_match_variable_or_constant, left if variables_on_left else right)    # noqa: E501
             if swapped_side_first_component is None:
                 # if there is no variable on the left side, we can't handle this yet
                 return None
@@ -186,12 +185,12 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                         return VariableExactProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactProdConstraint(variables[0], variables[1:])  # noqa: E501
                     elif comparator == "<=":
                         # "B*C <= A" (maxprod) if variables_on_left else "A <= B*C" (minprod)
-                        return VariableMaxProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMinProdConstraint(variables[0], variables[1:])
+                        return VariableMaxProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMinProdConstraint(variables[0], variables[1:])    # noqa: E501
                     elif comparator == ">=":
                         # "B*C >= A" (minprod) if variables_on_left else "A >= B*C" (maxprod)
-                        return VariableMinProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxProdConstraint(variables[0], variables[1:])
+                        return VariableMinProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxProdConstraint(variables[0], variables[1:])    # noqa: E501
 
-            # left_num and right_num can't both be constants, or there is some other reason we can't use a VariableConstraint
+            # left_num and right_num can't both be constants, or for other reasons we can't use a VariableConstraint
             return None
 
         # if one side is a number, the other side must be a variable or expression
