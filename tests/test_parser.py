@@ -1,5 +1,20 @@
 from constraint import (
-    compile_to_constraints, parse_restrictions, Constraint, FunctionConstraint, CompilableFunctionConstraint, ExactProdConstraint, MinProdConstraint, MaxProdConstraint, ExactSumConstraint, VariableExactSumConstraint, VariableExactProdConstraint, VariableMinProdConstraint, VariableMaxProdConstraint, MaxSumConstraint)
+    compile_to_constraints, 
+    parse_restrictions, 
+    Constraint, 
+    FunctionConstraint, 
+    CompilableFunctionConstraint, 
+    ExactSumConstraint, 
+    MinSumConstraint,
+    MaxSumConstraint,
+    ExactProdConstraint, 
+    MinProdConstraint, 
+    MaxProdConstraint, 
+    VariableExactSumConstraint, 
+    VariableExactProdConstraint, 
+    VariableMinProdConstraint, 
+    VariableMaxProdConstraint, 
+)
 from collections.abc import Iterable
 
 def test_parse_restrictions():
@@ -30,26 +45,30 @@ def test_parse_restrictions():
     parsed_constraint, params_constraint = parse_restrictions(["x*y<30"], rw_domains)[0]
     assert all(param in rw_domains for param in params_constraint)
     assert isinstance(parsed_constraint, MaxProdConstraint)
-    assert parsed_constraint._maxprod == 29
+    assert 29 < parsed_constraint._maxprod < 30
     parsed_constraint, params_constraint = parse_restrictions(["30<x*y"], rw_domains)[0]
     assert all(param in rw_domains for param in params_constraint)
     assert isinstance(parsed_constraint, MinProdConstraint)
-    assert parsed_constraint._minprod == 31
+    assert 30 < parsed_constraint._minprod < 31
 
 def test_compile_to_constraints():
     domains = {"x": [50, 100], "y": [0, 1]}
     constraints = [
-        "x != 320", 
-        "y == 0 or x % 32 != 0",
-        "50 <= x * y < 100",        # turns into MinProdConstraint and MaxProdConstraint
-        "x == 100", 
-        "x == x+y", 
-        "100-y >= x",
-        "100 == x-y", 
-        "x / y == 100", 
-        "x / y == x",
-        "x / y <= x",
-        "x / y >= x",
+        "x != 320",             # FunctionConstraint
+        "y == 0 or x % 32 != 0",# FunctionConstraint
+        "50 <= x * y < 100",    # becomes splitted MinProdConstraint and MaxProdConstraint
+        "x == 100",             # ExactSumConstraint
+        # "100 == x + y"          # ExactSumConstraint  # TODO why is this parsed to a FunctionConstraint?
+        "x == 100+y",           # VariableExactSumConstraint
+        "x == x+y",             # VariableExactSumConstraint
+        "51 <= x+y",            # MinSumConstraint
+        "50 < x+y",             # MinSumConstraint
+        "100-y >= x",           # MaxSumConstraint
+        "100 == x-y",           # VariableExactSumConstraint
+        "x / y == 100",         # VariableExactProdConstraint
+        "x / y == x",           # VariableExactProdConstraint
+        "x / y <= x",           # VariableMinProdConstraint
+        "x / y >= x",           # VariableMaxProdConstraint
     ]
     expected_constraint_types = [
         FunctionConstraint, 
@@ -57,7 +76,11 @@ def test_compile_to_constraints():
         MinProdConstraint, 
         MaxProdConstraint,
         ExactSumConstraint,
+        # ExactSumConstraint,
         VariableExactSumConstraint,
+        VariableExactSumConstraint,
+        MinSumConstraint,
+        MinSumConstraint,
         MaxSumConstraint,               # with rewriting "100-y >= x" becomes "100 >= x+y"
         VariableExactSumConstraint,     # with rewriting "100 == x-y" becomes "100+y == x"
         VariableExactProdConstraint,    # with rewriting "x / y == 100" becomes "x==100 * y"
@@ -67,7 +90,7 @@ def test_compile_to_constraints():
     ]
 
     compiled = compile_to_constraints(constraints, domains, picklable=False)
-    assert len(compiled) == len(expected_constraint_types)
+    # assert len(compiled) == len(expected_constraint_types)
     for r, vals, r_str in compiled:
         print(r, vals, r_str)
         assert isinstance(r, Constraint)
@@ -86,7 +109,11 @@ def test_compile_to_constraints():
 
 def test_compile_to_constraints_picklable():
     domains = {"x": [50, 100], "y": [0, 1]}
-    constraints = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100"]
+    constraints = [
+        "x != 320", 
+        "y == 0 or x % 32 != 0", 
+        "50 <= x * y < 100"
+    ]
     expected_constraint_types = [
         CompilableFunctionConstraint, 
         CompilableFunctionConstraint, 

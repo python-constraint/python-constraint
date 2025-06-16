@@ -139,18 +139,21 @@ def test_solvers_consistency():
     solvers = [None, MinConflictsSolver(), OptimizedBacktrackingSolver(), BacktrackingSolver(), RecursiveBacktrackingSolver()]
     base_solution = None
     # variables = ['A','B','E','F','G','H','M']
-    variables = ['B','E','G']
+    variables = ['B','E','M']
 
     def create_problem(solver):
         print(f"Creating problem with solver: {solver}")
         problem = Problem(solver)
-        values = range(10, 200)
+        values = range(10, 100)
         problem.addVariables(variables.copy(), values)
         # problem.addConstraint("H == 10*A-491")
-        problem.addConstraint("B == E+G")
+        problem.addConstraint("B == E+M")
         # problem.addConstraint("G == B-M")
+        # problem.addConstraint("B-M == G")
         # problem.addConstraint("H == F*F")
         # problem.addConstraint("M == 351-2*E")
+        problem.addConstraint("M*E >= B")
+        # problem.addConstraint("M >= B/E")
         return problem
 
     for solver in solvers:
