@@ -31,6 +31,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
     """Parses restrictions (constraints in string format) from a list of strings into compilable functions and constraints. Returns a list of tuples of (strings or constraints) and parameters."""   # noqa: E501
     # rewrite the restrictions so variables are singled out
     regex_match_variable = r"([a-zA-Z_$][a-zA-Z_$0-9]*)"
+    regex_match_variable_or_constant = r"([a-zA-Z_$0-9]*)"
 
     def replace_params(match_object):
         key = match_object.group(1)
@@ -83,6 +84,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         if len(params) == 0 or not all(all(isinstance(v, (int, float)) for v in tune_params[p]) for p in params):
             return None
 
+        restriction_unmodified = restriction
         comparators = ["<=", "==", ">=", ">", "<"]
         comparators_found = re.findall("|".join(comparators), restriction)
         # check if there is exactly one comparator, if not, return None
@@ -106,34 +108,34 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         unique_operators = unique_operators_left.union(unique_operators_right)
         if len(unique_operators) == 1:
             variables_on_left = len(unique_operators_left) > 0
-            swapped_side_first_variable = re.search(regex_match_variable, left if variables_on_left else right)
-            if swapped_side_first_variable is None:
+            swapped_side_first_component = re.search(regex_match_variable_or_constant, left if variables_on_left else right)
+            if swapped_side_first_component is None:
                 # if there is no variable on the left side, we can't handle this yet
                 return None
             else:
-                swapped_side_first_variable = swapped_side_first_variable.group(0)
+                swapped_side_first_component = swapped_side_first_component.group(0)
             if "-" in unique_operators:
                 if not variables_on_left:
                     # e.g. "G == B-M" becomes "G+M == B"
-                    right_remainder = right[len(swapped_side_first_variable):]
+                    right_remainder = right[len(swapped_side_first_component):]
                     left_swap = right_remainder.replace("-", "+")
-                    restriction = f"{left}{left_swap}{comparator}{swapped_side_first_variable}"
+                    restriction = f"{left}{left_swap}{comparator}{swapped_side_first_component}"
                 else:
                     # e.g. "B-M == G" becomes "B == G+M"
-                    left_remainder = left[len(swapped_side_first_variable):]
+                    left_remainder = left[len(swapped_side_first_component):]
                     right_swap = left_remainder.replace("-", "+")
-                    restriction = f"{swapped_side_first_variable}{comparator}{right}{right_swap}"
+                    restriction = f"{swapped_side_first_component}{comparator}{right}{right_swap}"
             if "/" in unique_operators:
                 if not variables_on_left:
                     # e.g. "G == B/M" becomes "G*M == B"
-                    right_remainder = right[len(swapped_side_first_variable):]
+                    right_remainder = right[len(swapped_side_first_component):]
                     left_swap = right_remainder.replace("/", "*")
-                    restriction = f"{left}{left_swap}{comparator}{swapped_side_first_variable}"
+                    restriction = f"{left}{left_swap}{comparator}{swapped_side_first_component}"
                 else:
                     # e.g. "B/M == G" becomes "B == G*M"
-                    left_remainder = left[len(swapped_side_first_variable):]
+                    left_remainder = left[len(swapped_side_first_component):]
                     right_swap = left_remainder.replace("/", "*")
-                    restriction = f"{swapped_side_first_variable}{comparator}{right}{right_swap}"
+                    restriction = f"{swapped_side_first_component}{comparator}{right}{right_swap}"
 
             # we have a potentially rewritten restriction, split again
             left, right = tuple(s.strip() for s in restriction.split(comparator))
@@ -161,7 +163,6 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             # if both sides are parameters, try to use the VariableConstraints
             variable_supported_operators = ['+', '*']
             # variables = [s.strip() for s in list(left + right) if s not in variable_supported_operators]
-            # TODO find all variables using regex_match_variable
             variables = re.findall(regex_match_variable, restriction)
 
             # find all unique variable_supported_operators in the restriction, can have at most one
@@ -199,6 +200,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         )
 
         # if the number is an integer, we can map '>' to '>=' and '<' to '<=' by changing the number (does not work with floating points!)  # noqa: E501
+        # TODO instead use the smallest floating point difference in Python / ^-10
         number_is_int = isinstance(number, int)
         if number_is_int:
             if comparator == "<":
