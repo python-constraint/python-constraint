@@ -769,6 +769,7 @@ class ExactProdConstraint(Constraint):
             exactprod: Value to be considered as the product
         """
         self._exactprod = exactprod
+        self._variable_contains_lt1: list[bool] = list()
 
     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
@@ -803,6 +804,10 @@ class ExactProdConstraint(Constraint):
         prod = 1
         missing = False
         missing_lt1 = []
+        # find out which variables contain values less than 1 if not preprocessed
+        if len(self._variable_contains_lt1) != len(variables):
+            for variable in variables:
+                self._variable_contains_lt1.append(any(value < 1 for value in domains[variable]))
         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
             if variable in assignments:
                 prod *= assignments[variable]
@@ -1093,6 +1098,7 @@ class MaxProdConstraint(Constraint):
             maxprod: Value to be considered as the maximum product
         """
         self._maxprod = maxprod
+        self._variable_contains_lt1: list[bool] = list()
 
     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
@@ -1127,6 +1133,10 @@ class MaxProdConstraint(Constraint):
         prod = 1
         missing = False
         missing_lt1 = []
+        # find out which variables contain values less than 1 if not preprocessed
+        if len(self._variable_contains_lt1) != len(variables):
+            for variable in variables:
+                self._variable_contains_lt1.append(any(value < 1 for value in domains[variable]))
         for variable, contains_lt1 in zip(variables, self._variable_contains_lt1):
             if variable in assignments:
                 prod *= assignments[variable]
