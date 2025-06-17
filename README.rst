@@ -15,6 +15,7 @@ python-constraint
 | New: writing constraints in the new string format is preferable over functions and lambdas. 
 | These strings, even as compound statements, are automatically parsed to faster built-in constraints, are more concise, and do not require constraint solving familiarity by the user to be efficient.
 | For example, :code:`problem.addConstraint(["50 <= x * y < 100"])` is parsed to :code:`[MinProdConstraint(50, ["x", "y"]), MaxProdConstraint(100, ["x", "y"])]`. 
+| Similarly, :code:`problem.addConstraint(["x / y == z"])` is parsed to :code:`[ExactProdConstraint("x", ["z", "y"])]`.
 | This feature is in beta and subject to possible change, please provide feedback.
 
 .. contents::
@@ -125,18 +126,25 @@ The following solvers are available:
 
 Predefined constraint types currently available:
 
-- :python:`FunctionConstraint`
-- :python:`AllDifferentConstraint`
-- :python:`AllEqualConstraint`
-- :python:`MaxSumConstraint`
-- :python:`ExactSumConstraint`
-- :python:`MinSumConstraint`
-- :python:`MaxProdConstraint`
-- :python:`MinProdConstraint`
-- :python:`InSetConstraint`
-- :python:`NotInSetConstraint`
-- :python:`SomeInSetConstraint`
-- :python:`SomeNotInSetConstraint`
+- :any:`FunctionConstraint`
+- :any:`AllDifferentConstraint`
+- :any:`AllEqualConstraint`
+- :any:`ExactSumConstraint`
+- :any:`MinSumConstraint`
+- :any:`MaxSumConstraint`
+- :any:`MinProdConstraint`
+- :any:`ExactProdConstraint`
+- :any:`MaxProdConstraint`
+- :any:`VariableExactSumConstraint`
+- :any:`VariableMinSumConstraint`
+- :any:`VariableMaxSumConstraint`
+- :any:`VariableMinProdConstraint`
+- :any:`VariableExactProdConstraint`
+- :any:`VariableMaxProdConstraint`
+- :any:`InSetConstraint`
+- :any:`NotInSetConstraint`
+- :any:`SomeInSetConstraint`
+- :any:`SomeNotInSetConstraint`
 
 API documentation
 -----------------

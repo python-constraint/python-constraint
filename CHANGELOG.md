@@ -4,13 +4,13 @@ All notable changes to this code base will be documented in this file, for every
 
 ### Version 2.3.0
 
-- Released: TBD
+- Released: 2025-06-17
 - Issues / Enhancements:
   - Python Constraint now has an entirely new type of built-in constraints, allowing comparisons with variables on both sides to be evaluated much more efficiently.
   - Constraint rewriting has been extended to include minus and division operators.
   - Rewriting of restrictions with less-than or greater-than operators now supports floats as well.
   - Tests have been extended and amended to reflect changes introduced.
-  - TODO documentation has been extended and amended to reflect changes introduced.
+  - Documentation has been extended and amended to reflect changes introduced.
   - Various minor bugs have been resolved.
 
 ### Version 2.2.0
