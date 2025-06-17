@@ -115,36 +115,36 @@ Features
 
 The following solvers are available:
 
-- :any:`BacktrackingSolver`
-- :any:`OptimizedBacktrackingSolver`
-- :any:`RecursiveBacktrackingSolver`
-- :any:`MinConflictsSolver`
-- :any:`ParallelSolver`
+- :code:`OptimizedBacktrackingSolver` (default)
+- :code:`BacktrackingSolver`
+- :code:`RecursiveBacktrackingSolver`
+- :code:`MinConflictsSolver`
+- :code:`ParallelSolver`
 
 .. role:: python(code)
    :language: python
 
-Predefined constraint types currently available:
+Predefined constraint types currently available (use the parsing for automatic conversion to these types):
 
-- :any:`FunctionConstraint`
-- :any:`AllDifferentConstraint`
-- :any:`AllEqualConstraint`
-- :any:`ExactSumConstraint`
-- :any:`MinSumConstraint`
-- :any:`MaxSumConstraint`
-- :any:`MinProdConstraint`
-- :any:`ExactProdConstraint`
-- :any:`MaxProdConstraint`
-- :any:`VariableExactSumConstraint`
-- :any:`VariableMinSumConstraint`
-- :any:`VariableMaxSumConstraint`
-- :any:`VariableMinProdConstraint`
-- :any:`VariableExactProdConstraint`
-- :any:`VariableMaxProdConstraint`
-- :any:`InSetConstraint`
-- :any:`NotInSetConstraint`
-- :any:`SomeInSetConstraint`
-- :any:`SomeNotInSetConstraint`
+- :code:`FunctionConstraint`
+- :code:`AllDifferentConstraint`
+- :code:`AllEqualConstraint`
+- :code:`ExactSumConstraint`
+- :code:`MinSumConstraint`
+- :code:`MaxSumConstraint`
+- :code:`MinProdConstraint`
+- :code:`ExactProdConstraint`
+- :code:`MaxProdConstraint`
+- :code:`VariableExactSumConstraint`
+- :code:`VariableMinSumConstraint`
+- :code:`VariableMaxSumConstraint`
+- :code:`VariableMinProdConstraint`
+- :code:`VariableExactProdConstraint`
+- :code:`VariableMaxProdConstraint`
+- :code:`InSetConstraint`
+- :code:`NotInSetConstraint`
+- :code:`SomeInSetConstraint`
+- :code:`SomeNotInSetConstraint`
 
 API documentation
 -----------------
