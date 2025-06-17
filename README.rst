@@ -115,11 +115,11 @@ Features
 
 The following solvers are available:
 
-- Backtracking solver
-- Optimized backtracking solver
-- Recursive backtracking solver
-- Minimum conflicts solver
-- Parallel solver
+- :any:`BacktrackingSolver`
+- :any:`OptimizedBacktrackingSolver`
+- :any:`RecursiveBacktrackingSolver`
+- :any:`MinConflictsSolver`
+- :any:`ParallelSolver`
 
 .. role:: python(code)
    :language: python

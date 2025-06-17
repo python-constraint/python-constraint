@@ -37,6 +37,10 @@ Solvers
     :members:
     :member-order: bysource
 
+.. autoclass:: constraint.ParallelSolver
+    :members:
+    :member-order: bysource
+
 
 Constraints
 ~~~~~~~~~~~
@@ -57,10 +61,6 @@ Constraints
     :members:
     :member-order: bysource
 
-.. autoclass:: constraint.MaxSumConstraint
-    :members:
-    :member-order: bysource
-
 .. autoclass:: constraint.ExactSumConstraint
     :members:
     :member-order: bysource
@@ -69,11 +69,43 @@ Constraints
     :members:
     :member-order: bysource
 
-.. autoclass:: constraint.MaxProdConstraint
+.. autoclass:: constraint.MaxSumConstraint
+    :members:
+    :member-order: bysource
+
+.. autoclass:: constraint.ExactProdConstraint
     :members:
     :member-order: bysource
 
 .. autoclass:: constraint.MinProdConstraint
+    :members:
+    :member-order: bysource
+
+.. autoclass:: constraint.MaxProdConstraint
+    :members:
+    :member-order: bysource
+
+.. autoclass:: constraint.VariableExactSumConstraint
+    :members:
+    :member-order: bysource
+
+.. autoclass:: constraint.VariableMinSumConstraint
+    :members:
+    :member-order: bysource
+
+.. autoclass:: constraint.VariableMaxSumConstraint
+    :members:
+    :member-order: bysource
+
+.. autoclass:: constraint.VariableExactProdConstraint
+    :members:
+    :member-order: bysource
+
+.. autoclass:: constraint.VariableMinProdConstraint
+    :members:
+    :member-order: bysource
+
+.. autoclass:: constraint.VariableMaxProdConstraint
     :members:
     :member-order: bysource
 
