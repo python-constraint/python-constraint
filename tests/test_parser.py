@@ -56,9 +56,8 @@ def test_compile_to_constraints():
     constraints = [
         "x != 320",             # FunctionConstraint
         "y == 0 or x % 32 != 0",# FunctionConstraint
-        "50 <= x * y < 100",    # becomes splitted MinProdConstraint and MaxProdConstraint
         "x == 100",             # ExactSumConstraint
-        # "100 == x + y"          # ExactSumConstraint  # TODO why is this parsed to a FunctionConstraint?
+        "100 == x + y",         # ExactSumConstraint  # TODO why is this parsed to a FunctionConstraint?
         "x == 100+y",           # VariableExactSumConstraint
         "x == x+y",             # VariableExactSumConstraint
         "51 <= x+y",            # MinSumConstraint
@@ -69,14 +68,13 @@ def test_compile_to_constraints():
         "x / y == x",           # VariableExactProdConstraint
         "x / y <= x",           # VariableMinProdConstraint
         "x / y >= x",           # VariableMaxProdConstraint
+        "50 <= x * y < 100",    # becomes splitted MinProdConstraint and MaxProdConstraint
     ]
     expected_constraint_types = [
         FunctionConstraint, 
         FunctionConstraint, 
-        MinProdConstraint, 
-        MaxProdConstraint,
         ExactSumConstraint,
-        # ExactSumConstraint,
+        ExactSumConstraint,
         VariableExactSumConstraint,
         VariableExactSumConstraint,
         MinSumConstraint,
@@ -87,12 +85,13 @@ def test_compile_to_constraints():
         VariableExactProdConstraint,
         VariableMinProdConstraint,
         VariableMaxProdConstraint,
+        MinProdConstraint, 
+        MaxProdConstraint,
     ]
 
     compiled = compile_to_constraints(constraints, domains, picklable=False)
     # assert len(compiled) == len(expected_constraint_types)
     for r, vals, r_str in compiled:
-        print(r, vals, r_str)
         assert isinstance(r, Constraint)
         assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)
         if isinstance(r, (FunctionConstraint, CompilableFunctionConstraint)):
@@ -103,7 +102,7 @@ def test_compile_to_constraints():
     # check whether the expected types match (may have to be adjusted to be order independent in future)
     for i, (r, _, cons) in enumerate(compiled):
         expected = expected_constraint_types[i]
-        assert isinstance(r, expected), f"Expected {expected} but got {type(r)} for constraint {constraints[i]}"
+        assert isinstance(r, expected), f"Expected {expected} but got {type(r)} for constraint {constraints[i]}"  # the constraint lookup is correct until there are split restrictions
         if callable(expected):
             assert callable(r)
 
