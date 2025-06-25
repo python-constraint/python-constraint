@@ -139,9 +139,9 @@ def test_compile_to_constraints_picklable():
             assert isinstance(r, expected)
 
 def test_compile_non_numeric():
-    domains = {"x": ["a", "b", "c"], "y": [True, False]}
+    domains = {"x": ["a2", "b4", "c6"], "y": [True, False]}
     constraints = [
-        "x != 'a'", 
+        "x == 'a'", 
         "y == 'd' or x != 'b'", 
         "'a' <= x + y < 'c'"
     ]
@@ -150,7 +150,7 @@ def test_compile_non_numeric():
     
     assert len(compiled) == 4
     for r, vals, r_str in compiled:
-        assert isinstance(r, Constraint)
+        assert isinstance(r, (Constraint, CompilableFunctionConstraint))
         assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)
         if isinstance(r, (FunctionConstraint, CompilableFunctionConstraint)):
             assert isinstance(r_str, str)
