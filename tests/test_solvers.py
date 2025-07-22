@@ -94,7 +94,7 @@ def test_parallel_solver():
     order = ["x", "y"]
 
     # get all solutions
-    solutions_list, solutions_dict, size = problem.getSolutionsAsListDict(order=order)
+    solutions_list, _, size = problem.getSolutionsAsListDict(order=order)
 
     # validate all solutions
     assert size == len(true_solutions)
@@ -120,7 +120,7 @@ def test_parallel_solver_process_mode():
     order = ["x", "y"]
 
     # get all solutions
-    solutions_list, solutions_dict, size = problem.getSolutionsAsListDict(order=order)
+    solutions_list, _, size = problem.getSolutionsAsListDict(order=order)
 
     # validate all solutions
     assert size == len(true_solutions)
@@ -176,3 +176,37 @@ def test_solvers_consistency():
             else:
                 assert size == len(base_solution)
                 # assert all(sol in solutions_list for sol in base_solution)
+
+def test_mixed_type_constraints():
+    """Test that mixed type constraints are handled correctly."""
+    problem = Problem()
+    domains = {
+        "x": ["a", "b", "c"], 
+        "y": [True, False], 
+        "z": [0, 1],
+        "delta": ["a", True, 0.2]
+    }
+    for var, domain in domains.items():
+        problem.addVariable(var, domain)
+    constraints = [
+        "x != 'a' or y < z", 
+        "y or x != 'b'",
+        "delta == 0.2"
+    ]
+    problem.addConstraint(constraints)
+    solutions, _, _ = problem.getSolutionsAsListDict(order=list(domains.keys()))
+    
+    possible_solutions = [
+        ('c', False, 1, 0.2), 
+        ('c', False, 0, 0.2), 
+        ('a', False, 1, 0.2), 
+        ('b', True, 0, 0.2), 
+        ('b', True, 1, 0.2), 
+        ('c', True, 0, 0.2), 
+        ('c', True, 1, 0.2), 
+    ]
+
+    assert len(solutions) == len(possible_solutions), "Number of solutions does not match expected"
+    assert len(set(solutions)) == len(possible_solutions), "Number of unique solutions does not match expected"
+    for solution in solutions:
+        assert solution in possible_solutions, f"Unexpected solution: {solution}"

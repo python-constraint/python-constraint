@@ -137,3 +137,22 @@ def test_compile_to_constraints_picklable():
             assert callable(r)
         else:
             assert isinstance(r, expected)
+
+def test_compile_non_numeric():
+    domains = {"x": ["a2", "b4", "c6"], "y": [True, False]}
+    constraints = [
+        "x == 'a'", 
+        "y == 'd' or x != 'b'", 
+        "'a' <= x + y < 'c'"
+    ]
+    
+    compiled = compile_to_constraints(constraints, domains, picklable=False)
+    
+    assert len(compiled) == 4
+    for r, vals, r_str in compiled:
+        assert isinstance(r, (Constraint, CompilableFunctionConstraint))
+        assert isinstance(vals, Iterable) and all(isinstance(v, str) for v in vals)
+        if isinstance(r, (FunctionConstraint, CompilableFunctionConstraint)):
+            assert isinstance(r_str, str)
+        else:
+            assert r_str is None

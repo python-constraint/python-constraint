@@ -254,7 +254,9 @@ class Problem:
             size_dict = len(solutions_dict)
             if size_list != size_dict:
                 raise ValueError(
-                    f"{size_list - size_dict} duplicate parameter configurations in searchspace, should not happen."
+                    f"{size_list - size_dict} duplicate parameter configurations out of {size_dict} unique.",
+                    f"Duplicate configs: {list(set([c for c in solutions_list if solutions_list.count(c) > 1]))}",
+                    f"Constraints: {self._constraints}, {self._str_constraints}"
                 )
         return (
             solutions_list,
