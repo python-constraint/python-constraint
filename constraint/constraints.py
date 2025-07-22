@@ -310,9 +310,9 @@ class ExactSumConstraint(Constraint):
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
         multipliers = self._multipliers if self._multipliers else [1] * len(variables)
         exactsum = self._exactsum
-        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
-        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
-        
+        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
+        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
+
         # preprocess the domains to remove values that cannot contribute to the exact sum
         for variable, multiplier in zip(variables, multipliers):
             domain = domains[variable]
@@ -325,8 +325,8 @@ class ExactSumConstraint(Constraint):
                     domain.remove(value)
 
         # recalculate the min and max after pruning
-        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
-        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
+        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
+        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
         self._var_is_negative = { variable: self._var_min[variable] < 0 for variable in variables }
         
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
@@ -404,7 +404,7 @@ class VariableExactSumConstraint(Constraint):
         >>> problem.addConstraint(VariableExactSumConstraint('c', ['a', 'b']))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', -1), ('b', 1), ('c', 0)], [('a', 0), ('b', 0), ('c', 0)], [('a', 1), ('b', -1), ('c', 0)], [('a', 1), ('b', 1), ('c', 2)]]
-    """
+    """ # noqa: E501
 
     def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Optional[Sequence] = None):
         """Initialization method.
@@ -531,7 +531,7 @@ class MinSumConstraint(Constraint):
     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
         multipliers = self._multipliers if self._multipliers else [1] * len(variables)
-        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
+        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
 
         # preprocess the domains to remove values that cannot contribute to the minimum sum
         for variable, multiplier in zip(variables, multipliers):
@@ -542,7 +542,7 @@ class MinSumConstraint(Constraint):
                     domain.remove(value) 
                 
         # recalculate the max after pruning
-        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
+        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
         multipliers = self._multipliers
@@ -682,7 +682,7 @@ class MaxSumConstraint(Constraint):
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
         multipliers = self._multipliers if self._multipliers else [1] * len(variables)
         maxsum = self._maxsum
-        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
+        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
         
         # preprocess the domains to remove values that cannot contribute to the sum
         for variable, multiplier in zip(variables, multipliers):
@@ -693,7 +693,7 @@ class MaxSumConstraint(Constraint):
                     domain.remove(value)
 
         # recalculate the min and max after pruning
-        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
+        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
         self._var_is_negative = { variable: self._var_min[variable] < 0 for variable in variables }
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
@@ -1040,7 +1040,7 @@ class MinProdConstraint(Constraint):
         >>> problem.addConstraint(MinProdConstraint(1))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', -2), ('b', -2)], [('a', -2), ('b', -1)], [('a', -1), ('b', -2)], [('a', -1), ('b', -1)], [('a', 1), ('b', 1)]]
-    """
+    """ # noqa: E501
 
     def __init__(self, minprod: Union[int, float]):
         """Instantiate a MinProdConstraint.
