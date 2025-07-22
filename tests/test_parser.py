@@ -57,14 +57,14 @@ def test_compile_to_constraints():
         "x != 320",             # FunctionConstraint
         "y == 0 or x % 32 != 0",# FunctionConstraint
         "x == 100",             # ExactSumConstraint
-        "100 == x + y",         # ExactSumConstraint  # TODO why is this parsed to a FunctionConstraint?
-        "x == 100+y",           # VariableExactSumConstraint
+        "100 == x + y",         # ExactSumConstraint
+        "x == 100+y",           # FunctionConstraint
         "x == x+y",             # VariableExactSumConstraint
         "51 <= x+y",            # MinSumConstraint
         "50 < x+y",             # MinSumConstraint
         "100-y >= x",           # MaxSumConstraint
-        "100 == x-y",           # VariableExactSumConstraint
-        "x / y == 100",         # VariableExactProdConstraint
+        "100 == x-y",           # FunctionConstraint
+        "x / y == 100",         # FunctionConstraint
         "x / y == x",           # VariableExactProdConstraint
         "x / y <= x",           # VariableMinProdConstraint
         "x / y >= x",           # VariableMaxProdConstraint
@@ -75,13 +75,13 @@ def test_compile_to_constraints():
         FunctionConstraint, 
         ExactSumConstraint,
         ExactSumConstraint,
-        VariableExactSumConstraint,
+        FunctionConstraint, # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented
         VariableExactSumConstraint,
         MinSumConstraint,
         MinSumConstraint,
         MaxSumConstraint,               # with rewriting "100-y >= x" becomes "100 >= x+y"
-        VariableExactSumConstraint,     # with rewriting "100 == x-y" becomes "100+y == x"
-        VariableExactProdConstraint,    # with rewriting "x / y == 100" becomes "x==100 * y"
+        FunctionConstraint,     # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented # with rewriting "100 == x-y" becomes "100+y == x"
+        FunctionConstraint,     # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented # with rewriting "x / y == 100" becomes "x==100 * y"
         VariableExactProdConstraint,
         VariableMinProdConstraint,
         VariableMaxProdConstraint,

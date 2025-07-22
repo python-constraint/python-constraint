@@ -13,33 +13,9 @@ assert doctest.testmod(domain)[0] == 0
 assert doctest.testmod(constraints, extraglobs={'Problem': problem.Problem})[0] == 0
 assert doctest.testmod(solvers, extraglobs={'Problem': problem.Problem})[0] == 0
 
-# def load_tests(loader, tests, ignore):
-#     tests.addTests(doctest.DocFileSuite(
-#         "../README.rst", 
-#         module_relative=False,
-#         optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
-#     ))
-#     raise ValueError(tests)
-#     return tests
-
-# assert doctest.testfile("../README.rst")
-
 def extract_python_code_blocks(path):
     with open(path, encoding="utf-8") as f:
         content = f.read()
-
-    # # Match ".. code-block:: python" and capture the following indented block
-    # pattern = re.compile(
-    #     r"""
-    #     ^\.\.               # literal ".."
-    #     \s+code-block::     # " code-block::"
-    #     \s+python           # " python"
-    #     \s*                 # optional trailing whitespace
-    #     \n\n                # blank line after directive
-    #     ((?:[ ]{4}.*\n?)+)  # capture indented block (4 spaces)
-    #     """,
-    #     re.MULTILINE | re.VERBOSE
-    # )
 
     # Matches '.. code-block:: python' followed by any amount of blank space,
     # then captures all subsequent lines that are indented by 4+ spaces

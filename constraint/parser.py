@@ -164,6 +164,15 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             # variables = [s.strip() for s in list(left + right) if s not in variable_supported_operators]
             variables = re.findall(regex_match_variable, restriction)
 
+            # if the restriction contains more than the variables and supported operators, return None
+            if len(variables) == 0:
+                return None
+            if any(var.strip() not in tune_params for var in variables):
+                raise ValueError(f"Variables {variables} not in tune_params {tune_params.keys()}")
+            if len(re.findall('[+-]?\d+', restriction)) > 0:    # adjust when we support modifiers such as multipliers
+                # if the restriction contains numbers, return None
+                return None
+
             # find all unique variable_supported_operators in the restriction, can have at most one
             variable_operators_left = list(s.strip() for s in list(left) if s in variable_supported_operators)
             variable_operators_right = list(s.strip() for s in list(right) if s in variable_supported_operators)
