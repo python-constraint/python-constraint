@@ -34,7 +34,9 @@ def main():
     solutions = solve()
     print("SEIS+SEIS=DOZE")
     for s in solutions:
-        print("%(s)d%(e)d%(i)d%(s)s+%(s)d%(e)d%(i)d%(s)d=" "%(d)d%(o)d%(z)d%(e)d") % s
+        seis = "%(s)d%(e)d%(i)d%(s)d" % s
+        doze = "%(d)d%(o)d%(z)d%(e)d" % s
+        print(f"{seis}+{seis}={doze}")
 
 
 if __name__ == "__main__":
