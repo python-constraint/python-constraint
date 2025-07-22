@@ -169,7 +169,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                 return None
             if any(var.strip() not in tune_params for var in variables):
                 raise ValueError(f"Variables {variables} not in tune_params {tune_params.keys()}")
-            if len(re.findall('[+-]?\d+', restriction)) > 0:    # adjust when we support modifiers such as multipliers
+            if len(re.findall(r'[+-]?\d+', restriction)) > 0:    # TODO adjust when we support modifiers such as multipliers (see roadmap)  # noqa: E501
                 # if the restriction contains numbers, return None
                 return None
 
