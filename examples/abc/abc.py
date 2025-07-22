@@ -23,6 +23,7 @@ def solve():
         c = solution["c"]
         value = (a * 100 + b * 10 + c) / (a + b + c)
         if value < minvalue:
+            minvalue = value
             minsolution = solution
     return minvalue, minsolution
 

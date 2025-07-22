@@ -17,8 +17,8 @@ from examples.studentdesks import studentdesks
 def test_abc():
     solutions = abc.solve()
     minvalue, minsolution = solutions
-    assert minvalue == 37
-    assert minsolution == {"a": 1, "c": 2, "b": 1}
+    assert minvalue == 10.473684210526315
+    assert minsolution == {'a': 1, 'b': 9, 'c': 9}
 
 
 def test_coins():
