@@ -95,13 +95,15 @@ class Problem:
         Args:
             variable (hashable object): Object representing a problem
                 variable
-            domain (list, tuple, or instance of :py:class:`Domain`): Set of items
+            domain (list, tuple, set, or instance of :py:class:`Domain`): Set of items
                 defining the possible values that the given variable may
                 assume
         """
         if variable in self._variables:
             msg = f"Tried to insert duplicated variable {repr(variable)}"
             raise ValueError(msg)
+        if not isinstance(variable, (list, tuple, Domain)) and not hasattr(domain, "__getitem__"):
+            domain = list(domain)
         if isinstance(domain, Domain):
             domain = copy.deepcopy(domain)
         elif hasattr(domain, "__getitem__"):
