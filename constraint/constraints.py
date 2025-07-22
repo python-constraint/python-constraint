@@ -284,6 +284,11 @@ class ExactSumConstraint(Constraint):
         >>> problem.addConstraint(ExactSumConstraint(3))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-1, 0, 1])
+        >>> problem.addConstraint(ExactSumConstraint(0))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -1), ('b', 1)], [('a', 0), ('b', 0)], [('a', 1), ('b', -1)]]
     """
 
     def __init__(self, exactsum: Union[int, float], multipliers: Optional[Sequence] = None):
@@ -297,40 +302,56 @@ class ExactSumConstraint(Constraint):
         """
         self._exactsum = exactsum
         self._multipliers = multipliers
+        self._var_max = {}
+        self._var_min = {}
+        self._var_is_negative = {}
 
     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
-        multipliers = self._multipliers
+        multipliers = self._multipliers if self._multipliers else [1] * len(variables)
         exactsum = self._exactsum
-        if multipliers:
-            for variable, multiplier in zip(variables, multipliers):
-                domain = domains[variable]
-                for value in domain[:]:
-                    if value * multiplier > exactsum:
-                        domain.remove(value)
-        else:
-            for variable in variables:
-                domain = domains[variable]
-                for value in domain[:]:
-                    if value > exactsum:
-                        domain.remove(value)
+        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
+        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
+        
+        # preprocess the domains to remove values that cannot contribute to the exact sum
+        for variable, multiplier in zip(variables, multipliers):
+            domain = domains[variable]
+            other_vars_min = sum_other_vars(variables, variable, self._var_min)
+            other_vars_max = sum_other_vars(variables, variable, self._var_max)
+            for value in domain[:]:
+                if value * multiplier + other_vars_min > exactsum:
+                    domain.remove(value)
+                if value * multiplier + other_vars_max < exactsum:
+                    domain.remove(value)
 
+        # recalculate the min and max after pruning
+        self._var_max = { variable: max(domains[variable]) for variable in variables }
+        self._var_min = { variable: min(domains[variable]) for variable in variables }
+        self._var_is_negative = { variable: self._var_min[variable] < 0 for variable in variables }
+        
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
         multipliers = self._multipliers
         exactsum = self._exactsum
         sum = 0
+        min_sum_missing = 0
+        max_sum_missing = 0
         missing = False
+        missing_negative = False
         if multipliers:
             for variable, multiplier in zip(variables, multipliers):
                 if variable in assignments:
                     sum += assignments[variable] * multiplier
                 else:
+                    min_sum_missing += self._var_min[variable]
+                    max_sum_missing += self._var_max[variable]
                     missing = True
+                    if self._var_is_negative[variable]:
+                        missing_negative = True
             if isinstance(sum, float):
                 sum = round(sum, 10)
-            if sum > exactsum:
+            if sum + min_sum_missing > exactsum or sum + max_sum_missing < exactsum:
                 return False
-            if forwardcheck and missing:
+            if forwardcheck and missing and not missing_negative:
                 for variable, multiplier in zip(variables, multipliers):
                     if variable not in assignments:
                         domain = domains[variable]
@@ -344,12 +365,16 @@ class ExactSumConstraint(Constraint):
                 if variable in assignments:
                     sum += assignments[variable]
                 else:
+                    min_sum_missing += self._var_min[variable]
+                    max_sum_missing += self._var_max[variable]
                     missing = True
+                    if self._var_is_negative[variable]:
+                        missing_negative = True
             if isinstance(sum, float):
                 sum = round(sum, 10)
-            if sum > exactsum:
+            if sum + min_sum_missing > exactsum or sum + max_sum_missing < exactsum:
                 return False
-            if forwardcheck and missing:
+            if forwardcheck and missing and not missing_negative:
                 for variable in variables:
                     if variable not in assignments:
                         domain = domains[variable]
@@ -359,7 +384,7 @@ class ExactSumConstraint(Constraint):
                         if not domain:
                             return False
         if missing:
-            return sum <= exactsum
+            return sum + min_sum_missing <= exactsum and sum + max_sum_missing >= exactsum
         else:
             return sum == exactsum
 
@@ -372,6 +397,13 @@ class VariableExactSumConstraint(Constraint):
         >>> problem.addConstraint(VariableExactSumConstraint('c', ['a', 'b']))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 1), ('c', 2)], [('a', 1), ('b', 2), ('c', 3)], [('a', 2), ('b', 1), ('c', 3)]]
+        >>> problem = Problem()
+        >>> problem.addVariable('a', [-1,0,1])
+        >>> problem.addVariable('b', [-1,0,1])
+        >>> problem.addVariable('c', [0, 2])
+        >>> problem.addConstraint(VariableExactSumConstraint('c', ['a', 'b']))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -1), ('b', 1), ('c', 0)], [('a', 0), ('b', 0), ('c', 0)], [('a', 1), ('b', -1), ('c', 0)], [('a', 1), ('b', 1), ('c', 2)]]
     """
 
     def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Optional[Sequence] = None):
@@ -476,6 +508,11 @@ class MinSumConstraint(Constraint):
         >>> problem.addConstraint(MinSumConstraint(3))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)], [('a', 2), ('b', 2)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-3, 1])
+        >>> problem.addConstraint(MinSumConstraint(-2))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -3), ('b', 1)], [('a', 1), ('b', -3)], [('a', 1), ('b', 1)]]
     """
 
     def __init__(self, minsum: Union[int, float], multipliers: Optional[Sequence] = None):
@@ -519,6 +556,12 @@ class VariableMinSumConstraint(Constraint):
         >>> problem.addConstraint(VariableMinSumConstraint('c', ['a', 'b']))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 1), ('c', 1)], [('a', 1), ('b', 4), ('c', 1)], [('a', 1), ('b', 4), ('c', 4)], [('a', 4), ('b', 1), ('c', 1)], [('a', 4), ('b', 1), ('c', 4)], [('a', 4), ('b', 4), ('c', 1)], [('a', 4), ('b', 4), ('c', 4)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-3, 1])
+        >>> problem.addVariable('c', [-2, 2])
+        >>> problem.addConstraint(VariableMinSumConstraint('c', ['a', 'b']))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -3), ('b', 1), ('c', -2)], [('a', 1), ('b', -3), ('c', -2)], [('a', 1), ('b', 1), ('c', -2)], [('a', 1), ('b', 1), ('c', 2)]]
     """ # noqa: E501
 
     def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Optional[Sequence] = None):
@@ -590,6 +633,11 @@ class MaxSumConstraint(Constraint):
         >>> problem.addConstraint(MaxSumConstraint(3))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-3, 1])
+        >>> problem.addConstraint(MaxSumConstraint(-2))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -3), ('b', -3)], [('a', -3), ('b', 1)], [('a', 1), ('b', -3)]]
     """
 
     def __init__(self, maxsum: Union[int, float], multipliers: Optional[Sequence] = None):
@@ -603,55 +651,49 @@ class MaxSumConstraint(Constraint):
         """
         self._maxsum = maxsum
         self._multipliers = multipliers
+        self._var_min = {}
+        self._var_is_negative = {}
+        self._contains_negative = True  # assume contains negative values by default
 
     def preProcess(self, variables: Sequence, domains: dict, constraints: list[tuple], vconstraints: dict): # noqa: D102
         Constraint.preProcess(self, variables, domains, constraints, vconstraints)
-
-        # check if there are any negative values in the associated variables
-        variable_contains_negative: list[bool] = list()
-        variable_with_negative = None
-        for variable in variables:
-            contains_negative = any(value < 0 for value in domains[variable])
-            variable_contains_negative.append(contains_negative)
-            if contains_negative:
-                if variable_with_negative is not None:
-                    # if more than one associated variables contain negative, we can't prune
-                    return
-                variable_with_negative = variable
-
-        # prune the associated variables of values > maxsum
-        multipliers = self._multipliers
+        multipliers = self._multipliers if self._multipliers else [1] * len(variables)
         maxsum = self._maxsum
-        if multipliers:
-            for variable, multiplier in zip(variables, multipliers):
-                if variable_with_negative is not None and variable_with_negative != variable:
-                    continue
-                domain = domains[variable]
-                for value in domain[:]:
-                    if value * multiplier > maxsum:
-                        domain.remove(value)
-        else:
-            for variable in variables:
-                if variable_with_negative is not None and variable_with_negative != variable:
-                    continue
-                domain = domains[variable]
-                for value in domain[:]:
-                    if value > maxsum:
-                        domain.remove(value)
+        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }
+        
+        # preprocess the domains to remove values that cannot contribute to the sum
+        for variable, multiplier in zip(variables, multipliers):
+            domain = domains[variable]
+            other_vars_min = sum_other_vars(variables, variable, self._var_min)
+            for value in domain[:]:
+                if value * multiplier + other_vars_min > maxsum:
+                    domain.remove(value)
+
+        # recalculate the min and max after pruning
+        self._var_min = { variable: min(domains[variable]) for variable in variables }
+        self._var_is_negative = { variable: self._var_min[variable] < 0 for variable in variables }
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
         multipliers = self._multipliers
         maxsum = self._maxsum
         sum = 0
+        min_sum_missing = 0
+        missing = False
+        missing_negative = False
         if multipliers:
             for variable, multiplier in zip(variables, multipliers):
                 if variable in assignments:
                     sum += assignments[variable] * multiplier
+                else:
+                    min_sum_missing += self._var_min[variable]
+                    missing = True
+                    if self._var_is_negative[variable]:
+                        missing_negative = True
             if isinstance(sum, float):
                 sum = round(sum, 10)
-            if sum > maxsum:
+            if sum + min_sum_missing > maxsum:
                 return False
-            if forwardcheck:
+            if forwardcheck and missing and not missing_negative:
                 for variable, multiplier in zip(variables, multipliers):
                     if variable not in assignments:
                         domain = domains[variable]
@@ -664,11 +706,16 @@ class MaxSumConstraint(Constraint):
             for variable in variables:
                 if variable in assignments:
                     sum += assignments[variable]
+                else:
+                    min_sum_missing += self._var_min[variable]
+                    missing = True
+                    if self._var_is_negative[variable]:
+                        missing_negative = True
             if isinstance(sum, float):
                 sum = round(sum, 10)
-            if sum > maxsum:
+            if sum + min_sum_missing > maxsum:
                 return False
-            if forwardcheck:
+            if forwardcheck and missing and not missing_negative:
                 for variable in variables:
                     if variable not in assignments:
                         domain = domains[variable]
@@ -689,6 +736,12 @@ class VariableMaxSumConstraint(Constraint):
         >>> problem.addConstraint(VariableMaxSumConstraint('c', ['a', 'b']))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 1), ('c', 3)], [('a', 1), ('b', 1), ('c', 4)], [('a', 1), ('b', 3), ('c', 4)], [('a', 3), ('b', 1), ('c', 4)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-2, 1])
+        >>> problem.addVariable('c', [-3, -1])
+        >>> problem.addConstraint(VariableMaxSumConstraint('c', ['a', 'b']))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -2), ('b', -2), ('c', -3)], [('a', -2), ('b', -2), ('c', -1)], [('a', -2), ('b', 1), ('c', -1)], [('a', 1), ('b', -2), ('c', -1)]]
     """ # noqa: E501
 
     def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Optional[Sequence] = None):
@@ -1446,3 +1499,10 @@ class SomeNotInSetConstraint(Constraint):
                 if found < self._n:
                     return False
         return True
+
+
+# Utility functions
+
+def sum_other_vars(variables: Sequence, variable, values: dict):
+    """Calculate the sum of the given values of all other variables."""
+    return sum(values[v] for v in variables if v != variable)
