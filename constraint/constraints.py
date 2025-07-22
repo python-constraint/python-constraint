@@ -836,6 +836,11 @@ class ExactProdConstraint(Constraint):
         >>> problem.addConstraint(ExactProdConstraint(2))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-2, -1, 1, 2])
+        >>> problem.addConstraint(ExactProdConstraint(-2))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -2), ('b', 1)], [('a', -1), ('b', 2)], [('a', 1), ('b', -2)], [('a', 2), ('b', -1)]]
     """
 
     def __init__(self, exactprod: Union[int, float]):
@@ -915,6 +920,12 @@ class VariableExactProdConstraint(Constraint):
         >>> problem.addConstraint(VariableExactProdConstraint('c', ['a', 'b']))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 1), ('c', 1)], [('a', 1), ('b', 2), ('c', 2)], [('a', 2), ('b', 1), ('c', 2)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-2, -1, 2])
+        >>> problem.addVariable('c', [-2, 1])
+        >>> problem.addConstraint(VariableExactProdConstraint('c', ['a', 'b']))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -1), ('b', -1), ('c', 1)], [('a', -1), ('b', 2), ('c', -2)], [('a', 2), ('b', -1), ('c', -2)]]
     """
 
     def __init__(self, target_var: str, product_vars: Sequence[str]):
@@ -997,19 +1008,20 @@ class VariableExactProdConstraint(Constraint):
         if target_value < possible_min or target_value > possible_max:
             return False
 
-        if forwardcheck:
-            for var in unassigned_vars:
-                others = [v for v in unassigned_vars if v != var]
-                others_bounds = [(min(domains[v]), max(domains[v])) for v in others] or [(1, 1)]
-                other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in others_bounds])]
+        # the below forwardcheck is incorrect for mixes of negative and positive values
+        # if forwardcheck:
+        #     for var in unassigned_vars:
+        #         others = [v for v in unassigned_vars if v != var]
+        #         others_bounds = [(min(domains[v]), max(domains[v])) for v in others] or [(1, 1)]
+        #         other_products = [self._safe_product(p) for p in product(*[(lo, hi) for lo, hi in others_bounds])]
 
-                domain = domains[var]
-                for value in domain[:]:
-                    candidates = [assigned_product * value * p for p in other_products]
-                    if all(c != target_value for c in candidates):
-                        domain.hideValue(value)
-                if not domain:
-                    return False
+        #         domain = domains[var]
+        #         for value in domain[:]:
+        #             candidates = [assigned_product * value * p for p in other_products]
+        #             if all(c != target_value for c in candidates):
+        #                 domain.hideValue(value)
+        #         if not domain:
+        #             return False
 
         return True
 
@@ -1023,6 +1035,11 @@ class MinProdConstraint(Constraint):
         >>> problem.addConstraint(MinProdConstraint(2))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 2)], [('a', 2), ('b', 1)], [('a', 2), ('b', 2)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-2, -1, 1])
+        >>> problem.addConstraint(MinProdConstraint(1))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -2), ('b', -2)], [('a', -2), ('b', -1)], [('a', -1), ('b', -2)], [('a', -1), ('b', -1)], [('a', 1), ('b', 1)]]
     """
 
     def __init__(self, minprod: Union[int, float]):
@@ -1069,6 +1086,12 @@ class VariableMinProdConstraint(Constraint):
         >>> problem.addConstraint(VariableMinProdConstraint('c', ['a', 'b']))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', -1), ('b', -1), ('c', -1)], [('a', 2), ('b', 2), ('c', -1)], [('a', 2), ('b', 2), ('c', 2)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-2, -1, 1])
+        >>> problem.addVariable('c', [2, 5])
+        >>> problem.addConstraint(VariableMinProdConstraint('c', ['a', 'b']))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -2), ('b', -2), ('c', 2)], [('a', -2), ('b', -1), ('c', 2)], [('a', -1), ('b', -2), ('c', 2)]]
     """
 
     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107
@@ -1165,6 +1188,11 @@ class MaxProdConstraint(Constraint):
         >>> problem.addConstraint(MaxProdConstraint(2))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', 1), ('b', 1)], [('a', 1), ('b', 2)], [('a', 2), ('b', 1)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-2, -1, 1])
+        >>> problem.addConstraint(MaxProdConstraint(-1))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -2), ('b', 1)], [('a', -1), ('b', 1)], [('a', 1), ('b', -2)], [('a', 1), ('b', -1)]]
     """
 
     def __init__(self, maxprod: Union[int, float]):
@@ -1245,6 +1273,12 @@ class VariableMaxProdConstraint(Constraint):
         >>> problem.addConstraint(VariableMaxProdConstraint('c', ['a', 'b']))
         >>> sorted(sorted(x.items()) for x in problem.getSolutions())
         [[('a', -1), ('b', -1), ('c', 2)], [('a', -1), ('b', 2), ('c', -1)], [('a', -1), ('b', 2), ('c', 2)], [('a', 2), ('b', -1), ('c', -1)], [('a', 2), ('b', -1), ('c', 2)]]
+        >>> problem = Problem()
+        >>> problem.addVariables(["a", "b"], [-2, -1, 1])
+        >>> problem.addVariable('c', [-2, -3])
+        >>> problem.addConstraint(VariableMaxProdConstraint('c', ['a', 'b']))
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[('a', -2), ('b', 1), ('c', -2)], [('a', 1), ('b', -2), ('c', -2)]]
     """ # noqa: E501
 
     def __init__(self, target_var: str, product_vars: Sequence[str]):   # noqa: D107
