@@ -1,21 +1,23 @@
 from constraint import (
-    compile_to_constraints, 
-    parse_restrictions, 
-    Constraint, 
-    FunctionConstraint, 
-    CompilableFunctionConstraint, 
-    ExactSumConstraint, 
+    compile_to_constraints,
+    parse_restrictions,
+    Constraint,
+    FunctionConstraint,
+    CompilableFunctionConstraint,
+    ExactSumConstraint,
     MinSumConstraint,
     MaxSumConstraint,
-    ExactProdConstraint, 
-    MinProdConstraint, 
-    MaxProdConstraint, 
-    VariableExactSumConstraint, 
-    VariableExactProdConstraint, 
-    VariableMinProdConstraint, 
-    VariableMaxProdConstraint, 
+    ExactProdConstraint,
+    MinProdConstraint,
+    MaxProdConstraint,
+    VariableExactSumConstraint,
+    VariableExactProdConstraint,
+    VariableMinProdConstraint,
+    VariableMaxProdConstraint,
 )
+from constraint.parser import extract_operators
 from collections.abc import Iterable
+
 
 def test_parse_restrictions():
     domains = {"x": [50, 100], "y": [0, 1]}
@@ -51,41 +53,44 @@ def test_parse_restrictions():
     assert isinstance(parsed_constraint, MinProdConstraint)
     assert 30 < parsed_constraint._minprod < 31
 
+
 def test_compile_to_constraints():
     domains = {"x": [50, 100], "y": [0, 1]}
     constraints = [
-        "x != 320",             # FunctionConstraint
-        "y == 0 or x % 32 != 0",# FunctionConstraint
-        "x == 100",             # ExactSumConstraint
-        "100 == x + y",         # ExactSumConstraint
-        "x == 100+y",           # FunctionConstraint
-        "x == x+y",             # VariableExactSumConstraint
-        "51 <= x+y",            # MinSumConstraint
-        "50 < x+y",             # MinSumConstraint
-        "100-y >= x",           # MaxSumConstraint
-        "100 == x-y",           # FunctionConstraint
-        "x / y == 100",         # FunctionConstraint
-        "x / y == x",           # VariableExactProdConstraint
-        "x / y <= x",           # VariableMinProdConstraint
-        "x / y >= x",           # VariableMaxProdConstraint
-        "50 <= x * y < 100",    # becomes splitted MinProdConstraint and MaxProdConstraint
+        "x != 320",  # FunctionConstraint
+        "y == 0 or x % 32 != 0",  # FunctionConstraint
+        "x == 100",  # ExactSumConstraint
+        "100 == x + y",  # ExactSumConstraint
+        "x + y >= -1",  # MinSumConstraint
+        "x == 100+y",  # FunctionConstraint
+        "x == x+y",  # VariableExactSumConstraint
+        "51 <= x+y",  # MinSumConstraint
+        "50 < x+y",  # MinSumConstraint
+        "100-y >= x",  # MaxSumConstraint
+        "100 == x-y",  # FunctionConstraint
+        "x / y == 100",  # FunctionConstraint
+        "x / y == x",  # VariableExactProdConstraint
+        "x / y <= x",  # VariableMinProdConstraint
+        "x / y >= x",  # VariableMaxProdConstraint
+        "50 <= x * y < 100",  # becomes splitted MinProdConstraint and MaxProdConstraint
     ]
     expected_constraint_types = [
-        FunctionConstraint, 
-        FunctionConstraint, 
+        FunctionConstraint,
+        FunctionConstraint,
         ExactSumConstraint,
         ExactSumConstraint,
-        FunctionConstraint, # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented
+        MinSumConstraint,
+        FunctionConstraint,  # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented
         VariableExactSumConstraint,
         MinSumConstraint,
         MinSumConstraint,
-        MaxSumConstraint,               # with rewriting "100-y >= x" becomes "100 >= x+y"
-        FunctionConstraint,     # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented # with rewriting "100 == x-y" becomes "100+y == x"
-        FunctionConstraint,     # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented # with rewriting "x / y == 100" becomes "x==100 * y"
+        MaxSumConstraint,  # with rewriting "100-y >= x" becomes "100 >= x+y"
+        FunctionConstraint,  # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented # with rewriting "100 == x-y" becomes "100+y == x"
+        FunctionConstraint,  # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented # with rewriting "x / y == 100" becomes "x==100 * y"
         VariableExactProdConstraint,
         VariableMinProdConstraint,
         VariableMaxProdConstraint,
-        MinProdConstraint, 
+        MinProdConstraint,
         MaxProdConstraint,
     ]
 
@@ -102,22 +107,21 @@ def test_compile_to_constraints():
     # check whether the expected types match (may have to be adjusted to be order independent in future)
     for i, (r, _, cons) in enumerate(compiled):
         expected = expected_constraint_types[i]
-        assert isinstance(r, expected), f"Expected {expected} but got {type(r)} for constraint {constraints[i]}"  # the constraint lookup is correct until there are split restrictions
+        assert isinstance(
+            r, expected
+        ), f"Expected {expected} but got {type(r)} for constraint {constraints[i]}"  # the constraint lookup is correct until there are split restrictions
         if callable(expected):
             assert callable(r)
 
+
 def test_compile_to_constraints_picklable():
     domains = {"x": [50, 100], "y": [0, 1]}
-    constraints = [
-        "x != 320", 
-        "y == 0 or x % 32 != 0", 
-        "50 <= x * y < 100"
-    ]
+    constraints = ["x != 320", "y == 0 or x % 32 != 0", "50 <= x * y < 100"]
     expected_constraint_types = [
-        CompilableFunctionConstraint, 
-        CompilableFunctionConstraint, 
-        MinProdConstraint, 
-        MaxProdConstraint
+        CompilableFunctionConstraint,
+        CompilableFunctionConstraint,
+        MinProdConstraint,
+        MaxProdConstraint,
     ]
 
     compiled = compile_to_constraints(constraints, domains, picklable=True)
@@ -138,16 +142,13 @@ def test_compile_to_constraints_picklable():
         else:
             assert isinstance(r, expected)
 
+
 def test_compile_non_numeric():
     domains = {"x": ["a2", "b4", "c6"], "y": [True, False]}
-    constraints = [
-        "x == 'a'", 
-        "y == 'd' or x != 'b'", 
-        "'a' <= x + y < 'c'"
-    ]
-    
+    constraints = ["x == 'a'", "y == 'd' or x != 'b'", "'a' <= x + y < 'c'"]
+
     compiled = compile_to_constraints(constraints, domains, picklable=False)
-    
+
     assert len(compiled) == 4
     for r, vals, r_str in compiled:
         assert isinstance(r, (Constraint, CompilableFunctionConstraint))
@@ -156,3 +157,21 @@ def test_compile_non_numeric():
             assert isinstance(r_str, str)
         else:
             assert r_str is None
+
+
+def test_extract_operators():
+    expression_and_solutions = [
+        ("-3<=x+y", ["+"]),  # should find: +
+        ("-3 <= x + y", ["+"]),  # should find: +
+        ("x+y>=-1", ["+"]),  # should find: +
+        ("x-y", ["-"]),  # should find: -
+        ("x**2-1", ["**", "-"]),  # should find: **, -
+        ("a*b+c/d-e", ["*", "+", "/", "-"]),  # should find: *, +, /, -
+        ("a * b + c / d - e", ["*", "+", "/", "-"]),  # should find: *, +, /, -
+        ("-x**2+3", ["**", "+"]),  # should find: **, +
+    ]
+
+    for expr, solution in expression_and_solutions:
+        assert (
+            extract_operators(expr) == solution
+        ), f"Failed for expression {expr}: expected {solution}, got {extract_operators(expr)}"
