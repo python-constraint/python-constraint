@@ -166,6 +166,7 @@ def test_extract_operators():
         ("x+y>=-1", ["+"]),  # should find: +
         ("x-y", ["-"]),  # should find: -
         ("x**2-1", ["**", "-"]),  # should find: **, -
+        ("x+2+-1", ["+", "+"]),  # should find: +, +
         ("a*b+c/d-e", ["*", "+", "/", "-"]),  # should find: *, +, /, -
         ("a * b + c / d - e", ["*", "+", "/", "-"]),  # should find: *, +, /, -
         ("-x**2+3", ["**", "+"]),  # should find: **, +
