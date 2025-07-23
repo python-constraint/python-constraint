@@ -178,6 +178,7 @@ For an overview of recent changes, visit the `Changelog <https://github.com/pyth
 Planned development:
 
 - Support constant modifiers on parsed (variable) constraints instead defaulting to `FunctionConstraint`, e.g. :code:`problem.addConstraint("a+2 == b")` or :code:`problem.addConstraint("x / y == 100")`
+- Parse using Abstract Syntax Trees (AST) instead of the current parser to be more robust and support decomposing lambdas
 - Rewrite hotspots in C / Pyx instead of pure python mode
 - Improvements to make the ParallelSolver competitive (experiments reveal the freethreading mode to be promising)
 - Versioned documentation
