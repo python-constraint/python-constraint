@@ -168,10 +168,10 @@ def test_is_or_evals_to_number():
     assert is_or_evals_to_number("1 + 2 * 3 / 4") == 2.5
 
     # Test cases where the expression does not evaluate to a number
-    assert is_or_evals_to_number("x+2") == None
-    assert is_or_evals_to_number("2 + '3'") == None
-    assert is_or_evals_to_number("x1 + y2") == None
-    assert is_or_evals_to_number("3 + 2j") == None
+    assert is_or_evals_to_number("x+2") is None
+    assert is_or_evals_to_number("2 + '3'") is None
+    assert is_or_evals_to_number("x1 + y2") is None
+    assert is_or_evals_to_number("3 + 2j") is None
 
 
 def test_extract_operators():
