@@ -15,7 +15,7 @@ from constraint import (
     VariableMinProdConstraint,
     VariableMaxProdConstraint,
 )
-from constraint.parser import extract_operators
+from constraint.parser import extract_operators, is_or_evals_to_number
 from collections.abc import Iterable
 
 
@@ -157,6 +157,21 @@ def test_compile_non_numeric():
             assert isinstance(r_str, str)
         else:
             assert r_str is None
+
+
+def test_is_or_evals_to_number():
+    # Test cases where the expression evaluates to a number
+    assert is_or_evals_to_number(" 42 ") == 42
+    assert is_or_evals_to_number("-42") == -42
+    assert is_or_evals_to_number(" +3.14 ") == 3.14
+    assert is_or_evals_to_number("4.16 + 1.84") == 6
+    assert is_or_evals_to_number("1 + 2 * 3 / 4") == 2.5
+
+    # Test cases where the expression does not evaluate to a number
+    assert is_or_evals_to_number("x+2") == None
+    assert is_or_evals_to_number("2 + '3'") == None
+    assert is_or_evals_to_number("x1 + y2") == None
+    assert is_or_evals_to_number("3 + 2j") == None
 
 
 def test_extract_operators():
