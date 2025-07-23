@@ -1,4 +1,5 @@
 """Module containing the code for parsing string constraints."""
+
 import re
 from types import FunctionType
 from typing import Union, Optional
@@ -27,8 +28,9 @@ from constraint.constraints import (
     # SomeNotInSetConstraint,
 )
 
+
 def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple[Union[Constraint, str], list[str]]]:
-    """Parses restrictions (constraints in string format) from a list of strings into compilable functions and constraints. Returns a list of tuples of (strings or constraints) and parameters."""   # noqa: E501
+    """Parses restrictions (constraints in string format) from a list of strings into compilable functions and constraints. Returns a list of tuples of (strings or constraints) and parameters."""  # noqa: E501
     # rewrite the restrictions so variables are singled out
     regex_match_variable = r"([a-zA-Z_$][a-zA-Z_$0-9]*)"
     regex_match_variable_or_constant = r"([a-zA-Z_$0-9]*)"
@@ -76,9 +78,22 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                 split_restrictions.append(temp_copy[prev_stop:next_stop].strip())
         return split_restrictions
 
-    def to_numeric_constraint(
-        restriction: str, params: list[str]
-    ) -> Optional[Union[MinSumConstraint, VariableMinSumConstraint, ExactSumConstraint, VariableExactSumConstraint, MaxSumConstraint, VariableMaxSumConstraint, MinProdConstraint, VariableMinProdConstraint, ExactProdConstraint, VariableExactProdConstraint, MaxProdConstraint, VariableMaxProdConstraint]]:  # noqa: E501
+    def to_numeric_constraint(restriction: str, params: list[str]) -> Optional[
+        Union[
+            MinSumConstraint,
+            VariableMinSumConstraint,
+            ExactSumConstraint,
+            VariableExactSumConstraint,
+            MaxSumConstraint,
+            VariableMaxSumConstraint,
+            MinProdConstraint,
+            VariableMinProdConstraint,
+            ExactProdConstraint,
+            VariableExactProdConstraint,
+            MaxProdConstraint,
+            VariableMaxProdConstraint,
+        ]
+    ]:  # noqa: E501
         """Converts a restriction to a built-in numeric constraint if possible."""
         # first check if all parameters have only numbers as values
         if len(params) == 0 or not all(all(isinstance(v, (int, float)) for v in tune_params[p]) for p in params):
@@ -95,10 +110,8 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         left, right = tuple(s.strip() for s in restriction.split(comparator))
 
         # if we have an inverse operation, rewrite to the other side
-        supported_operators = ["**", "*", "+", "-", "/"]
-        operators_left = [s.strip() for s in list(left) if s in supported_operators]
-        operators_right = [s.strip() for s in list(right) if s in supported_operators]
-        # TODO implement the case where the minus is part of a constant, e.g. "-3 <= x + y"
+        operators_left = extract_operators(left)
+        operators_right = extract_operators(right)
         if len(operators_left) > 0 and len(operators_right) > 0:
             # if there are operators on both sides, we can't handle this yet
             return None
@@ -107,7 +120,9 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         unique_operators = unique_operators_left.union(unique_operators_right)
         if len(unique_operators) == 1:
             variables_on_left = len(unique_operators_left) > 0
-            swapped_side_first_component = re.search(regex_match_variable_or_constant, left if variables_on_left else right)    # noqa: E501
+            swapped_side_first_component = re.search(
+                regex_match_variable_or_constant, left if variables_on_left else right
+            )  # noqa: E501
             if swapped_side_first_component is None:
                 # if there is no variable on the left side, we can't handle this yet
                 return None
@@ -116,51 +131,41 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             if "-" in unique_operators:
                 if not variables_on_left:
                     # e.g. "G == B-M" becomes "G+M == B"
-                    right_remainder = right[len(swapped_side_first_component):]
+                    right_remainder = right[len(swapped_side_first_component) :]
                     left_swap = right_remainder.replace("-", "+")
                     restriction = f"{left}{left_swap}{comparator}{swapped_side_first_component}"
                 else:
                     # e.g. "B-M == G" becomes "B == G+M"
-                    left_remainder = left[len(swapped_side_first_component):]
+                    left_remainder = left[len(swapped_side_first_component) :]
                     right_swap = left_remainder.replace("-", "+")
                     restriction = f"{swapped_side_first_component}{comparator}{right}{right_swap}"
             if "/" in unique_operators:
                 if not variables_on_left:
                     # e.g. "G == B/M" becomes "G*M == B"
-                    right_remainder = right[len(swapped_side_first_component):]
+                    right_remainder = right[len(swapped_side_first_component) :]
                     left_swap = right_remainder.replace("/", "*")
                     restriction = f"{left}{left_swap}{comparator}{swapped_side_first_component}"
                 else:
                     # e.g. "B/M == G" becomes "B == G*M"
-                    left_remainder = left[len(swapped_side_first_component):]
+                    left_remainder = left[len(swapped_side_first_component) :]
                     right_swap = left_remainder.replace("/", "*")
                     restriction = f"{swapped_side_first_component}{comparator}{right}{right_swap}"
 
             # we have a potentially rewritten restriction, split again
             left, right = tuple(s.strip() for s in restriction.split(comparator))
-            operators_left = [s.strip() for s in list(left) if s in supported_operators]
-            operators_right = [s.strip() for s in list(right) if s in supported_operators]
+            operators_left = extract_operators(left)
+            operators_right = extract_operators(right)
             unique_operators_left = set(operators_left)
             unique_operators_right = set(operators_right)
             unique_operators = unique_operators_left.union(unique_operators_right)
 
         # find out which side is the constant number
-        def is_or_evals_to_number(s: str) -> Optional[Union[int, float]]:
-            try:
-                # check if it's a number or solvable to a number (e.g. '32*2')
-                number = eval(s)
-                assert isinstance(number, (int, float))
-                return number
-            except Exception:
-                # it's not a solvable subexpression, return None
-                return None
-
         # either the left or right side of the equation must evaluate to a constant number, otherwise we use a VariableConstraint   # noqa: E501
         left_num = is_or_evals_to_number(left)
         right_num = is_or_evals_to_number(right)
         if (left_num is None and right_num is None) or (left_num is not None and right_num is not None):
             # if both sides are parameters, try to use the VariableConstraints
-            variable_supported_operators = ['+', '*']
+            variable_supported_operators = ["+", "*"]
             # variables = [s.strip() for s in list(left + right) if s not in variable_supported_operators]
             variables = re.findall(regex_match_variable, restriction)
 
@@ -169,7 +174,9 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                 return None
             if any(var.strip() not in tune_params for var in variables):
                 raise ValueError(f"Variables {variables} not in tune_params {tune_params.keys()}")
-            if len(re.findall(r'[+-]?\d+', restriction)) > 0:    # TODO adjust when we support modifiers such as multipliers (see roadmap)  # noqa: E501
+            if (
+                len(re.findall(r"[+-]?\d+", restriction)) > 0
+            ):  # TODO adjust when we support modifiers such as multipliers (see roadmap)  # noqa: E501
                 # if the restriction contains numbers, return None
                 return None
 
@@ -178,26 +185,54 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
             variable_operators_right = list(s.strip() for s in list(right) if s in variable_supported_operators)
             variable_unique_operators = list(set(variable_operators_left).union(set(variable_operators_right)))
             # if there is a mix of operators (e.g. 'x + y * z == a') or multiple variables on both sides, return None
-            if len(variable_unique_operators) <= 1 and all(s.strip() in params for s in variables) and (len(unique_operators_left) == 0 or len(unique_operators_right) == 0):  # noqa: E501
+            if (
+                len(variable_unique_operators) <= 1
+                and all(s.strip() in params for s in variables)
+                and (len(unique_operators_left) == 0 or len(unique_operators_right) == 0)
+            ):  # noqa: E501
                 variables_on_left = len(unique_operators_left) > 0
                 if len(variable_unique_operators) == 0 or variable_unique_operators[0] == "+":
                     if comparator == "==":
-                        return VariableExactSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactSumConstraint(variables[0], variables[1:])  # noqa: E501
+                        return (
+                            VariableExactSumConstraint(variables[-1], variables[:-1])
+                            if variables_on_left
+                            else VariableExactSumConstraint(variables[0], variables[1:])
+                        )  # noqa: E501
                     elif comparator == "<=":
                         # "B+C <= A" (maxsum) if variables_on_left else "A <= B+C" (minsum)
-                        return VariableMaxSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMinSumConstraint(variables[0], variables[1:])  # noqa: E501
+                        return (
+                            VariableMaxSumConstraint(variables[-1], variables[:-1])
+                            if variables_on_left
+                            else VariableMinSumConstraint(variables[0], variables[1:])
+                        )  # noqa: E501
                     elif comparator == ">=":
                         # "B+C >= A" (minsum) if variables_on_left else "A >= B+C" (maxsum)
-                        return VariableMinSumConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxSumConstraint(variables[0], variables[1:])  # noqa: E501
+                        return (
+                            VariableMinSumConstraint(variables[-1], variables[:-1])
+                            if variables_on_left
+                            else VariableMaxSumConstraint(variables[0], variables[1:])
+                        )  # noqa: E501
                 elif variable_unique_operators[0] == "*":
                     if comparator == "==":
-                        return VariableExactProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableExactProdConstraint(variables[0], variables[1:])  # noqa: E501
+                        return (
+                            VariableExactProdConstraint(variables[-1], variables[:-1])
+                            if variables_on_left
+                            else VariableExactProdConstraint(variables[0], variables[1:])
+                        )  # noqa: E501
                     elif comparator == "<=":
                         # "B*C <= A" (maxprod) if variables_on_left else "A <= B*C" (minprod)
-                        return VariableMaxProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMinProdConstraint(variables[0], variables[1:])    # noqa: E501
+                        return (
+                            VariableMaxProdConstraint(variables[-1], variables[:-1])
+                            if variables_on_left
+                            else VariableMinProdConstraint(variables[0], variables[1:])
+                        )  # noqa: E501
                     elif comparator == ">=":
                         # "B*C >= A" (minprod) if variables_on_left else "A >= B*C" (maxprod)
-                        return VariableMinProdConstraint(variables[-1], variables[:-1]) if variables_on_left else VariableMaxProdConstraint(variables[0], variables[1:])    # noqa: E501
+                        return (
+                            VariableMinProdConstraint(variables[-1], variables[:-1])
+                            if variables_on_left
+                            else VariableMaxProdConstraint(variables[0], variables[1:])
+                        )  # noqa: E501
 
             # left_num and right_num can't both be constants, or for other reasons we can't use a VariableConstraint
             return None
@@ -302,12 +337,12 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                 return AllDifferentConstraint()
             return ValueError(f"Not possible: comparator should be '==' or '!=', is {comparator}")
         return None
-    
+
     # remove functionally duplicate restrictions (preserves order and whitespace)
     if all(isinstance(r, str) for r in restrictions):
         # clean the restriction strings to functional equivalence
-        restrictions_cleaned = [r.replace(' ', '') for r in restrictions]
-        restrictions_cleaned_unique = list(dict.fromkeys(restrictions_cleaned)) # dict preserves order
+        restrictions_cleaned = [r.replace(" ", "") for r in restrictions]
+        restrictions_cleaned_unique = list(dict.fromkeys(restrictions_cleaned))  # dict preserves order
         # get the indices of the unique restrictions, use these to build a new list of restrictions
         restrictions_unique_indices = [restrictions_cleaned.index(r) for r in restrictions_cleaned_unique]
         restrictions = [restrictions[i] for i in restrictions_unique_indices]
@@ -342,7 +377,10 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
     return parsed_restrictions
 
-def compile_to_constraints(constraints: list[str], domains: dict, picklable=False) -> list[tuple[Constraint, list[str], Union[str, None]]]:    # noqa: E501
+
+def compile_to_constraints(
+    constraints: list[str], domains: dict, picklable=False
+) -> list[tuple[Constraint, list[str], Union[str, None]]]:  # noqa: E501
     """Parses constraints in string format (referred to as restrictions) from a list of strings into a list of Constraints, parameters used, and source if applicable.
 
     Args:
@@ -352,7 +390,7 @@ def compile_to_constraints(constraints: list[str], domains: dict, picklable=Fals
 
     Returns:
         list of tuples with restrictions, parameters used (list[str]), and source (str) if applicable. Returned restrictions are strings, functions, or Constraints depending on the options provided.
-    """ # noqa: E501
+    """  # noqa: E501
     parsed_restrictions = parse_restrictions(constraints, domains)
     compiled_constraints: list[tuple[Constraint, list[str], Union[str, None]]] = list()
     for restriction, params_used in parsed_restrictions:
@@ -373,3 +411,36 @@ def compile_to_constraints(constraints: list[str], domains: dict, picklable=Fals
 
     # return the restrictions and used parameters
     return compiled_constraints
+
+
+# Utility functions
+
+
+def is_or_evals_to_number(s: str) -> Optional[Union[int, float]]:
+    """Check if the string is a number or can be evaluated to a number."""
+    try:
+        # check if it's a number or solvable to a number (e.g. '32*2')
+        number = eval(s)
+        assert isinstance(number, (int, float))
+        return number
+    except Exception:
+        # it's not a solvable subexpression, return None
+        return None
+
+
+def extract_operators(expr: str) -> list[str]:
+    """Extracts all operators from an expression string."""
+    # Regex for all supported binary operators:
+    # supported_operators = ["**", "*", "+", "-", "/"]
+
+    # remove any whitespace from the expression
+    expr = expr.strip().replace(" ", "")
+
+    # Match ** first to avoid matching * twice
+    pattern = r"""
+        (?<!\*)\*\*      |   # match ** but not ***
+        (?<=[\w)\d])\-   |   # binary -: preceded by var/number/closing )
+        [+\*/]               # match +, *, /
+    """
+    matches = re.findall(pattern, expr, re.VERBOSE)
+    return [m.strip() for m in matches]
