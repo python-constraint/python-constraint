@@ -2,6 +2,21 @@
 
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
 
+### Version 2.5.0
+- Released: 2026-01-08
+- Issues / Enhancements:
+  - Added Python 3.14 support.
+  - Resolved issue #103 relating to pruning.
+  - Various minor improvements.
+
+### Version 2.4.0
+- Released: 2025-07-23
+- Issues / Enhancements:
+  - `MinSumConstraint` is now much faster thanks to preprocessing.
+  - Variables values can be instantiated with any type that can be iterable, such as sets.
+  - Two issues (#13 and #65) relating to the examples have been resolved.
+  - Various minor improvements.
+
 ### Version 2.3.0
 
 - Released: 2025-06-17

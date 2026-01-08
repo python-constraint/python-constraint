@@ -17,7 +17,7 @@ python_versions_to_test = [
     "3.11",
     "3.12",
     "3.13",
-    # "3.14"  # 3.14 has not yet been officially released
+    "3.14"
 ]
 nox.options.stop_on_first_error = True
 nox.options.error_on_missing_interpreters = True
