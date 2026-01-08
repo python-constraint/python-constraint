@@ -8,6 +8,11 @@ from math import sqrt
 from .benchmarks import dedispersion, microhh, hotspot
 
 
+# skip the test module if there are no C-extensions available
+from constraint import check_if_compiled
+if not check_if_compiled():
+    pytest.skip("C-extensions not available, skipping benchmark tests.", allow_module_level=True)
+
 # reference times (using A4000 on DAS6)
 reference_microbenchmark_mean = [0.3784186691045761, 0.4737640768289566, 0.10726054509480794, 0.10744890073935191, 0.10979799057046573, 0.15360217044750848, 0.14483965436617532, 0.054416230569283165, 0.13835338006416956, 0.1371802551050981]    # noqa E501
 reference_results = {
@@ -123,8 +128,8 @@ print(f"\nSystem performance factor: {round(performance_factor, 3)}")
 def check_benchmark_performance(benchmark_name, mean, std):
     """Utility function to check whether the performance of a benchmark is within the expected range and print information."""
     reference_result = reference_results[benchmark_name]
-    assert  mean - std * 2 <= reference_result * (performance_factor + mean_relative_std * 2)
     print(f"Benchmark {benchmark_name}: reference: {round(reference_result, 3)}, run: {round(mean, 3)}, expected: {round(reference_result * performance_factor, 3)}")
+    assert  mean - std * 2 <= reference_result * (performance_factor + mean_relative_std * 2)
 
 @pytest.mark.skip
 def run_and_check_benchmark(benchmark, benchmark_name, problem, expected_num_solutions):
