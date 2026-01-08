@@ -121,6 +121,13 @@ class FunctionConstraint(Constraint):
         >>> problem.addConstraint(FunctionConstraint(func), ["a", "b"])
         >>> problem.getSolution()
         {'a': 1, 'b': 2}
+        >>> problem = Problem()
+        >>> problem.addVariables([1, 2], ["a", "b"])
+        >>> def func(x, y):
+        ...     return x != y
+        >>> problem.addConstraint(FunctionConstraint(func), [1, 2])
+        >>> sorted(sorted(x.items()) for x in problem.getSolutions())
+        [[(1, 'a'), (2, 'b')], [(1, 'b'), (2, 'a')]]
     """
 
     def __init__(self, func: Callable, assigned: bool = True):
