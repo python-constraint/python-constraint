@@ -325,8 +325,8 @@ class ExactSumConstraint(Constraint):
                     domain.remove(value)
 
         # recalculate the min and max after pruning
-        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
-        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
+        self._var_max = { variable: max(domains[variable]) * multiplier if len(domains[variable]) > 0 else 0 for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
+        self._var_min = { variable: min(domains[variable]) * multiplier if len(domains[variable]) > 0 else 0 for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
         self._var_is_negative = { variable: self._var_min[variable] < 0 for variable in variables }
         
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):    # noqa: D102
@@ -542,7 +542,7 @@ class MinSumConstraint(Constraint):
                     domain.remove(value) 
                 
         # recalculate the max after pruning
-        self._var_max = { variable: max(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
+        self._var_max = { variable: max(domains[variable]) * multiplier if len(domains[variable]) > 0 else 0 for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
         multipliers = self._multipliers
@@ -692,8 +692,8 @@ class MaxSumConstraint(Constraint):
                 if value * multiplier + other_vars_min > maxsum:
                     domain.remove(value)
 
-        # recalculate the min and max after pruning
-        self._var_min = { variable: min(domains[variable]) * multiplier for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
+        # recalculate the min after pruning
+        self._var_min = { variable: min(domains[variable]) * multiplier if len(domains[variable]) > 0 else 0 for variable, multiplier in zip(variables, multipliers) }   # noqa: E501
         self._var_is_negative = { variable: self._var_min[variable] < 0 for variable in variables }
 
     def __call__(self, variables: Sequence, domains: dict, assignments: dict, forwardcheck=False):  # noqa: D102
