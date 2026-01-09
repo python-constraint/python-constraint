@@ -1,4 +1,6 @@
-|License| |Build Status| |Docs| |Python Versions| |Downloads| |CondaDownloads| |Status| |Code Coverage|
+|CondaDownloads| |Downloads| 
+|Python Versions| 
+|License| |Build Status| |Status| |Docs| |Code Coverage|
 
 .. image:: https://github.com/python-constraint/python-constraint/raw/main/docs/assets/logo/N-Queens_problem_Python.svg
     :align: center
