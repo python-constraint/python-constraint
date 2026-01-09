@@ -1,4 +1,4 @@
-|License| |Build Status| |Docs| |Python Versions| |Downloads| |Status| |Code Coverage|
+|License| |Build Status| |Docs| |Python Versions| |Downloads| |CondaDownloads| |Status| |Code Coverage|
 
 .. image:: https://github.com/python-constraint/python-constraint/raw/main/docs/assets/logo/N-Queens_problem_Python.svg
     :align: center
@@ -7,8 +7,9 @@
 python-constraint
 =================
 
-| This software is now back to active development / maintainance status.
-| IMPORTANT: the new version can be installed with `pip install python-constraint2`, as the original pip release will not be updated.
+| ⚠️ IMPORTANT: this software must be installed with ``pip install python-constraint2``, as the original pip release will not be updated.
+| A [Conda Forge version](https://github.com/conda-forge/python-constraint2-feedstock) is also available: ``conda install python-constraint2``. 
+
 | For an overview of recent changes, visit the `Changelog <https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md>`_.
 | The complete documentation can be found `here <http://python-constraint.github.io/python-constraint/>`_.
 
@@ -207,6 +208,9 @@ But it's probably better to `open an issue <https://github.com/python-constraint
 
 .. |Downloads| image:: https://img.shields.io/pypi/dm/python-constraint2
     :alt: PyPI - Downloads
+
+.. |CondaDownloads| image:: https://img.shields.io/conda/d/conda-forge/python-constraint2.svg
+    :alt: Conda - Downloads
 
 .. |Status| image:: https://img.shields.io/pypi/status/python-constraint2
     :alt: PyPI - Status
