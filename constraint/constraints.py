@@ -495,8 +495,12 @@ class VariableExactSumConstraint(Constraint):
                                 if temp_sum > target_value:
                                     domain.hideValue(value)
                         else:
+                            # sum_value already includes min(domain) as a placeholder for this
+                            # unassigned variable; subtract it before adding the candidate value
+                            # to avoid double-counting.
+                            var_placeholder = min(domain)
                             for value in domain[:]:
-                                temp_sum = sum_value + value
+                                temp_sum = sum_value - var_placeholder + value
                                 if temp_sum > target_value:
                                     domain.hideValue(value)
                         if not domain:
