@@ -12,19 +12,21 @@ python-constraint
 | ⚠️ IMPORTANT: this software must be installed with ``pip install python-constraint2``, as the original pip release will not be updated.
 | A `Conda Forge <https://anaconda.org/channels/conda-forge/packages/python-constraint2/overview>`_ / `Mamba <https://github.com/conda-forge/python-constraint2-feedstock>`_ version is also available: ``conda install python-constraint2``. 
 |
+
 | For an overview of recent changes, visit the `Changelog <https://github.com/python-constraint/python-constraint/blob/main/CHANGELOG.md>`_.
 | The complete documentation can be found `here <http://python-constraint.github.io/python-constraint/>`_.
 |
+
 | New: writing constraints in the new string format is preferable over functions and lambdas. 
-| These strings, even as compound statements, are automatically parsed to faster built-in constraints, are more concise, and do not require constraint solving familiarity by the user to be efficient.
+| These strings, even as compound statements, are automatically parsed to faster built-in constraints, are more concise, and do not require constraint solving familiarity by the user to be efficient. 
 | For example, :code:`problem.addConstraint(["50 <= x * y < 100"])` is parsed to :code:`[MinProdConstraint(50, ["x", "y"]), MaxProdConstraint(100, ["x", "y"])]`. 
 | Similarly, :code:`problem.addConstraint(["x / y == z"])` is parsed to :code:`[ExactProdConstraint("x", ["z", "y"])]`.
 | This feature is in beta and subject to possible change, please provide feedback.
-|
+
 .. contents::
     :local:
     :depth: 1
-|
+
 Introduction
 ------------
 The :code:`python-constraint` module offers efficient solvers for `Constraint Satisfaction Problems (CSPs) <https://en.wikipedia.org/wiki/Constraint_satisfaction_problem>`_ over finite domains in an accessible Python package.
