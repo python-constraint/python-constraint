@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 [project]
 name = "python-constraint2" # when set back to "python-constraint", don't forget to remove '2' in other places (e.g. README)
 description = "python-constraint is a module for efficiently solving CSPs (Constraint Solving Problems) over finite domains."
-version = "2.5.0" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
+version = "2.6.0" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
 authors = [
     {name = "Floris-Jan Willemsen", email = "fjwillemsen97@gmail.com"},
     {name = "Sébastien Celles", email = "s.celles@gmail.com"},
@@ -33,8 +33,6 @@ classifiers = [
     "Programming Language :: Cython",
     "Topic :: Scientific/Engineering",
     "Topic :: Software Development",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -42,7 +40,7 @@ classifiers = [
 ]
 
 # ATTENTION: if anything is changed here, run `poetry update`
-requires-python = ">= 3.9"  # when changing the Python versions, also change the test versions in the Noxfile and GitHub Actions
+requires-python = ">= 3.11"  # when changing the Python versions, also change the test versions in the Noxfile and GitHub Actions
 
 [project.urls]
 Homepage = "http://python-constraint.github.io/python-constraint/"
@@ -66,9 +64,11 @@ script = "cythonize_build.py"
 # ATTENTION: if anything is changed here, run `poetry update` and `poetry export --with docs --without-hashes --format=requirements.txt > docs/requirements.txt`
 [tool.poetry.group.docs]
 optional = true
+[tool.poetry.requires-plugins]
+poetry-plugin-export = ">=1.10"
 [tool.poetry.group.docs.dependencies]
-sphinx = "^7.4.7"                       # can be updated to >=8.*.* when Python 3.9 is dropped
-sphinx-autodoc-typehints = "^2.3.0"     # can be updated to >=3.*.* when Python 3.9 is dropped
+sphinx = ">=8.0.0"                       # can be updated to >=8.*.* when Python 3.9 is dropped
+sphinx-autodoc-typehints = ">=3.0.0"     # can be updated to >=3.*.* when Python 3.9 is dropped
 sphinx_rtd_theme = "^3.0.2"
 sphinx-pyproject = "^0.3.0"
 

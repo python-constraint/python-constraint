@@ -2,34 +2,34 @@
 
 import re
 from types import FunctionType
-from typing import Union, Optional
+
 from constraint.constraints import (
     AllDifferentConstraint,
     AllEqualConstraint,
-    Constraint,
-    ExactSumConstraint,
-    MinSumConstraint,
-    MaxSumConstraint,
-    ExactProdConstraint,
-    MinProdConstraint,
-    MaxProdConstraint,
-    FunctionConstraint,
     CompilableFunctionConstraint,
-    VariableExactSumConstraint,
-    VariableMinSumConstraint,
-    VariableMaxSumConstraint,
+    Constraint,
+    ExactProdConstraint,
+    ExactSumConstraint,
+    FunctionConstraint,
+    MaxProdConstraint,
+    MaxSumConstraint,
+    MinProdConstraint,
+    MinSumConstraint,
     VariableExactProdConstraint,
-    VariableMinProdConstraint,
+    VariableExactSumConstraint,
     VariableMaxProdConstraint,
     # TODO implement parsing for these constraints:
     # InSetConstraint,
     # NotInSetConstraint,
     # SomeInSetConstraint,
     # SomeNotInSetConstraint,
+    VariableMaxSumConstraint,
+    VariableMinProdConstraint,
+    VariableMinSumConstraint,
 )
 
 
-def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple[Union[Constraint, str], list[str]]]:
+def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple[Constraint | str, list[str]]]:
     """Parses restrictions (constraints in string format) from a list of strings into compilable functions and constraints. Returns a list of tuples of (strings or constraints) and parameters."""  # noqa: E501
     # rewrite the restrictions so variables are singled out
     regex_match_variable = r"([a-zA-Z_$][a-zA-Z_$0-9]*)"
@@ -78,22 +78,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                 split_restrictions.append(temp_copy[prev_stop:next_stop].strip())
         return split_restrictions
 
-    def to_numeric_constraint(restriction: str, params: list[str]) -> Optional[
-        Union[
-            MinSumConstraint,
-            VariableMinSumConstraint,
-            ExactSumConstraint,
-            VariableExactSumConstraint,
-            MaxSumConstraint,
-            VariableMaxSumConstraint,
-            MinProdConstraint,
-            VariableMinProdConstraint,
-            ExactProdConstraint,
-            VariableExactProdConstraint,
-            MaxProdConstraint,
-            VariableMaxProdConstraint,
-        ]
-    ]:  # noqa: E501
+    def to_numeric_constraint(restriction: str, params: list[str]) -> MinSumConstraint | VariableMinSumConstraint | ExactSumConstraint | VariableExactSumConstraint | MaxSumConstraint | VariableMaxSumConstraint | MinProdConstraint | VariableMinProdConstraint | ExactProdConstraint | VariableExactProdConstraint | MaxProdConstraint | VariableMaxProdConstraint | None:  # noqa: E501
         """Converts a restriction to a built-in numeric constraint if possible."""
         # first check if all parameters have only numbers as values
         if len(params) == 0 or not all(all(isinstance(v, (int, float)) for v in tune_params[p]) for p in params):
@@ -312,7 +297,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
     def to_equality_constraint(
         restriction: str, params: list[str]
-    ) -> Optional[Union[AllEqualConstraint, AllDifferentConstraint]]:
+    ) -> AllEqualConstraint | AllDifferentConstraint | None:
         """Converts a restriction to either an equality or inequality constraint on all the parameters if possible."""
         # check if all parameters are involved
         if len(params) != len(tune_params):
@@ -380,7 +365,7 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
 
 def compile_to_constraints(
     constraints: list[str], domains: dict, picklable=False
-) -> list[tuple[Constraint, list[str], Union[str, None]]]:  # noqa: E501
+) -> list[tuple[Constraint, list[str], str | None]]:  # noqa: E501
     """Parses constraints in string format (referred to as restrictions) from a list of strings into a list of Constraints, parameters used, and source if applicable.
 
     Args:
@@ -392,7 +377,7 @@ def compile_to_constraints(
         list of tuples with restrictions, parameters used (list[str]), and source (str) if applicable. Returned restrictions are strings, functions, or Constraints depending on the options provided.
     """  # noqa: E501
     parsed_restrictions = parse_restrictions(constraints, domains)
-    compiled_constraints: list[tuple[Constraint, list[str], Union[str, None]]] = list()
+    compiled_constraints: list[tuple[Constraint, list[str], str | None]] = list()
     for restriction, params_used in parsed_restrictions:
         if isinstance(restriction, str):
             # if it's a string, wrap it in a (compilable or compiled) function constraint
@@ -416,7 +401,7 @@ def compile_to_constraints(
 # Utility functions
 
 
-def is_or_evals_to_number(s: str) -> Optional[Union[int, float]]:
+def is_or_evals_to_number(s: str) -> int | float | None:
     """Check if the string is a number or can be evaluated to a number."""
     try:
         # check if it's a number or solvable to a number (e.g. '32*2')

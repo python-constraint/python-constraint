@@ -1,15 +1,14 @@
 """Module containing the code for problem definitions."""
 
 import copy
-from warnings import warn
+from collections.abc import Callable, Hashable, Sequence
 from operator import itemgetter
-from typing import Callable, Optional, Union
-from collections.abc import Sequence, Hashable
+from warnings import warn
 
-from constraint.constraints import Constraint, FunctionConstraint, CompilableFunctionConstraint
+from constraint.constraints import CompilableFunctionConstraint, Constraint, FunctionConstraint
 from constraint.domain import Domain
-from constraint.solvers import Solver, OptimizedBacktrackingSolver, ParallelSolver
 from constraint.parser import compile_to_constraints
+from constraint.solvers import OptimizedBacktrackingSolver, ParallelSolver, Solver
 
 try:
     from sys import _is_gil_enabled
@@ -138,7 +137,7 @@ class Problem:
         for variable in variables:
             self.addVariable(variable, domain)
 
-    def addConstraint(self, constraint: Union[Constraint, Callable, str], variables: Optional[Sequence] = None):
+    def addConstraint(self, constraint: Constraint | Callable | str, variables: Sequence | None = None):
         """Add a constraint to the problem.
 
         Example:

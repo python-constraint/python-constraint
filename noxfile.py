@@ -5,15 +5,14 @@ These tests are ran on GitHub, and can be executed locally by running `nox`.
 Be aware that the general setup of tests is left to pyproject.toml.
 """
 
+from pathlib import Path
+
 import nox
 from nox import Session, session
-from pathlib import Path
 
 # from nox_poetry import Session, session   # nox_poetry is a better option, but <=1.0.3 has a bug with filename-URLs
 
 python_versions_to_test = [
-    "3.9",
-    "3.10",
     "3.11",
     "3.12",
     "3.13",
