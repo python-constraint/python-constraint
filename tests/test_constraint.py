@@ -125,3 +125,21 @@ def test_multipliers():
     solutions = problem.getSolutions()
     for solution in solutions:
         assert solution in possible_solutions
+
+def test_pruning_constraint():
+    """Test that the VariableExactSumConstraint prunes the domain correctly."""
+    from constraint import VariableExactSumConstraint
+
+    problem = constraint.Problem()
+    problem.addVariable("a", [1, 2, -1, 3])
+    problem.addVariable("b", [1, 2, -1, 3])
+    problem.addVariable("c", [3])
+    problem.addConstraint(VariableExactSumConstraint("c", ["a", "b"]))
+
+    possible_solutions = [{"a": 2, "b": 1, "c": 3}, {"a": 1, "b": 2, "c": 3}]
+
+    # get the solutions
+    solutions = problem.getSolutions()
+    assert len(solutions) == len(possible_solutions)
+    for solution in solutions:
+        assert solution in possible_solutions

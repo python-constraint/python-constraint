@@ -6,7 +6,7 @@ All notable changes to this code base will be documented in this file, for every
 - Released: 2026-06-29
 - Issues / Enhancements:
   - Improved type specification.
-  - Resolved issue #108 relating to pruning. 
+  - Resolved issue #108 relating to pruning (thank you @gaoflow). 
   - Various minor improvements.
   - Updated build and documentation dependencies.
   - Dropped Python 3.9 & 3.10 support.
