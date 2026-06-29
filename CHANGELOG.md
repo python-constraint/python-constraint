@@ -2,6 +2,15 @@
 
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
 
+### Version 2.6.0
+- Released: 2026-06-29
+- Issues / Enhancements:
+  - Improved type specification.
+  - Resolved issue #108 relating to pruning. 
+  - Various minor improvements.
+  - Updated build and documentation dependencies.
+  - Dropped Python 3.9 & 3.10 support.
+
 ### Version 2.5.0
 - Released: 2026-01-08
 - Issues / Enhancements:

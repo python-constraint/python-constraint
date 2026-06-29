@@ -1,9 +1,10 @@
 """Module containing the code for constraint definitions."""
 
-from constraint.domain import Unassigned
-from typing import Callable, Union, Optional
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from itertools import product
+
+from constraint.domain import Unassigned
+
 
 class Constraint:
     """Abstract base class for constraints."""
@@ -298,7 +299,7 @@ class ExactSumConstraint(Constraint):
         [[('a', -1), ('b', 1)], [('a', 0), ('b', 0)], [('a', 1), ('b', -1)]]
     """
 
-    def __init__(self, exactsum: Union[int, float], multipliers: Optional[Sequence] = None):
+    def __init__(self, exactsum: int | float, multipliers: Sequence | None = None):
         """Initialization method.
 
         Args:
@@ -413,7 +414,7 @@ class VariableExactSumConstraint(Constraint):
         [[('a', -1), ('b', 1), ('c', 0)], [('a', 0), ('b', 0), ('c', 0)], [('a', 1), ('b', -1), ('c', 0)], [('a', 1), ('b', 1), ('c', 2)]]
     """ # noqa: E501
 
-    def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Optional[Sequence] = None):
+    def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Sequence | None = None):
         """Initialization method.
 
         Args:
@@ -522,7 +523,7 @@ class MinSumConstraint(Constraint):
         [[('a', -3), ('b', 1)], [('a', 1), ('b', -3)], [('a', 1), ('b', 1)]]
     """
 
-    def __init__(self, minsum: Union[int, float], multipliers: Optional[Sequence] = None):
+    def __init__(self, minsum: int | float, multipliers: Sequence | None = None):
         """Initialization method.
 
         Args:
@@ -595,7 +596,7 @@ class VariableMinSumConstraint(Constraint):
         [[('a', -3), ('b', 1), ('c', -2)], [('a', 1), ('b', -3), ('c', -2)], [('a', 1), ('b', 1), ('c', -2)], [('a', 1), ('b', 1), ('c', 2)]]
     """ # noqa: E501
 
-    def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Optional[Sequence] = None):
+    def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Sequence | None = None):
         """Initialization method.
 
         Args:
@@ -671,7 +672,7 @@ class MaxSumConstraint(Constraint):
         [[('a', -3), ('b', -3)], [('a', -3), ('b', 1)], [('a', 1), ('b', -3)]]
     """
 
-    def __init__(self, maxsum: Union[int, float], multipliers: Optional[Sequence] = None):
+    def __init__(self, maxsum: int | float, multipliers: Sequence | None = None):
         """Initialization method.
 
         Args:
@@ -774,7 +775,7 @@ class VariableMaxSumConstraint(Constraint):
         [[('a', -2), ('b', -2), ('c', -3)], [('a', -2), ('b', -2), ('c', -1)], [('a', -2), ('b', 1), ('c', -1)], [('a', 1), ('b', -2), ('c', -1)]]
     """ # noqa: E501
 
-    def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Optional[Sequence] = None):
+    def __init__(self, target_var: str, sum_vars: Sequence[str], multipliers: Sequence | None = None):
         """Initialization method.
 
         Args:
@@ -850,7 +851,7 @@ class ExactProdConstraint(Constraint):
         [[('a', -2), ('b', 1)], [('a', -1), ('b', 2)], [('a', 1), ('b', -2)], [('a', 2), ('b', -1)]]
     """
 
-    def __init__(self, exactprod: Union[int, float]):
+    def __init__(self, exactprod: int | float):
         """Instantiate an ExactProdConstraint.
 
         Args:
@@ -1049,7 +1050,7 @@ class MinProdConstraint(Constraint):
         [[('a', -2), ('b', -2)], [('a', -2), ('b', -1)], [('a', -1), ('b', -2)], [('a', -1), ('b', -1)], [('a', 1), ('b', 1)]]
     """ # noqa: E501
 
-    def __init__(self, minprod: Union[int, float]):
+    def __init__(self, minprod: int | float):
         """Instantiate a MinProdConstraint.
 
         Args:
@@ -1202,7 +1203,7 @@ class MaxProdConstraint(Constraint):
         [[('a', -2), ('b', 1)], [('a', -1), ('b', 1)], [('a', 1), ('b', -2)], [('a', 1), ('b', -1)]]
     """
 
-    def __init__(self, maxprod: Union[int, float]):
+    def __init__(self, maxprod: int | float):
         """Instantiate a MaxProdConstraint.
 
         Args:
