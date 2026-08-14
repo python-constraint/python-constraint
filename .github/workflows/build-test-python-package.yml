@@ -26,11 +26,11 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v7
               with:
                   fetch-depth: 0 # fetch all history to avoid detached HEAD state when pushing benchmark results
             - name: Download previous benchmark data
-              uses: actions/cache@v4
+              uses: actions/cache@v6
               with:
                   path: ./cache
                   key: ${{ runner.os }}-benchmark
@@ -41,7 +41,7 @@ jobs:
               uses: benchmark-action/github-action-benchmark@v1
               with:
                   tool: "pytest"
-                  output-file-path: .benchmarks/benchmark_${{ runner.os }}_3.13.json
+                  output-file-path: .benchmarks/benchmark_${{ runner.os }}_3.14.json
                   external-data-json-path: ./cache/benchmark-data.json
                   fail-on-alert: true
                   # GitHub API token to make a commit comment

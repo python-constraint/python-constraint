@@ -27,12 +27,12 @@ jobs:
                 pyversion: ["3.11", "3.12", "3.13", "3.14"]
                 exclude:
                     - os: ubuntu-latest
-                      pyversion: "3.12" # exclude because we already use this OS and version for building the source package
+                      pyversion: "3.14" # exclude because we already use this OS and version for building the source package
 
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v7
             - name: Setup Python
-              uses: actions/setup-python@v5
+              uses: actions/setup-python@v7
               with:
                   python-version: ${{ matrix.pyversion }}
             - name: Setup Poetry
@@ -60,20 +60,20 @@ jobs:
             id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
         steps:
             - name: Build the source distribution and platform-specific wheel
-              uses: actions/checkout@v4
+              uses: actions/checkout@v7
             - name: Setup Python
-              uses: actions/setup-python@v5
+              uses: actions/setup-python@v7
               with:
-                  python-version: "3.12"
+                  python-version: "3.14"
             - name: Setup Poetry
               uses: Gr1N/setup-poetry@v9
-            - name: Build for Python 3.12 on ubuntu-latest
+            - name: Build for Python 3.14 on ubuntu-latest
               run: |
                   poetry install
                   poetry build
                   ls ./dist
             - name: Download all platform-specific wheels to the `temp_dist` folder
-              uses: actions/download-artifact@v4
+              uses: actions/download-artifact@v8
               with:
                   path: ./temp_dist
             - name: Unpack the remotely built wheels to the `dist` folder
