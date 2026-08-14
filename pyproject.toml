@@ -107,7 +107,7 @@ select = [
 convention = "google"
 
 [tool.pytest.ini_options]
-minversion = "9.1.1"
+minversion = "8.0.0"
 pythonpath = [
     "constraint",
 ] # necessary to get coverage reports without installing with `-e`
