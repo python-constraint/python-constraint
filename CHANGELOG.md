@@ -2,6 +2,14 @@
 
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
 
+### Version 2.6.1
+- Released: 2026-08-13
+- Issues / Enhancements:
+  - Bumped version numbers of build system, e.g. Python versions and GitHub Actions.
+  - Cythonized with new version.
+  - Updated several development and documentation dependencies.
+  - Dropped no longer needed testing dependency. 
+
 ### Version 2.6.0
 - Released: 2026-06-29
 - Issues / Enhancements:

@@ -1,11 +1,11 @@
 [build-system]
-requires = ["poetry-core>=2.0.1", "setuptools>=75.8.0", "Cython>=3.0.12"]
+requires = ["poetry-core>=2.4.1", "setuptools>=84.0.0", "Cython>=3.2.9"]
 build-backend = "poetry.core.masonry.api" 
 
 [project]
 name = "python-constraint2" # when set back to "python-constraint", don't forget to remove '2' in other places (e.g. README)
 description = "python-constraint is a module for efficiently solving CSPs (Constraint Solving Problems) over finite domains."
-version = "2.6.0" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
+version = "2.6.1" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
 authors = [
     {name = "Floris-Jan Willemsen", email = "fjwillemsen97@gmail.com"},
     {name = "Sébastien Celles", email = "s.celles@gmail.com"},
@@ -67,24 +67,23 @@ optional = true
 [tool.poetry.requires-plugins]
 poetry-plugin-export = ">=1.10"
 [tool.poetry.group.docs.dependencies]
-sphinx = ">=8.0.0"                       # can be updated to >=8.*.* when Python 3.9 is dropped
-sphinx-autodoc-typehints = ">=3.0.0"     # can be updated to >=3.*.* when Python 3.9 is dropped
+sphinx = ">=8.0.0"                       # can be updated to >=9.*.* when Python 3.12 is dropped
+sphinx-autodoc-typehints = ">=3.0.0"
 sphinx_rtd_theme = "^3.0.2"
 sphinx-pyproject = "^0.3.0"
 
 # ATTENTION: if anything is changed here, run `poetry update`
 [tool.poetry.group.dev.dependencies]
-Cython = "^3.2.4"
+Cython = "^3.2.9"
 [tool.poetry.group.test]
 optional = true
 [tool.poetry.group.test.dependencies]
-pytest = "^8.4.2"
+pytest = "^9.1.1"
 pytest-benchmark = "^5.2.3"
-pytest-cov = "^6.3.0"
-nox = "^2025.11.12"
-ruff = "^0.9.6"
+pytest-cov = "^7.1.0"
+nox = "^2026.8.10"
+ruff = "^0.16.3"
 pep440 = "^0.1.2"
-tomli = "^2.2.1"      # can be replaced by built-in [tomllib](https://docs.python.org/3.11/library/tomllib.html) from Python 3.11
 
 # development dependencies are unused for now, as this is already covered by test and docs
 # # ATTENTION: if anything is changed here, run `poetry update`
@@ -108,7 +107,7 @@ select = [
 convention = "google"
 
 [tool.pytest.ini_options]
-minversion = "8.4"
+minversion = "9.1.1"
 pythonpath = [
     "constraint",
 ] # necessary to get coverage reports without installing with `-e`
