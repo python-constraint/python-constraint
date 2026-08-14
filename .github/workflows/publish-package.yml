@@ -43,7 +43,7 @@ jobs:
                   poetry build -f wheel
                   ls ./dist
             - name: Upload the built wheel distribution
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v7
               with:
                   name: ${{ matrix.os }}_${{ matrix.pyversion }}
                   path: ./dist/*.whl
