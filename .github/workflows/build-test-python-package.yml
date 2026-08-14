@@ -34,7 +34,7 @@ jobs:
               with:
                   path: ./cache
                   key: ${{ runner.os }}-benchmark
-            - uses: fjwillemsen/setup-nox2@v3.0.0
+            - uses: fjwillemsen/setup-nox2@v4
             - run: |
                   nox -- ${{ runner.os }}
             - name: Store benchmark result

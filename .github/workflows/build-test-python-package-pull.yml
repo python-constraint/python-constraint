@@ -12,7 +12,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v7
-            - uses: fjwillemsen/setup-nox2@v3.0.0
+            - uses: fjwillemsen/setup-nox2@v4
             - run: |
                   nox -- ${{ runner.os }}
             - name: Report to Coveralls
