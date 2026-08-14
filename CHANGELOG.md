@@ -2,9 +2,10 @@
 
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
 
-### Version 2.6.1
-- Released: 2026-08-13
+### Version 2.7.0
+- Released: 2026-08-14
 - Issues / Enhancements:
+  - Added ARM-wheels for Ubuntu and Windows. 
   - Bumped version numbers of build system, e.g. Python versions and GitHub Actions.
   - Cythonized with new version.
   - Updated several development and documentation dependencies.

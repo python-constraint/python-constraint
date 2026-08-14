@@ -23,7 +23,7 @@ The release description must link to the changelog.
 ## Upload to PyPI
 
 Once a new release is created, publishing to PyPI happens automatically via a GitHub action. 
-This action builds wheels for manylinux, macOS and Windows on x86. ARM support will be added as soon as it is supported by GitHub. 
+This action builds wheels for manylinux (both CLib 2.35 and 2.39), macOS and Windows. For all three platforms ARM-wheels are available, as well as x86 for Ubuntu and Windows. 
 Source build is also released, be aware that this requires a C-compiler on the user side.  
 
 ## Verify release
