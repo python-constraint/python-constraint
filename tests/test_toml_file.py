@@ -2,13 +2,13 @@
 
 from pathlib import Path
 
-import tomli
+import tomllib
 
 package_root = Path(".").parent.parent
 pyproject_toml_path = package_root / "pyproject.toml"
 assert pyproject_toml_path.exists()
 with open(pyproject_toml_path, mode="rb") as fp:
-    pyproject = tomli.load(fp)
+    pyproject = tomllib.load(fp)
     project = pyproject["project"] if "project" in pyproject else pyproject["tool"]["poetry"]
 
 
