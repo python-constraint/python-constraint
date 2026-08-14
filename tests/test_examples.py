@@ -56,7 +56,9 @@ def test_xsum():
 
 
 def test_crosswords():
-    """Verify crossword puzzle helper initialization."""
-    puzzle_mask = "####\n####\n####\n####"
+    """Verify crossword puzzle solver execution with sample mask and word list."""
+    puzzle = "####\n####\n####\n####"
     words = ["DATA", "CODE", "TEST", "MATH", "BYTE", "DISK", "FILE", "FLOW"]
-    assert len(words) == 8
+    solution, matrix = crosswords.solve(puzzle, words)
+    assert isinstance(matrix, list)
+
