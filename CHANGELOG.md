@@ -2,6 +2,12 @@
 
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
 
+### Version 2.7.1
+- Released: 2026-08-17
+- Issues / Enhancements:
+  - Expanded support for wheels to match more macOS targets
+  - The included examples are now part of the tests, resolving issue #18
+
 ### Version 2.7.0
 - Released: 2026-08-14
 - Issues / Enhancements:

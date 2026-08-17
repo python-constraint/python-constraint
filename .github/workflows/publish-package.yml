@@ -38,6 +38,8 @@ jobs:
             - name: Setup Poetry
               uses: Gr1N/setup-poetry@v9
             - name: Build wheel distribution
+              env:
+                MACOSX_DEPLOYMENT_TARGET: "13.0"
               run: |
                   poetry install
                   poetry build -f wheel
