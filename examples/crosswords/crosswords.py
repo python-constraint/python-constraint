@@ -6,7 +6,7 @@ import sys
 MINLEN = 3
 
 
-def main(puzzle, lines):
+def solve(puzzle, lines):
     puzzle = puzzle.rstrip().splitlines()
     while puzzle and not puzzle[0]:
         del puzzle[0]
@@ -60,10 +60,6 @@ def main(puzzle, lines):
             del word[:]
         col += 1
 
-    # hnames = ["h%d" % i for i in range(len(horizontal))]
-    # vnames = ["v%d" % i for i in range(len(vertical))]
-
-    # problem = Problem(MinConflictsSolver())
     problem = Problem()
 
     for hi, hword in enumerate(horizontal):
@@ -116,7 +112,7 @@ def main(puzzle, lines):
 
     solution = problem.getSolution()
     if not solution:
-        print("No solution found!")
+        return None, []
 
     maxcol = 0
     maxrow = 0
@@ -145,8 +141,16 @@ def main(puzzle, lines):
         for (row, col), char in zip(word, solution[variable]):
             matrix[row][col] = char
 
-    for row in range(maxrow + 1):
-        for col in range(maxcol + 1):
+    return solution, matrix
+
+
+def main(puzzle, lines):
+    solution, matrix = solve(puzzle, lines)
+    if not solution:
+        print("No solution found!")
+        return
+    for row in range(len(matrix)):
+        for col in range(len(matrix[row])):
             sys.stdout.write(matrix[row][col])
         sys.stdout.write("\n")
 
