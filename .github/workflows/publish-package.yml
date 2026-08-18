@@ -23,7 +23,7 @@ jobs:
 
         strategy:
             matrix: # important: if this matrix is changed, also change EXPECTED_WHEELS_COUNT in `build_and_publish_as_package` below
-                os: [ubuntu-latest, ubuntu-24.04-arm, ubuntu-22.04, ubuntu-22.04-arm, macos-latest, windows-latest, windows-11-arm] # ubuntu-22.04 is used to generate wheels for manylinux_2_35 in addition to the manylinux_2_39 of ubuntu-latest
+                os: [ubuntu-latest, ubuntu-24.04-arm, ubuntu-22.04, ubuntu-22.04-arm, macos-latest, macos-14, windows-latest, windows-11-arm] # ubuntu-22.04 is used to generate wheels for manylinux_2_35 in addition to the manylinux_2_39 of ubuntu-latest
                 pyversion: ["3.11", "3.12", "3.13", "3.14"]
                 exclude:
                     - os: ubuntu-latest
@@ -38,9 +38,9 @@ jobs:
             - name: Setup Poetry
               uses: Gr1N/setup-poetry@v9
             - name: Build older macOS wheel distribution
-              if: runner.os == 'macOS'
+              if: matrix.os == 'macos-14'
               env:
-                  MACOSX_DEPLOYMENT_TARGET: "13.0"  # Must be equal to the current Pixi "osx-arm64" minimum version.
+                  MACOSX_DEPLOYMENT_TARGET: "13.0"  # Must be equal to the current Pixi "osx-arm64" minimum version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
               run: |
                   poetry install
                   poetry build -f wheel  
@@ -51,8 +51,8 @@ jobs:
                   python -m wheel tags --remove --platform-tag=macosx_13_0_arm64 dist/*.whl  
                   ls dist
             - name: Build wheel distribution
+              if: matrix.os != 'macos-14'
               run: |
-                  unset MACOSX_DEPLOYMENT_TARGET
                   poetry install
                   poetry build -f wheel
                   ls ./dist
