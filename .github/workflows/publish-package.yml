@@ -86,6 +86,15 @@ jobs:
                   poetry install
                   poetry build
                   ls ./dist
+            - name: Install cibuildwheel
+              run: python -m pip install cibuildwheel==4.2.0
+            - name: Build older Linux wheel distribution
+              env:
+                CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-*"
+                CIBW_ARCHS_LINUX: "x86_64 aarch64"
+                CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28      # Must be equal to the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
+                CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_28
+              run: python -m cibuildwheel --output-dir dist
             - name: Download all platform-specific wheels to the `temp_dist` folder
               uses: actions/download-artifact@v8
               with:
