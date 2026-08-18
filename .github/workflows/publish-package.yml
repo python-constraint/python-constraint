@@ -91,7 +91,7 @@ jobs:
             - name: Build older Linux wheel distribution
               env:
                 CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-*"
-                CIBW_ARCHS_LINUX: "x86_64 aarch64"
+                CIBW_ARCHS_LINUX: "x86_64"
                 CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28      # Must be equal to the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
                 CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_28
               run: python -m cibuildwheel --output-dir dist
@@ -119,7 +119,7 @@ jobs:
                     exit 1;
                   fi
 
-                  EXPECTED_WHEELS_COUNT=32
+                  EXPECTED_WHEELS_COUNT=40
                   WHEELS_COUNT=$(ls -lR ./dist/*.whl | wc -l)
                   echo "Number of wheel distributions: $WHEELS_COUNT"
                   if [ "$WHEELS_COUNT" -ne "$EXPECTED_WHEELS_COUNT" ]; then
