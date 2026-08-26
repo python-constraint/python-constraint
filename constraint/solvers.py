@@ -441,16 +441,17 @@ class RecursiveBacktrackingSolver(Solver):
         >>> sorted(solution.items()) in result
         True
 
-        >>> for solution in problem.getSolutions():
+        >>> for solution in problem.getSolutionIter():
         ...     sorted(solution.items()) in result
         True
         True
         True
 
-        >>> problem.getSolutionIter()
-        Traceback (most recent call last):
-        ...
-        NotImplementedError: RecursiveBacktrackingSolver doesn't provide iteration
+        >>> for solution in problem.getSolutions():
+        ...     sorted(solution.items()) in result
+        True
+        True
+        True
     """
 
     def __init__(self, forwardcheck=True):
@@ -516,12 +517,66 @@ class RecursiveBacktrackingSolver(Solver):
         del assignments[variable]
         return solutions
 
+    def recursiveBacktrackingIter(self, domains: dict, vconstraints: dict, assignments: dict):
+        """Yield solutions lazily using recursive backtracking.
+
+        Args:
+            domains (dict): Dictionary mapping variables to domains
+            vconstraints (dict): Dictionary mapping variables to a list
+                of constraints affecting the given variables.
+            assignments (dict): Current variable assignments
+
+        Yields:
+            dict: Next valid solution mapping variables to assigned values
+        """
+        lst = [(-len(vconstraints[variable]), len(domains[variable]), variable) for variable in domains]
+        lst.sort(key=lambda x: (x[0], x[1]))
+        for item in lst:
+            if item[-1] not in assignments:
+                # Found an unassigned variable. Let's go.
+                break
+        else:
+            # No unassigned variables. We've got a solution.
+            yield assignments.copy()
+            return
+
+        variable = item[-1]
+        assignments[variable] = None
+
+        forwardcheck = self._forwardcheck
+        if forwardcheck:
+            pushdomains = [domains[x] for x in domains if x not in assignments]
+        else:
+            pushdomains = None
+
+        for value in domains[variable]:
+            assignments[variable] = value
+            if pushdomains:
+                for domain in pushdomains:
+                    domain.pushState()
+            try:
+                for constraint, variables in vconstraints[variable]:
+                    if not constraint(variables, domains, assignments, pushdomains):
+                        # Value is not good.
+                        break
+                else:
+                    # Value is good. Recurse and get next variable.
+                    yield from self.recursiveBacktrackingIter(domains, vconstraints, assignments)
+            finally:
+                if pushdomains:
+                    for domain in pushdomains:
+                        domain.popState()
+        del assignments[variable]
+
     def getSolution(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         solutions = self.recursiveBacktracking([], domains, vconstraints, {}, True)
         return solutions and solutions[0] or None
 
     def getSolutions(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
         return self.recursiveBacktracking([], domains, vconstraints, {}, False)
+
+    def getSolutionIter(self, domains: dict, constraints: list[tuple], vconstraints: dict):  # noqa: D102
+        return self.recursiveBacktrackingIter(domains, vconstraints, {})
 
 
 class MinConflictsSolver(Solver):
