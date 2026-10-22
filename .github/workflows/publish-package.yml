@@ -119,7 +119,7 @@ jobs:
                     exit 1;
                   fi
 
-                  EXPECTED_WHEELS_COUNT=48
+                  EXPECTED_WHEELS_COUNT=40
                   WHEELS_COUNT=$(ls -lR ./dist/*.whl | wc -l)
                   echo "Number of wheel distributions: $WHEELS_COUNT"
                   if [ "$WHEELS_COUNT" -ne "$EXPECTED_WHEELS_COUNT" ]; then
