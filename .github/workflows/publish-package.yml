@@ -127,7 +127,7 @@ jobs:
                   WHEELS_COUNT=$(ls -lR ./dist/*.whl | wc -l)
                   echo "Number of wheel distributions: $WHEELS_COUNT"
                   if [ "$WHEELS_COUNT" -ne "$EXPECTED_WHEELS_COUNT" ]; then
-                    echo "::error::Number of wheel distributions $WHEELS_COUNT not equal to $EXPECTED_WHEELS_COUNT"
+                    echo "::warning::Number of wheel distributions $WHEELS_COUNT not equal to $EXPECTED_WHEELS_COUNT"
                     exit 1;
                   fi
             - name: Publish package distributions to PyPI
