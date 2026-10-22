@@ -7,6 +7,7 @@ All notable changes to this code base will be documented in this file, for every
 - Issues / Enhancements:
   - Added Python 3.15 support
   - Cythonized with new version
+  - Updated dependencies
 
 ### Version 2.7.3
 - Released: 2026-08-18
