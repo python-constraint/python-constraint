@@ -41,7 +41,7 @@ classifiers = [
 ]
 
 # ATTENTION: if anything is changed here, run `poetry update`
-requires-python = ">= 3.11"  # when changing the Python versions, also change the test versions in the Noxfile and GitHub Actions
+requires-python = ">= 3.11"  # when changing the Python versions, also change the test and build versions in the Noxfile and GitHub Actions
 
 [project.urls]
 Homepage = "http://python-constraint.github.io/python-constraint/"
