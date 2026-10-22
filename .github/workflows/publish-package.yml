@@ -1,7 +1,7 @@
 # This workflow checks out a new release and publishes it to PyPI using Poetry.
 #
-# First it builds a wheel for every combination of OS and Python version listed, save for Python 3.12 on ubuntu-latest.
-# It then starts an ubuntu-latest instance that retrieves all built wheels, and builds a wheel for Python 3.12 and a source distribution.
+# First it builds a wheel for every combination of OS and Python version listed, save for Python 3.14 on ubuntu-latest.
+# It then starts an ubuntu-latest instance that retrieves all built wheels, and builds a wheel for Python 3.14 and a source distribution.
 # Finally it uploads the source and all wheels to PyPI.
 
 name: Publish Package
@@ -23,7 +23,7 @@ jobs:
 
         strategy:
             matrix: # important: if this matrix is changed, also change EXPECTED_WHEELS_COUNT in `build_and_publish_as_package` below
-                os: [ubuntu-latest, ubuntu-24.04-arm, ubuntu-22.04, ubuntu-22.04-arm, macos-latest, macos-14, windows-latest, windows-11-arm] # ubuntu-22.04 is used to generate wheels for manylinux_2_35 in addition to the manylinux_2_39 of ubuntu-latest
+                os: [ubuntu-latest, ubuntu-22.04, macos-latest, macos-14, windows-latest, windows-11-arm] # ubuntu-22.04 is used to generate wheels for manylinux_2_35 in addition to the manylinux_2_39 of ubuntu-latest
                 pyversion: ["3.11", "3.12", "3.13", "3.14", "3.15"]
                 exclude:
                     - os: ubuntu-latest
@@ -91,7 +91,7 @@ jobs:
             - name: Build older Linux wheel distribution
               env:
                 CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
-                CIBW_ARCHS_LINUX: "x86_64"
+                CIBW_ARCHS_LINUX: "x86_64 aarch64"
                 CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28      # Must be equal to the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
                 CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_28
               run: python -m cibuildwheel --output-dir dist
@@ -119,7 +119,7 @@ jobs:
                     exit 1;
                   fi
 
-                  EXPECTED_WHEELS_COUNT=40
+                  EXPECTED_WHEELS_COUNT=35
                   WHEELS_COUNT=$(ls -lR ./dist/*.whl | wc -l)
                   echo "Number of wheel distributions: $WHEELS_COUNT"
                   if [ "$WHEELS_COUNT" -ne "$EXPECTED_WHEELS_COUNT" ]; then
