@@ -8,6 +8,8 @@ Please be aware that access to these functions may be restricted on a user accou
 
 * Ensure version is bumped in `pyproject.toml` and it is [PEP440-compliant](https://peps.python.org/pep-0440/)
 
+* In `docs`, run `pur -r requirements.txt` to update the dependencies
+
 ## CHANGELOG
 
 Ensure `CHANGELOG.md` has been updated.

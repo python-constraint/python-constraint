@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 [project]
 name = "python-constraint2" # when set back to "python-constraint", don't forget to remove '2' in other places (e.g. README)
 description = "python-constraint is a module for efficiently solving CSPs (Constraint Solving Problems) over finite domains."
-version = "2.7.3" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
+version = "2.7.4" # adhere to PEP440 versioning: https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#id55
 authors = [
     {name = "Floris-Jan Willemsen", email = "fjwillemsen97@gmail.com"},
     {name = "Sébastien Celles", email = "s.celles@gmail.com"},
@@ -37,6 +37,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
 ]
 
 # ATTENTION: if anything is changed here, run `poetry update`

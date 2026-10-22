@@ -2,8 +2,13 @@
 
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
 
-### Unreleased
-- Fixed: preserve valid solutions when fixed-bound sum constraints use negative multipliers.
+### Version 2.8.0
+- Released: 2026-10-22
+- Issues / Enhancements:
+  - Added Python 3.15 support
+  - Fixed #113: preserve valid solutions when fixed-bound sum constraints use negative multipliers (by @xiehuanyi)
+  - Cythonized with new version
+  - Updated dependencies
 
 ### Version 2.7.3
 - Released: 2026-08-18
