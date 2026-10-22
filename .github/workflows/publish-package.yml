@@ -23,11 +23,8 @@ jobs:
 
         strategy:
             matrix: # important: if this matrix is changed, also change EXPECTED_WHEELS_COUNT in `build_and_publish_as_package` below
-                os: [ubuntu-latest, ubuntu-22.04, macos-latest, macos-14, windows-latest, windows-11-arm] # ubuntu-22.04 is used to generate wheels for manylinux_2_35 in addition to the manylinux_2_39 of ubuntu-latest
+                os: [macos-latest, macos-14, windows-latest, windows-11-arm]
                 pyversion: ["3.11", "3.12", "3.13", "3.14", "3.15"]
-                exclude:
-                    - os: ubuntu-latest
-                      pyversion: "3.14" # exclude because we already use this OS and version for building the source package
 
         steps:
             - uses: actions/checkout@v7
@@ -98,9 +95,44 @@ jobs:
                   path: ./dist/*.whl
                   if-no-files-found: error
 
+    build_linux_x86_64_wheels:
+        name: Build Linux x86_64 wheels
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+            - name: Setup Python
+              uses: actions/setup-python@v7
+              with:
+                  python-version: "3.14"
+            - name: Install cibuildwheel
+              run: python -m pip install cibuildwheel>=4.2.0
+            - name: Build Linux x86_64 wheels manylinux_2_28
+              env:
+                  CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+                  CIBW_ARCHS_LINUX: "x86_64"
+                  CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28      # Must be equal to below and the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
+              run: python -m cibuildwheel --output-dir dist
+            - name: Build Linux x86_64 wheels manylinux_2_35
+              env:
+                  CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+                  CIBW_ARCHS_LINUX: "x86_64"
+                  CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_35
+              run: python -m cibuildwheel --output-dir dist
+            - name: Build Linux x86_64 wheels manylinux_2_39
+              env:
+                  CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+                  CIBW_ARCHS_LINUX: "x86_64"
+                  CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_39
+              run: python -m cibuildwheel --output-dir dist
+            - uses: actions/upload-artifact@v7
+              with:
+                  name: linux_x86_64_wheels
+                  path: ./dist/*.whl
+                  if-no-files-found: error
+
     build_and_publish_as_package:
         name: Package and upload release to PyPI
-        needs: [build_platform_specific_wheels, build_linux_aarch64_wheels]
+        needs: [build_platform_specific_wheels, build_linux_aarch64_wheels, build_linux_x86_64_wheels]
         runs-on: ubuntu-latest
         environment:
             name: pypi
@@ -121,26 +153,6 @@ jobs:
                   poetry install
                   poetry build
                   ls ./dist
-            - name: Install cibuildwheel
-              run: python -m pip install cibuildwheel>=4.2.0
-            - name: Build Linux wheel distribution manylinux_2_28
-              env:
-                CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
-                CIBW_ARCHS_LINUX: "x86_64"
-                CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28      # Must be equal to above and the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
-              run: python -m cibuildwheel --output-dir dist
-            - name: Build Linux wheel distribution manylinux_2_35
-              env:
-                CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
-                CIBW_ARCHS_LINUX: "x86_64"
-                CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_35
-              run: python -m cibuildwheel --output-dir dist
-            - name: Build Linux wheel distribution manylinux_2_39
-              env:
-                CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
-                CIBW_ARCHS_LINUX: "x86_64"
-                CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_39
-              run: python -m cibuildwheel --output-dir dist
             - name: Download all platform-specific wheels to the `temp_dist` folder
               uses: actions/download-artifact@v8
               with:
