@@ -63,9 +63,44 @@ jobs:
                   path: ./dist/*.whl
                   if-no-files-found: error
 
+    build_linux_aarch64_wheels:
+        name: Build Linux ARM64 wheels
+        runs-on: ubuntu-24.04-arm
+        steps:
+            - uses: actions/checkout@v7
+            - name: Setup Python
+              uses: actions/setup-python@v7
+              with:
+                  python-version: "3.14"
+            - name: Install cibuildwheel
+              run: python -m pip install cibuildwheel>=4.2.0
+            - name: Build Linux ARM64 wheels manylinux_2_28
+              env:
+                  CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+                  CIBW_ARCHS_LINUX: "aarch64"
+                  CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_28      # Must be equal to below and the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
+              run: python -m cibuildwheel --output-dir dist
+            - name: Build Linux ARM64 wheels manylinux_2_35
+              env:
+                  CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+                  CIBW_ARCHS_LINUX: "aarch64"
+                  CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_35
+              run: python -m cibuildwheel --output-dir dist
+            - name: Build Linux ARM64 wheels manylinux_2_39
+              env:
+                  CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+                  CIBW_ARCHS_LINUX: "aarch64"
+                  CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_39
+              run: python -m cibuildwheel --output-dir dist
+            - uses: actions/upload-artifact@v7
+              with:
+                  name: linux_aarch64_wheels
+                  path: ./dist/*.whl
+                  if-no-files-found: error
+
     build_and_publish_as_package:
         name: Package and upload release to PyPI
-        needs: [build_platform_specific_wheels]
+        needs: [build_platform_specific_wheels, build_linux_aarch64_wheels]
         runs-on: ubuntu-latest
         environment:
             name: pypi
@@ -87,17 +122,24 @@ jobs:
                   poetry build
                   ls ./dist
             - name: Install cibuildwheel
-              run: python -m pip install cibuildwheel==4.2.0
-            - name: Set up QEMU
-              uses: docker/setup-qemu-action@v3
-              with:
-                  platforms: arm64
-            - name: Build older Linux wheel distribution
+              run: python -m pip install cibuildwheel>=4.2.0
+            - name: Build Linux wheel distribution manylinux_2_28
               env:
                 CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
-                CIBW_ARCHS_LINUX: "x86_64 aarch64"
-                CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28      # Must be equal to the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
-                CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_28
+                CIBW_ARCHS_LINUX: "x86_64"
+                CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28      # Must be equal to above and the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
+              run: python -m cibuildwheel --output-dir dist
+            - name: Build Linux wheel distribution manylinux_2_35
+              env:
+                CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+                CIBW_ARCHS_LINUX: "x86_64"
+                CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_35
+              run: python -m cibuildwheel --output-dir dist
+            - name: Build Linux wheel distribution manylinux_2_39
+              env:
+                CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+                CIBW_ARCHS_LINUX: "x86_64"
+                CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_39
               run: python -m cibuildwheel --output-dir dist
             - name: Download all platform-specific wheels to the `temp_dist` folder
               uses: actions/download-artifact@v8
