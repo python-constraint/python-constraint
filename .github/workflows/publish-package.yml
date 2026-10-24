@@ -73,11 +73,16 @@ jobs:
               uses: Gr1N/setup-poetry@v9
             - name: Install cibuildwheel
               run: python -m pip install cibuildwheel>=4.3.4
+            - name: Install auditwheel
+              run: python -m pip install auditwheel
             - name: Build wheel distribution for current platform
               run: |
                   poetry install
                   poetry build -f wheel
                   ls ./dist
+                  auditwheel repair dist/*.whl
+                  rm -rf dist/*.whl
+                  mv dist/wheelhouse/*.whl dist/
             - name: Build Linux ARM64 wheels manylinux_2_28
               env:
                   CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
@@ -115,11 +120,16 @@ jobs:
               uses: Gr1N/setup-poetry@v9
             - name: Install cibuildwheel
               run: python -m pip install cibuildwheel>=4.3.4
+            - name: Install auditwheel
+              run: python -m pip install auditwheel
             - name: Build wheel distribution for current platform
               run: |
                   poetry install
                   poetry build -f wheel
                   ls ./dist
+                  auditwheel repair dist/*.whl
+                  rm -rf dist/*.whl
+                  mv dist/wheelhouse/*.whl dist/
             - name: Build Linux x86_64 wheels manylinux_2_28
               env:
                   CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
