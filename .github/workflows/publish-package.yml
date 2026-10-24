@@ -62,7 +62,7 @@ jobs:
 
     build_linux_aarch64_wheels:
         name: Build Linux ARM64 wheels
-        runs-on: ubuntu-24.04-arm
+        runs-on: ubuntu-24.04-arm   # manylinux_2_39
         steps:
             - uses: actions/checkout@v7
             - name: Setup Python
@@ -80,9 +80,10 @@ jobs:
                   poetry install
                   poetry build -f wheel
                   ls ./dist
-                  auditwheel repair dist/*.whl
+                  auditwheel show dist/*.whl
+                  auditwheel repair --plat manylinux_2_39_aarch64 dist/*.whl
                   rm -rf dist/*.whl
-                  mv dist/wheelhouse/*.whl dist/
+                  mv wheelhouse/*.whl dist/
             - name: Build Linux ARM64 wheels manylinux_2_28
               env:
                   CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
@@ -109,7 +110,7 @@ jobs:
 
     build_linux_x86_64_wheels:
         name: Build Linux x86_64 wheels
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-24.04   # manylinux_2_39
         steps:
             - uses: actions/checkout@v7
             - name: Setup Python
@@ -127,9 +128,10 @@ jobs:
                   poetry install
                   poetry build -f wheel
                   ls ./dist
-                  auditwheel repair dist/*.whl
+                  auditwheel show dist/*.whl
+                  auditwheel repair --plat manylinux_2_39_x86_64 dist/*.whl
                   rm -rf dist/*.whl
-                  mv dist/wheelhouse/*.whl dist/
+                  mv wheelhouse/*.whl dist/
             - name: Build Linux x86_64 wheels manylinux_2_28
               env:
                   CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
