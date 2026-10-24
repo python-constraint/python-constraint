@@ -73,35 +73,35 @@ jobs:
               uses: Gr1N/setup-poetry@v9
             - name: Install cibuildwheel
               run: python -m pip install cibuildwheel>=4.3.4
-            - name: Install auditwheel
-              run: python -m pip install auditwheel
-            - name: Build wheel distribution for current platform
-              run: |
-                  poetry install
-                  poetry build -f wheel
-                  ls ./dist
-                  auditwheel show dist/*.whl
-                  auditwheel repair --plat manylinux_2_39_aarch64 dist/*.whl
-                  rm -rf dist/*.whl
-                  mv wheelhouse/*.whl dist/
-            - name: Build Linux ARM64 wheels manylinux_2_28
-              env:
-                  CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
-                  CIBW_ARCHS_LINUX: "aarch64"
-                  CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_28      # Must be equal to below and the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
-              run: python -m cibuildwheel --output-dir dist
+            # - name: Install auditwheel
+            #   run: python -m pip install auditwheel
+            # - name: Build wheel distribution for current platform
+            #   run: |
+            #       poetry install
+            #       poetry build -f wheel
+            #       ls ./dist
+            #       auditwheel show dist/*.whl
+            #       auditwheel repair --plat manylinux_2_39_aarch64 dist/*.whl
+            #       rm -rf dist/*.whl
+            #       mv wheelhouse/*.whl dist/
+            # - name: Build Linux ARM64 wheels manylinux_2_28
+            #   env:
+            #       CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+            #       CIBW_ARCHS_LINUX: "aarch64"
+            #       CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_28      # Must be equal to below and the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
+            #   run: python -m cibuildwheel --output-dir dist
             - name: Build Linux ARM64 wheels manylinux_2_34
               env:
                   CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
                   CIBW_ARCHS_LINUX: "aarch64"
                   CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_34
               run: python -m cibuildwheel --output-dir dist
-            - name: Build Linux ARM64 wheels musllinux_1_2
-              env:
-                  CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
-                  CIBW_ARCHS_LINUX: "aarch64"
-                  CIBW_MANYLINUX_AARCH64_IMAGE: musllinux_1_2
-              run: python -m cibuildwheel --output-dir dist
+            # - name: Build Linux ARM64 wheels musllinux_1_2
+            #   env:
+            #       CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+            #       CIBW_ARCHS_LINUX: "aarch64"
+            #       CIBW_MANYLINUX_AARCH64_IMAGE: musllinux_1_2
+            #   run: python -m cibuildwheel --output-dir dist
             - uses: actions/upload-artifact@v7
               with:
                   name: linux_aarch64_wheels
@@ -121,35 +121,35 @@ jobs:
               uses: Gr1N/setup-poetry@v9
             - name: Install cibuildwheel
               run: python -m pip install cibuildwheel>=4.3.4
-            - name: Install auditwheel
-              run: python -m pip install auditwheel
-            - name: Build wheel distribution for current platform
-              run: |
-                  poetry install
-                  poetry build -f wheel
-                  ls ./dist
-                  auditwheel show dist/*.whl
-                  auditwheel repair --plat manylinux_2_39_x86_64 dist/*.whl
-                  rm -rf dist/*.whl
-                  mv wheelhouse/*.whl dist/
-            - name: Build Linux x86_64 wheels manylinux_2_28
-              env:
-                  CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
-                  CIBW_ARCHS_LINUX: "x86_64"
-                  CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28      # Must be equal to below and the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
-              run: python -m cibuildwheel --output-dir dist
+            # - name: Install auditwheel
+            #   run: python -m pip install auditwheel
+            # - name: Build wheel distribution for current platform
+            #   run: |
+            #       poetry install
+            #       poetry build -f wheel
+            #       ls ./dist
+            #       auditwheel show dist/*.whl
+            #       auditwheel repair --plat manylinux_2_39_x86_64 dist/*.whl
+            #       rm -rf dist/*.whl
+            #       mv wheelhouse/*.whl dist/
+            # - name: Build Linux x86_64 wheels manylinux_2_28
+            #   env:
+            #       CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+            #       CIBW_ARCHS_LINUX: "x86_64"
+            #       CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28      # Must be equal to below and the current Pixi "linux-64" minimum GLIBC version (https://pixi.prefix.dev/latest/workspace/system_requirements/#equivalent-forms).
+            #   run: python -m cibuildwheel --output-dir dist
             - name: Build Linux x86_64 wheels manylinux_2_34
               env:
                   CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
                   CIBW_ARCHS_LINUX: "x86_64"
                   CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_34
               run: python -m cibuildwheel --output-dir dist
-            - name: Build Linux x86_64 wheels musllinux_1_2
-              env:
-                  CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
-                  CIBW_ARCHS_LINUX: "x86_64"
-                  CIBW_MANYLINUX_X86_64_IMAGE: musllinux_1_2
-              run: python -m cibuildwheel --output-dir dist
+            # - name: Build Linux x86_64 wheels musllinux_1_2
+            #   env:
+            #       CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
+            #       CIBW_ARCHS_LINUX: "x86_64"
+            #       CIBW_MANYLINUX_X86_64_IMAGE: musllinux_1_2
+            #   run: python -m cibuildwheel --output-dir dist
             - uses: actions/upload-artifact@v7
               with:
                   name: linux_x86_64_wheels
