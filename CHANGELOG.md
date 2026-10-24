@@ -10,6 +10,7 @@ All notable changes to this code base will be documented in this file, for every
   - Cythonized with new version
   - Updated dependencies
   - Prevents downstream eMudhra CA roots vulnerability
+  - Added `musllinux_1_2`; Switched from `manylinux_2_35` to `manylinux_2_34`
 
 ### Version 2.7.3
 - Released: 2026-08-18
