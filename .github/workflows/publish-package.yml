@@ -23,7 +23,7 @@ jobs:
 
         strategy:
             matrix: # important: if this matrix is changed, also change EXPECTED_WHEELS_COUNT in `build_and_publish_as_package` below
-                os: [macos-latest, macos-14, windows-latest, windows-11-arm]
+                os: [macos-latest, macos-14, windows-latest, windows-11-arm, ubuntu-24.04-arm, ubuntu-24.04]
                 pyversion: ["3.11", "3.12", "3.13", "3.14", "3.15"]
 
         steps:
@@ -53,6 +53,14 @@ jobs:
                   poetry install
                   poetry build -f wheel
                   ls ./dist
+            - name: Repair wheel distribution for Linux
+              if: startsWith(matrix.os, 'ubuntu')
+              run: |
+                  python -m pip install auditwheel
+                  auditwheel show dist/*.whl
+                  auditwheel repair --plat manylinux_2_39_aarch64 dist/*.whl
+                  rm -rf dist/*.whl
+                  mv wheelhouse/*.whl dist/
             - name: Upload the built wheel distribution
               uses: actions/upload-artifact@v7
               with:
@@ -73,17 +81,6 @@ jobs:
               uses: Gr1N/setup-poetry@v9
             - name: Install cibuildwheel
               run: python -m pip install cibuildwheel>=4.3.4
-            - name: Install auditwheel
-              run: python -m pip install auditwheel
-            - name: Build wheel distribution for current platform
-              run: |
-                  poetry install
-                  poetry build -f wheel
-                  ls ./dist
-                  auditwheel show dist/*.whl
-                  auditwheel repair --plat manylinux_2_39_aarch64 dist/*.whl
-                  rm -rf dist/*.whl
-                  mv wheelhouse/*.whl dist/
             - name: Build Linux ARM64 wheels manylinux_2_28
               env:
                   CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"
@@ -109,17 +106,6 @@ jobs:
               uses: Gr1N/setup-poetry@v9
             - name: Install cibuildwheel
               run: python -m pip install cibuildwheel>=4.3.4
-            - name: Install auditwheel
-              run: python -m pip install auditwheel
-            - name: Build wheel distribution for current platform
-              run: |
-                  poetry install
-                  poetry build -f wheel
-                  ls ./dist
-                  auditwheel show dist/*.whl
-                  auditwheel repair --plat manylinux_2_39_x86_64 dist/*.whl
-                  rm -rf dist/*.whl
-                  mv wheelhouse/*.whl dist/
             - name: Build Linux x86_64 wheels manylinux_2_28
               env:
                   CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-* cp315-*"

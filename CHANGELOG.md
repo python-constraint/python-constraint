@@ -2,6 +2,11 @@
 
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
 
+### Version 2.8.1
+- Released: TBD
+- Issues / Enhancements:
+  - Expanded to wider range of Linux wheels
+
 ### Version 2.8.0
 - Released: 2026-11-25
 - Issues / Enhancements:
