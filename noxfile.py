@@ -12,12 +12,7 @@ from nox import Session, session
 
 # from nox_poetry import Session, session   # nox_poetry is a better option, but <=1.0.3 has a bug with filename-URLs
 
-python_versions_to_test = [
-    "3.11",
-    "3.12",
-    "3.13",
-    "3.14"
-]
+python_versions_to_test = ["3.11", "3.12", "3.13", "3.14", "3.15"]
 nox.options.stop_on_first_error = True
 nox.options.error_on_missing_interpreters = True
 
@@ -42,7 +37,7 @@ def tests(session: Session) -> None:
     if session.posargs:
         os_name = session.posargs[0]
     else:
-        os_name = 'local'
+        os_name = "local"
 
     # install the dev-dependencies and build the package
     session.install("poetry")
