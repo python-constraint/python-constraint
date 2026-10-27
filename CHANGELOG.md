@@ -5,7 +5,7 @@ All notable changes to this code base will be documented in this file, for every
 ### Version 2.9.0
 - Released: TBD
 - Issues / Enhancements:
-  - Solution iterator for the `RecursiveBacktrackingSolver` (by @harmehak0173)
+  - Implemented #60: Solution iterator for the `RecursiveBacktrackingSolver` (by @harmehak0173)
   - Expanded range of Linux wheels
   - Updated Poetry setup
   - Updated dependencies
