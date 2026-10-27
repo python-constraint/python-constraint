@@ -53,9 +53,17 @@ jobs:
                   poetry install
                   poetry build -f wheel
                   ls ./dist
-            - name: Repair wheel distribution for Linux
-              if: startsWith(matrix.os, 'ubuntu')
-              run: |
+            - name: Repair wheel distribution for Linux x86_64
+              if: matrix.os == 'ubuntu-24.04'
+              run: | # manylinux_2_39
+                  python -m pip install auditwheel
+                  auditwheel show dist/*.whl
+                  auditwheel repair --plat manylinux_2_39_x86_64 dist/*.whl
+                  rm -rf dist/*.whl
+                  mv wheelhouse/*.whl dist/
+            - name: Repair wheel distribution for Linux aarch64
+              if: matrix.os == 'ubuntu-24.04-arm'
+              run: | # manylinux_2_39
                   python -m pip install auditwheel
                   auditwheel show dist/*.whl
                   auditwheel repair --plat manylinux_2_39_aarch64 dist/*.whl
@@ -69,8 +77,8 @@ jobs:
                   if-no-files-found: error
 
     build_linux_aarch64_wheels:
-        name: Build Linux ARM64 wheels
-        runs-on: ubuntu-24.04-arm   # manylinux_2_39
+        name: Build Linux ARM64 multiwheels
+        runs-on: ubuntu-24.04-arm
         steps:
             - uses: actions/checkout@v7
             - name: Setup Python
@@ -94,8 +102,8 @@ jobs:
                   if-no-files-found: error
 
     build_linux_x86_64_wheels:
-        name: Build Linux x86_64 wheels
-        runs-on: ubuntu-24.04   # manylinux_2_39
+        name: Build Linux x86_64 multiwheels
+        runs-on: ubuntu-24.04
         steps:
             - uses: actions/checkout@v7
             - name: Setup Python
@@ -166,7 +174,7 @@ jobs:
                     exit 1;
                   fi
 
-                  EXPECTED_WHEELS_COUNT=41
+                  EXPECTED_WHEELS_COUNT=52
                   WHEELS_COUNT=$(ls -lR ./dist/*.whl | wc -l)
                   echo "Number of wheel distributions: $WHEELS_COUNT"
                   if [ "$WHEELS_COUNT" -ne "$EXPECTED_WHEELS_COUNT" ]; then

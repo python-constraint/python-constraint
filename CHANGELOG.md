@@ -3,7 +3,7 @@
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
 
 ### Version 2.9.0
-- Released: TBD
+- Released: 2026-11-27
 - Issues / Enhancements:
   - Implemented #60: Solution iterator for the `RecursiveBacktrackingSolver` (by @harmehak0173)
   - Expanded range of Linux wheels
