@@ -33,7 +33,7 @@ jobs:
               with:
                   python-version: ${{ matrix.pyversion }}
             - name: Setup Poetry
-              uses: Gr1N/setup-poetry@v9
+              uses: Gr1N/setup-poetry@v10
             - name: Build older macOS wheel distribution
               if: matrix.os == 'macos-14'
               env:
@@ -78,7 +78,7 @@ jobs:
               with:
                   python-version: "3.14"
             - name: Setup Poetry
-              uses: Gr1N/setup-poetry@v9
+              uses: Gr1N/setup-poetry@v10
             - name: Install cibuildwheel
               run: python -m pip install cibuildwheel>=4.3.4
             - name: Build Linux ARM64 wheels manylinux_2_28
@@ -103,7 +103,7 @@ jobs:
               with:
                   python-version: "3.14"
             - name: Setup Poetry
-              uses: Gr1N/setup-poetry@v9
+              uses: Gr1N/setup-poetry@v10
             - name: Install cibuildwheel
               run: python -m pip install cibuildwheel>=4.3.4
             - name: Build Linux x86_64 wheels manylinux_2_28
@@ -135,7 +135,7 @@ jobs:
               with:
                   python-version: "3.14"
             - name: Setup Poetry
-              uses: Gr1N/setup-poetry@v9
+              uses: Gr1N/setup-poetry@v10
             - name: Build source
               run: |    # do not build wheels here as it is not PyPI compliant
                   poetry install
