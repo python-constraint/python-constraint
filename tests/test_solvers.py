@@ -88,6 +88,41 @@ def test_recursive_backtracking_solver():
     assert all(sol in possible_solutions for sol in solutions)
 
 
+@pytest.mark.parametrize("forwardcheck", [True, False])
+def test_recursive_backtracking_solver_iterator(forwardcheck: bool):
+    # Test lazy solution iteration parity with BacktrackingSolver
+    problem_rec = Problem(RecursiveBacktrackingSolver(forwardcheck=forwardcheck))
+    problem_bt = Problem(BacktrackingSolver(forwardcheck=forwardcheck))
+
+    for p in [problem_rec, problem_bt]:
+        p.addVariables(["a", "b", "c"], [1, 2, 3])
+        p.addConstraint(lambda a, b: b > a, ["a", "b"])
+        p.addConstraint(lambda b, c: c > b, ["b", "c"])
+
+    rec_solutions = list(problem_rec.getSolutionIter())
+    bt_solutions = list(problem_bt.getSolutionIter())
+
+    assert rec_solutions == [{"a": 1, "b": 2, "c": 3}]
+    assert rec_solutions == bt_solutions
+
+    # Test early stopping via next()
+    p_large = Problem(RecursiveBacktrackingSolver(forwardcheck=forwardcheck))
+    p_large.addVariables(["x", "y"], range(10))
+    it = p_large.getSolutionIter()
+    first = next(it)
+    second = next(it)
+    assert first != second
+    assert first["x"] in range(10) and first["y"] in range(10)
+    del it  # triggers generator cleanup / finally block
+
+    # Test unsatisfiable problem returns empty iterator
+    p_unsat = Problem(RecursiveBacktrackingSolver(forwardcheck=forwardcheck))
+    p_unsat.addVariables(["x"], [1, 2])
+    p_unsat.addConstraint(lambda x: x > 10, ["x"])
+    assert list(p_unsat.getSolutionIter()) == []
+    assert next(p_unsat.getSolutionIter(), None) is None
+
+
 def test_parallel_solver():
     # setup the solvers
     problem = Problem(ParallelSolver(process_mode=False))
