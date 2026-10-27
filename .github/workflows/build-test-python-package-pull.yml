@@ -1,6 +1,6 @@
 # This workflow will use Nox to run tests and lint for the supported Python versions, and upload the test coverage data.
 
-name: Build & Test
+name: Build & Test on Pull Request
 
 on:
     pull_request:
@@ -12,6 +12,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v7
+            - name: Setup Python
+              uses: actions/setup-python@v7
+              with:
+                  python-version: 3.15
             - uses: fjwillemsen/setup-nox2@v4
             - run: |
                   nox -- ${{ runner.os }}
