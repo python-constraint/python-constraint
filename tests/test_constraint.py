@@ -143,3 +143,42 @@ def test_pruning_constraint():
     assert len(solutions) == len(possible_solutions)
     for solution in solutions:
         assert solution in possible_solutions
+
+
+def test_variable_sum_constraints_with_multipliers():
+    """VariableMinSumConstraint / VariableMaxSumConstraint must support weighted sums to another variable.
+
+    Regression test: the weighted-extremum estimate previously used
+    ``domains[var] * multiplier`` (a list repetition, since Domain is a list
+    subclass). That crashed on float multipliers and, for integer multipliers
+    != 1, mis-estimated the bound and silently dropped valid solutions.
+    """
+    import itertools
+
+    from constraint import (
+        VariableMaxSumConstraint,
+        VariableMinSumConstraint,
+    )
+
+    cases = [
+        (VariableMinSumConstraint, lambda s, c: s >= c),
+        (VariableMaxSumConstraint, lambda s, c: s <= c),
+    ]
+    values = [-2, 0, 1, 2]
+    for constraint_cls, ok in cases:
+        for multipliers in [(1, 1, 1), (2, 2, 1), (0.5, 1.0, 1.0), (-1, 2, 1)]:
+            # Give the target variable a tight domain so it is assigned first,
+            # which exercises the partial-estimate path of the constraint.
+            problem = constraint.Problem()
+            problem.addVariables(["x", "y"], values)
+            problem.addVariable("c", [3])
+            problem.addConstraint(constraint_cls("c", ["x", "y"], multipliers=list(multipliers)))
+
+            expected = {
+                (x, y)
+                for x, y in itertools.product(values, repeat=2)
+                if ok(x * multipliers[0] + y * multipliers[1], 3)
+            }
+            actual = {(solution["x"], solution["y"]) for solution in problem.getSolutions()}
+            assert actual == expected, (constraint_cls.__name__, multipliers)
+
