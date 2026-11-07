@@ -642,7 +642,7 @@ class VariableMinSumConstraint(Constraint):
                 if var in assignments:
                     sum_value += assignments[var] * multiplier
                 else:
-                    sum_value += max(domains[var] * multiplier)  # use max value if not assigned
+                    sum_value += max(value * multiplier for value in domains[var])  # use max value if not assigned
         else:
             for var in self.sum_vars:
                 if var in assignments:
@@ -821,7 +821,7 @@ class VariableMaxSumConstraint(Constraint):
                 if var in assignments:
                     sum_value += assignments[var] * multiplier
                 else:
-                    sum_value += min(domains[var] * multiplier)  # use min value if not assigned
+                    sum_value += min(value * multiplier for value in domains[var])  # use min value if not assigned
         else:
             for var in self.sum_vars:
                 if var in assignments:
