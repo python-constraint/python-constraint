@@ -37,7 +37,8 @@ jobs:
               uses: actions/cache@v6
               with:
                   path: ./cache
-                  key: ${{ runner.os }}-benchmark
+                  key: ${{ runner.os }}-benchmark-${{ github.run_id }}
+                  restore-keys: ${{ runner.os }}-benchmark-
             - uses: fjwillemsen/setup-nox2@v4
             - run: |
                   nox -- ${{ runner.os }}
