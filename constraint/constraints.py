@@ -876,14 +876,14 @@ class ExactProdConstraint(Constraint):
                     return
                 variable_with_lt1 = variable
 
-        # prune the associated variables of values > exactprod
+        # Only nonnegative values cannot decrease when multiplied by the other factors >= 1.
         exactprod = self._exactprod
         for variable in variables:
             if variable_with_lt1 is not None and variable_with_lt1 != variable:
                 continue
             domain = domains[variable]
             for value in domain[:]:
-                if value > exactprod:
+                if value >= 0 and value > exactprod:
                     domain.remove(value)
                 elif value == 0 and exactprod != 0:
                     domain.remove(value)
@@ -906,14 +906,15 @@ class ExactProdConstraint(Constraint):
                     missing_lt1.append(variable)
         if isinstance(prod, float):
             prod = round(prod, 10)
-        if (not missing and prod != exactprod) or (len(missing_lt1) == 0 and prod > exactprod):
+        if (not missing and prod != exactprod) or (not missing_lt1 and prod >= 0 and prod > exactprod):
             return False
+        # A candidate can only be pruned when every other missing factor is at least one.
         if forwardcheck:
             for variable in variables:
-                if variable not in assignments and (variable not in missing_lt1 or len(missing_lt1) == 1):
+                if variable not in assignments and (not missing_lt1 or missing_lt1 == [variable]):
                     domain = domains[variable]
                     for value in domain[:]:
-                        if prod * value > exactprod:
+                        if prod * value >= 0 and prod * value > exactprod:
                             domain.hideValue(value)
                     if not domain:
                         return False
@@ -1228,14 +1229,14 @@ class MaxProdConstraint(Constraint):
                     return
                 variable_with_lt1 = variable
 
-        # prune the associated variables of values > maxprod
+        # Only nonnegative values cannot decrease when multiplied by the other factors >= 1.
         maxprod = self._maxprod
         for variable in variables:
             if variable_with_lt1 is not None and variable_with_lt1 != variable:
                 continue
             domain = domains[variable]
             for value in domain[:]:
-                if value > maxprod:
+                if value >= 0 and value > maxprod:
                     domain.remove(value)
                 elif value == 0 and maxprod < 0:
                     domain.remove(value)
@@ -1258,14 +1259,15 @@ class MaxProdConstraint(Constraint):
                     missing_lt1.append(variable)
         if isinstance(prod, float):
             prod = round(prod, 10)
-        if (not missing or len(missing_lt1) == 0) and prod > maxprod:
+        if (not missing or (not missing_lt1 and prod >= 0)) and prod > maxprod:
             return False
+        # A candidate can only be pruned when every other missing factor is at least one.
         if forwardcheck:
             for variable in variables:
-                if variable not in assignments and (variable not in missing_lt1 or len(missing_lt1) == 1):
+                if variable not in assignments and (not missing_lt1 or missing_lt1 == [variable]):
                     domain = domains[variable]
                     for value in domain[:]:
-                        if prod * value > maxprod:
+                        if prod * value >= 0 and prod * value > maxprod:
                             domain.hideValue(value)
                     if not domain:
                         return False

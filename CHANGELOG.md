@@ -2,6 +2,9 @@
 
 All notable changes to this code base will be documented in this file, for every released major and minor version. For all versions, see [releases](https://github.com/python-constraint/python-constraint/releases). 
 
+### Unreleased
+- Fix #118: preserve valid signed, zero, and fractional product solutions in fixed-bound exact and maximum constraints.
+
 ### Version 2.9.0
 - Released: 2026-11-27
 - Issues / Enhancements:
