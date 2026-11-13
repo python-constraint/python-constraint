@@ -11,9 +11,6 @@ from constraint import (
     MinProdConstraint,
     MaxProdConstraint,
     VariableExactSumConstraint,
-    VariableExactProdConstraint,
-    VariableMinProdConstraint,
-    VariableMaxProdConstraint,
 )
 from constraint.parser import extract_operators, is_or_evals_to_number
 from collections.abc import Iterable
@@ -69,9 +66,9 @@ def test_compile_to_constraints():
         "100-y >= x",  # MaxSumConstraint
         "100 == x-y",  # FunctionConstraint
         "x / y == 100",  # FunctionConstraint
-        "x / y == x",  # VariableExactProdConstraint
-        "x / y <= x",  # VariableMinProdConstraint
-        "x / y >= x",  # VariableMaxProdConstraint
+        "x / y == x",  # FunctionConstraint
+        "x / y <= x",  # FunctionConstraint
+        "x / y >= x",  # FunctionConstraint
         "50 <= x * y < 100",  # becomes splitted MinProdConstraint and MaxProdConstraint
     ]
     expected_constraint_types = [
@@ -86,10 +83,10 @@ def test_compile_to_constraints():
         MinSumConstraint,
         MaxSumConstraint,  # with rewriting "100-y >= x" becomes "100 >= x+y"
         FunctionConstraint,  # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented # with rewriting "100 == x-y" becomes "100+y == x"
-        FunctionConstraint,  # TODO should be VariableExactSumConstraint after Roadmap point 1 is implemented # with rewriting "x / y == 100" becomes "x==100 * y"
-        VariableExactProdConstraint,
-        VariableMinProdConstraint,
-        VariableMaxProdConstraint,
+        FunctionConstraint,  # Division keeps its original Python semantics.
+        FunctionConstraint,
+        FunctionConstraint,
+        FunctionConstraint,
         MinProdConstraint,
         MaxProdConstraint,
     ]

@@ -103,6 +103,10 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
         unique_operators_left = set(operators_left)
         unique_operators_right = set(operators_right)
         unique_operators = unique_operators_left.union(unique_operators_right)
+        # Division cannot be cross-multiplied without changing sign, zero,
+        # and floating-point semantics. Keep the original function instead.
+        if "/" in unique_operators:
+            return None
         if len(unique_operators) == 1:
             variables_on_left = len(unique_operators_left) > 0
             swapped_side_first_component = re.search(
@@ -124,18 +128,6 @@ def parse_restrictions(restrictions: list[str], tune_params: dict) -> list[tuple
                     left_remainder = left[len(swapped_side_first_component) :]
                     right_swap = left_remainder.replace("-", "+")
                     restriction = f"{swapped_side_first_component}{comparator}{right}{right_swap}"
-            if "/" in unique_operators:
-                if not variables_on_left:
-                    # e.g. "G == B/M" becomes "G*M == B"
-                    right_remainder = right[len(swapped_side_first_component) :]
-                    left_swap = right_remainder.replace("/", "*")
-                    restriction = f"{left}{left_swap}{comparator}{swapped_side_first_component}"
-                else:
-                    # e.g. "B/M == G" becomes "B == G*M"
-                    left_remainder = left[len(swapped_side_first_component) :]
-                    right_swap = left_remainder.replace("/", "*")
-                    restriction = f"{swapped_side_first_component}{comparator}{right}{right_swap}"
-
             # we have a potentially rewritten restriction, split again
             left, right = tuple(s.strip() for s in restriction.split(comparator))
             operators_left = extract_operators(left)
