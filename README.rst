@@ -20,7 +20,7 @@ python-constraint
 | New: writing constraints in the new string format is preferable over functions and lambdas. 
 | These strings, even as compound statements, are automatically parsed to faster built-in constraints, are more concise, and do not require constraint solving familiarity by the user to be efficient. 
 | For example, :code:`problem.addConstraint(["50 <= x * y < 100"])` is parsed to :code:`[MinProdConstraint(50, ["x", "y"]), MaxProdConstraint(100, ["x", "y"])]`. 
-| Similarly, :code:`problem.addConstraint(["x / y == z"])` is parsed to :code:`[ExactProdConstraint("x", ["z", "y"])]`.
+| Expressions involving division, such as :code:`problem.addConstraint("x / y == z")`, retain their original Python semantics through a function constraint. They are not rewritten as products, which could change inequality signs, division-by-zero behavior, or floating-point results.
 | This feature is in beta and subject to possible change, please provide feedback.
 
 .. contents::
